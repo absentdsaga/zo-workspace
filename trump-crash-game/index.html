@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Trump World Domination - Crash Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: "Space Grotesk", sans-serif;
+      --gold: #ffd700;
+      --red: #dc2626;
+      --blue: #1e40af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background: linear-gradient(180deg, #0a0a20 0%, #1a0a10 50%, #0a1a20 100%);
+      overflow-x: hidden; overflow-y: auto;
+    }
+
+    html {
+      height: -webkit-fill-available;
+    }
+
+    #container {
+      width: min(500px, 95vw);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    #header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 16px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 16px;
+      border: 1px solid rgba(255,215,0,0.3);
+    }
+
+    #hero-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--gold);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    #header-text {
+      flex: 1;
+    }
+
+    #header h1 {
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    #header p {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-top: 4px;
+    }
+
+    #balance-display {
+      font-family: "Orbitron", sans-serif;
+      font-size: 1rem;
+      color: #4ade80;
+    }
+
+    #game-board {
+      border-radius: 20px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      height: 280px;
+      background: radial-gradient(ellipse at center bottom, #1e3a5f 0%, #0a0a20 70%);
+      border: 2px solid rgba(255,215,0,0.2);
+    }
+
+    #globe {
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1e40af 0%, #065f46 50%, #1e40af 100%);
+      box-shadow: 
+        inset -30px -30px 60px rgba(0,0,0,0.5),
+        inset 20px 20px 40px rgba(255,255,255,0.1),
+        0 0 60px rgba(30, 64, 175, 0.5);
+      opacity: 0.8;
+    }
+
+    #globe::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: 
+        repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 21px),
+        repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(255,255,255,0.05) 30px, rgba(255,255,255,0.05) 31px);
+    }
+
+    #countries {
+      position: absolute;
+      z-index: 10;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-around;
+      padding: 0 20px;
+      font-size: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .country {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .country span {
+      font-size: 0.6rem;
+      color: #888;
+    }
+
+    .country.threatened {
+      animation: shake 0.5s ease-in-out;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px) rotate(-5deg); }
+      75% { transform: translateX(5px) rotate(5deg); }
+    }
+
+    #trail-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #rocket {
+      position: absolute;
+      bottom: 30px;
+      left: 25%;
+      transform: rotate(-25deg);
+      font-size: 3rem;
+      transition: bottom 0.1s linear, left 0.1s linear;
+      z-index: 100;
+    }
+
+    #rocket img {
+      width: 78px;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    #rocket.flying {
+      animation: fly-diagonal 0.3s ease-in-out infinite;
+    }
+
+    @keyframes fly-diagonal {
+      0%, 100% { transform: rotate(-25deg) translateY(0); }
+      50% { transform: rotate(-22deg) translateY(-3px); }
+    }
+
+    #multiplier-display {
+      z-index: 20;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: "Orbitron", sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 0 30px rgba(255,215,0,0.8);
+    }
+
+    #multiplier-display.crash {
+      color: var(--red);
+      text-shadow: 0 0 30px rgba(220,38,38,0.8);
+    }
+
+    #multiplier-display.win {
+      color: #4ade80;
+      text-shadow: 0 0 30px rgba(74,222,128,0.8);
+    }
+
+    #status-text {
+      z-index: 20;
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      color: #fbbf24;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    #current-target {
+      position: absolute;
+      top: 105px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      z-index: 20;
+    }
+
+    #controls {
+      display: flex;
+      gap: 12px;
+    }
+
+    button {
+      flex: 1;
+      padding: 18px 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      font-family: "Space Grotesk", sans-serif;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.1s, box-shadow 0.1s;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+    }
+
+    button:active:not(:disabled) {
+      transform: scale(0.96);
+    }
+
+    #start-btn {
+      background: linear-gradient(135deg, #4ade80, #22c55e);
+      color: #052e16;
+      box-shadow: 0 4px 20px rgba(74, 222, 128, 0.4);
+    }
+
+    #start-btn:disabled {
+      background: #333;
+      color: #666;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+
+    #cashout-btn {
+      background: linear-gradient(135deg, var(--gold), #f59e0b);
+      color: #1a1a00;
+      box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cashout-btn:disabled {
+      background: #333;
+      color: #666;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+
+    #cashout-btn:not(:disabled) {
+      animation: pulse-gold 1s ease-in-out infinite;
+    }
+
+    @keyframes pulse-gold {
+      0%, 100% { box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4); }
+      50% { box-shadow: 0 4px 40px rgba(255, 215, 0, 0.8); }
+    }
+
+    #stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .stat-card {
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    .stat-card .label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      color: #888;
+      margin-bottom: 4px;
+    }
+
+    .stat-card .value {
+      font-size: 1rem;
+      font-family: "Orbitron", sans-serif;
+      color: #fff;
+    }
+
+    #events {
+      max-height: 80px;
+      overflow-y: auto;
+      padding: 12px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 12px;
+      font-size: 0.75rem;
+      color: #aaa;
+    }
+
+    #events div {
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    #events div:last-child {
+      border-bottom: none;
+    }
+
+    .crash-text {
+      color: var(--red) !important;
+    }
+
+    .win-text {
+      color: #4ade80 !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <img id="hero-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/220px-Donald_Trump_official_portrait.jpg" alt="Trump" />
+      <div id="header-text">
+        <h1>World Domination</h1>
+        <p>Will he conquer or crash?</p>
+      </div>
+      <div id="balance-display">1000 SOL</div>
+    </div>
+
+    <div id="game-board">
+      <div id="globe"></div>
+      <div id="countries">
+        <div class="country" data-name="Mexico">🇲🇽<span>Mexico</span></div>
+        <div class="country" data-name="Canada">🇨🇦<span>Canada</span></div>
+        <div class="country" data-name="China">🇨🇳<span>China</span></div>
+        <div class="country" data-name="EU">🇪🇺<span>EU</span></div>
+        <div class="country" data-name="Russia">🇷🇺<span>Russia</span></div>
+      </div>
+      <canvas id="trail-canvas"></canvas>
+      <div id="rocket"><img src="https://pics.craiyon.com/2025-01-18/-twRCYGLQ8m5XxqlOAeu5Q.webp" alt="Trump Rocket"></div>
+      <div id="multiplier-display">1.00x</div>
+      <div id="status-text">Ready to launch</div>
+      <div id="current-target"></div>
+    </div>
+
+    <div id="controls">
+      <button id="start-btn">Launch</button>
+      <button id="cashout-btn" disabled>Cash Out</button>
+    </div>
+
+    <div id="stats">
+      <div class="stat-card">
+        <div class="label">Last Crash</div>
+        <div class="value" id="last-crash">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Wins</div>
+        <div class="value" id="wins">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Streak</div>
+        <div class="value" id="streak">0</div>
+      </div>
+    </div>
+
+    <div id="events"></div>
+  </div>
+
+  <script>
+    const multiplierEl = document.getElementById("multiplier-display");
+    const balanceEl = document.getElementById("balance-display");
+    const lastCrashEl = document.getElementById("last-crash");
+    const winsEl = document.getElementById("wins");
+    const streakEl = document.getElementById("streak");
+    const eventsEl = document.getElementById("events");
+    const startBtn = document.getElementById("start-btn");
+    const cashoutBtn = document.getElementById("cashout-btn");
+    const statusText = document.getElementById("status-text");
+    const currentTarget = document.getElementById("current-target");
+    const rocket = document.getElementById("rocket");
+    const gameBoard = document.getElementById("game-board");
+    const trailCanvas = document.getElementById("trail-canvas");
+    const ctx = trailCanvas.getContext("2d");
+    const countries = document.querySelectorAll(".country");
+
+    // Particle system
+    const particles = [];
+    
+    class Particle {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 12 + 6;
+        // Move down-left to trail behind rocket flying up-right
+        this.speedX = -(Math.random() * 2 + 1.5);
+        this.speedY = Math.random() * 2 + 1.5;
+        this.life = 1;
+        this.decay = Math.random() * 0.015 + 0.01;
+        this.hue = Math.random() * 20 + 35;
+      }
+      
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.life -= this.decay;
+        this.size *= 0.97;
+      }
+      
+      draw() {
+        if (this.life <= 0) return;
+        ctx.save();
+        ctx.globalAlpha = this.life * 0.85;
+        ctx.globalCompositeOperation = "lighter";
+        
+        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+        gradient.addColorStop(0, `hsl(${this.hue}, 90%, 70%)`);
+        gradient.addColorStop(0.4, `hsl(${this.hue}, 100%, 50%)`);
+        gradient.addColorStop(1, "transparent");
+        
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+    
+    function resizeCanvas() {
+      trailCanvas.width = gameBoard.offsetWidth;
+      trailCanvas.height = gameBoard.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    const countryNames = ["Mexico", "Canada", "China", "EU", "Russia"];
+    const threats = [
+      "Tariffs incoming!",
+      "Trade war brewing!",
+      "Sanctions loading...",
+      "Deal or no deal?",
+      "Tremendous pressure!",
+      "Very unfair!",
+      "Big negotiations!"
+    ];
+
+    let balance = 1000;
+    let multiplier = 1;
+    let crashPoint = 1;
+    let running = false;
+    let canCashOut = false;
+    let animationFrame = null;
+    let wins = 0;
+    let streak = 0;
+    let currentCountryIndex = 0;
+    let lastUpdate = 0;
+
+    function log(message, type = "") {
+      const entry = document.createElement("div");
+      entry.className = type;
+      entry.innerHTML = `<strong>${new Date().toLocaleTimeString()}</strong> — ${message}`;
+      eventsEl.prepend(entry);
+      while (eventsEl.children.length > 10) {
+        eventsEl.removeChild(eventsEl.lastChild);
+      }
+    }
+
+    function generateCrashPoint() {
+      const r = Math.random();
+      const crash = 1 / (1 - r) * 0.99;
+      return Math.max(1.01, Math.min(100, crash));
+    }
+
+    function updateDisplay() {
+      multiplierEl.textContent = multiplier.toFixed(2) + "x";
+      balanceEl.textContent = Math.floor(balance) + " SOL";
+      winsEl.textContent = wins;
+      streakEl.textContent = streak;
+    }
+
+    function threatenCountry() {
+      countries.forEach(c => c.classList.remove("threatened"));
+      const country = countries[currentCountryIndex];
+      country.classList.add("threatened");
+      const flag = country.textContent.split("\n")[0];
+      currentTarget.textContent = flag;
+      statusText.textContent = threats[Math.floor(Math.random() * threats.length)];
+      currentCountryIndex = (currentCountryIndex + 1) % countries.length;
+    }
+
+    function updateParticles(rocketX, rocketY) {
+      // Add new particles from bottom-left of rocket (exhaust area at 45deg rotation)
+      for (let i = 0; i < 4; i++) {
+        particles.push(new Particle(
+          rocketX - 15 + Math.random() * 8 - 4,
+          rocketY + 15 + Math.random() * 8 - 4
+        ));
+      }
+      
+      // Limit particles
+      while (particles.length > 150) {
+        particles.shift();
+      }
+      
+      // Clear canvas
+      ctx.clearRect(0, 0, trailCanvas.width, trailCanvas.height);
+      
+      // Update and draw
+      for (let i = particles.length - 1; i >= 0; i--) {
+        particles[i].update();
+        particles[i].draw();
+        if (particles[i].life <= 0) {
+          particles.splice(i, 1);
+        }
+      }
+    }
+    
+    function clearParticles() {
+      particles.length = 0;
+      ctx.clearRect(0, 0, trailCanvas.width, trailCanvas.height);
+    }
+
+    function startRound() {
+      if (running) return;
+      
+      running = true;
+      canCashOut = true;
+      multiplier = 1;
+      crashPoint = generateCrashPoint();
+      
+      startBtn.disabled = true;
+      cashoutBtn.disabled = false;
+      
+      rocket.classList.add("flying");
+      multiplierEl.classList.remove("crash", "win");
+      clearParticles();
+      
+      statusText.textContent = "Launching world tour...";
+      log(`Trump launches his world domination tour!`);
+      
+      lastUpdate = performance.now();
+      animationFrame = requestAnimationFrame(gameLoop);
+      
+      setTimeout(threatenCountry, 500);
+    }
+
+    function gameLoop(timestamp) {
+      if (!running) return;
+      
+      const delta = timestamp - lastUpdate;
+      lastUpdate = timestamp;
+      
+      // Slower multiplier increase
+      const increase = (Math.random() * 0.006 + 0.002) * (delta / 16);
+      multiplier += increase;
+      
+      // Move rocket from bottom-left to top-right diagonally
+      const progress = (multiplier - 1) * 15;
+      const rocketBottom = 20 + progress;
+      const rocketLeft = 25 + (progress * 0.4);
+      rocket.style.bottom = Math.min(rocketBottom, 200) + "px";
+      rocket.style.left = Math.min(rocketLeft, 75) + "%";
+      
+      // Update particle trail
+      const rocketRect = rocket.getBoundingClientRect();
+      const boardRect = gameBoard.getBoundingClientRect();
+      const canvasX = rocketRect.left - boardRect.left + rocketRect.width / 2;
+      const canvasY = rocketRect.top - boardRect.top + rocketRect.height / 2;
+      updateParticles(canvasX, canvasY);
+      
+      updateDisplay();
+      
+      // Threaten countries periodically
+      if (Math.random() < 0.01) {
+        threatenCountry();
+      }
+      
+      if (multiplier >= crashPoint) {
+        crash();
+        return;
+      }
+      
+      animationFrame = requestAnimationFrame(gameLoop);
+    }
+
+    function cashOut() {
+      if (!running || !canCashOut) return;
+      
+      canCashOut = false;
+      running = false;
+      
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+        animationFrame = null;
+      }
+      
+      const winnings = Math.floor(multiplier * 10);
+      balance += winnings;
+      wins++;
+      streak++;
+      
+      rocket.classList.remove("flying");
+      multiplierEl.classList.add("win");
+      clearParticles();
+      
+      startBtn.disabled = false;
+      cashoutBtn.disabled = true;
+      
+      statusText.textContent = "Deal secured! 🤝";
+      lastCrashEl.textContent = multiplier.toFixed(2) + "x";
+      
+      log(`Trump secured the deal at ${multiplier.toFixed(2)}x! +${winnings} SOL`, "win-text");
+      updateDisplay();
+    }
+
+    function crash() {
+      running = false;
+      canCashOut = false;
+      
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+        animationFrame = null;
+      }
+      
+      streak = 0;
+      
+      rocket.classList.remove("flying");
+      multiplierEl.classList.add("crash");
+      clearParticles();
+      
+      startBtn.disabled = false;
+      cashoutBtn.disabled = true;
+      
+      rocket.style.bottom = "30px";
+      rocket.style.left = "25%";
+      
+      statusText.textContent = "CRASHED! 💥";
+      lastCrashEl.textContent = crashPoint.toFixed(2) + "x";
+      
+      log(`Trump crashed at ${crashPoint.toFixed(2)}x! The deal fell through.`, "crash-text");
+      updateDisplay();
+    }
+
+    // Touch-friendly event handlers
+    startBtn.addEventListener("click", startRound);
+    startBtn.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      startRound();
+    });
+
+    cashoutBtn.addEventListener("click", cashOut);
+    cashoutBtn.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      cashOut();
+    });
+    cashoutBtn.addEventListener("touchend", (e) => {
+      e.preventDefault();
+    });
+
+    // Keyboard support
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "Space") {
+        e.preventDefault();
+        if (running && canCashOut) {
+          cashOut();
+        } else if (!running) {
+          startRound();
+        }
+      }
+    });
+
+    updateDisplay();
+    log("Welcome to Trump's World Domination! Will he conquer or crash?");
+  </script>
+</body>
+</html>
