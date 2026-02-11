@@ -59,3 +59,13 @@ Captures desktop + mobile screenshots and outputs a checklist of common issues t
 ## Output Location
 
 Screenshots are saved to: `/home/.z/workspaces/<conversation>/previews/`
+
+## Record Gameplay Video
+
+How to record gameplay videos with WebGL support
+- Command: python /home/workspace/Skills/build-preview/scripts/record_video.py <url> [duration] [output_path]
+- Default duration is 10 seconds
+- Videos are saved to /home/.z/workspaces/previews/videos/
+- Includes automatic gameplay simulation (movement in 8 directions)
+
+This is especially useful for reviewing Phaser games and WebGL applications.

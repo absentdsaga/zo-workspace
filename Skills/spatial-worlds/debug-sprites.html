@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Sprite Loading</title>
+    <style>
+        body { background: #1a1a2e; color: #fff; font-family: monospace; padding: 20px; }
+        #log { white-space: pre-wrap; }
+        .error { color: #ff4444; }
+        .success { color: #44ff44; }
+        .warning { color: #ffaa44; }
+    </style>
+</head>
+<body>
+    <h1>Sprite Loading Debug</h1>
+    <div id="log"></div>
+
+    <script>
+        const log = document.getElementById('log');
+        function addLog(msg, type = 'info') {
+            const span = document.createElement('div');
+            span.className = type;
+            span.textContent = msg;
+            log.appendChild(span);
+        }
+
+        // Test loading the sprite
+        const img = new Image();
+        img.onload = () => {
+            addLog('✓ Sprite loaded successfully', 'success');
+            addLog(`  Size: ${img.width}x${img.height}px`, 'success');
+
+            // Display the sprite
+            document.body.appendChild(img);
+            img.style.cssText = 'border: 2px solid #44ff44; margin: 20px; image-rendering: pixelated; image-rendering: crisp-edges;';
+        };
+        img.onerror = (e) => {
+            addLog('✗ Failed to load sprite', 'error');
+            addLog(`  Error: ${e}`, 'error');
+        };
+
+        addLog('Loading: /assets/sprites/warrior-chrono.png');
+        img.src = '/assets/sprites/warrior-chrono.png?t=' + Date.now();
+    </script>
+</body>
+</html>

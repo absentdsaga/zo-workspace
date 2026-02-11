@@ -1,0 +1,18 @@
+{
+  "name": "auto-qa",
+  "version": "1.0.0",
+  "description": "Automated QA system for spatial-worlds multiplayer game",
+  "type": "module",
+  "scripts": {
+    "test": "bun run scripts/test-multiplayer-sync.js",
+    "test:report": "bun run scripts/run-tests.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.37.2",
+    "pixelmatch": "^6.0.0",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.8"
+  }
+}

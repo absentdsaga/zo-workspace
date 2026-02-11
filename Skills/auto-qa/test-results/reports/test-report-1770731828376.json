@@ -1,0 +1,72 @@
+{
+  "startTime": "2026-02-10T13:56:51.878Z",
+  "endTime": "2026-02-10T13:57:08.376Z",
+  "totalTests": 4,
+  "passed": 2,
+  "failed": 2,
+  "tests": [
+    {
+      "name": "Browser Launch",
+      "passed": true,
+      "message": "Both browser instances launched successfully",
+      "timestamp": "2026-02-10T13:56:55.375Z"
+    },
+    {
+      "name": "Game Load",
+      "passed": true,
+      "message": "Game loaded in both browsers",
+      "timestamp": "2026-02-10T13:56:57.584Z"
+    },
+    {
+      "name": "Game Initialization",
+      "passed": false,
+      "message": "Game failed to initialize within timeout",
+      "timestamp": "2026-02-10T13:57:07.748Z",
+      "player1Ready": false,
+      "player2Ready": false
+    },
+    {
+      "name": "Test Execution",
+      "passed": false,
+      "message": "Game initialization timeout",
+      "timestamp": "2026-02-10T13:57:07.750Z",
+      "stack": "Error: Game initialization timeout\n    at runTests (/home/workspace/Skills/auto-qa/scripts/test-multiplayer-sync.js:303:17)\n    at processTicksAndRejections (native:7:39)"
+    }
+  ],
+  "screenshots": [
+    {
+      "player": "player2",
+      "label": "initial",
+      "filename": "player2_initial_1770731817585.png",
+      "filepath": "/home/workspace/Skills/auto-qa/test-results/screenshots/player2_initial_1770731817585.png",
+      "timestamp": "2026-02-10T13:56:57.720Z"
+    },
+    {
+      "player": "player1",
+      "label": "initial",
+      "filename": "player1_initial_1770731817584.png",
+      "filepath": "/home/workspace/Skills/auto-qa/test-results/screenshots/player1_initial_1770731817584.png",
+      "timestamp": "2026-02-10T13:56:57.738Z"
+    }
+  ],
+  "consoleErrors": {
+    "player1": [
+      {
+        "type": "error",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": "2026-02-10T13:56:56.604Z"
+      }
+    ],
+    "player2": [
+      {
+        "type": "error",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": "2026-02-10T13:56:56.599Z"
+      }
+    ]
+  },
+  "positionHistory": {
+    "player1": [],
+    "player2": []
+  }
+}

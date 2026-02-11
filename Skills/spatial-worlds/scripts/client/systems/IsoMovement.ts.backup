@@ -1,0 +1,93 @@
+import Phaser from 'phaser';
+
+/**
+ * Handles 8-direction isometric movement
+ * 
+ * Converts WASD input to isometric velocity vectors
+ */
+export class IsoMovementController {
+  private speed = 150;
+  
+  // Direction mappings for isometric
+  private directionMap = {
+    'n':  { vx: -1, vy: -0.5, anim: 'n' },
+    'ne': { vx:  0, vy: -1,   anim: 'ne' },
+    'e':  { vx:  1, vy: -0.5, anim: 'e' },
+    'se': { vx:  1, vy:  0,   anim: 'se' },
+    's':  { vx:  1, vy:  0.5, anim: 's' },
+    'sw': { vx:  0, vy:  1,   anim: 'sw' },
+    'w':  { vx: -1, vy:  0.5, anim: 'w' },
+    'nw': { vx: -1, vy:  0,   anim: 'nw' },
+  };
+  
+  update(
+    sprite: Phaser.Physics.Arcade.Sprite,
+    cursors: Phaser.Types.Input.Keyboard.CursorKeys,
+    wasd: any
+  ) {
+    // Get input direction
+    let dirX = 0;
+    let dirY = 0;
+
+    if (cursors.up.isDown || wasd.w.isDown) dirY -= 1;
+    if (cursors.down.isDown || wasd.s.isDown) dirY += 1;
+    if (cursors.left.isDown || wasd.a.isDown) dirX -= 1;
+    if (cursors.right.isDown || wasd.d.isDown) dirX += 1;
+
+    // Get direction key
+    const direction = this.getDirection(dirX, dirY);
+
+    if (direction) {
+      const dir = this.directionMap[direction];
+
+      // Apply isometric velocity
+      sprite.setVelocity(
+        dir.vx * this.speed,
+        dir.vy * this.speed
+      );
+    } else {
+      sprite.setVelocity(0, 0);
+    }
+  }
+
+  updateWithInput(
+    sprite: Phaser.Physics.Arcade.Sprite,
+    input: { up: boolean; down: boolean; left: boolean; right: boolean }
+  ) {
+    // Get input direction
+    let dirX = 0;
+    let dirY = 0;
+
+    if (input.up) dirY -= 1;
+    if (input.down) dirY += 1;
+    if (input.left) dirX -= 1;
+    if (input.right) dirX += 1;
+
+    // Get direction key
+    const direction = this.getDirection(dirX, dirY);
+
+    if (direction) {
+      const dir = this.directionMap[direction];
+
+      // Apply isometric velocity
+      sprite.setVelocity(
+        dir.vx * this.speed,
+        dir.vy * this.speed
+      );
+    } else {
+      sprite.setVelocity(0, 0);
+    }
+  }
+  
+  getDirection(x: number, y: number): keyof typeof this.directionMap | null {
+    if (x === 0 && y === -1) return 'n';
+    if (x === 1 && y === -1) return 'ne';
+    if (x === 1 && y === 0) return 'e';
+    if (x === 1 && y === 1) return 'se';
+    if (x === 0 && y === 1) return 's';
+    if (x === -1 && y === 1) return 'sw';
+    if (x === -1 && y === 0) return 'w';
+    if (x === -1 && y === -1) return 'nw';
+    return null;
+  }
+}

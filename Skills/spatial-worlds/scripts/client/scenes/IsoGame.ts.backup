@@ -1,0 +1,414 @@
+import Phaser from 'phaser';
+import { DepthManager } from '../systems/DepthManager';
+import { IsoMovementController } from '../systems/IsoMovement';
+import { AnimationController } from '../systems/AnimationController';
+import { MapGenerator } from '../systems/MapGenerator';
+import { CollisionManager } from '../systems/CollisionManager';
+import { MultiplayerManager } from '../MultiplayerManager';
+import { VoiceManager } from '../systems/VoiceManager';
+import { MobileInput } from '../systems/MobileInput';
+import { PlatformElevationManager } from '../systems/PlatformElevation';
+
+export class IsoGameScene extends Phaser.Scene {
+  private depthManager!: DepthManager;
+  private movementController!: IsoMovementController;
+  private animationController!: AnimationController;
+  private mapGenerator!: MapGenerator;
+  private collisionManager!: CollisionManager;
+  private platformElevation!: PlatformElevationManager;
+  private player!: Phaser.Physics.Arcade.Sprite;
+  private npcs: Phaser.Physics.Arcade.Sprite[] = [];
+  private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
+  private wasd!: any;
+  private mapData!: { tiles: any[], spawnPoints: any[] };
+  private multiplayerManager!: MultiplayerManager;
+  private voiceManager!: VoiceManager;
+  private mobileInput?: MobileInput;
+  private isMobile = false;
+  private frameCounter: number = 0;
+
+  constructor() {
+    super({ key: 'IsoGameScene' });
+  }
+
+  create() {
+    // Add background sky gradient
+    this.add.image(640, 360, 'background-sky').setDepth(-1000).setScrollFactor(0.2);
+
+    // Initialize systems
+    this.depthManager = new DepthManager();
+    this.movementController = new IsoMovementController();
+    this.animationController = new AnimationController();
+    this.mapGenerator = new MapGenerator();
+    this.collisionManager = new CollisionManager();
+    this.platformElevation = new PlatformElevationManager();
+
+    // Initialize multiplayer
+    this.multiplayerManager = new MultiplayerManager(this);
+
+    // Connect to multiplayer server
+    const wsUrl = window.location.protocol === 'https:'
+      ? `wss://${window.location.host}`
+      : `ws://${window.location.host}`;
+    this.multiplayerManager.connect(wsUrl);
+    console.log('🔌 Connecting to multiplayer server:', wsUrl);
+
+    // Initialize voice chat
+    this.voiceManager = new VoiceManager();
+    this.initializeVoiceChat();
+
+    // Create animations
+    this.animationController.createAnimations(this);
+
+    // Create The Crossroads map (complex 50x50 tile map)
+    this.createCrossroadsMap();
+
+    // Create player
+    this.createPlayer();
+    
+    // Create test NPCs (25 for 60 FPS target)
+    this.createNPCs(25);
+    
+    // Setup camera
+    this.setupCamera();
+    
+    // Setup input
+    this.setupInput();
+
+    // Setup mobile controls if on mobile device
+    this.isMobile = MobileInput.isMobile();
+    if (this.isMobile) {
+      this.mobileInput = new MobileInput(this);
+      console.log('📱 Mobile controls enabled');
+    }
+
+    // Instructions
+    this.add.text(20, 20, 'SPATIAL WORLDS - The Crossroads\nWASD/Arrows: Move | Auto-Elevation: ON\nProximity Voice Chat: ON\n\nNPC Colors:\nGreen=L0  Blue=L1  Orange=L2  Pink=L3', {
+      fontSize: '14px',
+      color: '#00ff00',
+      backgroundColor: '#000000',
+      padding: { x: 10, y: 10 },
+    }).setScrollFactor(0).setDepth(100000);
+  }
+
+  async initializeVoiceChat() {
+    try {
+      await this.voiceManager.createRoom();
+      console.log('✅ Voice chat initialized');
+    } catch (error) {
+      console.warn('⚠️ Voice chat failed to initialize:', error);
+      console.warn('Continuing without voice chat');
+    }
+  }
+
+  createCrossroadsMap() {
+    // Render The Crossroads using MapGenerator
+    const centerX = 640;
+    const centerY = 360;
+    const { tiles } = this.mapGenerator.generateCrossroads();
+
+    // Render the map
+    this.mapGenerator.renderMap(this, centerX, centerY);
+
+    // Register all elevated tiles for automatic elevation detection
+    const tileWidth = 64;
+    const tileHeight = 32;
+
+    for (const tile of tiles) {
+      if (tile.elevation > 0 && tile.walkable) {
+        const pos = this.mapGenerator.toIso(tile.row, tile.col, tile.elevation);
+        const x = pos.x + centerX;
+        const y = pos.y + centerY;
+
+        // Register diamond-shaped collision area for this elevated tile
+        this.platformElevation.addPlatform(x, y + tileHeight / 2, tileWidth, tileHeight, tile.elevation);
+      }
+    }
+
+    console.log(`📍 Registered ${tiles.filter(t => t.elevation > 0).length} elevated platforms`);
+  }
+
+  createIsoWorld() {
+    const graphics = this.add.graphics();
+
+    // Draw isometric grid (15x15 tiles for larger world)
+    const tileWidth = 64;  // Width of isometric tile
+    const tileHeight = 32; // Height of isometric tile
+
+    // Ground level (Level 0) - centered at camera/player position
+    const centerX = 640;  // Center of 1280px width
+    const centerY = 360;  // Center of 720px height
+
+    for (let row = 0; row < 15; row++) {
+      for (let col = 0; col < 15; col++) {
+        // Calculate isometric position (centered)
+        const x = (col - row) * (tileWidth / 2) + centerX;
+        const y = (col + row) * (tileHeight / 2) + centerY - 200;  // Offset up
+
+        // Vary ground color based on position
+        const variation = Math.sin(row * 0.5) * 0.1 + Math.cos(col * 0.5) * 0.1;
+        const baseColor = 0x4a6a3f;
+
+        // Draw isometric tile (diamond shape for ground)
+        graphics.lineStyle(2, 0x3a5a2f, 1);  // Thicker, more visible lines
+        graphics.fillStyle(baseColor, 1);     // Fully opaque
+
+        graphics.beginPath();
+        graphics.moveTo(x, y);                    // Top
+        graphics.lineTo(x + tileWidth / 2, y + tileHeight / 2); // Right
+        graphics.lineTo(x, y + tileHeight);       // Bottom
+        graphics.lineTo(x - tileWidth / 2, y + tileHeight / 2); // Left
+        graphics.closePath();
+        graphics.fillPath();
+        graphics.strokePath();
+      }
+    }
+
+    // LEVEL 1 PLATFORMS (elevated 20px) - positioned relative to center
+    this.drawIsoPlatform(graphics, centerX - 200, centerY - 100, 96, 48, 20, 0x6a8a5f);
+    this.drawIsoPlatform(graphics, centerX + 100, centerY - 100, 96, 48, 20, 0x6a8a5f);
+    this.drawIsoPlatform(graphics, centerX, centerY, 128, 64, 20, 0x7a9a6f);
+
+    // LEVEL 2 PLATFORMS (elevated 40px)
+    this.drawIsoPlatform(graphics, centerX - 300, centerY + 50, 80, 40, 40, 0x8aaa7f);
+    this.drawIsoPlatform(graphics, centerX + 200, centerY + 50, 80, 40, 40, 0x8aaa7f);
+
+    // LEVEL 3 PLATFORM (elevated 60px - highest point)
+    this.drawIsoPlatform(graphics, centerX, centerY + 150, 96, 48, 60, 0x9aba8f);
+
+    // Add some decorative lower platforms
+    this.drawIsoPlatform(graphics, centerX - 350, centerY - 150, 64, 32, 10, 0x5a7a4f);
+    this.drawIsoPlatform(graphics, centerX + 250, centerY - 150, 64, 32, 10, 0x5a7a4f);
+
+    graphics.setDepth(0); // Ground layer (render above background, below sprites)
+
+    // Register all platforms for elevation detection
+    // LEVEL 1 PLATFORMS
+    this.platformElevation.addPlatform(centerX - 200, centerY - 100, 96, 48, 1);
+    this.platformElevation.addPlatform(centerX + 100, centerY - 100, 96, 48, 1);
+    this.platformElevation.addPlatform(centerX, centerY, 128, 64, 1);
+
+    // LEVEL 2 PLATFORMS
+    this.platformElevation.addPlatform(centerX - 300, centerY + 50, 80, 40, 2);
+    this.platformElevation.addPlatform(centerX + 200, centerY + 50, 80, 40, 2);
+
+    // LEVEL 3 PLATFORM
+    this.platformElevation.addPlatform(centerX, centerY + 150, 96, 48, 3);
+  }
+  
+  drawIsoPlatform(
+    graphics: Phaser.GameObjects.Graphics,
+    x: number,
+    y: number,
+    width: number,
+    height: number,
+    depth: number,
+    color: number
+  ) {
+    // Top face (diamond)
+    graphics.fillStyle(color, 1);
+    graphics.beginPath();
+    graphics.moveTo(x, y);
+    graphics.lineTo(x + width / 2, y + height / 2);
+    graphics.lineTo(x, y + height);
+    graphics.lineTo(x - width / 2, y + height / 2);
+    graphics.closePath();
+    graphics.fillPath();
+    
+    // Left side (darker)
+    const leftColor = Phaser.Display.Color.IntegerToColor(color);
+    leftColor.darken(30);
+    graphics.fillStyle(leftColor.color, 1);
+    graphics.beginPath();
+    graphics.moveTo(x - width / 2, y + height / 2);
+    graphics.lineTo(x, y + height);
+    graphics.lineTo(x, y + height + depth);
+    graphics.lineTo(x - width / 2, y + height / 2 + depth);
+    graphics.closePath();
+    graphics.fillPath();
+    
+    // Right side (medium)
+    const rightColor = Phaser.Display.Color.IntegerToColor(color);
+    rightColor.darken(15);
+    graphics.fillStyle(rightColor.color, 1);
+    graphics.beginPath();
+    graphics.moveTo(x, y + height);
+    graphics.lineTo(x + width / 2, y + height / 2);
+    graphics.lineTo(x + width / 2, y + height / 2 + depth);
+    graphics.lineTo(x, y + height + depth);
+    graphics.closePath();
+    graphics.fillPath();
+  }
+
+  createPlayer() {
+    // Spawn player at center of viewport using warrior sprite (same as animations)
+    this.player = this.physics.add.sprite(640, 360, 'warrior-south-0');
+    this.player.setScale(1.5);
+
+    // Anchor sprite at feet (0.5, 0.85) so character stands on ground properly
+    this.player.setOrigin(0.5, 0.85);
+
+    // Initialize physics with acceleration/drag
+    this.movementController.initPhysics(this.player);
+
+    // Set isometric data - start at ground level (elevation 0)
+    this.depthManager.setIsoData(this.player, 0, 48);
+
+    // Physics - Don't restrict to world bounds (map is larger than initial bounds)
+    this.player.setCollideWorldBounds(false);
+  }
+
+  createNPCs(count: number) {
+    // Create NPCs at different elevation levels (spawn near center)
+    for (let i = 0; i < count; i++) {
+      const x = Phaser.Math.Between(400, 880);  // Center viewport range
+      const y = Phaser.Math.Between(200, 520);
+
+      const npc = this.physics.add.sprite(x, y, 'warrior-south-0');
+
+      // Assign different colors for different elevations
+      const elevation = Phaser.Math.Between(0, 3);
+      let tintColor: number;
+
+      switch(elevation) {
+        case 0: tintColor = 0x88ff88; break; // Green - ground level
+        case 1: tintColor = 0x88ccff; break; // Blue - level 1
+        case 2: tintColor = 0xffcc88; break; // Orange - level 2
+        case 3: tintColor = 0xff88ff; break; // Pink - level 3
+        default: tintColor = 0xffffff;
+      }
+
+      npc.setTint(tintColor);
+      npc.setAlpha(0.7);
+      npc.setScale(1.2);
+      npc.setOrigin(0.5, 0.85);
+
+      // Set elevation data
+      this.depthManager.setIsoData(npc, elevation, 48);
+
+      // Random slow movement (bouncing AI)
+      const speed = 40;
+      npc.setVelocity(
+        Phaser.Math.Between(-speed, speed),
+        Phaser.Math.Between(-speed, speed)
+      );
+
+      npc.setCollideWorldBounds(true);
+      npc.setBounce(1, 1);
+
+      this.npcs.push(npc);
+    }
+  }
+
+  setupCamera() {
+    this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+    this.cameras.main.setZoom(1);  // Reduced zoom to see more of the world
+    this.cameras.main.setBounds(-1000, -1000, 4000, 3000);
+  }
+
+  setupInput() {
+    this.cursors = this.input.keyboard!.createCursorKeys();
+    this.wasd = {
+      w: this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.W),
+      a: this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.A),
+      s: this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.S),
+      d: this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.D),
+      q: this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.Q),
+      e: this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.E),
+    };
+  }
+
+  override update() {
+    // Get input from keyboard or mobile
+    let input;
+    if (this.isMobile && this.mobileInput) {
+      input = this.mobileInput.getInput();
+    } else {
+      input = {
+        up: this.cursors.up.isDown || this.wasd.w.isDown,
+        down: this.cursors.down.isDown || this.wasd.s.isDown,
+        left: this.cursors.left.isDown || this.wasd.a.isDown,
+        right: this.cursors.right.isDown || this.wasd.d.isDown,
+      };
+    }
+
+    // Update player movement with input
+    this.movementController.updateWithInput(this.player, input);
+
+    // Update logical Y position after movement (for collision detection)
+    // This must happen BEFORE elevation detection to avoid feedback loop
+    if (this.player.body!.velocity.x !== 0 || this.player.body!.velocity.y !== 0) {
+      const currentLogicalY = this.player.getData('logicalY') as number;
+      const currentIsoData = this.player.getData('iso');
+      const currentElevation = currentIsoData?.elevation || 0;
+
+      // Calculate what logicalY should be based on current visual Y
+      // Must match MapGenerator.toIso() offset: elevation * 20px
+      const newLogicalY = this.player.y + (currentElevation * 20);
+      this.player.setData('logicalY', newLogicalY);
+    }
+
+    // AUTOMATIC ELEVATION DETECTION (FFT-style)
+    // Use logical Y position for detection to avoid feedback loop
+    const logicalY = this.player.getData('logicalY') || this.player.y;
+    const targetElevation = this.platformElevation.getElevationAt(this.player.x, logicalY);
+    const isoData = this.player.getData('iso');
+    const currentElevation = isoData?.elevation || 0;
+
+    // Auto-adjust elevation if player walked onto different level
+    if (targetElevation !== currentElevation) {
+      this.depthManager.setIsoData(this.player, targetElevation, 48);
+      console.log(`🎮 Auto Elevation: ${currentElevation} → ${targetElevation}`);
+    }
+
+    // Update player animation based on velocity
+    this.animationController.update(this.player, this.player.body!.velocity);
+
+    // Update depth sorting (throttled to every 2 frames for performance)
+    if (this.frameCounter % 2 === 0) {
+      this.depthManager.updateDepths(this);
+    }
+
+    // Send input to server (with current elevation and actual position)
+    const updatedIsoData = this.player.getData('iso');
+    this.multiplayerManager.sendInput(
+      input,
+      updatedIsoData?.elevation || 0,
+      { x: this.player.x, y: this.player.y } // Send actual position for client authority
+    );
+
+    // Update remote players
+    this.multiplayerManager.update();
+
+    // Update spatial audio (throttled to 10 FPS for performance)
+    this.frameCounter++;
+    if (this.frameCounter % 6 === 0) {
+      this.updateSpatialAudio();
+    }
+  }
+
+  updateSpatialAudio() {
+    // Get local player position and elevation
+    const localIsoData = this.player.getData('iso');
+    const localPos = {
+      playerId: this.voiceManager.getLocalPlayerId() || 'local',
+      x: this.player.x,
+      y: this.player.y,
+      elevation: localIsoData?.elevation || 0
+    };
+
+    // Get remote player positions from multiplayer manager
+    const remotePlayers = this.multiplayerManager.getRemotePlayers().map(({ id, sprite }) => {
+      const isoData = sprite.getData('iso');
+      return {
+        playerId: id,
+        x: sprite.x,
+        y: sprite.y,
+        elevation: isoData?.elevation || 0
+      };
+    });
+
+    // Update voice manager with positions
+    this.voiceManager.updateSpatialAudio(localPos, remotePlayers);
+  }
+}

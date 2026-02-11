@@ -1,0 +1,18 @@
+{
+  "startTime": "2026-02-10T15:02:37.843Z",
+  "tests": [],
+  "positionHistory": [],
+  "elevationLogs": [],
+  "consoleErrors": [
+    {
+      "player": 2,
+      "error": "Cannot create WebGL context, aborting."
+    },
+    {
+      "player": 1,
+      "error": "Cannot create WebGL context, aborting."
+    }
+  ],
+  "error": "Waiting failed: 15000ms exceeded",
+  "endTime": "2026-02-10T15:02:58.032Z"
+}

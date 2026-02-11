@@ -1,0 +1,84 @@
+{
+  "startTime": "2026-02-10T13:55:55.581Z",
+  "endTime": "2026-02-10T13:56:12.391Z",
+  "totalTests": 4,
+  "passed": 2,
+  "failed": 2,
+  "tests": [
+    {
+      "name": "Browser Launch",
+      "passed": true,
+      "message": "Both browser instances launched successfully",
+      "timestamp": "2026-02-10T13:55:59.292Z"
+    },
+    {
+      "name": "Game Load",
+      "passed": true,
+      "message": "Game loaded in both browsers",
+      "timestamp": "2026-02-10T13:56:01.636Z"
+    },
+    {
+      "name": "Game Initialization",
+      "passed": false,
+      "message": "Game failed to initialize within timeout",
+      "timestamp": "2026-02-10T13:56:11.813Z",
+      "player1Ready": false,
+      "player2Ready": false
+    },
+    {
+      "name": "Test Execution",
+      "passed": false,
+      "message": "Game initialization timeout",
+      "timestamp": "2026-02-10T13:56:11.816Z",
+      "stack": "Error: Game initialization timeout\n    at runTests (/home/workspace/Skills/auto-qa/scripts/test-multiplayer-sync.js:290:17)\n    at processTicksAndRejections (native:7:39)"
+    }
+  ],
+  "screenshots": [
+    {
+      "player": "player2",
+      "label": "initial",
+      "filename": "player2_initial_1770731761637.png",
+      "filepath": "/home/workspace/Skills/auto-qa/test-results/screenshots/player2_initial_1770731761637.png",
+      "timestamp": "2026-02-10T13:56:01.777Z"
+    },
+    {
+      "player": "player1",
+      "label": "initial",
+      "filename": "player1_initial_1770731761636.png",
+      "filepath": "/home/workspace/Skills/auto-qa/test-results/screenshots/player1_initial_1770731761636.png",
+      "timestamp": "2026-02-10T13:56:01.793Z"
+    }
+  ],
+  "consoleErrors": {
+    "player1": [
+      {
+        "type": "pageerror",
+        "message": "Cannot create WebGL context, aborting.",
+        "stack": "Error: Cannot create WebGL context, aborting.\n    at K (http://localhost:3000/dist/main-iso.js?v=13:1:74696)\n    at boot (http://localhost:3000/dist/main-iso.js?v=13:1:77581)\n    at M (http://localhost:3000/dist/main-iso.js?v=13:3:926)\n    at g (http://localhost:3000/dist/main-iso.js?v=13:1:77390)\n    at <anonymous> (http://localhost:3000/dist/main-iso.js?v=13:110:5565)",
+        "timestamp": "2026-02-10T13:56:00.329Z"
+      },
+      {
+        "type": "error",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": "2026-02-10T13:56:00.370Z"
+      }
+    ],
+    "player2": [
+      {
+        "type": "pageerror",
+        "message": "Cannot create WebGL context, aborting.",
+        "stack": "Error: Cannot create WebGL context, aborting.\n    at K (http://localhost:3000/dist/main-iso.js?v=13:1:74696)\n    at boot (http://localhost:3000/dist/main-iso.js?v=13:1:77581)\n    at M (http://localhost:3000/dist/main-iso.js?v=13:3:926)\n    at g (http://localhost:3000/dist/main-iso.js?v=13:1:77390)\n    at <anonymous> (http://localhost:3000/dist/main-iso.js?v=13:110:5565)",
+        "timestamp": "2026-02-10T13:56:00.469Z"
+      },
+      {
+        "type": "error",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": "2026-02-10T13:56:00.514Z"
+      }
+    ]
+  },
+  "positionHistory": {
+    "player1": [],
+    "player2": []
+  }
+}

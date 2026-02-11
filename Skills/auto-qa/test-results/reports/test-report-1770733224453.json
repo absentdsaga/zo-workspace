@@ -1,0 +1,221 @@
+{
+  "startTime": "2026-02-10T14:19:53.455Z",
+  "endTime": "2026-02-10T14:20:24.453Z",
+  "totalTests": 11,
+  "passed": 10,
+  "failed": 1,
+  "tests": [
+    {
+      "name": "Browser Launch",
+      "passed": true,
+      "message": "Both browser instances launched successfully",
+      "timestamp": "2026-02-10T14:19:56.490Z"
+    },
+    {
+      "name": "Game Load",
+      "passed": true,
+      "message": "Game loaded in both browsers",
+      "timestamp": "2026-02-10T14:20:09.063Z"
+    },
+    {
+      "name": "Game Initialization",
+      "passed": true,
+      "message": "Game initialized successfully in both instances",
+      "timestamp": "2026-02-10T14:20:09.704Z"
+    },
+    {
+      "name": "Multiplayer Connection",
+      "passed": true,
+      "message": "Both players connected via WebSocket",
+      "timestamp": "2026-02-10T14:20:11.713Z",
+      "player1": {
+        "localPlayerId": "8e65a0a1-2d0f-4828-92e5-7fb04a7cab6e",
+        "localPlayer": {
+          "x": 640,
+          "y": 360,
+          "elevation": 0
+        },
+        "remotePlayers": [
+          {
+            "id": "f1a898d9-eadc-42ea-aff1-7dd66845ee00",
+            "x": 640,
+            "y": 360,
+            "elevation": 0
+          }
+        ],
+        "connected": true,
+        "timestamp": 1770733211712
+      },
+      "player2": {
+        "localPlayerId": "f1a898d9-eadc-42ea-aff1-7dd66845ee00",
+        "localPlayer": {
+          "x": 640,
+          "y": 360,
+          "elevation": 0
+        },
+        "remotePlayers": [
+          {
+            "id": "8e65a0a1-2d0f-4828-92e5-7fb04a7cab6e",
+            "x": 640,
+            "y": 360,
+            "elevation": 0
+          }
+        ],
+        "connected": true,
+        "timestamp": 1770733211710
+      }
+    },
+    {
+      "name": "Mutual Visibility",
+      "passed": true,
+      "message": "Both players can see each other",
+      "timestamp": "2026-02-10T14:20:11.713Z",
+      "player1RemotePlayers": 1,
+      "player2RemotePlayers": 1
+    },
+    {
+      "name": "Player 1 Movement",
+      "passed": true,
+      "message": "Player 1 moved successfully",
+      "timestamp": "2026-02-10T14:20:15.610Z",
+      "before": {
+        "x": 640,
+        "y": 360,
+        "elevation": 0
+      },
+      "after": {
+        "x": 843,
+        "y": 259,
+        "elevation": 0
+      },
+      "deltaX": 203
+    },
+    {
+      "name": "Position Sync",
+      "passed": true,
+      "message": "Position synchronized between players",
+      "timestamp": "2026-02-10T14:20:15.610Z",
+      "player1Position": {
+        "x": 843,
+        "y": 259,
+        "elevation": 0
+      },
+      "player2SeesPlayer1At": {
+        "id": "8e65a0a1-2d0f-4828-92e5-7fb04a7cab6e",
+        "x": 780,
+        "y": 290,
+        "elevation": 0
+      },
+      "deltaX": 63
+    },
+    {
+      "name": "Bidirectional Movement",
+      "passed": true,
+      "message": "Both players moved simultaneously",
+      "timestamp": "2026-02-10T14:20:17.846Z",
+      "player1Delta": 92,
+      "player2Delta": -87
+    },
+    {
+      "name": "Elevation Tracking",
+      "passed": true,
+      "message": "Elevation is tracked",
+      "timestamp": "2026-02-10T14:20:18.384Z",
+      "elevation": 0
+    },
+    {
+      "name": "Sync Stability",
+      "passed": true,
+      "message": "Position sync remained stable",
+      "timestamp": "2026-02-10T14:20:23.815Z",
+      "maxDrift": 117,
+      "samples": 10
+    },
+    {
+      "name": "Console Errors",
+      "passed": false,
+      "message": "Console errors detected",
+      "timestamp": "2026-02-10T14:20:23.815Z",
+      "player1Errors": 1,
+      "player2Errors": 1
+    }
+  ],
+  "screenshots": [
+    {
+      "player": "player1",
+      "label": "initial",
+      "filename": "player1_initial_1770733209063.png",
+      "filepath": "/home/workspace/Skills/auto-qa/test-results/screenshots/player1_initial_1770733209063.png",
+      "timestamp": "2026-02-10T14:20:09.211Z"
+    },
+    {
+      "player": "player2",
+      "label": "initial",
+      "filename": "player2_initial_1770733209064.png",
+      "filepath": "/home/workspace/Skills/auto-qa/test-results/screenshots/player2_initial_1770733209064.png",
+      "timestamp": "2026-02-10T14:20:09.223Z"
+    },
+    {
+      "player": "player2",
+      "label": "connected",
+      "filename": "player2_connected_1770733211713.png",
+      "filepath": "/home/workspace/Skills/auto-qa/test-results/screenshots/player2_connected_1770733211713.png",
+      "timestamp": "2026-02-10T14:20:11.823Z"
+    },
+    {
+      "player": "player1",
+      "label": "connected",
+      "filename": "player1_connected_1770733211713.png",
+      "filepath": "/home/workspace/Skills/auto-qa/test-results/screenshots/player1_connected_1770733211713.png",
+      "timestamp": "2026-02-10T14:20:11.863Z"
+    },
+    {
+      "player": "player1",
+      "label": "after_movement",
+      "filename": "player1_after_movement_1770733215612.png",
+      "filepath": "/home/workspace/Skills/auto-qa/test-results/screenshots/player1_after_movement_1770733215612.png",
+      "timestamp": "2026-02-10T14:20:15.734Z"
+    },
+    {
+      "player": "player2",
+      "label": "after_movement",
+      "filename": "player2_after_movement_1770733215612.png",
+      "filepath": "/home/workspace/Skills/auto-qa/test-results/screenshots/player2_after_movement_1770733215612.png",
+      "timestamp": "2026-02-10T14:20:15.772Z"
+    },
+    {
+      "player": "player2",
+      "label": "final",
+      "filename": "player2_final_1770733218384.png",
+      "filepath": "/home/workspace/Skills/auto-qa/test-results/screenshots/player2_final_1770733218384.png",
+      "timestamp": "2026-02-10T14:20:18.652Z"
+    },
+    {
+      "player": "player1",
+      "label": "final",
+      "filename": "player1_final_1770733218384.png",
+      "filepath": "/home/workspace/Skills/auto-qa/test-results/screenshots/player1_final_1770733218384.png",
+      "timestamp": "2026-02-10T14:20:18.652Z"
+    }
+  ],
+  "consoleErrors": {
+    "player1": [
+      {
+        "type": "error",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": "2026-02-10T14:19:58.406Z"
+      }
+    ],
+    "player2": [
+      {
+        "type": "error",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": "2026-02-10T14:19:58.387Z"
+      }
+    ]
+  },
+  "positionHistory": {
+    "player1": [],
+    "player2": []
+  }
+}

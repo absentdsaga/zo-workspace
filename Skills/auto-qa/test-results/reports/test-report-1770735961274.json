@@ -1,0 +1,43 @@
+{
+  "startTime": "2026-02-10T15:05:41.589Z",
+  "endTime": "2026-02-10T15:06:01.274Z",
+  "totalTests": 2,
+  "passed": 1,
+  "failed": 1,
+  "tests": [
+    {
+      "name": "Browser Launch",
+      "passed": true,
+      "message": "Both browser instances launched successfully",
+      "timestamp": "2026-02-10T15:05:45.575Z"
+    },
+    {
+      "name": "Test Execution",
+      "passed": false,
+      "message": "Navigation timeout of 15000 ms exceeded",
+      "timestamp": "2026-02-10T15:06:00.582Z",
+      "stack": "TimeoutError: Navigation timeout of 15000 ms exceeded\n    at new PuppeteerError (/home/workspace/Skills/auto-qa/node_modules/puppeteer-core/lib/esm/puppeteer/common/Errors.js:16:9)\n    at new TimeoutError (unknown:1:28)\n    at new Deferred (/home/workspace/Skills/auto-qa/node_modules/puppeteer-core/lib/esm/puppeteer/util/Deferred.js:57:38)\n    at create (/home/workspace/Skills/auto-qa/node_modules/puppeteer-core/lib/esm/puppeteer/util/Deferred.js:18:20)\n    at new LifecycleWatcher (/home/workspace/Skills/auto-qa/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/LifecycleWatcher.js:70:46)\n    at goto (/home/workspace/Skills/auto-qa/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Frame.js:145:33)\n    at goto (/home/workspace/Skills/auto-qa/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Frame.js:142:20)\n    at goto (/home/workspace/Skills/auto-qa/node_modules/puppeteer-core/lib/esm/puppeteer/api/Page.js:576:43)\n    at goto (/home/workspace/Skills/auto-qa/node_modules/puppeteer-core/lib/esm/puppeteer/api/Page.js:575:20)\n    at runTests (/home/workspace/Skills/auto-qa/scripts/test-multiplayer-sync.js:292:19)"
+    }
+  ],
+  "screenshots": [],
+  "consoleErrors": {
+    "player1": [
+      {
+        "type": "error",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": "2026-02-10T15:05:48.439Z"
+      }
+    ],
+    "player2": [
+      {
+        "type": "error",
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "timestamp": "2026-02-10T15:05:48.370Z"
+      }
+    ]
+  },
+  "positionHistory": {
+    "player1": [],
+    "player2": []
+  }
+}
