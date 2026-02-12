@@ -51,6 +51,7 @@ class PaperTradeMasterCoordinatorFixed {
   private trades: TradeLog[] = [];
   private dailyBurnRate = 10;
   private isPaused = false;
+  private totalRefills = 0; // Track how many times we've refilled
 
   // Trading thresholds
   private readonly MAX_CONCURRENT_POSITIONS = 10; // Allow up to 10 tokens at once
@@ -59,6 +60,8 @@ class PaperTradeMasterCoordinatorFixed {
   private readonly MAX_DRAWDOWN = 0.25;
   private readonly MIN_SCORE = 40;
   private readonly MIN_SMART_MONEY_CONFIDENCE = 45; // Raised from 35 based on backtest analysis
+  private readonly AUTO_REFILL_THRESHOLD = 0.03; // Auto-add 1 SOL when balance hits this
+  private readonly AUTO_REFILL_AMOUNT = 1.0; // Add 1 SOL per refill
 
   // Exit thresholds
   private readonly TAKE_PROFIT = 1.0; // 100% gain (TP1 - activates trailing stop)
@@ -71,6 +74,7 @@ class PaperTradeMasterCoordinatorFixed {
   private readonly MONITOR_INTERVAL_MS = 5000; // 5 seconds (check positions)
   private readonly PAPER_TRADE = true;
   private readonly TRADES_FILE = '/tmp/paper-trades-master.json';
+  private readonly STATE_FILE = '/tmp/paper-trades-state.json';
 
   constructor(
     rpcUrl: string,
@@ -95,6 +99,7 @@ class PaperTradeMasterCoordinatorFixed {
     console.log('\n🔧 Initializing autonomous trading system...\n');
 
     await this.loadTrades();
+    await this.loadState();
 
     const check = await this.executor.preFlightCheck();
 
@@ -105,11 +110,10 @@ class PaperTradeMasterCoordinatorFixed {
     await this.scanner.initialize();
     await this.shockedScanner.initialize();
 
-    this.startingBalance = 0.5;
-    this.currentBalance = 0.5;
-
     console.log('\n✅ System initialized and ready');
     console.log(`💰 Starting balance: ${this.startingBalance.toFixed(4)} SOL`);
+    console.log(`💵 Current balance: ${this.currentBalance.toFixed(4)} SOL`);
+    console.log(`🔄 Total refills: ${this.totalRefills}`);
     console.log('🎯 Risk parameters:');
     console.log(`   Max concurrent positions: ${this.MAX_CONCURRENT_POSITIONS}`);
     console.log(`   Max position: ${(this.MAX_POSITION_SIZE * 100).toFixed(0)}%`);
@@ -191,6 +195,7 @@ class PaperTradeMasterCoordinatorFixed {
 
               this.currentBalance -= positionSize;
               await this.saveTrades();
+              await this.saveState();
               console.log('   ✅ SHOCKED CALL EXECUTED!\n');
 
               // Continue to next scan loop after shocked trade
@@ -286,6 +291,7 @@ class PaperTradeMasterCoordinatorFixed {
 
                   this.currentBalance -= positionSize;
                   await this.saveTrades();
+                  await this.saveState();
                   console.log('   ✅ TRADE SIMULATED (with Jupiter-validated prices)\n');
                 } else {
                   console.log('4️⃣  ⏭️  Skipping - smart money confidence too low\n');
@@ -320,6 +326,9 @@ class PaperTradeMasterCoordinatorFixed {
         if (openTrades.length > 0) {
           await this.checkExitsWithTrailingStop();
         }
+
+        // Auto-refill check
+        await this.checkAutoRefill();
 
         // System health check every 10 monitor cycles (~50 seconds)
         if (Math.random() < 0.1) {
@@ -479,6 +488,7 @@ class PaperTradeMasterCoordinatorFixed {
           // Return SOL to balance
           this.currentBalance += trade.amountIn + finalPnl;
           await this.saveTrades();
+          await this.saveState();
         }
       } else {
         console.log(`      ⏳ Holding...\n`);
@@ -505,6 +515,23 @@ class PaperTradeMasterCoordinatorFixed {
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
   }
 
+  async checkAutoRefill(): Promise<void> {
+    if (this.currentBalance <= this.AUTO_REFILL_THRESHOLD) {
+      this.currentBalance += this.AUTO_REFILL_AMOUNT;
+      this.totalRefills++;
+
+      console.log('\n💰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      console.log('💵 AUTO-REFILL TRIGGERED');
+      console.log(`   Balance was: ${(this.currentBalance - this.AUTO_REFILL_AMOUNT).toFixed(4)} SOL`);
+      console.log(`   Added: ${this.AUTO_REFILL_AMOUNT} SOL`);
+      console.log(`   New balance: ${this.currentBalance.toFixed(4)} SOL`);
+      console.log(`   Total refills: ${this.totalRefills}`);
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━💰\n');
+
+      await this.saveState();
+    }
+  }
+
   async saveTrades() {
     await Bun.write(this.TRADES_FILE, JSON.stringify(this.trades, null, 2));
   }
@@ -515,6 +542,44 @@ class PaperTradeMasterCoordinatorFixed {
       this.trades = JSON.parse(content);
     } catch {
       this.trades = [];
+    }
+  }
+
+  async saveState() {
+    const state = {
+      startingBalance: this.startingBalance,
+      currentBalance: this.currentBalance,
+      totalRefills: this.totalRefills,
+      lastUpdated: Date.now()
+    };
+    await Bun.write(this.STATE_FILE, JSON.stringify(state, null, 2));
+  }
+
+  async loadState() {
+    try {
+      const content = await Bun.file(this.STATE_FILE).text();
+      const state = JSON.parse(content);
+
+      this.startingBalance = state.startingBalance || 0.5;
+      this.currentBalance = state.currentBalance || 0.5;
+      this.totalRefills = state.totalRefills || 0;
+
+      const closedTrades = this.trades.filter(t => t.status === 'closed_profit' || t.status === 'closed_loss').length;
+      const totalPnl = this.currentBalance - this.startingBalance + (this.totalRefills * this.AUTO_REFILL_AMOUNT);
+
+      console.log('📂 RESUMING FROM PREVIOUS SESSION');
+      console.log(`   💾 Loaded ${this.trades.length} trades (${closedTrades} closed)`);
+      console.log(`   💰 Balance: ${this.currentBalance.toFixed(4)} SOL`);
+      console.log(`   📈 Session P&L: ${totalPnl >= 0 ? '+' : ''}${totalPnl.toFixed(4)} SOL`);
+      console.log(`   🔄 Total refills: ${this.totalRefills}\n`);
+    } catch {
+      // First run - initialize fresh
+      this.startingBalance = 0.5;
+      this.currentBalance = 0.5;
+      this.totalRefills = 0;
+
+      console.log('🆕 First run - initializing fresh state');
+      await this.saveState();
     }
   }
 }
