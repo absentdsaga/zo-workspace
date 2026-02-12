@@ -23,7 +23,7 @@ interface TradeLog {
   tokenAddress: string;
   tokenSymbol: string;
   strategy: 'meme' | 'arbitrage' | 'perp' | 'volume';
-  source?: 'pumpfun' | 'dexscreener' | 'both';
+  source?: 'pumpfun' | 'dexscreener' | 'both' | 'shocked';
   amountIn: number;
   entryPrice?: number;
   currentPrice?: number;
@@ -35,6 +35,8 @@ interface TradeLog {
   error?: string;
   exitTimestamp?: number;
   exitReason?: string;
+  confidenceScore?: number; // Smart money confidence score (0-100) for backtesting
+  shockedScore?: number; // Shocked scanner score for shocked calls
 }
 
 class PaperTradeMasterCoordinatorFixed {
@@ -56,7 +58,7 @@ class PaperTradeMasterCoordinatorFixed {
   private readonly MIN_BALANCE = 0.05;
   private readonly MAX_DRAWDOWN = 0.25;
   private readonly MIN_SCORE = 40;
-  private readonly MIN_SMART_MONEY_CONFIDENCE = 35;
+  private readonly MIN_SMART_MONEY_CONFIDENCE = 45; // Raised from 35 based on backtest analysis
 
   // Exit thresholds
   private readonly TAKE_PROFIT = 1.0; // 100% gain (TP1 - activates trailing stop)
@@ -183,7 +185,8 @@ class PaperTradeMasterCoordinatorFixed {
                 peakPrice: entryPrice,
                 tp1Hit: false,
                 status: 'open',
-                signature: 'PAPER_SHOCKED_' + Date.now()
+                signature: 'PAPER_SHOCKED_' + Date.now(),
+                shockedScore: best.score // Log shocked score for backtesting
               });
 
               this.currentBalance -= positionSize;
@@ -277,7 +280,8 @@ class PaperTradeMasterCoordinatorFixed {
                     peakPrice: entryPrice,
                     tp1Hit: false,
                     status: 'open',
-                    signature: 'PAPER_TRADE_' + Date.now()
+                    signature: 'PAPER_TRADE_' + Date.now(),
+                    confidenceScore: analysis.confidence // Log confidence for backtesting
                   });
 
                   this.currentBalance -= positionSize;
