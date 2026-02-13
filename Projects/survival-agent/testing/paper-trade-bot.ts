@@ -50,11 +50,13 @@ class PaperTradeMasterCoordinatorFixed {
   private currentBalance: number;
   private trades: TradeLog[] = [];
   private dailyBurnRate = 10;
+  private lastCheckTime = new Map<string, number>(); // Track last check per position
   private isPaused = false;
   private totalRefills = 0; // Track how many times we've refilled
+  private ruggedTokens: Set<string> = new Set(); // Blacklist of rugged tokens
 
   // Trading thresholds
-  private readonly MAX_CONCURRENT_POSITIONS = 10; // Allow up to 10 tokens at once
+  private readonly MAX_CONCURRENT_POSITIONS = 7; // Optimized for API rate limits
   private readonly MAX_POSITION_SIZE = 0.12; // 12% of balance (user preference)
   private readonly MIN_BALANCE = 0.05;
   private readonly MAX_DRAWDOWN = 0.25;
@@ -75,6 +77,7 @@ class PaperTradeMasterCoordinatorFixed {
   private readonly PAPER_TRADE = true;
   private readonly TRADES_FILE = '/tmp/paper-trades-master.json';
   private readonly STATE_FILE = '/tmp/paper-trades-state.json';
+  private readonly BLACKLIST_FILE = '/tmp/paper-trades-blacklist.json';
 
   constructor(
     rpcUrl: string,
@@ -100,6 +103,7 @@ class PaperTradeMasterCoordinatorFixed {
 
     await this.loadTrades();
     await this.loadState();
+    await this.loadBlacklist();
 
     const check = await this.executor.preFlightCheck();
 
@@ -124,6 +128,9 @@ class PaperTradeMasterCoordinatorFixed {
     console.log(`\n⚡ Timing:`);
     console.log(`   Scanner: Every ${this.SCAN_INTERVAL_MS / 1000}s`);
     console.log(`   Position monitor: Every ${this.MONITOR_INTERVAL_MS / 1000}s`);
+    if (this.ruggedTokens.size > 0) {
+      console.log(`\n🚫 Blacklist: ${this.ruggedTokens.size} rugged token(s) blocked`);
+    }
   }
 
   async run(): Promise<void> {
@@ -170,6 +177,13 @@ class PaperTradeMasterCoordinatorFixed {
         if (validShocked.length > 0) {
           const best = validShocked[0];
           const openPositions = this.trades.filter(t => t.status === 'open').length;
+
+          // Check blacklist
+          const isBlacklisted = this.ruggedTokens.has(best.address);
+          if (isBlacklisted) {
+            console.log(`   🚫 SKIPPED: ${best.symbol} is blacklisted (previously rugged)\n`);
+            continue;
+          }
 
           // Check if already holding this token or at max positions
           const alreadyHolding = this.trades.some(t => t.status === 'open' && t.tokenAddress === best.address);
@@ -228,15 +242,6 @@ class PaperTradeMasterCoordinatorFixed {
           let qualified = opportunities.filter(opp => opp.score >= this.MIN_SCORE);
           console.log(`   ${qualified.length} meet minimum score (≥${this.MIN_SCORE})\n`);
 
-          // v2.0: Exclude smart-money-only signals
-          const beforeSourceFilter = qualified.length;
-          qualified = qualified.filter(opp => (opp as any).source !== 'dexscreener');
-          const excluded = beforeSourceFilter - qualified.length;
-          if (excluded > 0) {
-            console.log(`   ⏭️  Excluded ${excluded} smart-money-only signal(s)`);
-          }
-          console.log(`   ${qualified.length} qualified after filters\n`);
-
           if (qualified.length > 0) {
             // Check if we have room for more positions
             const openPositions = this.trades.filter(t => t.status === 'open').length;
@@ -244,11 +249,22 @@ class PaperTradeMasterCoordinatorFixed {
             if (openPositions >= this.MAX_CONCURRENT_POSITIONS) {
               console.log(`2️⃣  ⏭️  Max concurrent positions reached (${this.MAX_CONCURRENT_POSITIONS}) - skipping\n`);
             } else {
-              const best = qualified.find(opp =>
-                !this.trades.some(t => t.status === 'open' && t.tokenAddress === opp.address)
-              );
+              // Sort by score (highest first) and filter out already held tokens
+              const availableOpps = qualified
+                .filter(opp => !this.trades.some(t => t.status === 'open' && t.tokenAddress === opp.address))
+                .sort((a, b) => b.score - a.score);
 
-              if (best) {
+              // Try top 5 opportunities (in case first few fail smart money check)
+              let traded = false;
+              for (const best of availableOpps.slice(0, 5)) {
+                if (traded) break;
+                // Check blacklist
+                const isBlacklisted = this.ruggedTokens.has(best.address);
+                if (isBlacklisted) {
+                  console.log(`   🚫 SKIPPED: ${best.symbol} is blacklisted (previously rugged)\n`);
+                  continue; // Try next opportunity
+                }
+
                 console.log('2️⃣  Analyzing top opportunity:');
                 console.log(`   Token: ${best.symbol} (${best.address.slice(0, 8)}...)`);
                 console.log(`   Score: ${best.score}/100`);
@@ -258,6 +274,11 @@ class PaperTradeMasterCoordinatorFixed {
                 console.log('3️⃣  Smart money analysis...');
                 const analysis = await this.tracker.hasSmartMoneyInterest(best.address);
                 console.log(`   Confidence: ${analysis.confidence}/100\n`);
+
+                if (analysis.confidence < this.MIN_SMART_MONEY_CONFIDENCE) {
+                  console.log(`   ⏭️  SKIPPED: Low confidence (${analysis.confidence} < ${this.MIN_SMART_MONEY_CONFIDENCE}) - trying next...\n`);
+                  continue; // Try next opportunity
+                }
 
                 if (analysis.confidence >= this.MIN_SMART_MONEY_CONFIDENCE) {
                   console.log('4️⃣  🎯 HIGH CONFIDENCE SIGNAL - VALIDATING TRADE\n');
@@ -311,9 +332,12 @@ class PaperTradeMasterCoordinatorFixed {
                   await this.saveTrades();
                   await this.saveState();
                   console.log('   ✅ TRADE SIMULATED (with Jupiter-validated prices)\n');
-                } else {
-                  console.log('4️⃣  ⏭️  Skipping - smart money confidence too low\n');
+                  traded = true; // Mark as traded, exit loop
                 }
+              }
+
+              if (!traded) {
+                console.log(`   ⚠️  No trades taken - all top 5 opportunities failed validation\n`);
               }
             }
           }
@@ -377,6 +401,37 @@ class PaperTradeMasterCoordinatorFixed {
       const holdTime = Date.now() - trade.timestamp;
       const holdMinutes = (holdTime / 60000).toFixed(1);
 
+      // Calculate current P&L for dynamic interval (use latest known price)
+      let pnlPercent = trade.currentPrice && trade.entryPrice
+        ? ((trade.currentPrice - trade.entryPrice) / trade.entryPrice) * 100
+        : 0;
+
+      // DYNAMIC CHECK INTERVAL based on risk
+      let checkInterval: number;
+      if (pnlPercent <= -25) {
+        checkInterval = 2000;  // CRITICAL: Near -30% stop loss, check every 2s
+      } else if (pnlPercent <= -15) {
+        checkInterval = 3000;  // WARNING: Getting close, check every 3s
+      } else if (trade.tp1Hit) {
+        checkInterval = 3000;  // TRAILING STOP active, check every 3s
+      } else if (pnlPercent > 50) {
+        checkInterval = 5000;  // Big gains, watch closely every 5s
+      } else {
+        checkInterval = 10000; // Safe range, check every 10s
+      }
+
+      // Check if we should skip this position this cycle
+      const lastCheck = this.lastCheckTime.get(trade.tokenAddress) || 0;
+      const timeSinceCheck = Date.now() - lastCheck;
+      
+      if (timeSinceCheck < checkInterval) {
+        console.log(`   ⏭️  ${trade.tokenSymbol}: Checked ${(timeSinceCheck/1000).toFixed(1)}s ago (interval: ${(checkInterval/1000).toFixed(0)}s), skipping`);
+        continue;
+      }
+
+      // Update last check time
+      this.lastCheckTime.set(trade.tokenAddress, Date.now());
+
       // 🔥 FIX #4: Get REAL current price from Jupiter, not DexScreener
       let currentPrice = trade.entryPrice!;
       let priceAvailable = false;
@@ -403,8 +458,7 @@ class PaperTradeMasterCoordinatorFixed {
         }
       }
 
-      // Calculate P&L
-      let pnlPercent: number;
+      // Recalculate P&L with fresh price
       let pnlSol: number;
 
       if (!priceAvailable || currentPrice === 0) {
@@ -480,15 +534,33 @@ class PaperTradeMasterCoordinatorFixed {
 
         if (!sellValidation.valid) {
           console.log(`      ❌ SELL FAILED: ${sellValidation.error}`);
-          console.log(`      💀 TOTAL LOSS - Token is rugged/illiquid\n`);
+          
+          // Check if it's a REAL rug (no liquidity) vs API/rate limit issue
+          if (sellValidation.liquidityInsufficient) {
+            // ACTUAL RUG - No liquidity available
+            console.log(`      💀 TOTAL LOSS - Token is rugged/illiquid\n`);
 
-          trade.status = 'closed_loss';
-          trade.pnl = -trade.amountIn; // Total loss
-          trade.currentPrice = 0;
-          trade.exitTimestamp = Date.now();
-          trade.exitReason = 'No sell route - rugged';
-          await this.saveTrades();
-          // Don't return SOL to balance - it's lost
+            trade.status = 'closed_loss';
+            trade.pnl = -trade.amountIn; // Total loss
+            trade.currentPrice = 0;
+            trade.exitTimestamp = Date.now();
+            trade.exitReason = 'No sell route - rugged';
+            
+            // Add to blacklist
+            this.ruggedTokens.add(trade.tokenAddress);
+            await this.saveBlacklist();
+            console.log(`      🚫 Added ${trade.tokenSymbol} to blacklist`);
+            await this.saveTrades();
+            // Don't return SOL to balance - it's lost
+          } else {
+            // API error, rate limit, or network issue - NOT a rug!
+            console.log(`      ⚠️  API/Network error - will retry next cycle`);
+            console.log(`      Error details: ${sellValidation.error}\n`);
+            
+            // Don't close position - keep it open and try again next cycle
+            // This allows the bot to retry when API recovers
+            console.log(`      ↻ Keeping position open for retry\n`);
+          }
         } else {
           // Get final sell price
           const finalPrice = sellValidation.priceUsd!;
@@ -578,6 +650,24 @@ class PaperTradeMasterCoordinatorFixed {
     } catch {
       this.trades = [];
   }
+  }
+
+  async loadBlacklist() {
+    try {
+      const content = await Bun.file(this.BLACKLIST_FILE).text();
+      const data = JSON.parse(content);
+      this.ruggedTokens = new Set(data.ruggedTokens || []);
+    } catch {
+      this.ruggedTokens = new Set();
+    }
+  }
+
+  async saveBlacklist() {
+    const data = {
+      ruggedTokens: Array.from(this.ruggedTokens),
+      lastUpdated: Date.now()
+    };
+    await Bun.write(this.BLACKLIST_FILE, JSON.stringify(data, null, 2));
   }
 
   async saveState() {

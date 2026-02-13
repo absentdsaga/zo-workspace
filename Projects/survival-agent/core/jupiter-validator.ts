@@ -18,7 +18,7 @@ export interface RouteValidation {
 }
 
 /**
- * Fetch with timeout and retry logic
+ * Fetch with timeout and 429-aware retry logic
  */
 async function fetchWithRetry(
   url: string,
@@ -41,6 +41,23 @@ async function fetchWithRetry(
       });
 
       clearTimeout(timeout);
+
+      // Handle 429 rate limits with retry
+      if (response.status === 429) {
+        const retryAfter = response.headers.get('Retry-After');
+        const delayMs = retryAfter ? parseInt(retryAfter) * 1000 : 2000;
+
+        console.log(`⚠️  429 Rate Limited - Retry ${attempt}/${maxRetries} after ${delayMs}ms`);
+
+        if (attempt < maxRetries) {
+          await new Promise(resolve => setTimeout(resolve, delayMs));
+          continue; // Retry
+        }
+
+        // Last attempt - return the 429 response
+        return response;
+      }
+
       return response;
 
     } catch (error: any) {
@@ -48,7 +65,7 @@ async function fetchWithRetry(
         throw new Error(`Failed after ${maxRetries} attempts: ${error.message}`);
       }
 
-      // Exponential backoff
+      // Exponential backoff for network errors
       const backoffMs = Math.min(1000 * Math.pow(2, attempt - 1), 5000);
       await new Promise(resolve => setTimeout(resolve, backoffMs));
     }
@@ -93,16 +110,19 @@ export class JupiterValidator {
 
       if (!response.ok) {
         const text = await response.text();
-        
+
         // Check if it's a liquidity/routing issue vs API error
-        const isLiquidityIssue = response.status === 404 || 
-                                text.includes('No routes') || 
+        const isLiquidityIssue = response.status === 404 ||
+                                text.includes('No routes') ||
                                 text.includes('No route found');
+
+        // 429 rate limits are NOT liquidity issues - they're temporary API errors
+        const isRateLimit = response.status === 429;
 
         return {
           valid: false,
           error: `Jupiter API ${response.status}: ${text.substring(0, 100)}`,
-          liquidityInsufficient: isLiquidityIssue
+          liquidityInsufficient: isLiquidityIssue && !isRateLimit
         };
       }
 
@@ -187,14 +207,17 @@ export class JupiterValidator {
 
       if (!response.ok) {
         const text = await response.text();
-        const isLiquidityIssue = response.status === 404 || 
-                                text.includes('No routes') || 
+        const isLiquidityIssue = response.status === 404 ||
+                                text.includes('No routes') ||
                                 text.includes('No route found');
+
+        // 429 rate limits are NOT liquidity issues - they're temporary API errors
+        const isRateLimit = response.status === 429;
 
         return {
           valid: false,
           error: `Sell route ${response.status}: ${text.substring(0, 100)}`,
-          liquidityInsufficient: isLiquidityIssue
+          liquidityInsufficient: isLiquidityIssue && !isRateLimit
         };
       }
 
