@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Character Test - Spatial Worlds</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            overflow: hidden;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+        }
+        #controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffd700;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        #controls h3 {
+            margin: 0 0 10px 0;
+            color: #ff6b9d;
+        }
+        #controls p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .char-btn {
+            background: #1a1a2e;
+            border: 2px solid #ffd700;
+            color: #fff;
+            padding: 8px;
+            cursor: pointer;
+            font-size: 11px;
+            border-radius: 5px;
+            user-select: none;
+        }
+        .char-btn:hover {
+            background: #ffd700;
+            color: #000;
+        }
+        .char-btn.active {
+            background: #ff6b9d;
+            border-color: #ff6b9d;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
+</head>
+<body>
+    <div id="controls">
+        <h3>🎮 NFT Characters</h3>
+        <p>⌨️ WASD/Arrows to move</p>
+        <p>🎨 Click character to switch</p>
+        <p>📦 96×144 resolution (2x zoom)</p>
+        <div class="character-grid" id="charGrid"></div>
+    </div>
+    <div id="game-container"></div>
+
+    <script>
+        const characters = [
+            { id: 'set1-char1', name: 'Purple Vest' },
+            { id: 'set1-char2', name: 'Skeleton King' },
+            { id: 'set1-char3', name: 'Orange Bear' },
+            { id: 'set1-char4', name: 'Rainbow Penguin' },
+            { id: 'set1-char5', name: 'Red Vest' },
+            { id: 'set2-char1', name: 'Yellow Shades' },
+            { id: 'set2-char2', name: 'Blue Penguin' },
+            { id: 'set2-char3', name: 'Pink Dino' },
+            { id: 'set3-char1', name: 'Fire Cat' },
+            { id: 'set3-char2', name: 'Flame Knight' },
+            { id: 'single1-cat', name: 'Crypto Cat' },
+        ];
+
+        let selectedCharacter = 'set1-char3'; // Default: Orange Bear
+        let gameScene = null;
+
+        // Create character selection buttons
+        const grid = document.getElementById('charGrid');
+        characters.forEach(char => {
+            const btn = document.createElement('button');
+            btn.className = 'char-btn';
+            btn.textContent = char.name;
+            btn.onclick = () => {
+                selectedCharacter = char.id;
+                document.querySelectorAll('.char-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update the player character in the game
+                if (gameScene && gameScene.player) {
+                    gameScene.changePlayerCharacter(char.id);
+                }
+            };
+            if (char.id === selectedCharacter) btn.classList.add('active');
+            grid.appendChild(btn);
+        });
+
+        class NFTTestScene extends Phaser.Scene {
+            constructor() {
+                super({ key: 'NFTTestScene' });
+                this.player = null;
+                this.cursors = null;
+                this.npcs = [];
+            }
+
+            preload() {
+                console.log('🎨 Loading sprites...');
+
+                // Load all character sprite sheets
+                characters.forEach(char => {
+                    const path = `../../assets/sprites/nft-characters-xl/${char.id}/${char.id}-sheet.png`;
+                    this.load.spritesheet(char.id, path,
+                        { frameWidth: 96, frameHeight: 144 }
+                    );
+                });
+
+                // Simple ground tile
+                this.load.image('ground', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAnElEQVR4AWNgGAWjYBSMglEwvAELEA8A4v1A/B+IDQZqmALEH4H4PxAPA2IgNgJiEyA2HqhhChAfBOL/QPwBiAcB8SAgPgjE/4H4IBA7DDRAARBfAOL/QLwfiBcA8QUg/g/E+4H4AhBbDDQAAPkvPxJQH4XGAAAAASUVORK5CYII=');
+            }
+
+            create() {
+                console.log('✅ Scene created!');
+                gameScene = this; // Store reference for character switching
+
+                // Create tiled ground
+                for (let x = 0; x < 25; x++) {
+                    for (let y = 0; y < 20; y++) {
+                        this.add.image(x * 64 + 32, y * 64 + 32, 'ground');
+                    }
+                }
+
+                // Create animations for all characters
+                characters.forEach(char => {
+                    ['down', 'up', 'left', 'right'].forEach((dir, dirIndex) => {
+                        this.anims.create({
+                            key: `${char.id}-walk-${dir}`,
+                            frames: this.anims.generateFrameNumbers(char.id, {
+                                start: dirIndex * 4,
+                                end: dirIndex * 4 + 3
+                            }),
+                            frameRate: 8,
+                            repeat: -1
+                        });
+
+                        this.anims.create({
+                            key: `${char.id}-idle-${dir}`,
+                            frames: [{ key: char.id, frame: dirIndex * 4 }],
+                            frameRate: 1
+                        });
+                    });
+                });
+
+                // Create player with 2x zoom
+                this.player = this.add.sprite(400, 300, selectedCharacter);
+                this.player.setScale(2); // 2x zoom for sweet spot
+                this.player.currentDirection = 'down';
+                this.player.characterId = selectedCharacter;
+                this.player.play(`${selectedCharacter}-idle-down`);
+                console.log(`🚀 Player spawned: ${selectedCharacter}`);
+
+                // Spawn NPCs with 2x zoom
+                this.spawnNPC(200, 200, 'set1-char1');
+                this.spawnNPC(600, 200, 'set1-char2');
+                this.spawnNPC(200, 500, 'set2-char1');
+                this.spawnNPC(600, 500, 'set3-char1');
+
+                // Keyboard controls
+                this.cursors = this.input.keyboard.createCursorKeys();
+                this.wasd = {
+                    up: this.input.keyboard.addKey('W'),
+                    down: this.input.keyboard.addKey('S'),
+                    left: this.input.keyboard.addKey('A'),
+                    right: this.input.keyboard.addKey('D')
+                };
+
+                // Click to spawn NPC
+                this.input.on('pointerdown', (pointer) => {
+                    if (pointer.y > 100) { // Avoid spawning under UI
+                        this.spawnNPC(pointer.worldX, pointer.worldY, selectedCharacter);
+                        console.log(`🎭 Spawned NPC: ${selectedCharacter} at (${Math.round(pointer.worldX)}, ${Math.round(pointer.worldY)})`);
+                    }
+                });
+
+                // Camera follow with 2x zoom
+                this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+                this.cameras.main.setZoom(1); // Keep at 1x zoom, sprites are already 2x scale
+            }
+
+            changePlayerCharacter(newCharacterId) {
+                const oldX = this.player.x;
+                const oldY = this.player.y;
+                const oldDirection = this.player.currentDirection;
+
+                // Destroy old player
+                this.player.destroy();
+
+                // Create new player with same position
+                this.player = this.add.sprite(oldX, oldY, newCharacterId);
+                this.player.setScale(2); // 2x zoom
+                this.player.currentDirection = oldDirection;
+                this.player.characterId = newCharacterId;
+                this.player.play(`${newCharacterId}-idle-${oldDirection}`);
+
+                // Update camera follow
+                this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+
+                console.log(`🎭 Character switched to: ${newCharacterId}`);
+            }
+
+            spawnNPC(x, y, characterId) {
+                const npc = this.add.sprite(x, y, characterId);
+                npc.setScale(2); // 2x zoom
+                npc.currentDirection = 'down';
+                npc.characterId = characterId;
+                npc.play(`${characterId}-idle-down`);
+
+                // Random wandering
+                npc.wanderTimer = 0;
+                npc.wanderDirection = { x: 0, y: 0 };
+
+                this.npcs.push(npc);
+            }
+
+            update(time, delta) {
+                if (!this.player) return;
+
+                // Player movement
+                const speed = 200;
+                let velocityX = 0;
+                let velocityY = 0;
+                let moving = false;
+                const charId = this.player.characterId;
+
+                if (this.cursors.left.isDown || this.wasd.left.isDown) {
+                    velocityX = -speed;
+                    moving = true;
+                    if (this.player.currentDirection !== 'left') {
+                        this.player.currentDirection = 'left';
+                        this.player.play(`${charId}-walk-left`);
+                    }
+                }
+                else if (this.cursors.right.isDown || this.wasd.right.isDown) {
+                    velocityX = speed;
+                    moving = true;
+                    if (this.player.currentDirection !== 'right') {
+                        this.player.currentDirection = 'right';
+                        this.player.play(`${charId}-walk-right`);
+                    }
+                }
+
+                if (this.cursors.up.isDown || this.wasd.up.isDown) {
+                    velocityY = -speed;
+                    moving = true;
+                    if (velocityX === 0 && this.player.currentDirection !== 'up') {
+                        this.player.currentDirection = 'up';
+                        this.player.play(`${charId}-walk-up`);
+                    }
+                }
+                else if (this.cursors.down.isDown || this.wasd.down.isDown) {
+                    velocityY = speed;
+                    moving = true;
+                    if (velocityX === 0 && this.player.currentDirection !== 'down') {
+                        this.player.currentDirection = 'down';
+                        this.player.play(`${charId}-walk-down`);
+                    }
+                }
+
+                if (!moving) {
+                    this.player.play(`${charId}-idle-${this.player.currentDirection}`, true);
+                }
+
+                this.player.x += velocityX * (delta / 1000);
+                this.player.y += velocityY * (delta / 1000);
+
+                // NPC wandering
+                this.npcs.forEach(npc => {
+                    npc.wanderTimer -= delta;
+
+                    if (npc.wanderTimer <= 0) {
+                        npc.wanderTimer = Phaser.Math.Between(1000, 3000);
+                        npc.wanderDirection = {
+                            x: Phaser.Math.Between(-1, 1),
+                            y: Phaser.Math.Between(-1, 1)
+                        };
+
+                        const dir = this.getDirection(npc.wanderDirection.x, npc.wanderDirection.y);
+                        if (npc.wanderDirection.x !== 0 || npc.wanderDirection.y !== 0) {
+                            npc.play(`${npc.characterId}-walk-${dir}`);
+                        } else {
+                            npc.play(`${npc.characterId}-idle-${npc.currentDirection || 'down'}`);
+                        }
+                        npc.currentDirection = dir;
+                    }
+
+                    npc.x += npc.wanderDirection.x * 50 * (delta / 1000);
+                    npc.y += npc.wanderDirection.y * 50 * (delta / 1000);
+                });
+            }
+
+            getDirection(vx, vy) {
+                if (Math.abs(vx) > Math.abs(vy)) {
+                    return vx > 0 ? 'right' : 'left';
+                } else if (vy !== 0) {
+                    return vy > 0 ? 'down' : 'up';
+                }
+                return 'down';
+            }
+        }
+
+        const config = {
+            type: Phaser.AUTO,
+            parent: 'game-container',
+            width: window.innerWidth,
+            height: window.innerHeight,
+            backgroundColor: '#2d2d2d',
+            scene: NFTTestScene,
+            pixelArt: true,
+            scale: {
+                mode: Phaser.Scale.RESIZE,
+                autoCenter: Phaser.Scale.CENTER_BOTH
+            }
+        };
+
+        console.log('🎮 Starting Phaser...');
+        const game = new Phaser.Game(config);
+    </script>
+</body>
+</html>

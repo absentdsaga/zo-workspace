@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Bot Monitor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0e27;
+            color: #00ff41;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-shadow: 0 0 10px #00ff41;
+        }
+
+        .status {
+            background: #1a1f3a;
+            border: 2px solid #00ff41;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator.live {
+            background: #00ff41;
+            box-shadow: 0 0 10px #00ff41;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .log-container {
+            background: #0d1117;
+            border: 2px solid #00ff41;
+            border-radius: 8px;
+            padding: 20px;
+            height: 600px;
+            overflow-y: auto;
+            font-size: 14px;
+        }
+
+        .log-line {
+            margin-bottom: 5px;
+            white-space: pre-wrap;
+        }
+
+        .log-line.separator {
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .log-line.opportunity {
+            color: #ffff00;
+            font-weight: bold;
+        }
+
+        .log-line.trade {
+            color: #ff6b00;
+            font-weight: bold;
+        }
+
+        .log-line.success {
+            color: #00ff41;
+            font-weight: bold;
+        }
+
+        .log-line.error {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .refresh-info {
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: #1a1f3a;
+            border: 1px solid #00ff41;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AUTONOMOUS TRADING BOT MONITOR</h1>
+
+        <div class="status">
+            <span class="status-indicator live"></span>
+            <strong>Status:</strong> <span id="status">LIVE & SCANNING</span>
+            <span style="float: right;">
+                <strong>Last Update:</strong> <span id="lastUpdate">--:--:--</span>
+            </span>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="balance">0.3352</div>
+                <div class="stat-label">Balance (SOL)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="scans">0</div>
+                <div class="stat-label">Scans</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="trades">0</div>
+                <div class="stat-label">Trades</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="pnl">+0.00%</div>
+                <div class="stat-label">P&L</div>
+            </div>
+        </div>
+
+        <div class="log-container" id="logContainer">
+            <div class="log-line">Loading logs...</div>
+        </div>
+
+        <div class="refresh-info">
+            Auto-refreshing every 5 seconds | Reading from /tmp/trading-bot.log
+        </div>
+    </div>
+
+    <script>
+        let scanCount = 0;
+        let tradeCount = 0;
+
+        async function fetchLogs() {
+            try {
+                // In a real deployment, you'd use an API endpoint
+                // For now, this shows the structure
+                const response = await fetch('/api/logs');
+                const data = await response.json();
+
+                updateDisplay(data.logs);
+                updateStats(data.stats);
+
+            } catch (error) {
+                // Fallback: show static message
+                document.getElementById('logContainer').innerHTML = `
+                    <div class="log-line">📊 Bot is running in background</div>
+                    <div class="log-line">📁 Log file: /tmp/trading-bot.log</div>
+                    <div class="log-line"></div>
+                    <div class="log-line">To view live logs, open a terminal and run:</div>
+                    <div class="log-line success">tail -f /tmp/trading-bot.log</div>
+                    <div class="log-line"></div>
+                    <div class="log-line">Or check latest entries:</div>
+                    <div class="log-line success">tail -50 /tmp/trading-bot.log</div>
+                `;
+            }
+
+            document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString();
+        }
+
+        function updateDisplay(logs) {
+            const container = document.getElementById('logContainer');
+            container.innerHTML = '';
+
+            logs.forEach(line => {
+                const div = document.createElement('div');
+                div.className = 'log-line';
+
+                if (line.includes('===')) {
+                    div.className += ' separator';
+                } else if (line.includes('Opportunity') || line.includes('🎯')) {
+                    div.className += ' opportunity';
+                } else if (line.includes('EXECUTING TRADE')) {
+                    div.className += ' trade';
+                } else if (line.includes('✅') || line.includes('SUCCESS')) {
+                    div.className += ' success';
+                } else if (line.includes('❌') || line.includes('FAILED')) {
+                    div.className += ' error';
+                }
+
+                div.textContent = line;
+                container.appendChild(div);
+            });
+
+            // Auto-scroll to bottom
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function updateStats(stats) {
+            if (stats) {
+                document.getElementById('balance').textContent = stats.balance || '0.3352';
+                document.getElementById('scans').textContent = stats.scans || '0';
+                document.getElementById('trades').textContent = stats.trades || '0';
+                document.getElementById('pnl').textContent = stats.pnl || '+0.00%';
+            }
+        }
+
+        // Fetch logs every 5 seconds
+        fetchLogs();
+        setInterval(fetchLogs, 5000);
+    </script>
+</body>
+</html>

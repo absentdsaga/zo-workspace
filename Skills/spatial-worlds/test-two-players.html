@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two Player Test - Spatial Worlds</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+            font-family: monospace;
+        }
+        h2 {
+            color: #4a9eff;
+        }
+        .instructions {
+            background: #2a2a2a;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #4a9eff;
+        }
+        .link-box {
+            background: #000;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #4a9eff;
+        }
+        .link-box a {
+            color: #4a9eff;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+        .link-box a:hover {
+            color: #6ac0ff;
+            text-decoration: underline;
+        }
+        code {
+            background: #000;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #4a9eff;
+        }
+        .note {
+            background: #2a1a1a;
+            border-left: 4px solid #ff4a4a;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>🎮 Spatial Worlds - Two Player Multiplayer Test</h2>
+
+    <div class="instructions">
+        <h3>📋 Instructions:</h3>
+        <ol>
+            <li>Open <strong>Player 1</strong> link below in a new tab</li>
+            <li>Open <strong>Player 2</strong> link below in another new tab</li>
+            <li>In each tab, <strong>press F12</strong> to open developer console</li>
+            <li>Look for console logs that start with:
+                <ul>
+                    <li><code>👤 INIT:</code> - Initial connection</li>
+                    <li><code>🎯 SPAWNING</code> - Remote player being spawned</li>
+                    <li><code>📦 Sprite created:</code> - Sprite details</li>
+                    <li><code>✅ Remote player</code> - Success message</li>
+                </ul>
+            </li>
+            <li>Move around in both windows to see if players see each other</li>
+        </ol>
+    </div>
+
+    <div class="link-box">
+        <strong>Player 1:</strong>
+        <a href="https://spatial-worlds-dioni.zocomputer.io/?player=1" target="_blank">
+            🎮 Open Player 1 Window →
+        </a>
+    </div>
+
+    <div class="link-box">
+        <strong>Player 2:</strong>
+        <a href="https://spatial-worlds-dioni.zocomputer.io/?player=2" target="_blank">
+            🎮 Open Player 2 Window →
+        </a>
+    </div>
+
+    <div class="note">
+        <strong>⚠️ What to look for:</strong>
+        <ul>
+            <li>When Player 2 connects, Player 1's console should show <code>🎉 PLAYER_JOINED</code></li>
+            <li>Player 2's console should show <code>🔵 INIT: Spawning existing player</code> for Player 1</li>
+            <li>Both consoles should show sprite details including <code>visible: true</code></li>
+            <li>If a sprite shows <code>visible: false</code> or is not spawned, that's the bug</li>
+        </ul>
+    </div>
+
+    <div class="instructions">
+        <h3>🔍 Expected Console Output:</h3>
+        <p><strong>Player 1 (first to connect):</strong></p>
+        <pre style="background: #000; padding: 10px;">
+👤 INIT: You are player xxxxxxxx
+📋 INIT: Received 1 players from server
+🔴 INIT: Skipping self (xxxxxxxx)
+✅ INIT: Complete. Remote players spawned: 0
+
+[When Player 2 joins:]
+🎉 PLAYER_JOINED: yyyyyyyy - isMe: false
+🎯 SPAWNING remote player yyyyyyyy: {...}
+📦 Sprite created: {visible: true, ...}
+✅ Remote player yyyyyyyy spawned successfully
+        </pre>
+
+        <p><strong>Player 2 (second to connect):</strong></p>
+        <pre style="background: #000; padding: 10px;">
+👤 INIT: You are player yyyyyyyy
+📋 INIT: Received 2 players from server
+👁️ INIT: Checking player xxxxxxxx - isMe: false
+🔵 INIT: Spawning existing player xxxxxxxx
+🎯 SPAWNING remote player xxxxxxxx: {...}
+📦 Sprite created: {visible: true, ...}
+✅ Remote player xxxxxxxx spawned successfully
+        </pre>
+    </div>
+
+    <script>
+        console.log('Test page loaded. Click the links above to open player windows.');
+    </script>
+</body>
+</html>

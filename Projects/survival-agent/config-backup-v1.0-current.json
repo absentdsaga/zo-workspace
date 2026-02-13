@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "timestamp": 1739397600000,
+  "date": "2026-02-12T22:00:00.000Z",
+  "description": "Backup of current production settings before v2.0 upgrade",
+  
+  "settings": {
+    "MIN_SCORE": 60,
+    "MIN_SMART_MONEY_CONFIDENCE": 35,
+    "MAX_POSITION_SIZE": 0.10,
+    "TAKE_PROFIT": 1.0,
+    "STOP_LOSS": -0.30,
+    "MAX_HOLD_TIME_MS": 3600000,
+    "SCAN_INTERVAL_MS": 30000,
+    "filters": {
+      "excludeSources": [],
+      "description": "No source exclusions - trades all signals (shocked, dexscreener, both)"
+    }
+  },
+  
+  "backtest_performance": {
+    "paper_mode": {
+      "total_trades": 234,
+      "win_rate_percent": 35.5,
+      "paper_pnl_sol": 0.509
+    },
+    "mainnet_estimate": {
+      "pnl_sol": 0.021,
+      "description": "After fees (Jupiter 0.05%, slippage 0.3%, network 0.00001 SOL)"
+    }
+  },
+  
+  "breakdown_by_source": {
+    "dexscreener_only": {
+      "trades": 161,
+      "win_rate_percent": 33.3
+    },
+    "shocked_only": {
+      "trades": 3,
+      "win_rate_percent": 33.3
+    },
+    "both_shocked_and_smart": {
+      "trades": 70,
+      "win_rate_percent": 37.1
+    }
+  },
+  
+  "notes": [
+    "This configuration trades ALL signals regardless of source",
+    "Main issue: dexscreener-only trades (161) drag down win rate",
+    "Best performers: 'both' signals (shocked + smart money agree)",
+    "If upgrade fails, revert to these exact settings"
+  ]
+}

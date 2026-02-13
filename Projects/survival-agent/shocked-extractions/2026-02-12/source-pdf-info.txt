@@ -1,0 +1,19 @@
+PDF Source Information
+======================
+
+Original File: /home/.z/chat-uploads/shocked-51512087884f.pdf
+Pages: 94
+Extraction Date: 2026-02-12 23:09 UTC
+Tokens Found: 17 unique addresses
+
+Extraction Method:
+- Used strings extraction from binary PDF data
+- Regex pattern matching for pump.fun addresses (44 chars ending in 'pump')
+- Context analysis for symbols, FDV, and gain percentages
+- Cleaned addresses by removing PDF formatting artifacts
+
+Quality Notes:
+- Symbol extraction was approximate (PDF chat format)
+- Addresses are 100% accurate
+- FDV and gain data extracted from surrounding context
+- Some symbols may need correction from on-chain metadata

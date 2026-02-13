@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
+</head>
+<body>
+    <div id="game"></div>
+    <script>
+        console.log('Script starting...');
+        
+        class TestScene extends Phaser.Scene {
+            preload() {
+                console.log('Preload called');
+                // Create a simple colored rectangle as a texture
+                const graphics = this.add.graphics();
+                graphics.fillStyle(0xff0000, 1);
+                graphics.fillRect(0, 0, 64, 64);
+                graphics.generateTexture('red-square', 64, 64);
+                graphics.destroy();
+            }
+            
+            create() {
+                console.log('Create called');
+                this.add.text(400, 300, 'PHASER WORKS!', { fontSize: '32px', color: '#00ff00' });
+                this.add.image(400, 400, 'red-square');
+            }
+        }
+        
+        const config = {
+            type: Phaser.AUTO,
+            parent: 'game',
+            width: 800,
+            height: 600,
+            backgroundColor: '#000000',
+            scene: TestScene
+        };
+        
+        console.log('Creating game...');
+        const game = new Phaser.Game(config);
+        console.log('Game created');
+    </script>
+</body>
+</html>

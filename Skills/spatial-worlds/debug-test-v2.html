@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug NFT Characters</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.85.2/dist/phaser.js"></script>
+    <style>
+        body { margin: 0; padding: 20px; background: #1a1a1a; color: #fff; font-family: monospace; }
+        #log { white-space: pre-wrap; padding: 10px; background: #000; margin-bottom: 20px; }
+        canvas { border: 2px solid #333; image-rendering: pixelated; }
+    </style>
+</head>
+<body>
+    <div id="log">Loading...</div>
+    <div id="game"></div>
+    
+    <script>
+        const log = document.getElementById('log');
+        function logMsg(msg, type = 'info') {
+            const prefix = type === 'error' ? '❌' : type === 'success' ? '✅' : 'ℹ️';
+            log.textContent += `\n${prefix} ${msg}`;
+            console.log(msg);
+        }
+        
+        window.onerror = (msg, url, line, col, error) => {
+            logMsg(`Global error: ${msg} at ${url}:${line}:${col}`, 'error');
+            if (error) logMsg('Stack: ' + error.stack, 'error');
+            return true; // Prevent default error handling
+        };
+        
+        logMsg('Starting Phaser initialization...');
+        
+        const config = {
+            type: Phaser.CANVAS,
+            width: 800,
+            height: 600,
+            parent: 'game',
+            backgroundColor: '#2d2d2d',
+            pixelArt: true,
+            render: {
+                pixelArt: true,
+                antialias: false,
+                roundPixels: true
+            },
+            scene: {
+                preload: preload,
+                create: create
+            }
+        };
+        
+        logMsg('Creating Phaser game...');
+        const game = new Phaser.Game(config);
+        
+        function preload() {
+            logMsg('Preload function called');
+            
+            this.load.on('loaderror', (fileObj) => {
+                logMsg(`Failed to load: ${fileObj.key} from ${fileObj.url}`, 'error');
+            });
+            
+            this.load.on('filecomplete', (key) => {
+                logMsg(`Loaded: ${key}`, 'success');
+            });
+            
+            logMsg('Loading sprite sheet from root...');
+            this.load.spritesheet('nft-char',
+                '/set1-char1-v2.png',
+                { frameWidth: 32, frameHeight: 48 }
+            );
+        }
+        
+        function create() {
+            logMsg('Create function called');
+            
+            try {
+                if (this.textures.exists('nft-char')) {
+                    logMsg('Sprite sheet loaded successfully!', 'success');
+
+                    const texture = this.textures.get('nft-char');
+                    const frameCount = texture.frameTotal;
+                    logMsg(`Available frames: ${frameCount}`, 'success');
+
+                    // Log frame 0 dimensions
+                    const frame0 = texture.get(0);
+                    logMsg(`Frame 0 size: ${frame0.width}x${frame0.height}`, 'success');
+                    logMsg(`Frame 0 source: ${frame0.source.width}x${frame0.source.height}`, 'success');
+
+                    // Create sprite with frame 0
+                    const sprite = this.add.sprite(400, 300, 'nft-char', 0);
+                    sprite.setScale(4);
+                    logMsg(`Sprite created at (400, 300) with frame 0`, 'success');
+                    logMsg(`Sprite display size: ${sprite.displayWidth}x${sprite.displayHeight}`, 'success');
+
+                    // Sprite sheet order: right(0-3), left(4-7), up(8-11), down(12-15)
+                    this.anims.create({
+                        key: 'walk-down',
+                        frames: this.anims.generateFrameNumbers('nft-char', { start: 12, end: 15 }),
+                        frameRate: 8,
+                        repeat: -1
+                    });
+
+                    sprite.play('walk-down');
+                    logMsg('Animation playing!', 'success');
+                    logMsg('✨ Everything working!', 'success');
+                } else {
+                    logMsg('Sprite sheet failed to load!', 'error');
+                }
+            } catch (error) {
+                logMsg(`Error in create: ${error.message}`, 'error');
+                logMsg(`Stack: ${error.stack}`, 'error');
+            }
+        }
+        
+        logMsg('Script execution complete');
+    </script>
+</body>
+</html>
