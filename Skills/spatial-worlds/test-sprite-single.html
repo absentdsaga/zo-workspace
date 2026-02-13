@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NFT Sprite Test - set2-char2</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #222;
+            font-family: monospace;
+            color: #fff;
+        }
+        #info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.8);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        canvas {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #444;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <h3>🧪 NFT Sprite Test: set2-char2</h3>
+        <div id="status">Loading...</div>
+        <div style="margin-top: 10px; font-size: 12px;">
+            <strong>Controls:</strong> WASD or Arrow Keys<br>
+            <strong>Test:</strong> Check transparency, animations, scale
+        </div>
+    </div>
+
+    <script>
+        const config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            backgroundColor: '#5a8a4f', // Grass green to show transparency clearly
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 0 },
+                    debug: false
+                }
+            },
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            }
+        };
+
+        const game = new Phaser.Game(config);
+        let player;
+        let cursors;
+        let wasd;
+        let statusText;
+
+        function preload() {
+            updateStatus('Loading sprite sheet...');
+
+            // Load the HD sprite sheet (TRANSPARENT VERSION)
+            this.load.spritesheet('nft-char',
+                'assets/sprites/nft-characters-hd/set2-char2/set2-char2-sheet-transparent.png?v=' + Date.now(),
+                {
+                    frameWidth: 64,
+                    frameHeight: 96
+                }
+            );
+        }
+
+        function create() {
+            updateStatus('Creating sprites...');
+
+            // Create player sprite at center
+            player = this.physics.add.sprite(400, 300, 'nft-char', 0);
+            player.setScale(1.5); // Scale up for visibility
+            player.setOrigin(0.5, 0.85); // Anchor feet to ground
+
+            // Create animations
+            // Row 1 (0-3): Right
+            this.anims.create({
+                key: 'walk-right',
+                frames: this.anims.generateFrameNumbers('nft-char', { start: 0, end: 3 }),
+                frameRate: 8,
+                repeat: -1
+            });
+
+            // Row 2 (4-7): Left
+            this.anims.create({
+                key: 'walk-left',
+                frames: this.anims.generateFrameNumbers('nft-char', { start: 4, end: 7 }),
+                frameRate: 8,
+                repeat: -1
+            });
+
+            // Row 3 (8-11): Down
+            this.anims.create({
+                key: 'walk-down',
+                frames: this.anims.generateFrameNumbers('nft-char', { start: 8, end: 11 }),
+                frameRate: 8,
+                repeat: -1
+            });
+
+            // Row 4 (12-15): Up
+            this.anims.create({
+                key: 'walk-up',
+                frames: this.anims.generateFrameNumbers('nft-char', { start: 12, end: 15 }),
+                frameRate: 8,
+                repeat: -1
+            });
+
+            // Idle animations (first frame of each direction)
+            this.anims.create({
+                key: 'idle-right',
+                frames: [ { key: 'nft-char', frame: 0 } ],
+                frameRate: 1
+            });
+
+            this.anims.create({
+                key: 'idle-left',
+                frames: [ { key: 'nft-char', frame: 4 } ],
+                frameRate: 1
+            });
+
+            this.anims.create({
+                key: 'idle-down',
+                frames: [ { key: 'nft-char', frame: 8 } ],
+                frameRate: 1
+            });
+
+            this.anims.create({
+                key: 'idle-up',
+                frames: [ { key: 'nft-char', frame: 12 } ],
+                frameRate: 1
+            });
+
+            // Start with idle down
+            player.play('idle-down');
+
+            // Input
+            cursors = this.input.keyboard.createCursorKeys();
+            wasd = this.input.keyboard.addKeys('W,S,A,D');
+
+            // Status text in game
+            statusText = this.add.text(400, 550, '', {
+                fontSize: '16px',
+                fill: '#fff',
+                backgroundColor: '#000',
+                padding: { x: 10, y: 5 }
+            }).setOrigin(0.5);
+
+            updateStatus('✅ Ready! Use WASD or arrows to move');
+            updateGameStatus('Standing still (down)');
+        }
+
+        function update() {
+            const speed = 200;
+            let moving = false;
+            let direction = '';
+
+            player.setVelocity(0);
+
+            // Handle input
+            if (cursors.left.isDown || wasd.A.isDown) {
+                player.setVelocityX(-speed);
+                player.play('walk-left', true);
+                moving = true;
+                direction = 'left';
+            } else if (cursors.right.isDown || wasd.D.isDown) {
+                player.setVelocityX(speed);
+                player.play('walk-right', true);
+                moving = true;
+                direction = 'right';
+            } else if (cursors.up.isDown || wasd.W.isDown) {
+                player.setVelocityY(-speed);
+                player.play('walk-up', true);
+                moving = true;
+                direction = 'up';
+            } else if (cursors.down.isDown || wasd.S.isDown) {
+                player.setVelocityY(speed);
+                player.play('walk-down', true);
+                moving = true;
+                direction = 'down';
+            }
+
+            // If not moving, show idle based on last direction
+            if (!moving) {
+                const currentAnim = player.anims.currentAnim;
+                if (currentAnim) {
+                    const animKey = currentAnim.key;
+                    if (animKey.startsWith('walk-')) {
+                        const dir = animKey.replace('walk-', '');
+                        player.play(`idle-${dir}`, true);
+                        direction = dir + ' (idle)';
+                    }
+                }
+            }
+
+            if (direction) {
+                updateGameStatus(`Moving: ${direction} | Pos: ${Math.floor(player.x)}, ${Math.floor(player.y)}`);
+            }
+        }
+
+        function updateStatus(msg) {
+            document.getElementById('status').innerHTML = msg;
+        }
+
+        function updateGameStatus(msg) {
+            if (statusText) {
+                statusText.setText(msg);
+            }
+        }
+    </script>
+</body>
+</html>
