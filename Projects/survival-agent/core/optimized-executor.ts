@@ -408,16 +408,16 @@ class OptimizedExecutor {
             console.log(`   ✅ Transaction sent: ${signature}`);
           }
 
-          // Step 7: Confirm with websocket
+          // Step 7: Poll for confirmation (more reliable than confirmTransaction)
           console.log(`   Waiting for confirmation...`);
-
-          const latestBlockhash = await this.connection.getLatestBlockhash();
-
-          await this.connection.confirmTransaction({
-            signature,
-            blockhash: latestBlockhash.blockhash,
-            lastValidBlockHeight: latestBlockhash.lastValidBlockHeight
-          }, 'confirmed');
+          const confirmStart = Date.now();
+          while (Date.now() - confirmStart < 60000) {
+            await new Promise(r => setTimeout(r, 2000));
+            const status = await this.connection.getSignatureStatus(signature);
+            const conf = status?.value?.confirmationStatus;
+            if (conf === 'confirmed' || conf === 'finalized') break;
+            if (status?.value?.err) throw new Error(`Tx failed on-chain: ${JSON.stringify(status.value.err)}`);
+          }
         }
 
         const executionTime = Date.now() - overallStartTime;

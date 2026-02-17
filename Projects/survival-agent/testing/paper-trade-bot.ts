@@ -1,5 +1,5 @@
 /**
- * PAPER TRADING - MASTER COORDINATOR v2.4
+ * PAPER TRADING - MASTER COORDINATOR v2.5
  *
  * VERSION HISTORY:
  * v2.0 - Dual-loop architecture, trailing stops, source tracking
