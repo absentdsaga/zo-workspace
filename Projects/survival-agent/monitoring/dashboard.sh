@@ -1,15 +1,28 @@
 #!/bin/bash
 # Comprehensive trading dashboard
-# Version-independent dashboard that reads from config
+# Usage: bash dashboard.sh           (paper mode)
+#        bash dashboard.sh mainnet   (mainnet mode)
 
-# Load configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/dashboard-config.sh"
+
+# Load config based on mode argument
+if [[ "$1" == "mainnet" ]]; then
+    source "$SCRIPT_DIR/mainnet-dashboard-config.sh"
+else
+    source "$SCRIPT_DIR/dashboard-config.sh"
+fi
 
 print_header() {
-    echo -e "${BOLD}${CYAN}╔════════════════════════════════════════════════════════════════════════╗${NC}"
-    echo -e "${BOLD}${CYAN}║${NC}${WHITE}                  📊 SOLANA TRADING BOT DASHBOARD                     ${CYAN}║${NC}"
-    echo -e "${BOLD}${CYAN}╚════════════════════════════════════════════════════════════════════════╝${NC}"
+    local mode_display="${MODE_LABEL:-PAPER}"
+    if [[ "$mode_display" == "MAINNET" ]]; then
+        echo -e "${BOLD}${RED}╔════════════════════════════════════════════════════════════════════════╗${NC}"
+        echo -e "${BOLD}${RED}║${NC}${WHITE}              🔴 SOLANA TRADING BOT DASHBOARD [MAINNET]              ${RED}║${NC}"
+        echo -e "${BOLD}${RED}╚════════════════════════════════════════════════════════════════════════╝${NC}"
+    else
+        echo -e "${BOLD}${CYAN}╔════════════════════════════════════════════════════════════════════════╗${NC}"
+        echo -e "${BOLD}${CYAN}║${NC}${WHITE}              📊 SOLANA TRADING BOT DASHBOARD [PAPER]                ${CYAN}║${NC}"
+        echo -e "${BOLD}${CYAN}╚════════════════════════════════════════════════════════════════════════╝${NC}"
+    fi
 }
 
 print_section() {

@@ -12,6 +12,8 @@ export STARTING_BALANCE=0.5
 # Display settings
 export REFRESH_INTERVAL=3  # seconds
 export MAX_POSITIONS=7
+export MODE_LABEL="PAPER"
+export MODE_COLOR='\033[0;36m'  # Cyan for paper
 
 # Colors
 export RED='\033[0;31m'

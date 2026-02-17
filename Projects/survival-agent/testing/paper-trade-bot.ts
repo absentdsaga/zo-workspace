@@ -27,6 +27,7 @@ import { SmartMoneyTracker } from '../strategies/smart-money-tracker';
 import { JupiterValidator } from '../core/jupiter-validator';
 import { LAMPORTS_PER_SOL } from '@solana/web3.js';
 import { ShockedAlphaScanner } from '../strategies/shocked-alpha-scanner';
+import { CONFIG } from '../config/paper.config';
 
 interface TradeLog {
   timestamp: number;
@@ -71,29 +72,29 @@ class PaperTradeMasterCoordinatorFixed {
   private rateLimitCount = 0; // Track 429 rate limits
   private lastRateLimitTime = 0; // Last time we hit rate limit
 
-  // Trading thresholds
-  private readonly MAX_CONCURRENT_POSITIONS = 7; // Optimized for API rate limits
-  private readonly MAX_POSITION_SIZE = 0.12; // 12% of balance (user preference)
-  private readonly MIN_BALANCE = 0.05;
+  // Trading thresholds - loaded from config (paper.config.ts or mainnet.config.ts)
+  private readonly MAX_CONCURRENT_POSITIONS = CONFIG.MAX_CONCURRENT_POSITIONS;
+  private readonly MAX_POSITION_SIZE = CONFIG.MAX_POSITION_SIZE;
+  private readonly MIN_BALANCE = CONFIG.MIN_BALANCE;
   private readonly MAX_DRAWDOWN = 0.25;
-  private readonly MIN_SCORE = 40;
-  private readonly MIN_SMART_MONEY_CONFIDENCE = 45; // Raised from 35 based on backtest analysis
-  private readonly AUTO_REFILL_THRESHOLD = 0.03; // Auto-add 1 SOL when balance hits this
-  private readonly AUTO_REFILL_AMOUNT = 1.0; // Add 1 SOL per refill
+  private readonly MIN_SCORE = CONFIG.MIN_SCORE;
+  private readonly MIN_SMART_MONEY_CONFIDENCE = CONFIG.MIN_SMART_MONEY_CONFIDENCE;
+  private readonly AUTO_REFILL_THRESHOLD = CONFIG.AUTO_REFILL_THRESHOLD;
+  private readonly AUTO_REFILL_AMOUNT = CONFIG.AUTO_REFILL_AMOUNT;
 
   // Exit thresholds
-  private readonly TAKE_PROFIT = 1.0; // 100% gain (TP1 - activates trailing stop)
-  private readonly STOP_LOSS = -0.30; // -30% loss (before TP1)
-  private readonly TRAILING_STOP_PERCENT = 0.20; // 20% drop from peak (after TP1)
-  private readonly MAX_HOLD_TIME_MS = 60 * 60 * 1000; // 60 minutes
-  private readonly MIN_SHOCKED_SCORE = 30;
+  private readonly TAKE_PROFIT = CONFIG.TAKE_PROFIT;
+  private readonly STOP_LOSS = CONFIG.STOP_LOSS;
+  private readonly TRAILING_STOP_PERCENT = CONFIG.TRAILING_STOP_PERCENT;
+  private readonly MAX_HOLD_TIME_MS = CONFIG.MAX_HOLD_TIME_MS;
+  private readonly MIN_SHOCKED_SCORE = CONFIG.MIN_SHOCKED_SCORE;
 
-  private readonly SCAN_INTERVAL_MS = 15000; // 15 seconds (find opportunities)
-  private readonly MONITOR_INTERVAL_MS = 5000; // 5 seconds (check ALL positions)
-  private readonly PAPER_TRADE = true;
-  private readonly TRADES_FILE = '/tmp/paper-trades-master.json';
-  private readonly STATE_FILE = '/tmp/paper-trades-state.json';
-  private readonly BLACKLIST_FILE = '/tmp/paper-trades-blacklist.json';
+  private readonly SCAN_INTERVAL_MS = CONFIG.SCAN_INTERVAL_MS;
+  private readonly MONITOR_INTERVAL_MS = CONFIG.MONITOR_INTERVAL_MS;
+  private readonly PAPER_TRADE = CONFIG.PAPER_TRADE;
+  private readonly TRADES_FILE = CONFIG.TRADES_FILE;
+  private readonly STATE_FILE = CONFIG.STATE_FILE;
+  private readonly BLACKLIST_FILE = CONFIG.BLACKLIST_FILE;
 
   constructor(
     rpcUrl: string,
@@ -101,7 +102,7 @@ class PaperTradeMasterCoordinatorFixed {
     jupiterApiKey: string,
     heliusApiKey: string
   ) {
-    this.executor = new OptimizedExecutor(rpcUrl, privateKey, jupiterApiKey, heliusApiKey, true); // Enable paper mode
+    this.executor = new OptimizedExecutor(rpcUrl, privateKey, jupiterApiKey, heliusApiKey, CONFIG.PAPER_TRADE);
     this.scanner = new CombinedScannerWebSocket();
     this.tracker = new SmartMoneyTracker();
     this.validator = new JupiterValidator(jupiterApiKey);
@@ -110,8 +111,10 @@ class PaperTradeMasterCoordinatorFixed {
     this.startingBalance = 0;
     this.currentBalance = 0;
 
-    console.log('🤖 Master Coordinator FIXED initialized');
-    console.log('📄 PAPER TRADING MODE - 1:1 simulation with REAL on-chain validation');
+    console.log(`🤖 Master Coordinator initialized [${CONFIG.MODE_LABEL}]`);
+    console.log(CONFIG.PAPER_TRADE
+      ? '📄 PAPER TRADING MODE - 1:1 simulation with REAL on-chain validation'
+      : '🔴 MAINNET MODE - REAL TRANSACTIONS');
   }
 
   async initialize(): Promise<void> {
@@ -877,8 +880,8 @@ class PaperTradeMasterCoordinatorFixed {
       const content = await Bun.file(this.STATE_FILE).text();
       const state = JSON.parse(content);
 
-      this.startingBalance = state.startingBalance || 0.5;
-      this.currentBalance = state.currentBalance || 0.5;
+      this.startingBalance = state.startingBalance || CONFIG.STARTING_BALANCE;
+      this.currentBalance = state.currentBalance || CONFIG.STARTING_BALANCE;
       this.totalRefills = state.totalRefills || 0;
 
       const closedTrades = this.trades.filter(t => t.status === 'closed_profit' || t.status === 'closed_loss').length;
@@ -890,9 +893,9 @@ class PaperTradeMasterCoordinatorFixed {
       console.log(`   📈 Session P&L: ${totalPnl >= 0 ? '+' : ''}${totalPnl.toFixed(4)} SOL`);
       console.log(`   🔄 Total refills: ${this.totalRefills}\n`);
     } catch {
-      // First run - initialize fresh
-      this.startingBalance = 0.5;
-      this.currentBalance = 0.5;
+      // First run - initialize fresh from config
+      this.startingBalance = CONFIG.STARTING_BALANCE;
+      this.currentBalance = CONFIG.STARTING_BALANCE;
       this.totalRefills = 0;
 
       console.log('🆕 First run - initializing fresh state');
@@ -903,7 +906,7 @@ class PaperTradeMasterCoordinatorFixed {
 
 // Run
 async function main() {
-  console.log('🧪 PAPER TRADING - MASTER COORDINATOR v2.3\n');
+  console.log(`🧪 ${CONFIG.MODE_LABEL} - MASTER COORDINATOR v2.4\n`);
   console.log('🚀 FEATURES:');
   console.log('   ⚡ Dual-loop: Scanner (15s) + Monitor (5s) for fast exits');
   console.log('   💎 Trailing stop: 20% from peak after +100% TP1');
