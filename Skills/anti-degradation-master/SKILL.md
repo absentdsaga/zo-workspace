@@ -1,12 +1,11 @@
 ---
 name: anti-degradation-master
-description: Master orchestration skill that activates the full anti-degradation stack automatically. Prevents the "starts great, ends broken" pattern through coordinated state management, verification, and minimal-change discipline.
+description: "Master orchestration skill that activates the full anti-degradation stack automatically. Prevents the \"starts great, ends broken\" pattern through coordinated state management, verification, and minimal-change discipline."
 compatibility: Created for Zo Computer
 metadata:
   author: dioni.zo.computer
   version: 1.0.0
 ---
-
 # Anti-Degradation Master Protocol
 
 ## What This Skill Does

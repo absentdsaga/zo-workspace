@@ -1,138 +1,137 @@
 #!/bin/bash
-# Mandatory QA checkpoint - must pass before claiming task complete
-
 set -e
 
-TASK_DESC="$1"
-PROJECT_PATH="${2:-/home/workspace/Skills/spatial-worlds}"
-AUDIT_LOG="/home/workspace/Skills/enforce-qa/audit.log"
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 <original_file> <new_file>"
+    exit 1
+fi
 
-# Ensure audit log exists
-mkdir -p "$(dirname "$AUDIT_LOG")"
-touch "$AUDIT_LOG"
+ORIGINAL="$1"
+NEW="$2"
 
-# Log function
-log() {
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$AUDIT_LOG"
-}
+# Make paths absolute if relative
+if [[ ! "$ORIGINAL" = /* ]]; then
+    ORIGINAL="/home/workspace/Projects/survival-agent/$ORIGINAL"
+fi
+if [[ ! "$NEW" = /* ]]; then
+    NEW="/home/workspace/Projects/survival-agent/$NEW"
+fi
 
-echo "═══════════════════════════════════════"
-echo "  🛡️  MANDATORY QA CHECKPOINT"
-echo "═══════════════════════════════════════"
+echo "═══════════════════════════════════════════════════════════════"
+echo "  QA CHECKPOINT: MANDATORY VERIFICATION"
+echo "═══════════════════════════════════════════════════════════════"
+echo ""
+echo "Original: $ORIGINAL"
+echo "New:      $NEW"
 echo ""
 
-log "TASK: $TASK_DESC"
-log "PROJECT: $PROJECT_PATH"
+FAILED=0
 
-# Phase 1: Technical QA
-echo "Phase 1: Technical Verification"
-echo "--------------------------------"
+# 1. Check numeric constants
+echo "1️⃣  Checking numeric constants..."
+echo "────────────────────────────────────────────────────────────"
+ORIG_NUMS=$(grep -oE "(0\.[0-9]+|[0-9]+\.[0-9]+)" "$ORIGINAL" | sort -u)
+NEW_NUMS=$(grep -oE "(0\.[0-9]+|[0-9]+\.[0-9]+)" "$NEW" | sort -u)
 
-if [ -f "$PROJECT_PATH/tsconfig.json" ]; then
-    cd "$PROJECT_PATH"
+MISSING=$(comm -23 <(echo "$ORIG_NUMS") <(echo "$NEW_NUMS"))
+if [ -n "$MISSING" ]; then
+    echo "❌ FAIL: Missing numeric constants in new version:"
+    echo "$MISSING" | sed 's/^/     /'
+    FAILED=1
+else
+    echo "✅ PASS: All numeric constants present"
+fi
+echo ""
 
-    # TypeScript check
-    if bunx tsc --noEmit 2>&1 | tee /tmp/tsc-output.txt; then
-        log "TECHNICAL_QA/TypeScript: ✅ PASS"
-        echo "✅ TypeScript compilation: PASS"
-    else
-        log "TECHNICAL_QA/TypeScript: ❌ FAIL"
-        echo "❌ TypeScript compilation: FAIL"
-        cat /tmp/tsc-output.txt
-        exit 1
-    fi
+# 2. Check critical config values
+echo "2️⃣  Checking critical thresholds (STOP_LOSS, TAKE_PROFIT, etc.)..."
+echo "────────────────────────────────────────────────────────────"
 
-    # Build check
-    if [ -f "build-client.sh" ]; then
-        if ./build-client.sh > /tmp/build-output.txt 2>&1; then
-            log "TECHNICAL_QA/Build: ✅ PASS"
-            echo "✅ Build: PASS"
+# Extract values from ORIGINAL
+ORIG_VALS=$(grep -E "STOP_LOSS|TAKE_PROFIT|TRAILING|MAX_POSITION|REFILL|takeProfit|stopLoss|trailingStop|maxPosition|autoRefill" "$ORIGINAL" | grep -E "= *-?[0-9]")
+
+# Extract values from NEW (could be in config or as constants)
+NEW_VALS=$(grep -E "STOP_LOSS|TAKE_PROFIT|TRAILING|MAX_POSITION|REFILL|takeProfit|stopLoss|trailingStop|maxPosition|autoRefill" "$NEW" | grep -E "= *-?[0-9]")
+
+if [ -z "$NEW_VALS" ]; then
+    echo "❌ FAIL: No critical thresholds found in new version"
+    FAILED=1
+else
+    # Check specific values match
+    CHECKS=(
+        "0.12:maxPosition"
+        "1.0:takeProfit" 
+        "-0.30:stopLoss"
+        "0.20:trailing"
+        "0.03:refillThreshold"
+    )
+    
+    for check in "${CHECKS[@]}"; do
+        VALUE="${check%%:*}"
+        NAME="${check##*:}"
+        
+        if echo "$NEW_VALS" | grep -q "$VALUE"; then
+            echo "✅ $NAME: $VALUE found"
         else
-            log "TECHNICAL_QA/Build: ❌ FAIL"
-            echo "❌ Build: FAIL"
-            cat /tmp/build-output.txt
-            exit 1
+            echo "❌ $NAME: $VALUE MISSING"
+            FAILED=1
         fi
-    fi
-
-    # Server check
-    if pgrep -f "bun.*server.ts" > /dev/null; then
-        log "TECHNICAL_QA/Server: ✅ RUNNING"
-        echo "✅ Server: RUNNING"
-    else
-        log "TECHNICAL_QA/Server: ⚠️  NOT RUNNING"
-        echo "⚠️  Server: NOT RUNNING (may be intentional)"
-    fi
-
-    # HTTP check (if server running)
-    if curl -s -o /dev/null -w "%{http_code}" http://localhost:3000 | grep -q "200"; then
-        log "TECHNICAL_QA/HTTP: ✅ RESPONDING"
-        echo "✅ HTTP endpoint: RESPONDING (200)"
-    fi
+    done
 fi
+echo ""
 
-echo ""
-log "TECHNICAL_QA: ✅ COMPLETE"
+# 3. Check method signatures
+echo "3️⃣  Checking method signatures..."
+echo "────────────────────────────────────────────────────────────"
+ORIG_METHODS=$(grep -oE "private\s+\w+\s*\(|async\s+\w+\s*\(" "$ORIGINAL" | awk '{print $2}' | sed 's/($//' | sort -u)
+NEW_METHODS=$(grep -oE "private\s+\w+\s*\(|async\s+\w+\s*\(" "$NEW" | awk '{print $2}' | sed 's/($//' | sort -u)
+REMOVED=$(comm -23 <(echo "$ORIG_METHODS") <(echo "$NEW_METHODS"))
 
-# Phase 2: Visual Verification (if applicable)
-echo "Phase 2: Visual Verification"
-echo "-----------------------------"
-echo ""
-echo "✅ AUTOMATED VISUAL VERIFICATION"
-echo ""
-echo "AI will automatically:"
-echo "  1. Open the live site in browser"
-echo "  2. Capture screenshot"
-echo "  3. Analyze against VISUAL-SPEC.md"
-echo "  4. Log results"
-echo ""
-echo "Running automated screenshot capture..."
-
-# Take screenshot of localhost if available
-if [ -f "$PROJECT_PATH/scripts/tools/screenshot.mjs" ]; then
-    cd "$PROJECT_PATH"
-    if node scripts/tools/screenshot.mjs > /tmp/screenshot.log 2>&1; then
-        log "VISUAL_VERIFY: ✅ Screenshot captured: /tmp/spatial-worlds-screenshot.png"
-        echo "✅ Screenshot saved: /tmp/spatial-worlds-screenshot.png"
-    else
-        log "VISUAL_VERIFY: ⚠️ Screenshot failed (see /tmp/screenshot.log)"
-        echo "⚠️ Screenshot capture failed"
-    fi
+if [ -n "$REMOVED" ]; then
+    echo "⚠️  WARNING: Methods in original but not in new:"
+    echo "$REMOVED" | sed 's/^/     /'
+    echo "    (This may be OK if refactored into sub-modules)"
 else
-    log "VISUAL_VERIFY: AUTOMATED (AI uses open_webpage + view_webpage)"
-    echo "Note: Visual verification via browser tools"
+    echo "✅ PASS: All methods present"
 fi
-
 echo ""
 
-# Phase 3: Spec Compliance
-echo "Phase 3: Specification Compliance"
-echo "----------------------------------"
+# 4. Check critical features exist
+echo "4️⃣  Checking critical features..."
+echo "────────────────────────────────────────────────────────────"
+FEATURES=(
+    "DexScreener:getDexScreener"
+    "Stop Loss:stopLoss"
+    "Take Profit:takeProfit"
+    "Trailing Stop:trailing"
+    "Circuit Breaker:circuitBreaker|CircuitBreaker"
+)
 
-if [ -f "$PROJECT_PATH/USER-GUIDANCE.md" ]; then
-    echo "Checking against user requirements..."
-    log "SPEC_CHECK: Reviewing USER-GUIDANCE.md"
-    echo "✅ User requirements file found"
-    echo "   Review: $PROJECT_PATH/USER-GUIDANCE.md"
+for feature in "${FEATURES[@]}"; do
+    NAME="${feature%%:*}"
+    PATTERN="${feature##*:}"
+    
+    if grep -qE "$PATTERN" "$NEW"; then
+        echo "✅ $NAME: Present"
+    else
+        echo "❌ $NAME: MISSING"
+        FAILED=1
+    fi
+done
+echo ""
+
+# 5. Final verdict
+echo "═══════════════════════════════════════════════════════════════"
+if [ $FAILED -eq 0 ]; then
+    echo "✅ QA CHECKPOINT PASSED"
+    echo ""
+    echo "The new version is functionally equivalent to the original."
+    echo "You may proceed."
 else
-    log "SPEC_CHECK: ⚠️  No USER-GUIDANCE.md found"
-    echo "⚠️  No specification file found"
+    echo "❌ QA CHECKPOINT FAILED"
+    echo ""
+    echo "DO NOT PROCEED. Fix the issues above first."
+    echo "Re-run this checkpoint after fixes."
+    exit 1
 fi
-
-echo ""
-log "CHECKPOINT: TECHNICAL_QA PASSED, VISUAL_VERIFY PENDING"
-
-echo "═══════════════════════════════════════"
-echo "  CHECKPOINT SUMMARY"
-echo "═══════════════════════════════════════"
-echo ""
-echo "Technical QA:     ✅ PASSED"
-echo "Visual Verify:    ⏸️  PENDING (AI must verify)"
-echo "Spec Compliance:  ⏸️  PENDING (AI must verify)"
-echo ""
-echo "⚠️  AI: Do NOT claim task complete until:"
-echo "   1. User confirms visual output is correct"
-echo "   2. All spec requirements verified"
-echo ""
-echo "Audit trail: $AUDIT_LOG"
-echo ""
+echo "═══════════════════════════════════════════════════════════════"

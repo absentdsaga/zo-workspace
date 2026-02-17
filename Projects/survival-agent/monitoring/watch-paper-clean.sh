@@ -16,4 +16,4 @@ echo ""
 echo "======================================"
 echo ""
 
-tail -f /tmp/paper-trade-final.log | grep -a --line-buffered -E "(^Loop|opportunities|Analyzing top|Score:|Confidence:|EXECUTING TRADE|SIMULATED|SKIPPED|Balance:|P&L:|Win rate|Sleeping)"
+tail -f /tmp/paper-trade.log | grep -a --line-buffered -E "(^Loop|opportunities|Analyzing top|Score:|Confidence:|EXECUTING TRADE|SIMULATED|SKIPPED|Balance:|P&L:|Win rate|Sleeping)"

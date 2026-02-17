@@ -32,7 +32,7 @@ interface MemeToken {
 class MemeScanner {
   private readonly MIN_AGE_MINUTES = 0;
   private readonly MAX_AGE_MINUTES = 1440; // 24 hours
-  private readonly MIN_LIQUIDITY = 2000; // $2k minimum (more realistic)
+  private readonly MIN_LIQUIDITY = 10000; // $10k minimum (raised from $2k - filters out 78% loss rate rugs)
   private readonly MIN_VOLUME_24H = 1000; // $1k minimum volume in 24h
 
   constructor() {
@@ -112,21 +112,23 @@ class MemeScanner {
           ageMinutes = ageMs / 1000 / 60;
         }
 
-        // Filter: Skip very old tokens (>24h) if age is known
-        if (ageMinutes < 999 && ageMinutes > 1440) {
+        // Filter: NO AGE FILTERING - replicate Archive Master exactly
+        // Archive Master (626% profit) had no age filtering and included all tokens
+        // (The old broken code never filtered anything)
+
+        // Filter: Minimum liquidity (raised to filter out rugs)
+        const liquidityUSD = pair.liquidity?.usd || 0;
+        if (liquidityUSD < this.MIN_LIQUIDITY) {
+          console.log(`   🚫 LOW_LIQ_REJECT: ${pair.baseToken?.symbol || 'unknown'} | Liq: $${liquidityUSD.toFixed(0)} | MC: $${(pair.marketCap || 0).toFixed(0)} | Addr: ${pair.baseToken?.address}`);
           continue;
         }
-
-        // Filter: Minimum liquidity (lower threshold)
-        const liquidityUSD = pair.liquidity?.usd || 0;
-        if (liquidityUSD < 2000) continue; // $2k minimum (was $5k)
 
         // Get volume data
         const volume24h = pair.volume?.h24 || 0;
         const volume1h = pair.volume?.h1 || 0;
 
-        // Filter: Minimum volume (much more lenient)
-        if (volume24h < 1000) continue; // $1k/day minimum
+        // Filter: Minimum volume (raised to target established tokens)
+        if (volume24h < this.MIN_VOLUME_24H) continue;
 
         // Build token object
         const token: MemeToken = {

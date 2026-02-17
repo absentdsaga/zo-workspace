@@ -130,30 +130,37 @@ export class CombinedScannerWebSocket {
    */
   private async scanPumpFunCache(): Promise<CombinedOpportunity[]> {
     this.cleanCache();
-    
+
     const now = Date.now();
     const opportunities: CombinedOpportunity[] = [];
 
+    // DISABLED: Only want bonded pump.fun tokens (which appear in DexScreener)
+    // Unbonded pump.fun tokens are too risky and have fake data
+    console.log(`   🔥 Pump.fun: Disabled (only trading bonded tokens via DexScreener)`);
+    return opportunities;
+
+    /* ORIGINAL CODE - DISABLED
     for (const [mint, data] of this.pumpfunTokens.entries()) {
       const token = data.token;
-      const ageMs = now - token.timestamp;
+      // Use data.timestamp (when we cached it) since token.timestamp is undefined from PumpPortal API
+      const ageMs = now - data.timestamp;
       const ageMinutes = ageMs / 60000;
-      
+
       // Only include tokens 0-60 minutes old
       if (ageMinutes > 60) continue;
-      
+
       // Score the token
       const score = this.scorePumpFunToken(token, ageMinutes);
-      
+
       // Only include if score >= 30
       if (score < 30) continue;
       
       const signals: string[] = [];
-      
+
       if (ageMinutes <= 5) signals.push('Ultra fresh (<5 min)');
       if (token.initialBuy >= 5) signals.push(`${token.initialBuy.toFixed(1)} SOL initial buy`);
       if (token.marketCapSol >= 50) signals.push(`${token.marketCapSol.toFixed(0)} SOL mcap`);
-      
+
       opportunities.push({
         address: mint,
         symbol: token.symbol,
@@ -167,8 +174,10 @@ export class CombinedScannerWebSocket {
         bondingCurveKey: token.bondingCurveKey
       });
     }
+    */
 
-    return opportunities;
+    // console.log(`   🔥 Pump.fun: Found ${opportunities.length} opportunities`);
+    // return opportunities;
   }
 
   /**
@@ -210,6 +219,8 @@ export class CombinedScannerWebSocket {
   private async scanDexScreener(): Promise<CombinedOpportunity[]> {
     try {
       const opportunities = await this.dexScanner.scan();
+      const scores = opportunities.map(o => o.score).sort((a, b) => b - a);
+      console.log(`   📊 DexScreener: Found ${opportunities.length} opportunities, top scores: [${scores.slice(0, 5).join(', ')}]`);
 
       return opportunities.map(opp => ({
         address: opp.address,

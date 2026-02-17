@@ -1,14 +1,29 @@
-import { Connection, Keypair, VersionedTransaction, LAMPORTS_PER_SOL, ComputeBudgetProgram } from "@solana/web3.js";
+import { Connection, Keypair, VersionedTransaction, LAMPORTS_PER_SOL, ComputeBudgetProgram, Transaction, SystemProgram, PublicKey } from "@solana/web3.js";
 import bs58 from "bs58";
 
 /**
  * OPTIMIZED TRADE EXECUTOR
- * Uses Helius speed optimizations for fastest possible execution:
+ * Uses Helius + Jito speed optimizations for fastest possible execution:
  * 1. Priority Fee API - Get optimal fees based on current network
- * 2. sendTransaction with skipPreflight - Reduce latency
- * 3. Staked connections - Near 100% delivery, minimal latency
- * 4. Dynamic compute units - Only pay for what you use
+ * 2. Jito Bundles - MEV protection + guaranteed inclusion
+ * 3. sendTransaction with skipPreflight - Reduce latency
+ * 4. Staked connections - Near 100% delivery, minimal latency
+ * 5. Dynamic compute units - Only pay for what you use
  */
+
+// Jito tip accounts (rotated by block engine)
+const JITO_TIP_ACCOUNTS = [
+  'Cw8CFyM9FkoMi7K7Crf6HNQqf4uEMzpKw6QNghXLvLkY',
+  'DttWaMuVvTiduZRnguLF7jNxTgiMBZ1hyAumKUiL2KRL',
+  'ADaUMid9yfUytqMBgopwjb2DTLSokTSzL1zt6iGPaS49',
+  'ADuUkR4vqLUMWXxW9gh6D6L8pMSawimctcNZ5pGwDcEt',
+  'DfXygSm4jCyNCybVYYK6DwvWqjKee8pbDmJGcLWNDXjh',
+  '96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU5',
+  '3AVi9Tg9Uo68tJfuvoKvqKNWKkC5wPdSSdeBnizKZ6jT',
+  'HFqU5x63VTqvQss8hp11i4wVV8bD44PvwucfZ2bU7gRe'
+];
+
+const JITO_BLOCK_ENGINE_URL = 'https://mainnet.block-engine.jito.wtf/api/v1';
 
 interface TradeParams {
   inputMint: string;
@@ -25,6 +40,10 @@ interface TradeResult {
   executionTime: number;
   priorityFeeUsed?: number;
   computeUnitsUsed?: number;
+  retryCount?: number;
+  totalFeesSpent?: number;
+  jitoTipPaid?: number; // SOL paid as Jito tip
+  jitoEnabled?: boolean;
 }
 
 class OptimizedExecutor {
@@ -33,6 +52,8 @@ class OptimizedExecutor {
   private jupiterApiKey: string;
   private heliusApiKey: string;
   private baseUrl = 'https://api.jup.ag';
+  private paperMode: boolean;
+  private useJito: boolean;
 
   // Priority level by strategy
   private priorityLevels = {
@@ -43,7 +64,20 @@ class OptimizedExecutor {
     default: 'Medium'
   };
 
-  constructor(rpcUrl: string, privateKey: string, jupiterApiKey: string, heliusApiKey: string) {
+  // REAL Jito tip percentiles (from Jito API, updated Feb 14 2026)
+  // Source: https://bundles.jito.wtf/api/v1/bundles/tip_floor
+  private jitoTipPercentiles = {
+    p25: 0.0000050320,   // $0.0004/trade - cheap, may fail in competition
+    p50: 0.0000155520,   // $0.0014/trade - median
+    p75: 0.0001000000,   // $0.0088/trade - competitive (START HERE)
+    p95: 0.0010000000,   // $0.0881/trade - very competitive
+    p99: 0.0018192000,   // $0.1602/trade - extreme competition
+  };
+
+  // Default: Start at 75th percentile, adjust based on mainnet success rate
+  private jitoTipLevel: 'p25' | 'p50' | 'p75' | 'p95' | 'p99' = 'p75';
+
+  constructor(rpcUrl: string, privateKey: string, jupiterApiKey: string, heliusApiKey: string, paperMode: boolean = false, useJito: boolean = true) {
     // Use Helius with optimized settings
     this.connection = new Connection(rpcUrl, {
       commitment: 'confirmed',
@@ -54,10 +88,18 @@ class OptimizedExecutor {
     this.wallet = Keypair.fromSecretKey(bs58.decode(privateKey));
     this.jupiterApiKey = jupiterApiKey;
     this.heliusApiKey = heliusApiKey;
+    this.paperMode = paperMode;
+    this.useJito = useJito;
 
     console.log('⚡ Optimized Trade Executor initialized');
     console.log(`👛 Wallet: ${this.wallet.publicKey.toBase58()}`);
     console.log(`🚀 Using Helius optimizations`);
+    if (useJito) {
+      console.log('📦 Jito bundles: ENABLED (MEV protection + faster inclusion)');
+    }
+    if (paperMode) {
+      console.log('📄 PAPER MODE: Trades will be simulated (no actual transactions)');
+    }
   }
 
   /**
@@ -162,102 +204,345 @@ class OptimizedExecutor {
   }
 
   /**
-   * Execute optimized trade
+   * Select random Jito tip account
+   */
+  private selectJitoTipAccount(): PublicKey {
+    const randomIndex = Math.floor(Math.random() * JITO_TIP_ACCOUNTS.length);
+    return new PublicKey(JITO_TIP_ACCOUNTS[randomIndex]);
+  }
+
+  /**
+   * Build Jito bundle with swap + tip transaction
+   */
+  private async buildJitoBundle(
+    swapTransaction: VersionedTransaction,
+    tipAmount: number
+  ): Promise<string[]> {
+    const tipAccount = this.selectJitoTipAccount();
+    const tipLamports = Math.floor(tipAmount * LAMPORTS_PER_SOL);
+
+    // Create tip transaction
+    const tipTx = new Transaction();
+    tipTx.add(
+      SystemProgram.transfer({
+        fromPubkey: this.wallet.publicKey,
+        toPubkey: tipAccount,
+        lamports: tipLamports
+      })
+    );
+
+    // Get recent blockhash
+    const { blockhash } = await this.connection.getLatestBlockhash('finalized');
+
+    tipTx.recentBlockhash = blockhash;
+    tipTx.feePayer = this.wallet.publicKey;
+    tipTx.sign(this.wallet);
+
+    // Build bundle: [swap tx, tip tx]
+    const bundle = [
+      Buffer.from(swapTransaction.serialize()).toString('base64'),
+      Buffer.from(tipTx.serialize()).toString('base64')
+    ];
+
+    console.log(`   📦 Jito bundle built: 2 transactions`);
+    console.log(`   💰 Tip: ${tipAmount.toFixed(6)} SOL to ${tipAccount.toBase58().substring(0, 8)}...`);
+
+    return bundle;
+  }
+
+  /**
+   * Send Jito bundle
+   */
+  private async sendJitoBundle(bundle: string[]): Promise<string> {
+    if (this.paperMode) {
+      // Paper mode: simulate bundle send
+      console.log(`   🧪 PAPER: Simulating Jito bundle send...`);
+      const latency = 200 + Math.random() * 300;
+      await new Promise(resolve => setTimeout(resolve, latency));
+      return 'PAPER_JITO_' + Date.now() + '_' + Math.random().toString(36).substring(7);
+    }
+
+    // Real mode: send to Jito block engine
+    const response = await fetch(`${JITO_BLOCK_ENGINE_URL}/bundles`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'sendBundle',
+        params: [bundle]
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Jito bundle submission failed: ${response.status}`);
+    }
+
+    const result = await response.json();
+
+    if (result.error) {
+      throw new Error(`Jito error: ${result.error.message}`);
+    }
+
+    // Return the swap transaction signature (first tx in bundle)
+    const swapTxBuf = Buffer.from(bundle[0], 'base64');
+    const swapTx = VersionedTransaction.deserialize(swapTxBuf);
+    return bs58.encode(swapTx.signatures[0]);
+  }
+
+  /**
+   * Execute optimized trade with retry logic
    */
   async executeTrade(params: TradeParams): Promise<TradeResult> {
-    const startTime = Date.now();
+    const MAX_RETRIES = 3;
+    const RETRY_DELAYS = [0, 3000, 8000]; // ms: 0s, 3s, 8s
+    const RETRY_FEE_MULTIPLIERS = [1, 2, 5, 10]; // 1x, 2x, 5x, 10x
+    
+    const overallStartTime = Date.now();
     const strategy = params.strategy || 'default';
+    let totalFeesSpent = 0;
 
-    console.log(`\n⚡ Executing OPTIMIZED ${strategy} trade`);
+    console.log(`\n⚡ Executing ${this.paperMode ? 'PAPER' : 'REAL'} ${strategy} trade with retry logic`);
     console.log(`   Priority Level: ${this.priorityLevels[strategy]}`);
+    console.log(`   Max retries: ${MAX_RETRIES}`);
+    if (this.paperMode) {
+      console.log(`   📄 Paper mode: Will validate routing but not send transaction`);
+    }
 
-    try {
-      // Step 1: Get quote
-      console.log(`1️⃣  Getting quote...`);
-      const quote = await this.getQuote(params);
-      console.log(`✅ Quote: ${quote.outAmount} out | ${quote.priceImpactPct}% impact`);
-
-      // Step 2: Get swap transaction
-      console.log(`2️⃣  Getting swap transaction...`);
-      const swapData = await this.getSwapTransaction(quote, true);
-
-      // Step 3: Deserialize transaction
-      console.log(`3️⃣  Preparing transaction...`);
-      const swapTransactionBuf = Buffer.from(swapData.swapTransaction, 'base64');
-      let transaction = VersionedTransaction.deserialize(swapTransactionBuf);
-
-      // Step 4: Get optimal priority fee from Helius
-      console.log(`4️⃣  Getting optimal priority fee from Helius...`);
-      const serializedForEstimate = Buffer.from(transaction.serialize()).toString('base64');
-      const optimalFee = await this.getOptimalPriorityFee(
-        serializedForEstimate,
-        this.priorityLevels[strategy]
-      );
-
-      console.log(`✅ Optimal priority fee: ${optimalFee} micro-lamports`);
-
-      // Step 5: Add priority fee instruction if not already present
-      // (Jupiter v1 may already include it, but we ensure it's optimal)
-
-      // Step 6: Sign transaction
-      console.log(`5️⃣  Signing transaction...`);
-      transaction.sign([this.wallet]);
-
-      // Step 7: Send with Helius optimized settings
-      console.log(`6️⃣  Broadcasting (skipPreflight=true, staked connection)...`);
-
-      const signature = await this.connection.sendRawTransaction(
-        transaction.serialize(),
-        {
-          skipPreflight: true,  // Helius optimization: reduce latency
-          maxRetries: 0         // We'll handle retries ourselves
-        }
-      );
-
-      console.log(`✅ Transaction sent: ${signature}`);
-
-      // Step 8: Confirm with websocket (faster than polling)
-      console.log(`7️⃣  Waiting for confirmation (websocket)...`);
-
-      const latestBlockhash = await this.connection.getLatestBlockhash();
-
-      await this.connection.confirmTransaction({
-        signature,
-        blockhash: latestBlockhash.blockhash,
-        lastValidBlockHeight: latestBlockhash.lastValidBlockHeight
-      }, 'confirmed');
-
-      const executionTime = Date.now() - startTime;
-
-      console.log(`\n⚡ OPTIMIZED TRADE COMPLETE in ${executionTime}ms`);
-      console.log(`📝 Signature: ${signature}`);
-      console.log(`🚀 Priority fee used: ${optimalFee} µL`);
-
-      return {
-        success: true,
-        signature,
-        executionTime,
-        priorityFeeUsed: optimalFee
-      };
-
-    } catch (error: any) {
-      const executionTime = Date.now() - startTime;
-
-      console.log(`\n❌ Trade failed after ${executionTime}ms`);
-      console.log(`   Error: ${error.message}`);
-
-      // Implement retry logic for failed transactions
-      if (executionTime < 30000) { // Only retry if < 30s
-        console.log(`   🔄 Retrying...`);
-        // Could implement exponential backoff retry here
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+      const attemptStartTime = Date.now();
+      const feeMultiplier = RETRY_FEE_MULTIPLIERS[attempt];
+      
+      if (attempt > 0) {
+        const delay = RETRY_DELAYS[attempt - 1];
+        console.log(`\n🔄 RETRY #${attempt} (${feeMultiplier}x priority fee)`);
+        console.log(`   Waiting ${delay / 1000}s before retry...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      } else {
+        console.log(`\n1️⃣  Attempt #1`);
       }
 
-      return {
-        success: false,
-        error: error.message,
-        executionTime
-      };
+      try {
+        // Step 1: Get quote
+        console.log(`   Getting quote...`);
+        const quote = await this.getQuote(params);
+        console.log(`   ✅ Quote: ${quote.outAmount} out | ${quote.priceImpactPct}% impact`);
+
+        // Step 2: Get swap transaction
+        console.log(`   Getting swap transaction...`);
+        const swapData = await this.getSwapTransaction(quote, true);
+
+        // Step 3: Deserialize transaction
+        console.log(`   Preparing transaction...`);
+        const swapTransactionBuf = Buffer.from(swapData.swapTransaction, 'base64');
+        let transaction = VersionedTransaction.deserialize(swapTransactionBuf);
+
+        // Step 4: Get optimal priority fee from Helius
+        console.log(`   Getting optimal priority fee from Helius...`);
+        const serializedForEstimate = Buffer.from(transaction.serialize()).toString('base64');
+        const baseFee = await this.getOptimalPriorityFee(
+          serializedForEstimate,
+          this.priorityLevels[strategy]
+        );
+
+        // Apply retry multiplier
+        const optimalFee = baseFee * feeMultiplier;
+        totalFeesSpent += optimalFee;
+
+        console.log(`   ✅ Priority fee: ${baseFee} μL × ${feeMultiplier} = ${optimalFee} μL`);
+
+        let signature: string;
+        const jitoTip = this.useJito ? this.jitoTipPercentiles[this.jitoTipLevel] : 0;
+
+        if (this.paperMode) {
+          // PAPER MODE: Simulate transaction without actually sending
+          if (this.useJito) {
+            console.log(`   📄 Paper mode: Simulating Jito bundle send...`);
+            console.log(`   💡 Jito tip (${this.jitoTipLevel}): ${jitoTip.toFixed(8)} SOL (~$${(jitoTip * 88).toFixed(4)})`);
+          } else {
+            console.log(`   📄 Paper mode: Simulating transaction send...`);
+          }
+
+          // Simulate network latency (200-500ms for direct, 150-300ms for Jito)
+          const latency = this.useJito ? 150 + Math.random() * 150 : 200 + Math.random() * 300;
+          await new Promise(resolve => setTimeout(resolve, latency));
+
+          signature = 'PAPER_' + Date.now() + '_' + Math.random().toString(36).substring(7);
+          console.log(`   ✅ Paper transaction simulated: ${signature}`);
+          console.log(`   📊 Simulated latency: ${latency.toFixed(0)}ms`);
+
+          // Track Jito tip in paper mode
+          if (this.useJito) {
+            totalFeesSpent += jitoTip * LAMPORTS_PER_SOL;
+          }
+
+        } else {
+          // REAL MODE: Execute actual transaction
+          // Step 5: Sign transaction
+          console.log(`   Signing transaction...`);
+          transaction.sign([this.wallet]);
+
+          if (this.useJito) {
+            // Step 6a: Send via Jito bundle for MEV protection
+            console.log(`   Building Jito bundle...`);
+            console.log(`   💡 Jito tip: ${jitoTip} SOL (~$${(jitoTip * 100).toFixed(2)})`);
+
+            const bundle = await this.buildJitoBundle(transaction, jitoTip);
+            signature = await this.sendJitoBundle(bundle);
+            totalFeesSpent += jitoTip * LAMPORTS_PER_SOL;
+
+            console.log(`   ✅ Jito bundle sent: ${signature}`);
+
+          } else {
+            // Step 6b: Send with Helius optimized settings (no MEV protection)
+            console.log(`   Broadcasting (skipPreflight=true)...`);
+
+            signature = await this.connection.sendRawTransaction(
+              transaction.serialize(),
+              {
+                skipPreflight: true,
+                maxRetries: 0
+              }
+            );
+
+            console.log(`   ✅ Transaction sent: ${signature}`);
+          }
+
+          // Step 7: Confirm with websocket
+          console.log(`   Waiting for confirmation...`);
+
+          const latestBlockhash = await this.connection.getLatestBlockhash();
+
+          await this.connection.confirmTransaction({
+            signature,
+            blockhash: latestBlockhash.blockhash,
+            lastValidBlockHeight: latestBlockhash.lastValidBlockHeight
+          }, 'confirmed');
+        }
+
+        const executionTime = Date.now() - overallStartTime;
+
+        console.log(`\n✅ TRADE COMPLETE in ${executionTime}ms`);
+        console.log(`📝 Signature: ${signature}`);
+        console.log(`🚀 Priority fee: ${optimalFee} μL`);
+        if (attempt > 0) {
+          console.log(`🔄 Succeeded on attempt ${attempt + 1}/${MAX_RETRIES + 1}`);
+          console.log(`💰 Total fees spent: ${totalFeesSpent} μL`);
+        }
+
+        return {
+          success: true,
+          signature,
+          executionTime,
+          priorityFeeUsed: optimalFee,
+          retryCount: attempt,
+          totalFeesSpent,
+          jitoTipPaid: this.useJito ? jitoTip : undefined,
+          jitoEnabled: this.useJito
+        };
+
+      } catch (error: any) {
+        const attemptTime = Date.now() - attemptStartTime;
+        const errorMsg = error.message || String(error);
+
+        console.log(`\n❌ Attempt ${attempt + 1} failed after ${attemptTime}ms`);
+        console.log(`   Error: ${errorMsg}`);
+
+        // Check if error is retryable
+        const isRetryable = this.isRetryableError(errorMsg);
+        const hasRetriesLeft = attempt < MAX_RETRIES;
+
+        if (!isRetryable) {
+          console.log(`   ⛔ Error is NOT retryable - aborting`);
+          return {
+            success: false,
+            error: `Non-retryable error: ${errorMsg}`,
+            executionTime: Date.now() - overallStartTime,
+            retryCount: attempt,
+            totalFeesSpent
+          };
+        }
+
+        if (!hasRetriesLeft) {
+          console.log(`   ⛔ Max retries exceeded - aborting`);
+          return {
+            success: false,
+            error: `Max retries exceeded: ${errorMsg}`,
+            executionTime: Date.now() - overallStartTime,
+            retryCount: attempt,
+            totalFeesSpent
+          };
+        }
+
+        console.log(`   ✅ Error is retryable - will retry with ${RETRY_FEE_MULTIPLIERS[attempt + 1]}x fee`);
+      }
     }
+
+    // Should never reach here, but handle it
+    return {
+      success: false,
+      error: 'Unexpected error: exhausted retries',
+      executionTime: Date.now() - overallStartTime,
+      retryCount: MAX_RETRIES,
+      totalFeesSpent
+    };
+  }
+
+  /**
+   * Determine if an error is retryable
+   */
+  private isRetryableError(errorMsg: string): boolean {
+    const errorLower = errorMsg.toLowerCase();
+
+    // RETRYABLE errors (network, timing, priority)
+    const retryablePatterns = [
+      'timeout',
+      'timed out',
+      'blockhash not found',
+      'block height exceeded',
+      'transaction expired',
+      'transaction was not confirmed',
+      'rpc',
+      'network',
+      'connection',
+      'socket',
+      '429', // rate limit
+      '503', // service unavailable
+      '502', // bad gateway
+      'ECONNRESET',
+      'ETIMEDOUT'
+    ];
+
+    // NON-RETRYABLE errors (logic, slippage, liquidity)
+    const nonRetryablePatterns = [
+      'slippage',
+      'insufficient',
+      'liquidity',
+      'invalid signature',
+      'invalid transaction',
+      'instruction error',
+      'custom program error',
+      'account not found', // Usually means token doesn't exist
+      'invalid account', // Usually means bad token address
+    ];
+
+    // Check non-retryable first (takes priority)
+    for (const pattern of nonRetryablePatterns) {
+      if (errorLower.includes(pattern)) {
+        return false;
+      }
+    }
+
+    // Check retryable patterns
+    for (const pattern of retryablePatterns) {
+      if (errorLower.includes(pattern)) {
+        return true;
+      }
+    }
+
+    // Default: retry on unknown errors (cautious approach)
+    // Better to waste a retry than miss a recoverable error
+    return true;
   }
 
   /**
@@ -345,6 +630,28 @@ class OptimizedExecutor {
       balance,
       issues,
       optimizationsEnabled
+    };
+  }
+
+  /**
+   * Update Jito tip level (for testing different competition levels)
+   */
+  setJitoTipLevel(level: 'p25' | 'p50' | 'p75' | 'p95' | 'p99'): void {
+    this.jitoTipLevel = level;
+    const tip = this.jitoTipPercentiles[level];
+    console.log(`🎯 Jito tip level updated to ${level}: ${tip.toFixed(8)} SOL (~$${(tip * 88).toFixed(4)}/trade)`);
+  }
+
+  /**
+   * Get current Jito tip configuration
+   */
+  getJitoTipInfo(): { level: string; tipSOL: number; tipUSD: number; monthlyUSD: number } {
+    const tip = this.jitoTipPercentiles[this.jitoTipLevel];
+    return {
+      level: this.jitoTipLevel,
+      tipSOL: tip,
+      tipUSD: tip * 88, // Current SOL price
+      monthlyUSD: tip * 88 * 5500 // Estimated monthly cost at 5500 trades
     };
   }
 }

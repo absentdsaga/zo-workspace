@@ -96,7 +96,7 @@ export class JupiterValidator {
         `inputMint=${SOL_MINT}&` +
         `outputMint=${tokenAddress}&` +
         `amount=${amountInLamports}&` +
-        `slippageBps=300`;
+        `slippageBps=1500`; // 15% to match execution slippage
 
       const headers: Record<string, string> = {};
       if (this.jupiterApiKey) {
@@ -193,7 +193,7 @@ export class JupiterValidator {
         `inputMint=${tokenAddress}&` +
         `outputMint=${SOL_MINT}&` +
         `amount=${tokensToSell}&` +
-        `slippageBps=300`;
+        `slippageBps=1500`; // 15% to match execution slippage
 
       const headers: Record<string, string> = {};
       if (this.jupiterApiKey) {

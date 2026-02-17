@@ -1,12 +1,11 @@
 ---
 name: regression-detector
-description: Automated regression detection that catches when "working" features break during iteration. Takes baseline snapshots and compares against them after each change.
+description: "Automated regression detection that catches when \"working\" features break during iteration. Takes baseline snapshots and compares against them after each change."
 compatibility: Created for Zo Computer
 metadata:
   author: dioni.zo.computer
   version: 1.0.0
 ---
-
 # Regression Detector - Catch Breaks Early
 
 ## Purpose
