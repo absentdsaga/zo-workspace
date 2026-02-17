@@ -7,8 +7,8 @@ export LOG_FILE="/tmp/mainnet-trade.log"
 export STATS_FILE="/tmp/mainnet-trades-master.json"
 
 # Trading parameters (match mainnet.config.ts)
-export STARTING_BALANCE=0.1
-export MAX_POSITIONS=3
+export STARTING_BALANCE=0.5
+export MAX_POSITIONS=7
 
 # Display settings
 export REFRESH_INTERVAL=3  # seconds

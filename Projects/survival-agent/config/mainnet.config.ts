@@ -13,28 +13,28 @@ export const CONFIG = {
   PAPER_TRADE: false,
   MODE_LABEL: 'MAINNET',
 
-  // Capital - conservative until proven profitable on mainnet
-  STARTING_BALANCE: 0.1,          // SOL - real money, start small
-  AUTO_REFILL_THRESHOLD: 0,       // No auto-refill on mainnet
-  AUTO_REFILL_AMOUNT: 0,
+  // Capital - matches paper exactly
+  STARTING_BALANCE: 0.5,
+  AUTO_REFILL_THRESHOLD: 0.03,
+  AUTO_REFILL_AMOUNT: 1.0,
 
-  // Position sizing - tighter than paper
-  MAX_CONCURRENT_POSITIONS: 3,    // Max 3 positions at once (vs 7 paper)
-  MAX_POSITION_SIZE: 0.05,        // 5% of balance per trade (vs 12% paper)
-  MIN_BALANCE: 0.02,
+  // Position sizing - matches paper exactly
+  MAX_CONCURRENT_POSITIONS: 7,
+  MAX_POSITION_SIZE: 0.12,        // 12% of balance per trade
+  MIN_BALANCE: 0.05,
 
-  // Entry filters - same as paper (don't loosen these)
+  // Entry filters - matches paper exactly
   MIN_SCORE: 40,
   MIN_SMART_MONEY_CONFIDENCE: 45,
   MIN_SHOCKED_SCORE: 30,
 
-  // Exit thresholds - tighter stop loss than paper
-  TAKE_PROFIT: 1.0,               // +100% activates trailing stop
-  STOP_LOSS: -0.20,               // -20% hard stop (vs -30% paper)
+  // Exit thresholds - matches paper exactly
+  TAKE_PROFIT: 1.0,
+  STOP_LOSS: -0.30,               // -30% hard stop
   TRAILING_STOP_PERCENT: 0.20,    // 20% drop from peak after TP1
   MAX_HOLD_TIME_MS: 60 * 60 * 1000, // 60 minutes
 
-  // Timing - same as paper
+  // Timing - matches paper exactly
   SCAN_INTERVAL_MS: 15000,
   MONITOR_INTERVAL_MS: 5000,
 

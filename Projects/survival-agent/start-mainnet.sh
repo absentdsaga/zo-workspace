@@ -43,8 +43,8 @@ pkill -f "mainnet-trade-bot" 2>/dev/null || true
 sleep 1
 
 # Build a temporary mainnet version of the bot by swapping the config import
-# This ensures 100% identical code to paper-trade-bot.ts, just different config
-MAINNET_BOT="/tmp/mainnet-trade-bot.ts"
+# Must stay in testing/ dir so relative imports (../core/, ../strategies/) resolve
+MAINNET_BOT="testing/mainnet-trade-bot.ts"
 sed 's|from '"'"'../config/paper.config'"'"'|from '"'"'../config/mainnet.config'"'"'|g' \
     testing/paper-trade-bot.ts > "$MAINNET_BOT"
 
