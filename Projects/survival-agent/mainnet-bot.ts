@@ -50,7 +50,7 @@ async function main() {
   console.log(`  Position size:  ${(CONFIG.MAX_POSITION_SIZE * 100).toFixed(0)}%  (paper: 12%)`);
   console.log(`  Stop loss:      ${(CONFIG.STOP_LOSS * 100).toFixed(0)}%  (paper: -30%)`);
   console.log(`  Starting bal:   ${CONFIG.STARTING_BALANCE} SOL`);
-  console.log(`  Data files:     /tmp/mainnet-trades-*.json\n`);
+  console.log(`  Data files:     /home/workspace/Projects/survival-agent/data/mainnet-trades-*.json\n`);
 
   const privateKey = process.env.MAINNET_PRIVATE_KEY || process.env.SOLANA_PRIVATE_KEY;
   const jupiterApiKey = process.env.JUP_TOKEN;

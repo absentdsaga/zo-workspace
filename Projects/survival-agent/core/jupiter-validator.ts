@@ -74,12 +74,39 @@ async function fetchWithRetry(
   throw new Error('Fetch failed after all retries');
 }
 
+const SOL_PRICE_REFRESH_MS = 5 * 60 * 1000; // refresh every 5 minutes
+
 export class JupiterValidator {
   private jupiterApiKey?: string;
-  private solPriceUsd: number = 119;
+  private solPriceUsd: number = 180; // fallback; updated live on first use
+  private solPriceLastFetched: number = 0;
 
   constructor(jupiterApiKey?: string) {
     this.jupiterApiKey = jupiterApiKey;
+  }
+
+  /**
+   * Fetch live SOL/USD price from Jupiter Price API.
+   * Refreshes at most once per SOL_PRICE_REFRESH_MS.
+   */
+  private async refreshSolPrice(): Promise<void> {
+    if (Date.now() - this.solPriceLastFetched < SOL_PRICE_REFRESH_MS) return;
+    try {
+      const res = await fetch(
+        'https://api.jup.ag/price/v2?ids=So11111111111111111111111111111111111111112',
+        { signal: AbortSignal.timeout(5000) }
+      );
+      if (res.ok) {
+        const json = await res.json();
+        const price = json?.data?.['So11111111111111111111111111111111111111112']?.price;
+        if (price && Number.isFinite(Number(price))) {
+          this.solPriceUsd = Number(price);
+          this.solPriceLastFetched = Date.now();
+        }
+      }
+    } catch {
+      // Keep using last known price on error
+    }
   }
 
   /**
@@ -89,6 +116,7 @@ export class JupiterValidator {
     tokenAddress: string,
     solAmount: number
   ): Promise<RouteValidation> {
+    await this.refreshSolPrice();
     try {
       const amountInLamports = Math.floor(solAmount * 1e9);
 

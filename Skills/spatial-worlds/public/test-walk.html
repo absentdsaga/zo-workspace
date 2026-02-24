@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Walk Direction Test</title>
+<style>
+  body { background: #1a1a2e; color: #fff; font-family: monospace; padding: 20px; margin: 0; }
+  .grid { display: grid; grid-template-columns: 120px repeat(4, 1fr); gap: 4px; margin: 10px 0; }
+  .cell { text-align: center; }
+  canvas { image-rendering: pixelated; display: block; margin: 0 auto; }
+  .active { outline: 3px solid #0f0; }
+  h3 { color: #ff0; margin: 4px 0; }
+  #key-status { font-size: 28px; color: #0ff; margin: 16px 0; }
+  .row-label { font-size: 13px; padding-top: 20px; }
+  .row0 { color: #f88; }
+  .row1 { color: #8f8; }
+  .row2 { color: #88f; }
+  .row3 { color: #ff8; }
+</style>
+</head>
+<body>
+<h2>Hero Orange — All Frames (press arrow keys)</h2>
+<div id="key-status">No key pressed</div>
+
+<div class="grid">
+  <div class="row-label row0"><b>ROW 0</b><br>frames 0–3</div>
+  <div class="cell"><div style="color:#888">f0</div><canvas id="f0" width="128" height="128"></canvas></div>
+  <div class="cell"><div style="color:#888">f1</div><canvas id="f1" width="128" height="128"></canvas></div>
+  <div class="cell"><div style="color:#888">f2</div><canvas id="f2" width="128" height="128"></canvas></div>
+  <div class="cell"><div style="color:#888">f3</div><canvas id="f3" width="128" height="128"></canvas></div>
+
+  <div class="row-label row1"><b>ROW 1</b><br>frames 4–7</div>
+  <div class="cell"><div style="color:#888">f4</div><canvas id="f4" width="128" height="128"></canvas></div>
+  <div class="cell"><div style="color:#888">f5</div><canvas id="f5" width="128" height="128"></canvas></div>
+  <div class="cell"><div style="color:#888">f6</div><canvas id="f6" width="128" height="128"></canvas></div>
+  <div class="cell"><div style="color:#888">f7</div><canvas id="f7" width="128" height="128"></canvas></div>
+
+  <div class="row-label row2"><b>ROW 2</b><br>frames 8–11</div>
+  <div class="cell"><div style="color:#888">f8</div><canvas id="f8" width="128" height="128"></canvas></div>
+  <div class="cell"><div style="color:#888">f9</div><canvas id="f9" width="128" height="128"></canvas></div>
+  <div class="cell"><div style="color:#888">f10</div><canvas id="f10" width="128" height="128"></canvas></div>
+  <div class="cell"><div style="color:#888">f11</div><canvas id="f11" width="128" height="128"></canvas></div>
+
+  <div class="row-label row3"><b>ROW 3</b><br>frames 12–15</div>
+  <div class="cell"><div style="color:#888">f12</div><canvas id="f12" width="128" height="128"></canvas></div>
+  <div class="cell"><div style="color:#888">f13</div><canvas id="f13" width="128" height="128"></canvas></div>
+  <div class="cell"><div style="color:#888">f14</div><canvas id="f14" width="128" height="128"></canvas></div>
+  <div class="cell"><div style="color:#888">f15</div><canvas id="f15" width="128" height="128"></canvas></div>
+</div>
+
+<div style="margin-top:20px; color:#aaa;">
+  Current game wiring: row0=south, row1=north, row2=west, row3=east<br>
+  Press ↑↓←→ — green highlight shows which row the game will play
+</div>
+<div id="game-verdict" style="margin-top:12px; font-size:16px; color:#ff8;"></div>
+
+<script>
+const SHEET = '/assets/sprites/nft-characters-xxl/hero_orange/hero_orange-sheet.png';
+const FW = 64, FH = 64, SCALE = 2;
+// Game's current wiring
+const DIR_TO_ROW = { south: 0, north: 1, west: 2, east: 3 };
+const KEY_TO_DIR = {
+  ArrowDown: 'south', s: 'south', S: 'south',
+  ArrowUp: 'north', w: 'north', W: 'north',
+  ArrowLeft: 'west', a: 'west', A: 'west',
+  ArrowRight: 'east', d: 'east', D: 'east',
+};
+
+const img = new Image();
+img.onload = () => {
+  for (let f = 0; f < 16; f++) {
+    const row = Math.floor(f / 4), col = f % 4;
+    const c = document.getElementById('f' + f);
+    const ctx = c.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    ctx.clearRect(0, 0, 128, 128);
+    ctx.drawImage(img, col*FW, row*FH, FW, FH, 0, 0, 128, 128);
+  }
+};
+img.src = SHEET;
+
+const keys = new Set();
+let animFrame = 0;
+let lastDir = null;
+
+function getDir() {
+  for (const k of keys) if (KEY_TO_DIR[k]) return KEY_TO_DIR[k];
+  return null;
+}
+
+function update() {
+  const dir = getDir();
+  if (dir !== lastDir) { animFrame = 0; lastDir = dir; }
+
+  // Clear all highlights
+  for (let f = 0; f < 16; f++) {
+    document.getElementById('f' + f).classList.remove('active');
+  }
+
+  if (dir) {
+    const row = DIR_TO_ROW[dir];
+    const f = row * 4 + (animFrame % 4);
+    document.getElementById('f' + f).classList.add('active');
+    document.getElementById('key-status').textContent =
+      `Key: ${dir.toUpperCase()} → plays ROW ${row} (frames ${row*4}–${row*4+3})`;
+    document.getElementById('game-verdict').textContent =
+      `Game will play: hero_orange-walk-${dir} (row ${row})`;
+  } else {
+    document.getElementById('key-status').textContent = 'No key — idle';
+    document.getElementById('game-verdict').textContent = '';
+  }
+}
+
+setInterval(() => { animFrame++; update(); }, 125);
+
+document.addEventListener('keydown', e => { keys.add(e.key); update(); e.preventDefault(); });
+document.addEventListener('keyup', e => { keys.delete(e.key); update(); });
+</script>
+</body>
+</html>

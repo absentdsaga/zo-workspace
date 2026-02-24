@@ -77,6 +77,30 @@ class OptimizedExecutor {
   // Default: Start at 75th percentile, adjust based on mainnet success rate
   private jitoTipLevel: 'p25' | 'p50' | 'p75' | 'p95' | 'p99' = 'p75';
 
+  private solPriceUsd: number = 180; // fallback; refreshed live every 5 minutes
+  private solPriceLastFetched: number = 0;
+  private static SOL_PRICE_REFRESH_MS = 5 * 60 * 1000;
+
+  private async refreshSolPrice(): Promise<void> {
+    if (Date.now() - this.solPriceLastFetched < OptimizedExecutor.SOL_PRICE_REFRESH_MS) return;
+    try {
+      const res = await fetch(
+        'https://api.jup.ag/price/v2?ids=So11111111111111111111111111111111111111112',
+        { signal: AbortSignal.timeout(5000) }
+      );
+      if (res.ok) {
+        const json = await res.json();
+        const price = json?.data?.['So11111111111111111111111111111111111111112']?.price;
+        if (price && Number.isFinite(Number(price))) {
+          this.solPriceUsd = Number(price);
+          this.solPriceLastFetched = Date.now();
+        }
+      }
+    } catch {
+      // Keep using last known price on error
+    }
+  }
+
   constructor(rpcUrl: string, privateKey: string, jupiterApiKey: string, heliusApiKey: string, paperMode: boolean = false, useJito: boolean = true) {
     // Use Helius with optimized settings
     this.connection = new Connection(rpcUrl, {
@@ -135,14 +159,14 @@ class OptimizedExecutor {
         return result.result.priorityFeeEstimate;
       }
 
-      // Fallback to our tested values
-      return priorityLevel === 'VeryHigh' ? 5000 :
-             priorityLevel === 'High' ? 2000 :
-             priorityLevel === 'Medium' ? 1000 : 500;
+      // Fallback to our tested values (100k μL = ~0.0001 SOL, proven to land reliably)
+      return priorityLevel === 'VeryHigh' ? 100000 :
+             priorityLevel === 'High' ? 50000 :
+             priorityLevel === 'Medium' ? 25000 : 10000;
 
     } catch (error) {
       // Fallback on error
-      return 1000;
+      return 100000;
     }
   }
 
@@ -175,7 +199,8 @@ class OptimizedExecutor {
    */
   private async getSwapTransaction(
     quote: any,
-    dynamicComputeUnits: boolean = true
+    dynamicComputeUnits: boolean = true,
+    isSell: boolean = false
   ): Promise<any> {
     const url = `${this.baseUrl}/swap/v1/swap`;
 
@@ -251,21 +276,29 @@ class OptimizedExecutor {
   }
 
   /**
-   * Send Jito bundle
+   * Send Jito bundle. Returns { bundleId, swapSig }.
+   * bundleId is used to poll /bundles/status for fast failure detection.
+   * swapSig is the on-chain signature to poll once the bundle lands.
    */
-  private async sendJitoBundle(bundle: string[]): Promise<string> {
+  private async sendJitoBundle(bundle: string[]): Promise<{ bundleId: string; swapSig: string }> {
+    // Extract swap sig from the serialized tx (available before sending)
+    const swapTxBuf = Buffer.from(bundle[0], 'base64');
+    const swapTx = VersionedTransaction.deserialize(swapTxBuf);
+    const swapSig = bs58.encode(swapTx.signatures[0]);
+
     if (this.paperMode) {
-      // Paper mode: simulate bundle send
       console.log(`   🧪 PAPER: Simulating Jito bundle send...`);
       const latency = 200 + Math.random() * 300;
       await new Promise(resolve => setTimeout(resolve, latency));
-      return 'PAPER_JITO_' + Date.now() + '_' + Math.random().toString(36).substring(7);
+      return { bundleId: 'PAPER_BUNDLE_' + Date.now(), swapSig: 'PAPER_JITO_' + Date.now() + '_' + Math.random().toString(36).substring(7) };
     }
 
     // Real mode: send to Jito block engine
+    const jitoHeaders: Record<string, string> = { 'Content-Type': 'application/json' };
+    if (process.env.JITO_API_KEY) jitoHeaders['x-jito-auth'] = process.env.JITO_API_KEY;
     const response = await fetch(`${JITO_BLOCK_ENGINE_URL}/bundles`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: jitoHeaders,
       body: JSON.stringify({
         jsonrpc: '2.0',
         id: 1,
@@ -275,6 +308,10 @@ class OptimizedExecutor {
     });
 
     if (!response.ok) {
+      // Use a distinct prefix for rate-limit errors so executeTrade can fall back to direct send
+      if (response.status === 429 || response.status === 400) {
+        throw new Error(`JITO_RATE_LIMITED: ${response.status}`);
+      }
       throw new Error(`Jito bundle submission failed: ${response.status}`);
     }
 
@@ -284,20 +321,40 @@ class OptimizedExecutor {
       throw new Error(`Jito error: ${result.error.message}`);
     }
 
-    // Return the swap transaction signature (first tx in bundle)
-    const swapTxBuf = Buffer.from(bundle[0], 'base64');
-    const swapTx = VersionedTransaction.deserialize(swapTxBuf);
-    return bs58.encode(swapTx.signatures[0]);
+    const bundleId: string = result.result;
+    return { bundleId, swapSig };
+  }
+
+  /**
+   * Poll Jito bundle status. Returns 'landed' | 'failed:<reason>' | 'pending'.
+   * Jito bundle statuses: Pending, Invalid, Failed, Landed, Win
+   */
+  private async getBundleStatus(bundleId: string): Promise<'landed' | 'pending' | string> {
+    try {
+      const response = await fetch(`${JITO_BLOCK_ENGINE_URL}/bundles/status?bundle_id=${bundleId}`, {
+        signal: AbortSignal.timeout(5000)
+      });
+      if (!response.ok) return 'pending'; // treat HTTP errors as still pending
+      const json = await response.json();
+      const status: string = json?.result?.status ?? json?.result?.value?.status ?? '';
+      if (status === 'Landed' || status === 'Win') return 'landed';
+      if (status === 'Failed' || status === 'Invalid') return `failed:${json?.result?.error || status}`;
+      return 'pending';
+    } catch {
+      return 'pending'; // network error = treat as pending
+    }
   }
 
   /**
    * Execute optimized trade with retry logic
    */
   async executeTrade(params: TradeParams): Promise<TradeResult> {
+    await this.refreshSolPrice();
+
     const MAX_RETRIES = 3;
     const RETRY_DELAYS = [0, 3000, 8000]; // ms: 0s, 3s, 8s
     const RETRY_FEE_MULTIPLIERS = [1, 2, 5, 10]; // 1x, 2x, 5x, 10x
-    
+
     const overallStartTime = Date.now();
     const strategy = params.strategy || 'default';
     let totalFeesSpent = 0;
@@ -330,7 +387,9 @@ class OptimizedExecutor {
 
         // Step 2: Get swap transaction
         console.log(`   Getting swap transaction...`);
-        const swapData = await this.getSwapTransaction(quote, true);
+        const isSell = params.outputMint === 'So11111111111111111111111111111111111111112' &&
+                       params.inputMint !== 'So11111111111111111111111111111111111111112';
+        const swapData = await this.getSwapTransaction(quote, true, isSell);
 
         // Step 3: Deserialize transaction
         console.log(`   Preparing transaction...`);
@@ -358,7 +417,7 @@ class OptimizedExecutor {
           // PAPER MODE: Simulate transaction without actually sending
           if (this.useJito) {
             console.log(`   📄 Paper mode: Simulating Jito bundle send...`);
-            console.log(`   💡 Jito tip (${this.jitoTipLevel}): ${jitoTip.toFixed(8)} SOL (~$${(jitoTip * 88).toFixed(4)})`);
+            console.log(`   💡 Jito tip (${this.jitoTipLevel}): ${jitoTip.toFixed(8)} SOL (~$${(jitoTip * this.solPriceUsd).toFixed(4)})`);
           } else {
             console.log(`   📄 Paper mode: Simulating transaction send...`);
           }
@@ -384,14 +443,65 @@ class OptimizedExecutor {
 
           if (this.useJito) {
             // Step 6a: Send via Jito bundle for MEV protection
+            // Falls back to direct send if Jito is globally rate-limited (429/400)
             console.log(`   Building Jito bundle...`);
-            console.log(`   💡 Jito tip: ${jitoTip} SOL (~$${(jitoTip * 100).toFixed(2)})`);
+            console.log(`   💡 Jito tip: ${jitoTip} SOL (~$${(jitoTip * this.solPriceUsd).toFixed(4)})`);
 
             const bundle = await this.buildJitoBundle(transaction, jitoTip);
-            signature = await this.sendJitoBundle(bundle);
-            totalFeesSpent += jitoTip * LAMPORTS_PER_SOL;
+            let bundleId = '';
+            try {
+              const jitoResult = await this.sendJitoBundle(bundle);
+              bundleId = jitoResult.bundleId;
+              signature = jitoResult.swapSig;
+              totalFeesSpent += jitoTip * LAMPORTS_PER_SOL;
+              console.log(`   ✅ Jito bundle sent: ${bundleId}`);
+              console.log(`   📝 Swap sig: ${signature}`);
+            } catch (jitoErr: any) {
+              if (!jitoErr.message?.startsWith('JITO_RATE_LIMITED')) throw jitoErr;
+              // Jito globally rate-limited — fall back to direct send for this attempt
+              console.log(`   ⚠️  Jito rate-limited — falling back to direct send (no MEV protection)`);
+              signature = await this.connection.sendRawTransaction(
+                transaction.serialize(),
+                { skipPreflight: true, maxRetries: 0 }
+              );
+              console.log(`   ✅ Direct fallback sent: ${signature}`);
+            }
 
-            console.log(`   ✅ Jito bundle sent: ${signature}`);
+            console.log(`   ✅ Jito bundle sent: ${bundleId}`);
+            console.log(`   📝 Swap sig: ${signature}`);
+
+            // Step 7a: Poll confirmation
+            // If bundleId is set, also poll Jito bundle status for fast failure detection.
+            // If bundleId is empty (direct fallback was used), poll sig status only.
+            console.log(`   Waiting for confirmation...`);
+            const confirmStart = Date.now();
+            let confirmed = false;
+            while (Date.now() - confirmStart < 60000) {
+              await new Promise(r => setTimeout(r, 2000));
+
+              // Check Jito bundle status first (fast failure path) — only if we have a bundleId
+              if (bundleId) {
+                const bundleStatus = await this.getBundleStatus(bundleId);
+                if (bundleStatus.startsWith('failed:')) {
+                  throw new Error(`Jito bundle rejected: ${bundleStatus.slice(7)}`);
+                }
+                if (bundleStatus === 'landed') {
+                  // Bundle landed per Jito but sig not yet visible - give it one more poll
+                  await new Promise(r => setTimeout(r, 2000));
+                  const finalStatus = await this.connection.getSignatureStatus(signature);
+                  const finalConf = finalStatus?.value?.confirmationStatus;
+                  if (finalConf === 'confirmed' || finalConf === 'finalized') { confirmed = true; }
+                  break;
+                }
+              }
+
+              // Check on-chain sig status
+              const sigStatus = await this.connection.getSignatureStatus(signature);
+              const conf = sigStatus?.value?.confirmationStatus;
+              if (conf === 'confirmed' || conf === 'finalized') { confirmed = true; break; }
+              if (sigStatus?.value?.err) throw new Error(`Tx failed on-chain: ${JSON.stringify(sigStatus.value.err)}`);
+            }
+            if (!confirmed) throw new Error(`Confirmation timeout after 60s for ${bundleId || signature}`);
 
           } else {
             // Step 6b: Send with Helius optimized settings (no MEV protection)
@@ -406,17 +516,19 @@ class OptimizedExecutor {
             );
 
             console.log(`   ✅ Transaction sent: ${signature}`);
-          }
 
-          // Step 7: Poll for confirmation (more reliable than confirmTransaction)
-          console.log(`   Waiting for confirmation...`);
-          const confirmStart = Date.now();
-          while (Date.now() - confirmStart < 60000) {
-            await new Promise(r => setTimeout(r, 2000));
-            const status = await this.connection.getSignatureStatus(signature);
-            const conf = status?.value?.confirmationStatus;
-            if (conf === 'confirmed' || conf === 'finalized') break;
-            if (status?.value?.err) throw new Error(`Tx failed on-chain: ${JSON.stringify(status.value.err)}`);
+            // Step 7b: Poll sig status
+            console.log(`   Waiting for confirmation...`);
+            const confirmStart = Date.now();
+            let confirmed = false;
+            while (Date.now() - confirmStart < 60000) {
+              await new Promise(r => setTimeout(r, 2000));
+              const status = await this.connection.getSignatureStatus(signature);
+              const conf = status?.value?.confirmationStatus;
+              if (conf === 'confirmed' || conf === 'finalized') { confirmed = true; break; }
+              if (status?.value?.err) throw new Error(`Tx failed on-chain: ${JSON.stringify(status.value.err)}`);
+            }
+            if (!confirmed) throw new Error(`Confirmation timeout after 60s for ${signature}`);
           }
         }
 
@@ -554,6 +666,26 @@ class OptimizedExecutor {
   }
 
   /**
+   * Get actual token balance from wallet (raw integer, no decimals)
+   * Returns 0 if account doesn't exist or has no balance
+   */
+  async getTokenBalance(mintAddress: string): Promise<number> {
+    try {
+      const accounts = await this.connection.getTokenAccountsByOwner(
+        this.wallet.publicKey,
+        { mint: new (await import('@solana/web3.js')).PublicKey(mintAddress) }
+      );
+      if (accounts.value.length === 0) return 0;
+      const info = accounts.value[0].account.data;
+      // Parse raw amount from account data (bytes 64-72 are the u64 amount)
+      const amount = info.readBigUInt64LE(64);
+      return Number(amount);
+    } catch {
+      return 0;
+    }
+  }
+
+  /**
    * Pre-flight check with optimizations
    */
   async preFlightCheck(): Promise<{
@@ -639,7 +771,7 @@ class OptimizedExecutor {
   setJitoTipLevel(level: 'p25' | 'p50' | 'p75' | 'p95' | 'p99'): void {
     this.jitoTipLevel = level;
     const tip = this.jitoTipPercentiles[level];
-    console.log(`🎯 Jito tip level updated to ${level}: ${tip.toFixed(8)} SOL (~$${(tip * 88).toFixed(4)}/trade)`);
+    console.log(`🎯 Jito tip level updated to ${level}: ${tip.toFixed(8)} SOL (~$${(tip * this.solPriceUsd).toFixed(4)}/trade)`);
   }
 
   /**
@@ -650,8 +782,8 @@ class OptimizedExecutor {
     return {
       level: this.jitoTipLevel,
       tipSOL: tip,
-      tipUSD: tip * 88, // Current SOL price
-      monthlyUSD: tip * 88 * 5500 // Estimated monthly cost at 5500 trades
+      tipUSD: tip * this.solPriceUsd,
+      monthlyUSD: tip * this.solPriceUsd * 5500 // Estimated monthly cost at 5500 trades
     };
   }
 }

@@ -1,0 +1,76 @@
+{
+  "preset": "saga_iso_v1",
+  "comfy": {
+    "steps": 28,
+    "cfg": 6.0,
+    "sampler": "dpmpp_2m_karras",
+    "base_seed": 42,
+    "gen_canvas": {
+      "width": 768,
+      "height": 768
+    },
+    "img2img_denoise": 0.45
+  },
+  "normalization": {
+    "canvas_w": 128,
+    "canvas_h": 128,
+    "target_char_height_px": 84,
+    "baseline_y": 108,
+    "pivot": [64, 108],
+    "scale_mode": "nearest",
+    "palette_max_colors": 36,
+    "outline_policy": "consistent"
+  },
+  "qc_gates": {
+    "box_artifact_threshold": 5,
+    "feet_baseline_tolerance": 2,
+    "scale_drift_percent": 5,
+    "palette_overflow_threshold": 36,
+    "jitter_tolerance_px": 2,
+    "silhouette_delta_percent": 18
+  },
+  "prompts": {
+    "global_style": "isometric 3/4 tactical RPG character sprite, single character only, clean pixel-art readability, limited palette, crisp silhouette, feet fully visible, grounded stance, transparent background, no environment, no frame, no card, no text, no watermark",
+    "negative": "rectangular frame, border, poster, card, background scene, floor texture, painterly smear, noisy texture, blurry edges, extra limbs, cropped feet, cut-off weapon, watermark, text, logo",
+    "poses": {
+      "idle": "neutral idle pose, weight balanced, readable silhouette",
+      "walk_contact": "walk cycle contact pose, one foot forward, one back",
+      "walk_passing": "walk cycle passing pose, hips centered",
+      "attack_anticipation": "attack anticipation, weapon drawn back",
+      "attack_impact": "attack impact pose, clear forward action line",
+      "hit": "hit reaction pose, recoil stance"
+    }
+  },
+  "animation_spec": {
+    "idle": {
+      "frames": 8,
+      "frame_rate": 8,
+      "loop": true
+    },
+    "walk": {
+      "frames": 10,
+      "frame_rate": 12,
+      "loop": true
+    },
+    "attack": {
+      "frames": 12,
+      "frame_rate": 15,
+      "loop": false,
+      "events": {
+        "hit_start": 6,
+        "hit_end": 8
+      }
+    },
+    "hit": {
+      "frames": 5,
+      "frame_rate": 12,
+      "loop": false
+    }
+  },
+  "shadow": {
+    "type": "blob",
+    "radius_x": 10,
+    "radius_y": 4,
+    "alpha": 0.28
+  }
+}

@@ -4,10 +4,10 @@
 
 # Data sources
 export LOG_FILE="/tmp/mainnet-trade.log"
-export STATS_FILE="/tmp/mainnet-trades-master.json"
+export STATS_FILE="/home/workspace/Projects/survival-agent/data/mainnet-trades-master.json"
 
 # Trading parameters (match mainnet.config.ts)
-export STARTING_BALANCE=0.5
+export STARTING_BALANCE=0.147808781
 export MAX_POSITIONS=7
 
 # Display settings

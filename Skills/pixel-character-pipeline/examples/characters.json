@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Warrior",
+    "description": "pixel art warrior, red armor, silver sword, shield, idle stance, front view",
+    "style": "snes rpg, chrono trigger style, 16-bit",
+    "size": "32x32"
+  },
+  {
+    "name": "Mage",
+    "description": "pixel art mage, blue robes, wooden staff with crystal, idle stance, front view",
+    "style": "snes rpg, final fantasy tactics style, 16-bit",
+    "size": "32x32"
+  },
+  {
+    "name": "Rogue",
+    "description": "pixel art rogue, black leather armor, dual daggers, idle stance, front view",
+    "style": "snes rpg, secret of mana style, 16-bit",
+    "size": "32x32"
+  },
+  {
+    "name": "Cleric",
+    "description": "pixel art cleric, white robes, holy symbol, healing pose, front view",
+    "style": "snes rpg, breath of fire style, 16-bit",
+    "size": "32x32"
+  },
+  {
+    "name": "Archer",
+    "description": "pixel art archer, green tunic, bow and quiver, idle stance, front view",
+    "style": "snes rpg, terranigma style, 16-bit",
+    "size": "32x32"
+  }
+]

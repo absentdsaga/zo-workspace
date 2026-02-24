@@ -1,0 +1,1 @@
+/home/workspace/Projects/survival-agent/testing/status.sh

@@ -1,0 +1,853 @@
+/**
+ * PAPER TRADING BOT - REFACTORED
+ *
+ * Implements @legendaryy's principles:
+ * 1. ✅ Sub-agents for heavy scanning (no context bloat)
+ * 2. ✅ Circuit breakers for resilience (no death spirals)
+ * 3. ✅ Config manager with .patch() (safe updates)
+ * 4. ✅ API-first approach (DexScreener, Jupiter)
+ *
+ * FEATURES:
+ * - Dual-loop architecture: Scanner (15s) + Monitor (5s)
+ * - Parallel market scanning via sub-agents
+ * - Resilient external API calls
+ * - Safe configuration updates
+ * - Peak price tracking with trailing stops
+ * - Jupiter-validated prices and routes
+ */
+
+import { OptimizedExecutor } from '../core/optimized-executor';
+import { SmartMoneyTracker } from '../strategies/smart-money-tracker';
+import { JupiterValidator } from '../core/jupiter-validator';
+import { ShockedAlphaScanner } from '../strategies/shocked-alpha-scanner';
+import { SubAgentCoordinator } from '../core/sub-agent-coordinator';
+import { globalCircuitBreaker } from '../core/circuit-breaker';
+import { TradingBotConfigManager, TradingBotConfig } from '../core/config-manager';
+import { LAMPORTS_PER_SOL } from '@solana/web3.js';
+import * as fs from 'fs';
+
+interface TradeLog {
+  timestamp: number;
+  tokenAddress: string;
+  tokenSymbol: string;
+  strategy: 'meme' | 'arbitrage' | 'perp' | 'volume';
+  source?: 'pumpfun' | 'dexscreener' | 'both' | 'shocked' | 'subagent';
+  amountIn: number;
+  entryPrice?: number;
+  currentPrice?: number;
+  peakPrice?: number;
+  tp1Hit?: boolean;
+  signature?: string;
+  pnl?: number;
+  pnlGross?: number;
+  jitoTipPaid?: number;
+  priorityFeePaid?: number;
+  totalFeesPaid?: number;
+  unrealizedPnl?: number;
+  status: 'open' | 'closed_profit' | 'closed_loss' | 'failed';
+  error?: string;
+  exitTimestamp?: number;
+  exitReason?: string;
+  confidenceScore?: number;
+  shockedScore?: number;
+}
+
+class PaperTradeBotRefactored {
+  private executor: OptimizedExecutor;
+  private tracker: SmartMoneyTracker;
+  private validator: JupiterValidator;
+  private shockedScanner: ShockedAlphaScanner;
+  private coordinator: SubAgentCoordinator;
+  private configManager: TradingBotConfigManager;
+
+  private startingBalance: number = 0;
+  private currentBalance: number = 0;
+  private trades: TradeLog[] = [];
+  private dailyBurnRate = 10;
+  private lastCheckTime = new Map<string, number>();
+  private isPaused = false;
+  private totalRefills = 0;
+  private ruggedTokens: Set<string> = new Set();
+
+  private readonly TRADES_FILE = '/tmp/paper-trades-refactored.json';
+  private readonly STATE_FILE = '/tmp/paper-trades-state-refactored.json';
+  private readonly BLACKLIST_FILE = '/tmp/paper-trades-blacklist-refactored.json';
+
+  constructor(
+    rpcUrl: string,
+    privateKey: string,
+    jupiterApiKey: string,
+    heliusApiKey: string
+  ) {
+    // Initialize with default config
+    const defaultConfig: TradingBotConfig = {
+      maxConcurrentPositions: 7,
+      maxPositionSize: 0.12,
+      minBalance: 0.05,
+      takeProfit: 1.0,
+      stopLoss: -0.30,
+      trailingStopPercent: 0.20,
+      maxDrawdown: 0.25,
+      minScore: 40,
+      minSmartMoneyConfidence: 45,
+      minShockedScore: 30,
+      autoRefillThreshold: 0.03,
+      autoRefillAmount: 1.0,
+      scanIntervalMs: 15000,
+      monitorIntervalMs: 5000,
+      maxHoldTimeMs: 3600000,
+      paperMode: true,
+      useJito: true
+    };
+
+    this.configManager = new TradingBotConfigManager(
+      defaultConfig,
+      '/tmp/trading-bot-config-refactored.json'
+    );
+
+    this.executor = new OptimizedExecutor(rpcUrl, privateKey, jupiterApiKey, heliusApiKey, true);
+    this.tracker = new SmartMoneyTracker();
+    this.validator = new JupiterValidator(jupiterApiKey);
+    this.shockedScanner = new ShockedAlphaScanner();
+    this.coordinator = new SubAgentCoordinator();
+
+    console.log('🤖 REFACTORED Trading Bot initialized');
+    console.log('📄 PAPER TRADING MODE with @legendaryy principles');
+    console.log('   1. Sub-agents for heavy scanning');
+    console.log('   2. Circuit breakers for resilience');
+    console.log('   3. Config manager with .patch()');
+  }
+
+  async initialize(): Promise<void> {
+    console.log('\n🔧 Initializing refactored trading system...\n');
+
+    await this.loadTrades();
+    await this.loadState();
+    await this.loadBlacklist();
+
+    const check = await this.executor.preFlightCheck();
+    if (!check.ready) {
+      throw new Error('System not ready. Check pre-flight issues.');
+    }
+
+    await this.shockedScanner.initialize();
+
+    // Set up circuit breaker queue processor
+    setInterval(() => {
+      globalCircuitBreaker.processQueue();
+    }, 300000); // Every 5 minutes
+
+    const config = this.configManager.get();
+
+    console.log('\n✅ System initialized and ready');
+    console.log(`💰 Starting balance: ${this.startingBalance.toFixed(4)} SOL`);
+    console.log(`💵 Current balance: ${this.currentBalance.toFixed(4)} SOL`);
+    console.log(`🔄 Total refills: ${this.totalRefills}`);
+    console.log('🎯 Risk parameters:');
+    console.log(`   Max concurrent positions: ${config.maxConcurrentPositions}`);
+    console.log(`   Max position: ${(config.maxPositionSize * 100).toFixed(0)}%`);
+    console.log(`   TP1 (activates trailing): +${(config.takeProfit * 100).toFixed(0)}%`);
+    console.log(`   Trailing stop: ${(config.trailingStopPercent * 100).toFixed(0)}% from peak`);
+    console.log(`   Stop loss: ${(config.stopLoss * 100).toFixed(0)}%`);
+    console.log(`   Max hold: ${config.maxHoldTimeMs / 60000} min`);
+    console.log(`\n⚡ Timing:`);
+    console.log(`   Scanner: Every ${config.scanIntervalMs / 1000}s`);
+    console.log(`   Position monitor: Every ${config.monitorIntervalMs / 1000}s`);
+    if (this.ruggedTokens.size > 0) {
+      console.log(`\n🚫 Blacklist: ${this.ruggedTokens.size} rugged token(s) blocked`);
+    }
+  }
+
+  async run(): Promise<void> {
+    console.log('\n🚀 Starting REFACTORED trading system...');
+    console.log('🔍 Sub-agent scanning | Circuit-protected APIs | Safe config');
+    console.log('⚠️  Press Ctrl+C to stop\n');
+
+    await Promise.all([
+      this.scannerLoop(),
+      this.monitorLoop()
+    ]);
+  }
+
+  /**
+   * Scanner loop - Uses sub-agents for heavy scanning
+   * Main session stays clean (<50K tokens)
+   */
+  private async scannerLoop(): Promise<void> {
+    let loopCount = 0;
+    const config = this.configManager.get();
+
+    while (!this.isPaused) {
+      loopCount++;
+      const startTime = Date.now();
+
+      console.log('============================================================');
+      console.log(`SCANNER ${loopCount} - ${new Date().toLocaleTimeString()}`);
+      console.log('============================================================\n');
+
+      try {
+        // 1. Check Shocked scanner FIRST (priority signals)
+        const shockedOpps = await globalCircuitBreaker.execute(
+          'shocked-scanner',
+          () => this.shockedScanner.scan(),
+          () => [] // Fallback: no opportunities
+        );
+
+        const validShocked = shockedOpps.filter(
+          opp => opp.score >= config.minShockedScore && opp.isCallActive
+        );
+
+        console.log(`   📡 Shocked scanner: ${shockedOpps.length} opportunities found`);
+        console.log(`   ✅ Valid shocked: ${validShocked.length} (score ≥${config.minShockedScore}, active)\n`);
+
+        // Process shocked calls
+        for (const best of validShocked) {
+          const openPositions = this.trades.filter(t => t.status === 'open').length;
+
+          if (openPositions >= config.maxConcurrentPositions) {
+            console.log(`   ⚠️  At max positions, skipping remaining shocked calls\n`);
+            break;
+          }
+
+          if (this.ruggedTokens.has(best.address)) {
+            console.log(`   🚫 SKIPPED: ${best.symbol} is blacklisted\n`);
+            continue;
+          }
+
+          const alreadyHolding = this.trades.some(
+            t => t.status === 'open' && t.tokenAddress === best.address
+          );
+
+          if (!alreadyHolding) {
+            await this.executeShockedTrade(best);
+          }
+        }
+
+        // 2. If shocked calls executed, skip regular scanning
+        const shockedTradesThisCycle = this.trades.filter(t =>
+          t.source === 'shocked' && t.timestamp > startTime
+        ).length;
+
+        if (shockedTradesThisCycle > 0) {
+          console.log(`   ✅ Executed ${shockedTradesThisCycle} shocked call(s)\n`);
+        } else {
+          // 3. Use sub-agent for regular market scanning
+          console.log('🔍 Scanning via sub-agents (no context bloat)...');
+
+          const signals = await globalCircuitBreaker.execute(
+            'market-scan',
+            () => this.coordinator.quickScan(10),
+            () => [] // Fallback: no signals
+          );
+
+          console.log(`   ✅ Found ${signals.length} signals from sub-agents\n`);
+
+          // Process top signals
+          for (const signal of signals) {
+            const openPositions = this.trades.filter(t => t.status === 'open').length;
+
+            if (openPositions >= config.maxConcurrentPositions) {
+              console.log(`   ⚠️  At max positions\n`);
+              break;
+            }
+
+            if (signal.confidence < config.minSmartMoneyConfidence) {
+              continue;
+            }
+
+            if (this.ruggedTokens.has(signal.address)) {
+              continue;
+            }
+
+            const alreadyHolding = this.trades.some(
+              t => t.status === 'open' && t.tokenAddress === signal.address
+            );
+
+            if (!alreadyHolding) {
+              await this.executeSubAgentTrade(signal);
+            }
+          }
+        }
+
+      } catch (error: any) {
+        console.error(`❌ Scanner error: ${error.message}`);
+      }
+
+      const elapsed = Date.now() - startTime;
+      const sleepTime = Math.max(0, config.scanIntervalMs - elapsed);
+      console.log(`⏳ Scanner sleeping for ${(sleepTime / 1000).toFixed(1)} seconds...\n`);
+      await new Promise(resolve => setTimeout(resolve, sleepTime));
+    }
+  }
+
+  /**
+   * Execute shocked trade with circuit breaker protection
+   */
+  private async executeShockedTrade(opportunity: any): Promise<void> {
+    const config = this.configManager.get();
+
+    console.log('\n🎯 SHOCKED GROUP CALL DETECTED!');
+    console.log(`   Token: ${opportunity.symbol}`);
+    console.log(`   Score: ${opportunity.score}/100\n`);
+
+    const positionSize = this.currentBalance * config.maxPositionSize;
+
+    // Circuit-protected validation
+    const roundTrip = await globalCircuitBreaker.execute(
+      'jupiter-validation',
+      () => this.validator.validateRoundTrip(opportunity.address, positionSize),
+      () => ({ canBuy: false, canSell: false }) // Fallback
+    );
+
+    if (!roundTrip.canBuy || !roundTrip.canSell || roundTrip.slippage! > 15) {
+      console.log(`   ❌ SKIPPED: Validation failed\n`);
+      return;
+    }
+
+    console.log('   ✅ Validation passed - EXECUTING SHOCKED TRADE\n');
+
+    // Circuit-protected trade execution
+    const SOL_MINT = 'So11111111111111111111111111111111111111112';
+    const tradeResult = await globalCircuitBreaker.execute(
+      'jupiter-trade',
+      () => this.executor.executeTrade({
+        inputMint: SOL_MINT,
+        outputMint: opportunity.address,
+        amount: Math.floor(positionSize * LAMPORTS_PER_SOL),
+        slippageBps: 1500,
+        strategy: 'meme'
+      }),
+      () => ({ success: false, error: 'Trade queued for retry', executionTime: 0 })
+    );
+
+    if (!tradeResult.success) {
+      console.log(`   ❌ Trade failed: ${tradeResult.error}\n`);
+      return;
+    }
+
+    this.trades.push({
+      timestamp: Date.now(),
+      tokenAddress: opportunity.address,
+      tokenSymbol: opportunity.symbol,
+      strategy: 'meme',
+      source: 'shocked',
+      amountIn: positionSize,
+      entryPrice: roundTrip.buyPrice!,
+      currentPrice: roundTrip.buyPrice!,
+      peakPrice: roundTrip.buyPrice!,
+      tp1Hit: false,
+      status: 'open',
+      signature: tradeResult.signature!,
+      shockedScore: opportunity.score,
+      jitoTipPaid: tradeResult.jitoTipPaid || 0,
+      priorityFeePaid: tradeResult.totalFeesSpent || 0,
+      totalFeesPaid: (tradeResult.jitoTipPaid || 0) + ((tradeResult.totalFeesSpent || 0) / LAMPORTS_PER_SOL)
+    });
+
+    this.currentBalance -= positionSize;
+    await this.saveTrades();
+    await this.saveState();
+    console.log('   ✅ SHOCKED CALL EXECUTED!\n');
+  }
+
+  /**
+   * Execute trade from sub-agent signal
+   */
+  private async executeSubAgentTrade(signal: any): Promise<void> {
+    const config = this.configManager.get();
+
+    console.log('\n💎 HIGH-CONFIDENCE SUB-AGENT SIGNAL!');
+    console.log(`   Token: ${signal.symbol || signal.address.slice(0, 8)}...`);
+    console.log(`   Score: ${signal.score}, Confidence: ${signal.confidence}\n`);
+
+    const positionSize = this.currentBalance * config.maxPositionSize;
+
+    // Circuit-protected validation
+    const roundTrip = await globalCircuitBreaker.execute(
+      'jupiter-validation',
+      () => this.validator.validateRoundTrip(signal.address, positionSize),
+      () => ({ canBuy: false, canSell: false })
+    );
+
+    if (!roundTrip.canBuy || !roundTrip.canSell || roundTrip.slippage! > 15) {
+      console.log(`   ❌ SKIPPED: Validation failed\n`);
+      return;
+    }
+
+    // Circuit-protected trade execution
+    const SOL_MINT = 'So11111111111111111111111111111111111111112';
+    const tradeResult = await globalCircuitBreaker.execute(
+      'jupiter-trade',
+      () => this.executor.executeTrade({
+        inputMint: SOL_MINT,
+        outputMint: signal.address,
+        amount: Math.floor(positionSize * LAMPORTS_PER_SOL),
+        slippageBps: 1500,
+        strategy: 'meme'
+      }),
+      () => ({ success: false, error: 'Trade queued for retry', executionTime: 0 })
+    );
+
+    if (!tradeResult.success) {
+      console.log(`   ❌ Trade failed: ${tradeResult.error}\n`);
+      return;
+    }
+
+    this.trades.push({
+      timestamp: Date.now(),
+      tokenAddress: signal.address,
+      tokenSymbol: signal.symbol || 'UNKNOWN',
+      strategy: 'meme',
+      source: 'subagent',
+      amountIn: positionSize,
+      entryPrice: roundTrip.buyPrice!,
+      currentPrice: roundTrip.buyPrice!,
+      peakPrice: roundTrip.buyPrice!,
+      tp1Hit: false,
+      status: 'open',
+      signature: tradeResult.signature!,
+      confidenceScore: signal.confidence,
+      jitoTipPaid: tradeResult.jitoTipPaid || 0,
+      priorityFeePaid: tradeResult.totalFeesSpent || 0,
+      totalFeesPaid: (tradeResult.jitoTipPaid || 0) + ((tradeResult.totalFeesSpent || 0) / LAMPORTS_PER_SOL)
+    });
+
+    this.currentBalance -= positionSize;
+    await this.saveTrades();
+    await this.saveState();
+    console.log('   ✅ SUB-AGENT TRADE EXECUTED!\n');
+  }
+
+  /**
+   * Monitor loop - Check open positions
+   */
+  private async monitorLoop(): Promise<void> {
+    const config = this.configManager.get();
+
+    // Wait a bit before starting monitor loop
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    while (!this.isPaused) {
+      try {
+        const openPositions = this.trades.filter(t => t.status === 'open');
+
+        if (openPositions.length > 0) {
+          console.log(`\n📊 Monitoring ${openPositions.length} open position(s)...`);
+
+          for (const trade of openPositions) {
+            await this.checkPosition(trade);
+          }
+        }
+
+        // Auto-refill check
+        await this.checkAutoRefill();
+
+        // System health check every 10 monitor cycles (~50 seconds)
+        if (Math.random() < 0.1) {
+          await this.checkHealth();
+        }
+
+        await new Promise(resolve => setTimeout(resolve, config.monitorIntervalMs));
+      } catch (error: any) {
+        console.error(`❌ Monitor error: ${error.message}`);
+        await new Promise(resolve => setTimeout(resolve, 5000));
+      }
+    }
+  }
+
+  private async checkPosition(trade: TradeLog): Promise<void> {
+    const config = this.configManager.get();
+    const now = Date.now();
+    const holdTime = now - trade.timestamp;
+    const holdMinutes = (holdTime / 60000).toFixed(1);
+
+    // Calculate current P&L for dynamic interval (use latest known price)
+    let pnlPercent = trade.currentPrice && trade.entryPrice
+      ? ((trade.currentPrice - trade.entryPrice) / trade.entryPrice) * 100
+      : 0;
+
+    // DYNAMIC CHECK INTERVAL based on risk
+    let checkInterval: number;
+    if (pnlPercent <= -25) {
+      checkInterval = 2000;  // CRITICAL: Near -30% stop loss, check every 2s
+    } else if (pnlPercent <= -15) {
+      checkInterval = 3000;  // WARNING: Getting close, check every 3s
+    } else if (trade.tp1Hit) {
+      checkInterval = 3000;  // TRAILING STOP active, check every 3s
+    } else if (pnlPercent > 50) {
+      checkInterval = 5000;  // Big gains, watch closely every 5s
+    } else {
+      checkInterval = 10000; // Safe range, check every 10s
+    }
+
+    // Check if we should skip this position this cycle
+    const lastCheck = this.lastCheckTime.get(trade.tokenAddress) || 0;
+    const timeSinceCheck = now - lastCheck;
+    
+    if (timeSinceCheck < checkInterval) {
+      console.log(`   ⏭️  ${trade.tokenSymbol}: Checked ${(timeSinceCheck/1000).toFixed(1)}s ago (interval: ${(checkInterval/1000).toFixed(0)}s), skipping`);
+      return;
+    }
+
+    // Update last check time
+    this.lastCheckTime.set(trade.tokenAddress, now);
+
+    // Get REAL current price from Jupiter, with DexScreener fallback
+    let currentPrice = trade.entryPrice!;
+    let priceAvailable = false;
+
+    try {
+      const realPrice = await globalCircuitBreaker.execute(
+        'jupiter-quote',
+        async () => await this.validator.getRealExecutablePrice(
+          trade.tokenAddress,
+          'sell',
+          trade.amountIn
+        ),
+        () => null
+      );
+
+      if (realPrice !== null) {
+        currentPrice = realPrice;
+        priceAvailable = true;
+      }
+    } catch (error) {
+      // Price fetch failed
+    }
+
+    // FALLBACK: If Jupiter failed, try DexScreener
+    if (!priceAvailable) {
+      try {
+        const dexPrice = await this.getDexScreenerPrice(trade.tokenAddress);
+        if (dexPrice !== null) {
+          currentPrice = dexPrice;
+          priceAvailable = true;
+          console.log(`   ℹ️  Using DexScreener fallback price: $${dexPrice.toFixed(8)}`);
+        }
+      } catch (error) {
+        // DexScreener also failed
+      }
+    }
+
+    // LAST RESORT: Use last known price if both failed
+    if (!priceAvailable && trade.currentPrice && trade.currentPrice > 0) {
+      currentPrice = trade.currentPrice;
+      priceAvailable = true;
+      console.log(`   ⚠️  Using last known price: $${currentPrice.toFixed(8)}`);
+    }
+
+    // Update peak price
+    if (priceAvailable && currentPrice > 0) {
+      if (!trade.peakPrice || currentPrice > trade.peakPrice) {
+        trade.peakPrice = currentPrice;
+      }
+    }
+
+    // Recalculate P&L with fresh price
+    let pnlSol: number;
+
+    if (!priceAvailable || currentPrice === 0) {
+      pnlPercent = -100;
+      pnlSol = -trade.amountIn;
+      currentPrice = 0;
+    } else {
+      trade.currentPrice = currentPrice;
+      pnlPercent = ((currentPrice - trade.entryPrice!) / trade.entryPrice!) * 100;
+      pnlSol = trade.amountIn * (pnlPercent / 100);
+      trade.unrealizedPnl = pnlSol;
+    }
+
+    // Check if TP1 hit
+    if (pnlPercent >= config.takeProfit * 100 && !trade.tp1Hit) {
+      trade.tp1Hit = true;
+      console.log(`   🎯 TP1 HIT! Trailing stop activated for ${trade.tokenSymbol}`);
+    }
+
+    console.log(`   📊 ${trade.tokenSymbol} [${trade.source || 'unknown'}]:`);
+    console.log(`      Entry: $${trade.entryPrice!.toFixed(8)} | Current: $${currentPrice.toFixed(8)}`);
+    if (trade.peakPrice && trade.peakPrice > trade.entryPrice!) {
+      const peakGain = ((trade.peakPrice - trade.entryPrice!) / trade.entryPrice!) * 100;
+      console.log(`      Peak: $${trade.peakPrice.toFixed(8)} (+${peakGain.toFixed(2)}%)`);
+    }
+    console.log(`      P&L: ${pnlPercent >= 0 ? '+' : ''}${pnlPercent.toFixed(2)}% (${pnlSol >= 0 ? '+' : ''}${pnlSol.toFixed(4)} SOL)`);
+    console.log(`      Hold time: ${holdMinutes} min`);
+    if (trade.tp1Hit) {
+      console.log(`      Status: 🔥 TRAILING STOP ACTIVE`);
+    }
+
+    if (!priceAvailable) {
+      console.log(`      ⚠️  Token rugged - no sell route`);
+    }
+
+    // Check exit conditions
+    let shouldExit = false;
+    let exitReason = '';
+
+    // TIERED EXIT LOGIC
+    if (!trade.tp1Hit) {
+      // Before TP1 - use regular stop loss
+      if (pnlPercent <= config.stopLoss * 100) {
+        shouldExit = true;
+        exitReason = `Stop loss hit (${config.stopLoss * 100}%)`;
+      } else if (holdTime >= config.maxHoldTimeMs) {
+        shouldExit = true;
+        exitReason = `Max hold time (${config.maxHoldTimeMs / 60000} min)`;
+      }
+    } else {
+      // After TP1 - use trailing stop from peak
+      const peakPrice = trade.peakPrice || currentPrice;
+      const dropFromPeak = ((peakPrice - currentPrice) / peakPrice);
+
+      if (dropFromPeak >= config.trailingStopPercent) {
+        shouldExit = true;
+        exitReason = `Trailing stop: ${(dropFromPeak * 100).toFixed(1)}% drop from peak $${peakPrice.toFixed(8)}`;
+      } else if (holdTime >= config.maxHoldTimeMs) {
+        shouldExit = true;
+        exitReason = `Max hold time (${config.maxHoldTimeMs / 60000} min)`;
+      }
+    }
+
+    if (shouldExit) {
+      await this.exitPosition(trade, exitReason);
+    }
+  }
+
+
+  /**
+   * DexScreener fallback when Jupiter can't find a route
+   */
+  private async getDexScreenerPrice(tokenAddress: string): Promise<number | null> {
+    try {
+      const response = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${tokenAddress}`);
+      if (!response.ok) return null;
+
+      const data = await response.json();
+      if (!data.pairs || data.pairs.length === 0) return null;
+
+      // Get the pair with highest liquidity
+      const bestPair = data.pairs.sort((a: any, b: any) =>
+        (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0)
+      )[0];
+
+      const priceUsd = parseFloat(bestPair.priceUsd);
+      return isNaN(priceUsd) ? null : priceUsd;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  private async exitPosition(trade: TradeLog, reason: string): Promise<void> {
+    console.log(`\n📤 Exiting ${trade.tokenSymbol}: ${reason}`);
+
+    const SOL_MINT = 'So11111111111111111111111111111111111111112';
+    const sellResult = await globalCircuitBreaker.execute(
+      'jupiter-sell',
+      () => this.executor.executeTrade({
+        inputMint: trade.tokenAddress,
+        outputMint: SOL_MINT,
+        amount: Math.floor(trade.amountIn * LAMPORTS_PER_SOL),
+        slippageBps: 1500,
+        strategy: 'meme'
+      }),
+      () => ({ success: false, error: 'Sell queued for retry', executionTime: 0 })
+    );
+
+    if (!sellResult.success) {
+      console.log(`   ❌ Sell failed: ${sellResult.error}\n`);
+      return;
+    }
+
+    const pnlGross = trade.amountIn * ((trade.currentPrice! - trade.entryPrice!) / trade.entryPrice!);
+    const exitJitoTip = sellResult.jitoTipPaid || 0;
+    const exitPriorityFee = (sellResult.totalFeesSpent || 0) / LAMPORTS_PER_SOL;
+    const totalFees = (trade.totalFeesPaid || 0) + exitJitoTip + exitPriorityFee;
+    const pnlNet = pnlGross - totalFees;
+
+    trade.status = pnlNet > 0 ? 'closed_profit' : 'closed_loss';
+    trade.exitTimestamp = Date.now();
+    trade.exitReason = reason;
+    trade.pnlGross = pnlGross;
+    trade.pnl = pnlNet;
+    trade.totalFeesPaid = totalFees;
+
+    this.currentBalance += trade.amountIn + pnlNet;
+
+    await this.saveTrades();
+    await this.saveState();
+
+    console.log(`   ✅ Exit complete: ${pnlNet > 0 ? '📈' : '📉'} ${(pnlNet / trade.amountIn * 100).toFixed(1)}%\n`);
+  }
+
+  private async checkHealth(): Promise<void> {
+    const config = this.configManager.get();
+    const openTrades = this.trades.filter(t => t.status === 'open');
+    const closedTrades = this.trades.filter(t => t.status === 'closed_profit' || t.status === 'closed_loss');
+    const wins = this.trades.filter(t => t.status === 'closed_profit').length;
+    const losses = this.trades.filter(t => t.status === 'closed_loss').length;
+    const winRate = closedTrades.length > 0 ? (wins / closedTrades.length) * 100 : 0;
+
+    const totalPnl = this.currentBalance - this.startingBalance;
+    const totalPnlPercent = ((totalPnl / this.startingBalance) * 100);
+
+    // Calculate gross vs net P&L for closed trades
+    const grossPnl = closedTrades.reduce((sum, t) => sum + (t.pnlGross || t.pnl || 0), 0);
+    const totalFees = closedTrades.reduce((sum, t) => sum + (t.totalFeesPaid || 0), 0);
+    const jitoTipInfo = this.executor.getJitoTipInfo();
+
+    console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    console.log('📊 STATUS UPDATE');
+    console.log(`💰 Balance: ${this.currentBalance.toFixed(4)} SOL`);
+    console.log(`📈 Net P&L: ${totalPnl >= 0 ? '+' : ''}${totalPnl.toFixed(4)} SOL (${totalPnlPercent >= 0 ? '+' : ''}${totalPnlPercent.toFixed(1)}%)`);
+    if (closedTrades.length > 0) {
+      console.log(`   ├─ Gross P&L: ${grossPnl >= 0 ? '+' : ''}${grossPnl.toFixed(4)} SOL`);
+      console.log(`   └─ Total fees: -${totalFees.toFixed(6)} SOL (Jito ${jitoTipInfo.level}: $${(jitoTipInfo.tipSOL * 88).toFixed(4)}/trade)`);
+    }
+    console.log(`📊 Trades: ${this.trades.length} | Open: ${openTrades.length} | Closed: ${closedTrades.length}`);
+    console.log(`🎯 Win Rate: ${winRate.toFixed(0)}% (${wins}W/${losses}L)`);
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
+  }
+
+  private async checkAutoRefill(): Promise<void> {
+    const config = this.configManager.get();
+    if (this.currentBalance <= config.autoRefillThreshold) {
+      this.currentBalance += config.autoRefillAmount;
+      this.totalRefills++;
+
+      console.log('\n💰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      console.log('💵 AUTO-REFILL TRIGGERED');
+      console.log(`   Balance was: ${(this.currentBalance - config.autoRefillAmount).toFixed(4)} SOL`);
+      console.log(`   Added: ${config.autoRefillAmount} SOL`);
+      console.log(`   New balance: ${this.currentBalance.toFixed(4)} SOL`);
+      console.log(`   Total refills: ${this.totalRefills}`);
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━💰\n');
+
+      await this.saveState();
+    }
+  }
+
+
+  /**
+   * Safely adjust config based on performance
+   */
+  adjustConfig(winRate: number): void {
+    if (winRate > 0.6) {
+      this.configManager.patch(
+        { maxPositionSize: 0.15 },
+        'Increased position size due to 60%+ win rate'
+      );
+    } else if (winRate < 0.4) {
+      this.configManager.patch(
+        { maxPositionSize: 0.08 },
+        'Decreased position size due to <40% win rate'
+      );
+    }
+  }
+
+  // State management methods (same as original)
+  private async loadTrades(): Promise<void> {
+    try {
+      if (fs.existsSync(this.TRADES_FILE)) {
+        const data = JSON.parse(fs.readFileSync(this.TRADES_FILE, 'utf-8'));
+        // Handle both formats: array or object with trades property
+        this.trades = Array.isArray(data) ? data : (data.trades || []);
+      }
+    } catch (error) {
+      console.error('Failed to load trades:', error);
+      this.trades = [];
+    }
+  }
+
+  private async saveTrades(): Promise<void> {
+    try {
+      fs.writeFileSync(this.TRADES_FILE, JSON.stringify(this.trades, null, 2));
+    } catch (error) {
+      console.error('Failed to save trades:', error);
+    }
+  }
+
+  private async loadState(): Promise<void> {
+    try {
+      if (fs.existsSync(this.STATE_FILE)) {
+        const state = JSON.parse(fs.readFileSync(this.STATE_FILE, 'utf-8'));
+        this.startingBalance = state.startingBalance || 0.5;
+        this.currentBalance = state.currentBalance || 1.0;
+        this.totalRefills = state.totalRefills || 0;
+      } else {
+        this.startingBalance = 0.5;
+        this.currentBalance = 1.0;
+      }
+    } catch (error) {
+      console.error('Failed to load state:', error);
+    }
+  }
+
+  private async saveState(): Promise<void> {
+    try {
+      const state = {
+        startingBalance: this.startingBalance,
+        currentBalance: this.currentBalance,
+        totalRefills: this.totalRefills
+      };
+      fs.writeFileSync(this.STATE_FILE, JSON.stringify(state, null, 2));
+    } catch (error) {
+      console.error('Failed to save state:', error);
+    }
+  }
+
+  private async loadBlacklist(): Promise<void> {
+    try {
+      if (fs.existsSync(this.BLACKLIST_FILE)) {
+        const data = JSON.parse(fs.readFileSync(this.BLACKLIST_FILE, 'utf-8'));
+        this.ruggedTokens = new Set(data);
+      }
+    } catch (error) {
+      console.error('Failed to load blacklist:', error);
+    }
+  }
+
+  private async saveBlacklist(): Promise<void> {
+    try {
+      fs.writeFileSync(this.BLACKLIST_FILE, JSON.stringify([...this.ruggedTokens], null, 2));
+    } catch (error) {
+      console.error('Failed to save blacklist:', error);
+    }
+  }
+}
+
+// Main entry point
+async function main() {
+  console.log('🧪 REFACTORED PAPER TRADING BOT\n');
+  console.log('🚀 @legendaryy PRINCIPLES:');
+  console.log('   1. Sub-agents for heavy scanning (no context bloat)');
+  console.log('   2. Circuit breakers for resilience (no death spirals)');
+  console.log('   3. Config manager with .patch() (safe updates)');
+  console.log('   4. API-first approach (DexScreener, Jupiter)\n');
+
+  const privateKey = process.env.SOLANA_PRIVATE_KEY;
+  const jupiterApiKey = process.env.JUP_TOKEN;
+  const heliusApiKey = process.env.HELIUS_RPC_URL || process.env.HELIUS_API_KEY;
+  const rpcUrl = `https://beta.helius-rpc.com/?api-key=${heliusApiKey}`;
+
+  if (!privateKey || !jupiterApiKey || !heliusApiKey) {
+    console.error('❌ Missing credentials');
+    console.error('   SOLANA_PRIVATE_KEY:', privateKey ? '✓' : '✗');
+    console.error('   JUP_TOKEN:', jupiterApiKey ? '✓' : '✗');
+    console.error('   HELIUS_RPC_URL/HELIUS_API_KEY:', heliusApiKey ? '✓' : '✗');
+    process.exit(1);
+  }
+
+  const bot = new PaperTradeBotRefactored(
+    rpcUrl,
+    privateKey,
+    jupiterApiKey,
+    heliusApiKey
+  );
+
+  await bot.initialize();
+  await bot.run();
+}
+
+main().catch(error => {
+  console.error('Fatal error:', error);
+  process.exit(1);
+});

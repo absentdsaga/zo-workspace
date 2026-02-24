@@ -12,11 +12,12 @@ export const CONFIG = {
   // Mode
   PAPER_TRADE: false,
   MODE_LABEL: 'MAINNET',
+  USE_JITO: false,               // Set true once you have a Jito API key (JITO_API_KEY env var)
 
   // Capital - matches paper exactly
   STARTING_BALANCE: 0.5,
-  AUTO_REFILL_THRESHOLD: 0.03,
-  AUTO_REFILL_AMOUNT: 1.0,
+  AUTO_REFILL_THRESHOLD: 0,       // Disabled on mainnet - no fake refills with real money
+  AUTO_REFILL_AMOUNT: 0,          // Disabled on mainnet
 
   // Position sizing - matches paper exactly
   MAX_CONCURRENT_POSITIONS: 7,
@@ -36,10 +37,14 @@ export const CONFIG = {
 
   // Timing - matches paper exactly
   SCAN_INTERVAL_MS: 15000,
-  MONITOR_INTERVAL_MS: 5000,
+  MONITOR_INTERVAL_MS: 1000,
 
-  // Data files - separate from paper so both can run simultaneously
-  TRADES_FILE: '/tmp/mainnet-trades-master.json',
-  STATE_FILE: '/tmp/mainnet-trades-state.json',
-  BLACKLIST_FILE: '/tmp/mainnet-trades-blacklist.json',
+  // RPC endpoint - mainnet.helius-rpc.com for reliability
+  // ${HELIUS_API_KEY} is replaced at runtime with the actual key
+  RPC_URL: 'https://mainnet.helius-rpc.com/?api-key=${HELIUS_API_KEY}',
+
+  // Data files - persistent storage (survives restarts)
+  TRADES_FILE: '/home/workspace/Projects/survival-agent/data/mainnet-trades-master.json',
+  STATE_FILE: '/home/workspace/Projects/survival-agent/data/mainnet-trades-state.json',
+  BLACKLIST_FILE: '/home/workspace/Projects/survival-agent/data/mainnet-trades-blacklist.json',
 } as const;

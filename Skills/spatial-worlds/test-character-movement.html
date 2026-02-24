@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Character Movement Test - Spatial Worlds</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a2e;
+            font-family: monospace;
+            color: #fff;
+        }
+        #info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.9);
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+            font-size: 12px;
+        }
+        canvas {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #444;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <h3>🎮 Character Movement Test</h3>
+        <div><strong>Controls:</strong></div>
+        <div>Arrow Keys / WASD - Move</div>
+        <div>Number Keys 1-9 - Switch characters</div>
+        <div>Space - Cycle through all 24</div>
+        <div style="margin-top: 10px;">
+            <div>Current: <span id="char-name">Loading...</span></div>
+            <div>Position: <span id="pos">0, 0</span></div>
+        </div>
+    </div>
+
+    <script>
+        // All 24 NFT characters
+        const characters = [
+            { id: 'set1-char1', name: 'Blue Knight', sheet: 'assets/sprites/nft-characters-xxl/set1-char1/set1-char1-sheet.png' },
+            { id: 'set1-char2', name: 'Green Ranger', sheet: 'assets/sprites/nft-characters-xxl/set1-char2/set1-char2-sheet.png' },
+            { id: 'set1-char3', name: 'Red Warrior', sheet: 'assets/sprites/nft-characters-xxl/set1-char3/set1-char3-sheet.png' },
+            { id: 'set1-char4', name: 'Purple Mage', sheet: 'assets/sprites/nft-characters-xxl/set1-char4/set1-char4-sheet.png' },
+            { id: 'set1-char5', name: 'Yellow Scout', sheet: 'assets/sprites/nft-characters-xxl/set1-char5/set1-char5-sheet.png' },
+            { id: 'set1-char6', name: 'Cyan Cleric', sheet: 'assets/sprites/nft-characters-xxl/set1-char6/set1-char6-sheet.png' },
+            { id: 'set2-char1', name: 'Pink Ninja', sheet: 'assets/sprites/nft-characters-xxl/set2-char1/set2-char1-sheet.png' },
+            { id: 'set2-char2', name: 'Orange Fighter', sheet: 'assets/sprites/nft-characters-xxl/set2-char2/set2-char2-sheet.png' },
+            { id: 'set2-char3', name: 'Teal Thief', sheet: 'assets/sprites/nft-characters-xxl/set2-char3/set2-char3-sheet.png' },
+            { id: 'set2-char4', name: 'Gold Paladin', sheet: 'assets/sprites/nft-characters-xxl/set2-char4/set2-char4-sheet.png' },
+            { id: 'set2-char5', name: 'Silver Archer', sheet: 'assets/sprites/nft-characters-xxl/set2-char5/set2-char5-sheet.png' },
+            { id: 'set2-char6', name: 'Brown Monk', sheet: 'assets/sprites/nft-characters-xxl/set2-char6/set2-char6-sheet.png' },
+            { id: 'set3-char1', name: 'Violet Sorcerer', sheet: 'assets/sprites/nft-characters-xxl/set3-char1/set3-char1-sheet.png' },
+            { id: 'set3-char2', name: 'Lime Hunter', sheet: 'assets/sprites/nft-characters-xxl/set3-char2/set3-char2-sheet.png' },
+            { id: 'set3-char3', name: 'Navy Defender', sheet: 'assets/sprites/nft-characters-xxl/set3-char3/set3-char3-sheet.png' },
+            { id: 'set3-char4', name: 'Crimson Berserker', sheet: 'assets/sprites/nft-characters-xxl/set3-char4/set3-char4-sheet.png' },
+            { id: 'set3-char5', name: 'Jade Druid', sheet: 'assets/sprites/nft-characters-xxl/set3-char5/set3-char5-sheet.png' },
+            { id: 'set3-char6', name: 'Copper Bard', sheet: 'assets/sprites/nft-characters-xxl/set3-char6/set3-char6-sheet.png' },
+            { id: 'set4-char1', name: 'Indigo Sage', sheet: 'assets/sprites/nft-characters-xxl/set4-char1/set4-char1-sheet.png' },
+            { id: 'set4-char2', name: 'Coral Dancer', sheet: 'assets/sprites/nft-characters-xxl/set4-char2/set4-char2-sheet.png' },
+            { id: 'set4-char3', name: 'Slate Knight', sheet: 'assets/sprites/nft-characters-xxl/set4-char3/set4-char3-sheet.png' },
+            { id: 'set4-char4', name: 'Amber Alchemist', sheet: 'assets/sprites/nft-characters-xxl/set4-char4/set4-char4-sheet.png' },
+            { id: 'set4-char5', name: 'Emerald Summoner', sheet: 'assets/sprites/nft-characters-xxl/set4-char5/set4-char5-sheet.png' },
+            { id: 'set4-char6', name: 'Pearl Priest', sheet: 'assets/sprites/nft-characters-xxl/set4-char6/set4-char6-sheet.png' }
+        ];
+
+        class GameScene extends Phaser.Scene {
+            constructor() {
+                super({ key: 'GameScene' });
+                this.player = null;
+                this.currentCharIndex = 0;
+                this.cursors = null;
+                this.wasd = null;
+            }
+
+            preload() {
+                // Load all 24 character sprite sheets
+                characters.forEach(char => {
+                    this.load.spritesheet(char.id, char.sheet, {
+                        frameWidth: 64,
+                        frameHeight: 64
+                    });
+                });
+            }
+
+            create() {
+                // Create grass background
+                const graphics = this.add.graphics();
+                graphics.fillStyle(0x5a8a4f, 1);
+                graphics.fillRect(0, 0, 800, 600);
+
+                // Add grid lines for reference
+                graphics.lineStyle(1, 0x4a7a3f, 0.3);
+                for (let x = 0; x < 800; x += 64) {
+                    graphics.lineTo(x, 0);
+                    graphics.lineTo(x, 600);
+                }
+                for (let y = 0; y < 600; y += 64) {
+                    graphics.moveTo(0, y);
+                    graphics.lineTo(800, y);
+                }
+                graphics.strokePath();
+
+                // Create player with first character
+                this.createPlayer(0);
+
+                // Setup controls
+                this.cursors = this.input.keyboard.createCursorKeys();
+                this.wasd = {
+                    W: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W),
+                    A: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A),
+                    S: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S),
+                    D: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D),
+                    SPACE: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE)
+                };
+
+                // Number keys to switch characters
+                for (let i = 1; i <= 9; i++) {
+                    this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes['DIGIT' + i]).on('down', () => {
+                        if (i - 1 < characters.length) {
+                            this.switchCharacter(i - 1);
+                        }
+                    });
+                }
+
+                // Space to cycle through all
+                this.wasd.SPACE.on('down', () => {
+                    this.switchCharacter((this.currentCharIndex + 1) % characters.length);
+                });
+
+                // Add instructions text
+                this.add.text(400, 550, 'Use Arrow Keys or WASD to move • Number keys 1-9 or Space to change character', {
+                    fontSize: '12px',
+                    color: '#ffffff',
+                    stroke: '#000000',
+                    strokeThickness: 3,
+                    align: 'center'
+                }).setOrigin(0.5);
+            }
+
+            createPlayer(charIndex) {
+                const char = characters[charIndex];
+
+                // Remove old player
+                if (this.player) {
+                    this.player.destroy();
+                }
+
+                // Create new player at center
+                this.player = this.add.sprite(400, 300, char.id, 0);
+                this.player.setScale(2);
+
+                // Create all animations for this character
+                // Down (frames 0-3)
+                this.anims.create({
+                    key: `${char.id}-down`,
+                    frames: this.anims.generateFrameNumbers(char.id, { start: 0, end: 3 }),
+                    frameRate: 8,
+                    repeat: -1
+                });
+
+                // Up (frames 4-7)
+                this.anims.create({
+                    key: `${char.id}-up`,
+                    frames: this.anims.generateFrameNumbers(char.id, { start: 4, end: 7 }),
+                    frameRate: 8,
+                    repeat: -1
+                });
+
+                // Left (frames 8-11)
+                this.anims.create({
+                    key: `${char.id}-left`,
+                    frames: this.anims.generateFrameNumbers(char.id, { start: 8, end: 11 }),
+                    frameRate: 8,
+                    repeat: -1
+                });
+
+                // Right (frames 12-15)
+                this.anims.create({
+                    key: `${char.id}-right`,
+                    frames: this.anims.generateFrameNumbers(char.id, { start: 12, end: 15 }),
+                    frameRate: 8,
+                    repeat: -1
+                });
+
+                // Start with down idle
+                this.player.play(`${char.id}-down`);
+                this.player.anims.pause();
+
+                // Update UI
+                document.getElementById('char-name').textContent = char.name;
+            }
+
+            switchCharacter(index) {
+                this.currentCharIndex = index;
+                this.createPlayer(index);
+            }
+
+            update() {
+                if (!this.player) return;
+
+                const speed = 200;
+                let velocityX = 0;
+                let velocityY = 0;
+
+                // Check input
+                if (this.cursors.left.isDown || this.wasd.A.isDown) {
+                    velocityX = -speed;
+                }
+                if (this.cursors.right.isDown || this.wasd.D.isDown) {
+                    velocityX = speed;
+                }
+                if (this.cursors.up.isDown || this.wasd.W.isDown) {
+                    velocityY = -speed;
+                }
+                if (this.cursors.down.isDown || this.wasd.S.isDown) {
+                    velocityY = speed;
+                }
+
+                // Update position
+                this.player.x += velocityX * (1/60);
+                this.player.y += velocityY * (1/60);
+
+                // Keep in bounds
+                this.player.x = Phaser.Math.Clamp(this.player.x, 32, 768);
+                this.player.y = Phaser.Math.Clamp(this.player.y, 32, 568);
+
+                // Update animation based on movement
+                const char = characters[this.currentCharIndex];
+                if (velocityX !== 0 || velocityY !== 0) {
+                    // Moving - play appropriate animation
+                    if (Math.abs(velocityX) > Math.abs(velocityY)) {
+                        // Left/Right dominant
+                        if (velocityX < 0) {
+                            this.player.play(`${char.id}-left`, true);
+                        } else {
+                            this.player.play(`${char.id}-right`, true);
+                        }
+                    } else {
+                        // Up/Down dominant
+                        if (velocityY < 0) {
+                            this.player.play(`${char.id}-up`, true);
+                        } else {
+                            this.player.play(`${char.id}-down`, true);
+                        }
+                    }
+                } else {
+                    // Idle - pause on first frame of current animation
+                    if (this.player.anims.isPlaying) {
+                        this.player.anims.pause(this.player.anims.currentFrame);
+                    }
+                }
+
+                // Update position display
+                document.getElementById('pos').textContent =
+                    `${Math.floor(this.player.x)}, ${Math.floor(this.player.y)}`;
+            }
+        }
+
+        const config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            backgroundColor: '#5a8a4f',
+            scene: [GameScene],
+            pixelArt: true
+        };
+
+        const game = new Phaser.Game(config);
+    </script>
+</body>
+</html>

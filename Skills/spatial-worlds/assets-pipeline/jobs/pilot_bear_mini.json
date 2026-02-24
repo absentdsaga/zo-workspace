@@ -1,0 +1,7 @@
+{
+  "character_id": "npc_bear",
+  "states": ["idle"],
+  "color_theme": "brown bear character",
+  "character_type": "NPC",
+  "notes": "Mini pilot - 2 frames only to test full pipeline end-to-end"
+}

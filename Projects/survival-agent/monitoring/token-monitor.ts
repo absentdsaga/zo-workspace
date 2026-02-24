@@ -38,7 +38,7 @@ async function getCachedPrice(validator: JupiterValidator, address: string, amou
 
 async function loadTrades(): Promise<PaperTrade[]> {
   try {
-    const tradesFile = '/tmp/paper-trades-master.json';
+    const tradesFile = '/home/workspace/Projects/survival-agent/data/paper-trades-master.json';
     const content = await Bun.file(tradesFile).text();
     return JSON.parse(content);
   } catch {

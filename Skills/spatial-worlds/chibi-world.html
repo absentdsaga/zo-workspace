@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spatial Worlds — The Crossroads</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0d1117; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; font-family: monospace; color: #fff; overflow: hidden; }
+    #wrap { position: relative; }
+    canvas { display: block; border: 2px solid #1a2a3a; border-radius: 4px; }
+    #hud {
+      position: absolute; top: 12px; left: 12px;
+      background: rgba(0,0,0,0.7); border: 1px solid #1e3a5f;
+      border-radius: 6px; padding: 10px 14px; font-size: 11px;
+      line-height: 1.7; pointer-events: none;
+    }
+    #hud .title { color: #4fc3f7; font-size: 12px; font-weight: bold; letter-spacing: 1px; margin-bottom: 4px; }
+    #hud .dim { color: #455a64; }
+    #hud .val { color: #80cbc4; }
+    #controls {
+      position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+      background: rgba(0,0,0,0.6); border-radius: 20px; padding: 6px 16px;
+      font-size: 11px; color: #546e7a; letter-spacing: 0.5px;
+    }
+    #loading {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: rgba(13,17,23,0.9); border-radius: 4px;
+      font-size: 13px; color: #4fc3f7; gap: 8px;
+    }
+    #loading .bar { width: 200px; height: 4px; background: #1a2a3a; border-radius: 2px; overflow: hidden; }
+    #loading .fill { height: 100%; background: #4fc3f7; transition: width 0.3s; }
+  </style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game" width="1024" height="640"></canvas>
+  <div id="hud">
+    <div class="title">⚔️ SPATIAL WORLDS — The Crossroads</div>
+    <div><span class="dim">pos:</span> <span class="val" id="pos">-</span></div>
+    <div><span class="dim">elevation:</span> <span class="val" id="elev">Ground</span></div>
+    <div><span class="dim">direction:</span> <span class="val" id="dir">south</span></div>
+  </div>
+  <div id="controls">WASD / Arrow Keys to move</div>
+  <div id="loading">
+    <div>Loading sprites...</div>
+    <div class="bar"><div class="fill" id="load-fill" style="width:0%"></div></div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════════════
+// CONFIG
+// ═══════════════════════════════════════════════════════════════════════════
+const TILE_W  = 64;
+const TILE_H  = 32;
+const MAP_SIZE = 50;
+const ELEV_H  = 20;   // px per elevation level
+const CAM_LERP = 0.10;
+
+const canvas = document.getElementById('game');
+const ctx    = canvas.getContext('2d');
+const loadEl = document.getElementById('loading');
+const fillEl = document.getElementById('load-fill');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// COORDINATE SYSTEM
+// ═══════════════════════════════════════════════════════════════════════════
+function toScreen(row, col, elevation, camX, camY) {
+  const wx = (col - row) * (TILE_W / 2);
+  const wy = (col + row) * (TILE_H / 2) - elevation * ELEV_H;
+  return { x: wx - camX + canvas.width / 2, y: wy - camY + canvas.height / 2 };
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MAP GENERATION (mirrors MapGenerator.ts logic)
+// ═══════════════════════════════════════════════════════════════════════════
+function getElevationAt(row, col) {
+  const cx = MAP_SIZE / 2, cy = MAP_SIZE / 2;
+  const dist = Math.hypot(col - cx, row - cy);
+  if (dist < 8) return 0;
+
+  // NW/NE = elevation 1, SW/SE = elevation 2
+  if (dist > 15 && dist < 20) {
+    if (row < cy && col < cx) return 1; // NW
+    if (row < cy && col >= cx) return 1; // NE
+    if (row >= cy && col < cx) return 2; // SW
+    if (row >= cy && col >= cx) return 2; // SE
+  }
+
+  // North/south towers at col ~25
+  if (dist > 20 && Math.abs(col - cx) < 5) {
+    if (row < cy) return 3;
+    if (row > cy) return 3;
+  }
+
+  return 0;
+}
+
+function getTileColor(row, col, elevation) {
+  const checker = (row + col) % 2;
+  if (elevation === 3) return checker ? '#5d4037' : '#4e342e'; // Tower: brown
+  if (elevation === 2) return checker ? '#2e7d32' : '#1b5e20'; // SE/SW: dark green
+  if (elevation === 1) return checker ? '#388e3c' : '#2e7d32'; // NW/NE: medium green
+  return checker ? '#4a7a3f' : '#3d6b34'; // Ground: grass
+}
+
+function getSideColor(base, side) {
+  // Convert hex to slightly darker shade
+  const darken = (hex, amt) => {
+    let r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+    r = Math.max(0, r - amt); g = Math.max(0, g - amt); b = Math.max(0, b - amt);
+    return '#' + [r,g,b].map(x => x.toString(16).padStart(2,'0')).join('');
+  };
+  return darken(base, side === 'left' ? 40 : 20);
+}
+
+// Build tile list once
+const tiles = [];
+for (let r = 0; r < MAP_SIZE; r++) {
+  for (let c = 0; c < MAP_SIZE; c++) {
+    const elev = getElevationAt(r, c);
+    tiles.push({ row: r, col: c, elev, color: getTileColor(r, c, elev) });
+  }
+}
+// Sort once: back-to-front (row+col ascending) then by elevation
+tiles.sort((a, b) => (a.row + a.col) - (b.row + b.col) || a.elev - b.elev);
+
+// ═══════════════════════════════════════════════════════════════════════════
+// TILE DRAWING
+// ═══════════════════════════════════════════════════════════════════════════
+function drawTile(r, c, elev, color, camX, camY, isNear) {
+  const { x, y } = toScreen(r, c, elev, camX, camY);
+
+  // Top face
+  ctx.beginPath();
+  ctx.moveTo(x,              y);
+  ctx.lineTo(x + TILE_W / 2, y + TILE_H / 2);
+  ctx.lineTo(x,              y + TILE_H);
+  ctx.lineTo(x - TILE_W / 2, y + TILE_H / 2);
+  ctx.closePath();
+  ctx.fillStyle = isNear ? lighten(color, 18) : color;
+  ctx.fill();
+  ctx.strokeStyle = 'rgba(0,0,0,0.18)';
+  ctx.lineWidth = 0.5;
+  ctx.stroke();
+
+  // Side faces only if elevated
+  if (elev > 0) {
+    const sh = elev * ELEV_H;
+    // Left face
+    ctx.beginPath();
+    ctx.moveTo(x - TILE_W / 2, y + TILE_H / 2);
+    ctx.lineTo(x,              y + TILE_H);
+    ctx.lineTo(x,              y + TILE_H + sh);
+    ctx.lineTo(x - TILE_W / 2, y + TILE_H / 2 + sh);
+    ctx.closePath();
+    ctx.fillStyle = getSideColor(color, 'left');
+    ctx.fill();
+
+    // Right face
+    ctx.beginPath();
+    ctx.moveTo(x,              y + TILE_H);
+    ctx.lineTo(x + TILE_W / 2, y + TILE_H / 2);
+    ctx.lineTo(x + TILE_W / 2, y + TILE_H / 2 + sh);
+    ctx.lineTo(x,              y + TILE_H + sh);
+    ctx.closePath();
+    ctx.fillStyle = getSideColor(color, 'right');
+    ctx.fill();
+  }
+}
+
+function lighten(hex, amt) {
+  let r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  r = Math.min(255, r + amt); g = Math.min(255, g + amt); b = Math.min(255, b + amt);
+  return '#' + [r,g,b].map(x => x.toString(16).padStart(2,'0')).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SPRITES — load 16-frame sheet or fall back to front-facing idle frames
+// ═══════════════════════════════════════════════════════════════════════════
+const FRAME_SIZE = 64;
+const DIRS = ['south', 'north', 'west', 'east'];  // row order in sheet
+const FRAMES_PER_DIR = 4;
+
+// Sprite state
+const spriteState = {
+  sheet: null,        // 256×256 walk sheet (if available)
+  fallback: [],       // individual idle frames from old pipeline
+  ready: false,
+  mode: 'none'        // 'sheet' | 'fallback' | 'none'
+};
+
+function loadSprites() {
+  let loaded = 0;
+  const total = 2;
+  const onLoad = () => { loaded++; fillEl.style.width = (loaded / total * 100) + '%'; checkReady(); };
+  const checkReady = () => {
+    if (loaded >= total) {
+      loadEl.style.display = 'none';
+      spriteState.ready = true;
+    }
+  };
+
+  // Try walk sheet first
+  const sheet = new Image();
+  sheet.onload = () => {
+    spriteState.sheet = sheet;
+    spriteState.mode = 'sheet';
+    onLoad();
+  };
+  sheet.onerror = () => {
+    console.warn('Walk sheet not found, trying fallback sprites');
+    onLoad();
+  };
+  sheet.src = 'assets-pipeline/output_qc_pass/hero_orange/hero_orange_walk_sheet.png';
+
+  // Load fallback idle sprites (old pipeline output)
+  const fb1 = new Image(), fb2 = new Image();
+  let fbLoaded = 0;
+  const fbDone = () => { fbLoaded++; if (fbLoaded === 2) { onLoad(); } };
+  fb1.onload = fb2.onload = fbDone;
+  fb1.onerror = fb2.onerror = fbDone;
+  fb1.src = 'assets-pipeline/output_qc_pass/hero_orange/hero_orange_idle_f01.png';
+  fb2.src = 'assets-pipeline/output_qc_pass/hero_orange/hero_orange_idle_f02.png';
+  spriteState.fallback = [fb1, fb2];
+}
+
+// Get the correct frame image given direction + walk frame index
+function getFrame(direction, frameIdx) {
+  if (spriteState.mode === 'sheet' && spriteState.sheet) {
+    // Slice from walk sheet
+    const dirRow = DIRS.indexOf(direction);
+    if (dirRow < 0) return null;
+    return { sheet: spriteState.sheet, sx: frameIdx * FRAME_SIZE, sy: dirRow * FRAME_SIZE };
+  }
+  // Fallback: use idle frames, alternate to fake walking
+  const fb = spriteState.fallback;
+  if (fb.length > 0 && fb[0].complete && fb[0].naturalWidth) {
+    return { sheet: fb[frameIdx % fb.length], sx: 0, sy: 0 };
+  }
+  return null;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SHADOW
+// ═══════════════════════════════════════════════════════════════════════════
+function drawShadow(x, y, size) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.scale(1, 0.4);
+  const g = ctx.createRadialGradient(0, 0, 0, 0, 0, size);
+  g.addColorStop(0, 'rgba(0,0,0,0.4)');
+  g.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = g;
+  ctx.beginPath();
+  ctx.arc(0, 0, size, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// CHARACTER DRAWING — leg animation by translation, no more float bob
+// ═══════════════════════════════════════════════════════════════════════════
+function drawCharacter(sx, sy, frame, direction, isMoving, walkT, isPlayer) {
+  const fs = FRAME_SIZE; // 64
+
+  // Foot contact offset: when moving, alternate foot-down gives ground contact feel
+  // Frame 0 & 2 = stride (one foot forward), Frame 1 & 3 = passing (upright)
+  let squashY = 0;
+  if (isMoving) {
+    // Subtle squash/stretch on contact frames (0, 2)
+    const contactFrame = (frame % 2 === 0);
+    squashY = contactFrame ? 1 : 0; // drop 1px on contact frames
+  }
+
+  const frameData = getFrame(direction, frame);
+  if (!frameData) {
+    // Draw placeholder circle
+    ctx.beginPath();
+    ctx.arc(sx, sy - 24, 16, 0, Math.PI * 2);
+    ctx.fillStyle = isPlayer ? '#4fc3f7' : '#aaa';
+    ctx.fill();
+    return;
+  }
+
+  const drawY = sy - fs + squashY;
+
+  if (frameData.sx !== undefined) {
+    // Sheet slice
+    ctx.drawImage(
+      frameData.sheet,
+      frameData.sx, frameData.sy, fs, fs,
+      sx - fs / 2, drawY, fs, fs
+    );
+  } else {
+    // Whole image fallback
+    ctx.drawImage(frameData.sheet, sx - fs / 2, drawY, fs, fs);
+  }
+
+  // Player label
+  if (isPlayer) {
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 10px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('YOU', sx, drawY - 4);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// PLAYER
+// ═══════════════════════════════════════════════════════════════════════════
+const player = {
+  row: 25, col: 25,   // logical grid (can be fractional)
+  elev: 0,
+  direction: 'south',
+  moving: false,
+  walkT: 0,            // continuous walk timer
+  frame: 0,            // current walk frame (0-3)
+  frameTimer: 0,
+  speed: 0.055,        // grid units per frame
+};
+
+// ═══════════════════════════════════════════════════════════════════════════
+// NPCs
+// ═══════════════════════════════════════════════════════════════════════════
+const npcs = [
+  { row: 20, col: 20, elev: 0, direction: 'east',  vrow: 0,     vcol: 0.025, walkT: 0, frame: 0, frameTimer: 0 },
+  { row: 30, col: 30, elev: 0, direction: 'north', vrow:-0.02,  vcol: 0,     walkT: 1, frame: 1, frameTimer: 0 },
+  { row: 22, col: 28, elev: 1, direction: 'south', vrow: 0.02,  vcol: 0.015, walkT: 2, frame: 2, frameTimer: 0 },
+  { row: 28, col: 22, elev: 2, direction: 'west',  vrow: 0,     vcol:-0.02,  walkT: 0.5, frame: 3, frameTimer: 0 },
+];
+
+// ═══════════════════════════════════════════════════════════════════════════
+// CAMERA (world coords of center)
+// ═══════════════════════════════════════════════════════════════════════════
+let camX = 0, camY = 0;
+
+function playerWorldPos() {
+  const wx = (player.col - player.row) * (TILE_W / 2);
+  const wy = (player.col + player.row) * (TILE_H / 2) - player.elev * ELEV_H;
+  return { wx, wy };
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// INPUT
+// ═══════════════════════════════════════════════════════════════════════════
+const keys = {};
+window.addEventListener('keydown', e => { keys[e.key] = true; e.preventDefault(); });
+window.addEventListener('keyup',   e => { keys[e.key] = false; });
+
+function getInput() {
+  return {
+    up:    keys['ArrowUp']    || keys['w'] || keys['W'],
+    down:  keys['ArrowDown']  || keys['s'] || keys['S'],
+    left:  keys['ArrowLeft']  || keys['a'] || keys['A'],
+    right: keys['ArrowRight'] || keys['d'] || keys['D'],
+  };
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// ELEVATION DETECTION
+// ═══════════════════════════════════════════════════════════════════════════
+function snapElevation(row, col) {
+  const r = Math.round(row), c = Math.round(col);
+  return getElevationAt(Math.max(0, Math.min(MAP_SIZE-1, r)), Math.max(0, Math.min(MAP_SIZE-1, c)));
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MAIN LOOP
+// ═══════════════════════════════════════════════════════════════════════════
+let lastTime = 0;
+
+function update(ts) {
+  const raw = ts - lastTime;
+  lastTime = ts;
+  const dt = Math.min(raw / 16.67, 3);
+
+  // ── Input ──
+  const inp = getInput();
+  player.moving = false;
+  const spd = player.speed * dt;
+
+  let moveRow = 0, moveCol = 0;
+  if (inp.up)    moveRow -= spd;
+  if (inp.down)  moveRow += spd;
+  if (inp.left)  moveCol -= spd;
+  if (inp.right) moveCol += spd;
+
+  if (moveRow !== 0 || moveCol !== 0) {
+    player.moving = true;
+    player.row = Math.max(1, Math.min(MAP_SIZE - 2, player.row + moveRow));
+    player.col = Math.max(1, Math.min(MAP_SIZE - 2, player.col + moveCol));
+
+    // Determine direction from movement
+    if (Math.abs(moveCol) > Math.abs(moveRow)) {
+      player.direction = moveCol > 0 ? 'east' : 'west';
+    } else {
+      player.direction = moveRow > 0 ? 'south' : 'north';
+    }
+  }
+
+  // Auto-snap elevation
+  player.elev = snapElevation(player.row, player.col);
+
+  // Walk animation: advance frame every ~8 display frames (100ms at 60fps)
+  if (player.moving) {
+    player.walkT += dt;
+    player.frameTimer += dt;
+    if (player.frameTimer > 7.5) {
+      player.frame = (player.frame + 1) % FRAMES_PER_DIR;
+      player.frameTimer = 0;
+    }
+  } else {
+    player.frame = 0; // idle = frame 0 (standing pose)
+  }
+
+  // ── NPCs ──
+  npcs.forEach(npc => {
+    npc.row += npc.vrow * dt;
+    npc.col += npc.vcol * dt;
+
+    // Bounce at map edges
+    if (npc.row < 2 || npc.row > MAP_SIZE - 3) { npc.vrow *= -1; npc.direction = npc.vrow > 0 ? 'south' : 'north'; }
+    if (npc.col < 2 || npc.col > MAP_SIZE - 3) { npc.vcol *= -1; npc.direction = npc.vcol > 0 ? 'east' : 'west'; }
+
+    npc.elev = snapElevation(npc.row, npc.col);
+
+    const moving = Math.abs(npc.vrow) > 0.001 || Math.abs(npc.vcol) > 0.001;
+    if (moving) {
+      npc.frameTimer += dt;
+      if (npc.frameTimer > 7.5) {
+        npc.frame = (npc.frame + 1) % FRAMES_PER_DIR;
+        npc.frameTimer = 0;
+      }
+    }
+  });
+
+  // ── Camera lerp ──
+  const pw = playerWorldPos();
+  camX += (pw.wx - camX) * CAM_LERP * dt * 6;
+  camY += (pw.wy - camY) * CAM_LERP * dt * 6;
+
+  // ── Draw ──
+  draw();
+
+  // ── HUD ──
+  document.getElementById('pos').textContent  = `${player.row.toFixed(1)}, ${player.col.toFixed(1)}`;
+  document.getElementById('elev').textContent = ['Ground', 'Level 1', 'Level 2', 'Tower'][player.elev] || 'Ground';
+  document.getElementById('dir').textContent  = player.direction;
+
+  requestAnimationFrame(update);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// DRAW
+// ═══════════════════════════════════════════════════════════════════════════
+function draw() {
+  // Sky gradient background
+  const sky = ctx.createLinearGradient(0, 0, 0, canvas.height);
+  sky.addColorStop(0, '#0d1b2a');
+  sky.addColorStop(1, '#162032');
+  ctx.fillStyle = sky;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // ── Tiles ──
+  // Only draw tiles visible in viewport (viewport culling)
+  const pRow = Math.round(player.row), pCol = Math.round(player.col);
+  const VIEW_RADIUS = 18;
+
+  for (const tile of tiles) {
+    if (Math.abs(tile.row - pRow) > VIEW_RADIUS || Math.abs(tile.col - pCol) > VIEW_RADIUS) continue;
+    const near = Math.abs(tile.row - player.row) < 2.5 && Math.abs(tile.col - player.col) < 2.5;
+    drawTile(tile.row, tile.col, tile.elev, tile.color, camX, camY, near);
+  }
+
+  // ── Sprites (depth sorted) ──
+  const drawList = [];
+
+  // Player
+  const ps = toScreen(player.row, player.col, player.elev, camX, camY);
+  const pSortY = ps.y + player.elev * 10;
+  drawList.push({
+    sortY: pSortY,
+    draw: () => {
+      drawShadow(ps.x, ps.y + 2, 20);
+      drawCharacter(ps.x, ps.y, player.frame, player.direction, player.moving, player.walkT, true);
+    }
+  });
+
+  // NPCs
+  npcs.forEach(npc => {
+    const ns = toScreen(npc.row, npc.col, npc.elev, camX, camY);
+    const nMoving = Math.abs(npc.vrow) > 0.001 || Math.abs(npc.vcol) > 0.001;
+    drawList.push({
+      sortY: ns.y + npc.elev * 10,
+      draw: () => {
+        drawShadow(ns.x, ns.y + 2, 18);
+        drawCharacter(ns.x, ns.y, npc.frame, npc.direction, nMoving, npc.walkT, false);
+      }
+    });
+  });
+
+  // Sort by Y + elevation for proper isometric depth
+  drawList.sort((a, b) => a.sortY - b.sortY);
+  drawList.forEach(d => d.draw());
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// BOOT
+// ═══════════════════════════════════════════════════════════════════════════
+loadSprites();
+
+// Start loop immediately (sprites load async, draws placeholder until ready)
+loadEl.style.display = 'none'; // show world immediately, sprites load in
+requestAnimationFrame(update);
+</script>
+</body>
+</html>

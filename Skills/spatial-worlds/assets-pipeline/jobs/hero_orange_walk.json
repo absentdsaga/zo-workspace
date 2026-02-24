@@ -1,0 +1,8 @@
+{
+  "character_id": "hero_orange",
+  "color_theme": "orange armor hero with orange cape, chibi proportions",
+  "character_type": "character",
+  "walk_directions": ["south", "north", "east", "west"],
+  "frames_per_direction": 4,
+  "notes": "4-direction walk cycle for 2.5D isometric world. Sheet layout: rows 0-3=south, 4-7=north, 8-11=west, 12-15=east"
+}

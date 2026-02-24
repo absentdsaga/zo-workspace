@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All 24 NFT Characters - Visual Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #222;
+            font-family: monospace;
+            color: #fff;
+        }
+        #info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.9);
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        canvas {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #444;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <h3>🎨 All 24 NFT Characters</h3>
+        <div id="status">Loading...</div>
+        <div style="margin-top: 10px; font-size: 12px;">
+            <strong>Layout:</strong> 6 columns × 4 rows<br>
+            <strong>Check:</strong> Transparency, size, visual quality<br>
+            <strong>Scroll:</strong> Use arrow keys to pan camera
+        </div>
+    </div>
+
+    <script>
+        const config = {
+            type: Phaser.AUTO,
+            width: 1200,
+            height: 800,
+            backgroundColor: '#5a8a4f', // Grass green background
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 0 }
+                }
+            },
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            }
+        };
+
+        const game = new Phaser.Game(config);
+        let statusText;
+        let cursors;
+        let camera;
+        let loadProgress = 0;
+        let totalSprites = 24;
+
+        // All 24 character sprite definitions
+        const characters = [];
+        for (let set = 1; set <= 4; set++) {
+            for (let char = 1; char <= 6; char++) {
+                characters.push({
+                    id: `set${set}-char${char}`,
+                    name: `Set ${set} Char ${char}`
+                });
+            }
+        }
+
+        function preload() {
+            updateStatus('Loading all 24 characters...');
+
+            // Load all sprite sheets
+            characters.forEach((char, index) => {
+                const path = `assets/sprites/nft-characters-hd/${char.id}/${char.id}-sheet-transparent.png?v=` + Date.now();
+
+                this.load.spritesheet(char.id, path, {
+                    frameWidth: 64,
+                    frameHeight: 96
+                });
+
+                this.load.on('progress', (value) => {
+                    loadProgress = Math.floor(value * 100);
+                    updateStatus(`Loading: ${loadProgress}% (${Math.floor(value * totalSprites)}/${totalSprites})`);
+                });
+            });
+        }
+
+        function create() {
+            updateStatus('Creating character showcase...');
+
+            // Grid layout: 6 columns × 4 rows
+            const cols = 6;
+            const startX = 150;
+            const startY = 150;
+            const spacingX = 180;
+            const spacingY = 180;
+
+            characters.forEach((char, index) => {
+                const col = index % cols;
+                const row = Math.floor(index / cols);
+                const x = startX + (col * spacingX);
+                const y = startY + (row * spacingY);
+
+                // Create sprite
+                const sprite = this.add.sprite(x, y, char.id, 8); // Frame 8 = down-walk-0
+                sprite.setScale(1.5);
+                sprite.setOrigin(0.5, 0.85);
+
+                // Create idle animation for this character
+                this.anims.create({
+                    key: `${char.id}-idle`,
+                    frames: [ { key: char.id, frame: 8 } ],
+                    frameRate: 1
+                });
+
+                // Create walk animation for this character (down direction)
+                this.anims.create({
+                    key: `${char.id}-walk`,
+                    frames: this.anims.generateFrameNumbers(char.id, { start: 8, end: 11 }),
+                    frameRate: 6,
+                    repeat: -1
+                });
+
+                // Play walk animation
+                sprite.play(`${char.id}-walk`);
+
+                // Add label below character
+                const label = this.add.text(x, y + 80, char.name, {
+                    fontSize: '14px',
+                    fill: '#fff',
+                    backgroundColor: '#000',
+                    padding: { x: 5, y: 3 }
+                }).setOrigin(0.5);
+
+                // Add character ID label
+                const idLabel = this.add.text(x, y + 100, char.id, {
+                    fontSize: '11px',
+                    fill: '#aaa',
+                    backgroundColor: '#000',
+                    padding: { x: 5, y: 2 }
+                }).setOrigin(0.5);
+            });
+
+            // Camera controls
+            cursors = this.input.keyboard.createCursorKeys();
+            camera = this.cameras.main;
+            camera.setBounds(0, 0, 1400, 1000);
+
+            // Status text at bottom center
+            statusText = this.add.text(600, 750, '', {
+                fontSize: '16px',
+                fill: '#fff',
+                backgroundColor: '#000',
+                padding: { x: 10, y: 5 }
+            }).setOrigin(0.5);
+            statusText.setScrollFactor(0); // Fixed to camera
+
+            updateStatus('✅ All 24 characters loaded!');
+            updateGameStatus('Use arrow keys to pan camera and view all characters');
+        }
+
+        function update() {
+            const cameraSpeed = 5;
+
+            // Pan camera with arrow keys
+            if (cursors.left.isDown) {
+                camera.scrollX -= cameraSpeed;
+            } else if (cursors.right.isDown) {
+                camera.scrollX += cameraSpeed;
+            }
+
+            if (cursors.up.isDown) {
+                camera.scrollY -= cameraSpeed;
+            } else if (cursors.down.isDown) {
+                camera.scrollY += cameraSpeed;
+            }
+
+            // Update camera position display
+            if (cursors.left.isDown || cursors.right.isDown || cursors.up.isDown || cursors.down.isDown) {
+                updateGameStatus(`Camera: ${Math.floor(camera.scrollX)}, ${Math.floor(camera.scrollY)}`);
+            }
+        }
+
+        function updateStatus(msg) {
+            document.getElementById('status').innerHTML = msg;
+        }
+
+        function updateGameStatus(msg) {
+            if (statusText) {
+                statusText.setText(msg);
+            }
+        }
+    </script>
+</body>
+</html>

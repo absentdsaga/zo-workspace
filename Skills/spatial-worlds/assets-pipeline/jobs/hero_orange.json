@@ -1,0 +1,18 @@
+{
+  "character_id": "hero_orange",
+  "style_profile": "saga_iso_v1",
+  "size_class": "humanoid_m",
+  "states": ["idle", "walk", "attack", "hit"],
+  "color_theme": "orange heroic",
+  "reference_images": [
+    "input/refs/hero_ref_01.png",
+    "input/refs/style_board_01.png"
+  ],
+  "output": {
+    "raw_dir": "output_raw/hero_orange",
+    "cut_dir": "output_cut/hero_orange",
+    "norm_dir": "output_norm/hero_orange",
+    "qc_pass_dir": "output_qc_pass/hero_orange",
+    "metadata_dir": "metadata/hero_orange"
+  }
+}

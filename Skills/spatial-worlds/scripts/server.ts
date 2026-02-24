@@ -226,6 +226,16 @@ const server = Bun.serve({
       return new Response(Bun.file('scripts/client/index-iso.html'));
     }
 
+    // Serve character selection screen
+    if (url.pathname === '/character-select.html') {
+      return new Response(Bun.file('character-select.html'));
+    }
+
+    // Serve character movement test
+    if (url.pathname === '/test-character-movement.html') {
+      return new Response(Bun.file('test-character-movement.html'));
+    }
+
     // Serve client files
     if (url.pathname.startsWith('/scripts/client/')) {
       const filePath = url.pathname.slice(1);

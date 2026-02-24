@@ -1,0 +1,25 @@
+{
+  "character_id": "hero_orange",
+  "state": "idle",
+  "frame_rate": 8,
+  "loop": true,
+  "pivot_px": [
+    64,
+    108
+  ],
+  "baseline_y": 108,
+  "frames": [
+    {
+      "file": "hero_orange_idle_f01.png",
+      "duration_ms": 125,
+      "event": null
+    }
+  ],
+  "sort_bias": 0,
+  "shadow": {
+    "type": "blob",
+    "radius_x": 10,
+    "radius_y": 4,
+    "alpha": 0.28
+  }
+}

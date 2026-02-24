@@ -7,6 +7,7 @@ export const CONFIG = {
   // Mode
   PAPER_TRADE: true,
   MODE_LABEL: 'PAPER',
+  USE_JITO: false,               // Set true once you have a Jito API key (JITO_API_KEY env var)
 
   // Capital
   STARTING_BALANCE: 0.5,          // SOL - paper money, reset freely
@@ -31,10 +32,14 @@ export const CONFIG = {
 
   // Timing
   SCAN_INTERVAL_MS: 15000,        // 15s between opportunity scans
-  MONITOR_INTERVAL_MS: 5000,      // 5s between position checks
+  MONITOR_INTERVAL_MS: 1000,      // 1s between position checks
+
+  // RPC endpoint - mainnet.helius-rpc.com for reliability
+  // ${HELIUS_API_KEY} is replaced at runtime with the actual key
+  RPC_URL: 'https://mainnet.helius-rpc.com/?api-key=${HELIUS_API_KEY}',
 
   // Data files
-  TRADES_FILE: '/tmp/paper-trades-master.json',
-  STATE_FILE: '/tmp/paper-trades-state.json',
-  BLACKLIST_FILE: '/tmp/paper-trades-blacklist.json',
+  TRADES_FILE: '/home/workspace/Projects/survival-agent/data/paper-trades-master.json',
+  STATE_FILE: '/home/workspace/Projects/survival-agent/data/paper-trades-state.json',
+  BLACKLIST_FILE: '/home/workspace/Projects/survival-agent/data/paper-trades-blacklist.json',
 } as const;

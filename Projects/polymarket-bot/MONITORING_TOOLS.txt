@@ -1,0 +1,101 @@
+╔══════════════════════════════════════════════════════════════╗
+║  POLYMARKET 5-MINUTE BOT - MONITORING TOOLS SUMMARY          ║
+╚══════════════════════════════════════════════════════════════╝
+
+✅ THREE MONITORING OPTIONS CREATED:
+
+1. 📊 LIVE STATS DASHBOARD (Recommended)
+   File: stats_dashboard.py
+   Command: /usr/local/bin/python3 stats_dashboard.py
+   
+   Features:
+   • Real-time prices (updates every 5 seconds)
+   • Opportunity counter
+   • Best spread tracker  
+   • Profit trend visualization
+   • Market volume tracking
+   • Full-screen auto-refreshing display
+   
+   Best for: Watching markets in real-time
+
+2. 📋 SIMPLE LOG MONITOR
+   File: monitor_hybrid.sh
+   Command: ./monitor_hybrid.sh
+   
+   Features:
+   • Color-coded bot output
+   • Real-time log streaming
+   • Process status check
+   • Error highlighting
+   
+   Best for: Debugging and seeing raw output
+
+3. 🎛️ MONITORING LAUNCHER
+   File: monitor.sh
+   Command: ./monitor.sh
+   
+   Features:
+   • Menu-driven interface
+   • Choose dashboard or log monitor
+   • Easy switching between modes
+   
+   Best for: Quick access to any monitor
+
+════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION FILES:
+
+• MONITORING.md - Full monitoring guide with examples
+• QUICK_REFERENCE.md - One-page cheat sheet
+• README.md - Complete project documentation
+
+════════════════════════════════════════════════════════════════
+
+🚀 GETTING STARTED:
+
+Step 1: Start the bot
+$ ./run_bot.sh
+
+Step 2: Open monitoring (new terminal)
+$ /usr/local/bin/python3 stats_dashboard.py
+
+Step 3: Watch for opportunities (profit ≥ 5%)
+
+════════════════════════════════════════════════════════════════
+
+💡 PRO TIPS:
+
+• Dashboard works WITHOUT the bot running (fetches prices directly)
+• Run for 30+ minutes to see multiple market cycles
+• Best spreads appear in first 60 seconds of new markets
+• Markets rotate every 5 minutes at :X0 and :X5
+• Press Ctrl+C in dashboard to see session stats
+
+════════════════════════════════════════════════════════════════
+
+📊 EXAMPLE DASHBOARD OUTPUT:
+
+🤖 POLYMARKET 5-MINUTE BOT - LIVE DASHBOARD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⏱️  Runtime: 00:05:23
+📊 Price Checks: 64
+🎯 Opportunities Found: 3
+
+📍 CURRENT MARKET
+Market: btc-updown-5m-1771025400
+UP Price:   $0.4800
+DOWN Price: $0.4500
+Total Cost: $0.9300
+💰 PROFIT: $0.0700 (7.00%) ⚡ OPPORTUNITY!
+
+🏆 BEST SPREAD TODAY
+Profit: 12.50%
+Time: 18:23:45
+
+📈 PROFIT TREND
+18:31:05 | +7.00% | ████████████████ ⚡
+18:31:10 | +2.50% | ██████
+18:31:15 | +0.50% | █
+
+════════════════════════════════════════════════════════════════

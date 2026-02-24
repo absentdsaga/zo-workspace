@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spatial Worlds - Chibi Character Demo</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #1a1a2e; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: monospace; color: #fff; overflow: hidden; }
+    h2 { margin-bottom: 16px; color: #a0e0ff; letter-spacing: 2px; font-size: 14px; text-transform: uppercase; }
+    canvas { border: 2px solid #334; border-radius: 8px; }
+    p { margin-top: 12px; color: #556; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h2>⚔️ Spatial Worlds — Character Preview</h2>
+  <canvas id="game" width="800" height="500"></canvas>
+  <p>WASD / Arrow Keys to move your character</p>
+
+<script>
+const canvas = document.getElementById('game');
+const ctx = canvas.getContext('2d');
+
+// ── Isometric tile map ──────────────────────────────────────────────
+const TILE_W = 64, TILE_H = 32;
+const MAP_COLS = 16, MAP_ROWS = 12;
+const ORIGIN_X = canvas.width / 2;
+const ORIGIN_Y = 120;
+
+function toScreen(row, col) {
+  return {
+    x: ORIGIN_X + (col - row) * (TILE_W / 2),
+    y: ORIGIN_Y + (col + row) * (TILE_H / 2)
+  };
+}
+
+function drawTile(row, col, color, highlight) {
+  const { x, y } = toScreen(row, col);
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x + TILE_W / 2, y + TILE_H / 2);
+  ctx.lineTo(x, y + TILE_H);
+  ctx.lineTo(x - TILE_W / 2, y + TILE_H / 2);
+  ctx.closePath();
+  ctx.fillStyle = highlight ? '#6a9f6a' : color;
+  ctx.fill();
+  ctx.strokeStyle = '#2a3a2a';
+  ctx.lineWidth = 1;
+  ctx.stroke();
+}
+
+// ── Sprites ─────────────────────────────────────────────────────────
+const sprites = {};
+const spriteFiles = {
+  hero:    'assets-pipeline/output_qc_pass/hero_orange/hero_orange_idle_f01.png',
+  hero2:   'assets-pipeline/output_qc_pass/hero_orange/hero_orange_idle_f02.png',
+  bear:    'assets-pipeline/output_qc_pass/npc_bear/npc_bear_idle_f01.png',
+  raccoon: 'assets-pipeline/output_qc_pass/npc_raccoon/npc_raccoon_idle_f01.png',
+  raccoon2:'assets-pipeline/output_qc_pass/npc_raccoon/npc_raccoon_idle_f02.png',
+};
+
+let loadedCount = 0;
+const totalSprites = Object.keys(spriteFiles).length;
+
+for (const [key, src] of Object.entries(spriteFiles)) {
+  const img = new Image();
+  img.onload = () => { loadedCount++; };
+  img.onerror = () => { loadedCount++; console.warn('Missing sprite:', src); };
+  img.src = src;
+  sprites[key] = img;
+}
+
+// ── Player ───────────────────────────────────────────────────────────
+const player = {
+  row: 6, col: 8,     // logical grid position
+  x: 0, y: 0,        // screen position (computed)
+  vx: 0, vy: 0,
+  speed: 2,
+  bobT: 0,
+  frame: 0,
+  frameTimer: 0,
+  moving: false,
+  facing: 'hero'
+};
+
+// ── NPCs ─────────────────────────────────────────────────────────────
+const npcs = [
+  { row: 3, col: 5,  sprite: 'bear',    bobT: 0,   vrow: 0.003, vcol: 0.002 },
+  { row: 9, col: 11, sprite: 'raccoon', bobT: 1.5, vrow: -0.002, vcol: 0.003 },
+  { row: 5, col: 13, sprite: 'raccoon', bobT: 0.8, vrow: 0.002, vcol: -0.003 },
+];
+
+// ── Input ────────────────────────────────────────────────────────────
+const keys = {};
+window.addEventListener('keydown', e => keys[e.key] = true);
+window.addEventListener('keyup',   e => keys[e.key] = false);
+
+// ── Shadow ───────────────────────────────────────────────────────────
+function drawShadow(x, y, size) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.scale(1, 0.4);
+  const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, size);
+  grad.addColorStop(0, 'rgba(0,0,0,0.35)');
+  grad.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, size, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+// ── Main loop ────────────────────────────────────────────────────────
+let lastTime = 0;
+
+function update(ts) {
+  const dt = Math.min((ts - lastTime) / 16.67, 3); // delta in frames, capped
+  lastTime = ts;
+
+  // Player input → row/col movement
+  player.moving = false;
+  if (keys['ArrowUp']    || keys['w'] || keys['W']) { player.row -= 0.04 * dt; player.moving = true; }
+  if (keys['ArrowDown']  || keys['s'] || keys['S']) { player.row += 0.04 * dt; player.moving = true; }
+  if (keys['ArrowLeft']  || keys['a'] || keys['A']) { player.col -= 0.04 * dt; player.moving = true; }
+  if (keys['ArrowRight'] || keys['d'] || keys['D']) { player.col += 0.04 * dt; player.moving = true; }
+
+  // Clamp to map
+  player.row = Math.max(0.5, Math.min(MAP_ROWS - 1.5, player.row));
+  player.col = Math.max(0.5, Math.min(MAP_COLS - 1.5, player.col));
+
+  // Bob animation
+  player.bobT += 0.08 * dt;
+  if (player.moving) {
+    // Swap idle frames while moving
+    player.frameTimer += dt;
+    if (player.frameTimer > 8) { player.frame = 1 - player.frame; player.frameTimer = 0; }
+  }
+
+  // Move NPCs
+  npcs.forEach(npc => {
+    npc.row += npc.vrow * dt;
+    npc.col += npc.vcol * dt;
+    npc.bobT += 0.05 * dt;
+    if (npc.row < 1 || npc.row > MAP_ROWS - 2) npc.vrow *= -1;
+    if (npc.col < 1 || npc.col > MAP_COLS - 2) npc.vcol *= -1;
+  });
+
+  // ── Draw ─────────────────────────────────────────────────────────
+
+  // Background
+  ctx.fillStyle = '#1a1a2e';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Tiles
+  for (let r = 0; r < MAP_ROWS; r++) {
+    for (let c = 0; c < MAP_COLS; c++) {
+      const base = ((r + c) % 2 === 0) ? '#3a5a3a' : '#344e34';
+      const nearPlayer = Math.abs(r - player.row) < 1.5 && Math.abs(c - player.col) < 1.5;
+      drawTile(r, c, base, nearPlayer);
+    }
+  }
+
+  // Collect all sprites to depth-sort
+  const drawList = [];
+
+  // Player screen pos
+  const pScreen = toScreen(player.row, player.col);
+  const pBob = player.moving ? Math.sin(player.bobT * 2.5) * 3 : Math.sin(player.bobT) * 2;
+  const pSprite = player.frame === 0 ? sprites.hero : sprites.hero2;
+  drawList.push({ sortY: pScreen.y, draw: () => {
+    drawShadow(pScreen.x, pScreen.y + 40, 22);
+    if (pSprite.complete && pSprite.naturalWidth) {
+      ctx.drawImage(pSprite, pScreen.x - 40, pScreen.y - 60 + pBob, 80, 80);
+    }
+    // Name label
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 11px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('YOU', pScreen.x, pScreen.y - 68 + pBob);
+  }});
+
+  // NPCs
+  npcs.forEach(npc => {
+    const s = toScreen(npc.row, npc.col);
+    const bob = Math.sin(npc.bobT) * 2;
+    const img = sprites[npc.sprite];
+    drawList.push({ sortY: s.y, draw: () => {
+      drawShadow(s.x, s.y + 40, 20);
+      if (img && img.complete && img.naturalWidth) {
+        ctx.drawImage(img, s.x - 36, s.y - 55 + bob, 72, 72);
+      }
+    }});
+  });
+
+  // Sort by Y (isometric depth)
+  drawList.sort((a, b) => a.sortY - b.sortY);
+  drawList.forEach(d => d.draw());
+
+  // HUD
+  ctx.fillStyle = 'rgba(0,0,0,0.5)';
+  ctx.fillRect(10, 10, 200, 50);
+  ctx.fillStyle = '#a0e0ff';
+  ctx.font = '11px monospace';
+  ctx.textAlign = 'left';
+  ctx.fillText('SPATIAL WORLDS v0.1', 18, 26);
+  ctx.fillStyle = '#667';
+  ctx.fillText(`pos: ${player.row.toFixed(1)}, ${player.col.toFixed(1)}`, 18, 44);
+
+  requestAnimationFrame(update);
+}
+
+requestAnimationFrame(update);
+</script>
+</body>
+</html>

@@ -3,8 +3,8 @@
  * Run this once to blacklist all tokens that have rugged in past trades
  */
 
-const TRADES_FILE = '/tmp/paper-trades-master.json';
-const BLACKLIST_FILE = '/tmp/paper-trades-blacklist.json';
+const TRADES_FILE = '/home/workspace/Projects/survival-agent/data/paper-trades-master.json';
+const BLACKLIST_FILE = '/home/workspace/Projects/survival-agent/data/paper-trades-blacklist.json';
 
 async function main() {
   console.log('🔍 Analyzing trade history for rugged tokens...\n');

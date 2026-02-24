@@ -1,0 +1,95 @@
+{
+  "preset": "saga_iso_v1",
+  "comfy": {
+    "steps": 28,
+    "cfg": 6.0,
+    "sampler": "dpmpp_2m_karras",
+    "base_seed": 42,
+    "gen_canvas": {
+      "width": 768,
+      "height": 768
+    },
+    "img2img_denoise": 0.45
+  },
+  "normalization": {
+    "canvas_w": 128,
+    "canvas_h": 128,
+    "target_char_height_px": 84,
+    "baseline_y": 108,
+    "pivot": [
+      64,
+      108
+    ],
+    "scale_mode": "nearest",
+    "palette_max_colors": 36,
+    "outline_policy": "consistent"
+  },
+  "qc_gates": {
+    "box_artifact_threshold": 5,
+    "feet_baseline_tolerance": 2,
+    "scale_drift_percent": 5,
+    "palette_overflow_threshold": 36,
+    "jitter_tolerance_px": 2,
+    "silhouette_delta_percent": 18
+  },
+  "prompts": {
+    "global_style": "chibi RPG character art, cute chibi proportions with big head and short body, vibrant full color illustration, detailed fantasy armor and clothing, bold clean outlines, rich saturated colors, front-facing full body portrait, large figure centered filling the frame, plain neutral background, mobile game character art style, high quality digital illustration",
+    "negative": "pixel art, 3D render, realistic photo, blurry, watermark, text, logo, multiple characters, sprite sheet, background scene, environment, tiny figure, cropped, sketch, rough lines, low quality",
+    "poses": {
+      "idle": "neutral idle pose, weight balanced, readable silhouette",
+      "walk_south_0": "walking toward viewer, left foot forward, 2.5D three-quarter angle view from slightly above, character facing down-toward-viewer in isometric perspective",
+      "walk_south_1": "walking toward viewer, both feet centered passing pose, 2.5D three-quarter angle view from slightly above",
+      "walk_south_2": "walking toward viewer, right foot forward, 2.5D three-quarter angle view from slightly above",
+      "walk_south_3": "walking toward viewer, both feet centered passing pose alternate, 2.5D three-quarter angle view from slightly above",
+      "walk_north_0": "walking away from viewer, left foot forward, 2.5D three-quarter angle view from slightly above, character facing up-away in isometric perspective",
+      "walk_north_1": "walking away from viewer, both feet centered passing pose, 2.5D three-quarter angle view from slightly above",
+      "walk_north_2": "walking away from viewer, right foot forward, 2.5D three-quarter angle view from slightly above",
+      "walk_north_3": "walking away from viewer, both feet centered passing pose alternate, 2.5D three-quarter angle view from slightly above",
+      "walk_east_0": "walking right, left foot forward, 2.5D side-facing three-quarter angle, character profile facing right",
+      "walk_east_1": "walking right, both feet centered passing pose, 2.5D side-facing three-quarter angle",
+      "walk_east_2": "walking right, right foot forward, 2.5D side-facing three-quarter angle",
+      "walk_east_3": "walking right, both feet centered passing pose alternate, 2.5D side-facing three-quarter angle",
+      "walk_west_0": "walking left, left foot forward, 2.5D side-facing three-quarter angle, character profile facing left",
+      "walk_west_1": "walking left, both feet centered passing pose, 2.5D side-facing three-quarter angle",
+      "walk_west_2": "walking left, right foot forward, 2.5D side-facing three-quarter angle",
+      "walk_west_3": "walking left, both feet centered passing pose alternate, 2.5D side-facing three-quarter angle",
+      "walk_contact": "walk cycle contact pose, one foot forward, one back",
+      "walk_passing": "walk cycle passing pose, hips centered",
+      "attack_anticipation": "attack anticipation, weapon drawn back",
+      "attack_impact": "attack impact pose, clear forward action line",
+      "hit": "hit reaction pose, recoil stance"
+    }
+  },
+  "animation_spec": {
+    "idle": {
+      "frames": 2,
+      "frame_rate": 8,
+      "loop": true
+    },
+    "walk": {
+      "frames": 10,
+      "frame_rate": 12,
+      "loop": true
+    },
+    "attack": {
+      "frames": 12,
+      "frame_rate": 15,
+      "loop": false,
+      "events": {
+        "hit_start": 6,
+        "hit_end": 8
+      }
+    },
+    "hit": {
+      "frames": 5,
+      "frame_rate": 12,
+      "loop": false
+    }
+  },
+  "shadow": {
+    "type": "blob",
+    "radius_x": 10,
+    "radius_y": 4,
+    "alpha": 0.28
+  }
+}

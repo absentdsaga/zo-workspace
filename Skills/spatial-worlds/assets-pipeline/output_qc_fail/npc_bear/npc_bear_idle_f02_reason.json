@@ -1,0 +1,10 @@
+{
+  "image": "/home/workspace/Skills/spatial-worlds/assets-pipeline/output_norm/npc_bear/npc_bear_idle_f02.png",
+  "passed": false,
+  "failures": [
+    {
+      "check": "jitter",
+      "reason": "Jitter: 2.5px shift (max: 2px)"
+    }
+  ]
+}

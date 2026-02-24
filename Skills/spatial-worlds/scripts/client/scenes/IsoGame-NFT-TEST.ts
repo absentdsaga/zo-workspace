@@ -9,8 +9,19 @@ import { VoiceManager } from '../systems/VoiceManager';
 import { MobileInput } from '../systems/MobileInput';
 import { PlatformElevationManager } from '../systems/PlatformElevation';
 
-// 🧪 TEST: Which NFT sprite to test
-const TEST_NFT_SPRITE = 'set2-char2';
+// 🎨 Player character
+const PLAYER_CHARACTER = 'hero_orange';
+
+// 🎨 ALL 24 NFT CHARACTERS (used for NPCs)
+const NFT_CHARACTERS = [
+  'set1-char1', 'set1-char2', 'set1-char3', 'set1-char4', 'set1-char5', 'set1-char6',
+  'set2-char1', 'set2-char2', 'set2-char3', 'set2-char4', 'set2-char5', 'set2-char6',
+  'set3-char1', 'set3-char2', 'set3-char3', 'set3-char4', 'set3-char5', 'set3-char6',
+  'set4-char1', 'set4-char2', 'set4-char3', 'set4-char4', 'set4-char5', 'set4-char6'
+];
+
+// All characters to load (player + NPCs)
+const ALL_CHARACTERS = [PLAYER_CHARACTER];
 
 export class IsoGameScene extends Phaser.Scene {
   private depthManager!: DepthManager;
@@ -29,18 +40,18 @@ export class IsoGameScene extends Phaser.Scene {
   private mobileInput?: MobileInput;
   private isMobile = false;
   private frameCounter: number = 0;
+  private walkTick: number = 0;
+  private debugText!: Phaser.GameObjects.Text;
 
   constructor() {
     super({ key: 'IsoGameScene' });
   }
 
   preload() {
-    // 🧪 TEST: Load NFT sprite
-    console.log(`🧪 TEST MODE: Loading ${TEST_NFT_SPRITE}`);
-    const path = `assets/sprites/nft-characters/${TEST_NFT_SPRITE}/${TEST_NFT_SPRITE}-sheet.png`;
-    this.load.spritesheet(TEST_NFT_SPRITE, path, {
-      frameWidth: 32,
-      frameHeight: 48
+    // 🎨 Load player character (hero_orange: 256x256, 64x64 frames, 4x4 grid)
+    this.load.spritesheet('hero_orange', 'assets/sprites/nft-characters-xxl/hero_orange/hero_orange-sheet.png', {
+      frameWidth: 64,
+      frameHeight: 64
     });
   }
 
@@ -70,7 +81,10 @@ export class IsoGameScene extends Phaser.Scene {
     this.voiceManager = new VoiceManager();
     this.initializeVoiceChat();
 
-    // Create animations
+    // 🎨 Create NFT animations for all 24 characters
+    this.createNFTAnimations();
+
+    // Create old warrior animations for fallback
     this.animationController.createAnimations(this);
 
     // Create The Crossroads map (complex 50x50 tile map)
@@ -80,7 +94,7 @@ export class IsoGameScene extends Phaser.Scene {
     this.createPlayer();
     
     // Create test NPCs (25 for 60 FPS target)
-    this.createNPCs(25);
+    this.createNPCs(5);
     
     // Setup camera
     this.setupCamera();
@@ -96,12 +110,14 @@ export class IsoGameScene extends Phaser.Scene {
     }
 
     // Instructions
-    this.add.text(20, 20, 'SPATIAL WORLDS - The Crossroads\nWASD/Arrows: Move | Auto-Elevation: ON\nProximity Voice Chat: ON\n\nNPC Colors:\nGreen=L0  Blue=L1  Orange=L2  Pink=L3', {
+    this.add.text(20, 20, `SPATIAL WORLDS - The Crossroads\nWASD/Arrows: Move | Auto-Elevation: ON\nProximity Voice Chat: ON\n\n🎨 ${NFT_CHARACTERS.length} Diverse NFT Characters!\nWatch them roam across 4 elevation levels`, {
       fontSize: '14px',
       color: '#00ff00',
       backgroundColor: '#000000',
       padding: { x: 10, y: 10 },
     }).setScrollFactor(0).setDepth(100000);
+
+    this.debugText = this.add.text(20, 120, '', { fontSize: '12px', color: '#ffff00', backgroundColor: '#000000', padding: { x: 5, y: 5 } }).setScrollFactor(0).setDepth(200000);
   }
 
   async initializeVoiceChat() {
@@ -227,7 +243,7 @@ export class IsoGameScene extends Phaser.Scene {
     graphics.lineTo(x - width / 2, y + height / 2);
     graphics.closePath();
     graphics.fillPath();
-    
+
     // Left side (darker)
     const leftColor = Phaser.Display.Color.IntegerToColor(color);
     leftColor.darken(30);
@@ -239,7 +255,7 @@ export class IsoGameScene extends Phaser.Scene {
     graphics.lineTo(x - width / 2, y + height / 2 + depth);
     graphics.closePath();
     graphics.fillPath();
-    
+
     // Right side (medium)
     const rightColor = Phaser.Display.Color.IntegerToColor(color);
     rightColor.darken(15);
@@ -253,52 +269,70 @@ export class IsoGameScene extends Phaser.Scene {
     graphics.fillPath();
   }
 
-  createPlayer() {
-    // 🧪 TEST: Spawn player with NFT sprite instead of warrior
-    console.log(`🧪 TEST: Creating player with ${TEST_NFT_SPRITE}`);
-    this.player = this.physics.add.sprite(640, 360, TEST_NFT_SPRITE, 12);  // frame 12 = down idle
-    this.player.setScale(1.5);
+  createNFTAnimations() {
+    // hero_orange: 256x256, 64x64 frames, 4x4 grid
+    // Row 0 (frames 0-3):   south (front view, walk toward viewer)
+    // Row 1 (frames 4-7):   north (back view, walk away)
+    // Row 2 (frames 8-11):  west  (left-facing profile)
+    // Row 3 (frames 12-15): west duplicate — no genuine east frames exist
+    // East is achieved by playing west + flipX(true)
+    const dirs = ['south', 'north', 'west'];
+    dirs.forEach((dir, rowIdx) => {
+      this.anims.create({
+        key: `hero_orange-walk-${dir}`,
+        frames: this.anims.generateFrameNumbers('hero_orange', { start: rowIdx * 4, end: rowIdx * 4 + 3 }),
+        frameRate: 8,
+        repeat: -1
+      });
+      this.anims.create({
+        key: `hero_orange-idle-${dir}`,
+        frames: [{ key: 'hero_orange', frame: rowIdx * 4 + 1 }],
+        frameRate: 1
+      });
+    });
 
-    // Anchor sprite at feet (0.5, 0.85) so character stands on ground properly
-    this.player.setOrigin(0.5, 0.85);
+    console.log('✅ Created animations for hero_orange (east = west + flipX)');
+  }
+
+  createPlayer() {
+    console.log(`🎨 Creating player with ${PLAYER_CHARACTER}`);
+    this.player = this.physics.add.sprite(640, 360, PLAYER_CHARACTER, 1);  // frame 1 = south idle (row 0)
+    this.player.setScale(2.0);  // hero_orange is 64x64, scale 2x makes it visible
+
+    // Anchor at feet
+    this.player.setOrigin(0.5, 0.9);
 
     // Initialize physics with acceleration/drag
     this.movementController.initPhysics(this.player);
 
     // Set isometric data - start at ground level (elevation 0)
-    this.depthManager.setIsoData(this.player, 0, 48);
+    this.depthManager.setIsoData(this.player, 0, 64);
 
     // Physics - Don't restrict to world bounds (map is larger than initial bounds)
     this.player.setCollideWorldBounds(false);
   }
 
   createNPCs(count: number) {
-    // Create NPCs at different elevation levels (spawn near center)
+    // 🎨 Create NPCs using diverse NFT characters
+    console.log(`🎨 Spawning ${count} diverse NFT characters...`);
+
     for (let i = 0; i < count; i++) {
       const x = Phaser.Math.Between(400, 880);  // Center viewport range
       const y = Phaser.Math.Between(200, 520);
 
-      const npc = this.physics.add.sprite(x, y, 'warrior-south-0');
+      // Use hero_orange for all NPCs (NFT sheets have incompatible frame sizes)
+      const charId = PLAYER_CHARACTER;
+      const npc = this.physics.add.sprite(x, y, charId, 0);  // frame 0 = south idle
 
-      // Assign different colors for different elevations
+      // Random elevation (0-3)
       const elevation = Phaser.Math.Between(0, 3);
-      let tintColor: number;
 
-      switch(elevation) {
-        case 0: tintColor = 0x88ff88; break; // Green - ground level
-        case 1: tintColor = 0x88ccff; break; // Blue - level 1
-        case 2: tintColor = 0xffcc88; break; // Orange - level 2
-        case 3: tintColor = 0xff88ff; break; // Pink - level 3
-        default: tintColor = 0xffffff;
-      }
-
-      npc.setTint(tintColor);
-      npc.setAlpha(0.7);
-      npc.setScale(1.2);
-      npc.setOrigin(0.5, 0.85);
+      npc.setAlpha(0.9);
+      npc.setScale(2.0);
+      npc.setOrigin(0.5, 0.9);
 
       // Set elevation data
-      this.depthManager.setIsoData(npc, elevation, 48);
+      this.depthManager.setIsoData(npc, elevation, 64);
 
       // Random slow movement (bouncing AI)
       const speed = 40;
@@ -312,6 +346,8 @@ export class IsoGameScene extends Phaser.Scene {
 
       this.npcs.push(npc);
     }
+
+    console.log(`✅ Spawned ${this.npcs.length} diverse characters!`);
   }
 
   setupCamera() {
@@ -375,8 +411,18 @@ export class IsoGameScene extends Phaser.Scene {
       console.log(`🎮 Auto Elevation: ${currentElevation} → ${targetElevation}`);
     }
 
-    // Update player animation based on velocity
-    this.animationController.update(this.player, this.player.body!.velocity);
+    // Increment walk tick for bob effect
+    const moving = input.up || input.down || input.left || input.right;
+    if (moving) this.walkTick++;
+    else this.walkTick = 0;
+
+    // Update player animation based on INPUT (not velocity — velocity is isometrically skewed)
+    this.updateNFTAnimationFromInput(this.player, input, this.walkTick);
+
+    // Update NPC animations too
+    this.npcs.forEach(npc => {
+      this.updateNFTAnimation(npc, npc.body!.velocity);
+    });
 
     // Update depth sorting (throttled to every 2 frames for performance)
     if (this.frameCounter % 2 === 0) {
@@ -399,6 +445,13 @@ export class IsoGameScene extends Phaser.Scene {
     if (this.frameCounter % 6 === 0) {
       this.updateSpatialAudio();
     }
+
+    this.debugText.setText([
+      `anim: ${this.player.anims.currentAnim?.key ?? 'none'}`,
+      `frame: ${this.player.anims.currentFrame?.index ?? '?'} / ${this.player.anims.currentAnim?.frames.length ?? '?'}`,
+      `playing: ${this.player.anims.isPlaying}`,
+      `flipX: ${this.player.flipX}`
+    ].join('\n'));
   }
 
   updateSpatialAudio() {
@@ -424,5 +477,82 @@ export class IsoGameScene extends Phaser.Scene {
 
     // Update voice manager with positions
     this.voiceManager.updateSpatialAudio(localPos, remotePlayers);
+  }
+
+  updateNFTAnimationFromInput(sprite: Phaser.Physics.Arcade.Sprite, input: { up: boolean, down: boolean, left: boolean, right: boolean }, walkTick: number = 0) {
+    const charId = sprite.texture.key;
+    if (!ALL_CHARACTERS.includes(charId)) return;
+
+    const moving = input.up || input.down || input.left || input.right;
+
+    let targetKey: string;
+    let flipX = false;
+
+    if (moving) {
+      // Determine facing direction from input — horizontal dominates in isometric view
+      let direction: string;
+      if (input.left && input.up) direction = 'north';
+      else if (input.left && input.down) direction = 'west';
+      else if (input.right && input.up) direction = 'east';
+      else if (input.right && input.down) direction = 'south';
+      else if (input.left) direction = 'west';
+      else if (input.right) direction = 'east';
+      else if (input.down) direction = 'south';
+      else direction = 'north';
+
+      const animDir = direction === 'east' ? 'west' : direction;
+      flipX = direction === 'east';
+      targetKey = `${charId}-walk-${animDir}`;
+
+      if (direction === 'south' || direction === 'north') {
+        const bob = Math.sin(walkTick * 0.35) * 0.018;
+        sprite.setOrigin(0.5, 0.9 + bob);
+      } else {
+        sprite.setOrigin(0.5, 0.9);
+      }
+    } else {
+      sprite.setOrigin(0.5, 0.9);
+      // Derive idle direction from whichever walk anim was last playing
+      const lastKey: string = sprite.getData('lastAnimKey') || `${charId}-idle-south`;
+      const idleDir = lastKey.includes('-north') ? 'north'
+        : lastKey.includes('-west') ? 'west'
+        : 'south';
+      targetKey = `${charId}-idle-${idleDir}`;
+      flipX = sprite.getData('lastFlipX') || false;
+    }
+
+    sprite.setFlipX(flipX);
+
+    // Only call play() when animation needs to change — and NEVER pass ignoreIfPlaying=true
+    const prevKey = sprite.getData('lastAnimKey');
+    if (prevKey !== targetKey) {
+      sprite.setData('lastAnimKey', targetKey);
+      sprite.setData('lastFlipX', flipX);
+      sprite.play(targetKey);
+    }
+  }
+
+  updateNFTAnimation(sprite: Phaser.Physics.Arcade.Sprite, velocity: { x: number, y: number }) {
+    const isMoving = velocity.x !== 0 || velocity.y !== 0;
+    const charId = sprite.texture.key;
+    if (!ALL_CHARACTERS.includes(charId)) return;
+
+    if (isMoving) {
+      const horizDominant = Math.abs(velocity.x) > Math.abs(velocity.y);
+      let direction: string;
+      if (horizDominant) direction = velocity.x > 0 ? 'east' : 'west';
+      else direction = velocity.y > 0 ? 'south' : 'north';
+
+      const animDir = direction === 'east' ? 'west' : direction;
+      sprite.setFlipX(direction === 'east');
+      sprite.play(`${charId}-walk-${animDir}`, true);
+    } else {
+      const frameIdx = parseInt(String(sprite.frame.name), 10);
+      let direction = 'south';
+      if (frameIdx >= 4 && frameIdx <= 7) direction = 'north';
+      else if (frameIdx >= 8) direction = 'west';
+
+      sprite.play(`${charId}-idle-${direction}`, true);
+    }
   }
 }

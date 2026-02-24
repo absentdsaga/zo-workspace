@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NFT Characters Preview (6 at a time)</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #222;
+            font-family: monospace;
+            color: #fff;
+        }
+        #controls {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #5a8a4f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #6a9a5f;
+        }
+        button.active {
+            background: #2a4a2f;
+            border: 2px solid #fff;
+        }
+        #info {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+            border: 2px solid #444;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <h2>🎨 NFT Character Preview</h2>
+        <p>All characters shown with <strong>transparent backgrounds</strong> on grass green</p>
+    </div>
+
+    <div id="controls">
+        <button onclick="loadSet(1)" class="active" id="btn-1">Set 1 (Characters 1-6)</button>
+        <button onclick="loadSet(2)" id="btn-2">Set 2 (Characters 7-12)</button>
+        <button onclick="loadSet(3)" id="btn-3">Set 3 (Characters 13-18)</button>
+        <button onclick="loadSet(4)" id="btn-4">Set 4 (Characters 19-24)</button>
+    </div>
+
+    <div id="game-container"></div>
+
+    <script>
+        let game;
+        let currentSet = 1;
+
+        const config = {
+            type: Phaser.AUTO,
+            width: 1100,
+            height: 300,
+            backgroundColor: '#5a8a4f',
+            parent: 'game-container',
+            scene: {
+                preload: preload,
+                create: create
+            }
+        };
+
+        function loadSet(setNum) {
+            currentSet = setNum;
+
+            // Update button states
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`btn-${i}`).classList.remove('active');
+            }
+            document.getElementById(`btn-${setNum}`).classList.add('active');
+
+            // Restart game with new set
+            if (game) {
+                game.destroy(true);
+            }
+            game = new Phaser.Game(config);
+        }
+
+        function preload() {
+            // Load 6 characters from current set
+            for (let char = 1; char <= 6; char++) {
+                const id = `set${currentSet}-char${char}`;
+                const path = `assets/sprites/nft-characters-hd/${id}/${id}-sheet-transparent.png`;
+
+                this.load.spritesheet(id, path, {
+                    frameWidth: 64,
+                    frameHeight: 96
+                });
+            }
+        }
+
+        function create() {
+            const startX = 100;
+            const y = 150;
+            const spacingX = 170;
+
+            for (let char = 1; char <= 6; char++) {
+                const id = `set${currentSet}-char${char}`;
+                const x = startX + ((char - 1) * spacingX);
+
+                // Create sprite
+                const sprite = this.add.sprite(x, y, id, 8); // Frame 8 = down facing
+                sprite.setScale(1.8);
+                sprite.setOrigin(0.5, 0.85);
+
+                // Create walk animation
+                this.anims.create({
+                    key: `${id}-walk`,
+                    frames: this.anims.generateFrameNumbers(id, { start: 8, end: 11 }),
+                    frameRate: 6,
+                    repeat: -1
+                });
+
+                sprite.play(`${id}-walk`);
+
+                // Label
+                const charNum = ((currentSet - 1) * 6) + char;
+                this.add.text(x, y + 85, `#${charNum}: ${id}`, {
+                    fontSize: '12px',
+                    fill: '#fff',
+                    backgroundColor: '#000',
+                    padding: { x: 5, y: 3 }
+                }).setOrigin(0.5);
+            }
+
+            // Title
+            this.add.text(550, 20, `SET ${currentSet} - Characters ${(currentSet-1)*6+1} to ${currentSet*6}`, {
+                fontSize: '18px',
+                fill: '#fff',
+                fontStyle: 'bold'
+            }).setOrigin(0.5);
+        }
+
+        // Start with Set 1
+        game = new Phaser.Game(config);
+    </script>
+</body>
+</html>

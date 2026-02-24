@@ -4,7 +4,7 @@
 
 # Data sources
 export LOG_FILE="/tmp/paper-trade.log"
-export STATS_FILE="/tmp/paper-trades-master.json"
+export STATS_FILE="/home/workspace/Projects/survival-agent/data/paper-trades-master.json"
 
 # Trading parameters (update these when bot settings change)
 export STARTING_BALANCE=0.5

@@ -1,0 +1,10 @@
+{
+  "image": "/home/workspace/Skills/spatial-worlds/assets-pipeline/output_norm/hero_orange/hero_orange_idle_f02.png",
+  "passed": false,
+  "failures": [
+    {
+      "check": "jitter",
+      "reason": "Jitter: 3.7px shift (max: 2px)"
+    }
+  ]
+}

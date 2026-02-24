@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "bun run --hot scripts/server.ts",
-    "build": "bun build scripts/client/main.ts --outdir=dist --target=browser",
+    "build": "bun build scripts/client/main-iso.ts --outfile=dist/main-iso.js --target=browser",
     "preview": "bun run scripts/server.ts"
   },
   "dependencies": {

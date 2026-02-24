@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Walk Direction Test</title>
+<style>
+  body { background: #1a1a2e; color: #fff; font-family: monospace; padding: 20px; }
+  canvas { image-rendering: pixelated; border: 2px solid #444; }
+  .row { display: flex; gap: 20px; align-items: center; margin: 10px 0; }
+  .label { width: 80px; font-size: 18px; font-weight: bold; }
+  .active { color: #0f0; text-shadow: 0 0 8px #0f0; }
+  #status { font-size: 24px; margin: 20px 0; color: #ff0; }
+  #instructions { color: #aaa; margin-bottom: 20px; }
+  .framenum { color: #888; font-size: 12px; }
+</style>
+</head>
+<body>
+<h2>Hero Orange — Walk Direction Test</h2>
+<div id="instructions">Press arrow keys or WASD. Watch which row animates.</div>
+<div id="status">Press a key...</div>
+
+<div class="row">
+  <div class="label" id="lbl-south">↓ SOUTH<br><span class="framenum">frames 0-3</span></div>
+  <canvas id="c-south" width="256" height="64"></canvas>
+</div>
+<div class="row">
+  <div class="label" id="lbl-north">↑ NORTH<br><span class="framenum">frames 4-7</span></div>
+  <canvas id="c-north" width="256" height="64"></canvas>
+</div>
+<div class="row">
+  <div class="label" id="lbl-west">← WEST<br><span class="framenum">frames 8-11</span></div>
+  <canvas id="c-west" width="256" height="64"></canvas>
+</div>
+<div class="row">
+  <div class="label" id="lbl-east">→ EAST<br><span class="framenum">frames 12-15</span></div>
+  <canvas id="c-east" width="256" height="64"></canvas>
+</div>
+
+<div style="margin-top:30px; color:#aaa; font-size:13px;">
+  Sheet layout: 256×256, 4 rows × 4 cols, 64×64 per frame<br>
+  Row 0=south(0-3), Row 1=north(4-7), Row 2=west(8-11), Row 3=east(12-15)
+</div>
+
+<script>
+const SHEET = 'assets/sprites/nft-characters-xxl/hero_orange/hero_orange-sheet.png';
+const FW = 64, FH = 64;
+const DIRS = { south: 0, north: 1, west: 2, east: 3 };
+const SCALE = 4;  // display at 4x
+
+const img = new Image();
+img.onload = () => {
+  // Draw all 4 rows, scaled up
+  for (const [dir, row] of Object.entries(DIRS)) {
+    const c = document.getElementById('c-' + dir);
+    c.width = FW * 4 * SCALE;
+    c.height = FH * SCALE;
+    const ctx = c.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    // Draw 4 frames from this row
+    for (let col = 0; col < 4; col++) {
+      ctx.drawImage(img,
+        col * FW, row * FH, FW, FH,      // source
+        col * FW * SCALE, 0, FW * SCALE, FH * SCALE  // dest
+      );
+    }
+  }
+  startAnimation();
+};
+img.src = SHEET;
+
+// Animation state
+let currentDir = null;
+let frame = 0;
+let animTimer = null;
+
+function setActiveDir(dir) {
+  // Clear all labels
+  for (const d of Object.keys(DIRS)) {
+    document.getElementById('lbl-' + d).classList.remove('active');
+  }
+  if (dir) {
+    document.getElementById('lbl-' + dir).classList.add('active');
+    document.getElementById('status').textContent = '▶ Playing: ' + dir.toUpperCase() + ' (row ' + DIRS[dir] + ', frames ' + (DIRS[dir]*4) + '-' + (DIRS[dir]*4+3) + ')';
+  } else {
+    document.getElementById('status').textContent = 'Idle (no key held)';
+  }
+}
+
+function startAnimation() {
+  if (animTimer) clearInterval(animTimer);
+  frame = 0;
+  animTimer = setInterval(() => {
+    if (!img.complete) return;
+    frame = (frame + 1) % 4;
+
+    for (const [dir, row] of Object.entries(DIRS)) {
+      const c = document.getElementById('c-' + dir);
+      const ctx = c.getContext('2d');
+      ctx.imageSmoothingEnabled = false;
+      ctx.clearRect(0, 0, c.width, c.height);
+
+      // Draw all 4 frames dimmed
+      for (let col = 0; col < 4; col++) {
+        ctx.globalAlpha = 0.3;
+        ctx.drawImage(img, col*FW, row*FH, FW, FH, col*FW*SCALE, 0, FW*SCALE, FH*SCALE);
+      }
+
+      // Highlight current frame
+      ctx.globalAlpha = 1.0;
+      const activeCol = currentDir === dir ? frame : 1;
+      ctx.drawImage(img, activeCol*FW, row*FH, FW, FH, activeCol*FW*SCALE, 0, FW*SCALE, FH*SCALE);
+
+      // Box around active frame
+      if (currentDir === dir) {
+        ctx.strokeStyle = '#0f0';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(frame*FW*SCALE, 0, FW*SCALE, FH*SCALE);
+      }
+    }
+  }, 125);  // 8fps
+}
+
+const keys = new Set();
+function getDir() {
+  const horiz = keys.has('ArrowRight') || keys.has('d') || keys.has('D');
+  const horizL = keys.has('ArrowLeft') || keys.has('a') || keys.has('A');
+  const up = keys.has('ArrowUp') || keys.has('w') || keys.has('W');
+  const down = keys.has('ArrowDown') || keys.has('s') || keys.has('S');
+  if (horiz) return 'east';
+  if (horizL) return 'west';
+  if (down) return 'south';
+  if (up) return 'north';
+  return null;
+}
+
+document.addEventListener('keydown', e => {
+  keys.add(e.key);
+  const dir = getDir();
+  if (dir !== currentDir) { currentDir = dir; frame = 0; setActiveDir(dir); }
+  e.preventDefault();
+});
+document.addEventListener('keyup', e => {
+  keys.delete(e.key);
+  const dir = getDir();
+  if (dir !== currentDir) { currentDir = dir; frame = 0; setActiveDir(dir); }
+});
+</script>
+</body>
+</html>

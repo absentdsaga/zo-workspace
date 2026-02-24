@@ -1,0 +1,13 @@
+# CRITICAL: This Document Was Wrong
+
+**Status:** SUPERSEDED / INCORRECT
+**Date:** 2026-02-16 17:45 UTC
+
+This document recommended changing MIN_VOLUME to $500k.
+That change was NEVER implemented.
+
+## Actual Settings:
+- MIN_LIQUIDITY: $10k ✅ (implemented)
+- MIN_VOLUME_24H: $1k ✅ (unchanged from Archive Master)
+
+See CURRENT_VERSION.md for accurate info.

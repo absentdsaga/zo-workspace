@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>4 Character Test - Spatial Worlds</title>
+    <style>
+        body { 
+            margin: 0; 
+            background: #2d5016;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: monospace;
+            color: white;
+        }
+        #game-container {
+            background: #4a7c2c;
+            border: 4px solid #1a3010;
+            padding: 20px;
+        }
+        canvas {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+        #info {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="info">Arrow keys to move • 1-4 to switch characters</div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Game state
+        const characters = [
+            { name: 'Fox Rogue', img: null, src: 'assets/sprites/player-characters/fox-rogue.png' },
+            { name: 'Ape Blue', img: null, src: 'assets/sprites/player-characters/ape-blue.png' },
+            { name: 'Ape Purple', img: null, src: 'assets/sprites/player-characters/ape-purple.png' },
+            { name: 'Fox Small', img: null, src: 'assets/sprites/player-characters/fox-small.png' }
+        ];
+        
+        let currentChar = 0;
+        let playerX = 400;
+        let playerY = 300;
+        let loaded = 0;
+        
+        // Load all character images
+        characters.forEach((char, i) => {
+            const img = new Image();
+            img.onload = () => {
+                loaded++;
+                if (loaded === characters.length) {
+                    gameLoop();
+                }
+            };
+            img.src = char.src;
+            char.img = img;
+        });
+        
+        // Controls
+        const keys = {};
+        window.addEventListener('keydown', e => {
+            keys[e.key] = true;
+            // Switch characters with number keys
+            if (e.key >= '1' && e.key <= '4') {
+                currentChar = parseInt(e.key) - 1;
+            }
+        });
+        window.addEventListener('keyup', e => keys[e.key] = false);
+        
+        function gameLoop() {
+            // Movement
+            const speed = 3;
+            if (keys['ArrowLeft']) playerX -= speed;
+            if (keys['ArrowRight']) playerX += speed;
+            if (keys['ArrowUp']) playerY -= speed;
+            if (keys['ArrowDown']) playerY += speed;
+            
+            // Keep in bounds
+            playerX = Math.max(50, Math.min(750, playerX));
+            playerY = Math.max(50, Math.min(550, playerY));
+            
+            // Draw
+            ctx.fillStyle = '#4a7c2c';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw grass pattern
+            ctx.fillStyle = '#3a6c1c';
+            for (let y = 0; y < canvas.height; y += 40) {
+                for (let x = 0; x < canvas.width; x += 60) {
+                    ctx.fillRect(x, y, 20, 20);
+                }
+            }
+            
+            // Draw character
+            const char = characters[currentChar];
+            if (char.img && char.img.complete) {
+                ctx.drawImage(char.img, playerX - 32, playerY - 48, 64, 96);
+            }
+            
+            // Draw character name
+            ctx.fillStyle = 'rgba(0,0,0,0.7)';
+            ctx.fillRect(10, 10, 200, 30);
+            ctx.fillStyle = 'white';
+            ctx.font = '16px monospace';
+            ctx.fillText(`Character: ${char.name}`, 20, 30);
+            
+            requestAnimationFrame(gameLoop);
+        }
+    </script>
+</body>
+</html>

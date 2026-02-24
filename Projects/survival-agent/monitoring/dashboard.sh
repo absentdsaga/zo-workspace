@@ -34,32 +34,43 @@ while true; do
     print_header
     echo -e "${DIM}$(date '+%A, %B %d, %Y - %I:%M:%S %p')${NC}"
 
-    # Get data from status script
-    STATUS_OUTPUT=$(cd /home/workspace/Projects/survival-agent && bash testing/status.sh 2>/dev/null)
+    # Detect correct bot process per mode
+    if [[ "${MODE_LABEL:-PAPER}" == "MAINNET" ]]; then
+        BOT_PID=$(pgrep -f "mainnet-trade-bot" | head -1)
+    else
+        BOT_PID=$(pgrep -f "paper-trade-bot" | grep -v mainnet | head -1)
+    fi
+    if [[ -n "$BOT_PID" ]]; then BOT_STATUS="RUNNING"; else BOT_STATUS="STOPPED"; fi
+    BALANCE=""
+    # Read position counts from JSON (source of truth)
+    OPEN_POS=$(jq -r '[.trades[] | select(.status == "open")] | length' "$STATS_FILE" 2>/dev/null || echo "0")
+    MAX_POS=${MAX_POSITIONS:-7}
 
-    # Parse status output
-    BOT_STATUS=$(echo "$STATUS_OUTPUT" | grep "Bot Status:" | awk '{print $NF}')
-    BOT_PID=$(echo "$STATUS_OUTPUT" | grep "PID:" | awk '{print $NF}')
-    BALANCE=$(echo "$STATUS_OUTPUT" | grep "💰 Balance:" | grep -oP '\d+\.\d+')
-    OPEN_POS=$(echo "$STATUS_OUTPUT" | grep "📈 Open Positions:" | grep -oP '\d+(?=/)')
-    MAX_POS=$(echo "$STATUS_OUTPUT" | grep "📈 Open Positions:" | grep -oP '(?=/)\d+')
+    # Get P&L from closed trades in JSON (source of truth)
+    CLOSED_COUNT=$(jq -r '[.trades[] | select(.status | startswith("closed"))] | length' "$STATS_FILE" 2>/dev/null || echo "0")
+    GROSS_PNL=$(jq -r '[.trades[] | select(.status | startswith("closed")) | .pnlGross // 0] | add // 0' "$STATS_FILE" 2>/dev/null || echo "0")
+    PNL_SOL=$(jq -r '[.trades[] | select(.status | startswith("closed")) | .pnl // 0] | add // 0' "$STATS_FILE" 2>/dev/null || echo "0")
+    # Calculate P&L % vs starting balance
+    if [[ -n "$PNL_SOL" && "$PNL_SOL" != "0" ]]; then
+        PNL_PCT=$(awk "BEGIN {printf \"%.1f\", ($PNL_SOL / ${STARTING_BALANCE:-0.5}) * 100}" 2>/dev/null || echo "0")
+    else
+        PNL_PCT="0"
+    fi
 
-    # Get P&L from logs
-    PNL_LINE=$(tail -200 "$LOG_FILE" 2>/dev/null | grep "📈 Net P&L:" | tail -1)
-    PNL_SOL=$(echo "$PNL_LINE" | grep -oP '[-+]?\d+\.\d+(?= SOL)' | head -1)
-    PNL_PCT=$(echo "$PNL_LINE" | grep -oP '[-+]?\d+\.\d+(?=%)')
-    GROSS_PNL=$(echo "$PNL_LINE" | grep -oP 'Gross P&L: \K[-+]?\d+\.\d+')
-
-    # Get actual deployed capital and P&L from JSON
+    # Get actual deployed capital and P&L from JSON (source of truth)
     STARTING_BAL=${STARTING_BALANCE:-0.5}
     DEPLOYED=$(jq -r '.trades | map(select(.status == "open")) | map(.amountIn) | add // 0' "$STATS_FILE" 2>/dev/null || echo "0")
     TOTAL_PNL_SOL=$(jq -r '.totalPnl // 0' "$STATS_FILE" 2>/dev/null || echo "0")
+    # Free balance from JSON (not the log — log can mix paper/mainnet)
+    BALANCE=$(jq -r '.balance // 0' "$STATS_FILE" 2>/dev/null || echo "$BALANCE")
 
-    # Get total capital (starting + total PNL)
+    # Total Capital = free balance + deployed capital (what you actually have right now)
+    # This correctly reflects unrealized losses/gains on open positions
     if [[ -n "$BALANCE" && -n "$DEPLOYED" ]]; then
-        TOTAL_CAPITAL=$(echo "$STARTING_BAL + $TOTAL_PNL_SOL" | bc)
-        # Calculate actual gain percentage
-        TOTAL_GAIN_PCT=$(echo "scale=1; ($TOTAL_PNL_SOL / $STARTING_BAL) * 100" | bc)
+        TOTAL_CAPITAL=$(printf "%.6f" $(echo "$BALANCE + $DEPLOYED" | bc))
+        # Gain vs starting capital
+        TOTAL_GAIN_SOL=$(echo "$TOTAL_CAPITAL - $STARTING_BAL" | bc)
+        TOTAL_GAIN_PCT=$(awk "BEGIN {printf \"%.1f\", ($TOTAL_GAIN_SOL / $STARTING_BAL) * 100}" 2>/dev/null || echo "0")
     else
         TOTAL_CAPITAL="$BALANCE"
         TOTAL_GAIN_PCT="0"
@@ -81,7 +92,7 @@ while true; do
     printf "  %-25s ${WHITE}%10s${NC} SOL\n" "Starting Capital:" "$STARTING_BAL"
     printf "  %-25s ${CYAN}%10s${NC} SOL\n" "Free Balance:" "${BALANCE:-0.0000}"
     printf "  %-25s ${YELLOW}%10s${NC} SOL ${DIM}(%s/%s positions)${NC}\n" "Deployed Capital:" "${DEPLOYED:-0.0000}" "${OPEN_POS:-0}" "${MAX_POS:-7}"
-    if [[ $(echo "$TOTAL_GAIN_PCT >= 0" | bc) -eq 1 ]]; then
+    if [[ $(echo "${TOTAL_GAIN_PCT:-0} >= 0" | bc) -eq 1 ]]; then
         printf "  %-25s ${BOLD}%10s${NC} SOL ${GREEN}(+%s%%)${NC}\n" "Total Capital:" "${TOTAL_CAPITAL:-0.0000}" "${TOTAL_GAIN_PCT:-0}"
     else
         printf "  %-25s ${BOLD}%10s${NC} SOL ${RED}(%s%%)${NC}\n" "Total Capital:" "${TOTAL_CAPITAL:-0.0000}" "${TOTAL_GAIN_PCT:-0}"
@@ -118,94 +129,69 @@ while true; do
     echo -e "${BOLD}├──────────┼─────────┼────────┼───────┼──────────┼──────────┤${NC}"
 
     POSITIONS_FOUND=0
-    CURRENT_TOKEN=""
-    CURRENT_PNL=""
-    CURRENT_CONF=""
-    CURRENT_AGE=""
+    NOW_MS=$(date +%s%3N)
 
-    while IFS= read -r line; do
-        # Token name line
-        if [[ "$line" =~ ^[[:space:]]+([A-Za-z0-9]+)[[:space:]]+\[dexscreener\] ]]; then
-            CURRENT_TOKEN="${BASH_REMATCH[1]}"
+    # Read positions directly from JSON (always current, works for both paper and mainnet)
+    while IFS=$'\t' read -r TOKEN PNL_RAW CONF TP1HIT AGE_MIN; do
+        [[ -z "$TOKEN" ]] && continue
+        POSITIONS_FOUND=$((POSITIONS_FOUND + 1))
+
+        CURRENT_PNL=$(printf "%.0f" "$PNL_RAW" 2>/dev/null || echo "0")
+
+        # TP1 from JSON field (sticky, written by bot)
+        if [[ "$TP1HIT" == "true" ]]; then
+            TP1_STATUS="${GREEN}✓ ACTIVE  ${NC}"
+        else
+            TP1_STATUS="${DIM}pending   ${NC}"
         fi
 
-        # P&L line
-        if [[ "$line" =~ P\&L:[[:space:]]*(-?[0-9]+)% ]]; then
-            CURRENT_PNL="${BASH_REMATCH[1]}"
+        # Status emoji
+        if [[ $CURRENT_PNL -gt 50 ]]; then
+            STATUS="🚀 MOON"
+        elif [[ $CURRENT_PNL -gt 20 ]]; then
+            STATUS="📈 UP  "
+        elif [[ $CURRENT_PNL -gt 0 ]]; then
+            STATUS="➚ GAIN"
+        elif [[ $CURRENT_PNL -eq 0 ]]; then
+            STATUS="━ FLAT"
+        elif [[ $CURRENT_PNL -gt -10 ]]; then
+            STATUS="➘ DOWN"
+        elif [[ $CURRENT_PNL -gt -20 ]]; then
+            STATUS="📉 LOSS"
+        else
+            STATUS="💀 RUG "
         fi
 
-        # Confidence line
-        if [[ "$line" =~ Confidence:[[:space:]]*([0-9]+) ]]; then
-            CURRENT_CONF="${BASH_REMATCH[1]}"
+        echo -n "│ "
+        printf "%-8s" "$TOKEN"
+        echo -n " │ "
+        if [[ $CURRENT_PNL -ge 0 ]]; then
+            echo -ne "${GREEN}"; printf "%6s%%" "+${CURRENT_PNL}"; echo -ne "${NC}"
+        else
+            echo -ne "${RED}"; printf "%6s%%" "${CURRENT_PNL}"; echo -ne "${NC}"
         fi
+        echo -n " │ "
+        printf "%5s m" "$AGE_MIN"
+        echo -n " │ "
+        printf "%5s" "$CONF"
+        echo -n " │ "
+        echo -ne "$TP1_STATUS"
+        echo -n "│ "
+        printf "%-8s" "$STATUS"
+        echo " │"
 
-        # Age line
-        if [[ "$line" =~ Age:[[:space:]]*([0-9]+)[[:space:]]*min ]]; then
-            CURRENT_AGE="${BASH_REMATCH[1]}"
-
-            # Print complete row
-            if [[ -n "$CURRENT_TOKEN" ]]; then
-                POSITIONS_FOUND=$((POSITIONS_FOUND + 1))
-
-                # Determine TP1 status
-                if [[ $CURRENT_PNL -ge 100 ]]; then
-                    TP1_STATUS="${GREEN}✓ ACTIVE${NC}"
-                else
-                    TP1_STATUS="${DIM}pending${NC}"
-                fi
-
-                # Determine status emoji
-                if [[ $CURRENT_PNL -gt 50 ]]; then
-                    STATUS="🚀 MOON"
-                elif [[ $CURRENT_PNL -gt 20 ]]; then
-                    STATUS="📈 UP"
-                elif [[ $CURRENT_PNL -gt 0 ]]; then
-                    STATUS="➚ GAIN"
-                elif [[ $CURRENT_PNL -eq 0 ]]; then
-                    STATUS="━ FLAT"
-                elif [[ $CURRENT_PNL -gt -10 ]]; then
-                    STATUS="➘ DOWN"
-                elif [[ $CURRENT_PNL -gt -20 ]]; then
-                    STATUS="📉 LOSS"
-                else
-                    STATUS="💀 RUG"
-                fi
-
-                # Format row
-                echo -n "│ "
-                printf "%-8s" "$CURRENT_TOKEN"
-                echo -n " │ "
-
-                # P&L with color
-                if [[ $CURRENT_PNL -ge 0 ]]; then
-                    echo -ne "${GREEN}"
-                    printf "%6s%%" "+$CURRENT_PNL"
-                    echo -ne "${NC}"
-                else
-                    echo -ne "${RED}"
-                    printf "%6s%%" "$CURRENT_PNL"
-                    echo -ne "${NC}"
-                fi
-
-                echo -n " │ "
-                printf "%5s m" "$CURRENT_AGE"
-                echo -n " │ "
-                printf "%5s" "$CURRENT_CONF"
-                echo -n " │ "
-                echo -ne "$TP1_STATUS"
-                printf "%-${#TP1_STATUS}s" ""  # Padding hack
-                echo -n " │ "
-                printf "%-8s" "$STATUS"
-                echo " │"
-            fi
-
-            # Reset for next position
-            CURRENT_TOKEN=""
-            CURRENT_PNL=""
-            CURRENT_CONF=""
-            CURRENT_AGE=""
-        fi
-    done < <(echo "$STATUS_OUTPUT" | sed -n '/Current Positions/,/Recent Activity/p')
+    done < <(jq -r --argjson now "$NOW_MS" '
+        .trades[]
+        | select(.status == "open")
+        | [
+            .tokenSymbol,
+            ((.currentPrice - .entryPrice) / .entryPrice * 100),
+            (.confidenceScore | tostring),
+            (.tp1Hit | tostring),
+            (($now - .timestamp) / 60000 | floor | tostring)
+          ]
+        | @tsv
+    ' "$STATS_FILE" 2>/dev/null)
 
     if [[ $POSITIONS_FOUND -eq 0 ]]; then
         echo -e "│ ${YELLOW}No open positions${NC}                                                │"

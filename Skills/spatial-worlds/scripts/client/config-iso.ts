@@ -3,14 +3,14 @@ import { BootScene } from './scenes/Boot';
 import { IsoGameScene } from './scenes/IsoGame-NFT-TEST';  // TEST VERSION
 
 export const isoConfig: Phaser.Types.Core.GameConfig = {
-  type: Phaser.WEBGL,
+  type: Phaser.CANVAS,
   width: 1280,
   height: 720,
   parent: 'game-container',
   backgroundColor: '#2b2b2b',
   pixelArt: true,
   antialias: false,
-  roundPixels: true,
+  roundPixels: false,
 
   physics: {
     default: 'arcade',
@@ -25,8 +25,6 @@ export const isoConfig: Phaser.Types.Core.GameConfig = {
   },
 
   render: {
-    batchSize: 2048,
-    maxTextures: 8,
     antialias: false,
     pixelArt: true,
   },

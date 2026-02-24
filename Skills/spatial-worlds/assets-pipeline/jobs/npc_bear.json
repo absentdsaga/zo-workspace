@@ -1,0 +1,18 @@
+{
+  "character_id": "npc_bear_01",
+  "style_profile": "saga_iso_v1",
+  "size_class": "humanoid_m",
+  "states": ["idle", "walk", "attack", "hit"],
+  "color_theme": "orange utility",
+  "reference_images": [
+    "input/refs/npc_bear_ref_01.png",
+    "input/refs/style_board_01.png"
+  ],
+  "output": {
+    "raw_dir": "output_raw/npc_bear_01",
+    "cut_dir": "output_cut/npc_bear_01",
+    "norm_dir": "output_norm/npc_bear_01",
+    "qc_pass_dir": "output_qc_pass/npc_bear_01",
+    "metadata_dir": "metadata/npc_bear_01"
+  }
+}

@@ -37,14 +37,14 @@ async function getSwapTx(quote: any, walletPubkey: string, jupToken: string) {
       quoteResponse: quote,
       userPublicKey: walletPubkey,
       dynamicComputeUnitLimit: true,
-      prioritizationFeeLamports: 5000, // fixed small fee for test
+      prioritizationFeeLamports: 100000, // ~0.0001 SOL — enough to land reliably
     })
   });
   if (!res.ok) throw new Error(`Swap tx failed: ${res.status} ${await res.text()}`);
   return res.json();
 }
 
-async function pollConfirm(connection: Connection, sig: string, timeoutMs = 60000): Promise<void> {
+async function pollConfirm(connection: Connection, sig: string, timeoutMs = 90000): Promise<void> {
   const start = Date.now();
   while (Date.now() - start < timeoutMs) {
     await new Promise(r => setTimeout(r, 2000));

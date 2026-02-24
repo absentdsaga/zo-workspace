@@ -4,6 +4,7 @@ import { gameConfig } from './config';
 // Initialize game when DOM is ready
 window.addEventListener('DOMContentLoaded', () => {
   const game = new Phaser.Game(gameConfig);
+  (window as any).__phaserGame = game;
 
   // Debug info updates
   const updateDebugInfo = () => {

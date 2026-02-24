@@ -1,0 +1,10 @@
+{
+  "image": "/home/workspace/Skills/spatial-worlds/assets-pipeline/output_norm/hero_orange/hero_orange_idle_f01.png",
+  "passed": false,
+  "failures": [
+    {
+      "check": "scale_drift",
+      "reason": "Height 72px, expected 84\u00b14.2px"
+    }
+  ]
+}

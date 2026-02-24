@@ -1,0 +1,7 @@
+{
+  "character_id": "npc_bear",
+  "states": ["idle"],
+  "color_theme": "brown bear character",
+  "character_type": "NPC",
+  "notes": "Pilot batch - 4 idle frames (reduced for NPC testing)"
+}

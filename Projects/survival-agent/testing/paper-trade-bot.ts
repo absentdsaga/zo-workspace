@@ -41,6 +41,7 @@ interface TradeLog {
   peakPrice?: number; // Highest price seen since entry
   tp1Hit?: boolean; // Did we hit +100% take profit?
   signature?: string;
+  unrealizedPnl?: number; // Current open P&L in SOL (updated each monitor cycle)
   pnl?: number;
   pnlGross?: number; // P&L before fees
   jitoTipPaid?: number; // Jito tip in SOL (entry + exit)
@@ -48,6 +49,8 @@ interface TradeLog {
   totalFeesPaid?: number; // Total fees in SOL
   status: 'open' | 'closed_profit' | 'closed_loss' | 'failed';
   error?: string;
+  exitPrice?: number; // Actual price at exit (for slippage auditing)
+  closedAt?: number; // Alias for exitTimestamp — ms since epoch
   exitTimestamp?: number;
   exitReason?: string;
   confidenceScore?: number; // Smart money confidence score (0-100) for backtesting
@@ -68,7 +71,9 @@ class PaperTradeMasterCoordinatorFixed {
   private lastCheckTime = new Map<string, number>(); // Track last check per position
   private isPaused = false;
   private totalRefills = 0; // Track how many times we've refilled
-  private ruggedTokens: Set<string> = new Set(); // Blacklist of rugged tokens
+  private ruggedTokens: Set<string> = new Set(); // Blacklist of rugged token addresses
+  private blacklistedSymbols: Set<string> = new Set(); // Blacklist of symbols with 3 consecutive SL hits
+  private symbolSlHits: Map<string, number> = new Map(); // Consecutive SL streak per symbol (resets on win)
   private rateLimitCount = 0; // Track 429 rate limits
   private lastRateLimitTime = 0; // Last time we hit rate limit
 
@@ -102,7 +107,7 @@ class PaperTradeMasterCoordinatorFixed {
     jupiterApiKey: string,
     heliusApiKey: string
   ) {
-    this.executor = new OptimizedExecutor(rpcUrl, privateKey, jupiterApiKey, heliusApiKey, CONFIG.PAPER_TRADE);
+    this.executor = new OptimizedExecutor(rpcUrl, privateKey, jupiterApiKey, heliusApiKey, CONFIG.PAPER_TRADE, CONFIG.USE_JITO);
     this.scanner = new CombinedScannerWebSocket();
     this.tracker = new SmartMoneyTracker();
     this.validator = new JupiterValidator(jupiterApiKey);
@@ -130,6 +135,28 @@ class PaperTradeMasterCoordinatorFixed {
       throw new Error('System not ready. Check pre-flight issues.');
     }
 
+    // MAINNET ONLY: Verify currentBalance against real on-chain SOL.
+    // If state file was wiped or stale, the bot would use CONFIG.STARTING_BALANCE
+    // (e.g. 0.5 SOL) even if the wallet only has 0.05 SOL — causing massive over-sizing.
+    // clamp currentBalance to on-chain free SOL if it's more than 10% higher.
+    if (!CONFIG.PAPER_TRADE && check.balance !== undefined) {
+      const onChainSol = check.balance;
+      const openDeployed = this.trades
+        .filter(t => t.status === 'open')
+        .reduce((sum, t) => sum + (t.amountIn || 0), 0);
+      // free SOL = on-chain - what's deployed in open positions
+      const onChainFree = Math.max(0, onChainSol - openDeployed);
+      if (this.currentBalance > onChainFree * 1.1) {
+        console.warn(`⚠️  BALANCE MISMATCH DETECTED`);
+        console.warn(`   State file says: ${this.currentBalance.toFixed(4)} SOL free`);
+        console.warn(`   On-chain reality: ${onChainSol.toFixed(4)} SOL total, ~${onChainFree.toFixed(4)} SOL free`);
+        console.warn(`   Clamping to on-chain value to prevent over-sizing\n`);
+        this.currentBalance = onChainFree;
+        this.startingBalance = Math.min(this.startingBalance, onChainSol);
+        await this.saveState();
+      }
+    }
+
     await this.scanner.initialize();
     await this.shockedScanner.initialize();
 
@@ -147,8 +174,8 @@ class PaperTradeMasterCoordinatorFixed {
     console.log(`\n⚡ Timing:`);
     console.log(`   Scanner: Every ${this.SCAN_INTERVAL_MS / 1000}s`);
     console.log(`   Position monitor: Every ${this.MONITOR_INTERVAL_MS / 1000}s (all positions)`);
-    if (this.ruggedTokens.size > 0) {
-      console.log(`\n🚫 Blacklist: ${this.ruggedTokens.size} rugged token(s) blocked`);
+    if (this.ruggedTokens.size > 0 || this.blacklistedSymbols.size > 0) {
+      console.log(`\n🚫 Blacklist: ${this.ruggedTokens.size} rugged address(es), ${this.blacklistedSymbols.size} symbol(s) blocked`);
     }
   }
 
@@ -203,10 +230,13 @@ class PaperTradeMasterCoordinatorFixed {
             break;
           }
 
-          // Check blacklist
-          const isBlacklisted = this.ruggedTokens.has(best.address);
-          if (isBlacklisted) {
-            console.log(`   🚫 SKIPPED: ${best.symbol} is blacklisted (previously rugged)\n`);
+          // Check blacklist (address and symbol)
+          if (this.ruggedTokens.has(best.address)) {
+            console.log(`   🚫 SKIPPED: ${best.symbol} address is blacklisted (previously rugged)\n`);
+            continue;
+          }
+          if (this.blacklistedSymbols.has(best.symbol.toUpperCase())) {
+            console.log(`   🚫 SKIPPED: ${best.symbol} symbol is blacklisted (3 consecutive SL hits)\n`);
             continue;
           }
 
@@ -318,11 +348,14 @@ class PaperTradeMasterCoordinatorFixed {
               let traded = false;
               for (const best of availableOpps.slice(0, 5)) {
                 if (traded) break;
-                // Check blacklist
-                const isBlacklisted = this.ruggedTokens.has(best.address);
-                if (isBlacklisted) {
-                  console.log(`   🚫 SKIPPED: ${best.symbol} is blacklisted (previously rugged)\n`);
-                  continue; // Try next opportunity
+                // Check blacklist (address and symbol)
+                if (this.ruggedTokens.has(best.address)) {
+                  console.log(`   🚫 SKIPPED: ${best.symbol} address is blacklisted (previously rugged)\n`);
+                  continue;
+                }
+                if (this.blacklistedSymbols.has(best.symbol.toUpperCase())) {
+                  console.log(`   🚫 SKIPPED: ${best.symbol} symbol is blacklisted (3+ SL hits)\n`);
+                  continue;
                 }
 
                 console.log('2️⃣  Analyzing top opportunity:');
@@ -643,16 +676,18 @@ class PaperTradeMasterCoordinatorFixed {
             trade.pnlGross = -trade.amountIn; // Gross loss (principal)
             trade.pnl = -trade.amountIn - (trade.totalFeesPaid || 0); // Net loss (principal + entry fees)
             trade.currentPrice = 0;
+            trade.exitPrice = 0;
             trade.exitTimestamp = Date.now();
+            trade.closedAt = trade.exitTimestamp;
             trade.exitReason = 'No sell route - rugged';
             
-            // Add to blacklist
+            // Add to blacklist (address — immediate rug)
             this.ruggedTokens.add(trade.tokenAddress);
             await this.saveBlacklist();
-            console.log(`      🚫 Added ${trade.tokenSymbol} to blacklist`);
+            console.log(`      🚫 Added ${trade.tokenSymbol} address to blacklist`);
 
-            // Check for 3 consecutive losses
-            await this.checkAndBlacklistLosers(trade.tokenAddress);
+            // Track SL hits for symbol blacklist
+            await this.checkAndBlacklistLosers(trade);
 
             await this.saveTrades();
             // Don't return SOL to balance - it's lost
@@ -666,6 +701,38 @@ class PaperTradeMasterCoordinatorFixed {
             console.log(`      ↻ Keeping position open for retry\n`);
           }
         } else {
+          // REAL MODE: Execute the actual sell swap on-chain before recording anything
+          if (!CONFIG.PAPER_TRADE) {
+            const SOL_MINT = 'So11111111111111111111111111111111111111112';
+            // Use actual wallet token balance - avoids mismatch from price movement since buy
+            const actualTokenBalance = await this.executor.getTokenBalance(trade.tokenAddress);
+            if (actualTokenBalance === 0) {
+              console.log(`      ⚠️  No tokens in wallet for ${trade.tokenSymbol} - marking as closed\n`);
+              // Token is gone (rugged/already sold) - close the position at 0
+              trade.status = 'closed_loss';
+              trade.currentPrice = 0;
+              trade.pnl = -trade.amountIn;
+              trade.pnlGross = -trade.amountIn;
+              this.currentBalance += 0;
+              await this.saveTrades();
+              return;
+            }
+            const sellResult = await this.executor.executeTrade({
+              inputMint: trade.tokenAddress,
+              outputMint: SOL_MINT,
+              amount: actualTokenBalance,
+              slippageBps: 1500,
+              strategy: 'meme'
+            });
+
+            if (!sellResult.success) {
+              console.log(`      ❌ SELL TX FAILED: ${sellResult.error} - will retry next cycle\n`);
+              return;
+            }
+
+            console.log(`      ⚡ Sell tx confirmed: ${sellResult.signature}`);
+          }
+
           // Get final sell price
           const finalPrice = sellValidation.priceUsd!;
           const grossPnl = trade.amountIn * ((finalPrice - trade.entryPrice!) / trade.entryPrice!);
@@ -682,7 +749,7 @@ class PaperTradeMasterCoordinatorFixed {
           // Net PNL = Gross PNL - Total Fees
           const netPnl = grossPnl - totalFees;
 
-          console.log(`      ✅ SELL EXECUTED (Jupiter-validated)`);
+          console.log(`      ✅ SELL EXECUTED`);
           console.log(`      💰 Exit price: $${finalPrice.toFixed(8)}`);
           console.log(`      📊 Gross P&L: ${grossPnl >= 0 ? '+' : ''}${grossPnl.toFixed(4)} SOL`);
           console.log(`      💸 Total fees: ${totalFees.toFixed(8)} SOL (Jito: ${jitoTipInfo.level})`);
@@ -695,15 +762,19 @@ class PaperTradeMasterCoordinatorFixed {
           trade.priorityFeePaid = (trade.priorityFeePaid || 0) + (exitPriorityFee * LAMPORTS_PER_SOL);
           trade.totalFeesPaid = totalFees;
           trade.currentPrice = finalPrice;
+          trade.exitPrice = finalPrice;
           trade.exitTimestamp = Date.now();
+          trade.closedAt = trade.exitTimestamp;
           trade.exitReason = exitReason;
 
           // Return SOL to balance (net after fees)
           this.currentBalance += trade.amountIn + netPnl;
 
-          // Check for 3 consecutive losses
+          // Track consecutive SL hits for symbol blacklist; reset streak on win
           if (trade.status === 'closed_loss') {
-            await this.checkAndBlacklistLosers(trade.tokenAddress);
+            await this.checkAndBlacklistLosers(trade);
+          } else if (trade.status === 'closed_profit') {
+            await this.resetSymbolStreak(trade);
           }
 
           await this.saveTrades();
@@ -794,8 +865,10 @@ class PaperTradeMasterCoordinatorFixed {
   }
 
   async saveTrades() {
-    // Calculate total P&L from all trades
-    const totalPnl = this.trades.reduce((sum, t) => sum + (t.pnl || 0), 0);
+    // Calculate total P&L from closed trades only (open trades don't have realized pnl)
+    const totalPnl = this.trades
+      .filter(t => t.status === 'closed_profit' || t.status === 'closed_loss')
+      .reduce((sum, t) => sum + (t.pnl || 0), 0);
     
     const state = {
       balance: this.currentBalance,
@@ -824,42 +897,74 @@ class PaperTradeMasterCoordinatorFixed {
       const content = await Bun.file(this.BLACKLIST_FILE).text();
       const data = JSON.parse(content);
       this.ruggedTokens = new Set(data.ruggedTokens || []);
+      this.blacklistedSymbols = new Set((data.blacklistedSymbols || []).map((s: string) => s.toUpperCase()));
+      const hits: Record<string, number> = data.symbolSlHits || {};
+      this.symbolSlHits = new Map(Object.entries(hits));
     } catch {
       this.ruggedTokens = new Set();
+      this.blacklistedSymbols = new Set();
+      this.symbolSlHits = new Map();
     }
   }
 
   async saveBlacklist() {
     const data = {
       ruggedTokens: Array.from(this.ruggedTokens),
+      blacklistedSymbols: Array.from(this.blacklistedSymbols),
+      symbolSlHits: Object.fromEntries(this.symbolSlHits),
       lastUpdated: Date.now()
     };
     await Bun.write(this.BLACKLIST_FILE, JSON.stringify(data, null, 2));
   }
 
   /**
-   * Check if a token has 3 consecutive losses and blacklist it
+   * Reset consecutive SL streak for a symbol on a win.
    */
-  async checkAndBlacklistLosers(tokenAddress: string) {
-    // Get all closed trades for this token, ordered by timestamp (most recent first)
+  async resetSymbolStreak(trade: TradeLog) {
+    const symbol = trade.tokenSymbol.toUpperCase();
+    const prev = this.symbolSlHits.get(symbol) || 0;
+    if (prev > 0) {
+      this.symbolSlHits.set(symbol, 0);
+      console.log(`   ✅ ${symbol} win — consecutive SL streak reset (was ${prev})`);
+      await this.saveBlacklist();
+    }
+  }
+
+  /**
+   * Track consecutive SL hits per symbol; blacklist after 3 in a row.
+   * A single win resets the streak (see resetSymbolStreak).
+   * Also keeps the original address-based 3-consecutive-loss check.
+   */
+  async checkAndBlacklistLosers(trade: TradeLog) {
+    const symbol = trade.tokenSymbol.toUpperCase();
+
+    // Increment consecutive loss streak
+    const streak = (this.symbolSlHits.get(symbol) || 0) + 1;
+    this.symbolSlHits.set(symbol, streak);
+    console.log(`   📉 ${symbol} consecutive SL streak: ${streak}/3`);
+
+    if (streak >= 3 && !this.blacklistedSymbols.has(symbol)) {
+      console.log(`\n🚫 BLACKLISTING SYMBOL: ${symbol}`);
+      console.log(`   Reason: 3 consecutive stop-losses with no win in between`);
+      console.log(`   This symbol will no longer be traded\n`);
+      this.blacklistedSymbols.add(symbol);
+      await this.saveBlacklist();
+    }
+
+    // Also blacklist the address after 3 consecutive losses on same address (original logic)
     const tokenTrades = this.trades
-      .filter(t => t.tokenAddress === tokenAddress && (t.status === 'closed_profit' || t.status === 'closed_loss'))
+      .filter(t => t.tokenAddress === trade.tokenAddress && (t.status === 'closed_profit' || t.status === 'closed_loss'))
       .sort((a, b) => (b.exitTimestamp || b.timestamp) - (a.exitTimestamp || a.timestamp));
 
-    // Check if the 3 most recent trades are all losses
     if (tokenTrades.length >= 3) {
       const lastThree = tokenTrades.slice(0, 3);
       const allLosses = lastThree.every(t => t.status === 'closed_loss');
 
-      if (allLosses) {
-        const tokenSymbol = tokenTrades[0].tokenSymbol;
+      if (allLosses && !this.ruggedTokens.has(trade.tokenAddress)) {
         const totalLoss = lastThree.reduce((sum, t) => sum + (t.pnl || 0), 0);
-
-        console.log(`\n🚫 BLACKLISTING ${tokenSymbol} (${tokenAddress})`);
-        console.log(`   Reason: 3 consecutive losses (${totalLoss.toFixed(4)} SOL)`);
-        console.log(`   This token will no longer be traded\n`);
-
-        this.ruggedTokens.add(tokenAddress);
+        console.log(`\n🚫 BLACKLISTING ADDRESS: ${symbol} (${trade.tokenAddress})`);
+        console.log(`   Reason: 3 consecutive losses on same address (${totalLoss.toFixed(4)} SOL)\n`);
+        this.ruggedTokens.add(trade.tokenAddress);
         await this.saveBlacklist();
       }
     }
@@ -906,7 +1011,8 @@ class PaperTradeMasterCoordinatorFixed {
 
 // Run
 async function main() {
-  console.log(`🧪 ${CONFIG.MODE_LABEL} - MASTER COORDINATOR v2.4\n`);
+  const modeEmoji = CONFIG.PAPER_TRADE ? '🧪' : '🔴';
+  console.log(`${modeEmoji} ${CONFIG.MODE_LABEL} - MASTER COORDINATOR v2.5\n`);
   console.log('🚀 FEATURES:');
   console.log('   ⚡ Dual-loop: Scanner (15s) + Monitor (5s) for fast exits');
   console.log('   💎 Trailing stop: 20% from peak after +100% TP1');
@@ -919,8 +1025,7 @@ async function main() {
   const privateKey = process.env.SOLANA_PRIVATE_KEY;
   const jupiterApiKey = process.env.JUP_TOKEN;
   const heliusApiKey = process.env.HELIUS_RPC_URL || process.env.HELIUS_API_KEY;
-  // Using Helius Gatekeeper for 4-7x faster response times (sub-ms on warm connections)
-  const rpcUrl = `https://beta.helius-rpc.com/?api-key=${heliusApiKey}`;
+  const rpcUrl = CONFIG.RPC_URL.replace('${HELIUS_API_KEY}', heliusApiKey || '');
 
   if (!privateKey || !jupiterApiKey || !heliusApiKey) {
     console.error('❌ Missing credentials');

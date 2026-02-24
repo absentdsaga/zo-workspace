@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Choose Your Character - Spatial Worlds</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d1b4e 100%);
+            font-family: 'Press Start 2P', monospace;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        #game-container {
+            position: relative;
+        }
+        #title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 1000;
+            background: rgba(0,0,0,0.8);
+            padding: 20px 40px;
+            border-radius: 10px;
+            border: 3px solid #ffd700;
+        }
+        #title h1 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px #000;
+        }
+        #title p {
+            margin: 0;
+            font-size: 10px;
+            color: #aaa;
+        }
+        canvas {
+            border: 4px solid #ffd700;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <div id="title">
+            <h1>⚔️ CHOOSE YOUR CHARACTER ⚔️</h1>
+            <p>Click any character to select • Arrow keys to scroll</p>
+        </div>
+    </div>
+
+    <script>
+        // All 24 NFT character sprite paths
+        const characters = [
+            // Set 1
+            { id: 'set1-char1', name: 'Blue Knight', sheet: 'assets/sprites/nft-characters-xxl/set1-char1/set1-char1-sheet.png' },
+            { id: 'set1-char2', name: 'Green Ranger', sheet: 'assets/sprites/nft-characters-xxl/set1-char2/set1-char2-sheet.png' },
+            { id: 'set1-char3', name: 'Red Warrior', sheet: 'assets/sprites/nft-characters-xxl/set1-char3/set1-char3-sheet.png' },
+            { id: 'set1-char4', name: 'Purple Mage', sheet: 'assets/sprites/nft-characters-xxl/set1-char4/set1-char4-sheet.png' },
+            { id: 'set1-char5', name: 'Yellow Scout', sheet: 'assets/sprites/nft-characters-xxl/set1-char5/set1-char5-sheet.png' },
+            { id: 'set1-char6', name: 'Cyan Cleric', sheet: 'assets/sprites/nft-characters-xxl/set1-char6/set1-char6-sheet.png' },
+
+            // Set 2
+            { id: 'set2-char1', name: 'Pink Ninja', sheet: 'assets/sprites/nft-characters-xxl/set2-char1/set2-char1-sheet.png' },
+            { id: 'set2-char2', name: 'Orange Fighter', sheet: 'assets/sprites/nft-characters-xxl/set2-char2/set2-char2-sheet.png' },
+            { id: 'set2-char3', name: 'Teal Thief', sheet: 'assets/sprites/nft-characters-xxl/set2-char3/set2-char3-sheet.png' },
+            { id: 'set2-char4', name: 'Gold Paladin', sheet: 'assets/sprites/nft-characters-xxl/set2-char4/set2-char4-sheet.png' },
+            { id: 'set2-char5', name: 'Silver Archer', sheet: 'assets/sprites/nft-characters-xxl/set2-char5/set2-char5-sheet.png' },
+            { id: 'set2-char6', name: 'Brown Monk', sheet: 'assets/sprites/nft-characters-xxl/set2-char6/set2-char6-sheet.png' },
+
+            // Set 3
+            { id: 'set3-char1', name: 'Violet Sorcerer', sheet: 'assets/sprites/nft-characters-xxl/set3-char1/set3-char1-sheet.png' },
+            { id: 'set3-char2', name: 'Lime Hunter', sheet: 'assets/sprites/nft-characters-xxl/set3-char2/set3-char2-sheet.png' },
+            { id: 'set3-char3', name: 'Navy Defender', sheet: 'assets/sprites/nft-characters-xxl/set3-char3/set3-char3-sheet.png' },
+            { id: 'set3-char4', name: 'Crimson Berserker', sheet: 'assets/sprites/nft-characters-xxl/set3-char4/set3-char4-sheet.png' },
+            { id: 'set3-char5', name: 'Jade Druid', sheet: 'assets/sprites/nft-characters-xxl/set3-char5/set3-char5-sheet.png' },
+            { id: 'set3-char6', name: 'Copper Bard', sheet: 'assets/sprites/nft-characters-xxl/set3-char6/set3-char6-sheet.png' },
+
+            // Set 4
+            { id: 'set4-char1', name: 'Indigo Sage', sheet: 'assets/sprites/nft-characters-xxl/set4-char1/set4-char1-sheet.png' },
+            { id: 'set4-char2', name: 'Coral Dancer', sheet: 'assets/sprites/nft-characters-xxl/set4-char2/set4-char2-sheet.png' },
+            { id: 'set4-char3', name: 'Slate Knight', sheet: 'assets/sprites/nft-characters-xxl/set4-char3/set4-char3-sheet.png' },
+            { id: 'set4-char4', name: 'Amber Alchemist', sheet: 'assets/sprites/nft-characters-xxl/set4-char4/set4-char4-sheet.png' },
+            { id: 'set4-char5', name: 'Emerald Summoner', sheet: 'assets/sprites/nft-characters-xxl/set4-char5/set4-char5-sheet.png' },
+            { id: 'set4-char6', name: 'Pearl Priest', sheet: 'assets/sprites/nft-characters-xxl/set4-char6/set4-char6-sheet.png' }
+        ];
+
+        class CharacterSelect extends Phaser.Scene {
+            constructor() {
+                super({ key: 'CharacterSelect' });
+                this.selectedChar = null;
+                this.charSprites = [];
+            }
+
+            preload() {
+                // Load all 24 character sprite sheets
+                characters.forEach(char => {
+                    this.load.spritesheet(char.id, char.sheet, {
+                        frameWidth: 64,
+                        frameHeight: 64
+                    });
+                });
+            }
+
+            create() {
+                // Grid layout: 6 columns x 4 rows
+                const cols = 6;
+                const rows = 4;
+                const spacing = 150;
+                const startX = 150;
+                const startY = 150;
+
+                // Create character grid
+                characters.forEach((char, index) => {
+                    const col = index % cols;
+                    const row = Math.floor(index / cols);
+                    const x = startX + col * spacing;
+                    const y = startY + row * spacing;
+
+                    // Create character sprite (down-idle frame)
+                    const sprite = this.add.sprite(x, y, char.id, 0);
+                    sprite.setScale(2);
+                    sprite.setInteractive({ useHandCursor: true });
+                    sprite.setData('character', char);
+
+                    // Create name label
+                    const nameText = this.add.text(x, y + 50, char.name, {
+                        fontSize: '10px',
+                        color: '#ffffff',
+                        stroke: '#000000',
+                        strokeThickness: 3,
+                        align: 'center'
+                    });
+                    nameText.setOrigin(0.5);
+                    nameText.setVisible(false);
+
+                    // Create selection box
+                    const selectionBox = this.add.rectangle(x, y, 80, 80);
+                    selectionBox.setStrokeStyle(3, 0xffd700);
+                    selectionBox.setVisible(false);
+                    sprite.setData('selectionBox', selectionBox);
+                    sprite.setData('nameText', nameText);
+
+                    // Hover effects
+                    sprite.on('pointerover', () => {
+                        sprite.setTint(0xffff00);
+                        nameText.setVisible(true);
+                        sprite.setScale(2.2);
+                    });
+
+                    sprite.on('pointerout', () => {
+                        if (this.selectedChar !== sprite) {
+                            sprite.clearTint();
+                            nameText.setVisible(false);
+                            sprite.setScale(2);
+                        }
+                    });
+
+                    // Click to select
+                    sprite.on('pointerdown', () => {
+                        this.selectCharacter(sprite);
+                    });
+
+                    // Create idle animation
+                    this.anims.create({
+                        key: `${char.id}-idle`,
+                        frames: this.anims.generateFrameNumbers(char.id, { start: 0, end: 3 }),
+                        frameRate: 4,
+                        repeat: -1
+                    });
+                    sprite.play(`${char.id}-idle`);
+
+                    this.charSprites.push(sprite);
+                });
+
+                // Camera controls
+                this.cameras.main.setBounds(0, 0, 1000, 800);
+                const cursors = this.input.keyboard.createCursorKeys();
+
+                this.input.keyboard.on('keydown', (event) => {
+                    const cam = this.cameras.main;
+                    const speed = 50;
+
+                    if (cursors.left.isDown) cam.scrollX -= speed;
+                    if (cursors.right.isDown) cam.scrollX += speed;
+                    if (cursors.up.isDown) cam.scrollY -= speed;
+                    if (cursors.down.isDown) cam.scrollY += speed;
+                });
+
+                // Instructions text
+                const instructions = this.add.text(400, 680,
+                    '✨ Click your favorite character to begin your journey ✨', {
+                    fontSize: '14px',
+                    color: '#ffd700',
+                    stroke: '#000000',
+                    strokeThickness: 4,
+                    align: 'center'
+                });
+                instructions.setOrigin(0.5);
+            }
+
+            selectCharacter(sprite) {
+                // Clear previous selection
+                if (this.selectedChar) {
+                    this.selectedChar.clearTint();
+                    this.selectedChar.getData('selectionBox').setVisible(false);
+                    this.selectedChar.setScale(2);
+                }
+
+                // Set new selection
+                this.selectedChar = sprite;
+                sprite.setTint(0x00ff00);
+                sprite.getData('selectionBox').setVisible(true);
+                sprite.getData('nameText').setVisible(true);
+                sprite.setScale(2.3);
+
+                const char = sprite.getData('character');
+
+                // Show confirmation
+                const confirmText = this.add.text(400, 730,
+                    `✅ ${char.name} selected! Ready to enter the world?`, {
+                    fontSize: '12px',
+                    color: '#00ff00',
+                    stroke: '#000000',
+                    strokeThickness: 3,
+                    align: 'center'
+                });
+                confirmText.setOrigin(0.5);
+
+                // In a real implementation, this would:
+                // 1. Save character selection to localStorage
+                // 2. Transition to the game world
+                // 3. Load the selected sprite for the player
+
+                this.time.delayedCall(2000, () => {
+                    console.log('Selected character:', char.id);
+                    // window.location.href = 'game.html?char=' + char.id;
+                });
+            }
+        }
+
+        const config = {
+            type: Phaser.AUTO,
+            width: 900,
+            height: 700,
+            backgroundColor: '#2d1b4e',
+            parent: 'game-container',
+            scene: [CharacterSelect],
+            pixelArt: true
+        };
+
+        const game = new Phaser.Game(config);
+    </script>
+</body>
+</html>

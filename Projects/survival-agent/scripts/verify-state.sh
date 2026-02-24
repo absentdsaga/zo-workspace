@@ -32,10 +32,10 @@ echo ""
 
 # Check trades file
 echo "💾 Trades File:"
-if [ -f "/tmp/paper-trades-master.json" ]; then
-    OPEN_COUNT=$(jq '.trades | map(select(.status=="open")) | length' /tmp/paper-trades-master.json 2>/dev/null)
-    TOTAL_COUNT=$(jq '.trades | length' /tmp/paper-trades-master.json 2>/dev/null)
-    BALANCE=$(jq -r '.balance' /tmp/paper-trades-master.json 2>/dev/null)
+if [ -f "/home/workspace/Projects/survival-agent/data/paper-trades-master.json" ]; then
+    OPEN_COUNT=$(jq '.trades | map(select(.status=="open")) | length' /home/workspace/Projects/survival-agent/data/paper-trades-master.json 2>/dev/null)
+    TOTAL_COUNT=$(jq '.trades | length' /home/workspace/Projects/survival-agent/data/paper-trades-master.json 2>/dev/null)
+    BALANCE=$(jq -r '.balance' /home/workspace/Projects/survival-agent/data/paper-trades-master.json 2>/dev/null)
     echo "   ✅ File exists"
     echo "   📊 Open: $OPEN_COUNT | Total: $TOTAL_COUNT | Balance: $BALANCE SOL"
     
@@ -43,10 +43,10 @@ if [ -f "/tmp/paper-trades-master.json" ]; then
     if [ "$OPEN_COUNT" -gt 0 ]; then
         echo ""
         echo "   🔓 Open Positions:"
-        jq -r '.trades[] | select(.status=="open") | "      \(.tokenSymbol): \(.pnl // 0 | tonumber) SOL"' /tmp/paper-trades-master.json 2>/dev/null
+        jq -r '.trades[] | select(.status=="open") | "      \(.tokenSymbol): \(.pnl // 0 | tonumber) SOL"' /home/workspace/Projects/survival-agent/data/paper-trades-master.json 2>/dev/null
     fi
 else
-    echo "   ❌ File not found at /tmp/paper-trades-master.json"
+    echo "   ❌ File not found at /home/workspace/Projects/survival-agent/data/paper-trades-master.json"
 fi
 echo ""
 

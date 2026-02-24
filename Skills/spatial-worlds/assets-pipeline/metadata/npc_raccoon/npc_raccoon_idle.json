@@ -1,0 +1,30 @@
+{
+  "character_id": "npc_raccoon",
+  "state": "idle",
+  "frame_rate": 8,
+  "loop": true,
+  "pivot_px": [
+    64,
+    108
+  ],
+  "baseline_y": 108,
+  "frames": [
+    {
+      "file": "npc_raccoon_idle_f01.png",
+      "duration_ms": 125,
+      "event": null
+    },
+    {
+      "file": "npc_raccoon_idle_f02.png",
+      "duration_ms": 125,
+      "event": null
+    }
+  ],
+  "sort_bias": 0,
+  "shadow": {
+    "type": "blob",
+    "radius_x": 10,
+    "radius_y": 4,
+    "alpha": 0.28
+  }
+}
