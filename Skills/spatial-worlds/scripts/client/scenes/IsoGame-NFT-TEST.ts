@@ -41,6 +41,7 @@ export class IsoGameScene extends Phaser.Scene {
   private isMobile = false;
   private frameCounter: number = 0;
   private walkTick: number = 0;
+  private playerShadow!: Phaser.GameObjects.Ellipse;
   private debugText!: Phaser.GameObjects.Text;
 
   constructor() {
@@ -271,33 +272,44 @@ export class IsoGameScene extends Phaser.Scene {
 
   createNFTAnimations() {
     // hero_orange: 256x256, 64x64 frames, 4x4 grid
-    // Row 0 (frames 0-3):   south (front view, walk toward viewer)
-    // Row 1 (frames 4-7):   north (back view, walk away)
-    // Row 2 (frames 8-11):  west  (left-facing profile)
-    // Row 3 (frames 12-15): west duplicate — no genuine east frames exist
-    // East is achieved by playing west + flipX(true)
+    // Row 0 (frames 0-3): south | Row 1 (frames 4-7): north | Row 2 (frames 8-11): west
+    // East = west + flipX
     const dirs = ['south', 'north', 'west'];
     dirs.forEach((dir, rowIdx) => {
+      const base = rowIdx * 4;
+      // Ping-pong: 0-1-2-3-2-1 doubles effective cycle for smoother loop
       this.anims.create({
         key: `hero_orange-walk-${dir}`,
-        frames: this.anims.generateFrameNumbers('hero_orange', { start: rowIdx * 4, end: rowIdx * 4 + 3 }),
-        frameRate: 8,
+        frames: [
+          { key: 'hero_orange', frame: base },
+          { key: 'hero_orange', frame: base + 1 },
+          { key: 'hero_orange', frame: base + 2 },
+          { key: 'hero_orange', frame: base + 3 },
+          { key: 'hero_orange', frame: base + 2 },
+          { key: 'hero_orange', frame: base + 1 },
+        ],
+        frameRate: 7,
         repeat: -1
       });
       this.anims.create({
         key: `hero_orange-idle-${dir}`,
-        frames: [{ key: 'hero_orange', frame: rowIdx * 4 + 1 }],
+        frames: [{ key: 'hero_orange', frame: base + 1 }],
         frameRate: 1
       });
     });
 
-    console.log('✅ Created animations for hero_orange (east = west + flipX)');
+    console.log('✅ Created ping-pong animations for hero_orange');
   }
 
   createPlayer() {
     console.log(`🎨 Creating player with ${PLAYER_CHARACTER}`);
-    this.player = this.physics.add.sprite(640, 360, PLAYER_CHARACTER, 1);  // frame 1 = south idle (row 0)
-    this.player.setScale(2.0);  // hero_orange is 64x64, scale 2x makes it visible
+
+    // Ground shadow (renders below player)
+    this.playerShadow = this.add.ellipse(640, 364, 40, 14, 0x000000, 0.3);
+    this.playerShadow.setDepth(-1);
+
+    this.player = this.physics.add.sprite(640, 360, PLAYER_CHARACTER, 1);
+    this.player.setScale(2.0);
 
     // Anchor at feet
     this.player.setOrigin(0.5, 0.9);
@@ -484,35 +496,80 @@ export class IsoGameScene extends Phaser.Scene {
     if (!ALL_CHARACTERS.includes(charId)) return;
 
     const moving = input.up || input.down || input.left || input.right;
+    const IDLE_GRACE_FRAMES = 4;
+    let graceCounter = sprite.getData('idleGrace') || 0;
 
     let targetKey: string;
     let flipX = false;
 
     if (moving) {
-      // Determine facing direction from input — horizontal dominates in isometric view
+      graceCounter = 0;
+      sprite.setData('idleGrace', 0);
+
+      // Isometric direction mapping: keys align to grid edges
       let direction: string;
-      if (input.left && input.up) direction = 'north';
-      else if (input.left && input.down) direction = 'west';
-      else if (input.right && input.up) direction = 'east';
-      else if (input.right && input.down) direction = 'south';
-      else if (input.left) direction = 'west';
-      else if (input.right) direction = 'east';
-      else if (input.down) direction = 'south';
-      else direction = 'north';
+      if (input.right && input.down) direction = 'south';  // SE+SW → screen-down
+      else if (input.left && input.up) direction = 'north'; // NW+NE → screen-up
+      else if (input.right && input.up) direction = 'east';  // SE+NE → screen-right
+      else if (input.left && input.down) direction = 'west'; // NW+SW → screen-left
+      else if (input.right) direction = 'south';             // SE grid edge
+      else if (input.left) direction = 'north';              // NW grid edge
+      else if (input.up) direction = 'east';                 // NE grid edge
+      else direction = 'west';                               // SW grid edge
 
       const animDir = direction === 'east' ? 'west' : direction;
       flipX = direction === 'east';
       targetKey = `${charId}-walk-${animDir}`;
 
-      if (direction === 'south' || direction === 'north') {
-        const bob = Math.sin(walkTick * 0.35) * 0.018;
-        sprite.setOrigin(0.5, 0.9 + bob);
-      } else {
-        sprite.setOrigin(0.5, 0.9);
+      // Premium walk: subtle Y-only hop synced to step cadence
+      // 6-frame ping-pong at 7fps = ~0.86s cycle, each step = 0.43s
+      // At 60fps game loop: ~26 frames per step
+      // Use smooth step curve: quick lift, hang, soft land
+      const stepPhase = (walkTick % 26) / 26; // 0→1 per step
+      const lift = Math.sin(stepPhase * Math.PI); // smooth arc
+      const hopPx = lift * 0.025; // ~3px hop at scale 2.0 (64*2*0.025 = 3.2px)
+
+      sprite.setOrigin(0.5, 0.9 - hopPx);
+      sprite.setScale(2.0, 2.0);
+      sprite.setRotation(0);
+
+      // Update shadow if exists
+      if (this.playerShadow) {
+        this.playerShadow.setPosition(sprite.x, sprite.y + 4);
+        this.playerShadow.setScale(1.0 - lift * 0.15, 1.0 - lift * 0.08);
+        this.playerShadow.setAlpha(0.3 - lift * 0.1);
       }
     } else {
-      sprite.setOrigin(0.5, 0.9);
-      // Derive idle direction from whichever walk anim was last playing
+      graceCounter++;
+      sprite.setData('idleGrace', graceCounter);
+
+      // Settle: smooth return to neutral over 4 frames
+      const SETTLE_FRAMES = 4;
+      if (graceCounter <= SETTLE_FRAMES) {
+        const t = graceCounter / SETTLE_FRAMES;
+        const currentOriginY = sprite.originY;
+        const targetOriginY = 0.9;
+        sprite.setOrigin(0.5, currentOriginY + (targetOriginY - currentOriginY) * t);
+        sprite.setScale(2.0, 2.0);
+        sprite.setRotation(0);
+
+        if (graceCounter < IDLE_GRACE_FRAMES) {
+          const prevKey = sprite.getData('lastAnimKey') || '';
+          if (prevKey.includes('-walk-')) return;
+        }
+      } else {
+        sprite.setOrigin(0.5, 0.9);
+        sprite.setScale(2.0, 2.0);
+        sprite.setRotation(0);
+      }
+
+      // Update shadow to resting state
+      if (this.playerShadow) {
+        this.playerShadow.setPosition(sprite.x, sprite.y + 4);
+        this.playerShadow.setScale(1.0, 1.0);
+        this.playerShadow.setAlpha(0.3);
+      }
+
       const lastKey: string = sprite.getData('lastAnimKey') || `${charId}-idle-south`;
       const idleDir = lastKey.includes('-north') ? 'north'
         : lastKey.includes('-west') ? 'west'
@@ -523,7 +580,6 @@ export class IsoGameScene extends Phaser.Scene {
 
     sprite.setFlipX(flipX);
 
-    // Only call play() when animation needs to change — and NEVER pass ignoreIfPlaying=true
     const prevKey = sprite.getData('lastAnimKey');
     if (prevKey !== targetKey) {
       sprite.setData('lastAnimKey', targetKey);

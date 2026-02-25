@@ -23,6 +23,9 @@ export class MobileInput {
   public elevationUp = false;
   public elevationDown = false;
 
+  // Hysteresis: once moving, use a lower threshold to stop
+  private _isMoving = false;
+
   // Track elevation button touch IDs so they don't interfere with joystick
   private upTouchId = -1;
   private downTouchId = -1;
@@ -166,12 +169,19 @@ export class MobileInput {
   }
 
   getInput() {
-    const threshold = 0.15;
+    const onThreshold = 0.15;
+    const offThreshold = 0.08;
+    const mag = Math.sqrt(this.inputVector.x ** 2 + this.inputVector.y ** 2);
+
+    if (!this._isMoving && mag >= onThreshold) this._isMoving = true;
+    else if (this._isMoving && mag < offThreshold) this._isMoving = false;
+
+    const t = this._isMoving ? offThreshold : onThreshold;
     return {
-      up:    this.inputVector.y < -threshold,
-      down:  this.inputVector.y > threshold,
-      left:  this.inputVector.x < -threshold,
-      right: this.inputVector.x > threshold,
+      up:    this.inputVector.y < -t,
+      down:  this.inputVector.y > t,
+      left:  this.inputVector.x < -t,
+      right: this.inputVector.x > t,
     };
   }
 }

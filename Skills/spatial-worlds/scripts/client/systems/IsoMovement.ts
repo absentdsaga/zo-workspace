@@ -7,29 +7,20 @@ import Phaser from 'phaser';
  */
 export class IsoMovementController {
   private speed = 200; // Max speed - tuned for responsive feel
-  private acceleration = 1500; // Quick acceleration for tight controls
-  private drag = 1000; // High drag for instant stops when desired
 
-  // Direction mappings for isometric (normalized vectors)
-  private directionMap = {
-    'n':  { vx: -1, vy: -0.5, anim: 'n' },
-    'ne': { vx:  0, vy: -1,   anim: 'ne' },
-    'e':  { vx:  1, vy: -0.5, anim: 'e' },
-    'se': { vx:  1, vy:  0,   anim: 'se' },
-    's':  { vx:  1, vy:  0.5, anim: 's' },
-    'sw': { vx:  0, vy:  1,   anim: 'sw' },
-    'w':  { vx: -1, vy:  0.5, anim: 'w' },
-    'nw': { vx: -1, vy:  0,   anim: 'nw' },
-  };
+  // Isometric grid axes in screen pixels:
+  // col+ = (32, 16), row+ = (-32, 16)
+  // Normalized: col+ = (0.894, 0.447), row+ = (-0.894, 0.447)
+  private static readonly ISO_COL = { x: 0.89443, y: 0.44721 };  // (2,1)/sqrt(5)
+  private static readonly ISO_ROW = { x: -0.89443, y: 0.44721 }; // (-2,1)/sqrt(5)
 
   /**
    * Initialize physics properties on sprite
    * Call this once when creating the player
    */
   initPhysics(sprite: Phaser.Physics.Arcade.Sprite) {
-    sprite.setDrag(this.drag, this.drag);
-    sprite.setMaxVelocity(this.speed, this.speed);
-    sprite.setAcceleration(0, 0);
+    sprite.setDrag(0, 0);
+    sprite.setMaxVelocity(9999, 9999);
   }
 
   update(
@@ -37,63 +28,49 @@ export class IsoMovementController {
     cursors: Phaser.Types.Input.Keyboard.CursorKeys,
     wasd: any
   ) {
-    // Get input direction
-    let dirX = 0;
-    let dirY = 0;
-
-    if (cursors.up.isDown || wasd.w.isDown) dirY -= 1;
-    if (cursors.down.isDown || wasd.s.isDown) dirY += 1;
-    if (cursors.left.isDown || wasd.a.isDown) dirX -= 1;
-    if (cursors.right.isDown || wasd.d.isDown) dirX += 1;
-
-    // Get direction key
-    const direction = this.getDirection(dirX, dirY);
-
-    if (direction) {
-      const dir = this.directionMap[direction];
-
-      // Apply acceleration-based movement for smooth feel
-      sprite.setAcceleration(
-        dir.vx * this.acceleration,
-        dir.vy * this.acceleration
-      );
-    } else {
-      // No input - let drag slow the sprite naturally
-      sprite.setAcceleration(0, 0);
-    }
+    const input = {
+      up: cursors.up.isDown || wasd.w.isDown,
+      down: cursors.down.isDown || wasd.s.isDown,
+      left: cursors.left.isDown || wasd.a.isDown,
+      right: cursors.right.isDown || wasd.d.isDown,
+    };
+    this.updateWithInput(sprite, input);
   }
 
   updateWithInput(
     sprite: Phaser.Physics.Arcade.Sprite,
     input: { up: boolean; down: boolean; left: boolean; right: boolean }
   ) {
-    // Get input direction
-    let dirX = 0;
-    let dirY = 0;
+    // Build target velocity from isometric grid axes
+    let tx = 0, ty = 0;
+    const C = IsoMovementController.ISO_COL;
+    const R = IsoMovementController.ISO_ROW;
 
-    if (input.up) dirY -= 1;
-    if (input.down) dirY += 1;
-    if (input.left) dirX -= 1;
-    if (input.right) dirX += 1;
+    // Right = +col (SE grid edge), Left = -col (NW grid edge)
+    // Down = +row (SW grid edge), Up = -row (NE grid edge)
+    if (input.right) { tx += C.x; ty += C.y; }
+    if (input.left)  { tx -= C.x; ty -= C.y; }
+    if (input.down)  { tx += R.x; ty += R.y; }
+    if (input.up)    { tx -= R.x; ty -= R.y; }
 
-    // Get direction key
-    const direction = this.getDirection(dirX, dirY);
-
-    if (direction) {
-      const dir = this.directionMap[direction];
-
-      // Apply acceleration-based movement for smooth feel
-      sprite.setAcceleration(
-        dir.vx * this.acceleration,
-        dir.vy * this.acceleration
-      );
-    } else {
-      // No input - let drag slow the sprite naturally
-      sprite.setAcceleration(0, 0);
+    // Normalize so diagonals aren't faster
+    const len = Math.sqrt(tx * tx + ty * ty);
+    if (len > 0.001) {
+      tx = (tx / len) * this.speed;
+      ty = (ty / len) * this.speed;
     }
+
+    // Smooth acceleration/deceleration via lerp
+    const smoothing = 0.25;
+    const vx = sprite.body!.velocity.x;
+    const vy = sprite.body!.velocity.y;
+    sprite.setVelocity(
+      vx + (tx - vx) * smoothing,
+      vy + (ty - vy) * smoothing
+    );
   }
 
-  getDirection(x: number, y: number): keyof typeof this.directionMap | null {
+  getDirection(x: number, y: number): string | null {
     if (x === 0 && y === -1) return 'n';
     if (x === 1 && y === -1) return 'ne';
     if (x === 1 && y === 0) return 'e';
