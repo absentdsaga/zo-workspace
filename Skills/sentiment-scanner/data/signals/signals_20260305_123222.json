@@ -1,0 +1,723 @@
+{
+  "generated_at": "2026-03-05T12:32:22.605950+00:00",
+  "top_signals": [
+    {
+      "topic": "#2026",
+      "score": 52,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 200,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "jakeclaverqf12",
+        "infused.coinz"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "$WAR",
+      "score": 52,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 200,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "keltonai",
+        "gavincoins"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#fyp",
+      "score": 52,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 200,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "jacksononweb3",
+        "advyyyth"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#foryou",
+      "score": 52,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 200,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "gavincoins",
+        "theonlycrisy"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    }
+  ],
+  "prediction_market_edges": [
+    {
+      "type": "polymarket",
+      "question": "Trump out as President by March 31?",
+      "url": "https://polymarket.com/event/trump-out-as-president-by-march-31",
+      "matching_social_topics": [
+        "2026",
+        "trump"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0175,
+          "implied_probability": "1.8%",
+          "payout_multiple": "57.1x"
+        }
+      ],
+      "volume_24h": 293854.2838189999,
+      "social_engagement": 300,
+      "social_mentions": 3,
+      "match_quality": 69,
+      "social_context": [
+        "Prepare for December 15th: Potential Crypto Boom! December 15th is crucial for crypto investors. Discover the potential of cmsb coin and how Trump could create "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Iran close the Strait of Hormuz by March 31?",
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-march-31",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.195,
+          "implied_probability": "19.5%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "volume_24h": 2582785.5198780037,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0115,
+          "implied_probability": "1.1%",
+          "payout_multiple": "87.0x"
+        }
+      ],
+      "volume_24h": 2093321.3846550002,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the Iranian regime fall by March 31?",
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.148,
+          "implied_probability": "14.8%",
+          "payout_multiple": "6.8x"
+        }
+      ],
+      "volume_24h": 1226446.0075380004,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Ken Paxton win the 2026 Texas Republican Primary?",
+      "url": "https://polymarket.com/event/will-ken-paxton-win-the-2026-republican-primary",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.14,
+          "implied_probability": "14.0%",
+          "payout_multiple": "7.1x"
+        }
+      ],
+      "volume_24h": 1139604.7447339988,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Belgium win the 2026 FIFA World Cup?",
+      "url": "https://polymarket.com/event/will-belgium-win-the-2026-fifa-world-cup-358",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 1031942.191585,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Mexico win the 2026 FIFA World Cup?",
+      "url": "https://polymarket.com/event/will-mexico-win-the-2026-fifa-world-cup-529",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 538211.0470720001,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+      "url": "https://polymarket.com/event/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.145,
+          "implied_probability": "14.5%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "volume_24h": 459689.78318399953,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Reza Pahlavi enter Iran by March 31?",
+      "url": "https://polymarket.com/event/will-reza-pahlavi-enter-iran-by-march-31-282",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0345,
+          "implied_probability": "3.5%",
+          "payout_multiple": "29.0x"
+        }
+      ],
+      "volume_24h": 449657.0903140001,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
+      "url": "https://polymarket.com/event/will-the-colorado-avalanche-win-the-2026-nhl-stanley-cup",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.219,
+          "implied_probability": "21.9%",
+          "payout_multiple": "4.6x"
+        }
+      ],
+      "volume_24h": 444397.988635,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $100,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-100k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.022,
+          "implied_probability": "2.2%",
+          "payout_multiple": "45.5x"
+        }
+      ],
+      "volume_24h": 365553.02854400006,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": [
+        "Explore the saying 'Crypto is going to zero' and its implications in each bear market. Insights on Bitcoin trends and investor psychology. Keywords: crypto bear ",
+        "Will Bitcoin Finally Rise in 2026? Explore the potential of Bitcoin alongside gold and silver as we dive into the 2026 market predictions. #2026 #crypto #gold # "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Xander Schauffele win the 2026 Masters tournament?",
+      "url": "https://polymarket.com/event/will-xander-schauffele-win-the-2026-masters-tournament",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.044,
+          "implied_probability": "4.4%",
+          "payout_multiple": "22.7x"
+        }
+      ],
+      "volume_24h": 356034.8351360003,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Jesus Christ return before 2027?",
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0375,
+          "implied_probability": "3.8%",
+          "payout_multiple": "26.7x"
+        }
+      ],
+      "volume_24h": 348007.9938529992,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will John Cornyn win the 2026 Texas Republican Primary?",
+      "url": "https://polymarket.com/event/will-john-cornyn-win-the-2026-republican-primary",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.135,
+          "implied_probability": "13.5%",
+          "payout_multiple": "7.4x"
+        }
+      ],
+      "volume_24h": 346164.011889001,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $75,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-75k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.19,
+          "implied_probability": "19.0%",
+          "payout_multiple": "5.3x"
+        }
+      ],
+      "volume_24h": 330223.96529499994,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": [
+        "Explore the saying 'Crypto is going to zero' and its implications in each bear market. Insights on Bitcoin trends and investor psychology. Keywords: crypto bear ",
+        "Will Bitcoin Finally Rise in 2026? Explore the potential of Bitcoin alongside gold and silver as we dive into the 2026 market predictions. #2026 #crypto #gold # "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Russia x Ukraine ceasefire by March 31, 2026?",
+      "url": "https://polymarket.com/event/russia-x-ukraine-ceasefire-by-march-31-2026",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0275,
+          "implied_probability": "2.8%",
+          "payout_multiple": "36.4x"
+        }
+      ],
+      "volume_24h": 301541.09027499997,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "GTA VI released before June 2026?",
+      "url": "https://polymarket.com/event/gta-vi-released-before-june-2026",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0245,
+          "implied_probability": "2.5%",
+          "payout_multiple": "40.8x"
+        }
+      ],
+      "volume_24h": 297545.4231409999,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Netherlands win the 2026 FIFA World Cup?",
+      "url": "https://polymarket.com/event/will-netherlands-win-the-2026-fifa-world-cup-739",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0315,
+          "implied_probability": "3.1%",
+          "payout_multiple": "31.7x"
+        }
+      ],
+      "volume_24h": 261316.58797100012,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Croatia win the 2026 FIFA World Cup?",
+      "url": "https://polymarket.com/event/will-croatia-win-the-2026-fifa-world-cup",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 255218.131312,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Robert MacIntyre win the 2026 Masters tournament?",
+      "url": "https://polymarket.com/event/will-robert-macintyre-win-the-2026-masters-tournament",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0235,
+          "implied_probability": "2.4%",
+          "payout_multiple": "42.6x"
+        }
+      ],
+      "volume_24h": 240601.37093799986,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": []
+    }
+  ],
+  "polymarket_top_opportunities": [
+    {
+      "question": "Will Iran close the Strait of Hormuz by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.195,
+          "implied_probability": "19.5%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "volume_24h": 2582785.5198780037,
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-march-31"
+    },
+    {
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0115,
+          "implied_probability": "1.1%",
+          "payout_multiple": "87.0x"
+        }
+      ],
+      "volume_24h": 2093321.3846550002,
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting"
+    },
+    {
+      "question": "Will the Iranian regime fall by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.148,
+          "implied_probability": "14.8%",
+          "payout_multiple": "6.8x"
+        }
+      ],
+      "volume_24h": 1226446.0075380004,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31"
+    },
+    {
+      "question": "Will Ken Paxton win the 2026 Texas Republican Primary?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.14,
+          "implied_probability": "14.0%",
+          "payout_multiple": "7.1x"
+        }
+      ],
+      "volume_24h": 1139604.7447339988,
+      "url": "https://polymarket.com/event/will-ken-paxton-win-the-2026-republican-primary"
+    },
+    {
+      "question": "Will Belgium win the 2026 FIFA World Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 1031942.191585,
+      "url": "https://polymarket.com/event/will-belgium-win-the-2026-fifa-world-cup-358"
+    },
+    {
+      "question": "Will Mark Kelly win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0175,
+          "implied_probability": "1.8%",
+          "payout_multiple": "57.1x"
+        }
+      ],
+      "volume_24h": 618566.8054399999,
+      "url": "https://polymarket.com/event/will-mark-kelly-win-the-2028-democratic-presidential-nomination-479"
+    },
+    {
+      "question": "Will Wes Moore win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.017,
+          "implied_probability": "1.7%",
+          "payout_multiple": "58.8x"
+        }
+      ],
+      "volume_24h": 593585.381756,
+      "url": "https://polymarket.com/event/will-wes-moore-win-the-2028-democratic-presidential-nomination-714"
+    },
+    {
+      "question": "US x Iran ceasefire by March 15?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.105,
+          "implied_probability": "10.5%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "volume_24h": 582332.6527659999,
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-15"
+    },
+    {
+      "question": "Will Mexico win the 2026 FIFA World Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 538211.0470720001,
+      "url": "https://polymarket.com/event/will-mexico-win-the-2026-fifa-world-cup-529"
+    },
+    {
+      "question": "Will Ethereum reach $2,200 in March?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.175,
+          "implied_probability": "17.5%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "volume_24h": 525591.8200660003,
+      "url": "https://polymarket.com/event/will-ethereum-reach-2200-in-march-2026"
+    },
+    {
+      "question": "Will Andy Beshear win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 512058.96866799996,
+      "url": "https://polymarket.com/event/will-andy-beshear-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.145,
+          "implied_probability": "14.5%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "volume_24h": 459689.78318399953,
+      "url": "https://polymarket.com/event/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31"
+    },
+    {
+      "question": "Will Reza Pahlavi enter Iran by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0345,
+          "implied_probability": "3.5%",
+          "payout_multiple": "29.0x"
+        }
+      ],
+      "volume_24h": 449657.0903140001,
+      "url": "https://polymarket.com/event/will-reza-pahlavi-enter-iran-by-march-31-282"
+    },
+    {
+      "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.219,
+          "implied_probability": "21.9%",
+          "payout_multiple": "4.6x"
+        }
+      ],
+      "volume_24h": 444397.988635,
+      "url": "https://polymarket.com/event/will-the-colorado-avalanche-win-the-2026-nhl-stanley-cup"
+    },
+    {
+      "question": "Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0515,
+          "implied_probability": "5.1%",
+          "payout_multiple": "19.4x"
+        }
+      ],
+      "volume_24h": 414445.1044819999,
+      "url": "https://polymarket.com/event/will-alexandria-ocasio-cortez-win-the-2028-us-presidential-election"
+    }
+  ],
+  "kalshi_top_opportunities": [],
+  "summary": {
+    "total_topics_tracked": 16,
+    "high_confidence_signals": 0,
+    "medium_confidence_signals": 4,
+    "cross_platform_signals": 0,
+    "tier1_backed_signals": 0,
+    "prediction_market_matches": 58,
+    "x_signals_quality": {
+      "total": 4,
+      "with_known_author": 4,
+      "with_engagement": 0
+    },
+    "tiktok_signals_quality": {
+      "total": 17,
+      "crypto_relevant": 16
+    }
+  }
+}

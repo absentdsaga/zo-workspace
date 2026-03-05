@@ -4,6 +4,7 @@ import { ServerWebSocket } from 'bun';
 
 interface PlayerState {
   id: string;
+  charId: string;
   x: number;
   y: number;
   elevation: number;
@@ -72,10 +73,11 @@ class MultiplayerServer {
   
   private handleJoin(ws: ServerWebSocket, cmd: any) {
     const playerId = ws.data.playerId;
-    
+
     const now = Date.now();
     const playerState: PlayerState = {
       id: playerId,
+      charId: cmd.charId || 'hero_orange',
       x: 640,
       y: 360,
       elevation: 0,
@@ -98,7 +100,7 @@ class MultiplayerServer {
       player: playerState,
     }, playerId);
     
-    console.log(`👤 Player ${playerId.slice(0, 8)} joined (${this.players.size} total)`);
+    console.log(`👤 Player ${playerId.slice(0, 8)} joined as ${playerState.charId} (${this.players.size} total)`);
   }
   
   private handleMove(ws: ServerWebSocket, cmd: MoveCommand) {

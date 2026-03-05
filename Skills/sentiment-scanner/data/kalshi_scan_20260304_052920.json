@@ -1,0 +1,1064 @@
+{
+  "scan_time": "2026-03-04T05:29:20.136796+00:00",
+  "markets_with_edge": [
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20262F183E300B6-4C7397E580B",
+      "title": "yes Atlanta,yes Boston,yes Los Angeles C,yes Oklahoma City,yes Portland,yes Philadelphia,yes UCLA,yes UNLV,yes Indiana,yes Eastern Kentucky,yes Florida Gulf Coast",
+      "event_ticker": "KXMVECROSSCATEGORY-S20262F183E300B6",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262f183e300b6-4c7397e580b",
+      "yes_bid": 0,
+      "yes_ask": 3,
+      "no_bid": 96,
+      "no_ask": 100,
+      "yes_mid": 1.5,
+      "no_mid": 98.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840369+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20267585C7AD58F-7790F312D39",
+      "title": "no Los Angeles L wins by over 2.5 Points,no Phoenix wins by over 7.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20267585C7AD58F",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20267585c7ad58f-7790f312d39",
+      "yes_bid": 0,
+      "yes_ask": 28,
+      "no_bid": 71,
+      "no_ask": 100,
+      "yes_mid": 14.0,
+      "no_mid": 85.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 14.0,
+          "implied_probability": "14%",
+          "payout_multiple": "7.1x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840398+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202681707C8AD5D-0547618B46A",
+      "title": "yes Grayson Allen: 15+,yes Jalen Green: 15+,yes DeMar DeRozan: 10+,yes Precious Achiuwa: 20+,yes Russell Westbrook: 15+,yes Mark Williams: 6+,yes Los Angeles L wins by over 4.5 Points,yes Phoenix wins by over 1.5 Points,no Over 245.5 points scored,no Over 242.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S202681707C8AD5D",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202681707c8ad5d-0547618b46a",
+      "yes_bid": 0,
+      "yes_ask": 14,
+      "no_bid": 85,
+      "no_ask": 100,
+      "yes_mid": 7.0,
+      "no_mid": 92.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 7.0,
+          "implied_probability": "7%",
+          "payout_multiple": "14.3x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840414+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026130F4C0394C-4F92F3EFF17",
+      "title": "yes Jalen Johnson: 15+,yes Onyeka Okongwu: 10+,yes Giannis Antetokounmpo: 20+,yes Kevin Porter Jr.: 10+,yes Nikola Vu\u010devi\u0107: 10+,yes Jalen Brunson: 15+,yes Mikal Bridges: 10+,yes OG Anunoby: 10+,yes Chet Holmgren: 10+",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026130F4C0394C",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026130f4c0394c-4f92f3eff17",
+      "yes_bid": 0,
+      "yes_ask": 41,
+      "no_bid": 58,
+      "no_ask": 100,
+      "yes_mid": 20.5,
+      "no_mid": 79.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 20.5,
+          "implied_probability": "20%",
+          "payout_multiple": "4.9x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840434+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202627D30FC3BC8-EEA9CA905EE",
+      "title": "yes Over 3.5 goals scored,yes Over 4.5 goals scored,yes Over 3.5 goals scored,yes Over 3.5 goals scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S202627D30FC3BC8",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202627d30fc3bc8-eea9ca905ee",
+      "yes_bid": 0,
+      "yes_ask": 59,
+      "no_bid": 40,
+      "no_ask": 100,
+      "yes_mid": 29.5,
+      "no_mid": 70.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 29.5,
+          "implied_probability": "30%",
+          "payout_multiple": "3.4x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840444+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026CCB85FA80EE-55384598ED1",
+      "title": "yes Leverkusen,yes Arsenal,yes West Ham,yes Manchester City,yes Over 1.5 goals scored,yes Over 1.5 goals scored,yes Los Angeles C,yes Philadelphia,yes LIU,yes Wright St.,yes Indiana,yes George Washington",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026CCB85FA80EE",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026ccb85fa80ee-55384598ed1",
+      "yes_bid": 0,
+      "yes_ask": 3,
+      "no_bid": 96,
+      "no_ask": 100,
+      "yes_mid": 1.5,
+      "no_mid": 98.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840451+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20263F9AA73795F-273C297E678",
+      "title": "yes VAN Canucks,yes ANA Ducks,yes STL Blues,yes NJ Devils",
+      "event_ticker": "KXMVECROSSCATEGORY-S20263F9AA73795F",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20263f9aa73795f-273c297e678",
+      "yes_bid": 0,
+      "yes_ask": 3,
+      "no_bid": 96,
+      "no_ask": 100,
+      "yes_mid": 1.5,
+      "no_mid": 98.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840470+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202690A55047A28-EA3FBA3AED8",
+      "title": "yes Jalen Johnson: 15+,yes Onyeka Okongwu: 10+,yes Giannis Antetokounmpo: 20+,yes Nikola Vu\u010devi\u0107: 10+,yes Jalen Brunson: 15+,yes Mikal Bridges: 10+,yes OG Anunoby: 10+,yes Chet Holmgren: 10+",
+      "event_ticker": "KXMVECROSSCATEGORY-S202690A55047A28",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202690a55047a28-ea3fba3aed8",
+      "yes_bid": 0,
+      "yes_ask": 52,
+      "no_bid": 47,
+      "no_ask": 100,
+      "yes_mid": 26.0,
+      "no_mid": 73.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 26.0,
+          "implied_probability": "26%",
+          "payout_multiple": "3.8x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840495+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026F26EC06F4D9-D2AA3C5BD66",
+      "title": "yes Derrick White: 1+,yes Payton Pritchard: 1+,yes Payton Pritchard: 2+,yes Jalen Brunson: 2+,yes Los Angeles C,yes Washington,yes Jonathan Kuminga: 2+,yes Myles Turner: 2+,yes Payton Pritchard: 2+",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F26EC06F4D9",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026f26ec06f4d9-d2aa3c5bd66",
+      "yes_bid": 0,
+      "yes_ask": 50,
+      "no_bid": 49,
+      "no_ask": 100,
+      "yes_mid": 25.0,
+      "no_mid": 74.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 25.0,
+          "implied_probability": "25%",
+          "payout_multiple": "4.0x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840511+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20265B7B9FBADA9-4962F7B5CF0",
+      "title": "yes ANA Ducks,yes SEA Kraken,yes BOS Bruins",
+      "event_ticker": "KXMVECROSSCATEGORY-S20265B7B9FBADA9",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20265b7b9fbada9-4962f7b5cf0",
+      "yes_bid": 0,
+      "yes_ask": 14,
+      "no_bid": 85,
+      "no_ask": 100,
+      "yes_mid": 7.0,
+      "no_mid": 92.5,
+      "volume": 304,
+      "volume_24h": 0,
+      "open_interest": 304,
+      "last_price": 14,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 7.0,
+          "implied_probability": "7%",
+          "payout_multiple": "14.3x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840523+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20262B4E64E0803-A334B81EAAB",
+      "title": "yes LeBron James: 25+,yes Trey Murphy III: 30+,yes Precious Achiuwa: 8+",
+      "event_ticker": "KXMVECROSSCATEGORY-S20262B4E64E0803",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262b4e64e0803-a334b81eaab",
+      "yes_bid": 0,
+      "yes_ask": 6,
+      "no_bid": 93,
+      "no_ask": 100,
+      "yes_mid": 3.0,
+      "no_mid": 96.5,
+      "volume": 136,
+      "volume_24h": 0,
+      "open_interest": 136,
+      "last_price": 6,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.0,
+          "implied_probability": "3%",
+          "payout_multiple": "33.3x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840548+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20260D74C889855-3143E5C5F86",
+      "title": "yes Both Teams To Score,yes Both Teams To Score,yes Tie,yes Tie",
+      "event_ticker": "KXMVECROSSCATEGORY-S20260D74C889855",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20260d74c889855-3143e5c5f86",
+      "yes_bid": 0,
+      "yes_ask": 7,
+      "no_bid": 92,
+      "no_ask": 100,
+      "yes_mid": 3.5,
+      "no_mid": 96.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.5,
+          "implied_probability": "4%",
+          "payout_multiple": "28.6x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840559+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202637BE6F76482-092B67041C7",
+      "title": "yes Payton Pritchard: 2+,yes Derrick White: 6+,yes Jaylen Brown: 25+,yes Nikola Vu\u010devi\u0107: 10+",
+      "event_ticker": "KXMVECROSSCATEGORY-S202637BE6F76482",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202637be6f76482-092b67041c7",
+      "yes_bid": 0,
+      "yes_ask": 21,
+      "no_bid": 78,
+      "no_ask": 100,
+      "yes_mid": 10.5,
+      "no_mid": 89.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 10.5,
+          "implied_probability": "10%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840601+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026FF4AD58551A-CE18096CF34",
+      "title": "yes Leverkusen,yes Arsenal,yes Fulham,yes Manchester City,yes Barcelona,yes Atletico",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FF4AD58551A",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026ff4ad58551a-ce18096cf34",
+      "yes_bid": 0,
+      "yes_ask": 4,
+      "no_bid": 95,
+      "no_ask": 100,
+      "yes_mid": 2.0,
+      "no_mid": 97.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.0,
+          "implied_probability": "2%",
+          "payout_multiple": "50.0x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840626+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026EC06C6EE0F3-2641E9C8835",
+      "title": "yes Arsenal,yes Manchester City,no Aston Villa wins by over 1.5 goals,no Over 3.5 goals scored,no Over 4.5 goals scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026EC06C6EE0F3",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026ec06c6ee0f3-2641e9c8835",
+      "yes_bid": 0,
+      "yes_ask": 21,
+      "no_bid": 78,
+      "no_ask": 100,
+      "yes_mid": 10.5,
+      "no_mid": 89.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 10.5,
+          "implied_probability": "10%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840647+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20260A323B0E4A0-8A81FEF95AC",
+      "title": "yes LeBron James: 20+,yes Devin Booker: 20+,yes Jalen Green: 15+,no Los Angeles L wins by over 4.5 Points,yes Phoenix wins by over 8.5 Points,no Over 221.5 points scored,yes Over 221.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S20260A323B0E4A0",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20260a323b0e4a0-8a81fef95ac",
+      "yes_bid": 0,
+      "yes_ask": 12,
+      "no_bid": 87,
+      "no_ask": 100,
+      "yes_mid": 6.0,
+      "no_mid": 93.5,
+      "volume": 1,
+      "volume_24h": 0,
+      "open_interest": 1,
+      "last_price": 13,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.0,
+          "implied_probability": "6%",
+          "payout_multiple": "16.7x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840684+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026F893347AF8F-8345BC5623E",
+      "title": "yes Leverkusen,yes Arsenal,yes Fulham,yes Manchester City,yes Atletico",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F893347AF8F",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026f893347af8f-8345bc5623e",
+      "yes_bid": 0,
+      "yes_ask": 7,
+      "no_bid": 92,
+      "no_ask": 100,
+      "yes_mid": 3.5,
+      "no_mid": 96.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.5,
+          "implied_probability": "4%",
+          "payout_multiple": "28.6x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840693+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202605119EEA064-6C6E4018B5E",
+      "title": "yes Both Teams To Score,yes Both Teams To Score,yes Both Teams To Score,yes Arsenal,yes Fulham,yes Manchester City,yes Over 2.5 goals scored,yes Over 2.5 goals scored,yes Over 1.5 goals scored,yes Over 2.5 goals scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S202605119EEA064",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202605119eea064-6c6e4018b5e",
+      "yes_bid": 0,
+      "yes_ask": 3,
+      "no_bid": 96,
+      "no_ask": 100,
+      "yes_mid": 1.5,
+      "no_mid": 98.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840704+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026D48E27EECAF-DA2FD2D6930",
+      "title": "yes New Orleans,no Phoenix wins by over 7.5 Points,yes UNLV,no Over 134.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026D48E27EECAF",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026d48e27eecaf-da2fd2d6930",
+      "yes_bid": 0,
+      "yes_ask": 6,
+      "no_bid": 93,
+      "no_ask": 100,
+      "yes_mid": 3.0,
+      "no_mid": 96.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.0,
+          "implied_probability": "3%",
+          "payout_multiple": "33.3x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840733+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026D0AA66D96BB-A40454446BD",
+      "title": "yes New Orleans,yes Phoenix wins by over 2.5 Points,yes Over 224.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026D0AA66D96BB",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026d0aa66d96bb-a40454446bd",
+      "yes_bid": 0,
+      "yes_ask": 13,
+      "no_bid": 86,
+      "no_ask": 100,
+      "yes_mid": 6.5,
+      "no_mid": 93.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.5,
+          "implied_probability": "6%",
+          "payout_multiple": "15.4x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840743+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026C49C9738590-40CB6F29CFA",
+      "title": "yes Payton Pritchard: 2+,yes Derrick White: 6+,yes Jaylen Brown: 25+,yes Nikola Vu\u010devi\u0107: 10+,yes Nikola Vu\u010devi\u0107: 6+",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026C49C9738590",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026c49c9738590-40cb6f29cfa",
+      "yes_bid": 0,
+      "yes_ask": 16,
+      "no_bid": 83,
+      "no_ask": 100,
+      "yes_mid": 8.0,
+      "no_mid": 91.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 8.0,
+          "implied_probability": "8%",
+          "payout_multiple": "12.5x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840756+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202628F6C331395-6993C3A4CB3",
+      "title": "yes Aston Villa,yes Over 1.5 goals scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S202628F6C331395",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202628f6c331395-6993c3a4cb3",
+      "yes_bid": 0,
+      "yes_ask": 31,
+      "no_bid": 68,
+      "no_ask": 100,
+      "yes_mid": 15.5,
+      "no_mid": 84.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 15.5,
+          "implied_probability": "16%",
+          "payout_multiple": "6.5x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840769+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026D62881FAD58-76885A2ED9C",
+      "title": "yes Houston,yes LIU,yes Wright St.,yes New Mexico,yes Saint Louis,yes Wisconsin",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026D62881FAD58",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026d62881fad58-76885a2ed9c",
+      "yes_bid": 0,
+      "yes_ask": 56,
+      "no_bid": 43,
+      "no_ask": 100,
+      "yes_mid": 28.0,
+      "no_mid": 71.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 28.0,
+          "implied_probability": "28%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840784+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026C49C9738590-919A84E703C",
+      "title": "yes Payton Pritchard: 1+,yes Derrick White: 6+,yes Jaylen Brown: 25+,yes Nikola Vu\u010devi\u0107: 10+,yes Nikola Vu\u010devi\u0107: 6+",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026C49C9738590",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026c49c9738590-919a84e703c",
+      "yes_bid": 0,
+      "yes_ask": 16,
+      "no_bid": 83,
+      "no_ask": 100,
+      "yes_mid": 8.0,
+      "no_mid": 91.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 8.0,
+          "implied_probability": "8%",
+          "payout_multiple": "12.5x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840799+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202605F026F096A-17FD6D930B8",
+      "title": "yes Both Teams To Score,yes Both Teams To Score,yes Both Teams To Score,yes Manchester United,yes Manchester City wins by over 1.5 goals",
+      "event_ticker": "KXMVECROSSCATEGORY-S202605F026F096A",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202605f026f096a-17fd6d930b8",
+      "yes_bid": 0,
+      "yes_ask": 5,
+      "no_bid": 94,
+      "no_ask": 100,
+      "yes_mid": 2.5,
+      "no_mid": 97.0,
+      "volume": 173,
+      "volume_24h": 0,
+      "open_interest": 173,
+      "last_price": 5,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.5,
+          "implied_probability": "2%",
+          "payout_multiple": "40.0x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840829+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20264E00AA0E0AB-0D8905AE623",
+      "title": "yes Bayern Munich,yes Arsenal,yes Manchester City,yes Over 1.5 goals scored,yes Napoli,yes Juventus",
+      "event_ticker": "KXMVECROSSCATEGORY-S20264E00AA0E0AB",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20264e00aa0e0ab-0d8905ae623",
+      "yes_bid": 0,
+      "yes_ask": 24,
+      "no_bid": 76,
+      "no_ask": 100,
+      "yes_mid": 12.0,
+      "no_mid": 88.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 12.0,
+          "implied_probability": "12%",
+          "payout_multiple": "8.3x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840845+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B35DC9F02BC-A26E724877D",
+      "title": "yes CAR Hurricanes,yes NYI Islanders,yes DET Red Wings,no Over 6.5 goals scored,no Over 6.5 goals scored,yes Over 4.5 goals scored,no Over 6.5 goals scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B35DC9F02BC",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b35dc9f02bc-a26e724877d",
+      "yes_bid": 0,
+      "yes_ask": 4,
+      "no_bid": 95,
+      "no_ask": 100,
+      "yes_mid": 2.0,
+      "no_mid": 97.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.0,
+          "implied_probability": "2%",
+          "payout_multiple": "50.0x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840855+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026739BE0CBAD6-997B2CD1880",
+      "title": "yes Arsenal,yes Manchester City,no Aston Villa wins by over 1.5 goals,no Over 4.5 goals scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026739BE0CBAD6",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026739be0cbad6-997b2cd1880",
+      "yes_bid": 0,
+      "yes_ask": 32,
+      "no_bid": 67,
+      "no_ask": 100,
+      "yes_mid": 16.0,
+      "no_mid": 83.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 16.0,
+          "implied_probability": "16%",
+          "payout_multiple": "6.2x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840912+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20262C6FEF22D32-6BD74523584",
+      "title": "yes Both Teams To Score,yes Both Teams To Score,yes Manchester United,yes Manchester City wins by over 1.5 goals",
+      "event_ticker": "KXMVECROSSCATEGORY-S20262C6FEF22D32",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262c6fef22d32-6bd74523584",
+      "yes_bid": 0,
+      "yes_ask": 7,
+      "no_bid": 92,
+      "no_ask": 100,
+      "yes_mid": 3.5,
+      "no_mid": 96.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.5,
+          "implied_probability": "4%",
+          "payout_multiple": "28.6x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840940+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026CD073544198-D86898071E1",
+      "title": "yes Boston,yes Los Angeles C,yes Philadelphia,yes Indiana,yes Ohio St.,yes Purdue,yes Arkansas",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026CD073544198",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026cd073544198-d86898071e1",
+      "yes_bid": 0,
+      "yes_ask": 23,
+      "no_bid": 76,
+      "no_ask": 100,
+      "yes_mid": 11.5,
+      "no_mid": 88.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 11.5,
+          "implied_probability": "12%",
+          "payout_multiple": "8.7x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840955+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026A23583DD21D-A3234FF9521",
+      "title": "yes Derrick White: 6+,yes Jaylen Brown: 25+,yes Nikola Vu\u010devi\u0107: 10+,yes Nikola Vu\u010devi\u0107: 6+",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026A23583DD21D",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026a23583dd21d-a3234ff9521",
+      "yes_bid": 0,
+      "yes_ask": 18,
+      "no_bid": 81,
+      "no_ask": 100,
+      "yes_mid": 9.0,
+      "no_mid": 90.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 9.0,
+          "implied_probability": "9%",
+          "payout_multiple": "11.1x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.840994+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026AFB776C7B4A-70785CF0030",
+      "title": "yes Los Angeles C,no Over 243.5 points scored,no Over 228.5 points scored,no Over 233.5 points scored,no Over 250.5 points scored,no Over 163.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026AFB776C7B4A",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026afb776c7b4a-70785cf0030",
+      "yes_bid": 0,
+      "yes_ask": 55,
+      "no_bid": 44,
+      "no_ask": 100,
+      "yes_mid": 27.5,
+      "no_mid": 72.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 27.5,
+          "implied_probability": "28%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.841011+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20261926514E3FA-F40FB579E98",
+      "title": "yes Derrick White: 1+,yes Derrick White: 15+,yes Nikola Vu\u010devi\u0107: 6+",
+      "event_ticker": "KXMVECROSSCATEGORY-S20261926514E3FA",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20261926514e3fa-f40fb579e98",
+      "yes_bid": 0,
+      "yes_ask": 41,
+      "no_bid": 58,
+      "no_ask": 100,
+      "yes_mid": 20.5,
+      "no_mid": 79.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 20.5,
+          "implied_probability": "20%",
+          "payout_multiple": "4.9x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.841021+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026D331162421C-8373131F370",
+      "title": "yes Gabriel Diallo,yes Matteo Berrettini,yes Joao Fonseca,yes Stefanos Tsitsipas",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026D331162421C",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026d331162421c-8373131f370",
+      "yes_bid": 0,
+      "yes_ask": 13,
+      "no_bid": 86,
+      "no_ask": 100,
+      "yes_mid": 6.5,
+      "no_mid": 93.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.5,
+          "implied_probability": "6%",
+          "payout_multiple": "15.4x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.841091+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026D26A5DFFA9A-4B2913058AC",
+      "title": "yes Over 1.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored,yes Over 1.5 goals scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026D26A5DFFA9A",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026d26a5dffa9a-4b2913058ac",
+      "yes_bid": 0,
+      "yes_ask": 31,
+      "no_bid": 68,
+      "no_ask": 100,
+      "yes_mid": 15.5,
+      "no_mid": 84.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 15.5,
+          "implied_probability": "16%",
+          "payout_multiple": "6.5x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.841123+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20264153BF3F935-273CB82538E",
+      "title": "yes Manchester City,no Newcastle wins by over 1.5 goals,no Over 2.5 goals scored,no Over 2.5 goals scored,no Over 3.5 goals scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S20264153BF3F935",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20264153bf3f935-273cb82538e",
+      "yes_bid": 0,
+      "yes_ask": 10,
+      "no_bid": 89,
+      "no_ask": 100,
+      "yes_mid": 5.0,
+      "no_mid": 94.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.0,
+          "implied_probability": "5%",
+          "payout_multiple": "20.0x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.841142+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026F08267CE6CF-5AFB7F51F45",
+      "title": "yes Boston,yes Los Angeles C,yes Philadelphia,yes Indiana,yes Arkansas",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F08267CE6CF",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026f08267ce6cf-5afb7f51f45",
+      "yes_bid": 0,
+      "yes_ask": 33,
+      "no_bid": 66,
+      "no_ask": 100,
+      "yes_mid": 16.5,
+      "no_mid": 83.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 16.5,
+          "implied_probability": "16%",
+          "payout_multiple": "6.1x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.841147+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026A55807DCBDC-4715048F707",
+      "title": "no Leverkusen wins by over 1.5 goals,yes Both Teams To Score,yes Both Teams To Score,yes Chelsea,yes Arsenal,yes Manchester City,no Fulham wins by over 1.5 goals,no Over 2.5 goals scored,no Over 2.5 goals scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026A55807DCBDC",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026a55807dcbdc-4715048f707",
+      "yes_bid": 0,
+      "yes_ask": 8,
+      "no_bid": 91,
+      "no_ask": 100,
+      "yes_mid": 4.0,
+      "no_mid": 95.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 4.0,
+          "implied_probability": "4%",
+          "payout_multiple": "25.0x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.841173+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026753D216E40A-DEC9DDC8854",
+      "title": "yes New Orleans,yes Phoenix,yes UCLA,yes UNLV,yes MTL Canadiens",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026753D216E40A",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026753d216e40a-dec9ddc8854",
+      "yes_bid": 0,
+      "yes_ask": 11,
+      "no_bid": 89,
+      "no_ask": 100,
+      "yes_mid": 5.5,
+      "no_mid": 94.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.5,
+          "implied_probability": "6%",
+          "payout_multiple": "18.2x"
+        }
+      ],
+      "scanned_at": "2026-03-04T05:29:20.841200+00:00"
+    }
+  ],
+  "high_volume_markets": [],
+  "summary": {
+    "total_scanned": 500,
+    "markets_with_cheap_outcomes": 39,
+    "high_volume_markets": 0
+  }
+}

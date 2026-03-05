@@ -22,21 +22,19 @@ export class VoiceManager {
   private maxHearingDistance: number = 500;
   private joined = false;
   private roomUrl: string;
+  private pendingTracks: Array<{ participant: any; track: MediaStreamTrack }> = [];
+  private participantCount = 0;
 
   constructor() {
     this.roomUrl = 'https://ourroom.daily.co/spatial-worlds';
   }
 
   async createRoom(): Promise<void> {
-    // Defer AudioContext creation until user gesture (autoplay policy)
-    // We'll create it on the first user interaction
     this.setupAutoplayResume();
 
     this.daily = DailyIframe.createCallObject({
       audioSource: true,
       videoSource: false,
-      // Disable auto-subscription so we control who we hear based on proximity
-      subscribeToTracksAutomatically: false,
     });
 
     this.daily
@@ -52,8 +50,6 @@ export class VoiceManager {
   }
 
   private setupAutoplayResume() {
-    // Browsers block AudioContext until user gesture.
-    // Create it on first click/keypress/touch.
     const createContext = () => {
       if (!this.audioContext) {
         this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
@@ -64,9 +60,10 @@ export class VoiceManager {
           console.log('🔊 AudioContext resumed');
         });
       }
+      // Process any tracks that arrived before user gesture
+      this.processPendingTracks();
     };
 
-    // Listen for user interaction
     const events = ['click', 'keydown', 'touchstart'];
     const handler = () => {
       createContext();
@@ -83,27 +80,40 @@ export class VoiceManager {
     return this.audioContext;
   }
 
+  private processPendingTracks() {
+    const pending = [...this.pendingTracks];
+    this.pendingTracks = [];
+    for (const { participant, track } of pending) {
+      this.setupTrackAudio(participant, track);
+    }
+  }
+
   private onJoined(event: any) {
     this.localPlayerId = event.participants.local.session_id;
     this.joined = true;
     console.log('🎤 Joined voice room, local ID:', this.localPlayerId);
+
+    // Count existing participants
+    const participants = this.daily?.participants();
+    if (participants) {
+      const remoteCount = Object.keys(participants).filter(k => k !== 'local').length;
+      this.participantCount = remoteCount;
+      console.log(`🎤 ${remoteCount} other participant(s) already in room`);
+    }
   }
 
   private onParticipantJoined(event: any) {
     const p = event.participant;
     if (p.local) return;
-    console.log('👤 Voice participant joined:', p.session_id);
-
-    // Subscribe to their audio track
-    this.daily?.updateParticipant(p.session_id, {
-      setSubscribedTracks: { audio: true, video: false },
-    });
+    this.participantCount++;
+    console.log(`👤 Voice participant joined: ${p.session_id} (${this.participantCount} total)`);
   }
 
   private onParticipantLeft(event: any) {
     const sessionId = event.participant?.session_id;
     if (!sessionId) return;
-    console.log('👤 Voice participant left:', sessionId);
+    this.participantCount = Math.max(0, this.participantCount - 1);
+    console.log(`👤 Voice participant left: ${sessionId} (${this.participantCount} total)`);
     this.removeParticipantAudio(sessionId);
   }
 
@@ -113,9 +123,20 @@ export class VoiceManager {
 
     const ctx = this.ensureAudioContext();
     if (!ctx) {
-      console.warn('AudioContext not ready, deferring track setup');
+      console.warn('🔊 AudioContext not ready — queuing track for', participant.session_id);
+      this.pendingTracks.push({ participant, track });
       return;
     }
+
+    this.setupTrackAudio(participant, track);
+  }
+
+  private setupTrackAudio(participant: any, track: MediaStreamTrack) {
+    const ctx = this.ensureAudioContext();
+    if (!ctx) return;
+
+    // Remove old nodes if re-subscribing
+    this.removeParticipantAudio(participant.session_id);
 
     console.log('🎵 Setting up spatial audio for:', participant.session_id);
 
@@ -125,19 +146,17 @@ export class VoiceManager {
     const panner = ctx.createStereoPanner();
     const compressor = ctx.createDynamicsCompressor();
 
-    // Compressor prevents clipping from volume spikes
     compressor.threshold.value = -24;
     compressor.knee.value = 30;
     compressor.ratio.value = 12;
 
-    // Chain: source → gain → panner → compressor → speakers
     source.connect(gain);
     gain.connect(panner);
     panner.connect(compressor);
     compressor.connect(ctx.destination);
 
-    // Start silent — updateSpatialAudio will set real values
-    gain.gain.value = 0;
+    // Start at full volume — spatial audio will adjust based on distance
+    gain.gain.value = 1.0;
     panner.pan.value = 0;
 
     this.audioNodes.set(participant.session_id, { source, gain, panner, compressor });
@@ -172,22 +191,14 @@ export class VoiceManager {
       const distance = Math.sqrt(dx * dx + dy * dy);
       const elevationDiff = Math.abs(remote.elevation - localPos.elevation);
 
-      // Inverse distance falloff (more natural than linear)
-      // Full volume at distance 0, falls off with rolloff factor 2
       const rolloff = 2;
       let volume = 1 / (1 + rolloff * (distance / this.maxHearingDistance));
-
-      // Hard cutoff beyond max distance
       if (distance > this.maxHearingDistance) volume = 0;
-
-      // Elevation attenuation: each level difference halves the volume
       volume *= Math.pow(0.5, elevationDiff);
 
-      // Smooth the gain transition (avoids clicks/pops)
       const now = this.audioContext?.currentTime ?? 0;
       nodes.gain.gain.linearRampToValueAtTime(volume, now + 0.1);
 
-      // Stereo pan: angle from listener to speaker
       const angle = Math.atan2(dy, dx);
       nodes.panner.pan.linearRampToValueAtTime(
         Math.max(-1, Math.min(1, Math.sin(angle))),
@@ -232,5 +243,13 @@ export class VoiceManager {
 
   isJoined(): boolean {
     return this.joined;
+  }
+
+  getParticipantCount(): number {
+    return this.participantCount;
+  }
+
+  getAudioNodeCount(): number {
+    return this.audioNodes.size;
   }
 }

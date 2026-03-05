@@ -1,0 +1,862 @@
+{
+  "generated_at": "2026-03-05T09:35:26.042332+00:00",
+  "top_signals": [
+    {
+      "topic": "#fyp",
+      "score": 100,
+      "confidence": "high",
+      "mentions": 7,
+      "engagement": 393.0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "keltonai",
+        "zolksweb3",
+        "wwbtc5",
+        "jacksononweb3",
+        "advyyyth"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#foryou",
+      "score": 65,
+      "confidence": "medium",
+      "mentions": 3,
+      "engagement": 508.5,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "gavincoins",
+        "theonlycrisy"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#trending",
+      "score": 62,
+      "confidence": "medium",
+      "mentions": 3,
+      "engagement": 207.0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "zolksweb3",
+        "jacksononweb3"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#xyzbca",
+      "score": 57,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 735.0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "theonlycrisy"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#foryoupage",
+      "score": 52,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 186.0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "advyyyth"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "$WAR",
+      "score": 51,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 70.5,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "keltonai",
+        "gavincoins"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#xrpcommunity",
+      "score": 50,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 0.0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "jakeclaverqf12"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#digitalassets",
+      "score": 50,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 0.0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "jakeclaverqf12"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#2026",
+      "score": 50,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 0.0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "jakeclaverqf12"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    }
+  ],
+  "prediction_market_edges": [
+    {
+      "type": "polymarket",
+      "question": "Will Iran close the Strait of Hormuz by March 31?",
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-march-31",
+      "matching_social_topics": [
+        "iran",
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.195,
+          "implied_probability": "19.5%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "volume_24h": 2582785.5198780037,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 39,
+      "social_context": [
+        "$E=MC2 IS Up 16.4x \ud83d\udd25 From $37k >> $608k MC! \ud83d\ude80 Join our exclusive VIP Memecoin Signal Group and get Early Calls on trending memecoins before they take off. Send a DM now let's get you started #Solana #"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the Iranian regime fall by March 31?",
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31",
+      "matching_social_topics": [
+        "iran",
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1475,
+          "implied_probability": "14.8%",
+          "payout_multiple": "6.8x"
+        }
+      ],
+      "volume_24h": 1226446.0075380004,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 39,
+      "social_context": [
+        "$E=MC2 IS Up 16.4x \ud83d\udd25 From $37k >> $608k MC! \ud83d\ude80 Join our exclusive VIP Memecoin Signal Group and get Early Calls on trending memecoins before they take off. Send a DM now let's get you started #Solana #"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Reza Pahlavi enter Iran by March 31?",
+      "url": "https://polymarket.com/event/will-reza-pahlavi-enter-iran-by-march-31-282",
+      "matching_social_topics": [
+        "iran",
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0365,
+          "implied_probability": "3.6%",
+          "payout_multiple": "27.4x"
+        }
+      ],
+      "volume_24h": 449657.0903140001,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 39,
+      "social_context": [
+        "$E=MC2 IS Up 16.4x \ud83d\udd25 From $37k >> $608k MC! \ud83d\ude80 Join our exclusive VIP Memecoin Signal Group and get Early Calls on trending memecoins before they take off. Send a DM now let's get you started #Solana #"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Trump out as President by March 31?",
+      "url": "https://polymarket.com/event/trump-out-as-president-by-march-31",
+      "matching_social_topics": [
+        "2026",
+        "trump"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0185,
+          "implied_probability": "1.8%",
+          "payout_multiple": "54.1x"
+        }
+      ],
+      "volume_24h": 293854.2838189999,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 39,
+      "social_context": [
+        "Prepare for December 15th: Potential Crypto Boom! December 15th is crucial for crypto investors. Discover the potential of cmsb coin and how Trump could create "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will France, UK, or Germany strike Iran by March 31?",
+      "url": "https://polymarket.com/event/will-france-uk-or-germany-strike-iran-by-march-31-929",
+      "matching_social_topics": [
+        "iran",
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.261,
+          "implied_probability": "26.1%",
+          "payout_multiple": "3.8x"
+        }
+      ],
+      "volume_24h": 181201.28907499992,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 39,
+      "social_context": [
+        "$E=MC2 IS Up 16.4x \ud83d\udd25 From $37k >> $608k MC! \ud83d\ude80 Join our exclusive VIP Memecoin Signal Group and get Early Calls on trending memecoins before they take off. Send a DM now let's get you started #Solana #"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will US or Israel strike Iran on March 10, 2026?",
+      "url": "https://polymarket.com/event/will-us-or-israel-strike-iran-on-march-10-2026",
+      "matching_social_topics": [
+        "iran",
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.046,
+          "implied_probability": "4.6%",
+          "payout_multiple": "21.7x"
+        }
+      ],
+      "volume_24h": 115983.85630099995,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 39,
+      "social_context": [
+        "$E=MC2 IS Up 16.4x \ud83d\udd25 From $37k >> $608k MC! \ud83d\ude80 Join our exclusive VIP Memecoin Signal Group and get Early Calls on trending memecoins before they take off. Send a DM now let's get you started #Solana #"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the US officially declare war on Iran by March 31, 2026?",
+      "url": "https://polymarket.com/event/will-the-us-officially-declare-war-on-iran-by-march-31-2026",
+      "matching_social_topics": [
+        "iran",
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0135,
+          "implied_probability": "1.4%",
+          "payout_multiple": "74.1x"
+        }
+      ],
+      "volume_24h": 103779.05636099949,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 39,
+      "social_context": [
+        "$E=MC2 IS Up 16.4x \ud83d\udd25 From $37k >> $608k MC! \ud83d\ude80 Join our exclusive VIP Memecoin Signal Group and get Early Calls on trending memecoins before they take off. Send a DM now let's get you started #Solana #"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Iran close the Strait of Hormuz before 2027?",
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-2027-969-911-654-431-667",
+      "matching_social_topics": [
+        "iran",
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.141,
+          "implied_probability": "14.1%",
+          "payout_multiple": "7.1x"
+        }
+      ],
+      "volume_24h": 97296.34100900001,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 39,
+      "social_context": [
+        "$E=MC2 IS Up 16.4x \ud83d\udd25 From $37k >> $608k MC! \ud83d\ude80 Join our exclusive VIP Memecoin Signal Group and get Early Calls on trending memecoins before they take off. Send a DM now let's get you started #Solana #"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Iran strike Turkey in March?",
+      "url": "https://polymarket.com/event/will-iran-strike-turkey-in-march",
+      "matching_social_topics": [
+        "iran",
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1555,
+          "implied_probability": "15.6%",
+          "payout_multiple": "6.4x"
+        }
+      ],
+      "volume_24h": 89343.57397800004,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 39,
+      "social_context": [
+        "$E=MC2 IS Up 16.4x \ud83d\udd25 From $37k >> $608k MC! \ud83d\ude80 Join our exclusive VIP Memecoin Signal Group and get Early Calls on trending memecoins before they take off. Send a DM now let's get you started #Solana #"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Iran close the Strait of Hormuz by June 30?",
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-june-30",
+      "matching_social_topics": [
+        "iran",
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.1655,
+          "implied_probability": "16.6%",
+          "payout_multiple": "6.0x"
+        }
+      ],
+      "volume_24h": 86211.064808,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 39,
+      "social_context": [
+        "$E=MC2 IS Up 16.4x \ud83d\udd25 From $37k >> $608k MC! \ud83d\ude80 Join our exclusive VIP Memecoin Signal Group and get Early Calls on trending memecoins before they take off. Send a DM now let's get you started #Solana #"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $100,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-100k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0205,
+          "implied_probability": "2.1%",
+          "payout_multiple": "48.8x"
+        }
+      ],
+      "volume_24h": 365553.02854400006,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 24,
+      "social_context": [
+        "Explore the saying 'Crypto is going to zero' and its implications in each bear market. Insights on Bitcoin trends and investor psychology. Keywords: crypto bear ",
+        "Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum, XRP, Bitcoin Cash, Tron, #AAVE #AERO #TAO #KASPA #NAKA \u00b7 BETA 777 \u00b7 author. "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $75,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-75k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.22,
+          "implied_probability": "22.0%",
+          "payout_multiple": "4.5x"
+        }
+      ],
+      "volume_24h": 330223.96529499994,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 24,
+      "social_context": [
+        "Explore the saying 'Crypto is going to zero' and its implications in each bear market. Insights on Bitcoin trends and investor psychology. Keywords: crypto bear ",
+        "Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum, XRP, Bitcoin Cash, Tron, #AAVE #AERO #TAO #KASPA #NAKA \u00b7 BETA 777 \u00b7 author. "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $110,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-110k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 284760.76854499994,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 24,
+      "social_context": [
+        "Explore the saying 'Crypto is going to zero' and its implications in each bear market. Insights on Bitcoin trends and investor psychology. Keywords: crypto bear ",
+        "Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum, XRP, Bitcoin Cash, Tron, #AAVE #AERO #TAO #KASPA #NAKA \u00b7 BETA 777 \u00b7 author. "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $60,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-60k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.235,
+          "implied_probability": "23.5%",
+          "payout_multiple": "4.3x"
+        }
+      ],
+      "volume_24h": 236245.37834700005,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 24,
+      "social_context": [
+        "Explore the saying 'Crypto is going to zero' and its implications in each bear market. Insights on Bitcoin trends and investor psychology. Keywords: crypto bear ",
+        "Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum, XRP, Bitcoin Cash, Tron, #AAVE #AERO #TAO #KASPA #NAKA \u00b7 BETA 777 \u00b7 author. "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $76,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-76k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.026,
+          "implied_probability": "2.6%",
+          "payout_multiple": "38.5x"
+        }
+      ],
+      "volume_24h": 217257.35539100008,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 24,
+      "social_context": [
+        "Explore the saying 'Crypto is going to zero' and its implications in each bear market. Insights on Bitcoin trends and investor psychology. Keywords: crypto bear ",
+        "Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum, XRP, Bitcoin Cash, Tron, #AAVE #AERO #TAO #KASPA #NAKA \u00b7 BETA 777 \u00b7 author. "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $68,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-68k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0175,
+          "implied_probability": "1.8%",
+          "payout_multiple": "57.1x"
+        }
+      ],
+      "volume_24h": 210484.95794800002,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 24,
+      "social_context": [
+        "Explore the saying 'Crypto is going to zero' and its implications in each bear market. Insights on Bitcoin trends and investor psychology. Keywords: crypto bear ",
+        "Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum, XRP, Bitcoin Cash, Tron, #AAVE #AERO #TAO #KASPA #NAKA \u00b7 BETA 777 \u00b7 author. "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $70,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-70k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.05,
+          "implied_probability": "5.0%",
+          "payout_multiple": "20.0x"
+        }
+      ],
+      "volume_24h": 185431.93817799995,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 24,
+      "social_context": [
+        "Explore the saying 'Crypto is going to zero' and its implications in each bear market. Insights on Bitcoin trends and investor psychology. Keywords: crypto bear ",
+        "Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum, XRP, Bitcoin Cash, Tron, #AAVE #AERO #TAO #KASPA #NAKA \u00b7 BETA 777 \u00b7 author. "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $105,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-105k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0155,
+          "implied_probability": "1.6%",
+          "payout_multiple": "64.5x"
+        }
+      ],
+      "volume_24h": 167404.36399699998,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 24,
+      "social_context": [
+        "Explore the saying 'Crypto is going to zero' and its implications in each bear market. Insights on Bitcoin trends and investor psychology. Keywords: crypto bear ",
+        "Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum, XRP, Bitcoin Cash, Tron, #AAVE #AERO #TAO #KASPA #NAKA \u00b7 BETA 777 \u00b7 author. "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $55,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-55k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.12,
+          "implied_probability": "12.0%",
+          "payout_multiple": "8.3x"
+        }
+      ],
+      "volume_24h": 162425.109265,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 24,
+      "social_context": [
+        "Explore the saying 'Crypto is going to zero' and its implications in each bear market. Insights on Bitcoin trends and investor psychology. Keywords: crypto bear ",
+        "Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum, XRP, Bitcoin Cash, Tron, #AAVE #AERO #TAO #KASPA #NAKA \u00b7 BETA 777 \u00b7 author. "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $74,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-74k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1565,
+          "implied_probability": "15.7%",
+          "payout_multiple": "6.4x"
+        }
+      ],
+      "volume_24h": 158163.823279,
+      "social_engagement": 0.0,
+      "social_mentions": 3,
+      "match_quality": 24,
+      "social_context": [
+        "Explore the saying 'Crypto is going to zero' and its implications in each bear market. Insights on Bitcoin trends and investor psychology. Keywords: crypto bear ",
+        "Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum, XRP, Bitcoin Cash, Tron, #AAVE #AERO #TAO #KASPA #NAKA \u00b7 BETA 777 \u00b7 author. "
+      ]
+    }
+  ],
+  "polymarket_top_opportunities": [
+    {
+      "question": "Will Iran close the Strait of Hormuz by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.195,
+          "implied_probability": "19.5%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "volume_24h": 2582785.5198780037,
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-march-31"
+    },
+    {
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0115,
+          "implied_probability": "1.1%",
+          "payout_multiple": "87.0x"
+        }
+      ],
+      "volume_24h": 2093321.3846550002,
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting"
+    },
+    {
+      "question": "Will the Iranian regime fall by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1475,
+          "implied_probability": "14.8%",
+          "payout_multiple": "6.8x"
+        }
+      ],
+      "volume_24h": 1226446.0075380004,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31"
+    },
+    {
+      "question": "Will Ken Paxton win the 2026 Texas Republican Primary?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.13,
+          "implied_probability": "13.0%",
+          "payout_multiple": "7.7x"
+        }
+      ],
+      "volume_24h": 1139604.7447339988,
+      "url": "https://polymarket.com/event/will-ken-paxton-win-the-2026-republican-primary"
+    },
+    {
+      "question": "Will Belgium win the 2026 FIFA World Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 1031942.191585,
+      "url": "https://polymarket.com/event/will-belgium-win-the-2026-fifa-world-cup-358"
+    },
+    {
+      "question": "Will Mark Kelly win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0265,
+          "implied_probability": "2.6%",
+          "payout_multiple": "37.7x"
+        }
+      ],
+      "volume_24h": 618566.8054399999,
+      "url": "https://polymarket.com/event/will-mark-kelly-win-the-2028-democratic-presidential-nomination-479"
+    },
+    {
+      "question": "Will Wes Moore win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.015,
+          "implied_probability": "1.5%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 593585.381756,
+      "url": "https://polymarket.com/event/will-wes-moore-win-the-2028-democratic-presidential-nomination-714"
+    },
+    {
+      "question": "US x Iran ceasefire by March 15?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.125,
+          "implied_probability": "12.5%",
+          "payout_multiple": "8.0x"
+        }
+      ],
+      "volume_24h": 582332.6527659999,
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-15"
+    },
+    {
+      "question": "Will Mexico win the 2026 FIFA World Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 538211.0470720001,
+      "url": "https://polymarket.com/event/will-mexico-win-the-2026-fifa-world-cup-529"
+    },
+    {
+      "question": "Will Ethereum reach $2,200 in March?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.195,
+          "implied_probability": "19.5%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "volume_24h": 525591.8200660003,
+      "url": "https://polymarket.com/event/will-ethereum-reach-2200-in-march-2026"
+    },
+    {
+      "question": "Will Andy Beshear win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0155,
+          "implied_probability": "1.6%",
+          "payout_multiple": "64.5x"
+        }
+      ],
+      "volume_24h": 512058.96866799996,
+      "url": "https://polymarket.com/event/will-andy-beshear-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will Shane Lowry win the 2026 Masters tournament?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0185,
+          "implied_probability": "1.8%",
+          "payout_multiple": "54.1x"
+        }
+      ],
+      "volume_24h": 476597.6617319999,
+      "url": "https://polymarket.com/event/will-shane-lowry-win-the-2026-masters-tournament"
+    },
+    {
+      "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.185,
+          "implied_probability": "18.5%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "volume_24h": 459689.78318399953,
+      "url": "https://polymarket.com/event/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31"
+    },
+    {
+      "question": "Will Reza Pahlavi enter Iran by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0365,
+          "implied_probability": "3.6%",
+          "payout_multiple": "27.4x"
+        }
+      ],
+      "volume_24h": 449657.0903140001,
+      "url": "https://polymarket.com/event/will-reza-pahlavi-enter-iran-by-march-31-282"
+    },
+    {
+      "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1955,
+          "implied_probability": "19.6%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "volume_24h": 444397.988635,
+      "url": "https://polymarket.com/event/will-the-colorado-avalanche-win-the-2026-nhl-stanley-cup"
+    }
+  ],
+  "kalshi_top_opportunities": [],
+  "summary": {
+    "total_topics_tracked": 29,
+    "high_confidence_signals": 1,
+    "medium_confidence_signals": 8,
+    "cross_platform_signals": 0,
+    "tier1_backed_signals": 0,
+    "prediction_market_matches": 73,
+    "x_signals_quality": {
+      "total": 5,
+      "with_known_author": 5,
+      "with_engagement": 2
+    },
+    "tiktok_signals_quality": {
+      "total": 16,
+      "crypto_relevant": 15
+    }
+  }
+}

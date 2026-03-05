@@ -1,0 +1,38 @@
+{
+  "scan_time": "2026-03-05T13:29:03.507155+00:00",
+  "markets_with_edge": [
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026AA8C6115AD9-702C62F36AF",
+      "title": "yes Cade Cunningham: 1+,yes Duncan Robinson: 1+,yes De'Aaron Fox: 2+,yes Cade Cunningham: 20+,yes Victor Wembanyama: 20+",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026AA8C6115AD9",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s2026aa8c6115ad9-702c62f36af",
+      "yes_bid": 0,
+      "yes_ask": 52,
+      "no_bid": 47,
+      "no_ask": 100,
+      "yes_mid": 26.0,
+      "no_mid": 73.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 26.0,
+          "implied_probability": "26%",
+          "payout_multiple": "3.8x"
+        }
+      ],
+      "scanned_at": "2026-03-05T13:29:04.193130+00:00"
+    }
+  ],
+  "high_volume_markets": [],
+  "summary": {
+    "total_scanned": 500,
+    "markets_with_cheap_outcomes": 1,
+    "high_volume_markets": 0
+  }
+}

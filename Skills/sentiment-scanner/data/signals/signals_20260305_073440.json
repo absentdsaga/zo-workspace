@@ -1,0 +1,735 @@
+{
+  "generated_at": "2026-03-05T07:34:40.759728+00:00",
+  "top_signals": [
+    {
+      "topic": "#fyp",
+      "score": 61,
+      "confidence": "medium",
+      "mentions": 3,
+      "engagement": 120,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "keltonai",
+        "jakesuniverseonsol",
+        "jacksononweb3"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#trending",
+      "score": 51,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 100,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "jakesuniverseonsol",
+        "jacksononweb3"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    }
+  ],
+  "prediction_market_edges": [
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $100,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-100k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.02,
+          "implied_probability": "2.0%",
+          "payout_multiple": "50.0x"
+        }
+      ],
+      "volume_24h": 348054.134312,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $75,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-75k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.215,
+          "implied_probability": "21.5%",
+          "payout_multiple": "4.7x"
+        }
+      ],
+      "volume_24h": 331901.889584,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $110,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-110k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.011,
+          "implied_probability": "1.1%",
+          "payout_multiple": "90.9x"
+        }
+      ],
+      "volume_24h": 329416.8286829999,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $60,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-60k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.235,
+          "implied_probability": "23.5%",
+          "payout_multiple": "4.3x"
+        }
+      ],
+      "volume_24h": 296328.794804,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $68,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-68k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.026,
+          "implied_probability": "2.6%",
+          "payout_multiple": "38.5x"
+        }
+      ],
+      "volume_24h": 230488.49975899982,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $76,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-76k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0285,
+          "implied_probability": "2.9%",
+          "payout_multiple": "35.1x"
+        }
+      ],
+      "volume_24h": 228943.10719600008,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $105,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-105k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0135,
+          "implied_probability": "1.4%",
+          "payout_multiple": "74.1x"
+        }
+      ],
+      "volume_24h": 181991.07245500002,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $70,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-70k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.065,
+          "implied_probability": "6.5%",
+          "payout_multiple": "15.4x"
+        }
+      ],
+      "volume_24h": 180460.31113799996,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $90,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-90k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0885,
+          "implied_probability": "8.8%",
+          "payout_multiple": "11.3x"
+        }
+      ],
+      "volume_24h": 172714.16416399996,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $55,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-55k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.125,
+          "implied_probability": "12.5%",
+          "payout_multiple": "8.0x"
+        }
+      ],
+      "volume_24h": 160842.19933900004,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $74,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-74k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1655,
+          "implied_probability": "16.6%",
+          "payout_multiple": "6.0x"
+        }
+      ],
+      "volume_24h": 158425.19087399993,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $45,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-45k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0385,
+          "implied_probability": "3.9%",
+          "payout_multiple": "26.0x"
+        }
+      ],
+      "volume_24h": 154435.63409200002,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $95,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-95k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0365,
+          "implied_probability": "3.6%",
+          "payout_multiple": "27.4x"
+        }
+      ],
+      "volume_24h": 150729.32509100006,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $50,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-50k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.065,
+          "implied_probability": "6.5%",
+          "payout_multiple": "15.4x"
+        }
+      ],
+      "volume_24h": 149162.750095,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $85,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-85k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.205,
+          "implied_probability": "20.5%",
+          "payout_multiple": "4.9x"
+        }
+      ],
+      "volume_24h": 148960.882331,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $78,000 March 2-8?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-78k-march-2-8",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1745,
+          "implied_probability": "17.4%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "volume_24h": 112495.06653500002,
+      "social_engagement": 40,
+      "social_mentions": 2,
+      "match_quality": 25,
+      "social_context": [
+        "2026 Will Be the Year of Crypto Chaos! Get Ready for a Market ... TikTok video from God of Finance (@thegodoffinance): \u201c 2026 Will Be the Year of Crypto Chaos! Get Ready for a Market Crash #cryptocras",
+        "My 2026 Cryptocurrency Market Prediction: Bitcoin, XRP ... - TikTok TikTok video from Coach JV XRP (@wealthwranglertrust0): \u201cMy 2026 Cryptocurrency Market Prediction: Bitcoin, XRP, and the Clarity Act"
+      ]
+    }
+  ],
+  "polymarket_top_opportunities": [
+    {
+      "question": "Will Iran close the Strait of Hormuz by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.185,
+          "implied_probability": "18.5%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "volume_24h": 2918392.8953210004,
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-march-31"
+    },
+    {
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0115,
+          "implied_probability": "1.1%",
+          "payout_multiple": "87.0x"
+        }
+      ],
+      "volume_24h": 1977562.8576899993,
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting"
+    },
+    {
+      "question": "Will the Iranian regime fall by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1465,
+          "implied_probability": "14.6%",
+          "payout_multiple": "6.8x"
+        }
+      ],
+      "volume_24h": 1484844.0032449998,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31"
+    },
+    {
+      "question": "Will Ken Paxton win the 2026 Texas Republican Primary?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.14,
+          "implied_probability": "14.0%",
+          "payout_multiple": "7.1x"
+        }
+      ],
+      "volume_24h": 1387671.8053149986,
+      "url": "https://polymarket.com/event/will-ken-paxton-win-the-2026-republican-primary"
+    },
+    {
+      "question": "Will Belgium win the 2026 FIFA World Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 702374.7649199999,
+      "url": "https://polymarket.com/event/will-belgium-win-the-2026-fifa-world-cup-358"
+    },
+    {
+      "question": "US x Iran ceasefire by March 15?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.115,
+          "implied_probability": "11.5%",
+          "payout_multiple": "8.7x"
+        }
+      ],
+      "volume_24h": 671921.3283180002,
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-15"
+    },
+    {
+      "question": "Will Vivek Ramaswamy win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0135,
+          "implied_probability": "1.4%",
+          "payout_multiple": "74.1x"
+        }
+      ],
+      "volume_24h": 596890.7941600002,
+      "url": "https://polymarket.com/event/will-vivek-ramaswamy-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will Andy Beshear win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0155,
+          "implied_probability": "1.6%",
+          "payout_multiple": "64.5x"
+        }
+      ],
+      "volume_24h": 595796.7284290001,
+      "url": "https://polymarket.com/event/will-andy-beshear-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.206,
+          "implied_probability": "20.6%",
+          "payout_multiple": "4.9x"
+        }
+      ],
+      "volume_24h": 577241.6653160003,
+      "url": "https://polymarket.com/event/will-the-colorado-avalanche-win-the-2026-nhl-stanley-cup"
+    },
+    {
+      "question": "Will Tottenham win the 2025\u201326 Champions League?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 546769.0971740001,
+      "url": "https://polymarket.com/event/will-tottenham-win-the-202526-champions-league"
+    },
+    {
+      "question": "Will Ethereum reach $2,200 in March?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.185,
+          "implied_probability": "18.5%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "volume_24h": 541623.9334560003,
+      "url": "https://polymarket.com/event/will-ethereum-reach-2200-in-march-2026"
+    },
+    {
+      "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.185,
+          "implied_probability": "18.5%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "volume_24h": 518931.4168420002,
+      "url": "https://polymarket.com/event/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31"
+    },
+    {
+      "question": "Will Shane Lowry win the 2026 Masters tournament?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0185,
+          "implied_probability": "1.8%",
+          "payout_multiple": "54.1x"
+        }
+      ],
+      "volume_24h": 509876.627699,
+      "url": "https://polymarket.com/event/will-shane-lowry-win-the-2026-masters-tournament"
+    },
+    {
+      "question": "Will Jesus Christ return before 2027?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0375,
+          "implied_probability": "3.8%",
+          "payout_multiple": "26.7x"
+        }
+      ],
+      "volume_24h": 508708.95775699976,
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027"
+    },
+    {
+      "question": "Will Wes Moore win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.014,
+          "implied_probability": "1.4%",
+          "payout_multiple": "71.4x"
+        }
+      ],
+      "volume_24h": 494674.13167300005,
+      "url": "https://polymarket.com/event/will-wes-moore-win-the-2028-democratic-presidential-nomination-714"
+    }
+  ],
+  "kalshi_top_opportunities": [
+    {
+      "title": "yes Trae Young: 2+,yes Tyler Herro: 15+,yes Austin Reaves: 10+,yes LeBron James: 10+,yes Anthony Edwards: 20+,yes Trae Y",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 25.5,
+          "implied_probability": "26%",
+          "payout_multiple": "3.9x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20268e96240c5d9-3062de55950"
+    },
+    {
+      "title": "yes Miami,yes Phoenix,yes Orlando,no Sacramento wins by over 11.5 Points,yes Michigan",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 25.0,
+          "implied_probability": "25%",
+          "payout_multiple": "4.0x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026bc7d3803e52-3ec16579e21"
+    },
+    {
+      "title": "yes Phoenix,yes Jamal Murray: 20+,yes LeBron James: 15+",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 28.0,
+          "implied_probability": "28%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202628460596d7e-c4df10cfe41"
+    },
+    {
+      "title": "yes Draymond Green: 2+,yes Amen Thompson: 2+,yes Kevin Durant: 20+,yes Anthony Edwards: 20+,yes Alperen Sengun: 6+,yes S",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 27.5,
+          "implied_probability": "28%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b54334bddaf-b91ad1b6c65"
+    },
+    {
+      "title": "yes Desmond Bane: 2+,yes Minnesota",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 26.5,
+          "implied_probability": "26%",
+          "payout_multiple": "3.8x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026c4d54557722-99c7427ab24"
+    },
+    {
+      "title": "yes Michigan,yes South Florida,yes Hawai'i,no Indiana St. wins by over 7.5 Points,no Manhattan wins by over 7.5 Points",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 28.0,
+          "implied_probability": "28%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262bac669b3e3-dab82a65707"
+    },
+    {
+      "title": "yes Donte DiVincenzo: 2+,yes Miami,yes Phoenix,yes Orlando,yes Houston",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 26.5,
+          "implied_probability": "26%",
+          "payout_multiple": "3.8x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e85be079a42-07fb0898362"
+    }
+  ],
+  "summary": {
+    "total_topics_tracked": 17,
+    "high_confidence_signals": 0,
+    "medium_confidence_signals": 2,
+    "cross_platform_signals": 0,
+    "tier1_backed_signals": 0,
+    "prediction_market_matches": 16,
+    "x_signals_quality": {
+      "total": 22,
+      "with_known_author": 22,
+      "with_engagement": 16
+    },
+    "tiktok_signals_quality": {
+      "total": 14,
+      "crypto_relevant": 13
+    }
+  }
+}

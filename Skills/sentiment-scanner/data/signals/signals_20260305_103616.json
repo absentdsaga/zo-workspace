@@ -1,0 +1,775 @@
+{
+  "generated_at": "2026-03-05T10:36:16.732514+00:00",
+  "top_signals": [
+    {
+      "topic": "#fyp",
+      "score": 63,
+      "confidence": "medium",
+      "mentions": 3,
+      "engagement": 300,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "imzolks",
+        "jacksononweb3",
+        "advyyyth"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "$WAR",
+      "score": 52,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 200,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "keltonai",
+        "gavincoins"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#trending",
+      "score": 52,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 200,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "imzolks",
+        "jacksononweb3"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#foryou",
+      "score": 52,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 200,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "gavincoins",
+        "theonlycrisy"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    }
+  ],
+  "prediction_market_edges": [
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $100,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-100k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0205,
+          "implied_probability": "2.1%",
+          "payout_multiple": "48.8x"
+        }
+      ],
+      "volume_24h": 365553.02854400006,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $75,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-75k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.175,
+          "implied_probability": "17.5%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "volume_24h": 330223.96529499994,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $110,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-110k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.011,
+          "implied_probability": "1.1%",
+          "payout_multiple": "90.9x"
+        }
+      ],
+      "volume_24h": 284760.76854499994,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $60,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-60k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.215,
+          "implied_probability": "21.5%",
+          "payout_multiple": "4.7x"
+        }
+      ],
+      "volume_24h": 236245.37834700005,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $76,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-76k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0295,
+          "implied_probability": "2.9%",
+          "payout_multiple": "33.9x"
+        }
+      ],
+      "volume_24h": 217257.35539100008,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $68,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-68k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 210484.95794800002,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $72,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-72k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.1895,
+          "implied_probability": "18.9%",
+          "payout_multiple": "5.3x"
+        }
+      ],
+      "volume_24h": 192734.1716329999,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $70,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-70k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0255,
+          "implied_probability": "2.5%",
+          "payout_multiple": "39.2x"
+        }
+      ],
+      "volume_24h": 185431.93817799995,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $105,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-105k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0155,
+          "implied_probability": "1.6%",
+          "payout_multiple": "64.5x"
+        }
+      ],
+      "volume_24h": 167404.36399699998,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $55,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-55k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.115,
+          "implied_probability": "11.5%",
+          "payout_multiple": "8.7x"
+        }
+      ],
+      "volume_24h": 162425.109265,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $74,000 on March 5?",
+      "url": "https://polymarket.com/event/bitcoin-above-74k-on-march-5",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.186,
+          "implied_probability": "18.6%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "volume_24h": 158163.823279,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $85,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-85k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.195,
+          "implied_probability": "19.5%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "volume_24h": 137685.81449599998,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $50,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-50k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.065,
+          "implied_probability": "6.5%",
+          "payout_multiple": "15.4x"
+        }
+      ],
+      "volume_24h": 130331.81449899999,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $45,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-45k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0385,
+          "implied_probability": "3.9%",
+          "payout_multiple": "26.0x"
+        }
+      ],
+      "volume_24h": 125678.01173800003,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $78,000 March 2-8?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-78k-march-2-8",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.151,
+          "implied_probability": "15.1%",
+          "payout_multiple": "6.6x"
+        }
+      ],
+      "volume_24h": 124599.94803300007,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $95,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-95k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.041,
+          "implied_probability": "4.1%",
+          "payout_multiple": "24.4x"
+        }
+      ],
+      "volume_24h": 123947.11176,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $90,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-90k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0845,
+          "implied_probability": "8.5%",
+          "payout_multiple": "11.8x"
+        }
+      ],
+      "volume_24h": 117478.75371100001,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $64,000 March 2-8?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-64k-march-2-8",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.055,
+          "implied_probability": "5.5%",
+          "payout_multiple": "18.2x"
+        }
+      ],
+      "volume_24h": 88417.17237499998,
+      "social_engagement": 617,
+      "social_mentions": 6,
+      "match_quality": 83,
+      "social_context": [
+        "\ud83d\udfe3Top Trending memecoins on @Solana last 7D in http://bitcoinchina.io  Over the past seven days, the Solana memecoin ecosystem has experienced a noticeable surge in trading activity and social media en",
+        "MRO strategy for 5-minute Bitcoin markets on Polymarket  \n   Custom oscillator catches price reversals  \n   MRO tracks when price moves too far with volume confirmation. Below -70 signals Up bet. Abov"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the next Prime Minister of Hungary be L\u00e1szl\u00f3 Toroczkai?",
+      "url": "https://polymarket.com/event/will-the-next-prime-minister-of-hungary-be-lszl-toroczkai",
+      "matching_social_topics": [
+        "election",
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 151665.935961,
+      "social_engagement": 138,
+      "social_mentions": 2,
+      "match_quality": 50,
+      "social_context": [
+        "A trader lost $500 on Polymarket last week. He bet yes on Bitcoin hitting $100k by month end because the price there was $0.60. He didn't know Kalshi had the same event at $0.40. If he saw both prices"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Ethereum reach $2,200 in March?",
+      "url": "https://polymarket.com/event/will-ethereum-reach-2200-in-march-2026",
+      "matching_social_topics": [
+        "ethereum"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.165,
+          "implied_probability": "16.5%",
+          "payout_multiple": "6.1x"
+        }
+      ],
+      "volume_24h": 525591.8200660003,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": [
+        "Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum, XRP, Bitcoin Cash, Tron, #AAVE #AERO #TAO #KASPA #NAKA \u00b7 BETA 777 \u00b7 author. ",
+        "How Far Down Will Ethereum Go in 2026? Explore predictions on Ethereum's price trajectory and market trends for 2026. Stay informed about crypto movements! # "
+      ]
+    }
+  ],
+  "polymarket_top_opportunities": [
+    {
+      "question": "Will Iran close the Strait of Hormuz by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.21,
+          "implied_probability": "21.0%",
+          "payout_multiple": "4.8x"
+        }
+      ],
+      "volume_24h": 2582785.5198780037,
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-march-31"
+    },
+    {
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0125,
+          "implied_probability": "1.2%",
+          "payout_multiple": "80.0x"
+        }
+      ],
+      "volume_24h": 2093321.3846550002,
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting"
+    },
+    {
+      "question": "Will the Iranian regime fall by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.144,
+          "implied_probability": "14.4%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "volume_24h": 1226446.0075380004,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31"
+    },
+    {
+      "question": "Will Ken Paxton win the 2026 Texas Republican Primary?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.125,
+          "implied_probability": "12.5%",
+          "payout_multiple": "8.0x"
+        }
+      ],
+      "volume_24h": 1139604.7447339988,
+      "url": "https://polymarket.com/event/will-ken-paxton-win-the-2026-republican-primary"
+    },
+    {
+      "question": "Will Belgium win the 2026 FIFA World Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 1031942.191585,
+      "url": "https://polymarket.com/event/will-belgium-win-the-2026-fifa-world-cup-358"
+    },
+    {
+      "question": "Will Mark Kelly win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0265,
+          "implied_probability": "2.6%",
+          "payout_multiple": "37.7x"
+        }
+      ],
+      "volume_24h": 618566.8054399999,
+      "url": "https://polymarket.com/event/will-mark-kelly-win-the-2028-democratic-presidential-nomination-479"
+    },
+    {
+      "question": "Will Wes Moore win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.016,
+          "implied_probability": "1.6%",
+          "payout_multiple": "62.5x"
+        }
+      ],
+      "volume_24h": 593585.381756,
+      "url": "https://polymarket.com/event/will-wes-moore-win-the-2028-democratic-presidential-nomination-714"
+    },
+    {
+      "question": "US x Iran ceasefire by March 15?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.125,
+          "implied_probability": "12.5%",
+          "payout_multiple": "8.0x"
+        }
+      ],
+      "volume_24h": 582332.6527659999,
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-15"
+    },
+    {
+      "question": "Will Mexico win the 2026 FIFA World Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 538211.0470720001,
+      "url": "https://polymarket.com/event/will-mexico-win-the-2026-fifa-world-cup-529"
+    },
+    {
+      "question": "Will Ethereum reach $2,200 in March?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.165,
+          "implied_probability": "16.5%",
+          "payout_multiple": "6.1x"
+        }
+      ],
+      "volume_24h": 525591.8200660003,
+      "url": "https://polymarket.com/event/will-ethereum-reach-2200-in-march-2026"
+    },
+    {
+      "question": "Will Andy Beshear win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.014,
+          "implied_probability": "1.4%",
+          "payout_multiple": "71.4x"
+        }
+      ],
+      "volume_24h": 512058.96866799996,
+      "url": "https://polymarket.com/event/will-andy-beshear-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.15,
+          "implied_probability": "15.0%",
+          "payout_multiple": "6.7x"
+        }
+      ],
+      "volume_24h": 459689.78318399953,
+      "url": "https://polymarket.com/event/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31"
+    },
+    {
+      "question": "Will Reza Pahlavi enter Iran by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0375,
+          "implied_probability": "3.8%",
+          "payout_multiple": "26.7x"
+        }
+      ],
+      "volume_24h": 449657.0903140001,
+      "url": "https://polymarket.com/event/will-reza-pahlavi-enter-iran-by-march-31-282"
+    },
+    {
+      "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.221,
+          "implied_probability": "22.1%",
+          "payout_multiple": "4.5x"
+        }
+      ],
+      "volume_24h": 444397.988635,
+      "url": "https://polymarket.com/event/will-the-colorado-avalanche-win-the-2026-nhl-stanley-cup"
+    },
+    {
+      "question": "Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0565,
+          "implied_probability": "5.7%",
+          "payout_multiple": "17.7x"
+        }
+      ],
+      "volume_24h": 414445.1044819999,
+      "url": "https://polymarket.com/event/will-alexandria-ocasio-cortez-win-the-2028-us-presidential-election"
+    }
+  ],
+  "kalshi_top_opportunities": [],
+  "summary": {
+    "total_topics_tracked": 32,
+    "high_confidence_signals": 0,
+    "medium_confidence_signals": 4,
+    "cross_platform_signals": 0,
+    "tier1_backed_signals": 0,
+    "prediction_market_matches": 69,
+    "x_signals_quality": {
+      "total": 9,
+      "with_known_author": 9,
+      "with_engagement": 7
+    },
+    "tiktok_signals_quality": {
+      "total": 18,
+      "crypto_relevant": 16
+    }
+  }
+}

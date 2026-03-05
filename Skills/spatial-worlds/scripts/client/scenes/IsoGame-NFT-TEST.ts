@@ -9,8 +9,18 @@ import { VoiceManager } from '../systems/VoiceManager';
 import { MobileInput } from '../systems/MobileInput';
 import { PlatformElevationManager } from '../systems/PlatformElevation';
 
-// 🎨 Player character
-const PLAYER_CHARACTER = 'hero_orange';
+// 🎨 Full character pool — each client picks one at random on connect
+const CHARACTER_POOL = ['hero_orange', 'hero_blue', 'hero_purple', 'hero_green'];
+
+// Pick local character: use ?char=hero_blue URL param, or random
+function pickLocalCharacter(): string {
+  const params = new URLSearchParams(window.location.search);
+  const forced = params.get('char');
+  if (forced && CHARACTER_POOL.includes(forced)) return forced;
+  return CHARACTER_POOL[Math.floor(Math.random() * CHARACTER_POOL.length)];
+}
+
+const LOCAL_CHARACTER = pickLocalCharacter();
 
 // 🎨 ALL 24 NFT CHARACTERS (used for NPCs)
 const NFT_CHARACTERS = [
@@ -20,8 +30,8 @@ const NFT_CHARACTERS = [
   'set4-char1', 'set4-char2', 'set4-char3', 'set4-char4', 'set4-char5', 'set4-char6'
 ];
 
-// All characters to load (player + NPCs)
-const ALL_CHARACTERS = [PLAYER_CHARACTER];
+// All characters that have animations
+const ALL_CHARACTERS = [...CHARACTER_POOL];
 
 export class IsoGameScene extends Phaser.Scene {
   private depthManager!: DepthManager;
@@ -49,11 +59,14 @@ export class IsoGameScene extends Phaser.Scene {
   }
 
   preload() {
-    // 🎨 Load player character (hero_orange: 256x256, 64x64 frames, 4x4 grid)
-    this.load.spritesheet('hero_orange', 'assets/sprites/nft-characters-xxl/hero_orange/hero_orange-sheet.png', {
-      frameWidth: 64,
-      frameHeight: 64
-    });
+    // 🎨 Load all character sprites from pool
+    for (const charId of CHARACTER_POOL) {
+      this.load.spritesheet(charId, `assets/sprites/nft-characters-xxl/${charId}/${charId}-sheet.png`, {
+        frameWidth: 64,
+        frameHeight: 64
+      });
+    }
+
   }
 
   create() {
@@ -68,8 +81,8 @@ export class IsoGameScene extends Phaser.Scene {
     this.collisionManager = new CollisionManager();
     this.platformElevation = new PlatformElevationManager();
 
-    // Initialize multiplayer
-    this.multiplayerManager = new MultiplayerManager(this);
+    // Initialize multiplayer (server handles character identity)
+    this.multiplayerManager = new MultiplayerManager(this, LOCAL_CHARACTER);
 
     // Connect to multiplayer server
     const wsUrl = window.location.protocol === 'https:'
@@ -271,44 +284,46 @@ export class IsoGameScene extends Phaser.Scene {
   }
 
   createNFTAnimations() {
-    // hero_orange: 256x256, 64x64 frames, 4x4 grid
+    // All XXL sheets: 256x256, 64x64 frames, 4x4 grid
     // Row 0 (frames 0-3): south | Row 1 (frames 4-7): north | Row 2 (frames 8-11): west
     // East = west + flipX
     const dirs = ['south', 'north', 'west'];
-    dirs.forEach((dir, rowIdx) => {
-      const base = rowIdx * 4;
-      // Ping-pong: 0-1-2-3-2-1 doubles effective cycle for smoother loop
-      this.anims.create({
-        key: `hero_orange-walk-${dir}`,
-        frames: [
-          { key: 'hero_orange', frame: base },
-          { key: 'hero_orange', frame: base + 1 },
-          { key: 'hero_orange', frame: base + 2 },
-          { key: 'hero_orange', frame: base + 3 },
-          { key: 'hero_orange', frame: base + 2 },
-          { key: 'hero_orange', frame: base + 1 },
-        ],
-        frameRate: 7,
-        repeat: -1
-      });
-      this.anims.create({
-        key: `hero_orange-idle-${dir}`,
-        frames: [{ key: 'hero_orange', frame: base + 1 }],
-        frameRate: 1
-      });
-    });
 
-    console.log('✅ Created ping-pong animations for hero_orange');
+    for (const charId of CHARACTER_POOL) {
+      dirs.forEach((dir, rowIdx) => {
+        const base = rowIdx * 4;
+        this.anims.create({
+          key: `${charId}-walk-${dir}`,
+          frames: [
+            { key: charId, frame: base },
+            { key: charId, frame: base + 1 },
+            { key: charId, frame: base + 2 },
+            { key: charId, frame: base + 3 },
+            { key: charId, frame: base + 2 },
+            { key: charId, frame: base + 1 },
+          ],
+          frameRate: 7,
+          repeat: -1
+        });
+        this.anims.create({
+          key: `${charId}-idle-${dir}`,
+          frames: [{ key: charId, frame: base + 1 }],
+          frameRate: 1
+        });
+      });
+    }
+
+    console.log(`✅ Created animations for ${CHARACTER_POOL.length} characters`);
   }
 
   createPlayer() {
-    console.log(`🎨 Creating player with ${PLAYER_CHARACTER}`);
+    console.log(`🎨 Creating player with ${LOCAL_CHARACTER}`);
 
     // Ground shadow (renders below player)
     this.playerShadow = this.add.ellipse(640, 364, 40, 14, 0x000000, 0.3);
     this.playerShadow.setDepth(-1);
 
-    this.player = this.physics.add.sprite(640, 360, PLAYER_CHARACTER, 1);
+    this.player = this.physics.add.sprite(640, 360, LOCAL_CHARACTER, 1);
     this.player.setScale(2.0);
 
     // Anchor at feet
@@ -333,7 +348,7 @@ export class IsoGameScene extends Phaser.Scene {
       const y = Phaser.Math.Between(200, 520);
 
       // Use hero_orange for all NPCs (NFT sheets have incompatible frame sizes)
-      const charId = PLAYER_CHARACTER;
+      const charId = LOCAL_CHARACTER;
       const npc = this.physics.add.sprite(x, y, charId, 0);  // frame 0 = south idle
 
       // Random elevation (0-3)
@@ -493,7 +508,7 @@ export class IsoGameScene extends Phaser.Scene {
 
   updateNFTAnimationFromInput(sprite: Phaser.Physics.Arcade.Sprite, input: { up: boolean, down: boolean, left: boolean, right: boolean }, walkTick: number = 0) {
     const charId = sprite.texture.key;
-    if (!ALL_CHARACTERS.includes(charId)) return;
+    if (!CHARACTER_POOL.includes(charId)) return;
 
     const moving = input.up || input.down || input.left || input.right;
     const IDLE_GRACE_FRAMES = 4;
@@ -591,7 +606,7 @@ export class IsoGameScene extends Phaser.Scene {
   updateNFTAnimation(sprite: Phaser.Physics.Arcade.Sprite, velocity: { x: number, y: number }) {
     const isMoving = velocity.x !== 0 || velocity.y !== 0;
     const charId = sprite.texture.key;
-    if (!ALL_CHARACTERS.includes(charId)) return;
+    if (!CHARACTER_POOL.includes(charId)) return;
 
     if (isMoving) {
       const horizDominant = Math.abs(velocity.x) > Math.abs(velocity.y);

@@ -1,0 +1,119 @@
+{
+  "scan_time": "2026-03-04T13:33:41.962233+00:00",
+  "markets_with_edge": [
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202613735D3A51E-8D2872208E5",
+      "title": "yes Atlanta,yes Boston,yes Oklahoma City,yes Philadelphia,yes Houston,yes Wisconsin,yes Miami (FL)",
+      "event_ticker": "KXMVECROSSCATEGORY-S202613735D3A51E",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202613735d3a51e-8d2872208e5",
+      "yes_bid": 0,
+      "yes_ask": 35,
+      "no_bid": 65,
+      "no_ask": 100,
+      "yes_mid": 17.5,
+      "no_mid": 82.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 17.5,
+          "implied_probability": "18%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "scanned_at": "2026-03-04T13:33:42.849936+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202626EE8A45AE2-BBF088D4405",
+      "title": "yes Miomir Kecmanovic,yes Martin Damm Jr,yes Villanova",
+      "event_ticker": "KXMVECROSSCATEGORY-S202626EE8A45AE2",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202626ee8a45ae2-bbf088d4405",
+      "yes_bid": 0,
+      "yes_ask": 53,
+      "no_bid": 46,
+      "no_ask": 100,
+      "yes_mid": 26.5,
+      "no_mid": 73.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 26.5,
+          "implied_probability": "26%",
+          "payout_multiple": "3.8x"
+        }
+      ],
+      "scanned_at": "2026-03-04T13:33:42.850135+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026C10DB09DD5F-32B7BC78A05",
+      "title": "yes Jalen Brunson: 2+,yes Keyonte George: 2+,yes Oklahoma City,yes Derrick White: 10+,yes Bennedict Mathurin: 10+,yes Chet Holmgren: 10+",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026C10DB09DD5F",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026c10db09dd5f-32b7bc78a05",
+      "yes_bid": 0,
+      "yes_ask": 50,
+      "no_bid": 49,
+      "no_ask": 100,
+      "yes_mid": 25.0,
+      "no_mid": 74.5,
+      "volume": 52,
+      "volume_24h": 0,
+      "open_interest": 52,
+      "last_price": 42,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 25.0,
+          "implied_probability": "25%",
+          "payout_multiple": "4.0x"
+        }
+      ],
+      "scanned_at": "2026-03-04T13:33:42.850229+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20261638241BE17-3C2CF0F4B1D",
+      "title": "yes Jalen Brunson: 4+,yes Josh Hart: 2+,yes Jalen Brunson: 15+,yes Chet Holmgren: 10+,yes Jalen Brunson: 2+,yes Chet Holmgren: 6+,yes Luguentz Dort: 2+",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20261638241BE17",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s20261638241be17-3c2cf0f4b1d",
+      "yes_bid": 0,
+      "yes_ask": 52,
+      "no_bid": 48,
+      "no_ask": 100,
+      "yes_mid": 26.0,
+      "no_mid": 74.0,
+      "volume": 54,
+      "volume_24h": 0,
+      "open_interest": 54,
+      "last_price": 34,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 26.0,
+          "implied_probability": "26%",
+          "payout_multiple": "3.8x"
+        }
+      ],
+      "scanned_at": "2026-03-04T13:33:42.850373+00:00"
+    }
+  ],
+  "high_volume_markets": [],
+  "summary": {
+    "total_scanned": 500,
+    "markets_with_cheap_outcomes": 4,
+    "high_volume_markets": 0
+  }
+}

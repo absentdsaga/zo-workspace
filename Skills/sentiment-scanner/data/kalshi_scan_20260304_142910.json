@@ -1,0 +1,200 @@
+{
+  "scan_time": "2026-03-04T14:29:09.617690+00:00",
+  "markets_with_edge": [
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B712CA3A0B4-73AF666BC53",
+      "title": "yes Derrick White: 1+,yes Kon Knueppel: 2+,yes LaMelo Ball: 2+,yes Kawhi Leonard: 1+,yes Los Angeles C",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B712CA3A0B4",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b712ca3a0b4-73af666bc53",
+      "yes_bid": 0,
+      "yes_ask": 54,
+      "no_bid": 45,
+      "no_ask": 100,
+      "yes_mid": 27.0,
+      "no_mid": 72.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 27.0,
+          "implied_probability": "27%",
+          "payout_multiple": "3.7x"
+        }
+      ],
+      "scanned_at": "2026-03-04T14:29:10.690393+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026AA2BA109CD0-C9AE04CF494",
+      "title": "yes Dyson Daniels: 4+,yes Jonathan Kuminga: 4+,yes Giannis Antetokounmpo: 6+,yes Miles Bridges: 2+,yes Moussa Diabat\u00e9: 6+,yes Karl-Anthony Towns: 8+,yes Chet Holmgren: 6+,yes Jrue Holiday: 2+",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026AA2BA109CD0",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026aa2ba109cd0-c9ae04cf494",
+      "yes_bid": 0,
+      "yes_ask": 50,
+      "no_bid": 49,
+      "no_ask": 100,
+      "yes_mid": 25.0,
+      "no_mid": 74.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 25.0,
+          "implied_probability": "25%",
+          "payout_multiple": "4.0x"
+        }
+      ],
+      "scanned_at": "2026-03-04T14:29:10.690428+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202662C50853E79-5A2C51E84B6",
+      "title": "yes Jonathan Kuminga: 4+,yes Giannis Antetokounmpo: 6+,yes Miles Bridges: 2+,yes Moussa Diabat\u00e9: 6+,yes Karl-Anthony Towns: 8+,yes Chet Holmgren: 6+,yes Jrue Holiday: 2+",
+      "event_ticker": "KXMVECROSSCATEGORY-S202662C50853E79",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202662c50853e79-5a2c51e84b6",
+      "yes_bid": 0,
+      "yes_ask": 55,
+      "no_bid": 44,
+      "no_ask": 100,
+      "yes_mid": 27.5,
+      "no_mid": 72.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 27.5,
+          "implied_probability": "28%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "scanned_at": "2026-03-04T14:29:10.690487+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026AC341C5A83B-AF7A81EEE51",
+      "title": "yes OG Anunoby: 10+,no Oklahoma City wins by over 9.5 Points",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026AC341C5A83B",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s2026ac341c5a83b-af7a81eee51",
+      "yes_bid": 0,
+      "yes_ask": 57,
+      "no_bid": 42,
+      "no_ask": 100,
+      "yes_mid": 28.5,
+      "no_mid": 71.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 28.5,
+          "implied_probability": "28%",
+          "payout_multiple": "3.5x"
+        }
+      ],
+      "scanned_at": "2026-03-04T14:29:10.690515+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20262BD479B5426-7869777CA72",
+      "title": "yes Payton Pritchard: 15+,no Oklahoma City wins by over 12.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20262BD479B5426",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262bd479b5426-7869777ca72",
+      "yes_bid": 0,
+      "yes_ask": 53,
+      "no_bid": 46,
+      "no_ask": 100,
+      "yes_mid": 26.5,
+      "no_mid": 73.0,
+      "volume": 427,
+      "volume_24h": 0,
+      "open_interest": 427,
+      "last_price": 49,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 26.5,
+          "implied_probability": "26%",
+          "payout_multiple": "3.8x"
+        }
+      ],
+      "scanned_at": "2026-03-04T14:29:10.690847+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026011B7270080-8AE8C3D9D0D",
+      "title": "yes Miami (FL),yes Notre Dame,yes Washington",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026011B7270080",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026011b7270080-8ae8c3d9d0d",
+      "yes_bid": 0,
+      "yes_ask": 30,
+      "no_bid": 70,
+      "no_ask": 100,
+      "yes_mid": 15.0,
+      "no_mid": 85.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 15.0,
+          "implied_probability": "15%",
+          "payout_multiple": "6.7x"
+        }
+      ],
+      "scanned_at": "2026-03-04T14:29:10.690885+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20269CA4094E925-E1A288AC871",
+      "title": "yes Providence,yes SMU,yes Notre Dame",
+      "event_ticker": "KXMVECROSSCATEGORY-S20269CA4094E925",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20269ca4094e925-e1a288ac871",
+      "yes_bid": 0,
+      "yes_ask": 30,
+      "no_bid": 70,
+      "no_ask": 100,
+      "yes_mid": 15.0,
+      "no_mid": 85.0,
+      "volume": 15,
+      "volume_24h": 0,
+      "open_interest": 15,
+      "last_price": 18,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 15.0,
+          "implied_probability": "15%",
+          "payout_multiple": "6.7x"
+        }
+      ],
+      "scanned_at": "2026-03-04T14:29:10.690933+00:00"
+    }
+  ],
+  "high_volume_markets": [],
+  "summary": {
+    "total_scanned": 500,
+    "markets_with_cheap_outcomes": 7,
+    "high_volume_markets": 0
+  }
+}

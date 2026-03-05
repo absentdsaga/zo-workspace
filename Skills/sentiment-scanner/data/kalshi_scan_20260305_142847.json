@@ -1,0 +1,65 @@
+{
+  "scan_time": "2026-03-05T14:28:46.751612+00:00",
+  "markets_with_edge": [
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B6EFBE5A374-1A9A7B0EFD4",
+      "title": "yes Miami,yes Phoenix,yes Orlando,yes Alperen Sengun: 10+,yes Julius Randle: 10+",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B6EFBE5A374",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b6efbe5a374-1a9a7b0efd4",
+      "yes_bid": 0,
+      "yes_ask": 57,
+      "no_bid": 42,
+      "no_ask": 100,
+      "yes_mid": 28.5,
+      "no_mid": 71.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 28.5,
+          "implied_probability": "28%",
+          "payout_multiple": "3.5x"
+        }
+      ],
+      "scanned_at": "2026-03-05T14:28:47.690679+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026ABDD3D39923-31240690F26",
+      "title": "yes Alperen Sengun: 15+,yes Houston wins by over 3.5 Points",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026ABDD3D39923",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s2026abdd3d39923-31240690f26",
+      "yes_bid": 0,
+      "yes_ask": 53,
+      "no_bid": 46,
+      "no_ask": 100,
+      "yes_mid": 26.5,
+      "no_mid": 73.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 26.5,
+          "implied_probability": "26%",
+          "payout_multiple": "3.8x"
+        }
+      ],
+      "scanned_at": "2026-03-05T14:28:47.690737+00:00"
+    }
+  ],
+  "high_volume_markets": [],
+  "summary": {
+    "total_scanned": 500,
+    "markets_with_cheap_outcomes": 2,
+    "high_volume_markets": 0
+  }
+}

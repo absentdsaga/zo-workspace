@@ -1,0 +1,65 @@
+{
+  "scan_time": "2026-03-05T06:28:28.261478+00:00",
+  "markets_with_edge": [
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B436441D58F-30DBF4370EE",
+      "title": "yes Michigan wins by over 8.5 Points,no Michigan St. wins by over 13.5 Points,yes Hawai'i wins by over 5.5 Points,no Over 142.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B436441D58F",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b436441d58f-30dbf4370ee",
+      "yes_bid": 0,
+      "yes_ask": 53,
+      "no_bid": 46,
+      "no_ask": 100,
+      "yes_mid": 26.5,
+      "no_mid": 73.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 26.5,
+          "implied_probability": "26%",
+          "payout_multiple": "3.8x"
+        }
+      ],
+      "scanned_at": "2026-03-05T06:28:29.164427+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202658136D3C921-912FDC26B37",
+      "title": "yes Phoenix,yes Orlando,yes Houston,yes Boston,yes Los Angeles L,yes San Antonio",
+      "event_ticker": "KXMVECROSSCATEGORY-S202658136D3C921",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202658136d3c921-912fdc26b37",
+      "yes_bid": 0,
+      "yes_ask": 54,
+      "no_bid": 45,
+      "no_ask": 100,
+      "yes_mid": 27.0,
+      "no_mid": 72.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 27.0,
+          "implied_probability": "27%",
+          "payout_multiple": "3.7x"
+        }
+      ],
+      "scanned_at": "2026-03-05T06:28:29.165101+00:00"
+    }
+  ],
+  "high_volume_markets": [],
+  "summary": {
+    "total_scanned": 500,
+    "markets_with_cheap_outcomes": 2,
+    "high_volume_markets": 0
+  }
+}

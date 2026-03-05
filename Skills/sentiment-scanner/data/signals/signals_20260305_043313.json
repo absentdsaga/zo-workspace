@@ -1,0 +1,969 @@
+{
+  "generated_at": "2026-03-05T04:33:13.660496+00:00",
+  "top_signals": [
+    {
+      "topic": "$PMT",
+      "score": 100,
+      "confidence": "high",
+      "mentions": 30,
+      "engagement": 2700,
+      "platforms": [
+        "x"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "ChinaPumpWXC"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": [
+        "### Trending Solana Memecoin Pumps, Launches, and Activity\n\nBased on recent activity on X (as of March 5, 2026), Solana's memecoin ecosystem is buzzing with new launches, countdowns, and tokens showin"
+      ]
+    },
+    {
+      "topic": "rate cut",
+      "score": 100,
+      "confidence": "high",
+      "mentions": 9,
+      "engagement": 4212,
+      "platforms": [
+        "x"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "Crypto_Diet"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": [
+        "### Bitcoin and Crypto Market Sentiment in 2026: Bull, Bear, and Rally Predictions\n\nAs of March 5, 2026, discussions on X (formerly Twitter) about Bitcoin (BTC) and the broader crypto market are buzzi"
+      ]
+    },
+    {
+      "topic": "tariff",
+      "score": 100,
+      "confidence": "high",
+      "mentions": 9,
+      "engagement": 4212,
+      "platforms": [
+        "x"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "Crypto_Diet"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": [
+        "### Bitcoin and Crypto Market Sentiment in 2026: Bull, Bear, and Rally Predictions\n\nAs of March 5, 2026, discussions on X (formerly Twitter) about Bitcoin (BTC) and the broader crypto market are buzzi"
+      ]
+    },
+    {
+      "topic": "election",
+      "score": 80,
+      "confidence": "high",
+      "mentions": 5,
+      "engagement": 0,
+      "platforms": [
+        "x"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "CryptoGoblinBot"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": [
+        "### Overview of Polymarket and Bitcoin Price Bets\n\nPolymarket is a decentralized prediction market platform built on blockchain (primarily Polygon), where users bet on real-world outcomes using stable"
+      ]
+    },
+    {
+      "topic": "$WAR",
+      "score": 74,
+      "confidence": "high",
+      "mentions": 4,
+      "engagement": 400,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "keltonai",
+        "gavincoins"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#fyp",
+      "score": 63,
+      "confidence": "medium",
+      "mentions": 3,
+      "engagement": 300,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "keltonai",
+        "wwbtc5",
+        "advyyyth"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    }
+  ],
+  "prediction_market_edges": [
+    {
+      "type": "polymarket",
+      "question": "Will the next Prime Minister of Hungary be L\u00e1szl\u00f3 Toroczkai?",
+      "url": "https://polymarket.com/event/will-the-next-prime-minister-of-hungary-be-lszl-toroczkai",
+      "matching_social_topics": [
+        "election",
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 178002.90625300005,
+      "social_engagement": 100,
+      "social_mentions": 6,
+      "match_quality": 58,
+      "social_context": [
+        "### Overview of Polymarket and Bitcoin Price Bets\n\nPolymarket is a decentralized prediction market platform built on blockchain (primarily Polygon), where users bet on real-world outcomes using stable"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Ethereum reach $2,200 in March?",
+      "url": "https://polymarket.com/event/will-ethereum-reach-2200-in-march-2026",
+      "matching_social_topics": [
+        "ethereum"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.21,
+          "implied_probability": "21.0%",
+          "payout_multiple": "4.8x"
+        }
+      ],
+      "volume_24h": 541623.9334560003,
+      "social_engagement": 200,
+      "social_mentions": 2,
+      "match_quality": 41,
+      "social_context": [
+        "Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum ... Top ten cryptos I would buy on March 4 2026 Bitcoin, Ethereum, XRP, Bitcoin Cash, Tron, #AAVE #AERO #TAO #KASPA #NAKA \u00b7 BETA 777 \u00b7 aut",
+        "ALMOST ALL CRYPTO PEOPLE MISS THIS CHART ... - TikTok How Far Down Will Ethereum Go in 2026? Explore predictions on Ethereum's price trajectory and market trends for 2026. Stay informed about crypto m"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Vivek Ramaswamy win the 2028 US Presidential Election?",
+      "url": "https://polymarket.com/event/will-vivek-ramaswamy-win-the-2028-us-presidential-election",
+      "matching_social_topics": [
+        "election"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0135,
+          "implied_probability": "1.4%",
+          "payout_multiple": "74.1x"
+        }
+      ],
+      "volume_24h": 596890.7941600002,
+      "social_engagement": 0,
+      "social_mentions": 5,
+      "match_quality": 30,
+      "social_context": [
+        "### Overview of Polymarket and Bitcoin Price Bets\n\nPolymarket is a decentralized prediction market platform built on blockchain (primarily Polygon), where users bet on real-world outcomes using stable"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Andy Beshear win the 2028 US Presidential Election?",
+      "url": "https://polymarket.com/event/will-andy-beshear-win-the-2028-us-presidential-election",
+      "matching_social_topics": [
+        "election"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0145,
+          "implied_probability": "1.5%",
+          "payout_multiple": "69.0x"
+        }
+      ],
+      "volume_24h": 595796.7284290001,
+      "social_engagement": 0,
+      "social_mentions": 5,
+      "match_quality": 30,
+      "social_context": [
+        "### Overview of Polymarket and Bitcoin Price Bets\n\nPolymarket is a decentralized prediction market platform built on blockchain (primarily Polygon), where users bet on real-world outcomes using stable"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?",
+      "url": "https://polymarket.com/event/will-alexandria-ocasio-cortez-win-the-2028-us-presidential-election",
+      "matching_social_topics": [
+        "election"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.06,
+          "implied_probability": "6.0%",
+          "payout_multiple": "16.7x"
+        }
+      ],
+      "volume_24h": 481820.8688900003,
+      "social_engagement": 0,
+      "social_mentions": 5,
+      "match_quality": 30,
+      "social_context": [
+        "### Overview of Polymarket and Bitcoin Price Bets\n\nPolymarket is a decentralized prediction market platform built on blockchain (primarily Polygon), where users bet on real-world outcomes using stable"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk win the 2028 US Presidential Election?",
+      "url": "https://polymarket.com/event/will-elon-musk-win-the-2028-us-presidential-election",
+      "matching_social_topics": [
+        "election"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0145,
+          "implied_probability": "1.5%",
+          "payout_multiple": "69.0x"
+        }
+      ],
+      "volume_24h": 234517.95066299997,
+      "social_engagement": 0,
+      "social_mentions": 5,
+      "match_quality": 30,
+      "social_context": [
+        "### Overview of Polymarket and Bitcoin Price Bets\n\nPolymarket is a decentralized prediction market platform built on blockchain (primarily Polygon), where users bet on real-world outcomes using stable"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Gavin Newsom win the 2028 US Presidential Election?",
+      "url": "https://polymarket.com/event/will-gavin-newsom-win-the-2028-us-presidential-election",
+      "matching_social_topics": [
+        "election"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1695,
+          "implied_probability": "17.0%",
+          "payout_multiple": "5.9x"
+        }
+      ],
+      "volume_24h": 215088.65562200017,
+      "social_engagement": 0,
+      "social_mentions": 5,
+      "match_quality": 30,
+      "social_context": [
+        "### Overview of Polymarket and Bitcoin Price Bets\n\nPolymarket is a decentralized prediction market platform built on blockchain (primarily Polygon), where users bet on real-world outcomes using stable"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Jon Ossoff win the 2028 US Presidential Election?",
+      "url": "https://polymarket.com/event/will-jon-ossoff-win-the-2028-us-presidential-election",
+      "matching_social_topics": [
+        "election"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.022,
+          "implied_probability": "2.2%",
+          "payout_multiple": "45.5x"
+        }
+      ],
+      "volume_24h": 205580.71200099995,
+      "social_engagement": 0,
+      "social_mentions": 5,
+      "match_quality": 30,
+      "social_context": [
+        "### Overview of Polymarket and Bitcoin Price Bets\n\nPolymarket is a decentralized prediction market platform built on blockchain (primarily Polygon), where users bet on real-world outcomes using stable"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Iran close the Strait of Hormuz by March 31?",
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-march-31",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.185,
+          "implied_probability": "18.5%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "volume_24h": 2918392.8953210004,
+      "social_engagement": 100,
+      "social_mentions": 1,
+      "match_quality": 28,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0135,
+          "implied_probability": "1.4%",
+          "payout_multiple": "74.1x"
+        }
+      ],
+      "volume_24h": 1977562.8576899993,
+      "social_engagement": 100,
+      "social_mentions": 1,
+      "match_quality": 28,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the Iranian regime fall by March 31?",
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.162,
+          "implied_probability": "16.2%",
+          "payout_multiple": "6.2x"
+        }
+      ],
+      "volume_24h": 1484844.0032449998,
+      "social_engagement": 100,
+      "social_mentions": 1,
+      "match_quality": 28,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Ken Paxton win the 2026 Texas Republican Primary?",
+      "url": "https://polymarket.com/event/will-ken-paxton-win-the-2026-republican-primary",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.135,
+          "implied_probability": "13.5%",
+          "payout_multiple": "7.4x"
+        }
+      ],
+      "volume_24h": 1387671.8053149986,
+      "social_engagement": 100,
+      "social_mentions": 1,
+      "match_quality": 28,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Belgium win the 2026 FIFA World Cup?",
+      "url": "https://polymarket.com/event/will-belgium-win-the-2026-fifa-world-cup-358",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 702374.7649199999,
+      "social_engagement": 100,
+      "social_mentions": 1,
+      "match_quality": 28,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
+      "url": "https://polymarket.com/event/will-the-colorado-avalanche-win-the-2026-nhl-stanley-cup",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.2145,
+          "implied_probability": "21.4%",
+          "payout_multiple": "4.7x"
+        }
+      ],
+      "volume_24h": 577241.6653160003,
+      "social_engagement": 100,
+      "social_mentions": 1,
+      "match_quality": 28,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+      "url": "https://polymarket.com/event/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.185,
+          "implied_probability": "18.5%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "volume_24h": 518931.4168420002,
+      "social_engagement": 100,
+      "social_mentions": 1,
+      "match_quality": 28,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Shane Lowry win the 2026 Masters tournament?",
+      "url": "https://polymarket.com/event/will-shane-lowry-win-the-2026-masters-tournament",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0185,
+          "implied_probability": "1.8%",
+          "payout_multiple": "54.1x"
+        }
+      ],
+      "volume_24h": 509876.627699,
+      "social_engagement": 100,
+      "social_mentions": 1,
+      "match_quality": 28,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Jesus Christ return before 2027?",
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0375,
+          "implied_probability": "3.8%",
+          "payout_multiple": "26.7x"
+        }
+      ],
+      "volume_24h": 508708.95775699976,
+      "social_engagement": 100,
+      "social_mentions": 1,
+      "match_quality": 28,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Mexico win the 2026 FIFA World Cup?",
+      "url": "https://polymarket.com/event/will-mexico-win-the-2026-fifa-world-cup-529",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 485053.090289,
+      "social_engagement": 100,
+      "social_mentions": 1,
+      "match_quality": 28,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "GTA VI released before June 2026?",
+      "url": "https://polymarket.com/event/gta-vi-released-before-june-2026",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.027,
+          "implied_probability": "2.7%",
+          "payout_multiple": "37.0x"
+        }
+      ],
+      "volume_24h": 482277.3878279998,
+      "social_engagement": 100,
+      "social_mentions": 1,
+      "match_quality": 28,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will John Cornyn win the 2026 Texas Republican Primary?",
+      "url": "https://polymarket.com/event/will-john-cornyn-win-the-2026-republican-primary",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.135,
+          "implied_probability": "13.5%",
+          "payout_multiple": "7.4x"
+        }
+      ],
+      "volume_24h": 478327.1478499992,
+      "social_engagement": 100,
+      "social_mentions": 1,
+      "match_quality": 28,
+      "social_context": []
+    }
+  ],
+  "polymarket_top_opportunities": [
+    {
+      "question": "Will Iran close the Strait of Hormuz by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.185,
+          "implied_probability": "18.5%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "volume_24h": 2918392.8953210004,
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-march-31"
+    },
+    {
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0135,
+          "implied_probability": "1.4%",
+          "payout_multiple": "74.1x"
+        }
+      ],
+      "volume_24h": 1977562.8576899993,
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting"
+    },
+    {
+      "question": "Will the Iranian regime fall by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.162,
+          "implied_probability": "16.2%",
+          "payout_multiple": "6.2x"
+        }
+      ],
+      "volume_24h": 1484844.0032449998,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31"
+    },
+    {
+      "question": "Will Ken Paxton win the 2026 Texas Republican Primary?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.135,
+          "implied_probability": "13.5%",
+          "payout_multiple": "7.4x"
+        }
+      ],
+      "volume_24h": 1387671.8053149986,
+      "url": "https://polymarket.com/event/will-ken-paxton-win-the-2026-republican-primary"
+    },
+    {
+      "question": "Hawks vs. Bucks",
+      "cheap_outcomes": [
+        {
+          "outcome": "Bucks",
+          "price": 0.185,
+          "implied_probability": "18.5%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "volume_24h": 743110.1337200009,
+      "url": "https://polymarket.com/event/nba-atl-mil-2026-03-04"
+    },
+    {
+      "question": "Will Belgium win the 2026 FIFA World Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 702374.7649199999,
+      "url": "https://polymarket.com/event/will-belgium-win-the-2026-fifa-world-cup-358"
+    },
+    {
+      "question": "US x Iran ceasefire by March 15?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.125,
+          "implied_probability": "12.5%",
+          "payout_multiple": "8.0x"
+        }
+      ],
+      "volume_24h": 671921.3283180002,
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-15"
+    },
+    {
+      "question": "Will Vivek Ramaswamy win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0135,
+          "implied_probability": "1.4%",
+          "payout_multiple": "74.1x"
+        }
+      ],
+      "volume_24h": 596890.7941600002,
+      "url": "https://polymarket.com/event/will-vivek-ramaswamy-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will Andy Beshear win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0145,
+          "implied_probability": "1.5%",
+          "payout_multiple": "69.0x"
+        }
+      ],
+      "volume_24h": 595796.7284290001,
+      "url": "https://polymarket.com/event/will-andy-beshear-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.2145,
+          "implied_probability": "21.4%",
+          "payout_multiple": "4.7x"
+        }
+      ],
+      "volume_24h": 577241.6653160003,
+      "url": "https://polymarket.com/event/will-the-colorado-avalanche-win-the-2026-nhl-stanley-cup"
+    },
+    {
+      "question": "Will Tottenham win the 2025\u201326 Champions League?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0175,
+          "implied_probability": "1.8%",
+          "payout_multiple": "57.1x"
+        }
+      ],
+      "volume_24h": 546769.0971740001,
+      "url": "https://polymarket.com/event/will-tottenham-win-the-202526-champions-league"
+    },
+    {
+      "question": "Will Ethereum reach $2,200 in March?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.21,
+          "implied_probability": "21.0%",
+          "payout_multiple": "4.8x"
+        }
+      ],
+      "volume_24h": 541623.9334560003,
+      "url": "https://polymarket.com/event/will-ethereum-reach-2200-in-march-2026"
+    },
+    {
+      "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.185,
+          "implied_probability": "18.5%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "volume_24h": 518931.4168420002,
+      "url": "https://polymarket.com/event/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31"
+    },
+    {
+      "question": "Will Shane Lowry win the 2026 Masters tournament?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0185,
+          "implied_probability": "1.8%",
+          "payout_multiple": "54.1x"
+        }
+      ],
+      "volume_24h": 509876.627699,
+      "url": "https://polymarket.com/event/will-shane-lowry-win-the-2026-masters-tournament"
+    },
+    {
+      "question": "Will Jesus Christ return before 2027?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0375,
+          "implied_probability": "3.8%",
+          "payout_multiple": "26.7x"
+        }
+      ],
+      "volume_24h": 508708.95775699976,
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027"
+    }
+  ],
+  "kalshi_top_opportunities": [
+    {
+      "title": "yes Atlanta wins by over 1.5 Points,yes Los Angeles C wins by over 10.5 Points,yes Colorado St. wins by over 7.5 Points,",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 24.5,
+          "implied_probability": "24%",
+          "payout_multiple": "4.1x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e90298c703b-4690e4abff6"
+    },
+    {
+      "title": "yes Atlanta wins by over 7.5 Points,no Los Angeles C wins by over 19.5 Points,no Over 243.5 points scored,yes Over 223.5",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 13.5,
+          "implied_probability": "14%",
+          "payout_multiple": "7.4x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202644c6141419a-2aae14fff20"
+    },
+    {
+      "title": "yes Brook Lopez: 15+,yes Brook Lopez: 4+",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 23.5,
+          "implied_probability": "24%",
+          "payout_multiple": "4.3x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s2026bf763013254-f0fe0cced6a"
+    },
+    {
+      "title": "yes VAN Canucks,no Over 9.5 goals scored",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.5,
+          "implied_probability": "4%",
+          "payout_multiple": "28.6x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026840de3dee87-47b0fb25d81"
+    },
+    {
+      "title": "yes Atlanta,yes Jalen Johnson: 15+,yes Los Angeles C wins by over 19.5 Points",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 24.0,
+          "implied_probability": "24%",
+          "payout_multiple": "4.2x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026553d02ed446-dafef7945a2"
+    },
+    {
+      "title": "yes Cal State Northridge,yes Southern Illinois,yes Northern Iowa,yes New Mexico St.,yes Liberty,yes Michigan,yes Michiga",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026f90cfe73d28-64dd13a636a"
+    },
+    {
+      "title": "yes Crystal Palace,no Over 3.5 goals scored,yes Como",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 10.0,
+          "implied_probability": "10%",
+          "payout_multiple": "10.0x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026133ba842fd0-9b4687d99ad"
+    },
+    {
+      "title": "yes Phoenix,yes San Antonio,yes Denver,yes New Orleans,yes Miami wins by over 11.5 Points,yes Orlando wins by over 12.5 ",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262b047452c73-977c85ef551"
+    },
+    {
+      "title": "yes Cal State Northridge,yes Southern Illinois,yes New Mexico St.,yes Liberty,yes Michigan,yes Michigan St.,yes Sam Hous",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20260edefdfcc15-5f8a2f67b9e"
+    },
+    {
+      "title": "yes Miami wins by over 11.5 Points,yes Orlando wins by over 9.5 Points,yes Over 225.5 points scored",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 12.5,
+          "implied_probability": "12%",
+          "payout_multiple": "8.0x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026d9f9adc4667-89964317057"
+    },
+    {
+      "title": "yes Terence Atmane,yes Aleksandar Kovacevic,yes Giovanni Mpetshi Perricard,yes Alex Michelsen,yes Rafael Jodar,yes Sebas",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.0,
+          "implied_probability": "3%",
+          "payout_multiple": "33.3x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026f02b5ae600b-49ccabf4886"
+    },
+    {
+      "title": "yes Bayern Munich,yes Both Teams To Score,yes Both Teams To Score,yes Barcelona,yes PSG,yes Napoli,yes Atalanta,yes Juve",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.0,
+          "implied_probability": "2%",
+          "payout_multiple": "50.0x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202643625804a56-b182de75492"
+    },
+    {
+      "title": "yes Miami,yes Phoenix,yes Orlando,yes Houston,yes Denver,yes Sacramento",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.5,
+          "implied_probability": "6%",
+          "payout_multiple": "15.4x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20269fa58afd2ce-cb65f77c54c"
+    },
+    {
+      "title": "yes Miami,yes Phoenix,yes Orlando,yes San Antonio,yes Houston,yes Denver,yes New Orleans,yes Minnesota,yes Southern Illi",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.0,
+          "implied_probability": "3%",
+          "payout_multiple": "33.3x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026017e657af94-7f17636c9df"
+    },
+    {
+      "title": "no Michigan St. wins by over 19.5 Points,yes Sam Houston wins by over 4.5 Points,yes South Florida wins by over 6.5 Poin",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 8.0,
+          "implied_probability": "8%",
+          "payout_multiple": "12.5x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20268e412d8cfdd-f13aabb208f"
+    }
+  ],
+  "summary": {
+    "total_topics_tracked": 29,
+    "high_confidence_signals": 5,
+    "medium_confidence_signals": 1,
+    "cross_platform_signals": 0,
+    "tier1_backed_signals": 0,
+    "prediction_market_matches": 61,
+    "x_signals_quality": {
+      "total": 24,
+      "with_known_author": 24,
+      "with_engagement": 19
+    },
+    "tiktok_signals_quality": {
+      "total": 18,
+      "crypto_relevant": 18
+    }
+  }
+}
