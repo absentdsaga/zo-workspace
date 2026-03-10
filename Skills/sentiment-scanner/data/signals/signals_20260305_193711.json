@@ -1,0 +1,1162 @@
+{
+  "generated_at": "2026-03-05T19:37:11.795668+00:00",
+  "top_signals": [
+    {
+      "topic": "#fyp",
+      "score": 100,
+      "confidence": "high",
+      "mentions": 17,
+      "engagement": 5086,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown",
+        "zolksweb3",
+        "skisupply"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#trending",
+      "score": 100,
+      "confidence": "high",
+      "mentions": 11,
+      "engagement": 3258,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown",
+        "zolksweb3"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#cryptok",
+      "score": 84,
+      "confidence": "high",
+      "mentions": 4,
+      "engagement": 1420,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#meme",
+      "score": 70,
+      "confidence": "medium",
+      "mentions": 3,
+      "engagement": 996,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#cryptocurrency",
+      "score": 57,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 687,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "elon musk",
+      "score": 57,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 685,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": [
+        "Trending Cryptos The Biggest Crypto Obsessed | TikTok. \ud83d\ude0f\ud83d\udd25 #crypto #cryptocurrency #xrp #ledger #ripple #meme #memecoin #fyp #trendingvideo\u201d. \ud83d\ude0f\ud83d\udd25 #crypto #cryptocurrency #xrp #ledger #ripple #meme #meme",
+        "# Memecoin Craze Cools Down. TJR MAKES $1,500,000 WITH A MEMECOIN! Bro is down \ud83d\udcc9 #fyp #crypto #solana #memecoin #funny. memecoins are deadahh a money glitch if yk what you\u2019re doing #memecoin #memecoin"
+      ]
+    },
+    {
+      "topic": "#MemeCoin",
+      "score": 57,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 665,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "dogecoin",
+      "score": 57,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 665,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": [
+        "#invest #crypto #cryptok #btc #crytpocurrency #cryptonews #cryptoinvesting #bullrun #cryptocurrencytrading #bitcoinnews 1000x returns\u2026what\u2019s the next coin? #invest #crypto #cryptok #btc #crytpocurrenc",
+        "# Spotting the Next Viral Memecoin: A Guide for Crypto Enthusiasts. In the ever-evolving world of cryptocurrency, memecoins have emerged as a unique phenomenon, blending humor with financial speculati"
+      ]
+    },
+    {
+      "topic": "#memes",
+      "score": 57,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 659,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "$FRIES",
+      "score": 57,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 682,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#Mallard",
+      "score": 53,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 320,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "xrooge"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#XRPL",
+      "score": 53,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 320,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "xrooge"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#XRP",
+      "score": 53,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 320,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "xrooge"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#Duck",
+      "score": 53,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 320,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "xrooge"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#Quack",
+      "score": 53,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 320,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "xrooge"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "$MALLARD",
+      "score": 53,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 320,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "xrooge"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "$BTC",
+      "score": 50,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 0,
+      "platforms": [
+        "x"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "nehalzzzz1"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": [
+        "\ud83d\ude80 2026 Bull Run Roadmap Feb \u2014 Bear Trap Mar \u2014 $BTC Rally Apr \u2014 Altseason May \u2014 $BTC ATH ($215K?) Jun \u2014 Bull Trap Jul \u2014 Forced Liquidations Aug \u2014 Bear Market Bookmark this. Let\u2019s revisit in 6 months. \ud83d\udd16"
+      ]
+    }
+  ],
+  "prediction_market_edges": [
+    {
+      "type": "polymarket",
+      "question": "Will Ethereum reach $2,200 in March?",
+      "url": "https://polymarket.com/event/will-ethereum-reach-2200-in-march-2026",
+      "matching_social_topics": [
+        "ethereum"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.29,
+          "implied_probability": "29.0%",
+          "payout_multiple": "3.4x"
+        }
+      ],
+      "volume_24h": 275254.3623580001,
+      "social_engagement": 1075,
+      "social_mentions": 3,
+      "match_quality": 74,
+      "social_context": [
+        "# Memecoin Craze Cools Down. TJR MAKES $1,500,000 WITH A MEMECOIN! Bro is down \ud83d\udcc9 #fyp #crypto #solana #memecoin #funny. memecoins are deadahh a money glitch if yk what you\u2019re doing #memecoin #memecoin",
+        "#### Company #### Program #### Terms & Policies # Pups Crypto ## Discover videos related to Pups Crypto on TikTok. A message from our #Crypto pup Ember. He wants you to know we are launching #Sleeples"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk win the 2028 US Presidential Election?",
+      "url": "https://polymarket.com/event/will-elon-musk-win-the-2028-us-presidential-election",
+      "matching_social_topics": [
+        "elon musk"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0145,
+          "implied_probability": "1.5%",
+          "payout_multiple": "69.0x"
+        }
+      ],
+      "volume_24h": 110027.03107799997,
+      "social_engagement": 685,
+      "social_mentions": 2,
+      "match_quality": 71,
+      "social_context": [
+        "Trending Cryptos The Biggest Crypto Obsessed | TikTok. \ud83d\ude0f\ud83d\udd25 #crypto #cryptocurrency #xrp #ledger #ripple #meme #memecoin #fyp #trendingvideo\u201d. \ud83d\ude0f\ud83d\udd25 #crypto #cryptocurrency #xrp #ledger #ripple #meme #meme",
+        "# Memecoin Craze Cools Down. TJR MAKES $1,500,000 WITH A MEMECOIN! Bro is down \ud83d\udcc9 #fyp #crypto #solana #memecoin #funny. memecoins are deadahh a money glitch if yk what you\u2019re doing #memecoin #memecoin"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk win the 2028 Republican presidential nomination?",
+      "url": "https://polymarket.com/event/will-elon-musk-win-the-2028-republican-presidential-nomination",
+      "matching_social_topics": [
+        "elon musk"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0145,
+          "implied_probability": "1.5%",
+          "payout_multiple": "69.0x"
+        }
+      ],
+      "volume_24h": 99460.517273,
+      "social_engagement": 685,
+      "social_mentions": 2,
+      "match_quality": 71,
+      "social_context": [
+        "Trending Cryptos The Biggest Crypto Obsessed | TikTok. \ud83d\ude0f\ud83d\udd25 #crypto #cryptocurrency #xrp #ledger #ripple #meme #memecoin #fyp #trendingvideo\u201d. \ud83d\ude0f\ud83d\udd25 #crypto #cryptocurrency #xrp #ledger #ripple #meme #meme",
+        "# Memecoin Craze Cools Down. TJR MAKES $1,500,000 WITH A MEMECOIN! Bro is down \ud83d\udcc9 #fyp #crypto #solana #memecoin #funny. memecoins are deadahh a money glitch if yk what you\u2019re doing #memecoin #memecoin"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 180-199 tweets from February 27 to March 6, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-180-199",
+      "matching_social_topics": [
+        "elon musk"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0945,
+          "implied_probability": "9.4%",
+          "payout_multiple": "10.6x"
+        }
+      ],
+      "volume_24h": 83575.672149,
+      "social_engagement": 685,
+      "social_mentions": 2,
+      "match_quality": 71,
+      "social_context": [
+        "Trending Cryptos The Biggest Crypto Obsessed | TikTok. \ud83d\ude0f\ud83d\udd25 #crypto #cryptocurrency #xrp #ledger #ripple #meme #memecoin #fyp #trendingvideo\u201d. \ud83d\ude0f\ud83d\udd25 #crypto #cryptocurrency #xrp #ledger #ripple #meme #meme",
+        "# Memecoin Craze Cools Down. TJR MAKES $1,500,000 WITH A MEMECOIN! Bro is down \ud83d\udcc9 #fyp #crypto #solana #memecoin #funny. memecoins are deadahh a money glitch if yk what you\u2019re doing #memecoin #memecoin"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 220-239 tweets from February 27 to March 6, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-220-239",
+      "matching_social_topics": [
+        "elon musk"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.2435,
+          "implied_probability": "24.3%",
+          "payout_multiple": "4.1x"
+        }
+      ],
+      "volume_24h": 70273.921357,
+      "social_engagement": 685,
+      "social_mentions": 2,
+      "match_quality": 71,
+      "social_context": [
+        "Trending Cryptos The Biggest Crypto Obsessed | TikTok. \ud83d\ude0f\ud83d\udd25 #crypto #cryptocurrency #xrp #ledger #ripple #meme #memecoin #fyp #trendingvideo\u201d. \ud83d\ude0f\ud83d\udd25 #crypto #cryptocurrency #xrp #ledger #ripple #meme #meme",
+        "# Memecoin Craze Cools Down. TJR MAKES $1,500,000 WITH A MEMECOIN! Bro is down \ud83d\udcc9 #fyp #crypto #solana #memecoin #funny. memecoins are deadahh a money glitch if yk what you\u2019re doing #memecoin #memecoin"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 240-259 tweets from February 27 to March 6, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-240-259",
+      "matching_social_topics": [
+        "elon musk"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.067,
+          "implied_probability": "6.7%",
+          "payout_multiple": "14.9x"
+        }
+      ],
+      "volume_24h": 64733.86763300002,
+      "social_engagement": 685,
+      "social_mentions": 2,
+      "match_quality": 71,
+      "social_context": [
+        "Trending Cryptos The Biggest Crypto Obsessed | TikTok. \ud83d\ude0f\ud83d\udd25 #crypto #cryptocurrency #xrp #ledger #ripple #meme #memecoin #fyp #trendingvideo\u201d. \ud83d\ude0f\ud83d\udd25 #crypto #cryptocurrency #xrp #ledger #ripple #meme #meme",
+        "# Memecoin Craze Cools Down. TJR MAKES $1,500,000 WITH A MEMECOIN! Bro is down \ud83d\udcc9 #fyp #crypto #solana #memecoin #funny. memecoins are deadahh a money glitch if yk what you\u2019re doing #memecoin #memecoin"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $100,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-100k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.019,
+          "implied_probability": "1.9%",
+          "payout_multiple": "52.6x"
+        }
+      ],
+      "volume_24h": 180998.17013600003,
+      "social_engagement": 352,
+      "social_mentions": 1,
+      "match_quality": 53,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $60,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-60k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.275,
+          "implied_probability": "27.5%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "volume_24h": 124591.26492699995,
+      "social_engagement": 352,
+      "social_mentions": 1,
+      "match_quality": 53,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $45,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-45k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0425,
+          "implied_probability": "4.2%",
+          "payout_multiple": "23.5x"
+        }
+      ],
+      "volume_24h": 104754.60734999999,
+      "social_engagement": 352,
+      "social_mentions": 1,
+      "match_quality": 53,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $55,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-55k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.135,
+          "implied_probability": "13.5%",
+          "payout_multiple": "7.4x"
+        }
+      ],
+      "volume_24h": 103200.11312599994,
+      "social_engagement": 352,
+      "social_mentions": 1,
+      "match_quality": 53,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $90,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-90k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.075,
+          "implied_probability": "7.5%",
+          "payout_multiple": "13.3x"
+        }
+      ],
+      "volume_24h": 72098.00767100001,
+      "social_engagement": 352,
+      "social_mentions": 1,
+      "match_quality": 53,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $85,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-85k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.145,
+          "implied_probability": "14.5%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "volume_24h": 67497.58661300004,
+      "social_engagement": 352,
+      "social_mentions": 1,
+      "match_quality": 53,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $80,000 March 2-8?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-80k-march-2-8",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.036,
+          "implied_probability": "3.6%",
+          "payout_multiple": "27.8x"
+        }
+      ],
+      "volume_24h": 63130.14098200002,
+      "social_engagement": 352,
+      "social_mentions": 1,
+      "match_quality": 53,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $78,000 March 2-8?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-78k-march-2-8",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.074,
+          "implied_probability": "7.4%",
+          "payout_multiple": "13.5x"
+        }
+      ],
+      "volume_24h": 60110.47966600003,
+      "social_engagement": 352,
+      "social_mentions": 1,
+      "match_quality": 53,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $50,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-50k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.07,
+          "implied_probability": "7.0%",
+          "payout_multiple": "14.3x"
+        }
+      ],
+      "volume_24h": 58194.15058599999,
+      "social_engagement": 352,
+      "social_mentions": 1,
+      "match_quality": 53,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Trump out as President by March 31?",
+      "url": "https://polymarket.com/event/trump-out-as-president-by-march-31",
+      "matching_social_topics": [
+        "trump"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.018,
+          "implied_probability": "1.8%",
+          "payout_multiple": "55.6x"
+        }
+      ],
+      "volume_24h": 241845.25075899996,
+      "social_engagement": 191,
+      "social_mentions": 1,
+      "match_quality": 37,
+      "social_context": [
+        "#### Company. #### Program. #### Terms & Policies. We're having trouble playing this video. Please refresh and try again. Trump and Venezuela can retire you\u2026 #fyp #crypto #sol #memecoin #trending. Tru"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Trump acquire Greenland before 2027?",
+      "url": "https://polymarket.com/event/will-trump-acquire-greenland-before-2027",
+      "matching_social_topics": [
+        "trump"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1115,
+          "implied_probability": "11.2%",
+          "payout_multiple": "9.0x"
+        }
+      ],
+      "volume_24h": 62869.33103899999,
+      "social_engagement": 191,
+      "social_mentions": 1,
+      "match_quality": 37,
+      "social_context": [
+        "#### Company. #### Program. #### Terms & Policies. We're having trouble playing this video. Please refresh and try again. Trump and Venezuela can retire you\u2026 #fyp #crypto #sol #memecoin #trending. Tru"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Ivanka Trump win the 2028 Republican presidential nomination?",
+      "url": "https://polymarket.com/event/will-ivanka-trump-win-the-2028-republican-presidential-nomination",
+      "matching_social_topics": [
+        "trump"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 62800.81325,
+      "social_engagement": 191,
+      "social_mentions": 1,
+      "match_quality": 37,
+      "social_context": [
+        "#### Company. #### Program. #### Terms & Policies. We're having trouble playing this video. Please refresh and try again. Trump and Venezuela can retire you\u2026 #fyp #crypto #sol #memecoin #trending. Tru"
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Jesus Christ return before 2027?",
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027",
+      "matching_social_topics": [
+        "jesus"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0375,
+          "implied_probability": "3.8%",
+          "payout_multiple": "26.7x"
+        }
+      ],
+      "volume_24h": 364740.62918900006,
+      "social_engagement": 160,
+      "social_mentions": 1,
+      "match_quality": 34,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Jordan Spieth win the 2026 Masters tournament?",
+      "url": "https://polymarket.com/event/will-jordan-spieth-win-the-2026-masters-tournament",
+      "matching_social_topics": [
+        "jordan"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0275,
+          "implied_probability": "2.8%",
+          "payout_multiple": "36.4x"
+        }
+      ],
+      "volume_24h": 173066.565761,
+      "social_engagement": 143,
+      "social_mentions": 1,
+      "match_quality": 32,
+      "social_context": []
+    }
+  ],
+  "polymarket_top_opportunities": [
+    {
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 2270732.7762989993,
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting"
+    },
+    {
+      "question": "Will Belgium win the 2026 FIFA World Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 1065157.697773,
+      "url": "https://polymarket.com/event/will-belgium-win-the-2026-fifa-world-cup-358"
+    },
+    {
+      "question": "Will Ken Paxton win the 2026 Texas Republican Primary?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.145,
+          "implied_probability": "14.5%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "volume_24h": 970542.4079269983,
+      "url": "https://polymarket.com/event/will-ken-paxton-win-the-2026-republican-primary"
+    },
+    {
+      "question": "Will Mark Kelly win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0255,
+          "implied_probability": "2.5%",
+          "payout_multiple": "39.2x"
+        }
+      ],
+      "volume_24h": 667164.7691619997,
+      "url": "https://polymarket.com/event/will-mark-kelly-win-the-2028-democratic-presidential-nomination-479"
+    },
+    {
+      "question": "Will the Iranian regime fall by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1275,
+          "implied_probability": "12.8%",
+          "payout_multiple": "7.8x"
+        }
+      ],
+      "volume_24h": 652481.5179320003,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31"
+    },
+    {
+      "question": "Will Judy Shelton be confirmed as Fed Chair?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.029,
+          "implied_probability": "2.9%",
+          "payout_multiple": "34.5x"
+        }
+      ],
+      "volume_24h": 519620.72249200026,
+      "url": "https://polymarket.com/event/will-judy-shelton-be-confirmed-as-fed-chair"
+    },
+    {
+      "question": "Will Mexico win the 2026 FIFA World Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 516982.854772,
+      "url": "https://polymarket.com/event/will-mexico-win-the-2026-fifa-world-cup-529"
+    },
+    {
+      "question": "Will Wes Moore win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0155,
+          "implied_probability": "1.6%",
+          "payout_multiple": "64.5x"
+        }
+      ],
+      "volume_24h": 480185.59427999996,
+      "url": "https://polymarket.com/event/will-wes-moore-win-the-2028-democratic-presidential-nomination-714"
+    },
+    {
+      "question": "US forces enter Iran by March 7?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.073,
+          "implied_probability": "7.3%",
+          "payout_multiple": "13.7x"
+        }
+      ],
+      "volume_24h": 422681.90394699975,
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-7"
+    },
+    {
+      "question": "Will Reza Pahlavi enter Iran by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0345,
+          "implied_probability": "3.5%",
+          "payout_multiple": "29.0x"
+        }
+      ],
+      "volume_24h": 381612.2458650001,
+      "url": "https://polymarket.com/event/will-reza-pahlavi-enter-iran-by-march-31-282"
+    },
+    {
+      "question": "Will Jesus Christ return before 2027?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0375,
+          "implied_probability": "3.8%",
+          "payout_multiple": "26.7x"
+        }
+      ],
+      "volume_24h": 364740.62918900006,
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027"
+    },
+    {
+      "question": "Will Andy Beshear win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.015,
+          "implied_probability": "1.5%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 361687.212179,
+      "url": "https://polymarket.com/event/will-andy-beshear-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will John Cornyn win the 2026 Texas Republican Primary?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.145,
+          "implied_probability": "14.5%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "volume_24h": 356888.08248100185,
+      "url": "https://polymarket.com/event/will-john-cornyn-win-the-2026-republican-primary"
+    },
+    {
+      "question": "Will Pete Buttigieg win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0345,
+          "implied_probability": "3.5%",
+          "payout_multiple": "29.0x"
+        }
+      ],
+      "volume_24h": 315647.84252699994,
+      "url": "https://polymarket.com/event/will-pete-buttigieg-win-the-2028-democratic-presidential-nomination-687"
+    },
+    {
+      "question": "Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.053,
+          "implied_probability": "5.3%",
+          "payout_multiple": "18.9x"
+        }
+      ],
+      "volume_24h": 311964.2104029999,
+      "url": "https://polymarket.com/event/will-alexandria-ocasio-cortez-win-the-2028-us-presidential-election"
+    }
+  ],
+  "kalshi_top_opportunities": [
+    {
+      "title": "yes Trae Young: 20+,yes Orlando wins by over 3.5 Points,yes San Antonio wins by over 1.5 Points,yes Houston wins by over",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e89602e25de-1a0dee57075"
+    },
+    {
+      "title": "no Boston wins by over 2.5 goals,no Buffalo wins by over 2.5 goals,no Tampa Bay wins by over 2.5 goals,no Toronto wins b",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 14.5,
+          "implied_probability": "14%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026246cbf5ee3e-cc3d5c0d89f"
+    },
+    {
+      "title": "yes Over 225.5 points scored,yes Over 216.5 points scored,no Over 237.5 points scored,yes Over 216.5 points scored,yes O",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.0,
+          "implied_probability": "2%",
+          "payout_multiple": "50.0x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026540f5970c96-d3db4cd4328"
+    },
+    {
+      "title": "yes Bam Adebayo: 20+,yes Desmond Bane: 15+,yes Paolo Banchero: 20+,yes Kevin Durant: 25+,yes Bam Adebayo: 10+,yes Cade C",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 4.0,
+          "implied_probability": "4%",
+          "payout_multiple": "25.0x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026107e0de3ebf-d007f5b4ab4"
+    },
+    {
+      "title": "yes Miami,yes Orlando,yes Houston,yes Andrew Wiggins: 10+,yes Cade Cunningham: 20+,yes Amen Thompson: 10+,no San Antonio",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.5,
+          "implied_probability": "6%",
+          "payout_multiple": "18.2x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20268f2e8f8f3c8-0ec7cd3e4de"
+    },
+    {
+      "title": "yes Buffalo wins by over 1.5 goals,no Over 5.5 goals scored",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 8.0,
+          "implied_probability": "8%",
+          "payout_multiple": "12.5x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20264bcb6fc833c-61df0a9f712"
+    },
+    {
+      "title": "yes Miami,yes Orlando,yes Houston,yes Minnesota,yes San Antonio wins by over 1.5 Points,yes Over 199.5 points scored",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 9.0,
+          "implied_probability": "9%",
+          "payout_multiple": "11.1x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20269b806039783-b110c9a125c"
+    },
+    {
+      "title": "yes San Antonio,yes Boston University,yes Southern Illinois,yes Colgate,yes Fairfield,yes Portland,yes St. Thomas",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.5,
+          "implied_probability": "2%",
+          "payout_multiple": "40.0x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20261278dee382a-0062e9d5fd8"
+    },
+    {
+      "title": "yes Miami,yes Phoenix,yes Orlando,yes San Antonio,yes Houston,yes Minnesota,yes Boston,yes Los Angeles L,yes San Antonio",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 9.5,
+          "implied_probability": "10%",
+          "payout_multiple": "10.5x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026c285dee7696-0288469ef41"
+    },
+    {
+      "title": "yes Miami wins by over 5.5 Points,yes Orlando wins by over 3.5 Points,yes Houston wins by over 3.5 Points,no Over 243.5 ",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 12.0,
+          "implied_probability": "12%",
+          "payout_multiple": "8.3x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202649a863395bf-5d0d5ae75ba"
+    },
+    {
+      "title": "yes Sam Houston wins by over 4.5 Points,yes South Florida wins by over 3.5 Points,yes Over 137.5 points scored",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 10.5,
+          "implied_probability": "10%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026f9bbb2ae38a-18a685aa809"
+    },
+    {
+      "title": "yes San Antonio,yes Denver,yes Minnesota,yes Southern Illinois,yes Michigan wins by over 5.5 Points,yes Hawai'i wins by ",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.0,
+          "implied_probability": "2%",
+          "payout_multiple": "50.0x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026edbd1b4eaf4-1fa6e6917e5"
+    },
+    {
+      "title": "yes Tyler Herro: 1+,yes De'Aaron Fox: 2+,yes Austin Reaves: 2+,yes Miami,yes Houston,yes Washington,yes Devin Booker: 15",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 8.5,
+          "implied_probability": "8%",
+          "payout_multiple": "11.8x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20264b2d57c1c53-ddac9721184"
+    },
+    {
+      "title": "yes Miami,yes Phoenix,yes Orlando,yes San Antonio,yes Houston,yes Denver,yes New Orleans,no Toronto wins by over 5.5 Poi",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 4.0,
+          "implied_probability": "4%",
+          "payout_multiple": "25.0x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202654bbb172fdf-e0342f1ddce"
+    },
+    {
+      "title": "yes Trae Young: 20+,yes Miami wins by over 5.5 Points,yes Orlando wins by over 3.5 Points,yes San Antonio wins by over 1",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026563d71f614f-f7140ef727b"
+    }
+  ],
+  "summary": {
+    "total_topics_tracked": 97,
+    "high_confidence_signals": 3,
+    "medium_confidence_signals": 14,
+    "cross_platform_signals": 0,
+    "tier1_backed_signals": 0,
+    "prediction_market_matches": 20,
+    "x_signals_quality": {
+      "total": 11,
+      "with_known_author": 11,
+      "with_engagement": 6
+    },
+    "tiktok_signals_quality": {
+      "total": 20,
+      "crypto_relevant": 20
+    }
+  }
+}

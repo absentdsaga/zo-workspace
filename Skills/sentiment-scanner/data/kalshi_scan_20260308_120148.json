@@ -1,0 +1,767 @@
+{
+  "scan_time": "2026-03-08T12:01:47.864274+00:00",
+  "markets_with_edge": [
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026A40BEFFD9C4-2B2161F57D8",
+      "title": "yes San Antonio,yes Stephon Castle: 10+,yes Victor Wembanyama: 15+,yes Stephon Castle: 2+",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026A40BEFFD9C4",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026a40beffd9c4-2b2161f57d8",
+      "yes_bid": 0,
+      "yes_ask": 55,
+      "no_bid": 45,
+      "no_ask": 100,
+      "yes_mid": 27.5,
+      "no_mid": 72.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 27.5,
+          "implied_probability": "28%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264053+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202667D03E58448-7C3489A0D5C",
+      "title": "yes UNC Wilmington,yes Penn St.,yes Over 149.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S202667D03E58448",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202667d03e58448-7c3489a0d5c",
+      "yes_bid": 0,
+      "yes_ask": 15,
+      "no_bid": 85,
+      "no_ask": 100,
+      "yes_mid": 7.5,
+      "no_mid": 92.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 7.5,
+          "implied_probability": "8%",
+          "payout_multiple": "13.3x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264134+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B9654597155-5D320A07140",
+      "title": "yes Navy wins by over 7.5 Points,yes UNC Wilmington wins by over 7.5 Points,yes South Florida wins by over 16.5 Points,yes Illinois wins by over 16.5 Points,yes Tulsa wins by over 11.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B9654597155",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b9654597155-5d320a07140",
+      "yes_bid": 3,
+      "yes_ask": 4,
+      "no_bid": 96,
+      "no_ask": 97,
+      "yes_mid": 3.5,
+      "no_mid": 96.5,
+      "volume": 401,
+      "volume_24h": 0,
+      "open_interest": 401,
+      "last_price": 3,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.5,
+          "implied_probability": "4%",
+          "payout_multiple": "28.6x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264162+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026E3C47C3D0B3-87F82E48C19",
+      "title": "yes CHI Blackhawks,yes COL Avalanche",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026E3C47C3D0B3",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e3c47c3d0b3-87f82e48c19",
+      "yes_bid": 0,
+      "yes_ask": 21,
+      "no_bid": 79,
+      "no_ask": 100,
+      "yes_mid": 10.5,
+      "no_mid": 89.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 10.5,
+          "implied_probability": "10%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264189+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20263D433426667-211E0279C5C",
+      "title": "yes UNC Wilmington,yes Lehigh,yes Penn St.,yes Over 149.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S20263D433426667",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20263d433426667-211e0279c5c",
+      "yes_bid": 0,
+      "yes_ask": 7,
+      "no_bid": 93,
+      "no_ask": 100,
+      "yes_mid": 3.5,
+      "no_mid": 96.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.5,
+          "implied_probability": "4%",
+          "payout_multiple": "28.6x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264197+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B9654597155-E59A6B481C7",
+      "title": "yes Navy wins by over 7.5 Points,yes UNC Wilmington wins by over 7.5 Points,yes South Florida wins by over 16.5 Points,no Illinois wins by over 16.5 Points,yes Tulsa wins by over 11.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B9654597155",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b9654597155-e59a6b481c7",
+      "yes_bid": 0,
+      "yes_ask": 4,
+      "no_bid": 96,
+      "no_ask": 100,
+      "yes_mid": 2.0,
+      "no_mid": 98.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.0,
+          "implied_probability": "2%",
+          "payout_multiple": "50.0x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264204+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20262047B4B9AEC-7994C544521",
+      "title": "yes Navy,yes UNC Wilmington,yes Colgate,yes UAB,yes Nebraska,yes Michigan,yes Rutgers",
+      "event_ticker": "KXMVECROSSCATEGORY-S20262047B4B9AEC",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262047b4b9aec-7994c544521",
+      "yes_bid": 0,
+      "yes_ask": 12,
+      "no_bid": 88,
+      "no_ask": 100,
+      "yes_mid": 6.0,
+      "no_mid": 94.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.0,
+          "implied_probability": "6%",
+          "payout_multiple": "16.7x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264215+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20265BAB516E716-5EC949B8D0B",
+      "title": "yes Navy,yes UNC Wilmington,yes Colgate,yes UAB,yes Michigan,yes Rutgers",
+      "event_ticker": "KXMVECROSSCATEGORY-S20265BAB516E716",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20265bab516e716-5ec949b8d0b",
+      "yes_bid": 0,
+      "yes_ask": 17,
+      "no_bid": 83,
+      "no_ask": 100,
+      "yes_mid": 8.5,
+      "no_mid": 91.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 8.5,
+          "implied_probability": "8%",
+          "payout_multiple": "11.8x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264229+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202648A546532D9-E227FDA2C73",
+      "title": "yes Navy,yes UNC Wilmington,yes Colgate,yes UAB,yes Rutgers",
+      "event_ticker": "KXMVECROSSCATEGORY-S202648A546532D9",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202648a546532d9-e227fda2c73",
+      "yes_bid": 0,
+      "yes_ask": 20,
+      "no_bid": 80,
+      "no_ask": 100,
+      "yes_mid": 10.0,
+      "no_mid": 90.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 10.0,
+          "implied_probability": "10%",
+          "payout_multiple": "10.0x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264257+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202690F4E017458-48B2E45B391",
+      "title": "yes Navy wins by over 7.5 Points,yes UNC Wilmington wins by over 7.5 Points,yes South Florida wins by over 16.5 Points,yes Tulsa wins by over 11.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S202690F4E017458",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202690f4e017458-48b2e45b391",
+      "yes_bid": 0,
+      "yes_ask": 7,
+      "no_bid": 93,
+      "no_ask": 100,
+      "yes_mid": 3.5,
+      "no_mid": 96.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.5,
+          "implied_probability": "4%",
+          "payout_multiple": "28.6x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264267+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202666C99420600-94A6B3AF3E2",
+      "title": "yes Navy wins by over 7.5 Points,yes UNC Wilmington wins by over 7.5 Points,yes South Florida wins by over 16.5 Points,yes Rutgers wins by over 5.5 Points,yes Tulsa wins by over 11.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S202666C99420600",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202666c99420600-94a6b3af3e2",
+      "yes_bid": 0,
+      "yes_ask": 4,
+      "no_bid": 96,
+      "no_ask": 100,
+      "yes_mid": 2.0,
+      "no_mid": 98.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.0,
+          "implied_probability": "2%",
+          "payout_multiple": "50.0x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264327+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20266C31E490787-2B0BB834B57",
+      "title": "yes Illinois wins by over 10.5 Points,yes Michigan wins by over 5.5 Points,yes Rutgers wins by over 2.5 Points,no Over 147.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S20266C31E490787",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20266c31e490787-2b0bb834b57",
+      "yes_bid": 0,
+      "yes_ask": 29,
+      "no_bid": 71,
+      "no_ask": 100,
+      "yes_mid": 14.5,
+      "no_mid": 85.5,
+      "volume": 40,
+      "volume_24h": 0,
+      "open_interest": 40,
+      "last_price": 23,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 14.5,
+          "implied_probability": "14%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264360+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026CB8B5C81D32-C183BA2B7F4",
+      "title": "yes Navy wins by over 7.5 Points,yes UNC Wilmington wins by over 7.5 Points,yes South Florida wins by over 16.5 Points,yes Rutgers wins by over 5.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026CB8B5C81D32",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026cb8b5c81d32-c183ba2b7f4",
+      "yes_bid": 0,
+      "yes_ask": 7,
+      "no_bid": 93,
+      "no_ask": 100,
+      "yes_mid": 3.5,
+      "no_mid": 96.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.5,
+          "implied_probability": "4%",
+          "payout_multiple": "28.6x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264380+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026F7E0811F7E5-5386E0178FD",
+      "title": "yes UNC Wilmington wins by over 7.5 Points,yes South Florida wins by over 16.5 Points,yes Rutgers wins by over 5.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F7E0811F7E5",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026f7e0811f7e5-5386e0178fd",
+      "yes_bid": 0,
+      "yes_ask": 13,
+      "no_bid": 87,
+      "no_ask": 100,
+      "yes_mid": 6.5,
+      "no_mid": 93.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.5,
+          "implied_probability": "6%",
+          "payout_multiple": "15.4x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264423+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20269240922E7F6-1AA7CC745BB",
+      "title": "yes TB Lightning,yes Pittsburgh wins by over 1.5 goals,yes Colorado wins by over 1.5 goals",
+      "event_ticker": "KXMVECROSSCATEGORY-S20269240922E7F6",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20269240922e7f6-1aa7cc745bb",
+      "yes_bid": 0,
+      "yes_ask": 8,
+      "no_bid": 92,
+      "no_ask": 100,
+      "yes_mid": 4.0,
+      "no_mid": 96.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 4.0,
+          "implied_probability": "4%",
+          "payout_multiple": "25.0x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264452+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026C8A14317E3A-03E0100E2FB",
+      "title": "yes Cleveland,yes San Antonio,yes New York,yes Milwaukee",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026C8A14317E3A",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026c8a14317e3a-03e0100e2fb",
+      "yes_bid": 0,
+      "yes_ask": 23,
+      "no_bid": 77,
+      "no_ask": 100,
+      "yes_mid": 11.5,
+      "no_mid": 88.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 11.5,
+          "implied_probability": "12%",
+          "payout_multiple": "8.7x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264615+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202624EFE1A3E44-FEA3EA25D62",
+      "title": "yes Rutgers,yes Over 144.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S202624EFE1A3E44",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202624efe1a3e44-fea3ea25d62",
+      "yes_bid": 0,
+      "yes_ask": 48,
+      "no_bid": 52,
+      "no_ask": 100,
+      "yes_mid": 24.0,
+      "no_mid": 76.0,
+      "volume": 33,
+      "volume_24h": 0,
+      "open_interest": 33,
+      "last_price": 43,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 24.0,
+          "implied_probability": "24%",
+          "payout_multiple": "4.2x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264638+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026460FC5368DC-77F20BFFA1D",
+      "title": "yes Rutgers wins by over 2.5 Points,yes Over 144.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026460FC5368DC",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026460fc5368dc-77f20bffa1d",
+      "yes_bid": 0,
+      "yes_ask": 44,
+      "no_bid": 56,
+      "no_ask": 100,
+      "yes_mid": 22.0,
+      "no_mid": 78.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 22.0,
+          "implied_probability": "22%",
+          "payout_multiple": "4.5x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264653+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20260FBC2254615-114DB168F62",
+      "title": "yes Navy wins by over 7.5 Points,yes UNC Wilmington wins by over 7.5 Points,yes Colgate wins by over 1.5 Points,no Monmouth wins by over 3.5 Points,no Northern Kentucky wins by over 2.5 Points,yes East Tennessee St. wins by over 4.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20260FBC2254615",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20260fbc2254615-114db168f62",
+      "yes_bid": 0,
+      "yes_ask": 3,
+      "no_bid": 97,
+      "no_ask": 100,
+      "yes_mid": 1.5,
+      "no_mid": 98.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264681+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026460FC5368DC-D311AA8C231",
+      "title": "yes Rutgers wins by over 5.5 Points,yes Over 144.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026460FC5368DC",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026460fc5368dc-d311aa8c231",
+      "yes_bid": 0,
+      "yes_ask": 36,
+      "no_bid": 64,
+      "no_ask": 100,
+      "yes_mid": 18.0,
+      "no_mid": 82.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 18.0,
+          "implied_probability": "18%",
+          "payout_multiple": "5.6x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264688+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202676BE938D291-F16B5C19812",
+      "title": "yes Navy wins by over 7.5 Points,yes UNC Wilmington wins by over 7.5 Points,yes Colgate wins by over 1.5 Points,no Monmouth wins by over 3.5 Points,no Northern Kentucky wins by over 2.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S202676BE938D291",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202676be938d291-f16b5c19812",
+      "yes_bid": 0,
+      "yes_ask": 5,
+      "no_bid": 95,
+      "no_ask": 100,
+      "yes_mid": 2.5,
+      "no_mid": 97.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.5,
+          "implied_probability": "2%",
+          "payout_multiple": "40.0x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264709+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202626ED7BA3182-08A1362203E",
+      "title": "yes Colgate,yes Monmouth,yes Memphis,yes Merrimack,yes Green Bay,yes Charleston,yes East Tennessee St.",
+      "event_ticker": "KXMVECROSSCATEGORY-S202626ED7BA3182",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202626ed7ba3182-08a1362203e",
+      "yes_bid": 0,
+      "yes_ask": 3,
+      "no_bid": 97,
+      "no_ask": 100,
+      "yes_mid": 1.5,
+      "no_mid": 98.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264782+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026E475881C876-C1A717E542B",
+      "title": "yes PIT Penguins,yes DAL Stars,yes VGK Golden Knights,yes COL Avalanche,yes ANA Ducks",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026E475881C876",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e475881c876-c1a717e542b",
+      "yes_bid": 0,
+      "yes_ask": 9,
+      "no_bid": 91,
+      "no_ask": 100,
+      "yes_mid": 4.5,
+      "no_mid": 95.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 4.5,
+          "implied_probability": "4%",
+          "payout_multiple": "22.2x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264838+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026E5E55302966-E83F8BAA307",
+      "title": "yes Navy wins by over 7.5 Points,yes UNC Wilmington wins by over 7.5 Points,yes Colgate wins by over 1.5 Points,no Monmouth wins by over 3.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026E5E55302966",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e5e55302966-e83f8baa307",
+      "yes_bid": 0,
+      "yes_ask": 8,
+      "no_bid": 92,
+      "no_ask": 100,
+      "yes_mid": 4.0,
+      "no_mid": 96.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 4.0,
+          "implied_probability": "4%",
+          "payout_multiple": "25.0x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264845+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026F00764B46C4-2A02ECE1443",
+      "title": "yes Colgate,no Nebraska wins by over 7.5 Points,yes Michigan wins by over 10.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F00764B46C4",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026f00764b46c4-2a02ece1443",
+      "yes_bid": 0,
+      "yes_ask": 15,
+      "no_bid": 85,
+      "no_ask": 100,
+      "yes_mid": 7.5,
+      "no_mid": 92.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 7.5,
+          "implied_probability": "8%",
+          "payout_multiple": "13.3x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264859+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20261B4ED528FB5-5EA78F724E1",
+      "title": "yes Colgate,yes Michigan wins by over 10.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20261B4ED528FB5",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20261b4ed528fb5-5ea78f724e1",
+      "yes_bid": 0,
+      "yes_ask": 27,
+      "no_bid": 73,
+      "no_ask": 100,
+      "yes_mid": 13.5,
+      "no_mid": 86.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 13.5,
+          "implied_probability": "14%",
+          "payout_multiple": "7.4x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264866+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20260EACB449052-6C0822BE406",
+      "title": "yes Navy wins by over 7.5 Points,yes UNC Wilmington wins by over 7.5 Points,yes Colgate wins by over 1.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20260EACB449052",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20260eacb449052-6c0822be406",
+      "yes_bid": 0,
+      "yes_ask": 16,
+      "no_bid": 84,
+      "no_ask": 100,
+      "yes_mid": 8.0,
+      "no_mid": 92.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 8.0,
+          "implied_probability": "8%",
+          "payout_multiple": "12.5x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264875+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026DA223C94530-C429BE2BA84",
+      "title": "yes Illinois,yes Memphis,yes Michigan,yes Rutgers",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026DA223C94530",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026da223c94530-c429be2ba84",
+      "yes_bid": 0,
+      "yes_ask": 30,
+      "no_bid": 70,
+      "no_ask": 100,
+      "yes_mid": 15.0,
+      "no_mid": 85.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 15.0,
+          "implied_probability": "15%",
+          "payout_multiple": "6.7x"
+        }
+      ],
+      "scanned_at": "2026-03-08T12:01:48.264881+00:00"
+    }
+  ],
+  "high_volume_markets": [],
+  "summary": {
+    "total_scanned": 500,
+    "markets_with_cheap_outcomes": 28,
+    "high_volume_markets": 0
+  }
+}

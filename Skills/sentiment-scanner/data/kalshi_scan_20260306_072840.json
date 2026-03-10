@@ -1,0 +1,65 @@
+{
+  "scan_time": "2026-03-06T07:28:40.131082+00:00",
+  "markets_with_edge": [
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202600D8C15CDE2-1E5BD55ADA4",
+      "title": "yes Kon Knueppel: 2+,yes Devin Booker: 2+,yes Jalen Green: 2+,yes Los Angeles L,yes Jalen Brunson: 15+,yes OG Anunoby: 10+,yes Jalen Green: 2+",
+      "event_ticker": "KXMVECROSSCATEGORY-S202600D8C15CDE2",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202600d8c15cde2-1e5bd55ada4",
+      "yes_bid": 0,
+      "yes_ask": 50,
+      "no_bid": 49,
+      "no_ask": 100,
+      "yes_mid": 25.0,
+      "no_mid": 74.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 25.0,
+          "implied_probability": "25%",
+          "payout_multiple": "4.0x"
+        }
+      ],
+      "scanned_at": "2026-03-06T07:28:40.906501+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026FC45E8DA088-300225E110A",
+      "title": "yes Derrick White: 2+,yes Payton Pritchard: 2+,yes Boston,yes Los Angeles L,yes Cooper Flagg: 4+",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FC45E8DA088",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026fc45e8da088-300225e110a",
+      "yes_bid": 0,
+      "yes_ask": 51,
+      "no_bid": 49,
+      "no_ask": 100,
+      "yes_mid": 25.5,
+      "no_mid": 74.5,
+      "volume": 29,
+      "volume_24h": 0,
+      "open_interest": 29,
+      "last_price": 51,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 25.5,
+          "implied_probability": "26%",
+          "payout_multiple": "3.9x"
+        }
+      ],
+      "scanned_at": "2026-03-06T07:28:40.906634+00:00"
+    }
+  ],
+  "high_volume_markets": [],
+  "summary": {
+    "total_scanned": 500,
+    "markets_with_cheap_outcomes": 2,
+    "high_volume_markets": 0
+  }
+}

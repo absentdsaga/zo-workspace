@@ -1,0 +1,65 @@
+{
+  "scan_time": "2026-03-06T12:28:38.723804+00:00",
+  "markets_with_edge": [
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20267D63C332ED6-6653C5FE6AF",
+      "title": "yes Charlotte,yes Miami (OH),yes St. John's,yes Austin Peay",
+      "event_ticker": "KXMVECROSSCATEGORY-S20267D63C332ED6",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20267d63c332ed6-6653c5fe6af",
+      "yes_bid": 0,
+      "yes_ask": 53,
+      "no_bid": 46,
+      "no_ask": 100,
+      "yes_mid": 26.5,
+      "no_mid": 73.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 26.5,
+          "implied_probability": "26%",
+          "payout_multiple": "3.8x"
+        }
+      ],
+      "scanned_at": "2026-03-06T12:28:39.401405+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026E3053636EA0-70A52D0897B",
+      "title": "yes Luka Don\u010di\u0107: 4+,yes Luka Don\u010di\u0107: 30+",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026E3053636EA0",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s2026e3053636ea0-70a52d0897b",
+      "yes_bid": 0,
+      "yes_ask": 51,
+      "no_bid": 48,
+      "no_ask": 100,
+      "yes_mid": 25.5,
+      "no_mid": 74.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 25.5,
+          "implied_probability": "26%",
+          "payout_multiple": "3.9x"
+        }
+      ],
+      "scanned_at": "2026-03-06T12:28:39.401479+00:00"
+    }
+  ],
+  "high_volume_markets": [],
+  "summary": {
+    "total_scanned": 500,
+    "markets_with_cheap_outcomes": 2,
+    "high_volume_markets": 0
+  }
+}

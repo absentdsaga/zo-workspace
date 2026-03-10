@@ -1,0 +1,660 @@
+{
+  "generated_at": "2026-03-06T09:38:49.995142+00:00",
+  "top_signals": [
+    {
+      "topic": "#2026",
+      "score": 50,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "jakeclaverqf12",
+        "infused"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    }
+  ],
+  "prediction_market_edges": [
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $100,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-100k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.018,
+          "implied_probability": "1.8%",
+          "payout_multiple": "55.6x"
+        }
+      ],
+      "volume_24h": 391430.15420199995,
+      "social_engagement": 32,
+      "social_mentions": 1,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $72,000 on March 6?",
+      "url": "https://polymarket.com/event/bitcoin-above-72k-on-march-6",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1165,
+          "implied_probability": "11.7%",
+          "payout_multiple": "8.6x"
+        }
+      ],
+      "volume_24h": 271471.957467,
+      "social_engagement": 32,
+      "social_mentions": 1,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $66,000 on March 6?",
+      "url": "https://polymarket.com/event/bitcoin-above-66k-on-march-6",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0125,
+          "implied_probability": "1.2%",
+          "payout_multiple": "80.0x"
+        }
+      ],
+      "volume_24h": 259508.87213799995,
+      "social_engagement": 32,
+      "social_mentions": 1,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $74,000 on March 6?",
+      "url": "https://polymarket.com/event/bitcoin-above-74k-on-march-6",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.018,
+          "implied_probability": "1.8%",
+          "payout_multiple": "55.6x"
+        }
+      ],
+      "volume_24h": 241226.53824700014,
+      "social_engagement": 32,
+      "social_mentions": 1,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Bitcoin Up or Down on March 6?",
+      "url": "https://polymarket.com/event/bitcoin-up-or-down-on-march-6",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Up",
+          "price": 0.275,
+          "implied_probability": "27.5%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "volume_24h": 146055.918665,
+      "social_engagement": 32,
+      "social_mentions": 1,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $80,000 March 2-8?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-80k-march-2-8",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0135,
+          "implied_probability": "1.4%",
+          "payout_multiple": "74.1x"
+        }
+      ],
+      "volume_24h": 132212.579292,
+      "social_engagement": 32,
+      "social_mentions": 1,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $68,000 on March 6?",
+      "url": "https://polymarket.com/event/bitcoin-above-68k-on-march-6",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0485,
+          "implied_probability": "4.9%",
+          "payout_multiple": "20.6x"
+        }
+      ],
+      "volume_24h": 131634.21789099992,
+      "social_engagement": 32,
+      "social_mentions": 1,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Iran close the Strait of Hormuz by March 31?",
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-march-31",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.215,
+          "implied_probability": "21.5%",
+          "payout_multiple": "4.7x"
+        }
+      ],
+      "volume_24h": 3749132.5515159615,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 3633008.6434169947,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the Iranian regime fall by March 31?",
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1285,
+          "implied_probability": "12.8%",
+          "payout_multiple": "7.8x"
+        }
+      ],
+      "volume_24h": 2194829.558006999,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 180-199 tweets from February 27 to March 6, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-180-199",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1495,
+          "implied_probability": "14.9%",
+          "payout_multiple": "6.7x"
+        }
+      ],
+      "volume_24h": 756126.0927730007,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "url": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.175,
+          "implied_probability": "17.5%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "volume_24h": 523883.25531600055,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will FC Bayern M\u00fcnchen win on 2026-03-06?",
+      "url": "https://polymarket.com/event/bun-bay-moe-2026-03-06-bay",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.175,
+          "implied_probability": "17.5%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "volume_24h": 521021.2471469997,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Jesus Christ return before 2027?",
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0375,
+          "implied_probability": "3.8%",
+          "payout_multiple": "26.7x"
+        }
+      ],
+      "volume_24h": 423547.491133,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 220-239 tweets from February 27 to March 6, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-220-239",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.097,
+          "implied_probability": "9.7%",
+          "payout_multiple": "10.3x"
+        }
+      ],
+      "volume_24h": 398653.15904099995,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+      "url": "https://polymarket.com/event/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.295,
+          "implied_probability": "29.5%",
+          "payout_multiple": "3.4x"
+        }
+      ],
+      "volume_24h": 390230.5183979999,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 200-219 tweets from February 27 to March 6, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-200-219",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.2565,
+          "implied_probability": "25.7%",
+          "payout_multiple": "3.9x"
+        }
+      ],
+      "volume_24h": 354741.16561000014,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 240-259 tweets from February 27 to March 6, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-240-259",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 343220.1820679998,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Reza Pahlavi enter Iran by March 31?",
+      "url": "https://polymarket.com/event/will-reza-pahlavi-enter-iran-by-march-31-282",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0365,
+          "implied_probability": "3.6%",
+          "payout_multiple": "27.4x"
+        }
+      ],
+      "volume_24h": 340289.130722,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Matt Fitzpatrick win the 2026 Masters tournament?",
+      "url": "https://polymarket.com/event/will-matt-fitzpatrick-win-the-2026-masters-tournament",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0115,
+          "implied_probability": "1.1%",
+          "payout_multiple": "87.0x"
+        }
+      ],
+      "volume_24h": 314961.908085,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    }
+  ],
+  "polymarket_top_opportunities": [
+    {
+      "question": "Will Iran close the Strait of Hormuz by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.215,
+          "implied_probability": "21.5%",
+          "payout_multiple": "4.7x"
+        }
+      ],
+      "volume_24h": 3749132.5515159615,
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-march-31"
+    },
+    {
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 3633008.6434169947,
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting"
+    },
+    {
+      "question": "Will the Iranian regime fall by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1285,
+          "implied_probability": "12.8%",
+          "payout_multiple": "7.8x"
+        }
+      ],
+      "volume_24h": 2194829.558006999,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31"
+    },
+    {
+      "question": "US forces enter Iran by March 7?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0305,
+          "implied_probability": "3.0%",
+          "payout_multiple": "32.8x"
+        }
+      ],
+      "volume_24h": 1293148.152061001,
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-7"
+    },
+    {
+      "question": "Will Judy Shelton be confirmed as Fed Chair?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.032,
+          "implied_probability": "3.2%",
+          "payout_multiple": "31.2x"
+        }
+      ],
+      "volume_24h": 783263.8136680004,
+      "url": "https://polymarket.com/event/will-judy-shelton-be-confirmed-as-fed-chair"
+    },
+    {
+      "question": "Will Elon Musk post 180-199 tweets from February 27 to March 6, 2026?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1495,
+          "implied_probability": "14.9%",
+          "payout_multiple": "6.7x"
+        }
+      ],
+      "volume_24h": 756126.0927730007,
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-180-199"
+    },
+    {
+      "question": "Will Kim Kardashian win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 580358.5655210001,
+      "url": "https://polymarket.com/event/will-kim-kardashian-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will Greg Abbott win the 2028 Republican presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 561490.656181,
+      "url": "https://polymarket.com/event/will-greg-abbott-win-the-2028-republican-presidential-nomination"
+    },
+    {
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.175,
+          "implied_probability": "17.5%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "volume_24h": 523883.25531600055,
+      "url": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027"
+    },
+    {
+      "question": "Will FC Bayern M\u00fcnchen win on 2026-03-06?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.175,
+          "implied_probability": "17.5%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "volume_24h": 521021.2471469997,
+      "url": "https://polymarket.com/event/bun-bay-moe-2026-03-06-bay"
+    },
+    {
+      "question": "US x Iran ceasefire by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.285,
+          "implied_probability": "28.5%",
+          "payout_multiple": "3.5x"
+        }
+      ],
+      "volume_24h": 502510.71568199975,
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-31"
+    },
+    {
+      "question": "Mavericks vs. Celtics",
+      "cheap_outcomes": [
+        {
+          "outcome": "Mavericks",
+          "price": 0.115,
+          "implied_probability": "11.5%",
+          "payout_multiple": "8.7x"
+        }
+      ],
+      "volume_24h": 497410.5071890003,
+      "url": "https://polymarket.com/event/nba-dal-bos-2026-03-06"
+    },
+    {
+      "question": "US x Iran ceasefire by March 15?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.105,
+          "implied_probability": "10.5%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "volume_24h": 461763.28500599967,
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-15"
+    },
+    {
+      "question": "Will Jesus Christ return before 2027?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0375,
+          "implied_probability": "3.8%",
+          "payout_multiple": "26.7x"
+        }
+      ],
+      "volume_24h": 423547.491133,
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027"
+    },
+    {
+      "question": "Will Elon Musk post 220-239 tweets from February 27 to March 6, 2026?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.097,
+          "implied_probability": "9.7%",
+          "payout_multiple": "10.3x"
+        }
+      ],
+      "volume_24h": 398653.15904099995,
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-220-239"
+    }
+  ],
+  "kalshi_top_opportunities": [],
+  "summary": {
+    "total_topics_tracked": 16,
+    "high_confidence_signals": 0,
+    "medium_confidence_signals": 1,
+    "cross_platform_signals": 0,
+    "tier1_backed_signals": 0,
+    "prediction_market_matches": 40,
+    "x_signals_quality": {
+      "total": 6,
+      "with_known_author": 6,
+      "with_engagement": 2
+    },
+    "tiktok_signals_quality": {
+      "total": 12,
+      "crypto_relevant": 12
+    }
+  }
+}

@@ -1,0 +1,918 @@
+{
+  "generated_at": "2026-03-05T20:35:23.761929+00:00",
+  "top_signals": [
+    {
+      "topic": "#fyp",
+      "score": 60,
+      "confidence": "medium",
+      "mentions": 3,
+      "engagement": 0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "keltonai",
+        "wwbtc5",
+        "advyyyth"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "$SHAPE",
+      "score": 50,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 0,
+      "platforms": [
+        "x"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "Billysolz"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": [
+        "154.4x on my Tg call on $SHAPE You really hate making gains not to be in my tg group Join our vip group to get early alpha calls on trending memecoin before they take off 4HhWcsfjaWYKJtjaxd4EyGSAL4Ky8"
+      ]
+    },
+    {
+      "topic": "$MAXXING",
+      "score": 50,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 0,
+      "platforms": [
+        "x"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "caller__fredd",
+        "Caller_Bobblfg"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": [
+        "3.3x on my Tg call on $MAXXING You really hate making gains not to be in my tg group Join our vip group to get early alpha calls on trending memecoin 6MVnei2Lcuae2tbr7UjJR7o6s7kJmTQRdpxTZcoEpump DM no",
+        "3.7x on my Tg call on $MAXXING You really hate making gains not to be in my tg group Join our vip group to get early alpha calls on trending memecoin before they take off 6MVnei2Lcuae2tbr7UjJR7o6s7kJm"
+      ]
+    },
+    {
+      "topic": "#2026",
+      "score": 50,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "jakeclaverqf12",
+        "infused.coinz"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    }
+  ],
+  "prediction_market_edges": [
+    {
+      "type": "polymarket",
+      "question": "Will Crude Oil (CL) hit (HIGH) $150 by end of March?",
+      "url": "https://polymarket.com/event/will-crude-oil-cl-hit-high-150-by-end-of-march-138",
+      "matching_social_topics": [
+        "oil",
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.052,
+          "implied_probability": "5.2%",
+          "payout_multiple": "19.2x"
+        }
+      ],
+      "volume_24h": 136365.503168,
+      "social_engagement": 0,
+      "social_mentions": 3,
+      "match_quality": 39,
+      "social_context": [
+        "$OIL just did 175.26x $3.8K\u2192 $666K MCAP \ud83d\udd25 This is why I hunt early entries on trending Solana memecoins. My highest-conviction plays get shared first in my private alpha TG before they take off. Want "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 4818692.46567,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the Iranian regime fall by March 31?",
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.129,
+          "implied_probability": "12.9%",
+          "payout_multiple": "7.8x"
+        }
+      ],
+      "volume_24h": 2421832.715048,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Jesus Christ return before 2027?",
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0375,
+          "implied_probability": "3.8%",
+          "payout_multiple": "26.7x"
+        }
+      ],
+      "volume_24h": 742433.3121960002,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Belgium win the 2026 FIFA World Cup?",
+      "url": "https://polymarket.com/event/will-belgium-win-the-2026-fifa-world-cup-358",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 707826.5843100001,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "url": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.175,
+          "implied_probability": "17.5%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "volume_24h": 577760.9502640006,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Tottenham Hotspur FC vs. Crystal Palace FC end in a draw?",
+      "url": "https://polymarket.com/event/epl-tot-cry-2026-03-05-draw",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.295,
+          "implied_probability": "29.5%",
+          "payout_multiple": "3.4x"
+        }
+      ],
+      "volume_24h": 542582.9565630007,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "GTA VI released before June 2026?",
+      "url": "https://polymarket.com/event/gta-vi-released-before-june-2026",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.024,
+          "implied_probability": "2.4%",
+          "payout_multiple": "41.7x"
+        }
+      ],
+      "volume_24h": 463205.51562099985,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 180-199 tweets from February 27 to March 6, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-180-199",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.146,
+          "implied_probability": "14.6%",
+          "payout_multiple": "6.8x"
+        }
+      ],
+      "volume_24h": 406457.2137040004,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the Toronto Raptors win the NBA Eastern Conference Finals?",
+      "url": "https://polymarket.com/event/will-the-toronto-raptors-win-the-nba-eastern-conference-finals",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0285,
+          "implied_probability": "2.9%",
+          "payout_multiple": "35.1x"
+        }
+      ],
+      "volume_24h": 395147.8793250004,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Russia x Ukraine ceasefire by March 31, 2026?",
+      "url": "https://polymarket.com/event/russia-x-ukraine-ceasefire-by-march-31-2026",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0215,
+          "implied_probability": "2.1%",
+          "payout_multiple": "46.5x"
+        }
+      ],
+      "volume_24h": 386546.65918899985,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Jason Day win the 2026 Masters tournament?",
+      "url": "https://polymarket.com/event/will-jason-day-win-the-2026-masters-tournament",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.027,
+          "implied_probability": "2.7%",
+          "payout_multiple": "37.0x"
+        }
+      ],
+      "volume_24h": 383922.25875599997,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Reza Pahlavi enter Iran by March 31?",
+      "url": "https://polymarket.com/event/will-reza-pahlavi-enter-iran-by-march-31-282",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0355,
+          "implied_probability": "3.5%",
+          "payout_multiple": "28.2x"
+        }
+      ],
+      "volume_24h": 366302.07444500003,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Matt Fitzpatrick win the 2026 Masters tournament?",
+      "url": "https://polymarket.com/event/will-matt-fitzpatrick-win-the-2026-masters-tournament",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.017,
+          "implied_probability": "1.7%",
+          "payout_multiple": "58.8x"
+        }
+      ],
+      "volume_24h": 351852.237013,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will John Cornyn win the 2026 Texas Republican Primary?",
+      "url": "https://polymarket.com/event/will-john-cornyn-win-the-2026-republican-primary",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.145,
+          "implied_probability": "14.5%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "volume_24h": 332926.9515199989,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
+      "url": "https://polymarket.com/event/will-the-colorado-avalanche-win-the-2026-nhl-stanley-cup",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.217,
+          "implied_probability": "21.7%",
+          "payout_multiple": "4.6x"
+        }
+      ],
+      "volume_24h": 332377.15131699963,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Xander Schauffele win the 2026 Masters tournament?",
+      "url": "https://polymarket.com/event/will-xander-schauffele-win-the-2026-masters-tournament",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.028,
+          "implied_probability": "2.8%",
+          "payout_multiple": "35.7x"
+        }
+      ],
+      "volume_24h": 297509.33313400013,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Damac Saudi Club win on 2026-03-05?",
+      "url": "https://polymarket.com/event/spl-dam-riy-2026-03-05-dam",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.025,
+          "implied_probability": "2.5%",
+          "payout_multiple": "40.0x"
+        }
+      ],
+      "volume_24h": 289137.6851370001,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 220-239 tweets from February 27 to March 6, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-220-239",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.208,
+          "implied_probability": "20.8%",
+          "payout_multiple": "4.8x"
+        }
+      ],
+      "volume_24h": 273385.0230149999,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Trump out as President by March 31?",
+      "url": "https://polymarket.com/event/trump-out-as-president-by-march-31",
+      "matching_social_topics": [
+        "2026"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.018,
+          "implied_probability": "1.8%",
+          "payout_multiple": "55.6x"
+        }
+      ],
+      "volume_24h": 267633.47367700003,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    }
+  ],
+  "polymarket_top_opportunities": [
+    {
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 4818692.46567,
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting"
+    },
+    {
+      "question": "Will the Iranian regime fall by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.129,
+          "implied_probability": "12.9%",
+          "payout_multiple": "7.8x"
+        }
+      ],
+      "volume_24h": 2421832.715048,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31"
+    },
+    {
+      "question": "US forces enter Iran by March 7?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.076,
+          "implied_probability": "7.6%",
+          "payout_multiple": "13.2x"
+        }
+      ],
+      "volume_24h": 1722511.7800739983,
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-7"
+    },
+    {
+      "question": "Will Judy Shelton be confirmed as Fed Chair?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0295,
+          "implied_probability": "2.9%",
+          "payout_multiple": "33.9x"
+        }
+      ],
+      "volume_24h": 1197068.8879630002,
+      "url": "https://polymarket.com/event/will-judy-shelton-be-confirmed-as-fed-chair"
+    },
+    {
+      "question": "Will Mark Kelly win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0255,
+          "implied_probability": "2.5%",
+          "payout_multiple": "39.2x"
+        }
+      ],
+      "volume_24h": 925929.5061049992,
+      "url": "https://polymarket.com/event/will-mark-kelly-win-the-2028-democratic-presidential-nomination-479"
+    },
+    {
+      "question": "Will Wes Moore win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.016,
+          "implied_probability": "1.6%",
+          "payout_multiple": "62.5x"
+        }
+      ],
+      "volume_24h": 836483.213357,
+      "url": "https://polymarket.com/event/will-wes-moore-win-the-2028-democratic-presidential-nomination-714"
+    },
+    {
+      "question": "Will Jesus Christ return before 2027?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0375,
+          "implied_probability": "3.8%",
+          "payout_multiple": "26.7x"
+        }
+      ],
+      "volume_24h": 742433.3121960002,
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027"
+    },
+    {
+      "question": "Will Belgium win the 2026 FIFA World Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 707826.5843100001,
+      "url": "https://polymarket.com/event/will-belgium-win-the-2026-fifa-world-cup-358"
+    },
+    {
+      "question": "Will Andy Beshear win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.015,
+          "implied_probability": "1.5%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 667896.1161440001,
+      "url": "https://polymarket.com/event/will-andy-beshear-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Warriors vs. Rockets",
+      "cheap_outcomes": [
+        {
+          "outcome": "Warriors",
+          "price": 0.245,
+          "implied_probability": "24.5%",
+          "payout_multiple": "4.1x"
+        }
+      ],
+      "volume_24h": 584657.6854150008,
+      "url": "https://polymarket.com/event/nba-gsw-hou-2026-03-05"
+    },
+    {
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.175,
+          "implied_probability": "17.5%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "volume_24h": 577760.9502640006,
+      "url": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027"
+    },
+    {
+      "question": "US x Iran ceasefire by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.275,
+          "implied_probability": "27.5%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "volume_24h": 564871.2555889994,
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-31"
+    },
+    {
+      "question": "Will Tottenham Hotspur FC vs. Crystal Palace FC end in a draw?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.295,
+          "implied_probability": "29.5%",
+          "payout_multiple": "3.4x"
+        }
+      ],
+      "volume_24h": 542582.9565630007,
+      "url": "https://polymarket.com/event/epl-tot-cry-2026-03-05-draw"
+    },
+    {
+      "question": "US forces enter Iran by March 14?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.205,
+          "implied_probability": "20.5%",
+          "payout_multiple": "4.9x"
+        }
+      ],
+      "volume_24h": 521581.41177100013,
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-14-337"
+    },
+    {
+      "question": "Mavericks vs. Magic",
+      "cheap_outcomes": [
+        {
+          "outcome": "Mavericks",
+          "price": 0.235,
+          "implied_probability": "23.5%",
+          "payout_multiple": "4.3x"
+        }
+      ],
+      "volume_24h": 491233.46933700074,
+      "url": "https://polymarket.com/event/nba-dal-orl-2026-03-05"
+    }
+  ],
+  "kalshi_top_opportunities": [
+    {
+      "title": "yes Phoenix,yes Detroit,yes Denver,yes New Orleans,yes Boston,yes Tulsa",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.0,
+          "implied_probability": "6%",
+          "payout_multiple": "16.7x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20261d97898697c-ae4757adc8b"
+    },
+    {
+      "title": "yes Phoenix,yes Miami wins by over 14.5 Points,yes Houston wins by over 9.5 Points,no Washington wins by over 3.5 Points",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.0,
+          "implied_probability": "2%",
+          "payout_multiple": "50.0x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202616d77b6b52b-2fb6d72a9fc"
+    },
+    {
+      "title": "yes Jamal Murray: 20+,yes Nikola Joki\u0107: 25+,yes Austin Reaves: 15+,yes Nikola Joki\u0107: 12+",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 17.0,
+          "implied_probability": "17%",
+          "payout_multiple": "5.9x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026ee8ab66f88c-64dec29170a"
+    },
+    {
+      "title": "yes Austin Reaves: 2+,yes Austin Reaves: 15+,yes LeBron James: 15+",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 27.5,
+          "implied_probability": "28%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026df63e332c0d-ccf18ac6c1e"
+    },
+    {
+      "title": "yes Miami,yes Michael Porter Jr.: 15+,yes Bam Adebayo: 15+,yes Kevin Durant: 20+,yes Reed Sheppard: 10+,yes Anthony Edwa",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.5,
+          "implied_probability": "6%",
+          "payout_multiple": "18.2x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026dd2ba6c3e6f-a21a7f2ac4e"
+    },
+    {
+      "title": "no Brooklyn wins by over 1.5 Points,no Phoenix wins by over 26.5 Points,no Dallas wins by over 6.5 Points,no Detroit win",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 23.5,
+          "implied_probability": "24%",
+          "payout_multiple": "4.3x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202642f68a2a527-bb53314ec98"
+    },
+    {
+      "title": "yes San Antonio,yes Denver,yes Southern Illinois,no Michigan wins by over 5.5 Points",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.0,
+          "implied_probability": "5%",
+          "payout_multiple": "20.0x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026206cb0cb4ad-c2dfd1ada21"
+    },
+    {
+      "title": "yes Devin Booker: 1+,yes Desmond Bane: 1+,yes Kevin Durant: 1+,yes Trae Young: 2+,yes Trae Young: 6+,yes Victor Wembanya",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 16.0,
+          "implied_probability": "16%",
+          "payout_multiple": "6.2x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20266893abc1634-4121ba7600d"
+    },
+    {
+      "title": "yes San Antonio,yes Denver,yes New Orleans,yes Minnesota,yes Washington,yes Houston wins by over 3.5 Points",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.5,
+          "implied_probability": "4%",
+          "payout_multiple": "28.6x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202695757ad0fc7-7ce29d252ea"
+    },
+    {
+      "title": "yes Miami wins by over 11.5 Points,no Orlando wins by over 9.5 Points,no San Antonio wins by over 4.5 Points,no Houston ",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026cd3f6aaff35-27ab65eabfe"
+    },
+    {
+      "title": "yes Draymond Green: 10+,yes Alperen Sengun: 10+,yes Amen Thompson: 10+,yes Jabari Smith Jr.: 10+,yes Kevin Durant: 25+,y",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 22.5,
+          "implied_probability": "22%",
+          "payout_multiple": "4.4x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202614695b127e3-983ce876ec3"
+    },
+    {
+      "title": "yes Nikola Joki\u0107: 10+,yes Luka Don\u010di\u0107: 6+,yes Desmond Bane: 15+,yes Paolo Banchero: 15+,yes Cade Cunningham: 20+,yes Vic",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 14.5,
+          "implied_probability": "14%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262947a68cec4-cce9b129c65"
+    },
+    {
+      "title": "yes Southern Illinois wins by over 4.5 Points,yes Maryland-Eastern Shore wins by over 6.5 Points,yes Howard wins by over",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026ae3c6124d3d-32f6f4755d3"
+    },
+    {
+      "title": "yes Bayern Munich,yes Leipzig,yes Barcelona,yes PSG,yes Marseille,yes Lyon,yes Napoli,yes Juventus",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202622f560e7c75-bc1598880c3"
+    },
+    {
+      "title": "yes NYI Islanders,yes OTT Senators,yes TB Lightning,yes TOR Maple Leafs,yes Over 5.5 goals scored,yes Over 5.5 goals sco",
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 0,
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e41beafcd1e-0d26ab29a6d"
+    }
+  ],
+  "summary": {
+    "total_topics_tracked": 25,
+    "high_confidence_signals": 0,
+    "medium_confidence_signals": 4,
+    "cross_platform_signals": 0,
+    "tier1_backed_signals": 0,
+    "prediction_market_matches": 39,
+    "x_signals_quality": {
+      "total": 5,
+      "with_known_author": 5,
+      "with_engagement": 0
+    },
+    "tiktok_signals_quality": {
+      "total": 11,
+      "crypto_relevant": 10
+    }
+  }
+}

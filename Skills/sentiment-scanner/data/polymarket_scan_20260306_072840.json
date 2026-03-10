@@ -1,0 +1,4313 @@
+{
+  "scan_time": "2026-03-06T07:28:40.077902+00:00",
+  "markets_with_edge": [
+    {
+      "platform": "polymarket",
+      "question": "Will Iran close the Strait of Hormuz by March 31?",
+      "description": "If Iran halts or severely restricts international maritime traffic through the Strait of Hormuz by March 31, 2026, 11:59 PM ET, this market will resolve to \"Yes\". Otherwise, this market will resolve to \"No\".\n\nThe primary resolution source for this market will be official governmental information, ho",
+      "slug": "will-iran-close-the-strait-of-hormuz-by-march-31",
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-march-31",
+      "volume_24h": 3760362.2828519656,
+      "total_volume": 15414962.773137067,
+      "liquidity": 181465.3944,
+      "volume_spike_ratio": 7.32,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.215,
+          "implied_probability": "21.5%",
+          "payout_multiple": "4.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.785,
+        0.215
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224674+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "description": "The FED interest rates are defined in this market by the upper bound of the target federal funds range. The decisions on the target federal fund range are made by the Federal Open Market Committee (FOMC) meetings.\n\nThis market will resolve to the amount of basis points the upper bound of the target ",
+      "slug": "will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
+      "volume_24h": 3547595.9409759985,
+      "total_volume": 33050400.738521464,
+      "liquidity": 2176028.46841,
+      "volume_spike_ratio": 3.22,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-18T00:00:00Z",
+      "prices": [
+        0.9895,
+        0.0105
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224701+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the Iranian regime fall by March 31?",
+      "description": "This market will resolve to \"Yes\" if the Islamic Republic of Iran\u2019s current ruling regime is overthrown, collapsed, or otherwise ceases to govern by March 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThis requires a broad consensus of reporting indicating that core structures",
+      "slug": "will-the-iranian-regime-fall-by-march-31",
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31",
+      "volume_24h": 2045187.1683039998,
+      "total_volume": 22156268.576019198,
+      "liquidity": 863781.79162,
+      "volume_spike_ratio": 2.77,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1305,
+          "implied_probability": "13.1%",
+          "payout_multiple": "7.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.1305,
+        0.8695
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224774+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US forces enter Iran by March 7?",
+      "description": "This market will resolve to \u201cYes\u201d if active US military personnel physically enter Iran at any point by the listed date (ET). Otherwise, this market will resolve to \"No\".\n\nMilitary special operation forces will qualify, however intelligence operatives will not count.\n\nUS military personnel must phys",
+      "slug": "us-forces-enter-iran-by-march-7",
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-7",
+      "volume_24h": 1399185.198721001,
+      "total_volume": 2787761.7115869946,
+      "liquidity": 211932.9565,
+      "volume_spike_ratio": 15.06,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.034,
+          "implied_probability": "3.4%",
+          "payout_multiple": "29.4x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-03T00:00:00Z",
+      "prices": [
+        0.034,
+        0.966
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224816+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Judy Shelton be confirmed as Fed Chair?",
+      "description": "This market will resolve according to the next individual formally confirmed as Chair of the Federal Reserve.\n\nFormal confirmation as Chair of the Federal Reserve requires the Senate to confirm a nominee as Chair of the Federal Reserve. Recess appointments without Senate confirmation will not count.",
+      "slug": "will-judy-shelton-be-confirmed-as-fed-chair",
+      "url": "https://polymarket.com/event/will-judy-shelton-be-confirmed-as-fed-chair",
+      "volume_24h": 815459.1069850003,
+      "total_volume": 1564091.7988690003,
+      "liquidity": 1175044.98115,
+      "volume_spike_ratio": 15.64,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0315,
+          "implied_probability": "3.1%",
+          "payout_multiple": "31.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-10-31T00:00:00Z",
+      "prices": [
+        0.0315,
+        0.9685
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224881+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Kim Kardashian win the 2028 US Presidential Election?",
+      "description": "The 2028 US Presidential Election is scheduled to take place on November 7, 2028.\n\nThis market will resolve to the person who wins the 2028 US Presidential Election.\n\nThe resolution source for this market is the Associated Press, Fox News, and NBC. This market will resolve once all three sources cal",
+      "slug": "will-kim-kardashian-win-the-2028-us-presidential-election",
+      "url": "https://polymarket.com/event/will-kim-kardashian-win-the-2028-us-presidential-election",
+      "volume_24h": 599562.7505340001,
+      "total_volume": 22616158.270048086,
+      "liquidity": 862481.35529,
+      "volume_spike_ratio": 0.8,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0105,
+        0.9895
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224955+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "description": "This market will resolve to \"Yes\" if the President of the United States, any member of the Cabinet of the United States, any member of the Joint Chiefs of Staff, or any US federal agency definitively states that extraterrestrial life or technology exists by December 31, 2026, 11:59 PM ET. Otherwise,",
+      "slug": "will-the-us-confirm-that-aliens-exist-before-2027",
+      "url": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027",
+      "volume_24h": 541392.5319880006,
+      "total_volume": 14198365.083240047,
+      "liquidity": 1901798.7995,
+      "volume_spike_ratio": 1.14,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.175,
+          "implied_probability": "17.5%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.175,
+        0.825
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224986+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US x Iran ceasefire by March 15?",
+      "description": "This market will resolve to \u201cYes\u201d if there is an official ceasefire agreement, defined as a publicly announced and mutually agreed halt in direct military engagement, between the United States and Iran by the listed date, 11:59 PM ET.\n\nFor the purposes of this market, an \u201cofficial ceasefire agreemen",
+      "slug": "us-x-iran-ceasefire-by-march-15",
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-15",
+      "volume_24h": 514401.67666199966,
+      "total_volume": 2597928.3167080088,
+      "liquidity": 155144.2725,
+      "volume_spike_ratio": 5.94,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.105,
+          "implied_probability": "10.5%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "",
+      "prices": [
+        0.105,
+        0.895
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225004+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US x Iran ceasefire by March 31?",
+      "description": "This market will resolve to \u201cYes\u201d if there is an official ceasefire agreement, defined as a publicly announced and mutually agreed halt in direct military engagement, between the United States and Iran by the listed date, 11:59 PM ET.\n\nFor the purposes of this market, an \u201cofficial ceasefire agreemen",
+      "slug": "us-x-iran-ceasefire-by-march-31",
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-31",
+      "volume_24h": 507256.6807449997,
+      "total_volume": 2321672.678667011,
+      "liquidity": 158128.6405,
+      "volume_spike_ratio": 6.55,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.295,
+          "implied_probability": "29.5%",
+          "payout_multiple": "3.4x"
+        }
+      ],
+      "tags": [],
+      "end_date": "",
+      "prices": [
+        0.295,
+        0.705
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225018+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Byron Donalds win the 2028 Republican presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Republican Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Republican Party sources.\n\nAny replacement of",
+      "slug": "will-byron-donalds-win-the-2028-republican-presidential-nomination",
+      "url": "https://polymarket.com/event/will-byron-donalds-win-the-2028-republican-presidential-nomination",
+      "volume_24h": 436479.00326200004,
+      "total_volume": 15692750.877505984,
+      "liquidity": 201141.3699,
+      "volume_spike_ratio": 0.83,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0105,
+        0.9895
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225073+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will FC Bayern M\u00fcnchen win on 2026-03-06?",
+      "description": "In the upcoming game, scheduled for March 6, 2026\nIf FC Bayern M\u00fcnchen wins, this market will resolve to \"Yes\".\nOtherwise, this market will resolve to \"No\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, with no make-up gam",
+      "slug": "bun-bay-moe-2026-03-06-bay",
+      "url": "https://polymarket.com/event/bun-bay-moe-2026-03-06-bay",
+      "volume_24h": 433363.9541229997,
+      "total_volume": 465944.3760399991,
+      "liquidity": 341245.5883,
+      "volume_spike_ratio": 27.9,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.165,
+          "implied_probability": "16.5%",
+          "payout_multiple": "6.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T19:30:00Z",
+      "prices": [
+        0.835,
+        0.165
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225091+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Wes Moore win the 2028 Democratic presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Democratic Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Democratic Party sources.\n\nAny replacement of",
+      "slug": "will-wes-moore-win-the-2028-democratic-presidential-nomination-714",
+      "url": "https://polymarket.com/event/will-wes-moore-win-the-2028-democratic-presidential-nomination-714",
+      "volume_24h": 397848.2708020001,
+      "total_volume": 8723574.873754008,
+      "liquidity": 436581.33437,
+      "volume_spike_ratio": 1.37,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0155,
+          "implied_probability": "1.6%",
+          "payout_multiple": "64.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0155,
+        0.9845
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225130+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Bitcoin reach $100,000 in March?",
+      "description": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for BTC/USDT during the month specified in the title (from 00:00 AM ET on the first day to 11:59 PM ET on the last), has a final High price equal to or greater than the price specified in the title. Otherwise, this market w",
+      "slug": "will-bitcoin-reach-100k-in-march-2026",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-100k-in-march-2026",
+      "volume_24h": 397726.57220399985,
+      "total_volume": 1089406.1659219991,
+      "liquidity": 113754.7791,
+      "volume_spike_ratio": 10.95,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-04-01T04:00:00Z",
+      "prices": [
+        0.0165,
+        0.9835
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225139+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US forces enter Iran by March 14?",
+      "description": "This market will resolve to \u201cYes\u201d if active US military personnel physically enter Iran at any point by the listed date (ET). Otherwise, this market will resolve to \"No\".\n\nMilitary special operation forces will qualify, however intelligence operatives will not count.\n\nUS military personnel must phys",
+      "slug": "us-forces-enter-iran-by-march-14-337",
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-14-337",
+      "volume_24h": 396578.8972390001,
+      "total_volume": 998884.0590869992,
+      "liquidity": 103774.4691,
+      "volume_spike_ratio": 11.91,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.18,
+          "implied_probability": "18.0%",
+          "payout_multiple": "5.6x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-01T00:00:00Z",
+      "prices": [
+        0.18,
+        0.82
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225163+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Opinion FDV above $250M one day after launch?",
+      "description": "This market will resolve to \"Yes\" if the Fully Diluted Valuation of Opinion's governance token is greater than the value specified in the title 1 day after launch. Otherwise, the market will resolve to \"No.\"\n\nThe token must be actively, publicly transferable and tradable to be considered a launch.\n\n",
+      "slug": "opinion-fdv-above-250m-one-day-after-launch-214",
+      "url": "https://polymarket.com/event/opinion-fdv-above-250m-one-day-after-launch-214",
+      "volume_24h": 392477.75783499976,
+      "total_volume": 1585516.083298008,
+      "liquidity": 123531.89676,
+      "volume_spike_ratio": 7.43,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.014,
+          "implied_probability": "1.4%",
+          "payout_multiple": "71.4x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2027-01-01T05:00:00Z",
+      "prices": [
+        0.986,
+        0.014
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225174+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Rahm Emanuel win the 2028 Democratic presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Democratic Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Democratic Party sources.\n\nAny replacement of",
+      "slug": "will-rahm-emanuel-win-the-2028-democratic-presidential-nomination-299",
+      "url": "https://polymarket.com/event/will-rahm-emanuel-win-the-2028-democratic-presidential-nomination-299",
+      "volume_24h": 391884.414081,
+      "total_volume": 9201980.719868977,
+      "liquidity": 820191.84062,
+      "volume_spike_ratio": 1.28,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0165,
+        0.9835
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225183+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Opinion FDV above $500M one day after launch?",
+      "description": "This market will resolve to \"Yes\" if the Fully Diluted Valuation of Opinion's governance token is greater than the value specified in the title 1 day after launch. Otherwise, the market will resolve to \"No.\"\n\nThe token must be actively, publicly transferable and tradable to be considered a launch.\n\n",
+      "slug": "opinion-fdv-above-500m-one-day-after-launch-457-863-439-655",
+      "url": "https://polymarket.com/event/opinion-fdv-above-500m-one-day-after-launch-457-863-439-655",
+      "volume_24h": 373456.72420299996,
+      "total_volume": 3197348.567316,
+      "liquidity": 20426.86922,
+      "volume_spike_ratio": 3.5,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.079,
+          "implied_probability": "7.9%",
+          "payout_multiple": "12.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2027-01-01T05:00:00Z",
+      "prices": [
+        0.079,
+        0.921
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225232+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+      "description": "This market will resolve to \"Yes\" if Israel initiates a major ground offensive in Lebanon by March 31, 2026, 11:59PM ET. Otherwise, this market will resolve to \"No\".\n\nA \"major ground offensive\" is defined as a large-scale military operation that involves more than 1,000 Israeli ground forces enterin",
+      "slug": "will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31",
+      "url": "https://polymarket.com/event/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31",
+      "volume_24h": 371120.59826099995,
+      "total_volume": 2011650.2567170027,
+      "liquidity": 107732.6755,
+      "volume_spike_ratio": 5.53,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.285,
+          "implied_probability": "28.5%",
+          "payout_multiple": "3.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.715,
+        0.285
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225250+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Elon Musk post 220-239 tweets from February 27 to March 6, 2026?",
+      "description": "This market will resolve according to the number of times Elon Musk (@elonmusk), posts on X from February 27 12:00 PM ET to March 6, 2026 12:00 PM ET.\n\nFor the purposes of this market, only main feed posts, quote posts and reposts will count.\n\nReplies will NOT count towards the total - however, repl",
+      "slug": "elon-musk-of-tweets-february-27-march-6-220-239",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-220-239",
+      "volume_24h": 354364.67867900006,
+      "total_volume": 835886.2232159997,
+      "liquidity": 17727.20129,
+      "volume_spike_ratio": 12.72,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0765,
+          "implied_probability": "7.6%",
+          "payout_multiple": "13.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.0765,
+        0.9235
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225274+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Greg Abbott win the 2028 Republican presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Republican Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Republican Party sources.\n\nAny replacement of",
+      "slug": "will-greg-abbott-win-the-2028-republican-presidential-nomination",
+      "url": "https://polymarket.com/event/will-greg-abbott-win-the-2028-republican-presidential-nomination",
+      "volume_24h": 329629.9471250001,
+      "total_volume": 13768099.218967004,
+      "liquidity": 760633.25273,
+      "volume_spike_ratio": 0.72,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0105,
+        0.9895
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225354+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Mark Kelly win the 2028 Democratic presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Democratic Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Democratic Party sources.\n\nAny replacement of",
+      "slug": "will-mark-kelly-win-the-2028-democratic-presidential-nomination-479",
+      "url": "https://polymarket.com/event/will-mark-kelly-win-the-2028-democratic-presidential-nomination-479",
+      "volume_24h": 317855.94246099994,
+      "total_volume": 8807734.203185337,
+      "liquidity": 321780.79493,
+      "volume_spike_ratio": 1.08,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0275,
+          "implied_probability": "2.8%",
+          "payout_multiple": "36.4x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0275,
+        0.9725
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225371+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Matt Fitzpatrick win the 2026 Masters tournament?",
+      "description": "This polymarket will resolve according to the player who wins the 2026 Masters Tournament.\n\nIf this player is eliminated from contention for The Masters based on the official rules of the tournament, the relevant market will resolve to \"No\".\n\nIn the event of a tie, this market will resolve according",
+      "slug": "will-matt-fitzpatrick-win-the-2026-masters-tournament",
+      "url": "https://polymarket.com/event/will-matt-fitzpatrick-win-the-2026-masters-tournament",
+      "volume_24h": 311882.431955,
+      "total_volume": 834392.1449480001,
+      "liquidity": 4889.33757,
+      "volume_spike_ratio": 11.21,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0245,
+          "implied_probability": "2.5%",
+          "payout_multiple": "40.8x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-04-13T00:00:00Z",
+      "prices": [
+        0.0245,
+        0.9755
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225381+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Iran close the Strait of Hormuz before 2027?",
+      "description": "If Iran halts or severely restricts international maritime traffic through the Strait of Hormuz by December 31, 2026, 11:59 PM ET, this market will resolve to \"Yes\". Otherwise, this market will resolve to \"No\".\n\nThe primary resolution source for this market will be official governmental information,",
+      "slug": "will-iran-close-the-strait-of-hormuz-by-2027-969-911-654-431-667",
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-2027-969-911-654-431-667",
+      "volume_24h": 301443.88152600016,
+      "total_volume": 1306180.4450970017,
+      "liquidity": 24838.47565,
+      "volume_spike_ratio": 6.92,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.2035,
+          "implied_probability": "20.3%",
+          "payout_multiple": "4.9x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.7965,
+        0.2035
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225391+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Donald Trump win the 2028 US Presidential Election?",
+      "description": "The 2028 US Presidential Election is scheduled to take place on November 7, 2028.\n\nThis market will resolve to the person who wins the 2028 US Presidential Election.\n\nThe resolution source for this market is the Associated Press, Fox News, and NBC. This market will resolve once all three sources cal",
+      "slug": "will-donald-trump-win-the-2028-us-presidential-election",
+      "url": "https://polymarket.com/event/will-donald-trump-win-the-2028-us-presidential-election",
+      "volume_24h": 300487.70136300026,
+      "total_volume": 5198580.22944714,
+      "liquidity": 346485.40404,
+      "volume_spike_ratio": 1.73,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0255,
+          "implied_probability": "2.5%",
+          "payout_multiple": "39.2x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0255,
+        0.9745
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225409+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Reza Pahlavi enter Iran by March 31?",
+      "description": "If Reza Pahlavi visits Iran between market creation and March 31, 2026, 11:59 PM ET, this market will resolve to \"Yes\". Otherwise, this market will resolve to \"No\".\n\nFor the purpose of this market, a \"visit\" is defined as Reza Pahlavi physically entering the terrestrial territory of Iran. Whether or",
+      "slug": "will-reza-pahlavi-enter-iran-by-march-31-282",
+      "url": "https://polymarket.com/event/will-reza-pahlavi-enter-iran-by-march-31-282",
+      "volume_24h": 299297.35011999996,
+      "total_volume": 3277775.6561740045,
+      "liquidity": 226376.8126,
+      "volume_spike_ratio": 2.74,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0325,
+          "implied_probability": "3.2%",
+          "payout_multiple": "30.8x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-06-30T00:00:00Z",
+      "prices": [
+        0.0325,
+        0.9675
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225419+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Pete Buttigieg win the 2028 Democratic presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Democratic Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Democratic Party sources.\n\nAny replacement of",
+      "slug": "will-pete-buttigieg-win-the-2028-democratic-presidential-nomination-687",
+      "url": "https://polymarket.com/event/will-pete-buttigieg-win-the-2028-democratic-presidential-nomination-687",
+      "volume_24h": 298604.4979499998,
+      "total_volume": 7285435.387589682,
+      "liquidity": 810123.68438,
+      "volume_spike_ratio": 1.23,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0345,
+          "implied_probability": "3.5%",
+          "payout_multiple": "29.0x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0345,
+        0.9655
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225432+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Jesus Christ return before 2027?",
+      "description": "This market will resolve to \"Yes\" if The Second Coming of Jesus Christ occurs by December 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market will be a consensus of credible sources.",
+      "slug": "will-jesus-christ-return-before-2027",
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027",
+      "volume_24h": 296748.03058799997,
+      "total_volume": 38694268.66431813,
+      "liquidity": 2112429.12038,
+      "volume_spike_ratio": 0.23,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0375,
+          "implied_probability": "3.8%",
+          "payout_multiple": "26.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.0375,
+        0.9625
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225442+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Elon Musk post 240-259 tweets from February 27 to March 6, 2026?",
+      "description": "This market will resolve according to the number of times Elon Musk (@elonmusk), posts on X from February 27 12:00 PM ET to March 6, 2026 12:00 PM ET.\n\nFor the purposes of this market, only main feed posts, quote posts and reposts will count.\n\nReplies will NOT count towards the total - however, repl",
+      "slug": "elon-musk-of-tweets-february-27-march-6-240-259",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-240-259",
+      "volume_24h": 289175.5602549999,
+      "total_volume": 734465.3394090013,
+      "liquidity": 31251.38194,
+      "volume_spike_ratio": 11.81,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.0105,
+        0.9895
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225451+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Andy Beshear win the 2028 US Presidential Election?",
+      "description": "The 2028 US Presidential Election is scheduled to take place on November 7, 2028.\n\nThis market will resolve to the person who wins the 2028 US Presidential Election.\n\nThe resolution source for this market is the Associated Press, Fox News, and NBC. This market will resolve once all three sources cal",
+      "slug": "will-andy-beshear-win-the-2028-us-presidential-election",
+      "url": "https://polymarket.com/event/will-andy-beshear-win-the-2028-us-presidential-election",
+      "volume_24h": 282990.268965,
+      "total_volume": 11036845.414270977,
+      "liquidity": 428358.8277,
+      "volume_spike_ratio": 0.77,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0145,
+          "implied_probability": "1.5%",
+          "payout_multiple": "69.0x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0145,
+        0.9855
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225468+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Manchester City win the 2025\u201326 English Premier League?",
+      "description": "This is a polymarket on whether the listed club will win the 2025\u201326 English Premier League.\n\nThis market will resolve to \"Yes\" if the listed club is officially crowned the winner of the 2025\u201326 English Premier League. Otherwise, it will resolve to \"No\".\n\nIf at any point it becomes impossible for th",
+      "slug": "will-manchester-city-win-the-202526-english-premier-league",
+      "url": "https://polymarket.com/event/will-manchester-city-win-the-202526-english-premier-league",
+      "volume_24h": 280208.25287900015,
+      "total_volume": 6578147.579627974,
+      "liquidity": 916614.938,
+      "volume_spike_ratio": 1.28,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.175,
+          "implied_probability": "17.5%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-05-27T00:00:00Z",
+      "prices": [
+        0.175,
+        0.825
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225478+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Heat vs. Hornets",
+      "description": "In the upcoming NBA game, scheduled for March 6 at 7:00PM ET:\nIf the Heat win, the market will resolve to \"Heat\".\nIf the Hornets win, the market will resolve to \"Hornets\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, with",
+      "slug": "nba-mia-cha-2026-03-06",
+      "url": "https://polymarket.com/event/nba-mia-cha-2026-03-06",
+      "volume_24h": 277216.31638899987,
+      "total_volume": 291583.87369499943,
+      "liquidity": 171895.3378,
+      "volume_spike_ratio": 28.52,
+      "cheap_outcomes": [
+        {
+          "outcome": "Heat",
+          "price": 0.275,
+          "implied_probability": "27.5%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-07T00:00:00Z",
+      "prices": [
+        0.275,
+        0.725
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225491+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Marjorie Taylor Greene win the 2028 Republican presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Republican Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Republican Party sources.\n\nAny replacement of",
+      "slug": "will-marjorie-taylor-greene-win-the-2028-republican-presidential-nomination",
+      "url": "https://polymarket.com/event/will-marjorie-taylor-greene-win-the-2028-republican-presidential-nomination",
+      "volume_24h": 275367.60961800005,
+      "total_volume": 2621248.792197997,
+      "liquidity": 460677.85554,
+      "volume_spike_ratio": 3.15,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.012,
+          "implied_probability": "1.2%",
+          "payout_multiple": "83.3x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.012,
+        0.988
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225508+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the Toronto Raptors win the NBA Eastern Conference Finals?",
+      "description": "This market will resolve to \u201cYes\u201d if the Toronto Raptors win the 2025\u20132026 NBA Eastern Conference Finals. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThis market will resolve to \u201cNo\u201d if it becomes impossible for this team to win the 2025\u201326 NBA Eastern Conference Finals based on the rules of the N",
+      "slug": "will-the-toronto-raptors-win-the-nba-eastern-conference-finals",
+      "url": "https://polymarket.com/event/will-the-toronto-raptors-win-the-nba-eastern-conference-finals",
+      "volume_24h": 274457.54150600004,
+      "total_volume": 6712907.206786994,
+      "liquidity": 86354.77364,
+      "volume_spike_ratio": 1.23,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.023,
+          "implied_probability": "2.3%",
+          "payout_multiple": "43.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-06-13T00:00:00Z",
+      "prices": [
+        0.023,
+        0.977
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225519+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Mavericks vs. Celtics",
+      "description": "In the upcoming NBA game, scheduled for March 6 at 7:00PM ET:\nIf the Mavericks win, the market will resolve to \"Mavericks\".\nIf the Celtics win, the market will resolve to \"Celtics\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled enti",
+      "slug": "nba-dal-bos-2026-03-06",
+      "url": "https://polymarket.com/event/nba-dal-bos-2026-03-06",
+      "volume_24h": 270692.16583499993,
+      "total_volume": 283096.154883,
+      "liquidity": 851658.0119,
+      "volume_spike_ratio": 28.69,
+      "cheap_outcomes": [
+        {
+          "outcome": "Mavericks",
+          "price": 0.105,
+          "implied_probability": "10.5%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-07T00:00:00Z",
+      "prices": [
+        0.105,
+        0.895
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225532+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the position of Supreme Leader of Iran be abolished?",
+      "description": "The Supreme Leader of Iran is chosen by the Assembly of Experts.\n\nThis market will resolve according to the person who is named as the next Supreme Leader of the Islamic Republic of Iran.\n\nThe resolution of this market will be based on the first official announcement of the next Supreme Leader of Ir",
+      "slug": "will-the-position-of-supreme-leader-of-iran-be-abolished",
+      "url": "https://polymarket.com/event/will-the-position-of-supreme-leader-of-iran-be-abolished",
+      "volume_24h": 267461.04559899995,
+      "total_volume": 1221914.2366830027,
+      "liquidity": 63501.64816,
+      "volume_spike_ratio": 6.57,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0605,
+          "implied_probability": "6.0%",
+          "payout_multiple": "16.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.0605,
+        0.9395
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225565+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Bitcoin be above $72,000 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "bitcoin-above-72k-on-march-6",
+      "url": "https://polymarket.com/event/bitcoin-above-72k-on-march-6",
+      "volume_24h": 260235.28448300005,
+      "total_volume": 385387.071282,
+      "liquidity": 30040.51931,
+      "volume_spike_ratio": 20.26,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.205,
+          "implied_probability": "20.5%",
+          "payout_multiple": "4.9x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.205,
+        0.795
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225583+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Adam Scott win the 2026 Masters tournament?",
+      "description": "This polymarket will resolve according to the player who wins the 2026 Masters Tournament.\n\nIf this player is eliminated from contention for The Masters based on the official rules of the tournament, the relevant market will resolve to \"No\".\n\nIn the event of a tie, this market will resolve according",
+      "slug": "will-adam-scott-win-the-2026-masters-tournament",
+      "url": "https://polymarket.com/event/will-adam-scott-win-the-2026-masters-tournament",
+      "volume_24h": 239383.10280000002,
+      "total_volume": 270126.79011,
+      "liquidity": 15144.48168,
+      "volume_spike_ratio": 26.59,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0275,
+          "implied_probability": "2.8%",
+          "payout_multiple": "36.4x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-04-13T00:00:00Z",
+      "prices": [
+        0.0275,
+        0.9725
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225660+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Bitcoin be above $74,000 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "bitcoin-above-74k-on-march-6",
+      "url": "https://polymarket.com/event/bitcoin-above-74k-on-march-6",
+      "volume_24h": 233432.30612500012,
+      "total_volume": 354345.6450009994,
+      "liquidity": 32623.40837,
+      "volume_spike_ratio": 19.76,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.028,
+          "implied_probability": "2.8%",
+          "payout_multiple": "35.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.028,
+        0.972
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225690+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will France, UK, or Germany strike Iran by March 31?",
+      "description": "This market will resolve to \"Yes\" if France, the United Kingdom, or Germany initiates a drone, missile, or air strike on Iranian soil or any official Iranian embassy or consulate by March 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nFor the purposes of this market, a qualifyi",
+      "slug": "will-france-uk-or-germany-strike-iran-by-march-31-929",
+      "url": "https://polymarket.com/event/will-france-uk-or-germany-strike-iran-by-march-31-929",
+      "volume_24h": 232904.17662299995,
+      "total_volume": 2215639.9758170056,
+      "liquidity": 58884.51149,
+      "volume_spike_ratio": 3.15,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.221,
+          "implied_probability": "22.1%",
+          "payout_multiple": "4.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.221,
+        0.779
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225707+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Bitcoin be above $66,000 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "bitcoin-above-66k-on-march-6",
+      "url": "https://polymarket.com/event/bitcoin-above-66k-on-march-6",
+      "volume_24h": 232355.48149500004,
+      "total_volume": 329870.85958199936,
+      "liquidity": 31365.29138,
+      "volume_spike_ratio": 21.13,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0155,
+          "implied_probability": "1.6%",
+          "payout_multiple": "64.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.9845,
+        0.0155
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225720+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Jon Stewart win the 2028 Democratic presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Democratic Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Democratic Party sources.\n\nAny replacement of",
+      "slug": "will-jon-stewart-win-the-2028-democratic-presidential-nomination-518",
+      "url": "https://polymarket.com/event/will-jon-stewart-win-the-2028-democratic-presidential-nomination-518",
+      "volume_24h": 228054.0134859996,
+      "total_volume": 8062864.096452524,
+      "liquidity": 523733.35618,
+      "volume_spike_ratio": 0.85,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0205,
+          "implied_probability": "2.1%",
+          "payout_multiple": "48.8x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0205,
+        0.9795
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225731+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Base launch a token by June 30, 2026?",
+      "description": "This market will resolve to \"Yes\" if Base officially launches a token by June 30, 2026, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nThe token must be actively and publicly transferable and tradable. Announcements alone do not qualify\n\nThe primary resolution source for this market will",
+      "slug": "will-base-launch-a-token-by-june-30-2026",
+      "url": "https://polymarket.com/event/will-base-launch-a-token-by-june-30-2026",
+      "volume_24h": 223428.768967,
+      "total_volume": 535084.6695580002,
+      "liquidity": 12624.1016,
+      "volume_spike_ratio": 12.53,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.11,
+          "implied_probability": "11.0%",
+          "payout_multiple": "9.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-06-30T00:00:00Z",
+      "prices": [
+        0.11,
+        0.89
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225748+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Russia x Ukraine ceasefire by March 31, 2026?",
+      "description": "This market will resolve to \"Yes\" if there is an official ceasefire agreement, defined as a publicly announced and mutually agreed halt in military engagement, between Russia and Ukraine by March 31, 2026, 11:59 PM ET.\n\nIf the agreement is officially reached before the resolution date, this market w",
+      "slug": "russia-x-ukraine-ceasefire-by-march-31-2026",
+      "url": "https://polymarket.com/event/russia-x-ukraine-ceasefire-by-march-31-2026",
+      "volume_24h": 222106.99862199993,
+      "total_volume": 22570925.699020382,
+      "liquidity": 307560.58292,
+      "volume_spike_ratio": 0.3,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0275,
+          "implied_probability": "2.8%",
+          "payout_multiple": "36.4x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.0275,
+        0.9725
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225757+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "GTA VI released before June 2026?",
+      "description": "This market will resolve to \"Yes\" if it Grand Theft Auto VI is officially released in the US by May 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nFor the purposes of this market, \"release\" refers to the game becoming publicly available for purchase or download in the US. Early",
+      "slug": "gta-vi-released-before-june-2026",
+      "url": "https://polymarket.com/event/gta-vi-released-before-june-2026",
+      "volume_24h": 220670.47783399993,
+      "total_volume": 9941443.388110979,
+      "liquidity": 25972.48081,
+      "volume_spike_ratio": 0.67,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0245,
+          "implied_probability": "2.5%",
+          "payout_multiple": "40.8x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-05-31T12:00:00Z",
+      "prices": [
+        0.0245,
+        0.9755
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225770+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the Charlotte Hornets win the 2026 NBA Finals?",
+      "description": "This market will resolve to \u201cYes\u201d if the Charlotte Hornets win the 2026 NBA Finals. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThis market will resolve to \u201cNo\u201d if it becomes impossible for this team to win the 2026 NBA Finals based off the rules of the NBA.\n\nThe resolution source for this market ",
+      "slug": "will-the-charlotte-hornets-win-the-2026-nba-finals",
+      "url": "https://polymarket.com/event/will-the-charlotte-hornets-win-the-2026-nba-finals",
+      "volume_24h": 214216.89720600002,
+      "total_volume": 23179928.096066095,
+      "liquidity": 356428.78546,
+      "volume_spike_ratio": 0.28,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0155,
+          "implied_probability": "1.6%",
+          "payout_multiple": "64.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-07-01T00:00:00Z",
+      "prices": [
+        0.0155,
+        0.9845
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225811+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Trump out as President by March 31?",
+      "description": "This market will resolve to \u201cYes\u201d if Donald Trump resigns or is removed as President or otherwise ceases to be the President of the United States for any period of time by March 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to \u201cNo\u201d.\n\nAn announcement of Donald Trump's resignation/removal",
+      "slug": "trump-out-as-president-by-march-31",
+      "url": "https://polymarket.com/event/trump-out-as-president-by-march-31",
+      "volume_24h": 209989.09074299992,
+      "total_volume": 5194150.35716093,
+      "liquidity": 321333.28343,
+      "volume_spike_ratio": 1.21,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.018,
+          "implied_probability": "1.8%",
+          "payout_multiple": "55.6x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.018,
+        0.982
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225836+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?",
+      "description": "The 2028 US Presidential Election is scheduled to take place on November 7, 2028.\n\nThis market will resolve to the person who wins the 2028 US Presidential Election.\n\nThe resolution source for this market is the Associated Press, Fox News, and NBC. This market will resolve once all three sources cal",
+      "slug": "will-alexandria-ocasio-cortez-win-the-2028-us-presidential-election",
+      "url": "https://polymarket.com/event/will-alexandria-ocasio-cortez-win-the-2028-us-presidential-election",
+      "volume_24h": 208105.4479109998,
+      "total_volume": 8327409.094653935,
+      "liquidity": 498960.08199,
+      "volume_spike_ratio": 0.75,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0555,
+          "implied_probability": "5.5%",
+          "payout_multiple": "18.0x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0555,
+        0.9445
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225857+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Kevin Warsh be confirmed as Fed Chair?",
+      "description": "This market will resolve according to the next individual formally confirmed as Chair of the Federal Reserve.\n\nFormal confirmation as Chair of the Federal Reserve requires the Senate to confirm a nominee as Chair of the Federal Reserve. Recess appointments without Senate confirmation will not count.",
+      "slug": "will-kevin-warsh-be-confirmed-as-fed-chair",
+      "url": "https://polymarket.com/event/will-kevin-warsh-be-confirmed-as-fed-chair",
+      "volume_24h": 207020.30677099995,
+      "total_volume": 306834.3497219998,
+      "liquidity": 237705.38161,
+      "volume_spike_ratio": 20.24,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.059,
+          "implied_probability": "5.9%",
+          "payout_multiple": "16.9x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-10-31T00:00:00Z",
+      "prices": [
+        0.941,
+        0.059
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225867+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Rand Paul win the 2028 Republican presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Republican Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Republican Party sources.\n\nAny replacement of",
+      "slug": "will-rand-paul-win-the-2028-republican-presidential-nomination",
+      "url": "https://polymarket.com/event/will-rand-paul-win-the-2028-republican-presidential-nomination",
+      "volume_24h": 199672.06987600002,
+      "total_volume": 13913042.449676048,
+      "liquidity": 649199.35939,
+      "volume_spike_ratio": 0.43,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0125,
+          "implied_probability": "1.2%",
+          "payout_multiple": "80.0x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0125,
+        0.9875
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225922+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Pacers vs. Lakers",
+      "description": "In the upcoming NBA game, scheduled for March 6 at 10:30PM ET:\nIf the Pacers win, the market will resolve to \"Pacers\".\nIf the Lakers win, the market will resolve to \"Lakers\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, w",
+      "slug": "nba-ind-lal-2026-03-06",
+      "url": "https://polymarket.com/event/nba-ind-lal-2026-03-06",
+      "volume_24h": 187490.7500129999,
+      "total_volume": 189620.9682640003,
+      "liquidity": 190554.9854,
+      "volume_spike_ratio": 29.66,
+      "cheap_outcomes": [
+        {
+          "outcome": "Pacers",
+          "price": 0.195,
+          "implied_probability": "19.5%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-07T03:30:00Z",
+      "prices": [
+        0.195,
+        0.805
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225985+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will OpenAI have the best AI model at the end of March 2026?",
+      "description": "This market will resolve according to the company which owns the model which has the highest arena score based off the Chatbot Arena LLM Leaderboard (https://lmarena.ai/) when the table under the \"Leaderboard\" tab is checked on March 31, 2026, 12:00 PM ET.\n\nResults from the \"Arena Score\" section on ",
+      "slug": "will-openai-have-the-best-ai-model-at-the-end-of-march-2026-562",
+      "url": "https://polymarket.com/event/will-openai-have-the-best-ai-model-at-the-end-of-march-2026-562",
+      "volume_24h": 184303.5238170001,
+      "total_volume": 539188.0731559998,
+      "liquidity": 44746.48228,
+      "volume_spike_ratio": 10.25,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.03,
+          "implied_probability": "3.0%",
+          "payout_multiple": "33.3x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.03,
+        0.97
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226013+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Iran name a successor to Khamenei by March 6?",
+      "description": "This market will resolve to \"Yes\" if Iran officially announces a successor to Ali Khamenei as Supreme Leader by the specified date, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nAn announcement of a successor will be sufficient for a \"Yes\" resolution regardless of if/when the announced ",
+      "slug": "will-iran-name-a-successor-to-khamenei-by-march-6-419-412-158-246-866-876-465",
+      "url": "https://polymarket.com/event/will-iran-name-a-successor-to-khamenei-by-march-6-419-412-158-246-866-876-465",
+      "volume_24h": 180704.73813100005,
+      "total_volume": 1008847.9804629993,
+      "liquidity": 23290.8725,
+      "volume_spike_ratio": 5.37,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.145,
+          "implied_probability": "14.5%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.145,
+        0.855
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226027+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will John Cornyn win the 2026 Texas Republican Primary?",
+      "description": "This market will resolve according to the winner of the Republican Primary for United States Senator from Texas. \n\nIf no 2026 Texas Republican Senate Primary takes place, this market will resolve to \"Other\".\n\nThe resolution source for this market will be the first announcement of the results from th",
+      "slug": "will-john-cornyn-win-the-2026-republican-primary",
+      "url": "https://polymarket.com/event/will-john-cornyn-win-the-2026-republican-primary",
+      "volume_24h": 174601.31240999975,
+      "total_volume": 2186516.5220420193,
+      "liquidity": 71866.3609,
+      "volume_spike_ratio": 2.4,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.165,
+          "implied_probability": "16.5%",
+          "payout_multiple": "6.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-03T00:00:00Z",
+      "prices": [
+        0.835,
+        0.165
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226063+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Thomas Massie win the 2028 Republican presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Republican Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Republican Party sources.\n\nAny replacement of",
+      "slug": "will-thomas-massie-win-the-2028-republican-presidential-nomination",
+      "url": "https://polymarket.com/event/will-thomas-massie-win-the-2028-republican-presidential-nomination",
+      "volume_24h": 172704.108559,
+      "total_volume": 1623366.634887001,
+      "liquidity": 229145.70572,
+      "volume_spike_ratio": 3.19,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0185,
+          "implied_probability": "1.8%",
+          "payout_multiple": "54.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0185,
+        0.9815
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226080+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Iran close the Strait of Hormuz by June 30?",
+      "description": "If Iran halts or severely restricts international maritime traffic through the Strait of Hormuz by June 30, 2026, 11:59 PM ET, this market will resolve to \"Yes\". Otherwise, this market will resolve to \"No\".\n\nThe primary resolution source for this market will be official governmental information, how",
+      "slug": "will-iran-close-the-strait-of-hormuz-by-june-30",
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-june-30",
+      "volume_24h": 169357.99953900004,
+      "total_volume": 1160374.1336800011,
+      "liquidity": 25283.17832,
+      "volume_spike_ratio": 4.38,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.195,
+          "implied_probability": "19.5%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-06-30T00:00:00Z",
+      "prices": [
+        0.805,
+        0.195
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226109+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Xander Schauffele win the 2026 Masters tournament?",
+      "description": "This polymarket will resolve according to the player who wins the 2026 Masters Tournament.\n\nIf this player is eliminated from contention for The Masters based on the official rules of the tournament, the relevant market will resolve to \"No\".\n\nIn the event of a tie, this market will resolve according",
+      "slug": "will-xander-schauffele-win-the-2026-masters-tournament",
+      "url": "https://polymarket.com/event/will-xander-schauffele-win-the-2026-masters-tournament",
+      "volume_24h": 164451.73078500037,
+      "total_volume": 6002208.484140059,
+      "liquidity": 21727.76375,
+      "volume_spike_ratio": 0.82,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.026,
+          "implied_probability": "2.6%",
+          "payout_multiple": "38.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-04-13T00:00:00Z",
+      "prices": [
+        0.026,
+        0.974
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226140+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will there be no new Supreme Leader of Iran by June 30?",
+      "description": "The Supreme Leader of Iran is chosen by the Assembly of Experts.\n\nThis market will resolve according to the person who is named as the next Supreme Leader of the Islamic Republic of Iran.\n\nThe resolution of this market will be based on the first official announcement of the next Supreme Leader of Ir",
+      "slug": "will-there-be-no-new-supreme-leader-of-iran-by-june-30",
+      "url": "https://polymarket.com/event/will-there-be-no-new-supreme-leader-of-iran-by-june-30",
+      "volume_24h": 162731.58103299997,
+      "total_volume": 809414.5649170022,
+      "liquidity": 15116.06878,
+      "volume_spike_ratio": 6.03,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0815,
+          "implied_probability": "8.2%",
+          "payout_multiple": "12.3x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.0815,
+        0.9185
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226161+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Sarah Huckabee Sanders win the 2028 Republican presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Republican Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Republican Party sources.\n\nAny replacement of",
+      "slug": "will-sarah-huckabee-sanders-win-the-2028-republican-presidential-nomination",
+      "url": "https://polymarket.com/event/will-sarah-huckabee-sanders-win-the-2028-republican-presidential-nomination",
+      "volume_24h": 162526.521854,
+      "total_volume": 18879361.900316946,
+      "liquidity": 1002892.24971,
+      "volume_spike_ratio": 0.26,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0175,
+          "implied_probability": "1.8%",
+          "payout_multiple": "57.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0175,
+        0.9825
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226175+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Alireza Arafi be the next Supreme Leader of Iran?",
+      "description": "The Supreme Leader of Iran is chosen by the Assembly of Experts.\n\nThis market will resolve according to the person who is named as the next Supreme Leader of the Islamic Republic of Iran.\n\nThe resolution of this market will be based on the first official announcement of the next Supreme Leader of Ir",
+      "slug": "will-alireza-arafi-be-the-next-supreme-leader-of-iran-944",
+      "url": "https://polymarket.com/event/will-alireza-arafi-be-the-next-supreme-leader-of-iran-944",
+      "volume_24h": 160541.82738999993,
+      "total_volume": 1904301.8325620003,
+      "liquidity": 29448.6291,
+      "volume_spike_ratio": 2.53,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.13,
+          "implied_probability": "13.0%",
+          "payout_multiple": "7.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.13,
+        0.87
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226185+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Trump acquire Greenland before 2027?",
+      "description": "This market will resolve to \"Yes\" if the United States officially announces that Greenland will come under US sovereignty by December 31, 2026, 11:59 PM ET. Otherwise this market will resolve to \"No\".\n\nSovereignty is defined as the transfer of the majority of the territory of Greenland from its curr",
+      "slug": "will-trump-acquire-greenland-before-2027",
+      "url": "https://polymarket.com/event/will-trump-acquire-greenland-before-2027",
+      "volume_24h": 158929.66513300006,
+      "total_volume": 29353381.274110075,
+      "liquidity": 376281.60505,
+      "volume_spike_ratio": 0.16,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.111,
+          "implied_probability": "11.1%",
+          "payout_multiple": "9.0x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.111,
+        0.889
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226212+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Iran x Israel/US conflict ends by March 15?",
+      "description": "This market will resolve to \"Yes\" if there is a continuous 14-day period without any qualifying military action between Iran, and Israel and the United States that begins at any time between market creation and the specified end date (ET). Otherwise, this market will resolve to \"No\". \n\nThe 14-day pe",
+      "slug": "iran-x-israelus-conflict-ends-by-march-15",
+      "url": "https://polymarket.com/event/iran-x-israelus-conflict-ends-by-march-15",
+      "volume_24h": 150650.63755999994,
+      "total_volume": 679539.6982010009,
+      "liquidity": 62605.42754,
+      "volume_spike_ratio": 6.65,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0355,
+          "implied_probability": "3.5%",
+          "payout_multiple": "28.2x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.0355,
+        0.9645
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226291+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Iran strike Israel on March 4?",
+      "description": "This market will resolve to \"Yes\" if Iran initiates a drone, missile, or air strike on Israel\u2019s soil on the listed date in Israel Time (GMT+2). Otherwise, this market will resolve to \"No\".\n\nFor the purposes of this market, a qualifying \"strike\" is defined as the use of aerial bombs, drones, or missi",
+      "slug": "will-iran-strike-israel-on-march-4",
+      "url": "https://polymarket.com/event/will-iran-strike-israel-on-march-4",
+      "volume_24h": 146733.6217109999,
+      "total_volume": 566987.9293139998,
+      "liquidity": 17185.91852,
+      "volume_spike_ratio": 7.76,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0595,
+          "implied_probability": "5.9%",
+          "payout_multiple": "16.8x"
+        }
+      ],
+      "tags": [],
+      "end_date": "",
+      "prices": [
+        0.0595,
+        0.9405
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226337+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Germany win the 2026 FIFA World Cup?",
+      "description": "This market will resolve according to the national team that wins the 2026 FIFA World Cup.\n\nIf at any point it becomes impossible for this team to win the FIFA World Cup based on the rules of FIFA (e.g., they are eliminated in the knockout stage), this market will resolve immediately to \u201cNo\u201d.\n\nIf th",
+      "slug": "will-germany-win-the-2026-fifa-world-cup-467",
+      "url": "https://polymarket.com/event/will-germany-win-the-2026-fifa-world-cup-467",
+      "volume_24h": 145160.97183400003,
+      "total_volume": 4853768.372692025,
+      "liquidity": 371768.67519,
+      "volume_spike_ratio": 0.9,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0555,
+          "implied_probability": "5.5%",
+          "payout_multiple": "18.0x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-07-20T00:00:00Z",
+      "prices": [
+        0.0555,
+        0.9445
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226361+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Norway win the 2026 FIFA World Cup?",
+      "description": "This market will resolve according to the national team that wins the 2026 FIFA World Cup.\n\nIf at any point it becomes impossible for this team to win the FIFA World Cup based on the rules of FIFA (e.g., they are eliminated in the knockout stage), this market will resolve immediately to \u201cNo\u201d.\n\nIf th",
+      "slug": "will-norway-win-the-2026-fifa-world-cup-893",
+      "url": "https://polymarket.com/event/will-norway-win-the-2026-fifa-world-cup-893",
+      "volume_24h": 145060.09560300014,
+      "total_volume": 5566345.5736371605,
+      "liquidity": 363644.40168,
+      "volume_spike_ratio": 0.78,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0315,
+          "implied_probability": "3.1%",
+          "payout_multiple": "31.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-07-20T00:00:00Z",
+      "prices": [
+        0.0315,
+        0.9685
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226371+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Belgium win the 2026 FIFA World Cup?",
+      "description": "This market will resolve according to the national team that wins the 2026 FIFA World Cup.\n\nIf at any point it becomes impossible for this team to win the FIFA World Cup based on the rules of FIFA (e.g., they are eliminated in the knockout stage), this market will resolve immediately to \u201cNo\u201d.\n\nIf th",
+      "slug": "will-belgium-win-the-2026-fifa-world-cup-358",
+      "url": "https://polymarket.com/event/will-belgium-win-the-2026-fifa-world-cup-358",
+      "volume_24h": 143338.66529199996,
+      "total_volume": 4884290.315635976,
+      "liquidity": 708608.22059,
+      "volume_spike_ratio": 0.88,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-07-20T00:00:00Z",
+      "prices": [
+        0.0165,
+        0.9835
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226393+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Ethereum be above $2,200 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for ETH/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "ethereum-above-2200-on-march-6",
+      "url": "https://polymarket.com/event/ethereum-above-2200-on-march-6",
+      "volume_24h": 140735.04435400007,
+      "total_volume": 179762.695037,
+      "liquidity": 19554.52061,
+      "volume_spike_ratio": 23.49,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0305,
+          "implied_probability": "3.0%",
+          "payout_multiple": "32.8x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.0305,
+        0.9695
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226410+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Lens win the 2025\u201326 French Ligue 1?",
+      "description": "This is a polymarket on whether the listed club will win the 2025\u201326 French Ligue 1.\n\nThis market will resolve to \"Yes\" if the listed club is officially crowned the winner of the 2025\u201326 French Ligue 1. Otherwise, it will resolve to \"No\".\n\nIf at any point it becomes impossible for the listed club to",
+      "slug": "will-lens-win-the-202526-french-ligue-1",
+      "url": "https://polymarket.com/event/will-lens-win-the-202526-french-ligue-1",
+      "volume_24h": 140426.906192,
+      "total_volume": 10962405.33079707,
+      "liquidity": 20095.82258,
+      "volume_spike_ratio": 0.38,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.039,
+          "implied_probability": "3.9%",
+          "payout_multiple": "25.6x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-05-30T00:00:00Z",
+      "prices": [
+        0.039,
+        0.961
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226420+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Aston Villa win the 2025-26 UEFA Europa League?",
+      "description": "This is a polymarket on whether the listed team will win the 2025\u201326 UEFA Europa League.\n\nThis market will resolve to \"Yes\" if the listed team is officially crowned the winner of the 2025\u201326 UEFA Europa League. Otherwise, it will resolve to \"No\".\n\nIf at any point it becomes impossible for the listed",
+      "slug": "will-aston-villa-win-the-2025-26-uefa-europa-league",
+      "url": "https://polymarket.com/event/will-aston-villa-win-the-2025-26-uefa-europa-league",
+      "volume_24h": 139713.328019,
+      "total_volume": 375754.81849400006,
+      "liquidity": 25918.179,
+      "volume_spike_ratio": 11.15,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.225,
+          "implied_probability": "22.5%",
+          "payout_multiple": "4.4x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-05-24T00:00:00Z",
+      "prices": [
+        0.225,
+        0.775
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226441+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Tulsi Gabbard win the 2028 US Presidential Election?",
+      "description": "The 2028 US Presidential Election is scheduled to take place on November 7, 2028.\n\nThis market will resolve to the person who wins the 2028 US Presidential Election.\n\nThe resolution source for this market is the Associated Press, Fox News, and NBC. This market will resolve once all three sources cal",
+      "slug": "will-tulsi-gabbard-win-the-2028-us-presidential-election",
+      "url": "https://polymarket.com/event/will-tulsi-gabbard-win-the-2028-us-presidential-election",
+      "volume_24h": 137278.27280999997,
+      "total_volume": 24832787.409213867,
+      "liquidity": 774195.94629,
+      "volume_spike_ratio": 0.17,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0105,
+        0.9895
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226483+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Sporting win the 2025\u201326 Champions League?",
+      "description": "This is a polymarket on whether the listed team will win the 2025\u201326 UEFA Champions League.\n\nThis market will resolve to \"Yes\" if the listed team is officially crowned the winner of the 2025\u201326 UEFA Champions League. Otherwise, it will resolve to \"No\".\n\nIf at any point it becomes impossible for the ",
+      "slug": "will-sporting-win-the-202526-champions-league",
+      "url": "https://polymarket.com/event/will-sporting-win-the-202526-champions-league",
+      "volume_24h": 129634.631485,
+      "total_volume": 7714742.15146503,
+      "liquidity": 487371.53083,
+      "volume_spike_ratio": 0.5,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.012,
+          "implied_probability": "1.2%",
+          "payout_multiple": "83.3x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-05-31T00:00:00Z",
+      "prices": [
+        0.012,
+        0.988
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226528+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Ken Paxton win the 2026 Texas Republican Primary?",
+      "description": "This market will resolve according to the winner of the Republican Primary for United States Senator from Texas. \n\nIf no 2026 Texas Republican Senate Primary takes place, this market will resolve to \"Other\".\n\nThe resolution source for this market will be the first announcement of the results from th",
+      "slug": "will-ken-paxton-win-the-2026-republican-primary",
+      "url": "https://polymarket.com/event/will-ken-paxton-win-the-2026-republican-primary",
+      "volume_24h": 128363.21935599991,
+      "total_volume": 3281812.8515060223,
+      "liquidity": 68300.101,
+      "volume_spike_ratio": 1.17,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.175,
+          "implied_probability": "17.5%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-03T00:00:00Z",
+      "prices": [
+        0.175,
+        0.825
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226545+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Brazil win the 2026 FIFA World Cup?",
+      "description": "This market will resolve according to the national team that wins the 2026 FIFA World Cup.\n\nIf at any point it becomes impossible for this team to win the FIFA World Cup based on the rules of FIFA (e.g., they are eliminated in the knockout stage), this market will resolve immediately to \u201cNo\u201d.\n\nIf th",
+      "slug": "will-brazil-win-the-2026-fifa-world-cup-183",
+      "url": "https://polymarket.com/event/will-brazil-win-the-2026-fifa-world-cup-183",
+      "volume_24h": 128310.688376,
+      "total_volume": 2907697.4986249837,
+      "liquidity": 1135573.95614,
+      "volume_spike_ratio": 1.32,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0855,
+          "implied_probability": "8.6%",
+          "payout_multiple": "11.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-07-20T00:00:00Z",
+      "prices": [
+        0.0855,
+        0.9145
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226554+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Crude Oil (CL) hit (HIGH) $150 by end of March?",
+      "description": "This market will resolve to \"Yes\" if, on any trading day, the official CME settlement price for the Active Month (front month) of Crude Oil (CL) futures is equal to or above the listed price by the final trading day of March 2026. Otherwise, the market will resolve to \"No\".\n\nFor CME Crude Oil (CL) f",
+      "slug": "will-crude-oil-cl-hit-high-150-by-end-of-march-138",
+      "url": "https://polymarket.com/event/will-crude-oil-cl-hit-high-150-by-end-of-march-138",
+      "volume_24h": 128018.98649799991,
+      "total_volume": 566251.6345190007,
+      "liquidity": 135972.71067,
+      "volume_spike_ratio": 6.78,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0455,
+          "implied_probability": "4.5%",
+          "payout_multiple": "22.0x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.0455,
+        0.9545
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226572+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Sadegh Larijani be the next Supreme Leader of Iran?",
+      "description": "The Supreme Leader of Iran is chosen by the Assembly of Experts.\n\nThis market will resolve according to the person who is named as the next Supreme Leader of the Islamic Republic of Iran.\n\nThe resolution of this market will be based on the first official announcement of the next Supreme Leader of Ir",
+      "slug": "will-sadegh-larijani-be-the-next-supreme-leader-of-iran",
+      "url": "https://polymarket.com/event/will-sadegh-larijani-be-the-next-supreme-leader-of-iran",
+      "volume_24h": 127108.42512099996,
+      "total_volume": 569961.0687650001,
+      "liquidity": 19728.14033,
+      "volume_spike_ratio": 6.69,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.026,
+          "implied_probability": "2.6%",
+          "payout_multiple": "38.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.026,
+        0.974
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226588+00:00"
+    }
+  ],
+  "volume_spike_markets": [
+    {
+      "platform": "polymarket",
+      "question": "Spread: Nuggets (-4.5)",
+      "description": "In the upcoming NBA game, scheduled for March 5 at 10:00 PM ET:\n\nThis market will resolve to \"Nuggets\" if the Nuggets win the game by 5 or more points.\n\nOtherwise, this market will resolve to \"Lakers\". If the game ends in a tie, this market will resolve to \"Lakers\".\n\nIf the game is postponed, this m",
+      "slug": "nba-lal-den-2026-03-05-spread-home-4pt5",
+      "url": "https://polymarket.com/event/nba-lal-den-2026-03-05-spread-home-4pt5",
+      "volume_24h": 1055978.5020279991,
+      "total_volume": 1056090.852849,
+      "liquidity": 556856.27168,
+      "volume_spike_ratio": 30.0,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T03:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224854+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Spread: Pelicans (-5.5)",
+      "description": "In the upcoming NBA game, scheduled for March 5 at 10:00 PM ET:\n\nThis market will resolve to \"Pelicans\" if the Pelicans win the game by 6 or more points.\n\nOtherwise, this market will resolve to \"Kings\". If the game ends in a tie, this market will resolve to \"Kings\".\n\nIf the game is postponed, this m",
+      "slug": "nba-nop-sac-2026-03-05-spread-away-5pt5",
+      "url": "https://polymarket.com/event/nba-nop-sac-2026-03-05-spread-away-5pt5",
+      "volume_24h": 708328.954307,
+      "total_volume": 708328.9543069997,
+      "liquidity": 429070.75245,
+      "volume_spike_ratio": 30.0,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T03:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224925+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "BNP Paribas Open: Michael Zheng vs Vit Kopriva",
+      "description": "This market refers on the tennis match between Michael Zheng and Vit Kopriva in the BNP Paribas Open, scheduled for March 5 at 10:30PM ET.\n\nThis market will resolve to 'Michael Zheng' if Michael Zheng advances against Vit Kopriva.\n\nThis market will resolve to 'Vit Kopriva' if Vit Kopriva advances ag",
+      "slug": "atp-zheng-kopriva-2026-03-05",
+      "url": "https://polymarket.com/event/atp-zheng-kopriva-2026-03-05",
+      "volume_24h": 253718.75872300038,
+      "total_volume": 253718.75872300044,
+      "liquidity": 361015.33172,
+      "volume_spike_ratio": 30.0,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-13T03:30:00Z",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225623+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Bitcoin Up or Down - March 6, 1AM ET",
+      "description": "This market will resolve to \"Up\" if the close price is greater than or equal to the open price for the BTC/USDT 1 hour candle that begins on the time and date specified in the title. Otherwise, this market will resolve to \"Down\".\n\nThe resolution source for this market is information from Binance, sp",
+      "slug": "bitcoin-up-or-down-march-6-1am-et",
+      "url": "https://polymarket.com/event/bitcoin-up-or-down-march-6-1am-et",
+      "volume_24h": 200706.6784459998,
+      "total_volume": 200705.6384459999,
+      "liquidity": 736663.0771,
+      "volume_spike_ratio": 30.0,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T07:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225913+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "San Diego Toreros vs. Loyola Marymount Lions",
+      "description": "In the upcoming CBB game, scheduled for March 5 at 11:30 PM ET:\n\nIf the San Diego Toreros win, the market will resolve to \"San Diego Toreros\".\n\nIf the Loyola Marymount Lions win, the market will resolve to \"Loyola Marymount Lions\".\n\nIf the game is postponed, this market will remain open until the ga",
+      "slug": "cbb-sd-loymry-2026-03-05",
+      "url": "https://polymarket.com/event/cbb-sd-loymry-2026-03-05",
+      "volume_24h": 191767.75037500015,
+      "total_volume": 191792.9018890002,
+      "liquidity": 214371.01504,
+      "volume_spike_ratio": 30.0,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T04:30:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225961+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Pelicans vs. Kings: O/U 235.5",
+      "description": "In the upcoming NBA game, scheduled for March 5 at 10:00 PM ET:\n\nThis market will resolve to \"Over\" if the Pelicans and Kings combine to score 236 or more points in this game.\n\nIf the combined total is less than 236, this market will resolve to \"Under\".\n\nIf the game is postponed, this market will re",
+      "slug": "nba-nop-sac-2026-03-05-total-235pt5",
+      "url": "https://polymarket.com/event/nba-nop-sac-2026-03-05-total-235pt5",
+      "volume_24h": 172888.2724839999,
+      "total_volume": 172888.27248400007,
+      "liquidity": 486211.48186,
+      "volume_spike_ratio": 30.0,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T03:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226071+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Bitcoin Up or Down - March 6, 12AM ET",
+      "description": "This market will resolve to \"Up\" if the close price is greater than or equal to the open price for the BTC/USDT 1 hour candle that begins on the time and date specified in the title. Otherwise, this market will resolve to \"Down\".\n\nThe resolution source for this market is information from Binance, sp",
+      "slug": "bitcoin-up-or-down-march-6-12am-et",
+      "url": "https://polymarket.com/event/bitcoin-up-or-down-march-6-12am-et",
+      "volume_24h": 152984.80045700012,
+      "total_volume": 152984.80045699992,
+      "liquidity": 518703.07575,
+      "volume_spike_ratio": 30.0,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T06:00:00Z",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226252+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Lakers vs. Nuggets: O/U 240.5",
+      "description": "In the upcoming NBA game, scheduled for March 5 at 10:00 PM ET:\n\nThis market will resolve to \"Over\" if the Lakers and Nuggets combine to score 241 or more points in this game.\n\nIf the combined total is less than 241, this market will resolve to \"Under\".\n\nIf the game is postponed, this market will re",
+      "slug": "nba-lal-den-2026-03-05-total-240pt5",
+      "url": "https://polymarket.com/event/nba-lal-den-2026-03-05-total-240pt5",
+      "volume_24h": 784059.5148840008,
+      "total_volume": 784396.9424220043,
+      "liquidity": 230550.64479,
+      "volume_spike_ratio": 29.99,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T03:00:00Z",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224903+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Lakers vs. Nuggets: O/U 241.5",
+      "description": "In the upcoming NBA game, scheduled for March 5 at 10:00 PM ET:\n\nThis market will resolve to \"Over\" if the Lakers and Nuggets combine to score 242 or more points in this game.\n\nIf the combined total is less than 242, this market will resolve to \"Under\".\n\nIf the game is postponed, this market will re",
+      "slug": "nba-lal-den-2026-03-05-total-241pt5",
+      "url": "https://polymarket.com/event/nba-lal-den-2026-03-05-total-241pt5",
+      "volume_24h": 176838.46515799998,
+      "total_volume": 177292.59823300038,
+      "liquidity": 194995.16312,
+      "volume_spike_ratio": 29.92,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T03:00:00Z",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226053+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Hurricanes vs. Oilers",
+      "description": "In the upcoming NHL game, scheduled for March 6 at 9:00PM ET:\nIf the Hurricanes win, the market will resolve to \"Hurricanes\".\nIf the Oilers win, the market will resolve to \"Oilers\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled enti",
+      "slug": "nhl-car-edm-2026-03-06",
+      "url": "https://polymarket.com/event/nhl-car-edm-2026-03-06",
+      "volume_24h": 480944.386469,
+      "total_volume": 482375.23830299993,
+      "liquidity": 111153.9891,
+      "volume_spike_ratio": 29.91,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-07T02:00:00Z",
+      "prices": [
+        0.515,
+        0.485
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225042+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Canadiens vs. Ducks",
+      "description": "In the upcoming NHL game, scheduled for March 6 at 9:00PM ET:\nIf the Canadiens win, the market will resolve to \"Canadiens\".\nIf the Ducks win, the market will resolve to \"Ducks\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely",
+      "slug": "nhl-mon-ana-2026-03-06",
+      "url": "https://polymarket.com/event/nhl-mon-ana-2026-03-06",
+      "volume_24h": 331539.08290000004,
+      "total_volume": 332524.511905,
+      "liquidity": 61416.6681,
+      "volume_spike_ratio": 29.91,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-07T02:00:00Z",
+      "prices": [
+        0.485,
+        0.515
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225344+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Lakers vs. Nuggets: O/U 239.5",
+      "description": "In the upcoming NBA game, scheduled for March 5 at 10:00 PM ET:\n\nThis market will resolve to \"Over\" if the Lakers and Nuggets combine to score 240 or more points in this game.\n\nIf the combined total is less than 240, this market will resolve to \"Under\".\n\nIf the game is postponed, this market will re",
+      "slug": "nba-lal-den-2026-03-05-total-239pt5",
+      "url": "https://polymarket.com/event/nba-lal-den-2026-03-05-total-239pt5",
+      "volume_24h": 359919.81126199977,
+      "total_volume": 363879.65974699985,
+      "liquidity": 234778.97309,
+      "volume_spike_ratio": 29.67,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T03:00:00Z",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225263+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Pacers vs. Lakers",
+      "description": "In the upcoming NBA game, scheduled for March 6 at 10:30PM ET:\nIf the Pacers win, the market will resolve to \"Pacers\".\nIf the Lakers win, the market will resolve to \"Lakers\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, w",
+      "slug": "nba-ind-lal-2026-03-06",
+      "url": "https://polymarket.com/event/nba-ind-lal-2026-03-06",
+      "volume_24h": 187490.7500129999,
+      "total_volume": 189620.9682640003,
+      "liquidity": 190554.9854,
+      "volume_spike_ratio": 29.66,
+      "cheap_outcomes": [
+        {
+          "outcome": "Pacers",
+          "price": 0.195,
+          "implied_probability": "19.5%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-07T03:30:00Z",
+      "prices": [
+        0.195,
+        0.805
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225985+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "BNP Paribas Open: Peyton Stearns vs Solana Sierra",
+      "description": "This market refers on the tennis match between Peyton Stearns and Solana Sierra in the BNP Paribas Open, scheduled for March 4 at 1:00PM ET.\n\nThis market will resolve to 'Peyton Stearns' if Peyton Stearns advances against Solana Sierra.\n\nThis market will resolve to 'Solana Sierra' if Solana Sierra a",
+      "slug": "wta-stearns-sierra-2026-03-04",
+      "url": "https://polymarket.com/event/wta-stearns-sierra-2026-03-04",
+      "volume_24h": 217046.85535900004,
+      "total_volume": 220915.6720209999,
+      "liquidity": 477145.9287,
+      "volume_spike_ratio": 29.47,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-11T18:00:00Z",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225778+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Ethereum be greater than $2,400 on March 6?",
+      "description": "This market will resolve according to the final \"Close\" price of the Binance 1 minute candle for ETH/USDT 12:00 in the ET timezone (noon) on the date specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the ETH/USDT \"Clo",
+      "slug": "will-the-price-of-ethereum-be-greater-than-2400-on-march-6",
+      "url": "https://polymarket.com/event/will-the-price-of-ethereum-be-greater-than-2400-on-march-6",
+      "volume_24h": 159085.68370599987,
+      "total_volume": 162067.534085,
+      "liquidity": 20488.44512,
+      "volume_spike_ratio": 29.45,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226192+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Islanders vs. Kings",
+      "description": "In the upcoming NHL game, scheduled for March 5 at 9:30PM ET:\nIf the Islanders win, the market will resolve to \"Islanders\".\nIf the Kings win, the market will resolve to \"Kings\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely",
+      "slug": "nhl-nyi-lak-2026-03-05",
+      "url": "https://polymarket.com/event/nhl-nyi-lak-2026-03-05",
+      "volume_24h": 333580.1767790001,
+      "total_volume": 341054.24843800074,
+      "liquidity": 372522.66792,
+      "volume_spike_ratio": 29.34,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T02:30:00Z",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225329+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Spread: Nuggets (-5.5)",
+      "description": "In the upcoming NBA game, scheduled for March 5 at 10:00 PM ET:\n\nThis market will resolve to \"Nuggets\" if the Nuggets win the game by 6 or more points.\n\nOtherwise, this market will resolve to \"Lakers\". If the game ends in a tie, this market will resolve to \"Lakers\".\n\nIf the game is postponed, this m",
+      "slug": "nba-lal-den-2026-03-05-spread-home-5pt5",
+      "url": "https://polymarket.com/event/nba-lal-den-2026-03-05-spread-home-5pt5",
+      "volume_24h": 340030.62183100026,
+      "total_volume": 347971.96505399985,
+      "liquidity": 422338.03078,
+      "volume_spike_ratio": 29.32,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T03:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225313+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Lakers vs. Nuggets",
+      "description": "In the upcoming NBA game, scheduled for March 5 at 10:00PM ET:\nIf the Lakers win, the market will resolve to \"Lakers\".\nIf the Nuggets win, the market will resolve to \"Nuggets\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely,",
+      "slug": "nba-lal-den-2026-03-05",
+      "url": "https://polymarket.com/event/nba-lal-den-2026-03-05",
+      "volume_24h": 3022748.711041002,
+      "total_volume": 3146334.9415149908,
+      "liquidity": 1187106.13441,
+      "volume_spike_ratio": 28.82,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T03:00:00Z",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224730+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Trail Blazers vs. Rockets",
+      "description": "In the upcoming NBA game, scheduled for March 6 at 8:00PM ET:\nIf the Trail Blazers win, the market will resolve to \"Trail Blazers\".\nIf the Rockets win, the market will resolve to \"Rockets\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is cance",
+      "slug": "nba-por-hou-2026-03-06",
+      "url": "https://polymarket.com/event/nba-por-hou-2026-03-06",
+      "volume_24h": 138418.64589500002,
+      "total_volume": 144302.28127200005,
+      "liquidity": 122999.2349,
+      "volume_spike_ratio": 28.78,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-07T01:00:00Z",
+      "prices": [
+        0.325,
+        0.675
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226469+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Mavericks vs. Celtics",
+      "description": "In the upcoming NBA game, scheduled for March 6 at 7:00PM ET:\nIf the Mavericks win, the market will resolve to \"Mavericks\".\nIf the Celtics win, the market will resolve to \"Celtics\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled enti",
+      "slug": "nba-dal-bos-2026-03-06",
+      "url": "https://polymarket.com/event/nba-dal-bos-2026-03-06",
+      "volume_24h": 270692.16583499993,
+      "total_volume": 283096.154883,
+      "liquidity": 851658.0119,
+      "volume_spike_ratio": 28.69,
+      "cheap_outcomes": [
+        {
+          "outcome": "Mavericks",
+          "price": 0.105,
+          "implied_probability": "10.5%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-07T00:00:00Z",
+      "prices": [
+        0.105,
+        0.895
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225532+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Knicks vs. Nuggets",
+      "description": "In the upcoming NBA game, scheduled for March 6 at 9:00PM ET:\nIf the Knicks win, the market will resolve to \"Knicks\".\nIf the Nuggets win, the market will resolve to \"Nuggets\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, ",
+      "slug": "nba-nyk-den-2026-03-06",
+      "url": "https://polymarket.com/event/nba-nyk-den-2026-03-06",
+      "volume_24h": 333339.04859500006,
+      "total_volume": 348706.644099,
+      "liquidity": 114227.1955,
+      "volume_spike_ratio": 28.68,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-07T02:00:00Z",
+      "prices": [
+        0.515,
+        0.485
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225337+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Heat vs. Hornets",
+      "description": "In the upcoming NBA game, scheduled for March 6 at 7:00PM ET:\nIf the Heat win, the market will resolve to \"Heat\".\nIf the Hornets win, the market will resolve to \"Hornets\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, with",
+      "slug": "nba-mia-cha-2026-03-06",
+      "url": "https://polymarket.com/event/nba-mia-cha-2026-03-06",
+      "volume_24h": 277216.31638899987,
+      "total_volume": 291583.87369499943,
+      "liquidity": 171895.3378,
+      "volume_spike_ratio": 28.52,
+      "cheap_outcomes": [
+        {
+          "outcome": "Heat",
+          "price": 0.275,
+          "implied_probability": "27.5%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-07T00:00:00Z",
+      "prices": [
+        0.275,
+        0.725
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225491+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Paradex launch a token on March 5?",
+      "description": "This market will resolve to the first date (in ET) on which Paredex launches its governance token.\n\nThe token must be actively and publicly transferable and tradable. Announcements alone do not qualify.\n\nThe primary resolution source for this market will be information from Paradex (https://www.para",
+      "slug": "will-paradex-launch-a-token-on-march-5",
+      "url": "https://polymarket.com/event/will-paradex-launch-a-token-on-march-5",
+      "volume_24h": 2470011.121742,
+      "total_volume": 2648987.3807589994,
+      "liquidity": 5574788.6272,
+      "volume_spike_ratio": 27.97,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-04-01T05:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224755+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will FC Bayern M\u00fcnchen win on 2026-03-06?",
+      "description": "In the upcoming game, scheduled for March 6, 2026\nIf FC Bayern M\u00fcnchen wins, this market will resolve to \"Yes\".\nOtherwise, this market will resolve to \"No\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, with no make-up gam",
+      "slug": "bun-bay-moe-2026-03-06-bay",
+      "url": "https://polymarket.com/event/bun-bay-moe-2026-03-06-bay",
+      "volume_24h": 433363.9541229997,
+      "total_volume": 465944.3760399991,
+      "liquidity": 341245.5883,
+      "volume_spike_ratio": 27.9,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.165,
+          "implied_probability": "16.5%",
+          "payout_multiple": "6.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T19:30:00Z",
+      "prices": [
+        0.835,
+        0.165
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225091+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will David Belliard win the Paris mayor election?",
+      "description": "The 2026 election for the Mayor of Paris is scheduled to take place in March.\n\nThis market will resolve according to the candidate who wins the 2026 Paris mayoral election to become the next elected Mayor of Paris.\n\nTemporary, interim, or placeholder mayors appointed before the election will not be ",
+      "slug": "will-david-belliard-win-the-paris-mayor-election",
+      "url": "https://polymarket.com/event/will-david-belliard-win-the-paris-mayor-election",
+      "volume_24h": 2125772.11,
+      "total_volume": 2288380.352738,
+      "liquidity": 73428.78301,
+      "volume_spike_ratio": 27.87,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224763+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Bitcoin be above $62,000 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "bitcoin-above-62k-on-march-6",
+      "url": "https://polymarket.com/event/bitcoin-above-62k-on-march-6",
+      "volume_24h": 759204.3533329997,
+      "total_volume": 830252.6263080003,
+      "liquidity": 68033.80973,
+      "volume_spike_ratio": 27.43,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224912+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Adam Scott win the 2026 Masters tournament?",
+      "description": "This polymarket will resolve according to the player who wins the 2026 Masters Tournament.\n\nIf this player is eliminated from contention for The Masters based on the official rules of the tournament, the relevant market will resolve to \"No\".\n\nIn the event of a tie, this market will resolve according",
+      "slug": "will-adam-scott-win-the-2026-masters-tournament",
+      "url": "https://polymarket.com/event/will-adam-scott-win-the-2026-masters-tournament",
+      "volume_24h": 239383.10280000002,
+      "total_volume": 270126.79011,
+      "liquidity": 15144.48168,
+      "volume_spike_ratio": 26.59,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0275,
+          "implied_probability": "2.8%",
+          "payout_multiple": "36.4x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-04-13T00:00:00Z",
+      "prices": [
+        0.0275,
+        0.9725
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225660+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Crude Oil (CL) hit (HIGH) $80 by end of March?",
+      "description": "This market will resolve to \"Yes\" if, on any trading day, the official CME settlement price for the Active Month (front month) of Crude Oil (CL) futures is equal to or above the listed price by the final trading day of March 2026. Otherwise, the market will resolve to \"No\".\n\nFor CME Crude Oil (CL) f",
+      "slug": "will-crude-oil-cl-hit-high-80-by-end-of-march-113-384-528",
+      "url": "https://polymarket.com/event/will-crude-oil-cl-hit-high-80-by-end-of-march-113-384-528",
+      "volume_24h": 2700644.5277830004,
+      "total_volume": 3053357.995602,
+      "liquidity": 363617.70306,
+      "volume_spike_ratio": 26.53,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224738+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Crude Oil (CL) hit (HIGH) $75 by end of June?",
+      "description": "This market will resolve to \"Yes\" if, on any trading day, the official CME settlement price for the Active Month (front month) of Crude Oil (CL) futures is equal to or above the listed price by the final trading day of June 2026. Otherwise, the market will resolve to \"No\".\n\nFor CME Crude Oil (CL) fu",
+      "slug": "cl-hit-75-high-jun-2026-131",
+      "url": "https://polymarket.com/event/cl-hit-75-high-jun-2026-131",
+      "volume_24h": 127101.02314499998,
+      "total_volume": 145163.970686,
+      "liquidity": 95474.19313,
+      "volume_spike_ratio": 26.27,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-06-30T18:30:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226597+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will SSC Napoli win on 2026-03-06?",
+      "description": "In the upcoming game, scheduled for March 6, 2026\nIf SSC Napoli wins, this market will resolve to \"Yes\".\nOtherwise, this market will resolve to \"No\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, with no make-up game, this",
+      "slug": "sea-nap-tor-2026-03-06-nap",
+      "url": "https://polymarket.com/event/sea-nap-tor-2026-03-06-nap",
+      "volume_24h": 158847.37955399978,
+      "total_volume": 182240.40291299982,
+      "liquidity": 309367.0445,
+      "volume_spike_ratio": 26.15,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T19:45:00Z",
+      "prices": [
+        0.605,
+        0.395
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226226+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Pelicans vs. Kings",
+      "description": "In the upcoming NBA game, scheduled for March 5 at 10:00PM ET:\nIf the Pelicans win, the market will resolve to \"Pelicans\".\nIf the Kings win, the market will resolve to \"Kings\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely,",
+      "slug": "nba-nop-sac-2026-03-05",
+      "url": "https://polymarket.com/event/nba-nop-sac-2026-03-05",
+      "volume_24h": 1860797.4750200007,
+      "total_volume": 2165195.3547830046,
+      "liquidity": 725785.64716,
+      "volume_spike_ratio": 25.78,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T03:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224788+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Real Madrid CF win on 2026-03-07?",
+      "description": "In the upcoming game, scheduled for March 7, 2026\nIf Real Madrid CF wins, this market will resolve to \"Yes\".\nOtherwise, this market will resolve to \"No\".\nIf the game is postponed, this market will remain open until the game has been completed.\nIf the game is canceled entirely, with no make-up game, ",
+      "slug": "lal-cel-rea-2026-03-07-rea",
+      "url": "https://polymarket.com/event/lal-cel-rea-2026-03-07-rea",
+      "volume_24h": 390561.6142220002,
+      "total_volume": 474877.82780200103,
+      "liquidity": 215603.8829,
+      "volume_spike_ratio": 24.67,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T20:00:00Z",
+      "prices": [
+        0.425,
+        0.575
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225192+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Ethereum be above $2,200 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for ETH/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "ethereum-above-2200-on-march-6",
+      "url": "https://polymarket.com/event/ethereum-above-2200-on-march-6",
+      "volume_24h": 140735.04435400007,
+      "total_volume": 179762.695037,
+      "liquidity": 19554.52061,
+      "volume_spike_ratio": 23.49,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0305,
+          "implied_probability": "3.0%",
+          "payout_multiple": "32.8x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.0305,
+        0.9695
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226410+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Bitcoin be above $76,000 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "bitcoin-above-76k-on-march-6",
+      "url": "https://polymarket.com/event/bitcoin-above-76k-on-march-6",
+      "volume_24h": 259908.31222199992,
+      "total_volume": 333196.8779250001,
+      "liquidity": 26150.8877,
+      "volume_spike_ratio": 23.4,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.0035,
+        0.9965
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225591+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Ethereum be above $1,700 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for ETH/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "ethereum-above-1700-on-march-6",
+      "url": "https://polymarket.com/event/ethereum-above-1700-on-march-6",
+      "volume_24h": 145604.78031600002,
+      "total_volume": 186939.3140909999,
+      "liquidity": 40498.98745,
+      "volume_spike_ratio": 23.37,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226352+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Chelsea win the 2025\u201326 English Premier League?",
+      "description": "This is a polymarket on whether the listed club will win the 2025\u201326 English Premier League.\n\nThis market will resolve to \"Yes\" if the listed club is officially crowned the winner of the 2025\u201326 English Premier League. Otherwise, it will resolve to \"No\".\n\nIf at any point it becomes impossible for th",
+      "slug": "will-chelsea-win-the-202526-english-premier-league",
+      "url": "https://polymarket.com/event/will-chelsea-win-the-202526-english-premier-league",
+      "volume_24h": 36499658.31,
+      "total_volume": 47436133.08262596,
+      "liquidity": 1196390.53281,
+      "volume_spike_ratio": 23.08,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-05-27T00:00:00Z",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224606+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Bitcoin be above $64,000 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "bitcoin-above-64k-on-march-6",
+      "url": "https://polymarket.com/event/bitcoin-above-64k-on-march-6",
+      "volume_24h": 286244.01272699994,
+      "total_volume": 388464.94401800015,
+      "liquidity": 38684.98889,
+      "volume_spike_ratio": 22.11,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.998,
+        0.002
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225459+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Opinion FDV above $400M one day after launch?",
+      "description": "This market will resolve to \"Yes\" if the Fully Diluted Valuation of Opinion's governance token is greater than the value specified in the title 1 day after launch. Otherwise, the market will resolve to \"No.\"\n\nThe token must be actively, publicly transferable and tradable to be considered a launch.\n\n",
+      "slug": "opinion-fdv-above-400m-one-day-after-launch-976",
+      "url": "https://polymarket.com/event/opinion-fdv-above-400m-one-day-after-launch-976",
+      "volume_24h": 195063.63289399998,
+      "total_volume": 265249.52940500004,
+      "liquidity": 25473.6385,
+      "volume_spike_ratio": 22.06,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2027-01-01T05:00:00Z",
+      "prices": [
+        0.355,
+        0.645
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225929+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Bitcoin be above $66,000 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "bitcoin-above-66k-on-march-6",
+      "url": "https://polymarket.com/event/bitcoin-above-66k-on-march-6",
+      "volume_24h": 232355.48149500004,
+      "total_volume": 329870.85958199936,
+      "liquidity": 31365.29138,
+      "volume_spike_ratio": 21.13,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0155,
+          "implied_probability": "1.6%",
+          "payout_multiple": "64.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.9845,
+        0.0155
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225720+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Bitcoin be above $60,000 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "bitcoin-above-60k-on-march-6",
+      "url": "https://polymarket.com/event/bitcoin-above-60k-on-march-6",
+      "volume_24h": 277085.18736,
+      "total_volume": 395890.49996499997,
+      "liquidity": 77163.39642,
+      "volume_spike_ratio": 21.0,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225499+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Bitcoin be above $70,000 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "bitcoin-above-70k-on-march-6",
+      "url": "https://polymarket.com/event/bitcoin-above-70k-on-march-6",
+      "volume_24h": 193742.3132749999,
+      "total_volume": 282392.0962149999,
+      "liquidity": 30249.4269,
+      "volume_spike_ratio": 20.58,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.695,
+        0.305
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225941+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Bitcoin be above $72,000 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "bitcoin-above-72k-on-march-6",
+      "url": "https://polymarket.com/event/bitcoin-above-72k-on-march-6",
+      "volume_24h": 260235.28448300005,
+      "total_volume": 385387.071282,
+      "liquidity": 30040.51931,
+      "volume_spike_ratio": 20.26,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.205,
+          "implied_probability": "20.5%",
+          "payout_multiple": "4.9x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.205,
+        0.795
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225583+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Kevin Warsh be confirmed as Fed Chair?",
+      "description": "This market will resolve according to the next individual formally confirmed as Chair of the Federal Reserve.\n\nFormal confirmation as Chair of the Federal Reserve requires the Senate to confirm a nominee as Chair of the Federal Reserve. Recess appointments without Senate confirmation will not count.",
+      "slug": "will-kevin-warsh-be-confirmed-as-fed-chair",
+      "url": "https://polymarket.com/event/will-kevin-warsh-be-confirmed-as-fed-chair",
+      "volume_24h": 207020.30677099995,
+      "total_volume": 306834.3497219998,
+      "liquidity": 237705.38161,
+      "volume_spike_ratio": 20.24,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.059,
+          "implied_probability": "5.9%",
+          "payout_multiple": "16.9x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-10-31T00:00:00Z",
+      "prices": [
+        0.941,
+        0.059
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225867+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Bitcoin be above $74,000 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "bitcoin-above-74k-on-march-6",
+      "url": "https://polymarket.com/event/bitcoin-above-74k-on-march-6",
+      "volume_24h": 233432.30612500012,
+      "total_volume": 354345.6450009994,
+      "liquidity": 32623.40837,
+      "volume_spike_ratio": 19.76,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.028,
+          "implied_probability": "2.8%",
+          "payout_multiple": "35.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.028,
+        0.972
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225690+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the price of Bitcoin be above $58,000 on March 6?",
+      "description": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market",
+      "slug": "bitcoin-above-58k-on-march-6",
+      "url": "https://polymarket.com/event/bitcoin-above-58k-on-march-6",
+      "volume_24h": 152747.60164900002,
+      "total_volume": 234761.6908219999,
+      "liquidity": 92046.0715,
+      "volume_spike_ratio": 19.52,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226266+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will US or Israel strike Iran on March 6, 2026?",
+      "description": "This market will resolve to \"Yes\" if the US or Israel initiates a drone, missile, or air strike on Iranian soil or any official Iranian embassy or consulate on the listed date (ET). Otherwise, this market will resolve to \"No\".\n\nFor the purposes of this market, a qualifying \"strike\" is defined as the",
+      "slug": "will-us-or-israel-strike-iran-on-march-6-2026",
+      "url": "https://polymarket.com/event/will-us-or-israel-strike-iran-on-march-6-2026",
+      "volume_24h": 673767.879258,
+      "total_volume": 1098033.7288839996,
+      "liquidity": 97117.34679,
+      "volume_spike_ratio": 18.41,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-10T00:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224937+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Ethereum reach $3,800 in March?",
+      "description": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for ETH/USDT during the month specified in the title (from 00:00 AM ET on the first day to 11:59 PM ET on the last), has a final High price equal to or greater than the price specified in the title. Otherwise, this market w",
+      "slug": "will-ethereum-reach-3800-in-march-2026",
+      "url": "https://polymarket.com/event/will-ethereum-reach-3800-in-march-2026",
+      "volume_24h": 188333.204065,
+      "total_volume": 314565.493744,
+      "liquidity": 98285.59333,
+      "volume_spike_ratio": 17.96,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-04-01T04:00:00Z",
+      "prices": [
+        0.006,
+        0.994
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225976+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Elon Musk post 120-139 tweets from March 3 to March 10, 2026?",
+      "description": "This market will resolve according to the number of times Elon Musk (@elonmusk), posts on X from March 3 12:00 PM ET to March 10, 2026 12:00 PM ET.\n\nFor the purposes of this market, only main feed posts, quote posts and reposts will count.\n\nReplies will NOT count towards the total - however, replies",
+      "slug": "elon-musk-of-tweets-march-3-march-10-120-139",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-march-3-march-10-120-139",
+      "volume_24h": 204714.25201,
+      "total_volume": 349382.57872199937,
+      "liquidity": 72295.34702,
+      "volume_spike_ratio": 17.58,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-10T16:00:00Z",
+      "prices": [
+        0.0015,
+        0.9985
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225891+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Kon Knueppel win the 2025\u201326 NBA Rookie of the Year award?",
+      "description": "This is a market to predict which player will win the 2025\u201326 NBA Rookie of the Year award.\n\nThis market will resolve to \"Yes\" if the listed player is officially named the 2025\u201326 NBA Rookie of the Year. Otherwise, it will resolve to \"No\".\n\nIf the award is not announced by December 31, 2026, this ma",
+      "slug": "will-kon-knueppel-win-the-202526-nba-rookie-of-the-year-award",
+      "url": "https://polymarket.com/event/will-kon-knueppel-win-the-202526-nba-rookie-of-the-year-award",
+      "volume_24h": 203871.005282,
+      "total_volume": 382358.9500060002,
+      "liquidity": 5626.54463,
+      "volume_spike_ratio": 16.0,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-05-18T00:00:00Z",
+      "prices": [
+        0.506,
+        0.494
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225898+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Judy Shelton be confirmed as Fed Chair?",
+      "description": "This market will resolve according to the next individual formally confirmed as Chair of the Federal Reserve.\n\nFormal confirmation as Chair of the Federal Reserve requires the Senate to confirm a nominee as Chair of the Federal Reserve. Recess appointments without Senate confirmation will not count.",
+      "slug": "will-judy-shelton-be-confirmed-as-fed-chair",
+      "url": "https://polymarket.com/event/will-judy-shelton-be-confirmed-as-fed-chair",
+      "volume_24h": 815459.1069850003,
+      "total_volume": 1564091.7988690003,
+      "liquidity": 1175044.98115,
+      "volume_spike_ratio": 15.64,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0315,
+          "implied_probability": "3.1%",
+          "payout_multiple": "31.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-10-31T00:00:00Z",
+      "prices": [
+        0.0315,
+        0.9685
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224881+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Paradex FDV above $300M one day after launch?",
+      "description": "This market will resolve to \"Yes\" if the Fully Diluted Valuation of Paradex's token is greater than the value specified in the title 1 day after launch. Otherwise, the market will resolve to \"No.\"\n\nThe token must be actively, publicly transferable and tradable to be considered a launch.\n\n\"1 day afte",
+      "slug": "paradex-fdv-above-300m-one-day-after-launch-242-353-511-837-672-726-649-969-994",
+      "url": "https://polymarket.com/event/paradex-fdv-above-300m-one-day-after-launch-242-353-511-837-672-726-649-969-994",
+      "volume_24h": 335664.5999359999,
+      "total_volume": 661341.5055530018,
+      "liquidity": 81598.45442,
+      "volume_spike_ratio": 15.23,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2027-01-01T05:00:00Z",
+      "prices": [
+        0.0025,
+        0.9975
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225321+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Elon Musk post 180-199 tweets from February 27 to March 6, 2026?",
+      "description": "This market will resolve according to the number of times Elon Musk (@elonmusk), posts on X from February 27 12:00 PM ET to March 6, 2026 12:00 PM ET.\n\nFor the purposes of this market, only main feed posts, quote posts and reposts will count.\n\nReplies will NOT count towards the total - however, repl",
+      "slug": "elon-musk-of-tweets-february-27-march-6-180-199",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-180-199",
+      "volume_24h": 582465.2800110005,
+      "total_volume": 1152066.8862260024,
+      "liquidity": 17857.09335,
+      "volume_spike_ratio": 15.17,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.428,
+        0.572
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224964+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US forces enter Iran by March 7?",
+      "description": "This market will resolve to \u201cYes\u201d if active US military personnel physically enter Iran at any point by the listed date (ET). Otherwise, this market will resolve to \"No\".\n\nMilitary special operation forces will qualify, however intelligence operatives will not count.\n\nUS military personnel must phys",
+      "slug": "us-forces-enter-iran-by-march-7",
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-7",
+      "volume_24h": 1399185.198721001,
+      "total_volume": 2787761.7115869946,
+      "liquidity": 211932.9565,
+      "volume_spike_ratio": 15.06,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.034,
+          "implied_probability": "3.4%",
+          "payout_multiple": "29.4x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-03T00:00:00Z",
+      "prices": [
+        0.034,
+        0.966
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224816+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Crude Oil (CL) hit (HIGH) $75 by end of March?",
+      "description": "This market will resolve to \"Yes\" if, on any trading day, the official CME settlement price for the Active Month (front month) of Crude Oil (CL) futures is equal to or above the listed price by the final trading day of March 2026. Otherwise, the market will resolve to \"No\".\n\nFor CME Crude Oil (CL) f",
+      "slug": "will-crude-oil-cl-hit-high-75-by-end-of-march-216-621-736",
+      "url": "https://polymarket.com/event/will-crude-oil-cl-hit-high-75-by-end-of-march-216-621-736",
+      "volume_24h": 564159.258378,
+      "total_volume": 1237769.1315120007,
+      "liquidity": 116220.61489,
+      "volume_spike_ratio": 13.67,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224972+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Elon Musk post 220-239 tweets from February 27 to March 6, 2026?",
+      "description": "This market will resolve according to the number of times Elon Musk (@elonmusk), posts on X from February 27 12:00 PM ET to March 6, 2026 12:00 PM ET.\n\nFor the purposes of this market, only main feed posts, quote posts and reposts will count.\n\nReplies will NOT count towards the total - however, repl",
+      "slug": "elon-musk-of-tweets-february-27-march-6-220-239",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-220-239",
+      "volume_24h": 354364.67867900006,
+      "total_volume": 835886.2232159997,
+      "liquidity": 17727.20129,
+      "volume_spike_ratio": 12.72,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0765,
+          "implied_probability": "7.6%",
+          "payout_multiple": "13.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.0765,
+        0.9235
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225274+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Base launch a token by June 30, 2026?",
+      "description": "This market will resolve to \"Yes\" if Base officially launches a token by June 30, 2026, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nThe token must be actively and publicly transferable and tradable. Announcements alone do not qualify\n\nThe primary resolution source for this market will",
+      "slug": "will-base-launch-a-token-by-june-30-2026",
+      "url": "https://polymarket.com/event/will-base-launch-a-token-by-june-30-2026",
+      "volume_24h": 223428.768967,
+      "total_volume": 535084.6695580002,
+      "liquidity": 12624.1016,
+      "volume_spike_ratio": 12.53,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.11,
+          "implied_probability": "11.0%",
+          "payout_multiple": "9.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-06-30T00:00:00Z",
+      "prices": [
+        0.11,
+        0.89
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225748+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US forces enter Iran by March 14?",
+      "description": "This market will resolve to \u201cYes\u201d if active US military personnel physically enter Iran at any point by the listed date (ET). Otherwise, this market will resolve to \"No\".\n\nMilitary special operation forces will qualify, however intelligence operatives will not count.\n\nUS military personnel must phys",
+      "slug": "us-forces-enter-iran-by-march-14-337",
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-14-337",
+      "volume_24h": 396578.8972390001,
+      "total_volume": 998884.0590869992,
+      "liquidity": 103774.4691,
+      "volume_spike_ratio": 11.91,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.18,
+          "implied_probability": "18.0%",
+          "payout_multiple": "5.6x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-01T00:00:00Z",
+      "prices": [
+        0.18,
+        0.82
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225163+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Elon Musk post 240-259 tweets from February 27 to March 6, 2026?",
+      "description": "This market will resolve according to the number of times Elon Musk (@elonmusk), posts on X from February 27 12:00 PM ET to March 6, 2026 12:00 PM ET.\n\nFor the purposes of this market, only main feed posts, quote posts and reposts will count.\n\nReplies will NOT count towards the total - however, repl",
+      "slug": "elon-musk-of-tweets-february-27-march-6-240-259",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-240-259",
+      "volume_24h": 289175.5602549999,
+      "total_volume": 734465.3394090013,
+      "liquidity": 31251.38194,
+      "volume_spike_ratio": 11.81,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.0105,
+        0.9895
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225451+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Elon Musk post 200-219 tweets from February 27 to March 6, 2026?",
+      "description": "This market will resolve according to the number of times Elon Musk (@elonmusk), posts on X from February 27 12:00 PM ET to March 6, 2026 12:00 PM ET.\n\nFor the purposes of this market, only main feed posts, quote posts and reposts will count.\n\nReplies will NOT count towards the total - however, repl",
+      "slug": "elon-musk-of-tweets-february-27-march-6-200-219",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-200-219",
+      "volume_24h": 346402.0531820002,
+      "total_volume": 924702.6161949995,
+      "liquidity": 15844.20504,
+      "volume_spike_ratio": 11.24,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.475,
+        0.525
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225290+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Matt Fitzpatrick win the 2026 Masters tournament?",
+      "description": "This polymarket will resolve according to the player who wins the 2026 Masters Tournament.\n\nIf this player is eliminated from contention for The Masters based on the official rules of the tournament, the relevant market will resolve to \"No\".\n\nIn the event of a tie, this market will resolve according",
+      "slug": "will-matt-fitzpatrick-win-the-2026-masters-tournament",
+      "url": "https://polymarket.com/event/will-matt-fitzpatrick-win-the-2026-masters-tournament",
+      "volume_24h": 311882.431955,
+      "total_volume": 834392.1449480001,
+      "liquidity": 4889.33757,
+      "volume_spike_ratio": 11.21,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0245,
+          "implied_probability": "2.5%",
+          "payout_multiple": "40.8x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-04-13T00:00:00Z",
+      "prices": [
+        0.0245,
+        0.9755
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225381+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Aston Villa win the 2025-26 UEFA Europa League?",
+      "description": "This is a polymarket on whether the listed team will win the 2025\u201326 UEFA Europa League.\n\nThis market will resolve to \"Yes\" if the listed team is officially crowned the winner of the 2025\u201326 UEFA Europa League. Otherwise, it will resolve to \"No\".\n\nIf at any point it becomes impossible for the listed",
+      "slug": "will-aston-villa-win-the-2025-26-uefa-europa-league",
+      "url": "https://polymarket.com/event/will-aston-villa-win-the-2025-26-uefa-europa-league",
+      "volume_24h": 139713.328019,
+      "total_volume": 375754.81849400006,
+      "liquidity": 25918.179,
+      "volume_spike_ratio": 11.15,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.225,
+          "implied_probability": "22.5%",
+          "payout_multiple": "4.4x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-05-24T00:00:00Z",
+      "prices": [
+        0.225,
+        0.775
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226441+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Elon Musk post 260-279 tweets from February 27 to March 6, 2026?",
+      "description": "This market will resolve according to the number of times Elon Musk (@elonmusk), posts on X from February 27 12:00 PM ET to March 6, 2026 12:00 PM ET.\n\nFor the purposes of this market, only main feed posts, quote posts and reposts will count.\n\nReplies will NOT count towards the total - however, repl",
+      "slug": "elon-musk-of-tweets-february-27-march-6-260-279",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-260-279",
+      "volume_24h": 258665.964939,
+      "total_volume": 697268.6832549991,
+      "liquidity": 37205.11881,
+      "volume_spike_ratio": 11.13,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.002,
+        0.998
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225611+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Bitcoin reach $100,000 in March?",
+      "description": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for BTC/USDT during the month specified in the title (from 00:00 AM ET on the first day to 11:59 PM ET on the last), has a final High price equal to or greater than the price specified in the title. Otherwise, this market w",
+      "slug": "will-bitcoin-reach-100k-in-march-2026",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-100k-in-march-2026",
+      "volume_24h": 397726.57220399985,
+      "total_volume": 1089406.1659219991,
+      "liquidity": 113754.7791,
+      "volume_spike_ratio": 10.95,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-04-01T04:00:00Z",
+      "prices": [
+        0.0165,
+        0.9835
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225139+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Amazon be the largest company in the world by market cap on March 31?",
+      "description": "This market will resolve to the largest company in the world by market cap on March 31, 2026, as of market close.\n\nThe resolution source for this market will be a consensus of credible reporting.",
+      "slug": "will-amazon-be-the-largest-company-in-the-world-by-market-cap-on-march-31-453",
+      "url": "https://polymarket.com/event/will-amazon-be-the-largest-company-in-the-world-by-market-cap-on-march-31-453",
+      "volume_24h": 434328.86300000007,
+      "total_volume": 1194815.9802680009,
+      "liquidity": 215434.02103,
+      "volume_spike_ratio": 10.91,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.0015,
+        0.9985
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225081+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Elon Musk post 300-319 tweets from February 27 to March 6, 2026?",
+      "description": "This market will resolve according to the number of times Elon Musk (@elonmusk), posts on X from February 27 12:00 PM ET to March 6, 2026 12:00 PM ET.\n\nFor the purposes of this market, only main feed posts, quote posts and reposts will count.\n\nReplies will NOT count towards the total - however, repl",
+      "slug": "elon-musk-of-tweets-february-27-march-6-300-319",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-300-319",
+      "volume_24h": 241769.36177800008,
+      "total_volume": 690183.1992289994,
+      "liquidity": 96816.7131,
+      "volume_spike_ratio": 10.51,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225651+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Elon Musk post 280-299 tweets from February 27 to March 6, 2026?",
+      "description": "This market will resolve according to the number of times Elon Musk (@elonmusk), posts on X from February 27 12:00 PM ET to March 6, 2026 12:00 PM ET.\n\nFor the purposes of this market, only main feed posts, quote posts and reposts will count.\n\nReplies will NOT count towards the total - however, repl",
+      "slug": "elon-musk-of-tweets-february-27-march-6-280-299",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-february-27-march-6-280-299",
+      "volume_24h": 237254.70589100008,
+      "total_volume": 683287.5812209996,
+      "liquidity": 28113.41098,
+      "volume_spike_ratio": 10.42,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-06T17:00:00Z",
+      "prices": [
+        0.0015,
+        0.9985
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225668+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US strikes Iraq by March 7?",
+      "description": "This market will resolve to \"Yes\" if the United States initiates a drone, missile, or air strike on Iraqi soil or any official Iraqi embassy or consulate by the listed date, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nFor the purposes of this market, a qualifying \"strike\" is defined a",
+      "slug": "us-strikes-iraq-by-march-7",
+      "url": "https://polymarket.com/event/us-strikes-iraq-by-march-7",
+      "volume_24h": 146620.59223600003,
+      "total_volume": 422168.7558899999,
+      "liquidity": 12924.0372,
+      "volume_spike_ratio": 10.42,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.35,
+        0.65
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226345+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will OpenAI have the best AI model at the end of March 2026?",
+      "description": "This market will resolve according to the company which owns the model which has the highest arena score based off the Chatbot Arena LLM Leaderboard (https://lmarena.ai/) when the table under the \"Leaderboard\" tab is checked on March 31, 2026, 12:00 PM ET.\n\nResults from the \"Arena Score\" section on ",
+      "slug": "will-openai-have-the-best-ai-model-at-the-end-of-march-2026-562",
+      "url": "https://polymarket.com/event/will-openai-have-the-best-ai-model-at-the-end-of-march-2026-562",
+      "volume_24h": 184303.5238170001,
+      "total_volume": 539188.0731559998,
+      "liquidity": 44746.48228,
+      "volume_spike_ratio": 10.25,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.03,
+          "implied_probability": "3.0%",
+          "payout_multiple": "33.3x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.03,
+        0.97
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226013+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Iran strike Israel on March 3?",
+      "description": "This market will resolve to \"Yes\" if Iran initiates a drone, missile, or air strike on Israel\u2019s soil on the listed date in Israel Time (GMT+2). Otherwise, this market will resolve to \"No\".\n\nFor the purposes of this market, a qualifying \"strike\" is defined as the use of aerial bombs, drones, or missi",
+      "slug": "will-iran-strike-israel-on-march-3",
+      "url": "https://polymarket.com/event/will-iran-strike-israel-on-march-3",
+      "volume_24h": 502297.508746,
+      "total_volume": 1545506.9332250026,
+      "liquidity": 484433.35784,
+      "volume_spike_ratio": 9.75,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225035+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US x Iran ceasefire by March 6?",
+      "description": "This market will resolve to \u201cYes\u201d if there is an official ceasefire agreement, defined as a publicly announced and mutually agreed halt in direct military engagement, between the United States and Iran by the listed date, 11:59 PM ET.\n\nFor the purposes of this market, an \u201cofficial ceasefire agreemen",
+      "slug": "us-x-iran-ceasefire-by-march-6",
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-6",
+      "volume_24h": 1811934.4413430004,
+      "total_volume": 6404638.580852993,
+      "liquidity": 858115.59888,
+      "volume_spike_ratio": 8.49,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "",
+      "prices": [
+        0.0015,
+        0.9985
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224797+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US forces enter Iran by December 31?",
+      "description": "This market will resolve to \u201cYes\u201d if active US military personnel physically enter Iran at any point by the listed date (ET). Otherwise, this market will resolve to \"No\".\n\nMilitary special operation forces will qualify, however intelligence operatives will not count.\n\nUS military personnel must phys",
+      "slug": "us-forces-enter-iran-by-december-31-573-642-385-371-179",
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-december-31-573-642-385-371-179",
+      "volume_24h": 137158.85993,
+      "total_volume": 513021.8749230008,
+      "liquidity": 75689.8607,
+      "volume_spike_ratio": 8.02,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-03T00:00:00Z",
+      "prices": [
+        0.565,
+        0.435
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226491+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Meituan have the best AI model at the end of March 2026?",
+      "description": "This market will resolve according to the company which owns the model which has the highest arena score based off the Chatbot Arena LLM Leaderboard (https://lmarena.ai/) when the table under the \"Leaderboard\" tab is checked on March 31, 2026, 12:00 PM ET.\n\nResults from the \"Arena Score\" section on ",
+      "slug": "will-meituan-have-the-best-ai-model-at-the-end-of-march-2026-469",
+      "url": "https://polymarket.com/event/will-meituan-have-the-best-ai-model-at-the-end-of-march-2026-469",
+      "volume_24h": 143951.9,
+      "total_volume": 551845.9221890005,
+      "liquidity": 115302.18298,
+      "volume_spike_ratio": 7.83,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.0015,
+        0.9985
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226383+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Reza Pahlavi be the next Supreme Leader of Iran?",
+      "description": "The Supreme Leader of Iran is chosen by the Assembly of Experts.\n\nThis market will resolve according to the person who is named as the next Supreme Leader of the Islamic Republic of Iran.\n\nThe resolution of this market will be based on the first official announcement of the next Supreme Leader of Ir",
+      "slug": "will-reza-pahlavi-be-the-next-supreme-leader-of-iran",
+      "url": "https://polymarket.com/event/will-reza-pahlavi-be-the-next-supreme-leader-of-iran",
+      "volume_24h": 200938.342498,
+      "total_volume": 772849.8526920017,
+      "liquidity": 42650.30489,
+      "volume_spike_ratio": 7.8,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.0075,
+        0.9925
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225905+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Iran strike Israel on March 4?",
+      "description": "This market will resolve to \"Yes\" if Iran initiates a drone, missile, or air strike on Israel\u2019s soil on the listed date in Israel Time (GMT+2). Otherwise, this market will resolve to \"No\".\n\nFor the purposes of this market, a qualifying \"strike\" is defined as the use of aerial bombs, drones, or missi",
+      "slug": "will-iran-strike-israel-on-march-4",
+      "url": "https://polymarket.com/event/will-iran-strike-israel-on-march-4",
+      "volume_24h": 146733.6217109999,
+      "total_volume": 566987.9293139998,
+      "liquidity": 17185.91852,
+      "volume_spike_ratio": 7.76,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0595,
+          "implied_probability": "5.9%",
+          "payout_multiple": "16.8x"
+        }
+      ],
+      "tags": [],
+      "end_date": "",
+      "prices": [
+        0.0595,
+        0.9405
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226337+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Opinion FDV above $250M one day after launch?",
+      "description": "This market will resolve to \"Yes\" if the Fully Diluted Valuation of Opinion's governance token is greater than the value specified in the title 1 day after launch. Otherwise, the market will resolve to \"No.\"\n\nThe token must be actively, publicly transferable and tradable to be considered a launch.\n\n",
+      "slug": "opinion-fdv-above-250m-one-day-after-launch-214",
+      "url": "https://polymarket.com/event/opinion-fdv-above-250m-one-day-after-launch-214",
+      "volume_24h": 392477.75783499976,
+      "total_volume": 1585516.083298008,
+      "liquidity": 123531.89676,
+      "volume_spike_ratio": 7.43,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.014,
+          "implied_probability": "1.4%",
+          "payout_multiple": "71.4x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2027-01-01T05:00:00Z",
+      "prices": [
+        0.986,
+        0.014
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225174+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Iran close the Strait of Hormuz by March 31?",
+      "description": "If Iran halts or severely restricts international maritime traffic through the Strait of Hormuz by March 31, 2026, 11:59 PM ET, this market will resolve to \"Yes\". Otherwise, this market will resolve to \"No\".\n\nThe primary resolution source for this market will be official governmental information, ho",
+      "slug": "will-iran-close-the-strait-of-hormuz-by-march-31",
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-march-31",
+      "volume_24h": 3760362.2828519656,
+      "total_volume": 15414962.773137067,
+      "liquidity": 181465.3944,
+      "volume_spike_ratio": 7.32,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.215,
+          "implied_probability": "21.5%",
+          "payout_multiple": "4.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.785,
+        0.215
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224674+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Iran close the Strait of Hormuz before 2027?",
+      "description": "If Iran halts or severely restricts international maritime traffic through the Strait of Hormuz by December 31, 2026, 11:59 PM ET, this market will resolve to \"Yes\". Otherwise, this market will resolve to \"No\".\n\nThe primary resolution source for this market will be official governmental information,",
+      "slug": "will-iran-close-the-strait-of-hormuz-by-2027-969-911-654-431-667",
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-2027-969-911-654-431-667",
+      "volume_24h": 301443.88152600016,
+      "total_volume": 1306180.4450970017,
+      "liquidity": 24838.47565,
+      "volume_spike_ratio": 6.92,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.2035,
+          "implied_probability": "20.3%",
+          "payout_multiple": "4.9x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.7965,
+        0.2035
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225391+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Crude Oil (CL) hit (HIGH) $150 by end of March?",
+      "description": "This market will resolve to \"Yes\" if, on any trading day, the official CME settlement price for the Active Month (front month) of Crude Oil (CL) futures is equal to or above the listed price by the final trading day of March 2026. Otherwise, the market will resolve to \"No\".\n\nFor CME Crude Oil (CL) f",
+      "slug": "will-crude-oil-cl-hit-high-150-by-end-of-march-138",
+      "url": "https://polymarket.com/event/will-crude-oil-cl-hit-high-150-by-end-of-march-138",
+      "volume_24h": 128018.98649799991,
+      "total_volume": 566251.6345190007,
+      "liquidity": 135972.71067,
+      "volume_spike_ratio": 6.78,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0455,
+          "implied_probability": "4.5%",
+          "payout_multiple": "22.0x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.0455,
+        0.9545
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226572+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Sadegh Larijani be the next Supreme Leader of Iran?",
+      "description": "The Supreme Leader of Iran is chosen by the Assembly of Experts.\n\nThis market will resolve according to the person who is named as the next Supreme Leader of the Islamic Republic of Iran.\n\nThe resolution of this market will be based on the first official announcement of the next Supreme Leader of Ir",
+      "slug": "will-sadegh-larijani-be-the-next-supreme-leader-of-iran",
+      "url": "https://polymarket.com/event/will-sadegh-larijani-be-the-next-supreme-leader-of-iran",
+      "volume_24h": 127108.42512099996,
+      "total_volume": 569961.0687650001,
+      "liquidity": 19728.14033,
+      "volume_spike_ratio": 6.69,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.026,
+          "implied_probability": "2.6%",
+          "payout_multiple": "38.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.026,
+        0.974
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226588+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Iran x Israel/US conflict ends by March 15?",
+      "description": "This market will resolve to \"Yes\" if there is a continuous 14-day period without any qualifying military action between Iran, and Israel and the United States that begins at any time between market creation and the specified end date (ET). Otherwise, this market will resolve to \"No\". \n\nThe 14-day pe",
+      "slug": "iran-x-israelus-conflict-ends-by-march-15",
+      "url": "https://polymarket.com/event/iran-x-israelus-conflict-ends-by-march-15",
+      "volume_24h": 150650.63755999994,
+      "total_volume": 679539.6982010009,
+      "liquidity": 62605.42754,
+      "volume_spike_ratio": 6.65,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0355,
+          "implied_probability": "3.5%",
+          "payout_multiple": "28.2x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.0355,
+        0.9645
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226291+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the position of Supreme Leader of Iran be abolished?",
+      "description": "The Supreme Leader of Iran is chosen by the Assembly of Experts.\n\nThis market will resolve according to the person who is named as the next Supreme Leader of the Islamic Republic of Iran.\n\nThe resolution of this market will be based on the first official announcement of the next Supreme Leader of Ir",
+      "slug": "will-the-position-of-supreme-leader-of-iran-be-abolished",
+      "url": "https://polymarket.com/event/will-the-position-of-supreme-leader-of-iran-be-abolished",
+      "volume_24h": 267461.04559899995,
+      "total_volume": 1221914.2366830027,
+      "liquidity": 63501.64816,
+      "volume_spike_ratio": 6.57,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0605,
+          "implied_probability": "6.0%",
+          "payout_multiple": "16.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.0605,
+        0.9395
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225565+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US x Iran ceasefire by March 31?",
+      "description": "This market will resolve to \u201cYes\u201d if there is an official ceasefire agreement, defined as a publicly announced and mutually agreed halt in direct military engagement, between the United States and Iran by the listed date, 11:59 PM ET.\n\nFor the purposes of this market, an \u201cofficial ceasefire agreemen",
+      "slug": "us-x-iran-ceasefire-by-march-31",
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-31",
+      "volume_24h": 507256.6807449997,
+      "total_volume": 2321672.678667011,
+      "liquidity": 158128.6405,
+      "volume_spike_ratio": 6.55,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.295,
+          "implied_probability": "29.5%",
+          "payout_multiple": "3.4x"
+        }
+      ],
+      "tags": [],
+      "end_date": "",
+      "prices": [
+        0.295,
+        0.705
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225018+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Opinion FDV above $800M one day after launch?",
+      "description": "This market will resolve to \"Yes\" if the Fully Diluted Valuation of Opinion's governance token is greater than the value specified in the title 1 day after launch. Otherwise, the market will resolve to \"No.\"\n\nThe token must be actively, publicly transferable and tradable to be considered a launch.\n\n",
+      "slug": "opinion-fdv-above-800m-one-day-after-launch-953-269-745-278-467",
+      "url": "https://polymarket.com/event/opinion-fdv-above-800m-one-day-after-launch-953-269-745-278-467",
+      "volume_24h": 159074.89543600005,
+      "total_volume": 744659.4405140006,
+      "liquidity": 96479.11753,
+      "volume_spike_ratio": 6.41,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2027-01-01T05:00:00Z",
+      "prices": [
+        0.0045,
+        0.9955
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226203+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will there be no new Supreme Leader of Iran by June 30?",
+      "description": "The Supreme Leader of Iran is chosen by the Assembly of Experts.\n\nThis market will resolve according to the person who is named as the next Supreme Leader of the Islamic Republic of Iran.\n\nThe resolution of this market will be based on the first official announcement of the next Supreme Leader of Ir",
+      "slug": "will-there-be-no-new-supreme-leader-of-iran-by-june-30",
+      "url": "https://polymarket.com/event/will-there-be-no-new-supreme-leader-of-iran-by-june-30",
+      "volume_24h": 162731.58103299997,
+      "total_volume": 809414.5649170022,
+      "liquidity": 15116.06878,
+      "volume_spike_ratio": 6.03,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0815,
+          "implied_probability": "8.2%",
+          "payout_multiple": "12.3x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.0815,
+        0.9185
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226161+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US x Iran ceasefire by March 15?",
+      "description": "This market will resolve to \u201cYes\u201d if there is an official ceasefire agreement, defined as a publicly announced and mutually agreed halt in direct military engagement, between the United States and Iran by the listed date, 11:59 PM ET.\n\nFor the purposes of this market, an \u201cofficial ceasefire agreemen",
+      "slug": "us-x-iran-ceasefire-by-march-15",
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-15",
+      "volume_24h": 514401.67666199966,
+      "total_volume": 2597928.3167080088,
+      "liquidity": 155144.2725,
+      "volume_spike_ratio": 5.94,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.105,
+          "implied_probability": "10.5%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "",
+      "prices": [
+        0.105,
+        0.895
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225004+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US x Iran ceasefire by April 30?",
+      "description": "This market will resolve to \u201cYes\u201d if there is an official ceasefire agreement, defined as a publicly announced and mutually agreed halt in direct military engagement, between the United States and Iran by the listed date, 11:59 PM ET.\n\nFor the purposes of this market, an \u201cofficial ceasefire agreemen",
+      "slug": "us-x-iran-ceasefire-by-april-30",
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-april-30",
+      "volume_24h": 135627.68561699998,
+      "total_volume": 713992.3970170004,
+      "liquidity": 105250.3296,
+      "volume_spike_ratio": 5.7,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "",
+      "prices": [
+        0.465,
+        0.535
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226499+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Mojtaba Khamenei be the next Supreme Leader of Iran?",
+      "description": "The Supreme Leader of Iran is chosen by the Assembly of Experts.\n\nThis market will resolve according to the person who is named as the next Supreme Leader of the Islamic Republic of Iran.\n\nThe resolution of this market will be based on the first official announcement of the next Supreme Leader of Ir",
+      "slug": "will-mojtaba-khamenei-be-the-next-supreme-leader-of-iran-573",
+      "url": "https://polymarket.com/event/will-mojtaba-khamenei-be-the-next-supreme-leader-of-iran-573",
+      "volume_24h": 1076054.4881570002,
+      "total_volume": 5709254.62098604,
+      "liquidity": 109001.62509,
+      "volume_spike_ratio": 5.65,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-12-31T00:00:00Z",
+      "prices": [
+        0.578,
+        0.422
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224833+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+      "description": "This market will resolve to \"Yes\" if Israel initiates a major ground offensive in Lebanon by March 31, 2026, 11:59PM ET. Otherwise, this market will resolve to \"No\".\n\nA \"major ground offensive\" is defined as a large-scale military operation that involves more than 1,000 Israeli ground forces enterin",
+      "slug": "will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31",
+      "url": "https://polymarket.com/event/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31",
+      "volume_24h": 371120.59826099995,
+      "total_volume": 2011650.2567170027,
+      "liquidity": 107732.6755,
+      "volume_spike_ratio": 5.53,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.285,
+          "implied_probability": "28.5%",
+          "payout_multiple": "3.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.715,
+        0.285
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225250+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Iran name a successor to Khamenei by March 6?",
+      "description": "This market will resolve to \"Yes\" if Iran officially announces a successor to Ali Khamenei as Supreme Leader by the specified date, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nAn announcement of a successor will be sufficient for a \"Yes\" resolution regardless of if/when the announced ",
+      "slug": "will-iran-name-a-successor-to-khamenei-by-march-6-419-412-158-246-866-876-465",
+      "url": "https://polymarket.com/event/will-iran-name-a-successor-to-khamenei-by-march-6-419-412-158-246-866-876-465",
+      "volume_24h": 180704.73813100005,
+      "total_volume": 1008847.9804629993,
+      "liquidity": 23290.8725,
+      "volume_spike_ratio": 5.37,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.145,
+          "implied_probability": "14.5%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.145,
+        0.855
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226027+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "GPT-5.3 released by March 8, 2026?",
+      "description": "This market will resolve to \"Yes\" if OpenAI's GPT-5.3 model is made available to the general public by the specified date (ET). Otherwise, this market will resolve to \"No.\"\n\nGPT-5.3 refers to a product explicitly named GPT-5.3, or a general-purpose variant that is recognized as a direct successor to",
+      "slug": "gpt-5pt3-released-by-march-8-2026",
+      "url": "https://polymarket.com/event/gpt-5pt3-released-by-march-8-2026",
+      "volume_24h": 422320.337108,
+      "total_volume": 2366749.938355001,
+      "liquidity": 2855821.08537,
+      "volume_spike_ratio": 5.35,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-08T00:00:00Z",
+      "prices": [
+        0.9995,
+        0.0005
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225103+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Iran win the 2026 FIFA World Cup?",
+      "description": "This market will resolve according to the national team that wins the 2026 FIFA World Cup.\n\nIf at any point it becomes impossible for this team to win the FIFA World Cup based on the rules of FIFA (e.g., they are eliminated in the knockout stage), this market will resolve immediately to \u201cNo\u201d.\n\nIf th",
+      "slug": "will-iran-win-the-2026-fifa-world-cup-788",
+      "url": "https://polymarket.com/event/will-iran-win-the-2026-fifa-world-cup-788",
+      "volume_24h": 1095147.9985000007,
+      "total_volume": 6190249.225316014,
+      "liquidity": 1207753.92162,
+      "volume_spike_ratio": 5.31,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-07-20T00:00:00Z",
+      "prices": [
+        0.0015,
+        0.9985
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224825+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "US forces enter Iran by March 31?",
+      "description": "This market will resolve to \u201cYes\u201d if active US military personnel physically enter Iran at any point by the listed date (ET). Otherwise, this market will resolve to \"No\".\n\nMilitary special operation forces will qualify, however intelligence operatives will not count.\n\nUS military personnel must phys",
+      "slug": "us-forces-enter-iran-by-march-31-222-191-243-517-878-439-519",
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-31-222-191-243-517-878-439-519",
+      "volume_24h": 401085.156634,
+      "total_volume": 2268367.958301997,
+      "liquidity": 87544.4276,
+      "volume_spike_ratio": 5.3,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-01T00:00:00Z",
+      "prices": [
+        0.335,
+        0.665
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225119+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Egypt win the 2026 FIFA World Cup?",
+      "description": "This market will resolve according to the national team that wins the 2026 FIFA World Cup.\n\nIf at any point it becomes impossible for this team to win the FIFA World Cup based on the rules of FIFA (e.g., they are eliminated in the knockout stage), this market will resolve immediately to \u201cNo\u201d.\n\nIf th",
+      "slug": "will-egypt-win-the-2026-fifa-world-cup",
+      "url": "https://polymarket.com/event/will-egypt-win-the-2026-fifa-world-cup",
+      "volume_24h": 1075484.103663001,
+      "total_volume": 6241199.9834249625,
+      "liquidity": 680779.49766,
+      "volume_spike_ratio": 5.17,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-07-20T00:00:00Z",
+      "prices": [
+        0.0035,
+        0.9965
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224845+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Ethereum reach $4,000 in March?",
+      "description": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for ETH/USDT during the month specified in the title (from 00:00 AM ET on the first day to 11:59 PM ET on the last), has a final High price equal to or greater than the price specified in the title. Otherwise, this market w",
+      "slug": "will-ethereum-reach-4000-in-march-2026",
+      "url": "https://polymarket.com/event/will-ethereum-reach-4000-in-march-2026",
+      "volume_24h": 148530.855783,
+      "total_volume": 960148.6557700034,
+      "liquidity": 245914.25945,
+      "volume_spike_ratio": 4.64,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-04-01T04:00:00Z",
+      "prices": [
+        0.0035,
+        0.9965
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226328+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Iran close the Strait of Hormuz by June 30?",
+      "description": "If Iran halts or severely restricts international maritime traffic through the Strait of Hormuz by June 30, 2026, 11:59 PM ET, this market will resolve to \"Yes\". Otherwise, this market will resolve to \"No\".\n\nThe primary resolution source for this market will be official governmental information, how",
+      "slug": "will-iran-close-the-strait-of-hormuz-by-june-30",
+      "url": "https://polymarket.com/event/will-iran-close-the-strait-of-hormuz-by-june-30",
+      "volume_24h": 169357.99953900004,
+      "total_volume": 1160374.1336800011,
+      "liquidity": 25283.17832,
+      "volume_spike_ratio": 4.38,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.195,
+          "implied_probability": "19.5%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-06-30T00:00:00Z",
+      "prices": [
+        0.805,
+        0.195
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226109+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Tesla be the largest company in the world by market cap on March 31?",
+      "description": "This market will resolve to the largest company in the world by market cap on March 31, 2026, as of market close.\n\nThe resolution source for this market will be a consensus of credible reporting.",
+      "slug": "will-tesla-be-the-largest-company-in-the-world-by-market-cap-on-march-31",
+      "url": "https://polymarket.com/event/will-tesla-be-the-largest-company-in-the-world-by-market-cap-on-march-31",
+      "volume_24h": 152425.79900000003,
+      "total_volume": 1077118.659358003,
+      "liquidity": 207500.12262,
+      "volume_spike_ratio": 4.25,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.0015,
+        0.9985
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226281+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Puffpaw FDV above $50M one day after launch?",
+      "description": "This market will resolve to \"Yes\" if the Fully Diluted Valuation of Puffpaw's governance token is greater than the value specified in the title 1 day after launch. Otherwise, the market will resolve to \"No.\"\n\nThe token must be actively, publicly transferable and tradable to be considered a launch.\n\n",
+      "slug": "puffpaw-fdv-above-50m-one-day-after-launch",
+      "url": "https://polymarket.com/event/puffpaw-fdv-above-50m-one-day-after-launch",
+      "volume_24h": 163703.93927800003,
+      "total_volume": 1248478.0388711824,
+      "liquidity": 15954.6359,
+      "volume_spike_ratio": 3.93,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2027-01-01T05:00:00Z",
+      "prices": [
+        0.625,
+        0.375
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226148+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Train Dreams win Best Picture at the 98th Academy Awards?",
+      "description": "The Academy Awards are presented annually by the Academy of Motion Picture Arts and Sciences (AMPAS) to honor outstanding artistic and technical achievements in film. For the 98th Academy Awards in 2026, nominations are scheduled to be announced on January 22, followed by the ceremony on March 15, 2",
+      "slug": "will-train-dreams-win-best-picture-at-the-98th-academy-awards-736",
+      "url": "https://polymarket.com/event/will-train-dreams-win-best-picture-at-the-98th-academy-awards-736",
+      "volume_24h": 233351.208253,
+      "total_volume": 1817077.9298639954,
+      "liquidity": 160358.4276,
+      "volume_spike_ratio": 3.85,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-03-15T00:00:00Z",
+      "prices": [
+        0.0025,
+        0.9975
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225698+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Opinion FDV above $500M one day after launch?",
+      "description": "This market will resolve to \"Yes\" if the Fully Diluted Valuation of Opinion's governance token is greater than the value specified in the title 1 day after launch. Otherwise, the market will resolve to \"No.\"\n\nThe token must be actively, publicly transferable and tradable to be considered a launch.\n\n",
+      "slug": "opinion-fdv-above-500m-one-day-after-launch-457-863-439-655",
+      "url": "https://polymarket.com/event/opinion-fdv-above-500m-one-day-after-launch-457-863-439-655",
+      "volume_24h": 373456.72420299996,
+      "total_volume": 3197348.567316,
+      "liquidity": 20426.86922,
+      "volume_spike_ratio": 3.5,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.079,
+          "implied_probability": "7.9%",
+          "payout_multiple": "12.7x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2027-01-01T05:00:00Z",
+      "prices": [
+        0.079,
+        0.921
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225232+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the next Prime Minister of Hungary be Kl\u00e1ra Dobrev?",
+      "description": "Parliamentary elections are scheduled to be held in Hungary on April 12 2026.\n\nThis market will resolve to the individual who is next officially appointed and confirmed as Prime Minister of Hungary following the 2026 parliamentary election.\n\nTo count for resolution, the individual must be formally e",
+      "slug": "will-the-next-prime-minister-of-hungary-be-klra-dobrev",
+      "url": "https://polymarket.com/event/will-the-next-prime-minister-of-hungary-be-klra-dobrev",
+      "volume_24h": 347419.346,
+      "total_volume": 3085205.309883994,
+      "liquidity": 375879.08014,
+      "volume_spike_ratio": 3.38,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-04-12T00:00:00Z",
+      "prices": [
+        0.0015,
+        0.9985
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225282+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will the Iranian regime fall by June 30?",
+      "description": "This market will resolve to \"Yes\" if the Islamic Republic of Iran\u2019s current ruling regime is overthrown, collapsed, or otherwise ceases to govern by June 30, 2026, 11:59 PM ET. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThis requires a broad consensus of reporting indicating that core structures ",
+      "slug": "will-the-iranian-regime-fall-by-june-30",
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
+      "volume_24h": 956420.7476080041,
+      "total_volume": 8804311.619122872,
+      "liquidity": 482315.5563,
+      "volume_spike_ratio": 3.26,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-06-30T00:00:00Z",
+      "prices": [
+        0.375,
+        0.625
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224862+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+      "description": "The FED interest rates are defined in this market by the upper bound of the target federal funds range. The decisions on the target federal fund range are made by the Federal Open Market Committee (FOMC) meetings.\n\nThis market will resolve to the amount of basis points the upper bound of the target ",
+      "slug": "will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
+      "volume_24h": 3547595.9409759985,
+      "total_volume": 33050400.738521464,
+      "liquidity": 2176028.46841,
+      "volume_spike_ratio": 3.22,
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-18T00:00:00Z",
+      "prices": [
+        0.9895,
+        0.0105
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224701+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Thomas Massie win the 2028 Republican presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Republican Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Republican Party sources.\n\nAny replacement of",
+      "slug": "will-thomas-massie-win-the-2028-republican-presidential-nomination",
+      "url": "https://polymarket.com/event/will-thomas-massie-win-the-2028-republican-presidential-nomination",
+      "volume_24h": 172704.108559,
+      "total_volume": 1623366.634887001,
+      "liquidity": 229145.70572,
+      "volume_spike_ratio": 3.19,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0185,
+          "implied_probability": "1.8%",
+          "payout_multiple": "54.1x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.0185,
+        0.9815
+      ],
+      "scanned_at": "2026-03-06T07:28:40.226080+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Marjorie Taylor Greene win the 2028 Republican presidential nomination?",
+      "description": "This market will resolve to \u201cYes\u201d if the named individual wins and accepts the 2028 nomination of the Republican Party for U.S. president. Otherwise, this market will resolve to \u201cNo\u201d.\n\nThe resolution source for this market will be a consensus of official Republican Party sources.\n\nAny replacement of",
+      "slug": "will-marjorie-taylor-greene-win-the-2028-republican-presidential-nomination",
+      "url": "https://polymarket.com/event/will-marjorie-taylor-greene-win-the-2028-republican-presidential-nomination",
+      "volume_24h": 275367.60961800005,
+      "total_volume": 2621248.792197997,
+      "liquidity": 460677.85554,
+      "volume_spike_ratio": 3.15,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.012,
+          "implied_probability": "1.2%",
+          "payout_multiple": "83.3x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2028-11-07T00:00:00Z",
+      "prices": [
+        0.012,
+        0.988
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225508+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will France, UK, or Germany strike Iran by March 31?",
+      "description": "This market will resolve to \"Yes\" if France, the United Kingdom, or Germany initiates a drone, missile, or air strike on Iranian soil or any official Iranian embassy or consulate by March 31, 2026, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nFor the purposes of this market, a qualifyi",
+      "slug": "will-france-uk-or-germany-strike-iran-by-march-31-929",
+      "url": "https://polymarket.com/event/will-france-uk-or-germany-strike-iran-by-march-31-929",
+      "volume_24h": 232904.17662299995,
+      "total_volume": 2215639.9758170056,
+      "liquidity": 58884.51149,
+      "volume_spike_ratio": 3.15,
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.221,
+          "implied_probability": "22.1%",
+          "payout_multiple": "4.5x"
+        }
+      ],
+      "tags": [],
+      "end_date": "2026-03-31T00:00:00Z",
+      "prices": [
+        0.221,
+        0.779
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225707+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Giannis Antetokounmpo win the 2025\u20132026 NBA MVP?",
+      "description": "This market will resolve to \"Yes\" if Giannis Antetokounmpo is awarded the 2025\u201326 regular season NBA Most Valuable Player (MVP) Award. Otherwise, this market will resolve to \"No\".\n\nIf the listed player is not announced as a finalist for the 2025\u201326 NBA MVP award, this market will immediately resolve",
+      "slug": "will-giannis-antetokounmpo-win-the-20252026-nba-mvp",
+      "url": "https://polymarket.com/event/will-giannis-antetokounmpo-win-the-20252026-nba-mvp",
+      "volume_24h": 224865.0,
+      "total_volume": 2154429.8702140003,
+      "liquidity": 179685.14551,
+      "volume_spike_ratio": 3.13,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-06-10T00:00:00Z",
+      "prices": [
+        0.0005,
+        0.9995
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225739+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Will Villarreal win the 2025\u201326 La Liga?",
+      "description": "This is a polymarket on whether the listed club will win the 2025\u201326 La Liga.\n\nThis market will resolve to \"Yes\" if the listed club is officially crowned the winner of the 2025\u201326 La Liga. Otherwise, it will resolve to \"No\".\n\nIf at any point it becomes impossible for the listed club to win the leagu",
+      "slug": "will-villarreal-win-the-202526-la-liga",
+      "url": "https://polymarket.com/event/will-villarreal-win-the-202526-la-liga",
+      "volume_24h": 821222.7219929998,
+      "total_volume": 7924786.553778956,
+      "liquidity": 218045.36334,
+      "volume_spike_ratio": 3.11,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2026-05-30T00:00:00Z",
+      "prices": [
+        0.0015,
+        0.9985
+      ],
+      "scanned_at": "2026-03-06T07:28:40.224870+00:00"
+    },
+    {
+      "platform": "polymarket",
+      "question": "Opinion FDV above $1B one day after launch?",
+      "description": "This market will resolve to \"Yes\" if the Fully Diluted Valuation of Opinion's governance token is greater than the value specified in the title 1 day after launch. Otherwise, the market will resolve to \"No.\"\n\nThe token must be actively, publicly transferable and tradable to be considered a launch.\n\n",
+      "slug": "opinion-fdv-above-1b-one-day-after-launch-277-333-458-675-542",
+      "url": "https://polymarket.com/event/opinion-fdv-above-1b-one-day-after-launch-277-333-458-675-542",
+      "volume_24h": 244369.73737500003,
+      "total_volume": 2400093.2158210026,
+      "liquidity": 107849.59484,
+      "volume_spike_ratio": 3.05,
+      "cheap_outcomes": [],
+      "tags": [],
+      "end_date": "2027-01-01T05:00:00Z",
+      "prices": [
+        0.002,
+        0.998
+      ],
+      "scanned_at": "2026-03-06T07:28:40.225631+00:00"
+    }
+  ],
+  "summary": {
+    "total_scanned": 200,
+    "markets_with_cheap_outcomes": 74,
+    "volume_spike_markets": 108,
+    "top_5_edge": [
+      {
+        "question": "Will Iran close the Strait of Hormuz by March 31?",
+        "best_cheap": {
+          "outcome": "No",
+          "price": 0.215,
+          "implied_probability": "21.5%",
+          "payout_multiple": "4.7x"
+        },
+        "volume_24h": 3760362.2828519656
+      },
+      {
+        "question": "Will there be no change in Fed interest rates after the March 2026 meeting?",
+        "best_cheap": {
+          "outcome": "No",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        },
+        "volume_24h": 3547595.9409759985
+      },
+      {
+        "question": "Will the Iranian regime fall by March 31?",
+        "best_cheap": {
+          "outcome": "Yes",
+          "price": 0.1305,
+          "implied_probability": "13.1%",
+          "payout_multiple": "7.7x"
+        },
+        "volume_24h": 2045187.1683039998
+      },
+      {
+        "question": "US forces enter Iran by March 7?",
+        "best_cheap": {
+          "outcome": "Yes",
+          "price": 0.034,
+          "implied_probability": "3.4%",
+          "payout_multiple": "29.4x"
+        },
+        "volume_24h": 1399185.198721001
+      },
+      {
+        "question": "Will Judy Shelton be confirmed as Fed Chair?",
+        "best_cheap": {
+          "outcome": "Yes",
+          "price": 0.0315,
+          "implied_probability": "3.1%",
+          "payout_multiple": "31.7x"
+        },
+        "volume_24h": 815459.1069850003
+      }
+    ]
+  }
+}

@@ -91,10 +91,32 @@ Healthy BAM connection looks like:
 DoubleZero provides low-latency networking infrastructure for validators. Built by Malbec Labs.
 
 - **DZ pubkey:** `YL6gVvw8EtDLnq1byoNf8F9RWXotEzgY2tHoBVmxUL5`
-- **Protocol:** GRE tunnel (IBRL mode)
-- **Connect command:** `doublezero connect ibrl`
-- **Interface:** `doublezero0` (GRE tunnel, IP 169.254.2.129/31)
-- **Dashboard:** https://ecosystem.doublezero.dev (custom-built, LLM-powered query interface)
+- **DZ ID:** `SaGAgdkowooXBrHihpmE8gsjf1dUG7n5SqnyJxYFnXJ`
+- **IBRL user:** `AaC9y9YaULscbG9jbdL7x8sKgPhEe5wh3AaWmdfUWQu8`
+- **Version:** 0.8.11 (doublezero), 0.4.0 (doublezero-solana)
+- **Modes:** IBRL + Multicast (bebop group) — both active as of March 5, 2026
+- **DZDP Phase II:** Qualified (March 9, 2026 go-live). Ring 2 (Ashburn/Washington DC).
+- **Dashboard:** https://ecosystem.doublezero.dev
+
+### Active Tunnels
+| Tunnel | Interface | Mode | Device | Metro | Dst IP |
+|---|---|---|---|---|---|
+| doublezero0 | GRE | IBRL | dz-dc10-sw01 | Washington DC | 137.239.200.186 |
+| doublezero1 | GRE | Multicast (bebop) | was001-dz002 | Washington DC | 38.88.214.133 |
+
+### DZ Commands
+```bash
+doublezero status                              # Show tunnel status
+doublezero connect ibrl                        # Connect IBRL
+doublezero connect multicast --publish bebop   # Connect Multicast (publisher)
+
+# Verify multicast publishing (run during leader slot, or see heartbeats every 10s)
+sudo tcpdump -vv -c5 -ni doublezero1 port 7733 or port 5765
+
+# Update DZ
+sudo apt update && sudo apt install --only-upgrade doublezero
+sudo apt update && sudo apt install doublezero-solana
+```
 
 ### DZ Packages
 Two separate packages, updated independently:
@@ -112,7 +134,8 @@ Two separate packages, updated independently:
 | Feb 9, 2026 | v0.8.6 | — |
 | Feb 18, 2026 | v0.8.9 | — |
 | Feb 20, 2026 | v0.8.10 | — |
-| Feb 27, 2026 | v0.8.11 | Only needed if running IBRL + multicast simultaneously |
+| Feb 27, 2026 | v0.8.11 | Required for IBRL + Multicast simultaneously |
+| **Mar 5, 2026** | **v0.8.11 installed** | **Multicast connected, Phase II qualified** |
 
 doublezero-solana: v0.4.0 (Jan 30, 2026) — changed default leader schedule lookahead from 2 epochs to 1
 
@@ -405,6 +428,8 @@ For months, the `active_release` symlink pointed to `releases/2.3.13-jito/solana
 
 - [x] ~~Restart validator to activate 3.1.9 + BAM~~ (done March 5, 2026)
 - [x] ~~Verify BAM is working after restart~~ (confirmed: healthy connection, heartbeats flowing)
+- [x] ~~Connect DoubleZero Multicast for DZDP Phase II~~ (done March 5, 2026)
+- [ ] Verify multicast shred publishing with tcpdump during next leader slot
 - [ ] Confirm `--expected-shred-version 50093` is correct for current epoch
 - [ ] **Fix UFW typo:** `dobulezero0` → `doublezero0` in the 44880/udp inbound rule (see DZ section)
 - [ ] Document failover setup procedure (need Gabriel's initial setup chat logs)
