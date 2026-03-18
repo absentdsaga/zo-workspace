@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Saga-DAO-Commission-Proposal</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<h1 id="saga-dao-validator-commission-optimization-proposal">Saga DAO
+Validator — Commission Optimization Proposal</h1>
+<p><strong>Date:</strong> March 15, 2026 <strong>Prepared for:</strong>
+Saga DAO Core Team <strong>Validator:</strong>
+sagasJDjjAHND4hien3bbo5xXkzCT5Ss6nKjyUJ45aw <strong>Current
+Commission:</strong> 5% inflation / 10% MEV <strong>Proposed
+Commission:</strong> 0% inflation / 0% MEV</p>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p>At 5% inflation / 10% MEV, Saga DAO is underperforming its revenue
+potential. We currently receive delegation from 6 stake pools totaling
+~30K SOL in pool stake (plus ~40K SFDP and ~10K native). By dropping to
+0/0, we unlock or increase delegation from <strong>every
+commission-sensitive pool on Solana</strong>, growing total stake from
+80K to ~166K SOL.</p>
+<p>The proposal:</p>
+<ul>
+<li><strong>Increase annual validator income from ~525 SOL to ~1,228 SOL
+(+134%)</strong></li>
+<li><strong>Grow total stake from ~80K to ~166K SOL</strong></li>
+<li><strong>Expand active pool delegations from 6 to 9</strong></li>
+<li><strong>Break even within 18 days</strong> of the commission
+change</li>
+</ul>
+<p>The core math: at 0/0 with 166K stake, block rewards + priority fees
+generate <strong>far more</strong> than the commission income we give
+up. Every 10K SOL of additional delegation produces ~97 SOL/year in
+per-slot revenue — revenue that goes 100% to the validator regardless of
+commission setting.</p>
+<hr />
+<h2 id="the-opportunity-stake-sources-ranked-by-roi">The Opportunity:
+Stake Sources Ranked by ROI</h2>
+<p>Our validator has access to multiple independent stake sources. Each
+has different criteria, different delegation sizes, and different
+sensitivity to commission. Here’s every source ranked by the incremental
+revenue it delivers at 0/0:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Stake Source</th>
+<th>Current Delegation</th>
+<th>Projected at 0/0</th>
+<th>Δ SOL Staked</th>
+<th>Revenue Impact (SOL/yr)</th>
+<th>Commission Sensitivity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><strong>Marinade SAM</strong></td>
+<td>9,000 → 0 (being destaked)</td>
+<td>45,000</td>
+<td>+45,000</td>
+<td>+437</td>
+<td>Extreme — auction requires 0/0 to compete</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><strong>Jito</strong></td>
+<td>0</td>
+<td>31,750</td>
+<td>+31,750</td>
+<td>+308</td>
+<td>High — scoring ranks by commission as #1 factor</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><strong>SFDP</strong></td>
+<td>40,000</td>
+<td>40,000</td>
+<td>0</td>
+<td>0</td>
+<td>None — matching program, commission-insensitive up to 10%</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><strong>STKE</strong></td>
+<td>0</td>
+<td>9,600</td>
+<td>+9,600</td>
+<td>+93</td>
+<td>Medium — WizScore-ranked, lower commission helps</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><strong>Phase Delegation</strong></td>
+<td>9,000</td>
+<td>9,000</td>
+<td>0</td>
+<td>0</td>
+<td>Low — requires ≤5%, already met</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><strong>dynoSOL</strong></td>
+<td>8,000</td>
+<td>8,000</td>
+<td>0</td>
+<td>0</td>
+<td>Low — requires ≤5%/≤10%, already met</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><strong>DoubleZero</strong></td>
+<td>5,000</td>
+<td>5,000</td>
+<td>0</td>
+<td>0</td>
+<td>Low — requires ≤10% + DZ network membership</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td><strong>Vault</strong></td>
+<td>5,000</td>
+<td>7,500</td>
+<td>+2,500</td>
+<td>+24</td>
+<td>Medium — performance tier requires 0/0</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><strong>JPool</strong></td>
+<td>3,000</td>
+<td>5,500</td>
+<td>+2,500</td>
+<td>+24</td>
+<td>Medium — APY-ranked, lower commission = higher rank</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><strong>BlazeStake</strong></td>
+<td>500</td>
+<td>4,000</td>
+<td>+3,500</td>
+<td>+34</td>
+<td>Medium — tier 1 coefficient requires 0% MEV</td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td><strong>Native stake</strong></td>
+<td>~500</td>
+<td>~500</td>
+<td>0</td>
+<td>0</td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>TOTAL</strong></td>
+<td><strong>80,000</strong></td>
+<td><strong>166,350</strong></td>
+<td><strong>+94,850</strong></td>
+<td><strong>+920</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key insight:</strong> No single pool dominates the case. Jito
+and Marinade are the two largest gains, but STKE, BlazeStake, Vault, and
+JPool collectively add another ~32K SOL (+175 SOL/yr). The commission
+change improves our position across the <strong>entire pool
+ecosystem</strong>, not just one source.</p>
+<h3 id="sources-we-cannot-access-regardless-of-commission">Sources We
+Cannot Access (regardless of commission)</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pool</th>
+<th>Reason</th>
+<th>Delegation/Validator</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Edgevana</td>
+<td>Requires Edgevana hosting infrastructure</td>
+<td>~16K SOL</td>
+</tr>
+<tr class="even">
+<td>SharkPool</td>
+<td>US/Canadian university validators only</td>
+<td>~20K SOL</td>
+</tr>
+<tr class="odd">
+<td>JagPool</td>
+<td>Geographic (LATAM/Singapore/South Africa)</td>
+<td>~10K SOL</td>
+</tr>
+<tr class="even">
+<td>Shinobi/xSHIN</td>
+<td>Pure vote credits performance — top 54 only</td>
+<td>~18.5K SOL</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="how-validator-revenue-actually-works">How Validator Revenue
+Actually Works</h2>
+<p>Validator revenue has four components:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Revenue Stream</th>
+<th>Who Gets It</th>
+<th>Scales With</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Inflation commission</strong></td>
+<td>Validator (commission %)</td>
+<td>Total stake × commission rate</td>
+</tr>
+<tr class="even">
+<td><strong>Block rewards</strong></td>
+<td>Validator (100%)</td>
+<td>Number of leader slots</td>
+</tr>
+<tr class="odd">
+<td><strong>Priority fees</strong></td>
+<td>Validator (100%)</td>
+<td>Number of leader slots</td>
+</tr>
+<tr class="even">
+<td><strong>MEV commission</strong></td>
+<td>Validator (commission %)</td>
+<td>Number of leader slots × tip volume</td>
+</tr>
+</tbody>
+</table>
+<p>Block rewards and priority fees go <strong>100% to the validator
+regardless of commission setting</strong>. They only depend on how many
+leader slots you get, which scales linearly with stake.</p>
+<p>At our current 80K SOL: - Inflation commission (5%): <strong>1.27
+SOL/epoch</strong> — this is what we’d give up - Block rewards +
+priority fees: <strong>4.26 SOL/epoch</strong> — this scales with more
+stake - MEV commission (10%): <strong>0.06 SOL/epoch</strong> —
+negligible</p>
+<p><strong>The entire inflation commission at 5% is worth 231
+SOL/year.</strong> Meanwhile, every 10K SOL of additional pool
+delegation generates <strong>97 SOL/year</strong> in block rewards +
+priority fees. We only need 24K more stake to break even — and we’d gain
+~95K.</p>
+<h3 id="revenue-by-source-at-00">Revenue by Source at 0/0</h3>
+<p>Here’s how each stake source contributes to our total revenue at the
+proposed commission:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stake Source</th>
+<th>Projected Stake</th>
+<th>Leader Slots</th>
+<th>Block + Priority Fees (SOL/yr)</th>
+<th>Share of Revenue</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Marinade SAM</td>
+<td>45,000</td>
+<td>50</td>
+<td>485</td>
+<td>33%</td>
+</tr>
+<tr class="even">
+<td>SFDP</td>
+<td>40,000</td>
+<td>44</td>
+<td>427</td>
+<td>29%</td>
+</tr>
+<tr class="odd">
+<td>Jito</td>
+<td>31,750</td>
+<td>35</td>
+<td>342</td>
+<td>23%</td>
+</tr>
+<tr class="even">
+<td>Phase</td>
+<td>9,000</td>
+<td>10</td>
+<td>97</td>
+<td>7%</td>
+</tr>
+<tr class="odd">
+<td>STKE</td>
+<td>9,600</td>
+<td>11</td>
+<td>103</td>
+<td>7%</td>
+</tr>
+<tr class="even">
+<td>dynoSOL</td>
+<td>8,000</td>
+<td>9</td>
+<td>86</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>Vault</td>
+<td>7,500</td>
+<td>8</td>
+<td>81</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>JPool</td>
+<td>5,500</td>
+<td>6</td>
+<td>59</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>DoubleZero</td>
+<td>5,000</td>
+<td>6</td>
+<td>54</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>BlazeStake</td>
+<td>4,000</td>
+<td>4</td>
+<td>43</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>Native</td>
+<td>500</td>
+<td>1</td>
+<td>11</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td><strong>166,350</strong></td>
+<td><strong>185</strong></td>
+<td><strong>~1,228</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>No single source exceeds 33% of revenue.</strong> Marinade,
+SFDP, and Jito form a balanced top tier. The mid-tier pools (Phase,
+STKE, dynoSOL, Vault) collectively contribute ~20%. This diversification
+means losing any one pool doesn’t wreck the operation.</p>
+<hr />
+<h2 id="revenue-model">Revenue Model</h2>
+<p>Based on actual Trillium data from our validator (epochs 935-940),
+using per-leader-slot revenue derived from our own block production:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Scenario</th>
+<th>Commission</th>
+<th>Total Stake</th>
+<th>Leader Slots</th>
+<th>Net/Epoch</th>
+<th>Annual SOL</th>
+<th>vs Current</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Current (post-Marinade loss)</strong></td>
+<td>5% / 10%</td>
+<td>72K</td>
+<td>79</td>
+<td>2.88</td>
+<td>525</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><strong>Option A: Drop to 4/10</strong></td>
+<td>4% / 10%</td>
+<td>104K</td>
+<td>115</td>
+<td>4.81</td>
+<td>875</td>
+<td>+67%</td>
+</tr>
+<tr class="odd">
+<td><strong>Option B: Drop to 0/0</strong></td>
+<td>0% / 0%</td>
+<td>166K</td>
+<td>185</td>
+<td>6.75</td>
+<td>1,228</td>
+<td>+134%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="per-slot-revenue-validation">Per-Slot Revenue Validation</h3>
+<p>Our per-slot revenue assumptions are validated by: 1. <strong>Our own
+data</strong>: across 5 non-outlier epochs, per-slot revenue showed no
+correlation with slot count (slot counts ranged 80-124, per-slot revenue
+was independent) 2. <strong>Rated Network study</strong> (epochs
+749-786): CU utilization was 78-82% across all stake deciles from 50K to
+2M+ SOL; stake size explains only 2% of fee variance</p>
+<hr />
+<h2 id="pool-by-pool-breakdown">Pool-by-Pool Breakdown</h2>
+<p>Each pool evaluated by: how much stake it delivers, what it requires,
+and whether commission changes affect it.</p>
+<h3
+id="high-impact-pools-commission-change-unlocks-or-recovers-delegation">High-Impact
+Pools (commission change unlocks or recovers delegation)</h3>
+<p><strong>Marinade SAM — +45,000 SOL (+437 SOL/yr)</strong> - Current:
+9K → being destaked to 0 (our Max APY of 7.40% is below the 7.58%
+auction floor) - At 0/0: Clears auction threshold. All 57 current
+winners run 0/0. Our bond (13 SOL) supports up to 293K SOL capacity. -
+Activation: 2-4 days (every-epoch auction) - Risk: Auction is
+competitive — delegation depends on bid and validator count</p>
+<p><strong>Jito — +31,750 SOL (+308 SOL/yr)</strong> - Current: 0 SOL
+(commission too high to rank in top 400) - At 0/0: Score jumps — 0%
+inflation ranks at top priority tier. 12.7M SOL pool across ~400
+validators. - Activation: 14-20 days (10-epoch scoring cycle) - Risk:
+Low — Jito has 400 slots and most validators at 0% qualify. No lookback
+penalty since we’ve never been <em>above</em> 5%.</p>
+<p><strong>STKE — +9,600 SOL (+93 SOL/yr)</strong> - Current: 0 SOL - At
+0/0: WizScore improves with lower commission → qualifies for delegation
+- Activation: ~30 days (30-day rolling score) - Risk: Low — score-based,
+transparent criteria</p>
+<h3
+id="mid-impact-pools-commission-change-increases-existing-delegation">Mid-Impact
+Pools (commission change increases existing delegation)</h3>
+<p><strong>Vault — 5,000 → 7,500 SOL (+24 SOL/yr)</strong> - Basic tier
+(≤5%) already met. Performance pool tier requires 0/0 and board
+approval. - Activation: 30-40 days</p>
+<p><strong>JPool — 3,000 → 5,500 SOL (+24 SOL/yr)</strong> - APY-ranked.
+Lower commission = higher APY = more delegation. - Activation: ~10 days
+(5-epoch recalculation)</p>
+<p><strong>BlazeStake — 500 → 4,000 SOL (+34 SOL/yr)</strong> - Tier 1
+coefficient requires 0% MEV. Currently at 10% MEV → Tier 2 allocation
+only. - Activation: ~14 days</p>
+<h3 id="stable-pools-no-change-from-commission-reduction">Stable Pools
+(no change from commission reduction)</h3>
+<p><strong>SFDP — 40,000 SOL (427 SOL/yr)</strong> - Foundation matching
+program. Commission-insensitive up to 10%. Our largest single source.
+Stays regardless.</p>
+<p><strong>Phase Delegation — 9,000 SOL (97 SOL/yr)</strong> - Requires
+≤5%. Already met. No upside from going lower.</p>
+<p><strong>dynoSOL — 8,000 SOL (86 SOL/yr)</strong> - Requires ≤5% /
+≤10%. Already met. Stays.</p>
+<p><strong>DoubleZero — 5,000 SOL (54 SOL/yr)</strong> - Requires ≤10% +
+DZ network membership. Already connected to multicast. Stays.</p>
+<h3
+id="inaccessible-pools-structural-barriers-not-commission">Inaccessible
+Pools (structural barriers, not commission)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Pool</th>
+<th>Barrier</th>
+<th>Delegation/Validator</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Edgevana</td>
+<td>Requires Edgevana hosting</td>
+<td>~16K SOL</td>
+</tr>
+<tr class="even">
+<td>SharkPool</td>
+<td>US/Canadian university only</td>
+<td>~20K SOL</td>
+</tr>
+<tr class="odd">
+<td>JagPool</td>
+<td>LATAM/Singapore/South Africa only</td>
+<td>~10K SOL</td>
+</tr>
+<tr class="even">
+<td>Shinobi/xSHIN</td>
+<td>Top 54 by vote credits only</td>
+<td>~18.5K SOL</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ramp-up-timeline">Ramp-Up Timeline</h2>
+<p>Pools don’t activate instantly. Here’s the realistic timeline after
+changing commission:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Day</th>
+<th>Event</th>
+<th>Projected Stake</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Commission change takes effect (same epoch)</td>
+<td>72K</td>
+</tr>
+<tr class="even">
+<td>2-4</td>
+<td>Marinade SAM activates (every-epoch auction)</td>
+<td>~87K</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>JPool recalculates (5-epoch cycle)</td>
+<td>~119K</td>
+</tr>
+<tr class="even">
+<td>14-20</td>
+<td>Jito scores us in (next 10-epoch cycle)</td>
+<td>~142K</td>
+</tr>
+<tr class="odd">
+<td>30</td>
+<td>STKE fully reflects (30-day rolling score)</td>
+<td>~154K</td>
+</tr>
+<tr class="even">
+<td>40+</td>
+<td>Vault performance tier (board approval)</td>
+<td>~166K</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Jito lookback clarification:</strong> Jito checks if
+commission was ever <em>above</em> 5% in the last 30 epochs. We’ve
+always been at 5% (not above), so there is no lookback penalty. We
+already pass all binary criteria — only our score improves.</p>
+<h3 id="break-even-analysis">Break-Even Analysis</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Valley of Death</th>
+<th>Break-Even</th>
+<th>Steady-State Advantage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>0/0 vs staying at 5/10</strong></td>
+<td>6.6 SOL lost</td>
+<td><strong>Epoch 9 (~18 days)</strong></td>
+<td>+703 SOL/year</td>
+</tr>
+<tr class="even">
+<td><strong>4/10 vs staying at 5/10</strong></td>
+<td>4.7 SOL lost</td>
+<td>Epoch 12 (~24 days)</td>
+<td>+351 SOL/year</td>
+</tr>
+</tbody>
+</table>
+<p>The maximum cumulative deficit before pools activate is <strong>6.6
+SOL</strong> — roughly 2 epochs of current earnings. This is recovered
+within 18 days, after which we’re permanently ahead.</p>
+<hr />
+<h2 id="commission-scenarios-compared">Commission Scenarios
+Compared</h2>
+<p>Three options evaluated across all stake sources:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Stay at 5/10</th>
+<th>Drop to 4/10</th>
+<th>Drop to 0/0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Inflation comm</strong></td>
+<td>5%</td>
+<td>4%</td>
+<td>0%</td>
+</tr>
+<tr class="even">
+<td><strong>MEV comm</strong></td>
+<td>10%</td>
+<td>10%</td>
+<td>0%</td>
+</tr>
+<tr class="odd">
+<td><strong>Total Stake</strong></td>
+<td>72K (losing Marinade)</td>
+<td>104K</td>
+<td>166K</td>
+</tr>
+<tr class="even">
+<td><strong>Annual Income</strong></td>
+<td>525 SOL</td>
+<td>875 SOL</td>
+<td><strong>1,228 SOL</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Active Pools</strong></td>
+<td>5 (lost Marinade)</td>
+<td>7</td>
+<td><strong>9</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Break-even</strong></td>
+<td>—</td>
+<td>24 days</td>
+<td><strong>18 days</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-each-step-unlocks">What each step unlocks</h3>
+<p><strong>5/10 → 4/10 (incremental +350 SOL/yr):</strong> - Unlocks
+Jito (+31.7K SOL) — biggest single gain - But still loses Marinade
+(auction requires 0/0 to compete) - BlazeStake stays at Tier 2 (10% MEV
+disqualifies Tier 1)</p>
+<p><strong>4/10 → 0/0 (incremental +353 SOL/yr):</strong> - Wins
+Marinade SAM auction (+45K SOL) - Unlocks STKE (+9.6K SOL) - Upgrades
+BlazeStake to Tier 1 (+3.5K SOL) - Upgrades Vault to performance tier
+(+2.5K SOL) - Grows JPool (+2.5K SOL)</p>
+<p>The marginal cost of going from 4% to 0% inflation is 185 SOL/year in
+commission. The additional ~62K stake from those pools generates 602
+SOL/year. The second step is actually higher ROI than the first.</p>
+<hr />
+<h2 id="risk-assessment">Risk Assessment</h2>
+<p><strong>What we give up:</strong> - Inflation commission: 231
+SOL/year (predictable, stable) - MEV commission: 11 SOL/year
+(negligible) - Ability to easily raise commission later (Jito’s 30-epoch
+lookback penalizes increases above 5%)</p>
+<p><strong>What we gain:</strong> - ~95K more SOL stake across 4+ pools:
++920 SOL/year in block + priority fee revenue - Net gain: +690 SOL/year
+- Revenue diversified across 9 pools (no single source &gt;33%) - More
+leader slots = more consensus influence</p>
+<p><strong>Scenario analysis — what if pools don’t fully
+deliver?</strong></p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Scenario</th>
+<th>Pools Active</th>
+<th>Total Stake</th>
+<th>Annual Income</th>
+<th>vs. Current</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Worst case</strong> (only stable pools, Marinade gone)</td>
+<td>5</td>
+<td>68K</td>
+<td>492</td>
+<td>-33 SOL</td>
+</tr>
+<tr class="even">
+<td><strong>Conservative</strong> (stable + Jito only)</td>
+<td>6</td>
+<td>100K</td>
+<td>725</td>
+<td>+200 SOL</td>
+</tr>
+<tr class="odd">
+<td><strong>Base case</strong> (Jito + Marinade + mid-tier)</td>
+<td>9</td>
+<td>166K</td>
+<td>1,228</td>
+<td>+703 SOL</td>
+</tr>
+<tr class="even">
+<td><strong>Upside</strong> (base + Shinobi qualification)</td>
+<td>10</td>
+<td>185K</td>
+<td>1,340</td>
+<td>+815 SOL</td>
+</tr>
+</tbody>
+</table>
+<p>Even the conservative scenario (just Jito activates) beats staying at
+5/10 by 200 SOL/year. The only scenario where 0/0 underperforms is the
+worst case where we fail to win any new pools AND lose Marinade anyway —
+which would also happen if we stay at 5/10.</p>
+<p><strong>Key risks:</strong> - Marinade auction is competitive —
+delegation depends on bid strategy and validator count. Not guaranteed.
+- Network fee revenue varies epoch to epoch, though our 5-epoch dataset
+shows consistent per-slot revenue - Going back to 5% after going 0%
+would trigger Jito’s lookback → lose Jito delegation for up to 30
+epochs</p>
+<p><strong>Mitigations:</strong> - Revenue base is diversified: SFDP
+(40K), Phase (9K), dynoSOL (8K), DoubleZero (5K) stay regardless —
+that’s 62K SOL in commission-insensitive stake - Per-slot revenue
+validated across stake sizes (Rated Network study, epochs 749-786): CU
+utilization was 78-82% across all stake deciles - Ramp-up is gradual —
+we can monitor each pool’s activation and adjust strategy if needed</p>
+<hr />
+<h2 id="execution-plan">Execution Plan</h2>
+<p><strong>Step 1 — Change commission (Day 0)</strong></p>
+<pre><code>solana vote-update-commission sagasJDjjAHND4hien3bbo5xXkzCT5Ss6nKjyUJ45aw 0 &lt;AUTHORIZED_WITHDRAWER&gt;</code></pre>
+<p>Must be submitted during the first half of the current epoch. Takes
+effect immediately.</p>
+<p><strong>Step 2 — Update Marinade bid (Day 0-1)</strong> Set a
+competitive bid on the Marinade SAM auction. Current winning effective
+bids are ~0.064 SOL per 1K SOL delegated. Our bond (13 SOL) supports up
+to 293K SOL capacity — more than sufficient.</p>
+<p><strong>Step 3 — Set Jito MEV commission to 0% (Day 0)</strong>
+Update MEV commission through Jito’s tip distribution config.</p>
+<p><strong>Step 4 — Monitor pool activations (Days 2-30)</strong> Track
+delegation changes on Coefficient dashboard. Expected activation order:
+Marinade → JPool → Jito → STKE → Vault.</p>
+<p><strong>Step 5 — Evaluate at epoch 960 (~40 days)</strong> Review
+actual revenue vs projections. All major pools should be active by
+then.</p>
+<hr />
+<h2 id="data-sources">Data Sources</h2>
+<ul>
+<li>Validator epoch profitability: Trillium API via Coefficient (epochs
+935-940)</li>
+<li>Marinade SAM auction: psr.marinade.finance (epoch 940 live
+data)</li>
+<li>Jito delegation criteria: jito.network/docs (official
+documentation)</li>
+<li>Pool criteria: Official docs for each pool +
+SOFZP/Solana-Stake-Pools-Research (GitHub)</li>
+<li>Per-slot revenue validation: Rated Network study, epochs
+749-786</li>
+<li>Validator current status: Coefficient dashboard, validators.app,
+Grafana monitoring</li>
+</ul>
+<hr />
+<h2 id="summary">Summary</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Current (5/10)</th>
+<th>Proposed (0/0)</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Inflation Commission</td>
+<td>5%</td>
+<td>0%</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>MEV Commission</td>
+<td>10%</td>
+<td>0%</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>Total Stake</td>
+<td>72K SOL</td>
+<td>166K SOL</td>
+<td>+131%</td>
+</tr>
+<tr class="even">
+<td>Active Pool Delegations</td>
+<td>5 (losing Marinade)</td>
+<td>9</td>
+<td>+4 pools</td>
+</tr>
+<tr class="odd">
+<td>Revenue Sources &gt;5K SOL</td>
+<td>5</td>
+<td>9</td>
+<td>Diversified</td>
+</tr>
+<tr class="even">
+<td>Leader Slots/Epoch</td>
+<td>79</td>
+<td>185</td>
+<td>+134%</td>
+</tr>
+<tr class="odd">
+<td>Net Income/Epoch</td>
+<td>2.88 SOL</td>
+<td>6.75 SOL</td>
+<td>+134%</td>
+</tr>
+<tr class="even">
+<td>Annual Net Income</td>
+<td>525 SOL</td>
+<td>1,228 SOL</td>
+<td><strong>+703 SOL</strong></td>
+</tr>
+<tr class="odd">
+<td>Largest Single Source</td>
+<td>SFDP (56%)</td>
+<td>SFDP (29%)</td>
+<td>Less concentrated</td>
+</tr>
+<tr class="even">
+<td>Break-Even Timeline</td>
+<td>—</td>
+<td>18 days</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommendation:</strong> Approve commission change to 0/0.
+The case doesn’t rest on any single pool. Across 9 independent
+delegation sources — Marinade, Jito, SFDP, STKE, Phase, dynoSOL,
+DoubleZero, Vault, JPool, and BlazeStake — the additional stake
+generates substantially more per-slot revenue than the commission income
+sacrificed. Break-even is under 3 weeks, revenue is more diversified,
+and even the conservative scenario (only Jito activates) beats the
+status quo.</p>
+</body>
+</html>

@@ -1,0 +1,337 @@
+{
+  "generated_at": "2026-03-15T12:05:34.570793+00:00",
+  "top_signals": [
+    {
+      "topic": "#fyp",
+      "score": 70,
+      "confidence": "medium",
+      "mentions": 4,
+      "engagement": 0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#memes",
+      "score": 60,
+      "confidence": "medium",
+      "mentions": 3,
+      "engagement": 0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#cryptocurrency",
+      "score": 60,
+      "confidence": "medium",
+      "mentions": 3,
+      "engagement": 0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "unknown"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "$SMITH",
+      "score": 50,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 0,
+      "platforms": [
+        "x"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "sampsonitesddev",
+        "LongtermR"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": [
+        "** \"Solana memecoins are on a tear right now with $SMITH up 1,330%, $Twin up 1,280%, and $USMX up 861% in 24 hours. Wild moves but remember most of these pumps don't last.",
+        "** \"$SOL meme hype today is again stealing the spotlight while $BTC chills. Standout: $SMITH (airdrop + launch buzz) 9e1wtawpbkrJGq3vLbPGBvpQFLfsPFtjai4D9eo9pump Although I would like it to see it sta"
+      ]
+    },
+    {
+      "topic": "$BTC",
+      "score": 50,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 0,
+      "platforms": [
+        "x"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "LongtermR",
+        "GuavySentiment"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": [
+        "** \"$SOL meme hype today is again stealing the spotlight while $BTC chills. Standout: $SMITH (airdrop + launch buzz) 9e1wtawpbkrJGq3vLbPGBvpQFLfsPFtjai4D9eo9pump Although I would like it to see it sta",
+        "**  \n   \ud83d\udcc8 LINK - Polymarket's Bitcoin Price Prediction Market  \n\n   Sentiment: 2 | Clout: 40 | Speculation: 4/10 | \u27a1\ufe0f $BTC Neutral Confidence: 8/10  \n\n   Polymarket offers a market that predicts wheth"
+      ]
+    }
+  ],
+  "prediction_market_edges": [
+    {
+      "type": "polymarket",
+      "question": "Bitcoin Up or Down on March 15?",
+      "url": "https://polymarket.com/event/bitcoin-up-or-down-on-march-15-2026",
+      "matching_social_topics": [
+        "bitcoin",
+        "binance"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Down",
+          "price": 0.023,
+          "implied_probability": "2.3%",
+          "payout_multiple": "43.5x"
+        }
+      ],
+      "volume_24h": 219090.52936300027,
+      "social_engagement": 0,
+      "social_mentions": 3,
+      "match_quality": 39,
+      "social_context": []
+    }
+  ],
+  "polymarket_top_opportunities": [
+    {
+      "question": "Netanyahu out by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0575,
+          "implied_probability": "5.8%",
+          "payout_multiple": "17.4x"
+        }
+      ],
+      "volume_24h": 9058355.978795016,
+      "url": "https://polymarket.com/event/netanyahu-out-by-march-31-854"
+    },
+    {
+      "question": "Will Ted Cruz win the 2028 Republican presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 2448316.0422040024,
+      "url": "https://polymarket.com/event/will-ted-cruz-win-the-2028-republican-presidential-nomination"
+    },
+    {
+      "question": "Will Nikki Haley win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 1383619.0763849993,
+      "url": "https://polymarket.com/event/will-nikki-haley-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will the Iranian regime fall by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0385,
+          "implied_probability": "3.9%",
+          "payout_multiple": "26.0x"
+        }
+      ],
+      "volume_24h": 1062314.9064709994,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31"
+    },
+    {
+      "question": "Will the Iranian regime fall by June 30?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.285,
+          "implied_probability": "28.5%",
+          "payout_multiple": "3.5x"
+        }
+      ],
+      "volume_24h": 1036018.0328389993,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30"
+    },
+    {
+      "question": "Will Elon Musk win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0125,
+          "implied_probability": "1.2%",
+          "payout_multiple": "80.0x"
+        }
+      ],
+      "volume_24h": 952348.3844640009,
+      "url": "https://polymarket.com/event/will-elon-musk-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will the Iranian regime fall by April 30?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.155,
+          "implied_probability": "15.5%",
+          "payout_multiple": "6.5x"
+        }
+      ],
+      "volume_24h": 798503.206717,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-april-30"
+    },
+    {
+      "question": "Will Wes Moore win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0155,
+          "implied_probability": "1.6%",
+          "payout_multiple": "64.5x"
+        }
+      ],
+      "volume_24h": 588612.0177590002,
+      "url": "https://polymarket.com/event/will-wes-moore-win-the-2028-democratic-presidential-nomination-714"
+    },
+    {
+      "question": "Will Jesus Christ return before 2027?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0385,
+          "implied_probability": "3.9%",
+          "payout_multiple": "26.0x"
+        }
+      ],
+      "volume_24h": 552780.8577080003,
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027"
+    },
+    {
+      "question": "US x Iran ceasefire by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.135,
+          "implied_probability": "13.5%",
+          "payout_multiple": "7.4x"
+        }
+      ],
+      "volume_24h": 515455.4069909999,
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-31"
+    },
+    {
+      "question": "Will Bodo Glimt win the 2025\u201326 Champions League?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.027,
+          "implied_probability": "2.7%",
+          "payout_multiple": "37.0x"
+        }
+      ],
+      "volume_24h": 511444.76241100003,
+      "url": "https://polymarket.com/event/will-bodo-glimt-win-the-202526-champions-league"
+    },
+    {
+      "question": "Will the Golden State Warriors win the NBA Western Conference Finals?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0125,
+          "implied_probability": "1.2%",
+          "payout_multiple": "80.0x"
+        }
+      ],
+      "volume_24h": 497745.03857800004,
+      "url": "https://polymarket.com/event/will-the-golden-state-warriors-win-the-nba-western-conference-finals"
+    },
+    {
+      "question": "GTA VI released before June 2026?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0305,
+          "implied_probability": "3.0%",
+          "payout_multiple": "32.8x"
+        }
+      ],
+      "volume_24h": 483520.85358399985,
+      "url": "https://polymarket.com/event/gta-vi-released-before-june-2026"
+    },
+    {
+      "question": "Will Lens win the 2025\u201326 French Ligue 1?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0895,
+          "implied_probability": "8.9%",
+          "payout_multiple": "11.2x"
+        }
+      ],
+      "volume_24h": 434484.9474229999,
+      "url": "https://polymarket.com/event/will-lens-win-the-202526-french-ligue-1"
+    },
+    {
+      "question": "Kharg Island no longer under Iranian control by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.125,
+          "implied_probability": "12.5%",
+          "payout_multiple": "8.0x"
+        }
+      ],
+      "volume_24h": 428874.4769869998,
+      "url": "https://polymarket.com/event/kharg-island-no-longer-under-iranian-control-by-march-31"
+    }
+  ],
+  "kalshi_top_opportunities": [],
+  "summary": {
+    "total_topics_tracked": 37,
+    "high_confidence_signals": 0,
+    "medium_confidence_signals": 5,
+    "cross_platform_signals": 0,
+    "tier1_backed_signals": 0,
+    "prediction_market_matches": 1,
+    "x_signals_quality": {
+      "total": 35,
+      "with_known_author": 15,
+      "with_engagement": 0
+    },
+    "tiktok_signals_quality": {
+      "total": 35,
+      "crypto_relevant": 33
+    }
+  }
+}

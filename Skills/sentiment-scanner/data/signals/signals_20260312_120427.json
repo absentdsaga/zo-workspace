@@ -1,0 +1,674 @@
+{
+  "generated_at": "2026-03-12T12:04:27.885521+00:00",
+  "top_signals": [],
+  "prediction_market_edges": [
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 320-339 tweets from March 6 to March 13, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-march-6-march-13-320-339",
+      "matching_social_topics": [
+        "elonmusk",
+        "elon musk"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.2235,
+          "implied_probability": "22.4%",
+          "payout_multiple": "4.5x"
+        }
+      ],
+      "volume_24h": 274373.88248,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 36,
+      "social_context": [
+        "Elon Musk confirms crypto trading tools coming to X including price data and smart cashtags featuring bitcoin bonk and base "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 360-379 tweets from March 6 to March 13, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-march-6-march-13-360-379",
+      "matching_social_topics": [
+        "elonmusk",
+        "elon musk"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.2445,
+          "implied_probability": "24.4%",
+          "payout_multiple": "4.1x"
+        }
+      ],
+      "volume_24h": 246677.92988599988,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 36,
+      "social_context": [
+        "Elon Musk confirms crypto trading tools coming to X including price data and smart cashtags featuring bitcoin bonk and base "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 380-399 tweets from March 6 to March 13, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-march-6-march-13-380-399",
+      "matching_social_topics": [
+        "elonmusk",
+        "elon musk"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.1165,
+          "implied_probability": "11.7%",
+          "payout_multiple": "8.6x"
+        }
+      ],
+      "volume_24h": 238997.28123,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 36,
+      "social_context": [
+        "Elon Musk confirms crypto trading tools coming to X including price data and smart cashtags featuring bitcoin bonk and base "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 400-419 tweets from March 6 to March 13, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-march-6-march-13-400-419",
+      "matching_social_topics": [
+        "elonmusk",
+        "elon musk"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.046,
+          "implied_probability": "4.6%",
+          "payout_multiple": "21.7x"
+        }
+      ],
+      "volume_24h": 231496.594777,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 36,
+      "social_context": [
+        "Elon Musk confirms crypto trading tools coming to X including price data and smart cashtags featuring bitcoin bonk and base "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk post 420-439 tweets from March 6 to March 13, 2026?",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-march-6-march-13-420-439",
+      "matching_social_topics": [
+        "elonmusk",
+        "elon musk"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0145,
+          "implied_probability": "1.5%",
+          "payout_multiple": "69.0x"
+        }
+      ],
+      "volume_24h": 212068.7011239999,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 36,
+      "social_context": [
+        "Elon Musk confirms crypto trading tools coming to X including price data and smart cashtags featuring bitcoin bonk and base "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $72,000 on March 12?",
+      "url": "https://polymarket.com/event/bitcoin-above-72k-on-march-12",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.066,
+          "implied_probability": "6.6%",
+          "payout_multiple": "15.2x"
+        }
+      ],
+      "volume_24h": 272602.60633099964,
+      "social_engagement": 0,
+      "social_mentions": 4,
+      "match_quality": 27,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $68,000 on March 12?",
+      "url": "https://polymarket.com/event/bitcoin-above-68k-on-march-12",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.0195,
+          "implied_probability": "1.9%",
+          "payout_multiple": "51.3x"
+        }
+      ],
+      "volume_24h": 265117.592706,
+      "social_engagement": 0,
+      "social_mentions": 4,
+      "match_quality": 27,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $60,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-60k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.235,
+          "implied_probability": "23.5%",
+          "payout_multiple": "4.3x"
+        }
+      ],
+      "volume_24h": 193004.122964,
+      "social_engagement": 0,
+      "social_mentions": 4,
+      "match_quality": 27,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $40,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-40k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0125,
+          "implied_probability": "1.2%",
+          "payout_multiple": "80.0x"
+        }
+      ],
+      "volume_24h": 174184.85702000005,
+      "social_engagement": 0,
+      "social_mentions": 4,
+      "match_quality": 27,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $95,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-95k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0115,
+          "implied_probability": "1.1%",
+          "payout_multiple": "87.0x"
+        }
+      ],
+      "volume_24h": 170496.18850199992,
+      "social_engagement": 0,
+      "social_mentions": 4,
+      "match_quality": 27,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $90,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-90k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0295,
+          "implied_probability": "2.9%",
+          "payout_multiple": "33.9x"
+        }
+      ],
+      "volume_24h": 160433.05832799998,
+      "social_engagement": 0,
+      "social_mentions": 4,
+      "match_quality": 27,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk win the 2028 Republican presidential nomination?",
+      "url": "https://polymarket.com/event/will-elon-musk-win-the-2028-republican-presidential-nomination",
+      "matching_social_topics": [
+        "elon musk"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0115,
+          "implied_probability": "1.1%",
+          "payout_multiple": "87.0x"
+        }
+      ],
+      "volume_24h": 1347306.2595310013,
+      "social_engagement": 0,
+      "social_mentions": 1,
+      "match_quality": 18,
+      "social_context": [
+        "Elon Musk confirms crypto trading tools coming to X including price data and smart cashtags featuring bitcoin bonk and base "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Elon Musk win the 2028 US Presidential Election?",
+      "url": "https://polymarket.com/event/will-elon-musk-win-the-2028-us-presidential-election",
+      "matching_social_topics": [
+        "elon musk"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0115,
+          "implied_probability": "1.1%",
+          "payout_multiple": "87.0x"
+        }
+      ],
+      "volume_24h": 1111859.5299090003,
+      "social_engagement": 0,
+      "social_mentions": 1,
+      "match_quality": 18,
+      "social_context": [
+        "Elon Musk confirms crypto trading tools coming to X including price data and smart cashtags featuring bitcoin bonk and base "
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "US x Iran ceasefire by March 31?",
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-31",
+      "matching_social_topics": [
+        "iran"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.245,
+          "implied_probability": "24.5%",
+          "payout_multiple": "4.1x"
+        }
+      ],
+      "volume_24h": 804202.8093330004,
+      "social_engagement": 0,
+      "social_mentions": 1,
+      "match_quality": 18,
+      "social_context": [
+        "Crypto Mar 11 2026: Bear since Oct 25 -$2T gone. BTC stuck 69-71K (Iran + recession fears). Still ~$70K strong +7% from low beats stocks/gold. XRP $1.37 SOL pumping."
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "US x Iran ceasefire by March 15?",
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-15",
+      "matching_social_topics": [
+        "iran"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0225,
+          "implied_probability": "2.2%",
+          "payout_multiple": "44.4x"
+        }
+      ],
+      "volume_24h": 733719.3946569997,
+      "social_engagement": 0,
+      "social_mentions": 1,
+      "match_quality": 18,
+      "social_context": [
+        "Crypto Mar 11 2026: Bear since Oct 25 -$2T gone. BTC stuck 69-71K (Iran + recession fears). Still ~$70K strong +7% from low beats stocks/gold. XRP $1.37 SOL pumping."
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the Iranian regime fall by March 31?",
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31",
+      "matching_social_topics": [
+        "iran"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0465,
+          "implied_probability": "4.7%",
+          "payout_multiple": "21.5x"
+        }
+      ],
+      "volume_24h": 691778.499032,
+      "social_engagement": 0,
+      "social_mentions": 1,
+      "match_quality": 18,
+      "social_context": [
+        "Crypto Mar 11 2026: Bear since Oct 25 -$2T gone. BTC stuck 69-71K (Iran + recession fears). Still ~$70K strong +7% from low beats stocks/gold. XRP $1.37 SOL pumping."
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the Iranian regime fall by June 30?",
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
+      "matching_social_topics": [
+        "iran"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.215,
+          "implied_probability": "21.5%",
+          "payout_multiple": "4.7x"
+        }
+      ],
+      "volume_24h": 654342.79657,
+      "social_engagement": 0,
+      "social_mentions": 1,
+      "match_quality": 18,
+      "social_context": [
+        "Crypto Mar 11 2026: Bear since Oct 25 -$2T gone. BTC stuck 69-71K (Iran + recession fears). Still ~$70K strong +7% from low beats stocks/gold. XRP $1.37 SOL pumping."
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "US forces enter Iran by March 31?",
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-31-222-191-243-517-878-439-519",
+      "matching_social_topics": [
+        "iran"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.255,
+          "implied_probability": "25.5%",
+          "payout_multiple": "3.9x"
+        }
+      ],
+      "volume_24h": 583414.1964450006,
+      "social_engagement": 0,
+      "social_mentions": 1,
+      "match_quality": 18,
+      "social_context": [
+        "Crypto Mar 11 2026: Bear since Oct 25 -$2T gone. BTC stuck 69-71K (Iran + recession fears). Still ~$70K strong +7% from low beats stocks/gold. XRP $1.37 SOL pumping."
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "US forces enter Iran by March 14?",
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-14-337",
+      "matching_social_topics": [
+        "iran"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.055,
+          "implied_probability": "5.5%",
+          "payout_multiple": "18.2x"
+        }
+      ],
+      "volume_24h": 530226.6522989994,
+      "social_engagement": 0,
+      "social_mentions": 1,
+      "match_quality": 18,
+      "social_context": [
+        "Crypto Mar 11 2026: Bear since Oct 25 -$2T gone. BTC stuck 69-71K (Iran + recession fears). Still ~$70K strong +7% from low beats stocks/gold. XRP $1.37 SOL pumping."
+      ]
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Iran strike Israel on March 10?",
+      "url": "https://polymarket.com/event/will-iran-strike-israel-on-march-10",
+      "matching_social_topics": [
+        "iran"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.246,
+          "implied_probability": "24.6%",
+          "payout_multiple": "4.1x"
+        }
+      ],
+      "volume_24h": 516809.0959759996,
+      "social_engagement": 0,
+      "social_mentions": 1,
+      "match_quality": 18,
+      "social_context": [
+        "Crypto Mar 11 2026: Bear since Oct 25 -$2T gone. BTC stuck 69-71K (Iran + recession fears). Still ~$70K strong +7% from low beats stocks/gold. XRP $1.37 SOL pumping."
+      ]
+    }
+  ],
+  "polymarket_top_opportunities": [
+    {
+      "question": "Will Elon Musk win the 2028 Republican presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0115,
+          "implied_probability": "1.1%",
+          "payout_multiple": "87.0x"
+        }
+      ],
+      "volume_24h": 1347306.2595310013,
+      "url": "https://polymarket.com/event/will-elon-musk-win-the-2028-republican-presidential-nomination"
+    },
+    {
+      "question": "Will Elon Musk win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0115,
+          "implied_probability": "1.1%",
+          "payout_multiple": "87.0x"
+        }
+      ],
+      "volume_24h": 1111859.5299090003,
+      "url": "https://polymarket.com/event/will-elon-musk-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will Colombia win the 2026 FIFA World Cup?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0165,
+          "implied_probability": "1.7%",
+          "payout_multiple": "60.6x"
+        }
+      ],
+      "volume_24h": 813024.9211340001,
+      "url": "https://polymarket.com/event/will-colombia-win-the-2026-fifa-world-cup-734"
+    },
+    {
+      "question": "US x Iran ceasefire by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.245,
+          "implied_probability": "24.5%",
+          "payout_multiple": "4.1x"
+        }
+      ],
+      "volume_24h": 804202.8093330004,
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-31"
+    },
+    {
+      "question": "US x Iran ceasefire by March 15?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0225,
+          "implied_probability": "2.2%",
+          "payout_multiple": "44.4x"
+        }
+      ],
+      "volume_24h": 733719.3946569997,
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-15"
+    },
+    {
+      "question": "Will Bodo Glimt win the 2025\u201326 Champions League?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0305,
+          "implied_probability": "3.0%",
+          "payout_multiple": "32.8x"
+        }
+      ],
+      "volume_24h": 704651.2786480014,
+      "url": "https://polymarket.com/event/will-bodo-glimt-win-the-202526-champions-league"
+    },
+    {
+      "question": "Will the Iranian regime fall by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0465,
+          "implied_probability": "4.7%",
+          "payout_multiple": "21.5x"
+        }
+      ],
+      "volume_24h": 691778.499032,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31"
+    },
+    {
+      "question": "Will Jesus Christ return before 2027?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0385,
+          "implied_probability": "3.9%",
+          "payout_multiple": "26.0x"
+        }
+      ],
+      "volume_24h": 672864.2980709998,
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027"
+    },
+    {
+      "question": "Will the Golden State Warriors win the NBA Western Conference Finals?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.016,
+          "implied_probability": "1.6%",
+          "payout_multiple": "62.5x"
+        }
+      ],
+      "volume_24h": 669359.6405270001,
+      "url": "https://polymarket.com/event/will-the-golden-state-warriors-win-the-nba-western-conference-finals"
+    },
+    {
+      "question": "Will the Iranian regime fall by June 30?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.215,
+          "implied_probability": "21.5%",
+          "payout_multiple": "4.7x"
+        }
+      ],
+      "volume_24h": 654342.79657,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30"
+    },
+    {
+      "question": "Will Nikki Haley win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0125,
+          "implied_probability": "1.2%",
+          "payout_multiple": "80.0x"
+        }
+      ],
+      "volume_24h": 625533.2195020003,
+      "url": "https://polymarket.com/event/will-nikki-haley-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "US forces enter Iran by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.255,
+          "implied_probability": "25.5%",
+          "payout_multiple": "3.9x"
+        }
+      ],
+      "volume_24h": 583414.1964450006,
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-31-222-191-243-517-878-439-519"
+    },
+    {
+      "question": "Will Wes Moore win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.015,
+          "implied_probability": "1.5%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 576858.103297,
+      "url": "https://polymarket.com/event/will-wes-moore-win-the-2028-democratic-presidential-nomination-714"
+    },
+    {
+      "question": "Will Nikki Haley win the 2028 Republican presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 540521.409765,
+      "url": "https://polymarket.com/event/will-nikki-haley-win-the-2028-republican-presidential-nomination"
+    },
+    {
+      "question": "Will Rand Paul win the 2028 Republican presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 539113.3455029997,
+      "url": "https://polymarket.com/event/will-rand-paul-win-the-2028-republican-presidential-nomination"
+    }
+  ],
+  "kalshi_top_opportunities": [],
+  "summary": {
+    "total_topics_tracked": 39,
+    "high_confidence_signals": 0,
+    "medium_confidence_signals": 0,
+    "cross_platform_signals": 0,
+    "tier1_backed_signals": 0,
+    "prediction_market_matches": 29,
+    "x_signals_quality": {
+      "total": 13,
+      "with_known_author": 13,
+      "with_engagement": 3
+    },
+    "tiktok_signals_quality": {
+      "total": 7,
+      "crypto_relevant": 7
+    }
+  }
+}

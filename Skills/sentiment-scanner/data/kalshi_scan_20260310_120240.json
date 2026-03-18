@@ -1,0 +1,1307 @@
+{
+  "scan_time": "2026-03-10T12:02:40.171703+00:00",
+  "markets_with_edge": [
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026AE6F753ECC0-0A122A9356D",
+      "title": "no SMU wins by over 5.5 Points,yes Over 152.5 points scored,no Over 164.5 points scored,no Over 164.5 points scored,no Over 152.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026AE6F753ECC0",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026ae6f753ecc0-0a122a9356d",
+      "yes_bid": 0,
+      "yes_ask": 5,
+      "no_bid": 95,
+      "no_ask": 100,
+      "yes_mid": 2.5,
+      "no_mid": 97.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.5,
+          "implied_probability": "2%",
+          "payout_multiple": "40.0x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.880817+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20267784C0D9002-96092EF1711",
+      "title": "yes Baylor wins by over 1.5 Points,no Stanford wins by over 5.5 Points,no Over 155.5 points scored,no Over 139.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S20267784C0D9002",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20267784c0d9002-96092ef1711",
+      "yes_bid": 0,
+      "yes_ask": 11,
+      "no_bid": 89,
+      "no_ask": 100,
+      "yes_mid": 5.5,
+      "no_mid": 94.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.5,
+          "implied_probability": "6%",
+          "payout_multiple": "18.2x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.880835+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026441021E4488-EDA826600A5",
+      "title": "yes Baylor wins by over 1.5 Points,no Stanford wins by over 5.5 Points,no Over 139.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026441021E4488",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026441021e4488-eda826600a5",
+      "yes_bid": 0,
+      "yes_ask": 18,
+      "no_bid": 82,
+      "no_ask": 100,
+      "yes_mid": 9.0,
+      "no_mid": 91.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 9.0,
+          "implied_probability": "9%",
+          "payout_multiple": "11.1x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.880879+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20266BEC5182F02-09AABD97576",
+      "title": "yes Alcorn St.,yes Pittsburgh,yes PIT Penguins",
+      "event_ticker": "KXMVECROSSCATEGORY-S20266BEC5182F02",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20266bec5182f02-09aabd97576",
+      "yes_bid": 0,
+      "yes_ask": 5,
+      "no_bid": 95,
+      "no_ask": 100,
+      "yes_mid": 2.5,
+      "no_mid": 97.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.5,
+          "implied_probability": "2%",
+          "payout_multiple": "40.0x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.880914+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026C04BCDC51F2-B44EC2B31B7",
+      "title": "yes BYU,yes UMBC,yes Cincinnati wins by over 5.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026C04BCDC51F2",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026c04bcdc51f2-b44ec2b31b7",
+      "yes_bid": 0,
+      "yes_ask": 48,
+      "no_bid": 52,
+      "no_ask": 100,
+      "yes_mid": 24.0,
+      "no_mid": 76.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 24.0,
+          "implied_probability": "24%",
+          "payout_multiple": "4.2x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.880937+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20267A1DF852A38-2B28B6BF3CB",
+      "title": "yes Baylor,yes Oregon,yes Colorado,yes Stanford,yes Northwestern,yes SMU,yes Virginia Tech",
+      "event_ticker": "KXMVECROSSCATEGORY-S20267A1DF852A38",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20267a1df852a38-2b28b6bf3cb",
+      "yes_bid": 0,
+      "yes_ask": 5,
+      "no_bid": 95,
+      "no_ask": 100,
+      "yes_mid": 2.5,
+      "no_mid": 97.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.5,
+          "implied_probability": "2%",
+          "payout_multiple": "40.0x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.880946+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026E9AF0F87078-DF569E48DC1",
+      "title": "yes Stephen F. Austin,yes McNeese,no Oregon wins by over 9.5 Points,no Portland St. wins by over 8.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026E9AF0F87078",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e9af0f87078-df569e48dc1",
+      "yes_bid": 0,
+      "yes_ask": 31,
+      "no_bid": 69,
+      "no_ask": 100,
+      "yes_mid": 15.5,
+      "no_mid": 84.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 15.5,
+          "implied_probability": "16%",
+          "payout_multiple": "6.5x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.880972+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026C04BCDC51F2-16B4A8FD510",
+      "title": "yes BYU,yes UMBC,yes Cincinnati wins by over 2.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026C04BCDC51F2",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026c04bcdc51f2-16b4a8fd510",
+      "yes_bid": 0,
+      "yes_ask": 55,
+      "no_bid": 45,
+      "no_ask": 100,
+      "yes_mid": 27.5,
+      "no_mid": 72.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 27.5,
+          "implied_probability": "28%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.880983+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026E404D1EA0A7-8840BE206FA",
+      "title": "yes Baylor,yes Oregon,yes Stanford,yes Northwestern,yes SMU,yes Virginia Tech",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026E404D1EA0A7",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e404d1ea0a7-8840be206fa",
+      "yes_bid": 0,
+      "yes_ask": 8,
+      "no_bid": 92,
+      "no_ask": 100,
+      "yes_mid": 4.0,
+      "no_mid": 96.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 4.0,
+          "implied_probability": "4%",
+          "payout_multiple": "25.0x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881011+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026686DD83DE70-DF4A320EB79",
+      "title": "yes Stanford,yes Baylor wins by over 4.5 Points,yes SMU wins by over 2.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026686DD83DE70",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026686dd83de70-df4a320eb79",
+      "yes_bid": 0,
+      "yes_ask": 22,
+      "no_bid": 78,
+      "no_ask": 100,
+      "yes_mid": 11.0,
+      "no_mid": 89.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 11.0,
+          "implied_probability": "11%",
+          "payout_multiple": "9.1x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881046+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026082D361BDFF-E61D55F8276",
+      "title": "yes Maryland,yes Florida International wins by over 1.5 Points,yes Stanford wins by over 8.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026082D361BDFF",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026082d361bdff-e61d55f8276",
+      "yes_bid": 0,
+      "yes_ask": 10,
+      "no_bid": 90,
+      "no_ask": 100,
+      "yes_mid": 5.0,
+      "no_mid": 95.0,
+      "volume": 61,
+      "volume_24h": 0,
+      "open_interest": 61,
+      "last_price": 7,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.0,
+          "implied_probability": "5%",
+          "payout_multiple": "20.0x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881052+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026412C2D0421E-CE79C8947AD",
+      "title": "yes COL Avalanche,yes SEA Kraken,yes PHI Flyers",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026412C2D0421E",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026412c2d0421e-ce79c8947ad",
+      "yes_bid": 0,
+      "yes_ask": 20,
+      "no_bid": 80,
+      "no_ask": 100,
+      "yes_mid": 10.0,
+      "no_mid": 90.0,
+      "volume": 121,
+      "volume_24h": 0,
+      "open_interest": 121,
+      "last_price": 19,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 10.0,
+          "implied_probability": "10%",
+          "payout_multiple": "10.0x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881063+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202693CE4012786-8785BE4E5C3",
+      "title": "yes Prairie View A&M wins by over 6.5 Points,no SMU wins by over 5.5 Points,yes Over 152.5 points scored,no Over 164.5 points scored,no Over 164.5 points scored,no Over 152.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S202693CE4012786",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202693ce4012786-8785be4e5c3",
+      "yes_bid": 0,
+      "yes_ask": 3,
+      "no_bid": 97,
+      "no_ask": 100,
+      "yes_mid": 1.5,
+      "no_mid": 98.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881078+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20266428E380B62-B8D53A14EE2",
+      "title": "yes Stephen F. Austin,yes Northwestern,yes UT Rio Grande Valley",
+      "event_ticker": "KXMVECROSSCATEGORY-S20266428E380B62",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20266428e380b62-b8d53a14ee2",
+      "yes_bid": 0,
+      "yes_ask": 15,
+      "no_bid": 85,
+      "no_ask": 100,
+      "yes_mid": 7.5,
+      "no_mid": 92.5,
+      "volume": 10,
+      "volume_24h": 0,
+      "open_interest": 10,
+      "last_price": 13,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 7.5,
+          "implied_probability": "8%",
+          "payout_multiple": "13.3x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881086+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026A08C0D5445C-B19F4982188",
+      "title": "yes Stephen F. Austin,yes Florida International,yes McNeese,yes Virginia Tech",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026A08C0D5445C",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026a08c0d5445c-b19f4982188",
+      "yes_bid": 0,
+      "yes_ask": 19,
+      "no_bid": 81,
+      "no_ask": 100,
+      "yes_mid": 9.5,
+      "no_mid": 90.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 9.5,
+          "implied_probability": "10%",
+          "payout_multiple": "10.5x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881098+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026E0545AA265F-2EBFDFBE3A8",
+      "title": "yes Stephen F. Austin,yes UT Rio Grande Valley",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026E0545AA265F",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e0545aa265f-2ebfdfbe3a8",
+      "yes_bid": 0,
+      "yes_ask": 21,
+      "no_bid": 79,
+      "no_ask": 100,
+      "yes_mid": 10.5,
+      "no_mid": 89.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 10.5,
+          "implied_probability": "10%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881146+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202626345F9C9F7-E728A33F8A4",
+      "title": "yes BYU,yes Vermont,yes McNeese,yes Virginia Tech wins by over 2.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S202626345F9C9F7",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202626345f9c9f7-e728a33f8a4",
+      "yes_bid": 0,
+      "yes_ask": 33,
+      "no_bid": 67,
+      "no_ask": 100,
+      "yes_mid": 16.5,
+      "no_mid": 83.5,
+      "volume": 16,
+      "volume_24h": 0,
+      "open_interest": 16,
+      "last_price": 28,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 16.5,
+          "implied_probability": "16%",
+          "payout_multiple": "6.1x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881168+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026E5E2AB43AE8-AEF27FF9A8E",
+      "title": "yes UMBC wins by over 11.5 Points,no Over 158.5 points scored",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026E5E2AB43AE8",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s2026e5e2ab43ae8-aef27ff9a8e",
+      "yes_bid": 0,
+      "yes_ask": 34,
+      "no_bid": 66,
+      "no_ask": 100,
+      "yes_mid": 17.0,
+      "no_mid": 83.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 17.0,
+          "implied_probability": "17%",
+          "payout_multiple": "5.9x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881196+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20262C73A7431C7-196FD8030E1",
+      "title": "yes Stephen F. Austin,yes Florida International,yes Virginia Tech",
+      "event_ticker": "KXMVECROSSCATEGORY-S20262C73A7431C7",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262c73a7431c7-196fd8030e1",
+      "yes_bid": 0,
+      "yes_ask": 24,
+      "no_bid": 76,
+      "no_ask": 100,
+      "yes_mid": 12.0,
+      "no_mid": 88.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 12.0,
+          "implied_probability": "12%",
+          "payout_multiple": "8.3x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881207+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202603350E6160B-F1263713BCE",
+      "title": "yes Stanford,yes Virginia Tech wins by over 2.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S202603350E6160B",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202603350e6160b-f1263713bce",
+      "yes_bid": 0,
+      "yes_ask": 42,
+      "no_bid": 58,
+      "no_ask": 100,
+      "yes_mid": 21.0,
+      "no_mid": 79.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 21.0,
+          "implied_probability": "21%",
+          "payout_multiple": "4.8x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881245+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20262E411C82561-10F328153EC",
+      "title": "yes Stephen F. Austin,yes McNeese,no Portland St. wins by over 8.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20262E411C82561",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262e411c82561-10f328153ec",
+      "yes_bid": 0,
+      "yes_ask": 44,
+      "no_bid": 56,
+      "no_ask": 100,
+      "yes_mid": 22.0,
+      "no_mid": 78.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 22.0,
+          "implied_probability": "22%",
+          "payout_multiple": "4.5x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881260+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026124CE8E2B44-822565053DE",
+      "title": "yes Baylor,yes BYU,yes Northwestern,yes SMU,yes Cincinnati",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026124CE8E2B44",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026124ce8e2b44-822565053de",
+      "yes_bid": 0,
+      "yes_ask": 22,
+      "no_bid": 78,
+      "no_ask": 100,
+      "yes_mid": 11.0,
+      "no_mid": 89.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 11.0,
+          "implied_probability": "11%",
+          "payout_multiple": "9.1x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881284+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20262697B715058-8C9D4711FFA",
+      "title": "no Cincinnati wins by over 11.5 Points,yes Over 132.5 points scored",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20262697B715058",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s20262697b715058-8c9d4711ffa",
+      "yes_bid": 0,
+      "yes_ask": 37,
+      "no_bid": 63,
+      "no_ask": 100,
+      "yes_mid": 18.5,
+      "no_mid": 81.5,
+      "volume": 10,
+      "volume_24h": 0,
+      "open_interest": 10,
+      "last_price": 37,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 18.5,
+          "implied_probability": "18%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881293+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026E5E2AB43AE8-7DB7F98E6FC",
+      "title": "yes UMBC wins by over 8.5 Points,no Over 158.5 points scored",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026E5E2AB43AE8",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s2026e5e2ab43ae8-7db7f98e6fc",
+      "yes_bid": 0,
+      "yes_ask": 46,
+      "no_bid": 54,
+      "no_ask": 100,
+      "yes_mid": 23.0,
+      "no_mid": 77.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 23.0,
+          "implied_probability": "23%",
+          "payout_multiple": "4.3x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881300+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026546A47D88EC-D9EF8114213",
+      "title": "yes Grambling St. wins by over 4.5 Points,yes Colorado wins by over 1.5 Points",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026546A47D88EC",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s2026546a47d88ec-d9ef8114213",
+      "yes_bid": 0,
+      "yes_ask": 32,
+      "no_bid": 68,
+      "no_ask": 100,
+      "yes_mid": 16.0,
+      "no_mid": 84.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 16.0,
+          "implied_probability": "16%",
+          "payout_multiple": "6.2x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881316+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026C6AA60EDE3A-E3BD9C65AED",
+      "title": "yes Prairie View A&M wins by over 6.5 Points,no SMU wins by over 5.5 Points,yes Over 152.5 points scored,no Over 164.5 points scored,no Over 152.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026C6AA60EDE3A",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026c6aa60ede3a-e3bd9c65aed",
+      "yes_bid": 0,
+      "yes_ask": 5,
+      "no_bid": 95,
+      "no_ask": 100,
+      "yes_mid": 2.5,
+      "no_mid": 97.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.5,
+          "implied_probability": "2%",
+          "payout_multiple": "40.0x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881326+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026E0589810D5F-DC0AE166866",
+      "title": "yes BYU,yes McNeese,yes Virginia Tech wins by over 2.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026E0589810D5F",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e0589810d5f-dc0ae166866",
+      "yes_bid": 0,
+      "yes_ask": 39,
+      "no_bid": 61,
+      "no_ask": 100,
+      "yes_mid": 19.5,
+      "no_mid": 80.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 19.5,
+          "implied_probability": "20%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881351+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026E8AE6202773-CF25F5D0765",
+      "title": "yes Stephen F. Austin,yes UMBC,yes Florida International,yes Virginia Tech",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026E8AE6202773",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e8ae6202773-cf25f5d0765",
+      "yes_bid": 0,
+      "yes_ask": 19,
+      "no_bid": 81,
+      "no_ask": 100,
+      "yes_mid": 9.5,
+      "no_mid": 90.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 9.5,
+          "implied_probability": "10%",
+          "payout_multiple": "10.5x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881357+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026603E4144060-A9DA2EAEE00",
+      "title": "yes Prairie View A&M wins by over 6.5 Points,no SMU wins by over 5.5 Points,yes Over 152.5 points scored,no Over 152.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026603E4144060",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026603e4144060-a9da2eaee00",
+      "yes_bid": 0,
+      "yes_ask": 9,
+      "no_bid": 91,
+      "no_ask": 100,
+      "yes_mid": 4.5,
+      "no_mid": 95.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 4.5,
+          "implied_probability": "4%",
+          "payout_multiple": "22.2x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881366+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026546A47D88EC-877D5811935",
+      "title": "yes Grambling St. wins by over 4.5 Points,no Colorado wins by over 1.5 Points",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026546A47D88EC",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s2026546a47d88ec-877d5811935",
+      "yes_bid": 0,
+      "yes_ask": 29,
+      "no_bid": 71,
+      "no_ask": 100,
+      "yes_mid": 14.5,
+      "no_mid": 85.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 14.5,
+          "implied_probability": "14%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881373+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20262F075E68F9D-0EFDC5EB4B7",
+      "title": "yes Prairie View A&M,yes Stephen F. Austin,yes Baylor,yes Grambling St.,yes BYU,yes Oregon,yes Vermont,yes Oklahoma St.,yes SMU,yes Cincinnati",
+      "event_ticker": "KXMVECROSSCATEGORY-S20262F075E68F9D",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262f075e68f9d-0efdc5eb4b7",
+      "yes_bid": 0,
+      "yes_ask": 4,
+      "no_bid": 96,
+      "no_ask": 100,
+      "yes_mid": 2.0,
+      "no_mid": 98.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.0,
+          "implied_probability": "2%",
+          "payout_multiple": "50.0x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881396+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202627920C8A357-E62AC76E8A6",
+      "title": "yes BYU,yes Virginia Tech wins by over 2.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S202627920C8A357",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202627920c8a357-e62ac76e8a6",
+      "yes_bid": 0,
+      "yes_ask": 50,
+      "no_bid": 50,
+      "no_ask": 100,
+      "yes_mid": 25.0,
+      "no_mid": 75.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 25.0,
+          "implied_probability": "25%",
+          "payout_multiple": "4.0x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881405+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026FEA53998273-34DF7B23AB0",
+      "title": "yes Stephen F. Austin,yes UMBC,yes Florida International,yes McNeese,yes Virginia Tech",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FEA53998273",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026fea53998273-34df7b23ab0",
+      "yes_bid": 0,
+      "yes_ask": 15,
+      "no_bid": 85,
+      "no_ask": 100,
+      "yes_mid": 7.5,
+      "no_mid": 92.5,
+      "volume": 75,
+      "volume_24h": 0,
+      "open_interest": 75,
+      "last_price": 12,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 7.5,
+          "implied_probability": "8%",
+          "payout_multiple": "13.3x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881419+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20268C3F094DF77-7D4EDCCCFBD",
+      "title": "yes Baylor wins by over 4.5 Points,yes Grambling St. wins by over 4.5 Points",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20268C3F094DF77",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s20268c3f094df77-7d4edcccfbd",
+      "yes_bid": 0,
+      "yes_ask": 28,
+      "no_bid": 72,
+      "no_ask": 100,
+      "yes_mid": 14.0,
+      "no_mid": 86.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 14.0,
+          "implied_probability": "14%",
+          "payout_multiple": "7.1x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881424+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026C806955C47B-5E6B126261D",
+      "title": "yes Prairie View A&M wins by over 6.5 Points,no SMU wins by over 5.5 Points,yes Over 152.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026C806955C47B",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026c806955c47b-5e6b126261d",
+      "yes_bid": 0,
+      "yes_ask": 16,
+      "no_bid": 84,
+      "no_ask": 100,
+      "yes_mid": 8.0,
+      "no_mid": 92.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 8.0,
+          "implied_probability": "8%",
+          "payout_multiple": "12.5x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881434+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20262697B715058-4687BDFB167",
+      "title": "no Cincinnati wins by over 11.5 Points,yes Over 129.5 points scored",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20262697B715058",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s20262697b715058-4687bdfb167",
+      "yes_bid": 0,
+      "yes_ask": 42,
+      "no_bid": 58,
+      "no_ask": 100,
+      "yes_mid": 21.0,
+      "no_mid": 79.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 21.0,
+          "implied_probability": "21%",
+          "payout_multiple": "4.8x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881452+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026CFB045D28D9-36F3A7E3F8B",
+      "title": "yes Prairie View A&M wins by over 6.5 Points,yes Over 152.5 points scored,yes Over 138.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026CFB045D28D9",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026cfb045d28d9-36f3a7e3f8b",
+      "yes_bid": 0,
+      "yes_ask": 15,
+      "no_bid": 85,
+      "no_ask": 100,
+      "yes_mid": 7.5,
+      "no_mid": 92.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 7.5,
+          "implied_probability": "8%",
+          "payout_multiple": "13.3x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881460+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B6EEDDE4435-41B4E6731EF",
+      "title": "yes Prairie View A&M,yes Stephen F. Austin,yes Baylor,yes Grambling St.,yes BYU,yes Oregon,yes Vermont,yes SMU,yes Cincinnati",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B6EEDDE4435",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b6eedde4435-41b4e6731ef",
+      "yes_bid": 0,
+      "yes_ask": 7,
+      "no_bid": 93,
+      "no_ask": 100,
+      "yes_mid": 3.5,
+      "no_mid": 96.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.5,
+          "implied_probability": "4%",
+          "payout_multiple": "28.6x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881464+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026462CB48F073-F8EB3DA11BD",
+      "title": "yes Prairie View A&M wins by over 6.5 Points,yes Over 152.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026462CB48F073",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026462cb48f073-f8eb3da11bd",
+      "yes_bid": 0,
+      "yes_ask": 31,
+      "no_bid": 69,
+      "no_ask": 100,
+      "yes_mid": 15.5,
+      "no_mid": 84.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 15.5,
+          "implied_probability": "16%",
+          "payout_multiple": "6.5x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881498+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202622554A4B680-191F01C412E",
+      "title": "yes Prairie View A&M,yes Stephen F. Austin,yes Baylor,yes BYU,yes Oregon,yes Vermont,yes SMU,yes Cincinnati",
+      "event_ticker": "KXMVECROSSCATEGORY-S202622554A4B680",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202622554a4b680-191f01c412e",
+      "yes_bid": 0,
+      "yes_ask": 9,
+      "no_bid": 91,
+      "no_ask": 100,
+      "yes_mid": 4.5,
+      "no_mid": 95.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 4.5,
+          "implied_probability": "4%",
+          "payout_multiple": "22.2x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881505+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20262697B715058-4C5B5002061",
+      "title": "no Cincinnati wins by over 11.5 Points,yes Over 124.5 points scored",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20262697B715058",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s20262697b715058-4c5b5002061",
+      "yes_bid": 0,
+      "yes_ask": 48,
+      "no_bid": 52,
+      "no_ask": 100,
+      "yes_mid": 24.0,
+      "no_mid": 76.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 24.0,
+          "implied_probability": "24%",
+          "payout_multiple": "4.2x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881511+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20260EBF14BA00C-6D2416DBDBB",
+      "title": "yes Prairie View A&M,yes Baylor,yes BYU,yes Oregon,yes Vermont,yes SMU,yes Cincinnati",
+      "event_ticker": "KXMVECROSSCATEGORY-S20260EBF14BA00C",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20260ebf14ba00c-6d2416dbdbb",
+      "yes_bid": 0,
+      "yes_ask": 12,
+      "no_bid": 88,
+      "no_ask": 100,
+      "yes_mid": 6.0,
+      "no_mid": 94.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.0,
+          "implied_probability": "6%",
+          "payout_multiple": "16.7x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881526+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026DC70287C888-806C735EBEF",
+      "title": "yes Maryland,yes Stanford wins by over 8.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026DC70287C888",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026dc70287c888-806c735ebef",
+      "yes_bid": 0,
+      "yes_ask": 20,
+      "no_bid": 80,
+      "no_ask": 100,
+      "yes_mid": 10.0,
+      "no_mid": 90.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 10.0,
+          "implied_probability": "10%",
+          "payout_multiple": "10.0x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881540+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026D2A47135402-138B9925C98",
+      "title": "yes Ion Cutelaba,yes Andre Fili,yes Sam Hughes",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026D2A47135402",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026d2a47135402-138b9925c98",
+      "yes_bid": 0,
+      "yes_ask": 5,
+      "no_bid": 95,
+      "no_ask": 100,
+      "yes_mid": 2.5,
+      "no_mid": 97.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.5,
+          "implied_probability": "2%",
+          "payout_multiple": "40.0x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881546+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20264187ACEAB41-1866E486806",
+      "title": "yes Prairie View A&M wins by over 21.5 Points,no Over 157.5 points scored",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S20264187ACEAB41",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s20264187aceab41-1866e486806",
+      "yes_bid": 0,
+      "yes_ask": 37,
+      "no_bid": 63,
+      "no_ask": 100,
+      "yes_mid": 18.5,
+      "no_mid": 81.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 18.5,
+          "implied_probability": "18%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881553+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026A0301D2F6FA-886C0FFCF1F",
+      "title": "yes Prairie View A&M,yes Baylor,yes Oregon,yes Vermont,yes SMU,yes Cincinnati",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026A0301D2F6FA",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026a0301d2f6fa-886c0ffcf1f",
+      "yes_bid": 0,
+      "yes_ask": 15,
+      "no_bid": 85,
+      "no_ask": 100,
+      "yes_mid": 7.5,
+      "no_mid": 92.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 7.5,
+          "implied_probability": "8%",
+          "payout_multiple": "13.3x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881561+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B68DA41F19A-7BAFACE4430",
+      "title": "yes Ion Cutelaba,yes Andre Fili",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B68DA41F19A",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b68da41f19a-7baface4430",
+      "yes_bid": 0,
+      "yes_ask": 10,
+      "no_bid": 90,
+      "no_ask": 100,
+      "yes_mid": 5.0,
+      "no_mid": 95.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.0,
+          "implied_probability": "5%",
+          "payout_multiple": "20.0x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881578+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026346C9B8A43D-3BFBA874F2D",
+      "title": "yes Grambling St. wins by over 4.5 Points,no Cincinnati wins by over 11.5 Points",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026346C9B8A43D",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s2026346c9b8a43d-3bfba874f2d",
+      "yes_bid": 0,
+      "yes_ask": 30,
+      "no_bid": 70,
+      "no_ask": 100,
+      "yes_mid": 15.0,
+      "no_mid": 85.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 15.0,
+          "implied_probability": "15%",
+          "payout_multiple": "6.7x"
+        }
+      ],
+      "scanned_at": "2026-03-10T12:02:40.881590+00:00"
+    }
+  ],
+  "high_volume_markets": [],
+  "summary": {
+    "total_scanned": 500,
+    "markets_with_cheap_outcomes": 48,
+    "high_volume_markets": 0
+  }
+}

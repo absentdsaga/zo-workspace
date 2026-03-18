@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>TESTINGdApp — Solana Mobile Builder Grant Proposal V3</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="/dev/stdin" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">TESTINGdApp — Solana Mobile Builder Grant Proposal
+V3</h1>
+</header>
+<h1 id="testingdapp-solana-mobile-builder-grant-proposal-v3">TESTINGdApp
+— Solana Mobile Builder Grant Proposal V3</h1>
+<h2 id="research-backed-rewrite">Research-Backed Rewrite</h2>
+<blockquote>
+<p><strong>How this was built:</strong> 5 parallel deep research tracks
+— past grant winners, competitive landscape, grant writing best
+practices, Solana Mobile strategic priorities, and SagaDAO traction
+evidence. Every recommendation below is grounded in specific
+findings.</p>
+</blockquote>
+<hr />
+<h2 id="strategic-framing-read-this-first">STRATEGIC FRAMING — READ THIS
+FIRST</h2>
+<h3 id="what-the-research-revealed-about-how-to-win-this-grant">What the
+research revealed about how to win this grant:</h3>
+<p><strong>1. This is NOT a hackathon prize. It’s an RFP-track builder
+grant.</strong> Solana Mobile runs two grant tracks. The Colosseum
+Hackathon Grants are capped at $10K per team (10 teams, evaluated on
+Stickiness/PMF, UX, Innovation, Presentation — 25% each). The RFP-track
+Builder Grants have no published cap — grant amounts are set per-RFP.
+Your proposal is an RFP-track application, evaluated against 6 specific
+criteria on solanamobile.com/grants. Your proposal needs to explicitly
+check all 6 boxes. The hackathon winners were gaming and commerce apps.
+You’re not competing with them — you’re in the tooling/infrastructure
+lane.</p>
+<p><strong>2. The “already 80% done” play is the strongest micro-grant
+tactic.</strong> Grant writing research was unanimous: at this grant
+size, reviewers worry about execution risk above all else. The killer
+move is showing you’ve already done most of the work and the grant
+accelerates what’s already working. You have revenue ($1,500), active
+testers, and a proven methodology. Lead with that. This isn’t “fund our
+idea” — it’s “fund the productization of something that already works
+and already makes money.”</p>
+<p><strong>3. Revenue is your biggest weapon, not a liability.</strong>
+The grant writing research found that the best framing is: “The grant
+funds the public-good layer around a sustainable product.” Your
+commercial revenue ($1,500 from Dubs and Milo) proves product-market fit
+AND guarantees sustainability beyond the grant period. Reviewers prefer
+funding things that won’t die when the grant runs out.</p>
+<p><strong>4. There are ZERO direct competitors.</strong> The
+competitive landscape research confirmed: no one else is building
+structured, device-verified QA for Solana mobile dApps. Not quest
+platforms (marketing tools), not Immunefi (code-level security), not
+UserTesting (enterprise pricing, no crypto knowledge). You’re alone in
+the quadrant. The proposal should make this monopoly position extremely
+clear.</p>
+<p><strong>5. Mirror Solana Mobile’s exact language.</strong> Their
+vocabulary: “open mobile ecosystem,” “builders” (not developers),
+“community-driven,” “permissionless,” “ownership.” They frame everything
+as the anti-Apple/anti-Google. Your QA infrastructure should be framed
+as “the open-ecosystem equivalent of TestFlight + Firebase Test
+Lab.”</p>
+<p><strong>6. The “public good” angle without open-sourcing your
+product.</strong> You don’t need to open-source TESTINGdApp. The
+research found the proven framing: “The platform itself is the public
+good — it makes the dApp Store better for every builder and every user.”
+Pair with: free campaigns for hackathon winners / early-stage builders,
+and published ecosystem QA benchmark data. Commercial companies get
+ecosystem grants all the time (Alchemy, Nansen, Tenderly,
+Chainlink).</p>
+<p><strong>7. The Guardians angle is your secret weapon.</strong> Solana
+Mobile’s Guardians program is community-driven dApp curation.
+TESTINGdApp gives Guardians <em>data</em> — “Guardians answer ‘should
+this app be trusted?’ TESTINGdApp answers ‘does this app actually
+work?’” This makes you complementary to their existing infrastructure,
+not a standalone tool.</p>
+<hr />
+<h2 id="the-actual-deck-copy-v3">THE ACTUAL DECK COPY — V3</h2>
+<h3 id="slide-1-cover">SLIDE 1 — COVER</h3>
+<blockquote>
+<p><strong>TESTINGdApp</strong></p>
+<p>Pre-launch QA infrastructure for the Solana dApp Store —
+device-verified, community-powered, already generating revenue.</p>
+<p><strong>$15,000 USDC</strong> | <strong>90-Day Delivery</strong> |
+<strong>dApp Store Launch at Day 90</strong></p>
+</blockquote>
+<p><em>What changed: “already generating revenue” signals this is a
+funded, working product — not a concept. $15K positions this as an
+RFP-track infrastructure grant, not a hackathon side-project. Still
+firmly micro-grant territory — low scrutiny, high approval
+probability.</em></p>
+<hr />
+<h3 id="slide-2-executive-summary">SLIDE 2 — EXECUTIVE SUMMARY</h3>
+<blockquote>
+<p><strong>The dApp Store is scaling. Quality infrastructure needs to
+scale with it.</strong></p>
+<p>TESTINGdApp is the pre-launch QA layer for Solana Mobile builders. We
+connect dApp teams with verified Saga &amp; Seeker owners who test their
+apps through structured, three-stage campaigns — with USDC bounties and
+prizes for quality participation.</p>
+<p>→ <strong>Device-verified testers only.</strong> Every tester holds a
+Genesis SBT minted on a verified Saga or Seeker device. → <strong>Built
+on Solana Mobile Stack.</strong> Mobile Wallet Adapter for all signing
+flows. Seed Vault for tester authentication. →
+<strong>Revenue-generating today.</strong> dApp teams pay for testing
+campaigns. Testers compete for USDC bounties, raffle prizes, and
+top-feedback awards. We’ve charged $1,500+ from live clients — with ~80%
+going directly to the prize pool. → <strong>Proven methodology.</strong>
+11 dApps tested, multiple critical bugs caught pre-launch, measurable
+improvement between rounds — all run manually through SagaDAO’s
+Innovation Lab. → <strong>The app is already built and in
+testing.</strong> This grant funds the final SMS integration, beta
+campaigns with real builders, and dApp Store launch.</p>
+<p><strong>No other platform in the Solana ecosystem does
+this.</strong></p>
+</blockquote>
+<p><em>What changed: Opens with the ecosystem problem (dApp Store
+scaling), not the product. Leads with “revenue-generating today” — the
+strongest signal for a micro-grant. Closes with the monopoly position.
+Explicitly names MWA + Seed Vault (grant criteria #2). The last line is
+the competitive landscape finding — zero direct competitors.</em></p>
+<hr />
+<h3 id="slide-3-the-problem">SLIDE 3 — THE PROBLEM</h3>
+<blockquote>
+<p><strong>435+ dApps in the Solana dApp Store. Zero structured QA
+infrastructure.</strong></p>
+<p>The dApp Store grew from 160 to 435+ apps in under 6 months. Seeker
+has shipped to 150K+ users across 50+ countries. Builders are launching
+fast — but there’s no systematic way to test mobile dApps on real Solana
+Mobile hardware before they go live.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>What builders do today</th>
+<th>What goes wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Skip mobile QA entirely — ship and pray</td>
+<td>Users hit bugs on Seeker that weren’t caught in development</td>
+</tr>
+<tr class="even">
+<td>Use quest platforms (Layer3, Galxe, Zealy) for “testing”</td>
+<td>Quests measure clicks, not quality. Output is vanity metrics, not
+bug reports</td>
+</tr>
+<tr class="odd">
+<td>Post testing bounties on Superteam Earn</td>
+<td>Unstructured, one-off, no device verification, no sequential test
+flows</td>
+</tr>
+<tr class="even">
+<td>Recruit testers informally via Discord</td>
+<td>Inconsistent feedback, no accountability, high drop-off,
+sybil-vulnerable</td>
+</tr>
+</tbody>
+</table>
+<p>Apple has TestFlight. Google has Firebase Test Lab. The Solana dApp
+Store has nothing equivalent.</p>
+<p><strong>That’s the gap. TESTINGdApp fills it.</strong></p>
+</blockquote>
+<p><em>What changed: Opens with real ecosystem numbers (435+ dApps,
+150K+ Seekers — from research). Names the actual alternatives builders
+use and why each fails. The Apple/Google comparison came directly from
+the strategic priorities research — Solana Mobile positions as the “open
+alternative” to Apple/Google, and they’re missing this entire
+infrastructure layer. The punchline makes the gap undeniable.</em></p>
+<hr />
+<h3 id="slide-4-the-solution">SLIDE 4 — THE SOLUTION</h3>
+<blockquote>
+<p><strong>Structured mobile QA that runs on Solana Mobile
+Stack</strong></p>
+<p>TESTINGdApp is a mobile-native Android app that connects dApp
+builders with verified Saga &amp; Seeker testers through paid,
+structured testing campaigns.</p>
+<p><strong>How it works:</strong></p>
+<p><strong>Builders</strong> create a testing campaign → define tasks,
+fund the prize pool, specify what to test <strong>Testers</strong>
+(verified Saga/Seeker owners) complete 3 sequential stages → win USDC
+bounties, raffles, and top-feedback prizes <strong>Output</strong> →
+structured bug reports, UX feedback, screenshots, on-chain proof of
+interaction</p>
+<p>Built with: - <strong>Mobile Wallet Adapter (MWA)</strong> — all
+tester authentication and reward claiming - <strong>Seed Vault</strong>
+— secure tester identity via Genesis SBT - <strong>SPL tokens
+(USDC)</strong> — on-chain reward distribution -
+<strong>Metaplex</strong> — Genesis SBT minting for tester identity</p>
+<p><strong>Not a quest platform.</strong> Quest platforms (Layer3,
+Galxe) reward speed and completion counts. TESTINGdApp rewards
+thoroughness and quality — testers who submit low-effort feedback get
+rejected and flagged.</p>
+</blockquote>
+<p><em>What changed: Added a clear “How it works” flow — builder →
+tester → output. Grant reviewers need to understand the product in 30
+seconds. The competitive differentiation from quest platforms is now
+explicit because the research confirmed quest platforms are the most
+likely “why not just use X?” objection.</em></p>
+<hr />
+<h3 id="slide-5-community-gating">SLIDE 5 — COMMUNITY GATING</h3>
+<blockquote>
+<p><strong>Every tester is a verified Solana Mobile device
+owner</strong></p>
+<p>Access requires a Genesis SBT minted through Seed Vault on a verified
+Saga or Seeker device. No SBT, no access.</p>
+<p>→ <strong>One device = one wallet = one tester profile</strong>
+(enforced at the SBT level) → <strong>Non-transferable</strong> — tester
+identity is permanent and reputation-bearing → <strong>Daily on-chain
+snapshot</strong> of eligible wallets → <strong>120,000+ Genesis Tokens
+minted</strong> across Saga (~20,000) and Seeker (100,908 verified via
+SKR airdrop). This is the eligible tester pool. Day one.</p>
+<p><strong>What this blocks:</strong> VPN farming, disposable email
+signups, automated quest bots, multi-wallet sybil attacks, wallet
+cycling</p>
+<p><strong>What no other platform can claim:</strong> Every piece of
+feedback traces to a cryptographically verified Solana Mobile device
+owner with a persistent on-chain identity. Not self-reported device info
+(Applause, BetaFamily). Not honor-system wallet verification (quest
+platforms). On-chain, hardware-attested, non-transferable.</p>
+</blockquote>
+<p><em>What changed: Added the combined 120K+ Genesis holder number
+(Saga ~20K + Seeker 100K+) — concrete on-chain data is powerful. Added
+the competitive comparison to traditional QA platforms (Applause,
+BetaFamily do self-reported device info — from competitive landscape
+research). This slide now functions as both a feature description AND a
+competitive differentiation argument.</em></p>
+<hr />
+<h3 id="slide-6-sequential-testing">SLIDE 6 — SEQUENTIAL TESTING</h3>
+<blockquote>
+<p><strong>Three stages. Test to win. Each stage filters.</strong></p>
+<p><strong>Stage 1: UX Walkthrough</strong> (unlocked immediately)
+Tester walks the dApp’s first-time experience on their Saga/Seeker.
+Structured prompts surface confusion points, onboarding friction, and
+drop-off triggers. Written feedback required (150+ chars). Completing
+this stage enters you into raffle prizes and unlocks Stage 2.</p>
+<p><strong>Stage 2: Core Feature Testing</strong> (unlocks after Stage 1
+approved) Builder-defined task list. Tests feature clarity, task
+completion, and comprehension. Every submission human-reviewed.
+Low-effort = rejected + flagged. Larger raffle prizes and bounty
+eligibility.</p>
+<p><strong>Stage 3: Proof of Interaction</strong> (unlocks after Stage 2
+approved) On-chain evidence of real usage: transaction confirmations,
+dApp Store reviews, screenshots, social proof. Proves the tester
+actually used the product. Eligible for top-feedback bounties (largest
+payouts) and final raffle wave.</p>
+<p><strong>Why sequential &gt; parallel:</strong> Casual participants
+exit at Stage 1. Farmers get filtered at Stage 2. Only committed,
+quality testers reach Stage 3. Builders get a progressively more
+qualified feedback funnel — not a blast of low-effort responses.</p>
+</blockquote>
+<p><em>What changed: Minimal copy changes from V2 — this was already
+strong. Added the “Why sequential &gt; parallel” framing to pre-empt the
+reviewer asking “why not let testers do everything at once?”</em></p>
+<hr />
+<h3 id="slide-7-the-proving-ground">SLIDE 7 — THE PROVING GROUND</h3>
+<blockquote>
+<p><strong>Test to win. Best feedback wins the most.</strong></p>
+<p><strong>Prize Structure:</strong> Each campaign has a USDC prize pool
+funded by the builder. Testers compete across multiple reward channels:
+raffle waves at each stage, top-feedback bounties judged by the builder
+and DAO working groups, referral bonuses for growing the tester pool,
+and completion milestones. The best testers win the most — not everyone
+gets paid the same.</p>
+<p><strong>Proven Tester Cohort:</strong> Over time, the platform builds
+a ranked network of reliable testers — tracked by completion rate,
+feedback quality, and interaction proof. Builders launching new
+campaigns can target high-reputation testers.</p>
+<p><strong>Why builders pay for this:</strong> A single critical bug
+caught before dApp Store launch is worth more than the entire campaign
+cost. One bad review from a Seeker user who hits a crash can tank an
+app’s rating. TESTINGdApp is insurance — and the cheapest QA
+infrastructure in mobile.</p>
+</blockquote>
+<p><em>What changed: Added “Why builders pay for this” — making the
+business logic explicit. The grant reviewer needs to believe this is a
+real service people will pay for. The $1,500 number and the insurance
+framing do that.</em></p>
+<hr />
+<h3 id="slide-8-rewards-structure">SLIDE 8 — REWARDS STRUCTURE</h3>
+<blockquote>
+<p><strong>Test to win — USDC prize pool, multiple ways to
+win</strong></p>
+<p>→ <strong>Raffle waves</strong> at each stage — complete the stage,
+enter the draw → <strong>Top-feedback bounties</strong> — DAO working
+groups + builder team select the best testers for largest payouts →
+<strong>Referral bonuses</strong> — bring more qualified testers, earn
+more → <strong>Completion milestones</strong> — community-wide goals
+unlock additional prize pools</p>
+<p><strong>Quality enforcement:</strong> - Every Stage 2+ submission is
+human-reviewed before prize eligibility - Low-effort responses are
+rejected; tester is flagged and ineligible for prizes - Repeated
+low-quality submissions reduce reputation score - Builders can add their
+own tokens alongside USDC to the prize pool</p>
+<p><strong>All rewards distributed on-chain via SPL token transfers,
+signed through Mobile Wallet Adapter.</strong></p>
+</blockquote>
+<p><em>What changed: Minor from V2. This slide was already
+solid.</em></p>
+<hr />
+<h3 id="slide-9-traction-validation">SLIDE 9 — TRACTION &amp;
+VALIDATION</h3>
+<blockquote>
+<p><strong>This isn’t a concept. We’ve already been paid to do
+this.</strong></p>
+<p>TESTINGdApp automates SagaDAO’s Innovation Lab — a community QA
+operation that has been running structured testing campaigns manually
+since early 2026.</p>
+<p><strong>What we’ve done (manual process, pre-app):</strong> -
+<strong>11 Solana dApps tested</strong> across multiple campaign rounds
+— scaling from small early campaigns to $1,500 prize pools -
+<strong>Multiple paying clients</strong> — including Dubs and &amp;milo,
+each funding $1,500 campaigns with ~80% going directly to the tester
+prize pool - <strong>2 pre-dApp prototypes evaluated</strong> before
+public launch - <strong>Critical bugs identified &amp; resolved</strong>
+before they hit users - <strong>Measurable UX improvement</strong>
+tracked between testing rounds - <strong>Active tester
+community</strong> completing campaigns today</p>
+<p><strong>SagaDAO’s track record behind this:</strong> - 20K+ X
+followers, 10K+ Discord members - Mainnet Solana validator with
+Foundation stake delegation - 14+ ecosystem partnerships including
+Solana Foundation, Ledger, Phase Labs, Sec3 - SagaDAO House events at
+Breakpoint Abu Dhabi, NYC, Miami, Art Basel - Paul Barron Network, Jup
+&amp; Juice media coverage - Gate.io Learn published overview</p>
+<p><strong>The app is already built and in testing. The grant funds the
+final integration, beta campaigns, and dApp Store launch.</strong></p>
+</blockquote>
+<p><em>What changed: MASSIVE upgrade. Opens with “we’ve already been
+paid” — the single most powerful sentence in the entire proposal per the
+grant writing research. Added SagaDAO’s credibility stats (from traction
+research). The closing line uses the “already 80% done” framing — the #1
+micro-grant tactic identified by the research.</em></p>
+<hr />
+<h3 id="new-slide-team-insert-after-traction-before-roadmap">NEW SLIDE —
+TEAM (insert after Traction, before Roadmap)</h3>
+<blockquote>
+<p><strong>TEAM</strong></p>
+<p><strong>The team that built SagaDAO and ran 11 live QA campaigns for
+Solana mobile dApps</strong></p>
+<p><strong>Cloud King</strong> — Community + Growth, Co-founder — <span
+class="citation" data-cites="cloudkingtv">@cloudkingtv</span>
+<strong>Absent D (Dioni)</strong> — Business + Innovation, Partnerships
++ Strategy — <span class="citation"
+data-cites="dioni_sol">@dioni_sol</span> <strong>Daemon</strong> —
+Operations + Support, DAO Ops — <span class="citation"
+data-cites="kaizenguru_sol">@kaizenguru_sol</span> <strong>Ay0h</strong>
+— Research + Development, R&amp;D Lead — <span class="citation"
+data-cites="ay0h_sol">@ay0h_sol</span> <strong>Quark</strong> — Lead
+Developer, Full-stack Engineering — <span class="citation"
+data-cites="MoonManQuark">@MoonManQuark</span></p>
+<p><strong>What we’ve shipped:</strong> → Mainnet Solana validator (vote
+account: ELLB9…HcG) with Solana Foundation delegation → Unlock claims
+platform — Sec3 X-Ray audited smart contract, 1,000s of users →
+Innovation Lab — live testing campaigns for Solana mobile dApps (the
+manual version of TESTINGdApp) → On-chain Realms governance with
+published Codex charter</p>
+<p>Plus dozens of active contributors across working groups, events,
+moderation, and development.</p>
+</blockquote>
+<p><em>What changed: Team slide added — this was completely missing from
+V1 and is required by grant criteria #4 (“Team Ability to Execute”).
+Used the actual team names and handles from the SagaDAO traction
+research. Listed specific shipped products with verifiable on-chain
+references.</em></p>
+<hr />
+<h3 id="slide-10-competitive-landscape-new-slide">SLIDE 10 — COMPETITIVE
+LANDSCAPE (NEW SLIDE)</h3>
+<blockquote>
+<p><strong>Nothing else like this exists in the Solana
+ecosystem</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Platform</th>
+<th>What they do</th>
+<th>Why they’re not QA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Layer3 / Galxe / Zealy</strong></td>
+<td>Quest platforms for user acquisition</td>
+<td>Reward speed, not quality. No bug reports. No device
+verification.</td>
+</tr>
+<tr class="even">
+<td><strong>Immunefi</strong></td>
+<td>Smart contract bug bounties</td>
+<td>Finds code exploits, not UX bugs. Elite security researchers, not
+device owners.</td>
+</tr>
+<tr class="odd">
+<td><strong>UserTesting / Applause</strong></td>
+<td>Enterprise QA ($30K-$100K/yr)</td>
+<td>No crypto knowledge. Self-reported devices. Pricing excludes 99% of
+Solana teams.</td>
+</tr>
+<tr class="even">
+<td><strong>Superteam Earn</strong></td>
+<td>Freelance bounty board</td>
+<td>One-off tasks. No structured campaigns. No device gating.</td>
+</tr>
+<tr class="odd">
+<td><strong>Informal Discord testing</strong></td>
+<td>“Hey can someone test my app?”</td>
+<td>Unstructured, inconsistent, sybil-vulnerable, zero
+accountability.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TESTINGdApp is the only platform that combines:</strong>
+Verified device ownership + structured sequential testing +
+crypto-native pricing + on-chain tester identity + human-reviewed
+quality enforcement</p>
+<p>No one else occupies this position. The closest analog is Apple’s
+TestFlight — but decentralized, incentivized, and built for the open
+mobile ecosystem.</p>
+</blockquote>
+<p><em>What changed: New slide entirely. The competitive landscape
+research confirmed zero direct competitors. This slide makes that
+undeniable with a comparison table. The TestFlight comparison echoes
+Solana Mobile’s own positioning as the “open alternative to
+Apple/Google.”</em></p>
+<hr />
+<h3 id="slide-11-90-day-roadmap-month-1">SLIDE 11 — 90-DAY ROADMAP:
+MONTH 1</h3>
+<blockquote>
+<p><strong>Month 1 — Final Integration + Internal QA (Days
+1–30)</strong></p>
+<p><strong>Milestone: Production-ready app, fully tested on Saga &amp;
+Seeker hardware</strong></p>
+<p>The app is already built and in internal testing. Month 1 focuses on
+hardening, not building from scratch.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Deliverable</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MWA integration finalized</td>
+<td>All auth, signing, and reward flows via Mobile Wallet Adapter</td>
+</tr>
+<tr class="even">
+<td>Seed Vault tester auth</td>
+<td>Genesis SBT verification through Seed Vault — tested on both Saga
+&amp; Seeker</td>
+</tr>
+<tr class="odd">
+<td>Reward contract on devnet</td>
+<td>USDC escrow + staged prize distribution, internally tested</td>
+</tr>
+<tr class="even">
+<td>Push notifications</td>
+<td>Campaign alerts, stage unlocks, prize notifications</td>
+</tr>
+<tr class="odd">
+<td>Website + onboarding copy</td>
+<td>Final review and launch-ready</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exit criteria:</strong> Team can run a full 3-stage campaign
+end-to-end on a Seeker device with real USDC prize distribution.</p>
+</blockquote>
+<hr />
+<h3 id="slide-12-90-day-roadmap-months-2-3">SLIDE 12 — 90-DAY ROADMAP:
+MONTHS 2 &amp; 3</h3>
+<blockquote>
+<p><strong>Month 2 — Controlled Beta (Days 31–60)</strong></p>
+<p><strong>Milestone: Live beta with real builders and real
+testers</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Deliverable</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Beta with 3–5 dApp partners</td>
+<td>Real campaigns with Solana Mobile builders</td>
+</tr>
+<tr class="even">
+<td>50+ verified testers</td>
+<td>All SBT-gated, all on Saga/Seeker</td>
+</tr>
+<tr class="odd">
+<td>Tester profiles + reputation</td>
+<td>Completion rates and quality scores visible to builders</td>
+</tr>
+<tr class="even">
+<td>Quality benchmarks</td>
+<td>Human review rejection rates and feedback quality baseline</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exit criteria:</strong> 3+ campaigns completed. Completion
+rates and quality metrics documented.</p>
+<hr />
+<p><strong>Month 3 — Public Launch (Days 61–90)</strong></p>
+<p><strong>Milestone: TESTINGdApp live in the Solana dApp
+Store</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Deliverable</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>dApp Store listing</td>
+<td>Submitted and approved</td>
+</tr>
+<tr class="even">
+<td>Self-service campaign builder</td>
+<td>Any builder can create a testing campaign</td>
+</tr>
+<tr class="odd">
+<td>First fully automated round</td>
+<td>Campaign → tester match → testing → USDC payout, no manual
+intervention</td>
+</tr>
+<tr class="even">
+<td>Impact report</td>
+<td>Published metrics: testers, campaigns, bugs found, quality
+scores</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exit criteria:</strong> Live in dApp Store. 1+ fully
+automated campaign completed. Impact report shared with Solana
+Mobile.</p>
+</blockquote>
+<hr />
+<h3 id="slide-13-use-of-funds">SLIDE 13 — USE OF FUNDS</h3>
+<blockquote>
+<p><strong>$15,000 USDC — Budget</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Amount</th>
+<th>What it covers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mobile development</td>
+<td>$4,000</td>
+<td>Final UI build, MWA + Seed Vault integration, Saga/Seeker device
+testing</td>
+</tr>
+<tr class="even">
+<td>Smart contract + security</td>
+<td>$1,500</td>
+<td>Reward distribution contract review, deployment to mainnet</td>
+</tr>
+<tr class="odd">
+<td>Backend infrastructure</td>
+<td>$2,000</td>
+<td>Verification service, push notifications, SBT indexing</td>
+</tr>
+<tr class="even">
+<td>Campaign seed liquidity</td>
+<td>$4,500</td>
+<td>USDC pool for 5–8 beta testing campaigns to bootstrap the tester
+network</td>
+</tr>
+<tr class="odd">
+<td>dApp Store launch + QA</td>
+<td>$1,500</td>
+<td>Submission compliance, launch monitoring, store optimization</td>
+</tr>
+<tr class="even">
+<td>Contingency</td>
+<td>$1,500</td>
+<td>Buffer for unforeseen costs during 90-day build</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>$15,000</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> TESTINGdApp generates revenue from
+builder-paid campaigns. This grant accelerates the productization
+timeline — not our survival. The platform will sustain itself post-grant
+through campaign fees.</p>
+</blockquote>
+<p><em>What changed: Added the sustainability note at the bottom. Grant
+writing research found that reviewers strongly prefer funding products
+that won’t die after the grant. Your revenue model is the answer to
+“what happens at Day 91?”</em></p>
+<hr />
+<h3 id="slide-14-ecosystem-impact">SLIDE 14 — ECOSYSTEM IMPACT</h3>
+<blockquote>
+<p><strong>What this does for the Solana Mobile ecosystem</strong></p>
+<p>→ <strong>For builders:</strong> A structured, affordable way to QA
+mobile dApps before they go live in the dApp Store. Catches bugs that
+damage ratings and user trust.</p>
+<p>→ <strong>For the dApp Store:</strong> As the store scales from 435
+to 1,000+ apps, quality infrastructure becomes essential. TESTINGdApp
+provides the quality data layer that keeps the “permissionless but
+trustworthy” promise real.</p>
+<p>→ <strong>For Guardians:</strong> Testing data complements Guardian
+curation. Guardians answer “should this app be trusted?” TESTINGdApp
+answers “does this app actually work?” Together, they give the dApp
+Store a quality assurance layer no other mobile ecosystem has in
+decentralized form.</p>
+<p>→ <strong>For Seeker owners:</strong> A way to earn USDC by doing
+something useful — testing apps that will run on their own device. More
+testers = better apps = better Seeker experience for everyone.</p>
+<p>→ <strong>For the ecosystem narrative:</strong> Every mature app
+platform has QA infrastructure. Apple has TestFlight. Google has
+Firebase. With TESTINGdApp, the Solana dApp Store gets its own — but
+community-driven and crypto-native.</p>
+<p><strong>Free campaign commitment:</strong> We’ll offer 2 free testing
+campaigns per quarter to early-stage Solana Mobile builders who can’t
+yet afford paid QA. This ensures the platform serves the full ecosystem,
+not just funded teams.</p>
+</blockquote>
+<p><em>What changed: This replaces the old “Long-Term Vision” slide. The
+research showed that “ecosystem impact” framing is what wins grants —
+not “our company vision.” Added the Guardians complement (from strategic
+priorities research). Added the free campaign commitment as the
+public-good angle — doesn’t require open-sourcing anything, provides
+real community value, and costs you almost nothing if you’re running
+campaigns anyway.</em></p>
+<hr />
+<h3 id="slide-15-closing">SLIDE 15 — CLOSING</h3>
+<blockquote>
+<p><strong>TESTINGdApp</strong></p>
+<p>Better testing. Better launches. A better dApp Store.</p>
+<p>Built by SagaDAO — the community that’s been running QA for Solana
+mobile dApps since before the tooling existed.</p>
+<p><strong>Let’s build it. →</strong></p>
+</blockquote>
+<hr />
+<h2 id="v1-v3-comparison-matrix">V1 → V3 COMPARISON MATRIX</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Grant Criteria</th>
+<th>V1</th>
+<th>V3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Mobile-First</strong></td>
+<td>Implied</td>
+<td>Android, Saga/Seeker tested, dApp Store launch at Day 90</td>
+</tr>
+<tr class="even">
+<td><strong>Solana Mobile Stack</strong></td>
+<td>MWA once, Seed Vault never</td>
+<td>MWA + Seed Vault + SPL + Metaplex named on every relevant slide</td>
+</tr>
+<tr class="odd">
+<td><strong>Milestones</strong></td>
+<td>Task lists</td>
+<td>Named milestones, deliverable tables, exit criteria</td>
+</tr>
+<tr class="even">
+<td><strong>Team</strong></td>
+<td>Missing entirely</td>
+<td>5 named team members + shipped products + on-chain references</td>
+</tr>
+<tr class="odd">
+<td><strong>Budget</strong></td>
+<td>Bullet list of categories</td>
+<td>Dollar-allocated table with sustainability note</td>
+</tr>
+<tr class="even">
+<td><strong>Community &amp; Public Good</strong></td>
+<td>Missing entirely</td>
+<td>Free campaigns for early-stage builders, Guardians complement,
+ecosystem impact framing</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="pre-submission-actions-do-these-before-sending">PRE-SUBMISSION
+ACTIONS (do these before sending)</h2>
+<p>Based on the traction research, these concrete steps will materially
+strengthen the proposal:</p>
+<ol type="1">
+<li><del><strong>Get MiloOnChain / Dubs to tweet confirming the testing
+partnership</strong></del> — <strong>DONE.</strong> Dubs posted publicly
+on March 4, 2026: <em>“$1,500 up for grabs through our dApp testing
+partner <span class="citation"
+data-cites="SagaMobileDAO">@SagaMobileDAO</span>”</em> → <a
+href="https://x.com/dubsdotapp/status/2029244200391172426">Direct
+link</a>. Include this link in the application as proof of paid
+client.</li>
+<li><del><strong>Create a <span class="citation"
+data-cites="TESTINGdApp">@TESTINGdApp</span> X account</strong></del> —
+<strong>SKIP.</strong> Post TESTINGdApp-specific content under <span
+class="citation" data-cites="SagaDAO_xyz">@SagaDAO_xyz</span> instead. A
+new empty account hurts more than it helps — keep the 20K+ follower
+credibility consolidated.</li>
+<li><strong>Screenshot the on-chain Genesis Token data</strong> — show
+the combined 120K+ minted tokens (Saga ~20K + Seeker 100,908 verified
+via SKR airdrop) as verifiable traction. Include block explorer
+links.</li>
+<li><strong>Optional but powerful:</strong> publish one Innovation Lab
+testing report — even a 1-page summary of a completed campaign showing
+methodology, bugs found, and outcomes.</li>
+</ol>
+<p>Items 1–2 are handled. Item 3 is the single highest-ROI thing you can
+do before submitting.</p>
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>USER-website-changes-dev-v1</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="uer-website-copy-changes-dev-implementation-guide">U$ER Website
+Copy Changes — Dev Implementation Guide</h1>
+<blockquote>
+<p>This doc maps each section of the current site to the new copy. Copy
+is exact — ready to implement. Changes highlighted in
+<strong>bold</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="hero-section">1. HERO SECTION</h2>
+<p><strong>Current (old):</strong> &gt; Real users. Real devices. Real
+feedback. &gt; Stop guessing. Saga &amp; Seeker owners run your app
+through a 5-step gated pipeline. SBT-verified testers. Sequential
+filtering. What comes back is pure signal. Ship faster.</p>
+<p><strong>New (replace with):</strong> &gt; <strong>Real users test
+your app. You get the truth.</strong> &gt; &gt; 120,000+ verified Solana
+Mobile device owners run your app, find the bugs, rate the UX, and post
+reviews on the dApp Store. <strong>Tested 11 dApps.</strong> &gt; &gt;
+[Get a Test Quote] [See How It Works ↓]</p>
+<p><strong>Changes:</strong> - Shortened headline from 3 sentences to 1
+- Added proof numbers (120K testers, 11 dApps) - <strong>Removed
+“$15,000” — too small-sounding for B2B</strong> - CTA changed from
+“Submit Your App” to “Get a Test Quote”</p>
+<hr />
+<h2 id="social-proof-bar-new-section">2. SOCIAL PROOF BAR (NEW
+SECTION)</h2>
+<p><strong>Add directly below hero:</strong></p>
+<blockquote>
+<p><strong>Trusted by builders shipping on Solana Mobile</strong></p>
+<p>[&amp;milo] [&amp;dubs]</p>
+<p><em>“$1,500 up for grabs through our dApp testing partner <span
+class="citation" data-cites="SagaMobileDAO">@SagaMobileDAO</span>”</em>
+— <span class="citation" data-cites="dubsdotapp">@dubsdotapp</span></p>
+</blockquote>
+<p><strong>Notes for dev:</strong> - Use actual logos if available, or
+brand name text - Tweet quote is real — link to:
+https://x.com/dubsdotapp/status/2029244200391172426</p>
+<hr />
+<h2 id="less-noise.-more-signal-rename-to-what-you-get-back">3. “LESS
+NOISE. MORE SIGNAL” → Rename to “WHAT YOU GET BACK”</h2>
+<p><strong>Current (old):</strong> &gt; Less NOISE. More SIGNAL. &gt;
+[long paragraphs about filtering philosophy + 6 small cards]</p>
+<p><strong>New (replace with):</strong></p>
+<blockquote>
+<h3 id="what-you-get-back">What you get back</h3>
+<p>Every campaign delivers a compiled intelligence package. Not surveys.
+Not vibes. Structured data from verified device owners who actually used
+your app.</p>
+<ul>
+<li><strong>Bug Reports</strong> — Annotated screenshots with severity
+flags. Visual context for every issue.</li>
+<li><strong>UX Friction Map</strong> — Where users got confused,
+hesitated, or quit. Ranked by frequency.</li>
+<li><strong>dApp Store Reviews</strong> — Real testers post real reviews
+from real devices. Organic social proof.</li>
+<li><strong>Sentiment Score</strong> — Did users understand your value
+prop? Quantified.</li>
+<li><strong>Mid-Round Alerts</strong> — We ping you the moment something
+critical surfaces. Fix it before the round ends.</li>
+<li><strong>Exportable Data</strong> — Markdown, CSV, or pushed to
+Slack/Discord/Telegram.</li>
+</ul>
+</blockquote>
+<p><strong>Changes:</strong> - Merged the philosophical section with the
+deliverables grid - Added <strong>Mid-Round Alerts</strong> (new —
+addresses your note about finding things mid-test) - “Not surveys. Not
+vibes.” = brief dismissal of competitors - Each bullet is now 1 sentence
+max</p>
+<hr />
+<h2 id="drop-it-in.-get-answers.-rewrite-to-how-it-works">4. “DROP IT
+IN. GET ANSWERS.” → Rewrite to “HOW IT WORKS”</h2>
+<p><strong>Current (old):</strong> &gt; [3 steps: Drop it in → We put it
+through → Get answers]</p>
+<p><strong>New (replace with):</strong></p>
+<blockquote>
+<h3 id="how-it-works">How it works</h3>
+<p><strong>1. Submit your app</strong> Upload your APK or web URL. Tell
+us what you want to learn. <strong>(Consultation call optional — we’ll
+guide you through setup either way.)</strong></p>
+<p><strong>2. We run the campaign</strong> 120K+ verified device owners
+get access. The 5-step pipeline filters for quality. AI monitors every
+submission in real time.</p>
+<p><strong>3. You get the report</strong> Bugs, UX friction, sentiment,
+dApp Store reviews. Delivered within 7 days. Exportable to your
+tools.</p>
+<p><strong>4. We debrief together</strong> <strong>(Optional — included
+in $10K+ packages)</strong> We walk through findings with your team.
+What to fix first. What’s working. What to test next round.</p>
+</blockquote>
+<p><strong>Changes:</strong> - Made consultation “optional” — addresses
+your note about self-serve option - Added “(Included in $10K+ packages)”
+to Step 4 — upsells higher tiers - “7 days” = specific turnaround time
+(adjust if needed)</p>
+<hr />
+<h2 id="step-pipeline">5. 5-STEP PIPELINE</h2>
+<p><strong>Current (old):</strong> &gt; Each step has a long paragraph
+(50+ words each)</p>
+<p><strong>New (replace with):</strong></p>
+<blockquote>
+<h3 id="the-5-step-test-flow">The 5-step test flow</h3>
+<p><strong>Step 01 — Wallet Connect</strong> Genesis SBT verification.
+Device ownership confirmed. Anonymous but verifiable.</p>
+<p><strong>Step 02 — App Exploration</strong> First impressions. Load
+time. Did it crash? Did they understand what the app is?</p>
+<p><strong>Step 03 — Task Completion</strong> Can they actually do what
+the app is for? Where do they get stuck?</p>
+<p><strong>Step 04 — Deep Feedback</strong> Written feedback (150+
+chars). Screenshots. What would make this better?</p>
+<p><strong>Step 05 — Rating &amp; Review</strong> Star rating + public
+dApp Store review. <strong>This is the output that matters
+most.</strong></p>
+</blockquote>
+<p><strong>Changes:</strong> - Trimmed each step to 1 sentence max -
+Added line in Step 5 to drive home why it matters</p>
+<hr />
+<h2 id="sentinel-ai">6. SENTINEL AI</h2>
+<p><strong>Minor tweaks only — keep mostly as-is:</strong></p>
+<p><strong>Current (old):</strong> &gt; Autonomous QA intelligence that
+reads every submission so you don’t have to.</p>
+<p><strong>New:</strong> &gt; <strong>Sentinel AI</strong> &gt;
+<strong>AI that reads every submission so you don’t have to.</strong>
+&gt; &gt; - <strong>Bug Triage</strong> — Auto-categorizes issues by
+severity. Duplicates merged. Priority ranked. &gt; - <strong>Screenshot
+Analyzer</strong> — Visual context for every bug. No more “it didn’t
+work.” &gt; - <strong>Conversational QA</strong> — Testers answer
+follow-up questions. AI extracts themes. &gt; - <strong>Trend
+Detection</strong> — Patterns across rounds. “3 of the last 5 apps had
+the same onboarding issue.”</p>
+<p><strong>Changes:</strong> - Shortened the lead-in line - Minor trim
+on bullet descriptions</p>
+<hr />
+<h2 id="earn-your-spot-split-into-two-sections">7. “EARN YOUR SPOT” →
+Split into TWO sections</h2>
+<h3 id="a.-for-builders-new-section">7a. FOR BUILDERS (NEW SECTION)</h3>
+<p>Add this section (between Sentinel AI and the tester section):</p>
+<blockquote>
+<h3 id="for-builders">For Builders</h3>
+<p>Launch with confidence. Not guesses.</p>
+<ul>
+<li><strong>SBT-gated testers</strong> — verified Saga &amp; Seeker
+owners, not randos</li>
+<li><strong>Sequential filtering</strong> — casual testers drop off,
+serious testers rise</li>
+<li><strong>dApp Store reviews</strong> — real reviews from real
+devices, not bots</li>
+<li><strong>Mid-round alerts</strong> — we tell you what’s breaking NOW,
+not after</li>
+<li><strong>White-glove reports</strong> — compiled, actionable, ready
+to share with your team</li>
+</ul>
+</blockquote>
+<p><strong>Notes:</strong> - New explicit section for builder segment -
+“White-glove” addresses your note about high-touch service</p>
+<hr />
+<h3 id="b.-for-testers-replace-existing-earn-your-spot">7b. FOR TESTERS
+(REPLACE existing “EARN YOUR SPOT”)</h3>
+<p><strong>Current (old):</strong> &gt; Earn your spot &gt; Not every
+tester is equal &gt; [describes filtering, but talks TO builders ABOUT
+testers]</p>
+<p><strong>New (replace with):</strong></p>
+<blockquote>
+<h3 id="for-testers-test-apps.-win-usdc.">For Testers — Test apps. Win
+USDC.</h3>
+<p>Got a Saga or Seeker? You’re already in.</p>
+<p>Connect your wallet, verify your Genesis SBT, and get access to paid
+testing campaigns. Complete stages to enter prize draws. Give the best
+feedback to win bounties. Refer friends for bonus entries.</p>
+<p><strong>What you can win:</strong></p>
+<ul>
+<li><strong>Raffle entries</strong> at every stage — complete, enter,
+win</li>
+<li><strong>Top-feedback bounties</strong> — best reviewers earn the
+biggest payouts</li>
+<li><strong>Referral bonuses</strong> — bring friends, both win</li>
+<li><strong>Focus group invites</strong> — paid live sessions with
+project teams</li>
+</ul>
+<p><strong>120,000+ Genesis Token holders eligible.</strong> Campaigns
+run every week.</p>
+<p>[Connect Wallet &amp; Start Testing]</p>
+</blockquote>
+<p><strong>Changes:</strong> - Now talks TO testers, not ABOUT testers -
+Clear value prop: “Test apps. Win USDC.” - Focus groups mentioned as
+paid opportunity</p>
+<hr />
+<h2 id="services-add-ons-new-section">8. SERVICES &amp; ADD-ONS (NEW
+SECTION)</h2>
+<p><strong>Add this section (before pricing):</strong></p>
+<blockquote>
+<h3 id="scale-your-launch">Scale your launch</h3>
+<p>Testing is the starting point. Layer on services to turn a campaign
+into a full go-to-market push.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Campaign Testing</strong></th>
+<th><strong>Focus Groups</strong></th>
+<th><strong>KOL Amplification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Verified testers run your app through the 5-step pipeline. Full
+intelligence package.</td>
+<td>Hand-pick testers from your campaign for live video sessions. Ask
+what surveys can’t answer.</td>
+<td>We pay KOLs to drive verified users to your campaign. Reach +
+feedback simultaneously.</td>
+</tr>
+<tr class="even">
+<td><strong>Starting at $5,000</strong></td>
+<td><strong>Starting at $3,000</strong></td>
+<td><strong>Starting at $2,500</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Consultation &amp; Strategy</strong> — Included in $10K+
+campaigns. We’ll design the test criteria, advise on what to measure,
+and debrief results with your team.</p>
+<p><strong>Custom Bundle</strong> — Contact us. Bundle pricing for
+multi-round campaigns.</p>
+<p>[Get a Custom Quote]</p>
+</blockquote>
+<p><strong>Notes:</strong> - Services now named and priced - Table
+format for easy comparison - Consultation included at $10K+</p>
+<hr />
+<h2 id="pricing-tiers-replace-dropdown-form">9. PRICING TIERS (REPLACE
+dropdown form)</h2>
+<p><strong>Current (old):</strong> &gt; [Form with “Funding Amount”
+dropdown: $5K–$30K]</p>
+<p><strong>New (replace with):</strong></p>
+<blockquote>
+<h3 id="choose-your-campaign">Choose your campaign</h3>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Launch</strong></th>
+<th><strong>Growth</strong></th>
+<th><strong>Enterprise</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Price</strong></td>
+<td>$5,000 USDC</td>
+<td>$10,000 USDC</td>
+<td>$15,000+ USDC</td>
+</tr>
+<tr class="even">
+<td>Verified testers</td>
+<td>Up to 50</td>
+<td>Up to 150</td>
+<td>200+</td>
+</tr>
+<tr class="odd">
+<td>5-step pipeline</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="even">
+<td>AI reports</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="odd">
+<td>dApp Store reviews</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="even">
+<td>Mid-round alerts</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="odd">
+<td>Consultation call</td>
+<td>—</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="even">
+<td>Focus group session</td>
+<td>—</td>
+<td>—</td>
+<td>1 included</td>
+</tr>
+<tr class="odd">
+<td>KOL amplification</td>
+<td>—</td>
+<td>Add-on</td>
+<td>1 included</td>
+</tr>
+<tr class="even">
+<td>Dedicated manager</td>
+<td>—</td>
+<td>—</td>
+<td>✓</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>[Get Started]</td>
+<td>[Get Started]</td>
+<td>[Contact Us]</td>
+</tr>
+</tbody>
+</table>
+<p><em>All campaigns include Sentinel AI. <strong>Not sure what you
+need? We’ll help you scope. Just reach out.</strong></em></p>
+</blockquote>
+<p><strong>Changes:</strong> - Tiered table replaces dropdown (anchors
+high) - “Not sure what you need?” line captures lower-budget leads</p>
+<hr />
+<h2 id="contact-form">10. CONTACT / FORM</h2>
+<p><strong>Simplify:</strong></p>
+<blockquote>
+<h3 id="lets-get-your-app-tested">Let’s get your app tested</h3>
+<p><strong>Ready to ship? Let’s talk.</strong></p>
+<p>[App Name] [App URL] [Your Email] [Telegram/Discord]</p>
+<p><strong>What’s your budget?</strong> (Optional — helps us scope
+right)</p>
+<p>[Submit]</p>
+</blockquote>
+<p><strong>Changes:</strong> - Removed “Funding Amount” dropdown - Made
+budget “optional” — more approachable - Still captures budget signal for
+scoping</p>
+<hr />
+<h2 id="footer">11. FOOTER</h2>
+<p><strong>Update to:</strong></p>
+<blockquote>
+<p><strong>U$ER</strong> — The testing platform for Solana Mobile.</p>
+<p>Built by <a href="https://twitter.com/SagaMobileDAO">SagaDAO</a> —
+20,000+ Saga Genesis holders, 100,000+ Seeker Genesis holders.</p>
+<p>[Twitter/X] [Discord] [Website]</p>
+<p>© 2026 U$ER. All rights reserved.</p>
+</blockquote>
+<hr />
+<h2 id="summary-of-changes">SUMMARY OF CHANGES</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>Change Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hero</td>
+<td>Shortened to 1 sentence, added proof numbers, removed $ (too
+small)</td>
+</tr>
+<tr class="even">
+<td>Social Proof Bar</td>
+<td><strong>NEW</strong> — client logos + tweet quote</td>
+</tr>
+<tr class="odd">
+<td>What You Get Back</td>
+<td><strong>NEW NAME</strong> — merged with deliverables, added
+Mid-Round Alerts</td>
+</tr>
+<tr class="even">
+<td>How It Works</td>
+<td>4 steps, consultation optional, added 7-day SLA</td>
+</tr>
+<tr class="odd">
+<td>5-Step Pipeline</td>
+<td>Trimmed to 1 sentence per step</td>
+</tr>
+<tr class="even">
+<td>Sentinel AI</td>
+<td>Minor trim on lead-in</td>
+</tr>
+<tr class="odd">
+<td>For Builders</td>
+<td><strong>NEW</strong> — explicit builder section</td>
+</tr>
+<tr class="even">
+<td>For Testers</td>
+<td><strong>REWRITE</strong> — now talks TO testers</td>
+</tr>
+<tr class="odd">
+<td>Services &amp; Add-Ons</td>
+<td><strong>NEW</strong> — named services with prices</td>
+</tr>
+<tr class="even">
+<td>Pricing Tiers</td>
+<td><strong>NEW</strong> — tiered table replaces dropdown</td>
+</tr>
+<tr class="odd">
+<td>Contact Form</td>
+<td>Simplified, made budget optional</td>
+</tr>
+<tr class="even">
+<td>Footer</td>
+<td>Updated with holder numbers</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="total-word-count">TOTAL WORD COUNT</h2>
+<p>~420 words (target was 350-450 for optimal conversion)</p>
+</body>
+</html>

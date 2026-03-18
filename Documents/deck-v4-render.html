@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VURT x Dioni Vasquez — Deck v4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #D4A62A;
+    --gold-warm: #E4A836;
+    --gold-bright: #FDD55C;
+    --white: #FFFFFF;
+    --white-84: rgba(255,255,255,0.84);
+    --white-60: rgba(255,255,255,0.6);
+    --white-50: rgba(255,255,255,0.5);
+    --card-bg: #1B1B1B;
+    --card-bg2: #141414;
+    --black: #000000;
+    --teal: #3ECFB4;
+    --coral: #E07A5F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    margin: 0;
+    padding: 0;
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 120px;
+    page-break-after: always;
+  }
+
+  .slide:last-child {
+    page-break-after: auto;
+  }
+
+  /* Typography */
+  .slide-label {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+
+  .slide-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 0;
+  }
+
+  .gold-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 28px 0;
+  }
+
+  /* Utility */
+  .text-gold { color: var(--gold); }
+  .text-gold-warm { color: var(--gold-warm); }
+  .text-gold-bright { color: var(--gold-bright); }
+  .text-teal { color: var(--teal); }
+  .text-coral { color: var(--coral); }
+  .text-white-84 { color: var(--white-84); }
+  .text-white-60 { color: var(--white-60); }
+  .text-white-50 { color: var(--white-50); }
+
+  /* SLIDE 1 - Title */
+  .slide-title-page {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .slide-title-page .vurt-logo {
+    width: 180px;
+    opacity: 0.9;
+    margin-bottom: 48px;
+  }
+
+  .slide-title-page h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--white);
+  }
+
+  .slide-title-page .gold-rule {
+    margin: 32px auto;
+  }
+
+  .slide-title-page .author {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: var(--white-60);
+  }
+
+  .slide-title-page .date {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--white-50);
+    margin-top: 8px;
+  }
+
+  /* Stats grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 60px;
+    margin-top: 10px;
+  }
+
+  .stat-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--white-60);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  /* Observations list */
+  .obs-list {
+    list-style: none;
+    margin-top: 10px;
+  }
+
+  .obs-list li {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--white-84);
+    padding: 18px 0;
+    border-bottom: 1px solid var(--card-bg);
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+  }
+
+  .obs-list li:last-child { border-bottom: none; }
+
+  .obs-num {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 28px;
+  }
+
+  /* Flywheel */
+  .flywheel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    position: relative;
+  }
+
+  .flywheel {
+    width: 560px;
+    height: 560px;
+    position: relative;
+  }
+
+  .flywheel-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    height: 280px;
+    margin-left: -140px;
+    margin-top: -140px;
+    border: 1px solid rgba(212, 166, 42, 0.3);
+    border-radius: 50%;
+  }
+
+  .flywheel-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .flywheel-node {
+    position: absolute;
+    text-align: center;
+    width: 160px;
+  }
+
+  .flywheel-node .node-label {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .flywheel-node .node-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--white-50);
+    margin-top: 4px;
+  }
+
+  .flywheel-node.pos-top { top: 20px; left: 50%; transform: translateX(-50%); }
+  .flywheel-node.pos-top-right { top: 130px; right: 10px; }
+  .flywheel-node.pos-bottom-right { bottom: 130px; right: 10px; }
+  .flywheel-node.pos-bottom { bottom: 20px; left: 50%; transform: translateX(-50%); }
+  .flywheel-node.pos-bottom-left { bottom: 130px; left: 10px; }
+  .flywheel-node.pos-top-left { top: 130px; left: 10px; }
+
+  /* Two column layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 10px;
+  }
+
+  .col-block h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .col-block p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--white-60);
+    line-height: 1.7;
+  }
+
+  .col-block ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .col-block li {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--white-60);
+    line-height: 1.6;
+    padding: 10px 0;
+    padding-left: 22px;
+    position: relative;
+  }
+
+  .col-block li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .col-block.teal-bullets li::before { background: var(--teal); }
+  .col-block.coral-bullets li::before { background: var(--coral); }
+  .col-block.gold-bullets li::before { background: var(--gold); }
+
+  /* Proof block */
+  .proof {
+    background: var(--card-bg);
+    padding: 24px 28px;
+    margin-top: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--white-60);
+    border-left: 2px solid var(--teal);
+  }
+
+  .proof strong { color: var(--white); }
+
+  .proof.teal-border { border-left-color: var(--teal); }
+  .proof.gold-border { border-left-color: var(--gold); }
+
+  /* Gap grid / platform cards */
+  .gap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .gap-card {
+    background: var(--card-bg);
+    padding: 28px 24px;
+    text-align: center;
+    border-top: 2px solid var(--gold);
+  }
+
+  .gap-card .platform {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .gap-card .has {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+
+  .gap-card .missing {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--coral);
+  }
+
+  /* Intersection grid */
+  .intersection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .intersection-card {
+    border: 1px solid #222;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .intersection-card .role {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white-60);
+    margin-bottom: 10px;
+  }
+
+  .intersection-card .can {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--white-60);
+    line-height: 1.5;
+  }
+
+  .intersection-card.highlight {
+    border-color: var(--gold);
+    background: rgba(212, 166, 42, 0.06);
+  }
+
+  .intersection-card.highlight .role { color: var(--gold); }
+  .intersection-card.highlight .can { color: var(--white); font-weight: 500; }
+
+  /* IRL scenario list */
+  .scenario-list {
+    list-style: none;
+    margin-top: 10px;
+  }
+
+  .scenario-list li {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    padding: 16px 0;
+    padding-left: 24px;
+    border-bottom: 1px solid var(--card-bg);
+    color: var(--white-60);
+    line-height: 1.5;
+    position: relative;
+  }
+
+  .scenario-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 22px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .scenario-list li.sq-coral::before { background: var(--coral); }
+  .scenario-list li.sq-teal::before { background: var(--teal); }
+
+  /* Subtitle */
+  .slide-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--white-50);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  /* Closer */
+  .closer-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    color: var(--white-60);
+    line-height: 1.7;
+    max-width: 820px;
+  }
+
+  .closer-body strong { color: var(--white); font-weight: 600; }
+
+  .closer-cta {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: var(--white-84);
+    margin-top: 36px;
+  }
+
+  .closer-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--white-50);
+    margin-top: 48px;
+  }
+
+  @media print {
+    body { margin: 0; padding: 0; }
+    .slide {
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+    .slide:last-child { page-break-after: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE -->
+<div class="slide slide-title-page" data-slide="1">
+  <img src="https://resources-us1.enveu.tv/VURT_1766482785243-proj-1766484233117/statics/web/logo/VURT_Transparent_1.png" alt="VURT" class="vurt-logo">
+  <h1 style="font-family:'Poppins',sans-serif; font-size:60px; font-weight:800;">How I Can Help VURT Succeed.</h1>
+  <div class="gold-rule" style="margin:32px auto;"></div>
+  <div class="author" style="font-family:'Inter',sans-serif; font-size:18px; color:rgba(255,255,255,0.6);">Dioni Vasquez</div>
+  <div class="date" style="font-family:'Inter',sans-serif; font-size:13px; color:rgba(255,255,255,0.5); margin-top:8px;">March 2026</div>
+</div>
+
+<!-- SLIDE 2: TRACK RECORD -->
+<div class="slide" data-slide="2">
+  <div class="slide-label">TRACK RECORD</div>
+  <div class="slide-title">20 Years Building at the Intersection.</div>
+  <div class="gold-rule"></div>
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="stat-number text-gold-bright">$750M+</div>
+      <div class="stat-label">Campaign revenue driven across Meta, HBO, AmEx, Walmart, Cadillac, Starbucks</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number text-teal">5M+</div>
+      <div class="stat-label">Subscribers built from zero. Brat TV + Snapchat Originals.</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number text-teal">500M+</div>
+      <div class="stat-label">Views on creator-first content engines.</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number text-gold-warm">50-60%</div>
+      <div class="stat-label">Cost reduction. Planet Fitness. 16 agencies consolidated.</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number text-coral">20%</div>
+      <div class="stat-label">Sales lift. Cadillac XT6 launch with Spike Lee.</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number text-gold">Oscar</div>
+      <div class="stat-label">Nominated. Emmy, Peabody, BAFTA, Cannes Lions winner.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: OBSERVATIONS -->
+<div class="slide" data-slide="3">
+  <div class="slide-label">OBSERVATIONS</div>
+  <div class="slide-title">What I See at VURT.</div>
+  <div class="gold-rule"></div>
+  <ul class="obs-list">
+    <li><span class="obs-num">01</span> The content moat is real.</li>
+    <li><span class="obs-num">02</span> The business model may be a second moat.</li>
+    <li><span class="obs-num">03</span> Audience skew shows what's working and what's missing.</li>
+    <li><span class="obs-num">04</span> The conflict-resolution format is algorithmically powerful.</li>
+    <li><span class="obs-num">05</span> Distribution is the business.</li>
+    <li><span class="obs-num">06</span> IRL amplifies everything.</li>
+  </ul>
+</div>
+
+<!-- SLIDE 4: FLYWHEEL -->
+<div class="slide" data-slide="4">
+  <div class="slide-label">THE SYSTEM</div>
+  <div class="slide-title" style="text-align:center;">These Connect as a Flywheel.</div>
+  <div class="flywheel-container">
+    <div class="flywheel">
+      <div class="flywheel-circle"></div>
+      <div class="flywheel-center">VURT</div>
+      <div class="flywheel-node pos-top">
+        <div class="node-label text-gold-bright">CONTENT</div>
+        <div class="node-sub">hooks people</div>
+      </div>
+      <div class="flywheel-node pos-top-right">
+        <div class="node-label text-teal">DISTRIBUTION</div>
+        <div class="node-sub">creates reach</div>
+      </div>
+      <div class="flywheel-node pos-bottom-right">
+        <div class="node-label text-coral">COMMUNITY</div>
+        <div class="node-sub">retains</div>
+      </div>
+      <div class="flywheel-node pos-bottom">
+        <div class="node-label text-teal">INTERACTIVITY</div>
+        <div class="node-sub">activates</div>
+      </div>
+      <div class="flywheel-node pos-bottom-left">
+        <div class="node-label text-coral">IRL</div>
+        <div class="node-sub">amplifies</div>
+      </div>
+      <div class="flywheel-node pos-top-left">
+        <div class="node-label text-gold-warm">AD MODEL</div>
+        <div class="node-sub">sustains</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: DISTRIBUTION -->
+<div class="slide" data-slide="5">
+  <div class="slide-label">WHERE I CAN HELP</div>
+  <div class="slide-title">Turning Content Into <span class="text-teal">Distribution.</span></div>
+  <div class="gold-rule"></div>
+  <div class="two-col">
+    <div class="col-block">
+      <h3>THE MACHINE</h3>
+      <p>Episodes become clips. Clips become reach. Reach becomes installs. It's a buildable, repeatable system.</p>
+      <div class="proof teal-border">
+        <strong>Proof.</strong> Built Brat TV from zero to 5M+ subscribers, 500M+ views. Creator-first model: cast the creator, build the show, clip everything for distribution.
+      </div>
+    </div>
+    <div class="col-block teal-bullets">
+      <h3>THE GAP</h3>
+      <ul>
+        <li>No microdrama platform uses clippers or content creators for distribution.</li>
+        <li>They're all running paid acquisition ($20-30 CPI).</li>
+        <li>Zero organic discovery strategy across the category.</li>
+        <li>VURT can be first.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: PRODUCTION -->
+<div class="slide" data-slide="6">
+  <div class="slide-label">WHERE I CAN HELP</div>
+  <div class="slide-title">Production Expertise. Applied <span class="text-gold-warm">Differently.</span></div>
+  <div class="gold-rule"></div>
+  <div class="two-col">
+    <div class="col-block">
+      <h3>TASTE</h3>
+      <p>Knowing what works, what resonates, what to cut and what to keep. That sensibility applied to content selection, format development, and quality control is a force multiplier.</p>
+    </div>
+    <div class="col-block">
+      <h3>SYSTEMS</h3>
+      <p>Planet Fitness: 16 fragmented agencies consolidated into one pipeline. $500K+ annual savings. That operational thinking applied to VURT's production pipeline.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: COMMUNITY -->
+<div class="slide" data-slide="7">
+  <div class="slide-label">WHERE I CAN HELP</div>
+  <div class="slide-title">Building Community That <span class="text-coral">Retains.</span></div>
+  <div class="gold-rule"></div>
+  <div class="two-col">
+    <div class="col-block">
+      <h3>THE PROBLEM</h3>
+      <p>Every microdrama competitor is a slot machine. Zero community. Zero fandom infrastructure. Zero reason to feel like you belong.</p>
+    </div>
+    <div class="col-block coral-bullets">
+      <h3>WHAT I'VE BUILT</h3>
+      <ul>
+        <li>SagaDAO: real community with governance, elections, published charter.</li>
+        <li>Daily active Discord, watch parties, AMAs, fan voting.</li>
+        <li>Frameworks that translate: fan theory channels, superfan programs, audience voting on pilots.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8: CREATORS -->
+<div class="slide" data-slide="8">
+  <div class="slide-label">WHERE I CAN HELP</div>
+  <div class="slide-title">Connecting <span class="text-coral">Creators</span> to the Platform.</div>
+  <div class="gold-rule"></div>
+  <div class="two-col">
+    <div class="col-block">
+      <h3>THE NETWORK</h3>
+      <p>20 years of entertainment relationships. Creator managers, directors, producers, agents at every level. Not a cold email. A warm introduction backed by a body of work.</p>
+    </div>
+    <div class="col-block gold-bullets">
+      <h3>THE LEVERS</h3>
+      <ul>
+        <li>Creative freedom studios won't offer.</li>
+        <li>Speed-to-screen.</li>
+        <li>IP ownership terms.</li>
+        <li>Being early to a platform that gives artists a real home.</li>
+        <li>Every creator who joins brings their audience.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 9: IRL -->
+<div class="slide" data-slide="9">
+  <div class="slide-label">WHERE I CAN HELP</div>
+  <div class="slide-title">IRL <span class="text-coral">Amplification.</span></div>
+  <div class="slide-subtitle">SagaDAO House: Abu Dhabi, NYC, Miami, LA, Art Basel, Key West. Proof of concept already built and operated.</div>
+  <div class="gold-rule"></div>
+  <ul class="scenario-list">
+    <li class="sq-coral">Directors and creators with competing shows living together for a week. The rivalry alone is content.</li>
+    <li class="sq-coral">Cast members from different series meeting for the first time on camera, debating whose show is better.</li>
+    <li class="sq-teal">Live watch party. Audience votes in real-time. Results revealed on-stream.</li>
+    <li class="sq-teal">Pop-up confessional booth. Fans give unfiltered takes on a cliffhanger. 30-second TikTok fuel.</li>
+    <li class="sq-coral">Superfans getting cast in a cameo. Behind-the-scenes becomes its own content arc.</li>
+  </ul>
+</div>
+
+<!-- SLIDE 10: INTERACTIVITY -->
+<div class="slide" data-slide="10">
+  <div class="slide-label">WHERE I CAN HELP</div>
+  <div class="slide-title">Bringing <span class="text-teal">Interactivity</span> to Microdrama.</div>
+  <div class="gold-rule"></div>
+  <div class="gap-grid">
+    <div class="gap-card">
+      <div class="platform">TWITCH</div>
+      <div class="has">Predictions</div>
+      <div class="missing">No produced content</div>
+    </div>
+    <div class="gap-card">
+      <div class="platform">REELSHORT</div>
+      <div class="has">Micropayments</div>
+      <div class="missing">No interaction</div>
+    </div>
+    <div class="gap-card">
+      <div class="platform">POLYMARKET</div>
+      <div class="has">Prediction markets</div>
+      <div class="missing">No entertainment</div>
+    </div>
+    <div class="gap-card">
+      <div class="platform">TIKTOK</div>
+      <div class="has">Virtual gifts</div>
+      <div class="missing">No community</div>
+    </div>
+  </div>
+  <div class="proof teal-border" style="margin-top:28px;">
+    <strong>Nobody has combined them.</strong> Start lightweight — polls, predictions, fan theories. Incentivize participation — early access, shoutouts, leaderboards, exclusive drops. Let the data tell you what to invest in next.
+  </div>
+</div>
+
+<!-- SLIDE 11: ONE SYSTEM -->
+<div class="slide" data-slide="11">
+  <div class="slide-label">WHY THIS MATTERS</div>
+  <div class="slide-title">Not Five Hires. <span class="text-gold">One System.</span></div>
+  <div class="gold-rule"></div>
+  <div class="intersection-grid">
+    <div class="intersection-card">
+      <div class="role">SOCIAL MEDIA</div>
+      <div class="can">Can post clips.</div>
+    </div>
+    <div class="intersection-card">
+      <div class="role">COMMUNITY MGR</div>
+      <div class="can">Can run a Discord.</div>
+    </div>
+    <div class="intersection-card">
+      <div class="role">PRODUCER</div>
+      <div class="can">Can make content.</div>
+    </div>
+    <div class="intersection-card">
+      <div class="role">BIZ DEV</div>
+      <div class="can">Can sign deals.</div>
+    </div>
+    <div class="intersection-card">
+      <div class="role">EVENTS LEAD</div>
+      <div class="can">Can run activations.</div>
+    </div>
+    <div class="intersection-card highlight">
+      <div class="role">THE INTERSECTION</div>
+      <div class="can">Sees how they connect. Builds the system that makes them compound.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 12: CLOSER -->
+<div class="slide" data-slide="12">
+  <div class="slide-label">NEXT STEPS</div>
+  <div style="font-family:'Poppins',sans-serif; font-size:52px; font-weight:800; line-height:1.2; color:var(--white); max-width:1100px;">The thinking is underway.<br>The vision is aligned.</div>
+  <div class="gold-rule"></div>
+  <div class="closer-body">
+    Operational playbook drafted. Interactive entertainment research compiled. Competitive landscape mapped. <strong>Preliminary work with strong ideas to go through together.</strong>
+  </div>
+  <div class="closer-cta">Let's talk about how to make it real.</div>
+  <div class="closer-name">Dioni Vasquez</div>
+</div>
+
+</body>
+</html>

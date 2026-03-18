@@ -1,0 +1,427 @@
+{
+  "generated_at": "2026-03-16T12:06:00.796301+00:00",
+  "top_signals": [
+    {
+      "topic": "#trending",
+      "score": 50,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "rugrocket.pro",
+        "jakesuniverseonsol"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    },
+    {
+      "topic": "#daytrader",
+      "score": 50,
+      "confidence": "medium",
+      "mentions": 2,
+      "engagement": 0,
+      "platforms": [
+        "tiktok"
+      ],
+      "platform_count": 1,
+      "top_authors": [
+        "cryptowithjosh2026"
+      ],
+      "tier1_callers": [],
+      "has_tier1_signal": false,
+      "sample_texts": []
+    }
+  ],
+  "prediction_market_edges": [
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $90,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-90k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0425,
+          "implied_probability": "4.2%",
+          "payout_multiple": "23.5x"
+        }
+      ],
+      "volume_24h": 317483.468065,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Bitcoin Up or Down on March 16?",
+      "url": "https://polymarket.com/event/bitcoin-up-or-down-on-march-16-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Down",
+          "price": 0.016,
+          "implied_probability": "1.6%",
+          "payout_multiple": "62.5x"
+        }
+      ],
+      "volume_24h": 316025.88456799975,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $76,000 on March 16?",
+      "url": "https://polymarket.com/event/bitcoin-above-76k-on-march-16",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.028,
+          "implied_probability": "2.8%",
+          "payout_multiple": "35.7x"
+        }
+      ],
+      "volume_24h": 285562.78269300004,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin reach $75,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-reach-75k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.185,
+          "implied_probability": "18.5%",
+          "payout_multiple": "5.4x"
+        }
+      ],
+      "volume_24h": 261207.75148199976,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will the price of Bitcoin be above $72,000 on March 16?",
+      "url": "https://polymarket.com/event/bitcoin-above-72k-on-march-16",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.085,
+          "implied_probability": "8.5%",
+          "payout_multiple": "11.8x"
+        }
+      ],
+      "volume_24h": 242679.6063639998,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $60,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-60k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.125,
+          "implied_probability": "12.5%",
+          "payout_multiple": "8.0x"
+        }
+      ],
+      "volume_24h": 202147.724524,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Bitcoin dip to $55,000 in March?",
+      "url": "https://polymarket.com/event/will-bitcoin-dip-to-55k-in-march-2026",
+      "matching_social_topics": [
+        "bitcoin"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.045,
+          "implied_probability": "4.5%",
+          "payout_multiple": "22.2x"
+        }
+      ],
+      "volume_24h": 181437.954174,
+      "social_engagement": 0,
+      "social_mentions": 2,
+      "match_quality": 21,
+      "social_context": []
+    },
+    {
+      "type": "polymarket",
+      "question": "Will Stephen A. Smith win the 2028 Democratic presidential nomination?",
+      "url": "https://polymarket.com/event/will-stephen-a-smith-win-the-2028-democratic-presidential-nomination-914",
+      "matching_social_topics": [
+        "smith"
+      ],
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0115,
+          "implied_probability": "1.1%",
+          "payout_multiple": "87.0x"
+        }
+      ],
+      "volume_24h": 161920.60595099986,
+      "social_engagement": 0,
+      "social_mentions": 1,
+      "match_quality": 18,
+      "social_context": [
+        "Solana memecoins on fire! $SMITH skyrocketed 1,330%, $Twin 1,280% in 24h. These pumps are wild, but remember: DYOR before diving in."
+      ]
+    }
+  ],
+  "polymarket_top_opportunities": [
+    {
+      "question": "Netanyahu out by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0305,
+          "implied_probability": "3.0%",
+          "payout_multiple": "32.8x"
+        }
+      ],
+      "volume_24h": 7569646.923949024,
+      "url": "https://polymarket.com/event/netanyahu-out-by-march-31-854"
+    },
+    {
+      "question": "Will the Iranian regime fall by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0285,
+          "implied_probability": "2.9%",
+          "payout_multiple": "35.1x"
+        }
+      ],
+      "volume_24h": 1499049.683817002,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31"
+    },
+    {
+      "question": "US x Iran ceasefire by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.095,
+          "implied_probability": "9.5%",
+          "payout_multiple": "10.5x"
+        }
+      ],
+      "volume_24h": 962870.4952360023,
+      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by-march-31"
+    },
+    {
+      "question": "US forces enter Iran by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.295,
+          "implied_probability": "29.5%",
+          "payout_multiple": "3.4x"
+        }
+      ],
+      "volume_24h": 928832.9603990034,
+      "url": "https://polymarket.com/event/us-forces-enter-iran-by-march-31-222-191-243-517-878-439-519"
+    },
+    {
+      "question": "Will Crude Oil (CL) hit (HIGH) $100 by end of March?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.125,
+          "implied_probability": "12.5%",
+          "payout_multiple": "8.0x"
+        }
+      ],
+      "volume_24h": 733886.5528290005,
+      "url": "https://polymarket.com/event/will-crude-oil-cl-hit-high-100-by-end-of-march-658-396-769-971"
+    },
+    {
+      "question": "Will Vivek Ramaswamy win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0105,
+          "implied_probability": "1.1%",
+          "payout_multiple": "95.2x"
+        }
+      ],
+      "volume_24h": 677299.7194599998,
+      "url": "https://polymarket.com/event/will-vivek-ramaswamy-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will Andy Beshear win the 2028 US Presidential Election?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0155,
+          "implied_probability": "1.6%",
+          "payout_multiple": "64.5x"
+        }
+      ],
+      "volume_24h": 629652.4878580001,
+      "url": "https://polymarket.com/event/will-andy-beshear-win-the-2028-us-presidential-election"
+    },
+    {
+      "question": "Will the Iranian regime fall by June 30?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.285,
+          "implied_probability": "28.5%",
+          "payout_multiple": "3.5x"
+        }
+      ],
+      "volume_24h": 613249.8733490009,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30"
+    },
+    {
+      "question": "GTA VI released before June 2026?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0285,
+          "implied_probability": "2.9%",
+          "payout_multiple": "35.1x"
+        }
+      ],
+      "volume_24h": 547993.7737429994,
+      "url": "https://polymarket.com/event/gta-vi-released-before-june-2026"
+    },
+    {
+      "question": "Will the Iranian regime fall by April 30?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.155,
+          "implied_probability": "15.5%",
+          "payout_multiple": "6.5x"
+        }
+      ],
+      "volume_24h": 536339.8749750003,
+      "url": "https://polymarket.com/event/will-the-iranian-regime-fall-by-april-30"
+    },
+    {
+      "question": "Will China invade Taiwan by March 31, 2026?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0125,
+          "implied_probability": "1.2%",
+          "payout_multiple": "80.0x"
+        }
+      ],
+      "volume_24h": 535011.975721,
+      "url": "https://polymarket.com/event/will-china-invade-taiwan-by-march-31-2026"
+    },
+    {
+      "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+      "cheap_outcomes": [
+        {
+          "outcome": "No",
+          "price": 0.175,
+          "implied_probability": "17.5%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "volume_24h": 505535.6841399997,
+      "url": "https://polymarket.com/event/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31"
+    },
+    {
+      "question": "Will the Los Angeles Lakers win the 2026 NBA Finals?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.026,
+          "implied_probability": "2.6%",
+          "payout_multiple": "38.5x"
+        }
+      ],
+      "volume_24h": 485865.3311280003,
+      "url": "https://polymarket.com/event/will-the-los-angeles-lakers-win-the-2026-nba-finals"
+    },
+    {
+      "question": "Will Jesus Christ return before 2027?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.0385,
+          "implied_probability": "3.9%",
+          "payout_multiple": "26.0x"
+        }
+      ],
+      "volume_24h": 473783.87670999987,
+      "url": "https://polymarket.com/event/will-jesus-christ-return-before-2027"
+    },
+    {
+      "question": "Will Wes Moore win the 2028 Democratic presidential nomination?",
+      "cheap_outcomes": [
+        {
+          "outcome": "Yes",
+          "price": 0.015,
+          "implied_probability": "1.5%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "volume_24h": 465600.520927,
+      "url": "https://polymarket.com/event/will-wes-moore-win-the-2028-democratic-presidential-nomination-714"
+    }
+  ],
+  "kalshi_top_opportunities": [],
+  "summary": {
+    "total_topics_tracked": 22,
+    "high_confidence_signals": 0,
+    "medium_confidence_signals": 2,
+    "cross_platform_signals": 0,
+    "tier1_backed_signals": 0,
+    "prediction_market_matches": 8,
+    "x_signals_quality": {
+      "total": 14,
+      "with_known_author": 14,
+      "with_engagement": 5
+    },
+    "tiktok_signals_quality": {
+      "total": 8,
+      "crypto_relevant": 8
+    }
+  }
+}

@@ -1,0 +1,1685 @@
+{
+  "scan_time": "2026-03-11T12:02:22.743735+00:00",
+  "markets_with_edge": [
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026370A8A773CD-A48E9F223F6",
+      "title": "yes Iowa St.,yes Cincinnati wins by over 2.5 Points,yes Kentucky wins by over 5.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026370A8A773CD",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026370a8a773cd-a48e9f223f6",
+      "yes_bid": 0,
+      "yes_ask": 31,
+      "no_bid": 69,
+      "no_ask": 100,
+      "yes_mid": 15.5,
+      "no_mid": 84.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 15.5,
+          "implied_probability": "16%",
+          "payout_multiple": "6.5x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084410+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B210E065DB5-BA26101B840",
+      "title": "yes Nevada,yes Iowa St.,yes Richmond,yes Kentucky,yes Iowa,yes Liberty,yes Auburn,yes North Carolina St.,yes St. Bonaventure,yes Louisville,yes Washington",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B210E065DB5",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b210e065db5-ba26101b840",
+      "yes_bid": 0,
+      "yes_ask": 6,
+      "no_bid": 94,
+      "no_ask": 100,
+      "yes_mid": 3.0,
+      "no_mid": 97.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.0,
+          "implied_probability": "3%",
+          "payout_multiple": "33.3x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084442+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20268C5A41F78ED-CA1BFF87921",
+      "title": "yes Iowa wins by over 10.5 Points,no Louisville wins by over 7.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20268C5A41F78ED",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20268c5a41f78ed-ca1bff87921",
+      "yes_bid": 0,
+      "yes_ask": 34,
+      "no_bid": 66,
+      "no_ask": 100,
+      "yes_mid": 17.0,
+      "no_mid": 83.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 17.0,
+          "implied_probability": "17%",
+          "payout_multiple": "5.9x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084460+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202649415B95B99-72FC4BF09E7",
+      "title": "yes BYU,yes Kentucky,yes Iowa,yes Auburn,yes Marquette",
+      "event_ticker": "KXMVECROSSCATEGORY-S202649415B95B99",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202649415b95b99-72fc4bf09e7",
+      "yes_bid": 0,
+      "yes_ask": 23,
+      "no_bid": 77,
+      "no_ask": 100,
+      "yes_mid": 11.5,
+      "no_mid": 88.5,
+      "volume": 221,
+      "volume_24h": 0,
+      "open_interest": 221,
+      "last_price": 21,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 11.5,
+          "implied_probability": "12%",
+          "payout_multiple": "8.7x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084536+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202676CC8C8E69C-C11025A7999",
+      "title": "yes WSH Capitals,yes Over 4.5 goals scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S202676CC8C8E69C",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202676cc8c8e69c-c11025a7999",
+      "yes_bid": 0,
+      "yes_ask": 51,
+      "no_bid": 49,
+      "no_ask": 100,
+      "yes_mid": 25.5,
+      "no_mid": 74.5,
+      "volume": 4,
+      "volume_24h": 0,
+      "open_interest": 4,
+      "last_price": 44,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 25.5,
+          "implied_probability": "26%",
+          "payout_multiple": "3.9x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084543+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202653432CF52C8-0F90CB1C94F",
+      "title": "yes Kentucky,yes Iowa,yes Auburn,yes Marquette",
+      "event_ticker": "KXMVECROSSCATEGORY-S202653432CF52C8",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202653432cf52c8-0f90cb1c94f",
+      "yes_bid": 0,
+      "yes_ask": 35,
+      "no_bid": 65,
+      "no_ask": 100,
+      "yes_mid": 17.5,
+      "no_mid": 82.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 17.5,
+          "implied_probability": "18%",
+          "payout_multiple": "5.7x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084553+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026500C9122BAB-41F7D4E8095",
+      "title": "yes UCF,yes Mississippi St.,yes Butler",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026500C9122BAB",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026500c9122bab-41f7d4e8095",
+      "yes_bid": 0,
+      "yes_ask": 6,
+      "no_bid": 94,
+      "no_ask": 100,
+      "yes_mid": 3.0,
+      "no_mid": 97.0,
+      "volume": 36,
+      "volume_24h": 0,
+      "open_interest": 36,
+      "last_price": 5,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.0,
+          "implied_probability": "3%",
+          "payout_multiple": "33.3x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084568+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20269F7447AAE42-7A68CB38A7A",
+      "title": "yes Iowa,yes North Carolina St. wins by over 4.5 Points,yes St. Bonaventure wins by over 2.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20269F7447AAE42",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20269f7447aae42-7a68cb38a7a",
+      "yes_bid": 0,
+      "yes_ask": 42,
+      "no_bid": 58,
+      "no_ask": 100,
+      "yes_mid": 21.0,
+      "no_mid": 79.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 21.0,
+          "implied_probability": "21%",
+          "payout_multiple": "4.8x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084587+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B903BA1AE55-38545A6A0FE",
+      "title": "yes UCF,yes Mississippi St.",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B903BA1AE55",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b903ba1ae55-38545a6a0fe",
+      "yes_bid": 0,
+      "yes_ask": 12,
+      "no_bid": 88,
+      "no_ask": 100,
+      "yes_mid": 6.0,
+      "no_mid": 94.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.0,
+          "implied_probability": "6%",
+          "payout_multiple": "16.7x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084604+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026EF81E84F980-64A6F9E5AD6",
+      "title": "yes Iowa St.,yes Kentucky,yes Iowa,yes Auburn,yes North Carolina St.,yes St. Bonaventure,yes Louisville,yes Washington,yes Cincinnati wins by over 2.5 Points,yes Providence wins by over 1.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026EF81E84F980",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026ef81e84f980-64a6f9e5ad6",
+      "yes_bid": 0,
+      "yes_ask": 4,
+      "no_bid": 96,
+      "no_ask": 100,
+      "yes_mid": 2.0,
+      "no_mid": 98.0,
+      "volume": 262,
+      "volume_24h": 0,
+      "open_interest": 262,
+      "last_price": 3,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.0,
+          "implied_probability": "2%",
+          "payout_multiple": "50.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084622+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202692082C88615-648107F95E6",
+      "title": "yes Iowa,yes North Carolina St.,yes Iowa St. wins by over 3.5 Points,no Kentucky wins by over 23.5 Points,no North Carolina St. wins by over 25.5 Points,yes La Salle wins by over 2.5 Points,yes Over 131.5 points scored,yes Over 137.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S202692082C88615",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202692082c88615-648107f95e6",
+      "yes_bid": 0,
+      "yes_ask": 12,
+      "no_bid": 88,
+      "no_ask": 100,
+      "yes_mid": 6.0,
+      "no_mid": 94.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.0,
+          "implied_probability": "6%",
+          "payout_multiple": "16.7x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084642+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026CE89252D8CF-B999F743296",
+      "title": "no Iowa wins by over 10.5 Points,no North Carolina St. wins by over 7.5 Points,yes St. Bonaventure wins by over 5.5 Points,yes Over 149.5 points scored,yes Over 152.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026CE89252D8CF",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026ce89252d8cf-b999f743296",
+      "yes_bid": 0,
+      "yes_ask": 3,
+      "no_bid": 97,
+      "no_ask": 100,
+      "yes_mid": 1.5,
+      "no_mid": 98.5,
+      "volume": 103,
+      "volume_24h": 0,
+      "open_interest": 103,
+      "last_price": 2,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084663+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20260717164CE1E-7D3E34ED021",
+      "title": "yes Iowa St. wins by over 9.5 Points,no North Carolina St. wins by over 10.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20260717164CE1E",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20260717164ce1e-7d3e34ed021",
+      "yes_bid": 0,
+      "yes_ask": 39,
+      "no_bid": 61,
+      "no_ask": 100,
+      "yes_mid": 19.5,
+      "no_mid": 80.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 19.5,
+          "implied_probability": "20%",
+          "payout_multiple": "5.1x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084672+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202630D0BBB7F76-CB92DA01DE1",
+      "title": "yes Iowa St.,yes Kentucky,yes Iowa,yes Auburn,yes North Carolina St.,yes St. Bonaventure,yes Louisville,yes Cincinnati wins by over 2.5 Points,yes Providence wins by over 1.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S202630D0BBB7F76",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202630d0bbb7f76-cb92da01de1",
+      "yes_bid": 0,
+      "yes_ask": 6,
+      "no_bid": 94,
+      "no_ask": 100,
+      "yes_mid": 3.0,
+      "no_mid": 97.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.0,
+          "implied_probability": "3%",
+          "payout_multiple": "33.3x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084680+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202622DE12C939B-E023F08C566",
+      "title": "yes Kentucky,yes Iowa,yes Auburn,yes St. Bonaventure,yes Louisville",
+      "event_ticker": "KXMVECROSSCATEGORY-S202622DE12C939B",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202622de12c939b-e023f08c566",
+      "yes_bid": 0,
+      "yes_ask": 29,
+      "no_bid": 71,
+      "no_ask": 100,
+      "yes_mid": 14.5,
+      "no_mid": 85.5,
+      "volume": 7,
+      "volume_24h": 0,
+      "open_interest": 7,
+      "last_price": 26,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 14.5,
+          "implied_probability": "14%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084743+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20269D271D9BB43-E792067F325",
+      "title": "yes Iowa,yes North Carolina St.,yes Iowa St. wins by over 3.5 Points,no Kentucky wins by over 23.5 Points,yes La Salle wins by over 2.5 Points,yes Over 131.5 points scored,yes Over 137.5 points scored,yes Over 130.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S20269D271D9BB43",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20269d271d9bb43-e792067f325",
+      "yes_bid": 0,
+      "yes_ask": 11,
+      "no_bid": 89,
+      "no_ask": 100,
+      "yes_mid": 5.5,
+      "no_mid": 94.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.5,
+          "implied_probability": "6%",
+          "payout_multiple": "18.2x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084753+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026DB456F73A44-938E920B674",
+      "title": "yes Kentucky,yes Iowa,yes St. Bonaventure,yes Louisville",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026DB456F73A44",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026db456f73a44-938e920b674",
+      "yes_bid": 0,
+      "yes_ask": 38,
+      "no_bid": 62,
+      "no_ask": 100,
+      "yes_mid": 19.0,
+      "no_mid": 81.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 19.0,
+          "implied_probability": "19%",
+          "payout_multiple": "5.3x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084776+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20267356A7029C6-8D0DFCA96DD",
+      "title": "no Iowa wins by over 10.5 Points,no North Carolina St. wins by over 7.5 Points,yes Over 149.5 points scored,yes Over 152.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S20267356A7029C6",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20267356a7029c6-8d0dfca96dd",
+      "yes_bid": 0,
+      "yes_ask": 5,
+      "no_bid": 95,
+      "no_ask": 100,
+      "yes_mid": 2.5,
+      "no_mid": 97.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.5,
+          "implied_probability": "2%",
+          "payout_multiple": "40.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084785+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026ABA759A1C10-8441111EF54",
+      "title": "no North Carolina St. wins by over 7.5 Points,yes Over 149.5 points scored,yes Over 152.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026ABA759A1C10",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026aba759a1c10-8441111ef54",
+      "yes_bid": 0,
+      "yes_ask": 11,
+      "no_bid": 89,
+      "no_ask": 100,
+      "yes_mid": 5.5,
+      "no_mid": 94.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.5,
+          "implied_probability": "6%",
+          "payout_multiple": "18.2x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084812+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202658DF23F94A2-A542A580A3B",
+      "title": "yes Nevada,yes Iowa St.,yes Kentucky,yes Iowa,yes Auburn,yes North Carolina St.,yes St. Bonaventure,yes Cincinnati wins by over 2.5 Points,yes Providence wins by over 1.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S202658DF23F94A2",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202658df23f94a2-a542a580a3b",
+      "yes_bid": 0,
+      "yes_ask": 7,
+      "no_bid": 93,
+      "no_ask": 100,
+      "yes_mid": 3.5,
+      "no_mid": 96.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.5,
+          "implied_probability": "4%",
+          "payout_multiple": "28.6x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084825+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B8899FB09F5-167BEB123FF",
+      "title": "yes New York,yes Kentucky wins by over 5.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B8899FB09F5",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b8899fb09f5-167beb123ff",
+      "yes_bid": 50,
+      "yes_ask": 100,
+      "no_bid": 0,
+      "no_ask": 50,
+      "yes_mid": 75.0,
+      "no_mid": 25.0,
+      "volume": 47,
+      "volume_24h": 0,
+      "open_interest": 47,
+      "last_price": 50,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "NO",
+          "price_cents": 25.0,
+          "implied_probability": "25%",
+          "payout_multiple": "4.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084837+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202689E84AB0CE7-53700996704",
+      "title": "yes Nevada,yes Iowa St.,yes UCF,yes Morgan St.,yes Iowa,yes Texas,yes Liberty,yes North Carolina St.,yes Washington",
+      "event_ticker": "KXMVECROSSCATEGORY-S202689E84AB0CE7",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202689e84ab0ce7-53700996704",
+      "yes_bid": 0,
+      "yes_ask": 6,
+      "no_bid": 94,
+      "no_ask": 100,
+      "yes_mid": 3.0,
+      "no_mid": 97.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.0,
+          "implied_probability": "3%",
+          "payout_multiple": "33.3x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084873+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026DC65031AE40-C47F7D05B1D",
+      "title": "no North Carolina St. wins by over 7.5 Points,yes Over 152.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026DC65031AE40",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026dc65031ae40-c47f7d05b1d",
+      "yes_bid": 0,
+      "yes_ask": 23,
+      "no_bid": 77,
+      "no_ask": 100,
+      "yes_mid": 11.5,
+      "no_mid": 88.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 11.5,
+          "implied_probability": "12%",
+          "payout_multiple": "8.7x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084883+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20262BB05025DF9-E9187A1E6EF",
+      "title": "no North Carolina St. wins by over 10.5 Points,yes St. Bonaventure wins by over 2.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20262BB05025DF9",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262bb05025df9-e9187a1e6ef",
+      "yes_bid": 0,
+      "yes_ask": 43,
+      "no_bid": 57,
+      "no_ask": 100,
+      "yes_mid": 21.5,
+      "no_mid": 78.5,
+      "volume": 12,
+      "volume_24h": 0,
+      "open_interest": 12,
+      "last_price": 38,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 21.5,
+          "implied_probability": "22%",
+          "payout_multiple": "4.7x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084925+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B2C1E915881-F53E6D6B276",
+      "title": "yes Iowa,yes North Carolina St.,yes Iowa St. wins by over 3.5 Points,no Kentucky wins by over 23.5 Points,no La Salle wins by over 2.5 Points,yes Over 131.5 points scored,yes Over 137.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B2C1E915881",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b2c1e915881-f53e6d6b276",
+      "yes_bid": 0,
+      "yes_ask": 31,
+      "no_bid": 69,
+      "no_ask": 100,
+      "yes_mid": 15.5,
+      "no_mid": 84.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 15.5,
+          "implied_probability": "16%",
+          "payout_multiple": "6.5x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.084966+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20262DC949210A9-E8631DB5576",
+      "title": "yes Iowa,yes North Carolina St.,yes La Salle,yes Iowa St. wins by over 3.5 Points,no Kentucky wins by over 23.5 Points,yes Over 131.5 points scored,yes Over 137.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S20262DC949210A9",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20262dc949210a9-e8631db5576",
+      "yes_bid": 0,
+      "yes_ask": 13,
+      "no_bid": 87,
+      "no_ask": 100,
+      "yes_mid": 6.5,
+      "no_mid": 93.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.5,
+          "implied_probability": "6%",
+          "payout_multiple": "15.4x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085002+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026C6E3C49544F-73C78F3D5AE",
+      "title": "yes Iowa,yes Kentucky wins by over 5.5 Points,yes North Carolina St. wins by over 4.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026C6E3C49544F",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026c6e3c49544f-73c78f3d5ae",
+      "yes_bid": 0,
+      "yes_ask": 40,
+      "no_bid": 60,
+      "no_ask": 100,
+      "yes_mid": 20.0,
+      "no_mid": 80.0,
+      "volume": 27,
+      "volume_24h": 0,
+      "open_interest": 27,
+      "last_price": 34,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 20.0,
+          "implied_probability": "20%",
+          "payout_multiple": "5.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085014+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026ACE90D098DE-3777BF5CB0E",
+      "title": "yes Nevada,yes Iowa St.,yes UCF,yes Morgan St.,yes Iowa,yes Liberty,yes North Carolina St.,yes Washington",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026ACE90D098DE",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026ace90d098de-3777bf5cb0e",
+      "yes_bid": 0,
+      "yes_ask": 8,
+      "no_bid": 92,
+      "no_ask": 100,
+      "yes_mid": 4.0,
+      "no_mid": 96.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 4.0,
+          "implied_probability": "4%",
+          "payout_multiple": "25.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085037+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026042D51460AF-A7A01E7B08E",
+      "title": "yes Iowa St.,yes Richmond,yes Texas,yes Tulane,no Iowa wins by over 16.5 Points,no Auburn wins by over 13.5 Points,no Oklahoma wins by over 13.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026042D51460AF",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026042d51460af-a7a01e7b08e",
+      "yes_bid": 0,
+      "yes_ask": 7,
+      "no_bid": 93,
+      "no_ask": 100,
+      "yes_mid": 3.5,
+      "no_mid": 96.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.5,
+          "implied_probability": "4%",
+          "payout_multiple": "28.6x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085047+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B2C1E915881-7BD3877F6D3",
+      "title": "yes Iowa,yes North Carolina St.,yes Iowa St. wins by over 3.5 Points,no Kentucky wins by over 23.5 Points,yes La Salle wins by over 2.5 Points,yes Over 131.5 points scored,yes Over 137.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B2C1E915881",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b2c1e915881-7bd3877f6d3",
+      "yes_bid": 0,
+      "yes_ask": 13,
+      "no_bid": 87,
+      "no_ask": 100,
+      "yes_mid": 6.5,
+      "no_mid": 93.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.5,
+          "implied_probability": "6%",
+          "payout_multiple": "15.4x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085057+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20260BD180DA401-3A8FAFC046F",
+      "title": "yes Iowa St.,yes Richmond,yes Texas,yes North Carolina St.,yes Tulane,no Iowa wins by over 16.5 Points,no Auburn wins by over 13.5 Points,no Oklahoma wins by over 13.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20260BD180DA401",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20260bd180da401-3a8fafc046f",
+      "yes_bid": 0,
+      "yes_ask": 6,
+      "no_bid": 94,
+      "no_ask": 100,
+      "yes_mid": 3.0,
+      "no_mid": 97.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.0,
+          "implied_probability": "3%",
+          "payout_multiple": "33.3x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085071+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026F0EE50C7B10-740FC4BEBAB",
+      "title": "yes Iowa St.,yes Kentucky,yes Iowa,yes Auburn,yes North Carolina St.,yes St. Bonaventure,yes Cincinnati wins by over 2.5 Points,yes Providence wins by over 1.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F0EE50C7B10",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026f0ee50c7b10-740fc4bebab",
+      "yes_bid": 0,
+      "yes_ask": 8,
+      "no_bid": 92,
+      "no_ask": 100,
+      "yes_mid": 4.0,
+      "no_mid": 96.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 4.0,
+          "implied_probability": "4%",
+          "payout_multiple": "25.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085077+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202621C55512465-70D2F1F4A98",
+      "title": "yes North Carolina St. wins by over 1.5 Points,yes St. Bonaventure wins by over 2.5 Points,yes Over 129.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S202621C55512465",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202621c55512465-70d2f1f4a98",
+      "yes_bid": 0,
+      "yes_ask": 48,
+      "no_bid": 52,
+      "no_ask": 100,
+      "yes_mid": 24.0,
+      "no_mid": 76.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 24.0,
+          "implied_probability": "24%",
+          "payout_multiple": "4.2x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085097+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B85FBB43AD9-91A575C123E",
+      "title": "yes Iowa St.,yes Kentucky,yes Iowa,yes North Carolina St.,yes St. Bonaventure,yes Cincinnati wins by over 2.5 Points,yes Providence wins by over 1.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B85FBB43AD9",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b85fbb43ad9-91a575c123e",
+      "yes_bid": 0,
+      "yes_ask": 10,
+      "no_bid": 90,
+      "no_ask": 100,
+      "yes_mid": 5.0,
+      "no_mid": 95.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.0,
+          "implied_probability": "5%",
+          "payout_multiple": "20.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085118+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026547CD032216-C3A2905D049",
+      "title": "yes Iowa St.,yes Iowa,yes North Carolina St.,yes St. Bonaventure,yes Cincinnati wins by over 2.5 Points,yes Providence wins by over 1.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026547CD032216",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026547cd032216-c3a2905d049",
+      "yes_bid": 0,
+      "yes_ask": 12,
+      "no_bid": 88,
+      "no_ask": 100,
+      "yes_mid": 6.0,
+      "no_mid": 94.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 6.0,
+          "implied_probability": "6%",
+          "payout_multiple": "16.7x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085127+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20260F605C354E7-D916D5D4AF5",
+      "title": "yes Iowa,yes North Carolina St.,yes St. Bonaventure,yes Cincinnati wins by over 2.5 Points,yes Providence wins by over 1.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20260F605C354E7",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20260f605c354e7-d916d5d4af5",
+      "yes_bid": 0,
+      "yes_ask": 15,
+      "no_bid": 85,
+      "no_ask": 100,
+      "yes_mid": 7.5,
+      "no_mid": 92.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 7.5,
+          "implied_probability": "8%",
+          "payout_multiple": "13.3x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085136+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202654D6439A710-12C6C8F23DA",
+      "title": "yes North Carolina St.,yes St. Bonaventure,yes Cincinnati wins by over 2.5 Points,yes Providence wins by over 1.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S202654D6439A710",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202654d6439a710-12c6c8f23da",
+      "yes_bid": 0,
+      "yes_ask": 17,
+      "no_bid": 83,
+      "no_ask": 100,
+      "yes_mid": 8.5,
+      "no_mid": 91.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 8.5,
+          "implied_probability": "8%",
+          "payout_multiple": "11.8x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085150+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026E18D01CB864-ED85A73D878",
+      "title": "yes St. Bonaventure,yes Cincinnati wins by over 2.5 Points,yes Providence wins by over 1.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026E18D01CB864",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026e18d01cb864-ed85a73d878",
+      "yes_bid": 0,
+      "yes_ask": 21,
+      "no_bid": 79,
+      "no_ask": 100,
+      "yes_mid": 10.5,
+      "no_mid": 89.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 10.5,
+          "implied_probability": "10%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085160+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026BF33157C50A-F962069F8D5",
+      "title": "yes Iowa St.,yes North Carolina St.,yes St. Bonaventure,yes Louisville,yes Auburn wins by over 4.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026BF33157C50A",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026bf33157c50a-f962069f8d5",
+      "yes_bid": 0,
+      "yes_ask": 23,
+      "no_bid": 77,
+      "no_ask": 100,
+      "yes_mid": 11.5,
+      "no_mid": 88.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 11.5,
+          "implied_probability": "12%",
+          "payout_multiple": "8.7x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085212+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20265F67A63BF60-E57A5ACE9D5",
+      "title": "yes Iowa,yes North Carolina St.,yes Iowa St. wins by over 3.5 Points,no Kentucky wins by over 23.5 Points,yes Over 131.5 points scored,yes Over 137.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S20265F67A63BF60",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20265f67a63bf60-e57a5ace9d5",
+      "yes_bid": 0,
+      "yes_ask": 43,
+      "no_bid": 57,
+      "no_ask": 100,
+      "yes_mid": 21.5,
+      "no_mid": 78.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 21.5,
+          "implied_probability": "22%",
+          "payout_multiple": "4.7x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085224+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026469F48E6F1F-66B8B3E6016",
+      "title": "yes Iowa St.,yes North Carolina St.,no LSU wins by over 8.5 Points,no Iowa wins by over 19.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026469F48E6F1F",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026469f48e6f1f-66b8b3e6016",
+      "yes_bid": 0,
+      "yes_ask": 55,
+      "no_bid": 45,
+      "no_ask": 100,
+      "yes_mid": 27.5,
+      "no_mid": 72.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 27.5,
+          "implied_probability": "28%",
+          "payout_multiple": "3.6x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085234+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20269E55A6BD822-3BC954AA1A3",
+      "title": "yes Cincinnati wins by over 2.5 Points,yes Providence wins by over 1.5 Points,yes Over 145.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S20269E55A6BD822",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20269e55a6bd822-3bc954aa1a3",
+      "yes_bid": 0,
+      "yes_ask": 15,
+      "no_bid": 85,
+      "no_ask": 100,
+      "yes_mid": 7.5,
+      "no_mid": 92.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 7.5,
+          "implied_probability": "8%",
+          "payout_multiple": "13.3x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085264+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026ED30D11AAE9-19025F410AD",
+      "title": "yes Cameron Norrie,yes Daniil Medvedev,yes Cleveland,yes Toronto,yes North Carolina St.,yes St. Bonaventure,yes Iga Swiatek,yes Jessica Pegula",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026ED30D11AAE9",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026ed30d11aae9-19025f410ad",
+      "yes_bid": 0,
+      "yes_ask": 5,
+      "no_bid": 95,
+      "no_ask": 100,
+      "yes_mid": 2.5,
+      "no_mid": 97.5,
+      "volume": 351,
+      "volume_24h": 0,
+      "open_interest": 351,
+      "last_price": 5,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.5,
+          "implied_probability": "2%",
+          "payout_multiple": "40.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085283+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20269E55A6BD822-C414D57D9DC",
+      "title": "yes Cincinnati wins by over 2.5 Points,yes Providence wins by over 1.5 Points,no Over 145.5 points scored",
+      "event_ticker": "KXMVECROSSCATEGORY-S20269E55A6BD822",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20269e55a6bd822-c414d57d9dc",
+      "yes_bid": 0,
+      "yes_ask": 16,
+      "no_bid": 84,
+      "no_ask": 100,
+      "yes_mid": 8.0,
+      "no_mid": 92.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 8.0,
+          "implied_probability": "8%",
+          "payout_multiple": "12.5x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085288+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202689B6CE85610-FA5E6D713BD",
+      "title": "yes Nevada,yes Iowa St.,yes UCF,yes Morgan St.,yes Iowa,yes North Carolina St.,yes Washington",
+      "event_ticker": "KXMVECROSSCATEGORY-S202689B6CE85610",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202689b6ce85610-fa5e6d713bd",
+      "yes_bid": 0,
+      "yes_ask": 11,
+      "no_bid": 89,
+      "no_ask": 100,
+      "yes_mid": 5.5,
+      "no_mid": 94.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.5,
+          "implied_probability": "6%",
+          "payout_multiple": "18.2x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085294+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026469F48E6F1F-4E2A413038D",
+      "title": "yes Iowa St.,yes North Carolina St.,no LSU wins by over 8.5 Points,no Iowa wins by over 16.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026469F48E6F1F",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026469f48e6f1f-4e2a413038d",
+      "yes_bid": 0,
+      "yes_ask": 50,
+      "no_bid": 50,
+      "no_ask": 100,
+      "yes_mid": 25.0,
+      "no_mid": 75.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 25.0,
+          "implied_probability": "25%",
+          "payout_multiple": "4.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085304+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026D02016F0F47-F0E1ECAA1A6",
+      "title": "yes Iowa St.,yes Iowa,yes North Carolina St.,no LSU wins by over 8.5 Points,no Iowa wins by over 16.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026D02016F0F47",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026d02016f0f47-f0e1ecaa1a6",
+      "yes_bid": 0,
+      "yes_ask": 45,
+      "no_bid": 55,
+      "no_ask": 100,
+      "yes_mid": 22.5,
+      "no_mid": 77.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 22.5,
+          "implied_probability": "22%",
+          "payout_multiple": "4.4x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085309+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20264BBF7B30BCA-8F882F74A4B",
+      "title": "yes Iowa St.,yes Richmond,yes Texas,yes North Carolina St.,yes Tulane,no Auburn wins by over 13.5 Points,no Oklahoma wins by over 13.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20264BBF7B30BCA",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20264bbf7b30bca-8f882f74a4b",
+      "yes_bid": 0,
+      "yes_ask": 8,
+      "no_bid": 92,
+      "no_ask": 100,
+      "yes_mid": 4.0,
+      "no_mid": 96.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 4.0,
+          "implied_probability": "4%",
+          "payout_multiple": "25.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085329+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026F11B46125ED-842739CDCAE",
+      "title": "yes Kentucky,yes Iowa,yes North Carolina St. wins by over 7.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F11B46125ED",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026f11b46125ed-842739cdcae",
+      "yes_bid": 0,
+      "yes_ask": 41,
+      "no_bid": 59,
+      "no_ask": 100,
+      "yes_mid": 20.5,
+      "no_mid": 79.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 20.5,
+          "implied_probability": "20%",
+          "payout_multiple": "4.9x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085339+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026A8B283B9B22-6066287B55E",
+      "title": "yes Iowa St.,yes Auburn,yes North Carolina St.,yes St. Bonaventure,yes Louisville",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026A8B283B9B22",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026a8b283b9b22-6066287b55e",
+      "yes_bid": 0,
+      "yes_ask": 29,
+      "no_bid": 71,
+      "no_ask": 100,
+      "yes_mid": 14.5,
+      "no_mid": 85.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 14.5,
+          "implied_probability": "14%",
+          "payout_multiple": "6.9x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085345+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S202672B6A57B935-7CC180B21AA",
+      "title": "yes UC San Diego,yes Colorado St.,yes Kentucky,yes Texas,yes Auburn,yes Indiana,yes Oklahoma,yes Louisville,yes Florida Atlantic,yes Clemson,yes UNLV",
+      "event_ticker": "KXMVECROSSCATEGORY-S202672B6A57B935",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s202672b6a57b935-7cc180b21aa",
+      "yes_bid": 0,
+      "yes_ask": 3,
+      "no_bid": 97,
+      "no_ask": 100,
+      "yes_mid": 1.5,
+      "no_mid": 98.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085358+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026F13DBFCEF30-B340B46BCB6",
+      "title": "yes North Carolina St.,yes St. Bonaventure,no Iowa St. wins by over 12.5 Points,yes Kentucky wins by over 8.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F13DBFCEF30",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026f13dbfcef30-b340b46bcb6",
+      "yes_bid": 0,
+      "yes_ask": 17,
+      "no_bid": 83,
+      "no_ask": 100,
+      "yes_mid": 8.5,
+      "no_mid": 91.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 8.5,
+          "implied_probability": "8%",
+          "payout_multiple": "11.8x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085375+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20266C3DEC376C6-92152D777C2",
+      "title": "yes St. Bonaventure,no Iowa St. wins by over 12.5 Points,yes Kentucky wins by over 8.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S20266C3DEC376C6",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20266c3dec376c6-92152d777c2",
+      "yes_bid": 0,
+      "yes_ask": 21,
+      "no_bid": 79,
+      "no_ask": 100,
+      "yes_mid": 10.5,
+      "no_mid": 89.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 10.5,
+          "implied_probability": "10%",
+          "payout_multiple": "9.5x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085386+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026CBBD9E35A80-CB7641BC493",
+      "title": "yes UC San Diego,yes Colorado St.,yes Texas,yes Auburn,yes Indiana,yes Oklahoma,yes Louisville,yes Florida Atlantic,yes Clemson,yes UNLV",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026CBBD9E35A80",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026cbbd9e35a80-cb7641bc493",
+      "yes_bid": 0,
+      "yes_ask": 3,
+      "no_bid": 97,
+      "no_ask": 100,
+      "yes_mid": 1.5,
+      "no_mid": 98.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 1.5,
+          "implied_probability": "2%",
+          "payout_multiple": "66.7x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085400+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026B1FFABEE828-B14B325B366",
+      "title": "yes Nevada,yes Iowa St.,yes BYU,yes Richmond,yes Kentucky,yes Iowa,yes Auburn,yes North Carolina St.,yes Louisville",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026B1FFABEE828",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026b1ffabee828-b14b325b366",
+      "yes_bid": 0,
+      "yes_ask": 10,
+      "no_bid": 90,
+      "no_ask": 100,
+      "yes_mid": 5.0,
+      "no_mid": 95.0,
+      "volume": 90,
+      "volume_24h": 0,
+      "open_interest": 90,
+      "last_price": 10,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.0,
+          "implied_probability": "5%",
+          "payout_multiple": "20.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085415+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026A2543D8581D-BE08B000C35",
+      "title": "yes UC San Diego,yes Colorado St.,yes Texas,yes Auburn,yes Indiana,yes Oklahoma,yes Florida Atlantic,yes Clemson,yes UNLV",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026A2543D8581D",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026a2543d8581d-be08b000c35",
+      "yes_bid": 0,
+      "yes_ask": 4,
+      "no_bid": 96,
+      "no_ask": 100,
+      "yes_mid": 2.0,
+      "no_mid": 98.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.0,
+          "implied_probability": "2%",
+          "payout_multiple": "50.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085421+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026C4FD1497AE0-8C25282F05C",
+      "title": "yes Richmond,yes Kentucky,yes Iowa,yes Auburn,yes North Carolina St.,yes Bethune-Cookman,yes St. Bonaventure,yes Louisville,yes Washington,yes UNLV",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026C4FD1497AE0",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026c4fd1497ae0-8c25282f05c",
+      "yes_bid": 0,
+      "yes_ask": 5,
+      "no_bid": 95,
+      "no_ask": 100,
+      "yes_mid": 2.5,
+      "no_mid": 97.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 2.5,
+          "implied_probability": "2%",
+          "payout_multiple": "40.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085426+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026CCC99F8ED55-6437D0C82C7",
+      "title": "yes BYU,yes Kentucky,yes Indiana,yes Minnesota,yes Louisville",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026CCC99F8ED55",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026ccc99f8ed55-6437d0c82c7",
+      "yes_bid": 0,
+      "yes_ask": 18,
+      "no_bid": 82,
+      "no_ask": 100,
+      "yes_mid": 9.0,
+      "no_mid": 91.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 9.0,
+          "implied_probability": "9%",
+          "payout_multiple": "11.1x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085435+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026EA20AD361EA-7261C592334",
+      "title": "no Iowa St. wins by over 15.5 Points,yes Over 140.5 points scored",
+      "event_ticker": "KXMVESPORTSMULTIGAMEEXTENDED-S2026EA20AD361EA",
+      "url": "https://kalshi.com/markets/kxmvesportsmultigameextended-s2026ea20ad361ea-7261c592334",
+      "yes_bid": 0,
+      "yes_ask": 51,
+      "no_bid": 49,
+      "no_ask": 100,
+      "yes_mid": 25.5,
+      "no_mid": 74.5,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 25.5,
+          "implied_probability": "26%",
+          "payout_multiple": "3.9x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085442+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026EC688C14223-7907687FA3D",
+      "title": "yes Iowa St.,yes Richmond,yes Texas,yes North Carolina St.,yes Tulane,no Auburn wins by over 13.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026EC688C14223",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026ec688c14223-7907687fa3d",
+      "yes_bid": 0,
+      "yes_ask": 10,
+      "no_bid": 90,
+      "no_ask": 100,
+      "yes_mid": 5.0,
+      "no_mid": 95.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 5.0,
+          "implied_probability": "5%",
+          "payout_multiple": "20.0x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085447+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S2026259C39C430D-CC0FB1B85C1",
+      "title": "yes Cincinnati wins by over 2.5 Points,no Auburn wins by over 7.5 Points,yes Providence wins by over 1.5 Points",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026259C39C430D",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s2026259c39c430d-cc0fb1b85c1",
+      "yes_bid": 0,
+      "yes_ask": 16,
+      "no_bid": 84,
+      "no_ask": 100,
+      "yes_mid": 8.0,
+      "no_mid": 92.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 8.0,
+          "implied_probability": "8%",
+          "payout_multiple": "12.5x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085460+00:00"
+    },
+    {
+      "platform": "kalshi",
+      "ticker": "KXMVECROSSCATEGORY-S20267533053AFF1-B39C38F0E72",
+      "title": "yes UC San Diego,yes Colorado St.,yes Texas,yes Auburn,yes Indiana,yes Oklahoma,yes Florida Atlantic,yes Clemson",
+      "event_ticker": "KXMVECROSSCATEGORY-S20267533053AFF1",
+      "url": "https://kalshi.com/markets/kxmvecrosscategory-s20267533053aff1-b39c38f0e72",
+      "yes_bid": 0,
+      "yes_ask": 6,
+      "no_bid": 94,
+      "no_ask": 100,
+      "yes_mid": 3.0,
+      "no_mid": 97.0,
+      "volume": 0,
+      "volume_24h": 0,
+      "open_interest": 0,
+      "last_price": 0,
+      "liquidity": 0,
+      "cheap_sides": [
+        {
+          "side": "YES",
+          "price_cents": 3.0,
+          "implied_probability": "3%",
+          "payout_multiple": "33.3x"
+        }
+      ],
+      "scanned_at": "2026-03-11T12:02:24.085468+00:00"
+    }
+  ],
+  "high_volume_markets": [],
+  "summary": {
+    "total_scanned": 500,
+    "markets_with_cheap_outcomes": 62,
+    "high_volume_markets": 0
+  }
+}
