@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@import url('/usr/share/fonts/truetype/inter/');
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), local('Inter Regular');
+}
+@page {
+  size: letter;
+  margin: 0.75in;
+  background: #111111;
+}
+* { box-sizing: border-box; }
+html, body {
+  background: #111111;
+  color: #e0e0e0;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+h1 { color: #ffffff; font-size: 22pt; margin-top: 0; border-bottom: 2px solid #D4A62A; padding-bottom: 8px; }
+h2 { color: #D4A62A; font-size: 16pt; margin-top: 28px; border-bottom: 1px solid #333; padding-bottom: 4px; }
+h3 { color: #ffffff; font-size: 13pt; margin-top: 20px; }
+h4 { color: #cccccc; font-size: 11pt; margin-top: 16px; }
+p { margin: 8px 0; }
+strong { color: #ffffff; }
+code {
+  background: #1e1e1e;
+  color: #D4A62A;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10pt;
+  word-wrap: break-word;
+}
+pre {
+  background: #1e1e1e;
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 9pt;
+  border: 1px solid #333;
+}
+pre code { background: none; padding: 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 10pt;
+}
+th {
+  background: #1e1e1e;
+  color: #D4A62A;
+  padding: 8px 10px;
+  text-align: left;
+  border: 1px solid #333;
+}
+td {
+  padding: 6px 10px;
+  border: 1px solid #333;
+  color: #e0e0e0;
+}
+tr:nth-child(even) { background: #1a1a1a; }
+ul, ol { margin: 8px 0; padding-left: 24px; }
+li { margin: 4px 0; }
+a { color: #D4A62A; text-decoration: none; }
+blockquote {
+  border-left: 3px solid #D4A62A;
+  margin: 12px 0;
+  padding: 8px 16px;
+  background: #1a1a1a;
+  color: #cccccc;
+}
+hr { border: none; border-top: 1px solid #333; margin: 24px 0; }
+</style>
+</head>
+<body>
+<h1 id="vurt-seo-master-plan">VURT SEO MASTER PLAN</h1>
+<h3 id="comprehensive-technical-audit-strategic-roadmap">Comprehensive
+Technical Audit + Strategic Roadmap</h3>
+<h3 id="date-march-18-2026-updated-march-19-2026">Date: March 18, 2026
+(Updated: March 19, 2026)</h3>
+<h3 id="prepared-by-dioni-vasquez-seo-analyst-external-audit">Prepared
+by: Dioni Vasquez + SEO Analyst (External Audit)</h3>
+<h3 id="crawl-date-march-17-2026">Crawl Date: March 17, 2026</h3>
+<hr />
+<h2 id="executive-summary">EXECUTIVE SUMMARY</h2>
+<p>VURT (www.myvurt.com) is a free vertical drama and micro-series
+streaming platform built on the enveu CMS. The site was professionally
+crawled on March 17, 2026, and cross-referenced with the internal dev
+team brief.</p>
+<p><strong>The Bottom Line:</strong> VURT is currently invisible to both
+traditional search engines and AI search platforms. Zero SEO work has
+been done to date. With 100+ titles, TechCrunch press coverage, and
+talent like Kevin Hart and Vivica A. Fox, VURT has exceptional raw
+material being completely wasted due to fundamental technical
+failures.</p>
+<p>When someone searches “free vertical drama app” or “micro drama like
+ReelShort but free,” VURT does not appear anywhere — not on Google, not
+in ChatGPT, not in Perplexity, not in Google AI Overviews.</p>
+<hr />
+<h2 id="overall-health-score">OVERALL HEALTH SCORE</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Score</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Crawlability &amp; Indexation</td>
+<td><strong>FAIL</strong></td>
+<td>Empty sitemap, no canonical tags, Angular SPA blocks crawlers</td>
+</tr>
+<tr class="even">
+<td>On-Page SEO</td>
+<td><strong>FAIL</strong></td>
+<td>58% missing meta descriptions, 42% duplicate titles, 42% missing
+H1s</td>
+</tr>
+<tr class="odd">
+<td>Technical Infrastructure</td>
+<td><strong>FAIL</strong></td>
+<td>No SSR/pre-rendering; AI crawlers see blank page</td>
+</tr>
+<tr class="even">
+<td>Content Quality</td>
+<td><strong>FAIL</strong></td>
+<td>83% low-content pages, 42% exact duplicates detected</td>
+</tr>
+<tr class="odd">
+<td>Structured Data</td>
+<td><strong>FAIL</strong></td>
+<td>Zero schema markup on any page — no rich results possible</td>
+</tr>
+<tr class="even">
+<td>Security Headers</td>
+<td><strong>WARN</strong></td>
+<td>HTTPS present but missing CSP, X-Content-Type, X-Frame-Options</td>
+</tr>
+<tr class="odd">
+<td>Internal Linking</td>
+<td><strong>WARN</strong></td>
+<td>33% of pages have zero internal outlinks; broken URL patterns
+found</td>
+</tr>
+<tr class="even">
+<td>Image SEO</td>
+<td><strong>FAIL</strong></td>
+<td>100% missing alt attributes; hashed CDN filenames with zero SEO
+value</td>
+</tr>
+<tr class="odd">
+<td>Mobile Readiness</td>
+<td><strong>PASS</strong></td>
+<td>Viewport set, font sizes legible, no unsupported plugins</td>
+</tr>
+<tr class="even">
+<td>Off-Site / Backlinks</td>
+<td><strong>WARN</strong></td>
+<td>TechCrunch coverage exists but no strategic link-building in
+place</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-1-crawl-data-technical-findings">PART 1: CRAWL DATA &amp;
+TECHNICAL FINDINGS</h2>
+<h3 id="crawl-summary">1.1 Crawl Summary</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Value</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total URLs Encountered</td>
+<td>20</td>
+<td>Very Low</td>
+</tr>
+<tr class="even">
+<td>Internal URLs</td>
+<td>16 (80%)</td>
+<td>Extremely Low</td>
+</tr>
+<tr class="odd">
+<td>External URLs</td>
+<td>4 (20%)</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>HTML Pages</td>
+<td>12</td>
+<td>Thin Site</td>
+</tr>
+<tr class="odd">
+<td>JavaScript Files</td>
+<td>3 (18.75%)</td>
+<td>Angular SPA Confirmed</td>
+</tr>
+<tr class="even">
+<td>CSS Files</td>
+<td>1</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>Images Crawled</td>
+<td>0 internal / 1 external</td>
+<td>Critical Image Gap</td>
+</tr>
+<tr class="even">
+<td>Success Responses (2xx)</td>
+<td>19 (95%)</td>
+<td>Good</td>
+</tr>
+<tr class="odd">
+<td>Redirections (3xx)</td>
+<td>1 (5%)</td>
+<td>Acceptable</td>
+</tr>
+<tr class="even">
+<td>Client/Server Errors</td>
+<td>0</td>
+<td>Good</td>
+</tr>
+<tr class="odd">
+<td>Average Response Time</td>
+<td>&lt; 1 second</td>
+<td>Fast</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key findings:</strong> - Only 20 URLs discovered for a
+platform with 100+ titles — the crawler couldn’t find series/episode
+pages through navigation - <strong>UPDATE (Mar 19):</strong> Manual
+testing confirms series DO have unique URLs (e.g.,
+<code>myvurt.com/detail/micro_series/the-love-letter</code>) — but
+episodes do NOT. The URL does not change when switching episodes. The
+crawler missed series URLs because the Angular SPA doesn’t expose them
+through standard links. - Zero internal images crawled — all loaded via
+JavaScript or served from external CDN with hashed filenames - 12 HTML
+pages = the entire indexable footprint of VURT</p>
+<h3 id="url-structure">1.2 URL Structure</h3>
+<p>URLs that exist are clean: no uppercase, no parameters, no spaces.
+URL hygiene is sound for existing pages.</p>
+<p><strong>UPDATED URL Findings (Mar 19 — Manual Testing):</strong></p>
+<p>Series pages DO have unique URLs. Example:
+<code>https://www.myvurt.com/detail/micro_series/the-love-letter</code>.
+The initial crawl missed these because the Angular SPA doesn’t expose
+them through standard HTML links — the crawler couldn’t discover them
+through navigation.</p>
+<p><strong>However, three critical URL problems remain:</strong></p>
+<p><strong>Problem 1: Episodes have NO unique URLs.</strong> When a user
+clicks from one episode to another within a series, the URL in the
+address bar does NOT change — it stays at the show-level URL (e.g.,
+<code>myvurt.com/detail/micro_series/the-love-letter</code>). This
+means: - Individual episodes cannot be indexed by any search engine -
+Episode-level sharing is impossible via web URL - Deep links from app →
+web cannot route to a specific episode</p>
+<p><strong>Problem 2: Share links go to enveu’s domain, not
+VURT’s.</strong> When a user clicks “Share” on an episode, the generated
+link is <code>https://vurt.enveu.link/dmqdikktzy</code> — a short link
+on enveu’s domain with a random hash. This means: - Every share builds
+SEO authority for <code>enveu.link</code>, NOT <code>myvurt.com</code> -
+The “vurt” subdomain provides zero SEO benefit — authority accrues to
+the root domain (<code>enveu.link</code>) - The random hash
+(<code>dmqdikktzy</code>) carries no keyword signal — search engines
+can’t tell what content lives at that URL - All social sharing,
+backlinks, and word-of-mouth link equity is being given away to a
+third-party domain</p>
+<p><strong>Problem 3: Deep links are broken at the episode
+level.</strong> The enveu short link triggers a browser → app handoff,
+but the app only resolves to the show page, not the specific episode.
+The short link likely carries the episode ID, but the app’s deep link
+handler doesn’t parse it.</p>
+<p><strong>What share links SHOULD look like:</strong>
+<code>https://www.myvurt.com/detail/micro_series/the-love-letter/episode-2</code>
+— keyword-rich, on VURT’s domain, directly linkable and indexable.</p>
+<p><strong>Broken Internal URLs Detected (Bug)</strong></p>
+<p>The crawl found malformed URLs where the domain is doubled: -
+<code>https://www.myvurt.com/www.myvurt.com</code> — domain prepended as
+path -
+<code>https://www.myvurt.com/www.myvurt.com/terms-and-conditions</code>
+- <code>https://www.myvurt.com/www.myvurt.com/privacy-policy</code> -
+<code>https://www.myvurt.com/settings/terms-and-conditions</code> —
+internal settings path exposed</p>
+<p><strong>Cause:</strong> Absolute URL placed in an href expecting a
+relative path. Immediate code fix required.</p>
+<h3 id="crawl-depth">1.3 Crawl Depth</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Depth (Clicks from Home)</th>
+<th>Pages</th>
+<th>% of Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0 (Homepage)</td>
+<td>1</td>
+<td>8.33%</td>
+</tr>
+<tr class="even">
+<td>1 click</td>
+<td>7</td>
+<td>58.33%</td>
+</tr>
+<tr class="odd">
+<td>2 clicks</td>
+<td>4</td>
+<td>33.33%</td>
+</tr>
+</tbody>
+</table>
+<p>All pages within 2 clicks — good. When unique series/episode URLs are
+created, keep content within 3 clicks through proper navigation.</p>
+<hr />
+<h2 id="part-2-on-page-seo-analysis">PART 2: ON-PAGE SEO ANALYSIS</h2>
+<h3 id="page-titles">2.1 Page Titles</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Issue</th>
+<th>Count</th>
+<th>% of Pages</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Missing Titles</td>
+<td>0</td>
+<td>0%</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>Duplicate Titles</td>
+<td>5</td>
+<td>41.67%</td>
+<td>CRITICAL</td>
+</tr>
+<tr class="odd">
+<td>Over 60 Characters</td>
+<td>5</td>
+<td>41.67%</td>
+<td>MEDIUM</td>
+</tr>
+<tr class="even">
+<td>Below 30 Characters</td>
+<td>7</td>
+<td>58.33%</td>
+<td>HIGH</td>
+</tr>
+<tr class="odd">
+<td>Over 561 Pixels</td>
+<td>5</td>
+<td>41.67%</td>
+<td>MEDIUM</td>
+</tr>
+<tr class="even">
+<td>Below 200 Pixels</td>
+<td>6</td>
+<td>50.00%</td>
+<td>HIGH</td>
+</tr>
+<tr class="odd">
+<td>Same as H1</td>
+<td>0</td>
+<td>0%</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<p>5 duplicate titles on a 12-page site = the Angular app is serving
+generic titles like “Video Detail” across multiple pages. 58% of titles
+are too short for meaningful keywords.</p>
+<p><strong>Recommended Title Templates:</strong> -
+<strong>Homepage:</strong> VURT — Free Vertical Drama &amp; Micro-Series
+| Built for the Culture - <strong>Series Pages:</strong> {Series Name} |
+VURT — Watch Free - <strong>Episode Pages:</strong> {Series Name} Ep.
+{#}: {Episode Title} | VURT - <strong>About:</strong> About VURT | Free
+Streaming for Black Creators &amp; Culture - <strong>FAQ:</strong> FAQ |
+VURT — Free Vertical Drama &amp; Micro-Series -
+<strong>Contact:</strong> Contact Us | VURT Streaming Support</p>
+<h3 id="meta-descriptions">2.2 Meta Descriptions</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Issue</th>
+<th>Count</th>
+<th>% of Pages</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Missing Meta Descriptions</td>
+<td>7</td>
+<td>58.33%</td>
+<td>CRITICAL</td>
+</tr>
+<tr class="even">
+<td>Duplicate Meta Descriptions</td>
+<td>5</td>
+<td>41.67%</td>
+<td>CRITICAL</td>
+</tr>
+</tbody>
+</table>
+<p>58% missing, and the remaining 42% are all duplicates. Effectively
+<strong>0% of pages have a proper, unique meta description.</strong></p>
+<p><strong>Recommended Templates:</strong> - <strong>Homepage:</strong>
+“Watch 100+ vertical micro-series, dramas, and originals free on VURT.
+No paywall. Black creators, bold stories, designed for your phone.” -
+<strong>Series Pages:</strong> “{Series synopsis, first 155 characters}”
+— dynamically pulled from CMS - <strong>Static Pages:</strong> Unique,
+keyword-rich description per page</p>
+<h3 id="heading-tags">2.3 Heading Tags</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Issue</th>
+<th>Count</th>
+<th>% of Pages</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Missing H1</td>
+<td>5</td>
+<td>41.67%</td>
+<td>CRITICAL</td>
+</tr>
+<tr class="even">
+<td>Missing H2</td>
+<td>5</td>
+<td>41.67%</td>
+<td>HIGH</td>
+</tr>
+<tr class="odd">
+<td>Multiple H2s (OK)</td>
+<td>3</td>
+<td>25.00%</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<p>Homepage H1 is dynamically set to the featured series name and
+changes with the carousel. Should be persistent: <strong>“VURT — Free
+Vertical Micro-Series &amp; Drama Streaming”</strong></p>
+<h3 id="meta-keywords">2.4 Meta Keywords</h3>
+<p>All 12 pages missing meta keywords. Google doesn’t use them, but
+<strong>Bing does — and Bing powers ChatGPT search.</strong> Low-effort
+optimization worth adding.</p>
+<h3 id="content-quality">2.5 Content Quality</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Issue</th>
+<th>Count</th>
+<th>% of Pages</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Exact Duplicate Content</td>
+<td>5</td>
+<td>41.67%</td>
+<td>CRITICAL</td>
+</tr>
+<tr class="even">
+<td>Low Content Pages</td>
+<td>10</td>
+<td>83.33%</td>
+<td>CRITICAL</td>
+</tr>
+</tbody>
+</table>
+<p>83% flagged as “low content” because the crawler sees the Angular JS
+shell, not the rendered content. Two specific empty pages identified: -
+<strong>“What’s New”</strong> — placeholder with no actual content -
+<strong>“Help/Support”</strong> — lists categories but has no
+articles</p>
+<p><strong>Recommendation:</strong> Populate with real content or add
+noindex tags. Empty pages damage site-wide quality signals.</p>
+<hr />
+<h2 id="part-3-technical-seo">PART 3: TECHNICAL SEO</h2>
+<h3 id="canonical-tags">3.1 Canonical Tags</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Issue</th>
+<th>Count</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Missing Canonical Tags</td>
+<td>12 (100%)</td>
+<td>CRITICAL</td>
+</tr>
+<tr class="even">
+<td>Self-Referencing Canonicals</td>
+<td>0</td>
+<td>CRITICAL</td>
+</tr>
+</tbody>
+</table>
+<p>Zero pages have a canonical tag. Every page must have:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">&quot;canonical&quot;</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://www.myvurt.com/{page-slug}&quot;</span> <span class="kw">/&gt;</span></span></code></pre></div>
+<h3 id="sitemap">3.2 Sitemap</h3>
+<p><code>myvurt.com/sitemap.xml</code> returns HTTP 200 but contains
+<strong>zero URLs</strong>. Google has no roadmap to discover pages.</p>
+<p><strong>Required sitemap contents:</strong> - Homepage URL - All
+static pages (About, FAQ, Contact, Help, Privacy, Terms, What’s New) -
+Every series page: <code>/series/{slug}</code> - Every episode page:
+<code>/series/{slug}/episode-{n}</code> - Every category/genre page</p>
+<p>Must be auto-generated by the CMS and updated on publish. Add
+<code>Sitemap: https://www.myvurt.com/sitemap.xml</code> to
+robots.txt.</p>
+<h3 id="structured-data-schema.org">3.3 Structured Data
+(Schema.org)</h3>
+<p>Zero structured data on any page. No JSON-LD, no Microdata, no
+RDFa.</p>
+<p><strong>Required Schema Implementations:</strong></p>
+<p><strong>Homepage — Organization:</strong></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;@context&quot;</span><span class="fu">:</span> <span class="st">&quot;https://schema.org&quot;</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Organization&quot;</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;VURT&quot;</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://www.myvurt.com&quot;</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;logo&quot;</span><span class="fu">:</span> <span class="st">&quot;https://www.myvurt.com/images/vurt-logo.png&quot;</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Vertical-first streaming platform for micro-series, dramas, and originals. Free, ad-supported, built for the culture.&quot;</span><span class="fu">,</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;sameAs&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;https://www.instagram.com/myvurt&quot;</span><span class="ot">,</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;https://www.tiktok.com/@myvurt&quot;</span><span class="ot">,</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;https://www.youtube.com/@myVurt1&quot;</span><span class="ot">,</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;https://www.facebook.com/myvurt&quot;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;contactPoint&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;ContactPoint&quot;</span><span class="fu">,</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;contact@myvurt.com&quot;</span><span class="fu">,</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;contactType&quot;</span><span class="fu">:</span> <span class="st">&quot;customer service&quot;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p><strong>FAQ Page — FAQPage:</strong></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;@context&quot;</span><span class="fu">:</span> <span class="st">&quot;https://schema.org&quot;</span><span class="fu">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;FAQPage&quot;</span><span class="fu">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;mainEntity&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Question&quot;</span><span class="fu">,</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;What is VURT?&quot;</span><span class="fu">,</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;acceptedAnswer&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Answer&quot;</span><span class="fu">,</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;VURT is the ultimate streaming destination for premium vertical cinema. We provide a mobile first viewing experience across all platforms, delivering quality content for FREE.&quot;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Question&quot;</span><span class="fu">,</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Is VURT free?&quot;</span><span class="fu">,</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;acceptedAnswer&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Answer&quot;</span><span class="fu">,</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Yes, VURT is a free and legal video streaming service. To keep our service free, we include advertising.&quot;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Question&quot;</span><span class="fu">,</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Where can I watch VURT?&quot;</span><span class="fu">,</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;acceptedAnswer&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Answer&quot;</span><span class="fu">,</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;You can watch VURT anytime, anywhere for free at www.myvurt.com or on the VURT app on iOS, Android, smart TVs, tablets, and streaming devices.&quot;</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Question&quot;</span><span class="fu">,</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Can I submit my film or show to VURT?&quot;</span><span class="fu">,</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;acceptedAnswer&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Answer&quot;</span><span class="fu">,</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Yes, VURT supports independent creators. Email submissions@myvurt.com for more information.&quot;</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p><strong>Series Pages — TVSeries:</strong></p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;@context&quot;</span><span class="fu">:</span> <span class="st">&quot;https://schema.org&quot;</span><span class="fu">,</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;TVSeries&quot;</span><span class="fu">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;{Series Name}&quot;</span><span class="fu">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;{Synopsis}&quot;</span><span class="fu">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;genre&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;{Genre1}&quot;</span><span class="ot">,</span> <span class="st">&quot;{Genre2}&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;numberOfSeasons&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;numberOfEpisodes&quot;</span><span class="fu">:</span> <span class="st">&quot;{count}&quot;</span><span class="fu">,</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;offers&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;Offer&quot;</span><span class="fu">,</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;price&quot;</span><span class="fu">:</span> <span class="st">&quot;0&quot;</span><span class="fu">,</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;priceCurrency&quot;</span><span class="fu">:</span> <span class="st">&quot;USD&quot;</span><span class="fu">,</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;availability&quot;</span><span class="fu">:</span> <span class="st">&quot;https://schema.org/InStock&quot;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p><strong>Episode Pages — TVEpisode:</strong> Each episode should have
+TVEpisode schema nested within TVSeries for relationship clarity:
+episode name, description, part of series, episode number, duration.</p>
+<h3 id="server-side-rendering-pre-rendering">3.4 Server-Side Rendering /
+Pre-Rendering</h3>
+<p><strong>The Core Problem:</strong> VURT is an Angular SPA. Crawlers
+receive a JavaScript shell, not rendered HTML. Googlebot can execute JS
+(slowly), but AI crawlers (ChatGPT, Perplexity) <strong>cannot</strong>
+— they see a blank page.</p>
+<p><strong>Options (ranked by preference):</strong> 1. <strong>Angular
+Universal SSR</strong> — Best option. Server renders full HTML per
+request. Gold standard. 2. <strong>Prerender.io or similar</strong> —
+Good fallback. Middleware detects bot user agents and serves
+pre-rendered static HTML. No Angular code changes needed. 3.
+<strong>Static Site Generation</strong> for fixed pages (About, FAQ,
+Contact, Help, Privacy, Terms)</p>
+<p><strong>This is the single most important technical fix for AI search
+visibility.</strong> Without SSR or pre-rendering, VURT will never
+appear in ChatGPT, Perplexity, or Google AI Overviews — regardless of
+how good the on-page SEO is.</p>
+<h3 id="meta-tags-current-state">3.5 Meta Tags (Current State)</h3>
+<p><strong>Homepage (all null/empty):</strong></p>
+<pre><code>og:title = null
+og:description = null
+og:type = null
+twitter:title = null
+twitter:description = empty
+twitter:image = null</code></pre>
+<p><strong>What We Need — Homepage:</strong></p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;title&gt;</span>VURT — Free Vertical Drama <span class="er">&amp;</span> Micro-Series | Built for the Culture<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;description&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;Watch 100+ vertical micro-series, dramas, and originals free on VURT. No paywall. Black creators, bold stories, designed for your phone.&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">property</span><span class="ot">=</span><span class="st">&quot;og:title&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;VURT — Free Vertical Drama </span><span class="er">&amp;</span><span class="st"> Micro-Series&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">property</span><span class="ot">=</span><span class="st">&quot;og:description&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;Watch 100+ vertical micro-series and dramas free. No paywall. Built for the culture.&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">property</span><span class="ot">=</span><span class="st">&quot;og:image&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;https://www.myvurt.com/images/vurt-og-share-card.jpg&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">property</span><span class="ot">=</span><span class="st">&quot;og:type&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;website&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">property</span><span class="ot">=</span><span class="st">&quot;og:url&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;https://www.myvurt.com/&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">property</span><span class="ot">=</span><span class="st">&quot;og:site_name&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;VURT&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;twitter:card&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;summary_large_image&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;twitter:site&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;@myvurt&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;twitter:title&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;VURT — Free Vertical Drama </span><span class="er">&amp;</span><span class="st"> Micro-Series&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;twitter:description&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;100+ vertical micro-series free. No paywall. Built for the culture.&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;twitter:image&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;https://www.myvurt.com/images/vurt-og-share-card.jpg&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">&quot;canonical&quot;</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://www.myvurt.com/&quot;</span> <span class="kw">/&gt;</span></span></code></pre></div>
+<p><strong>What We Need — Each Series Page (dynamic):</strong></p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;title&gt;</span>{Series Name} | VURT — Watch Free<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">&quot;description&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;{Series synopsis, first 155 chars}&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">property</span><span class="ot">=</span><span class="st">&quot;og:title&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;{Series Name} | VURT&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">property</span><span class="ot">=</span><span class="st">&quot;og:description&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;{Series synopsis}&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">property</span><span class="ot">=</span><span class="st">&quot;og:image&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;{Series poster/thumbnail URL}&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">property</span><span class="ot">=</span><span class="st">&quot;og:type&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;video.tv_show&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">property</span><span class="ot">=</span><span class="st">&quot;og:url&quot;</span> <span class="er">content</span><span class="ot">=</span><span class="st">&quot;https://www.myvurt.com/series/{slug}&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">&quot;canonical&quot;</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://www.myvurt.com/series/{slug}&quot;</span> <span class="kw">/&gt;</span></span></code></pre></div>
+<h3 id="security-headers">3.6 Security Headers</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Issue</th>
+<th>Affected</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Missing Content-Security-Policy</td>
+<td>16 (100%)</td>
+<td>MEDIUM</td>
+</tr>
+<tr class="even">
+<td>Missing X-Content-Type-Options</td>
+<td>16 (100%)</td>
+<td>MEDIUM</td>
+</tr>
+<tr class="odd">
+<td>Missing X-Frame-Options</td>
+<td>16 (100%)</td>
+<td>MEDIUM</td>
+</tr>
+<tr class="even">
+<td>Missing Secure Referrer-Policy</td>
+<td>16 (100%)</td>
+<td>MEDIUM</td>
+</tr>
+<tr class="odd">
+<td>Unsafe Cross-Origin Links</td>
+<td>2 (12.5%)</td>
+<td>LOW</td>
+</tr>
+<tr class="even">
+<td>HTTPS Enabled</td>
+<td>16 (100%)</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>HSTS Header Present</td>
+<td>16 (100%)</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<p>Not direct ranking factors, but Google increasingly signals that
+security contributes to trust. Straightforward server-config fixes at
+CDN/hosting level.</p>
+<h3 id="robots.txt">3.7 Robots.txt</h3>
+<p>No noindex or nofollow directives — fine for now. Updates needed: -
+Add: <code>Sitemap: https://www.myvurt.com/sitemap.xml</code> - Ensure
+crawlers aren’t blocked from content pages - Block
+<code>/settings/</code> paths (crawl found internal settings
+exposed)</p>
+<hr />
+<h2 id="part-4-internal-linking-architecture">PART 4: INTERNAL LINKING
+&amp; ARCHITECTURE</h2>
+<h3 id="dead-end-pages">4.1 Dead-End Pages</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Issue</th>
+<th>Count</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pages Without Internal Outlinks</td>
+<td>4 (33.33%)</td>
+<td>HIGH</td>
+</tr>
+</tbody>
+</table>
+<p>1/3 of pages have zero outlinks — trapping users and crawlers. Every
+page should link to at least 2-3 relevant internal pages.</p>
+<h3 id="inverted-link-priority">4.2 Inverted Link Priority</h3>
+<table>
+<thead>
+<tr class="header">
+<th>URL</th>
+<th>Inlinks</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>/privacy-policy</td>
+<td>6 (highest)</td>
+<td>Footer link on every page</td>
+</tr>
+<tr class="even">
+<td>/help-support</td>
+<td>5</td>
+<td>Footer link</td>
+</tr>
+<tr class="odd">
+<td>/what-new</td>
+<td>5</td>
+<td>Footer link</td>
+</tr>
+<tr class="even">
+<td>/faq</td>
+<td>5</td>
+<td>Footer link</td>
+</tr>
+<tr class="odd">
+<td>/terms-and-conditions</td>
+<td>5</td>
+<td>Footer link</td>
+</tr>
+<tr class="even">
+<td>/about-us</td>
+<td>5</td>
+<td>Footer link</td>
+</tr>
+<tr class="odd">
+<td>/contact-us</td>
+<td>5</td>
+<td>Footer link</td>
+</tr>
+<tr class="even">
+<td>/ (homepage)</td>
+<td>1</td>
+<td>Critically low</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The problem:</strong> Legal/support pages get the most links.
+Content pages get almost none. This is inverted — content (series,
+episodes) should receive the most internal links.</p>
+<p>Once unique series URLs exist, navigation and homepage should
+prominently link to top series, genre categories, and featured
+content.</p>
+<hr />
+<h2 id="part-5-image-seo">PART 5: IMAGE SEO</h2>
+<p>Only 1 image was discovered by the crawler (external CDN). Missing
+both alt attribute and explicit dimensions. All other images loaded via
+JavaScript — invisible to crawlers.</p>
+<p><strong>Standards:</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Standard</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Filename</strong></td>
+<td><code>vurt-[series-name]-[descriptor]-[optional-episode].jpg</code>
+(e.g., <code>vurt-karma-in-heels-poster-s1.jpg</code>)</td>
+</tr>
+<tr class="even">
+<td><strong>Alt Text</strong></td>
+<td>Unique per image, describes what you see, includes keywords
+naturally</td>
+</tr>
+<tr class="odd">
+<td><strong>EXIF Title</strong></td>
+<td>Series/asset name</td>
+</tr>
+<tr class="even">
+<td><strong>EXIF Description</strong></td>
+<td>What the image shows + context</td>
+</tr>
+<tr class="odd">
+<td><strong>EXIF Copyright</strong></td>
+<td>© 2026 VURT Corporation</td>
+</tr>
+<tr class="even">
+<td><strong>EXIF Keywords</strong></td>
+<td>Series name, talent, genre, “VURT”, “vertical cinema”,
+“micro-drama”</td>
+</tr>
+<tr class="odd">
+<td><strong>EXIF Author</strong></td>
+<td>VURT</td>
+</tr>
+<tr class="even">
+<td><strong>EXIF Source</strong></td>
+<td>myvurt.com</td>
+</tr>
+<tr class="odd">
+<td><strong>Dimensions</strong></td>
+<td>Every <code>&lt;img&gt;</code> must include explicit
+<code>width</code> and <code>height</code> attributes (CLS / Core Web
+Vitals)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Good alt text:</strong> “Tatyana Ali and Charles S. Dutton in
+Come Back Dad, a VURT micro-series about family reconciliation.”</p>
+<p><strong>Bad alt text:</strong> “come-back-dad image” or
+keyword-stuffed spam</p>
+<hr />
+<h2 id="part-6-ai-search-optimization-geo">PART 6: AI SEARCH
+OPTIMIZATION (GEO)</h2>
+<p>Generative Engine Optimization — optimizing for ChatGPT, Perplexity,
+Google AI Overviews. ~70% of AI search queries flow through ChatGPT.</p>
+<h3 id="current-ai-visibility-zero">6.1 Current AI Visibility: Zero</h3>
+<p>VURT does not appear in any AI search results. Compounding reasons:
+1. Angular SPA serves blank JS shell to AI crawlers 2. No structured
+data for AI systems to parse 3. No canonical URLs for AI to reference or
+cite 4. No entity presence on platforms AI systems trust (Wikipedia,
+Crunchbase, Product Hunt) 5. Content freshness — AI citation drops
+sharply after 3 months without updates</p>
+<h3 id="geo-strategy">6.2 GEO Strategy</h3>
+<p><strong>Entity Building — get VURT mentioned on pages AI already
+cites:</strong> - Crunchbase company profile - Product Hunt launch -
+AlternativeTo listing (as alternative to ReelShort/DramaBox/Tubi) -
+Wikipedia article (TechCrunch coverage establishes notability) - Reddit
+threads in r/streaming, r/BlackFilm, r/filmmakers, r/shortfilm,
+r/cordcutters - Medium publication (backlink engine + AI-citable
+source)</p>
+<p><strong>Unlinked brand mentions</strong> carry weight with AI systems
+even without links.</p>
+<p><strong>Answer-first content structure:</strong> - Bullet points and
+clear headers - Direct answers before context/explanation - Factual,
+encyclopedic tone AI can quote</p>
+<p><strong>Monthly AI search testing:</strong> - Test 10-20
+VURT-relevant queries across ChatGPT, Perplexity, Google AI Overviews -
+Track “share of voice” — brand appearance frequency across AI responses
+- Content freshness: refresh key content quarterly</p>
+<p><strong>Bing Webmaster Tools registration:</strong> ChatGPT uses
+Bing’s index. Submitting sitemap to Bing is essential for AI search
+visibility.</p>
+<p><strong>Technical dependency:</strong> AI crawlers cannot execute
+JavaScript — SSR/pre-rendering is the blocker here.</p>
+<hr />
+<h2 id="part-7-off-site-seo-backlink-strategy">PART 7: OFF-SITE SEO
+&amp; BACKLINK STRATEGY</h2>
+<h3 id="current-state">7.1 Current State</h3>
+<p>TechCrunch coverage is an exceptional starting point. No systematic
+backlink strategy in place. Referring domain count is minimal and domain
+authority is likely very low.</p>
+<h3 id="backlink-strategy-4-tiers">7.2 Backlink Strategy (4 Tiers)</h3>
+<p><strong>Tier 1: Editorial/Press</strong> - Leverage TechCrunch to
+pitch: Variety, Deadline, Shadow and Act, The Root, Black Enterprise,
+Essence - Creator spotlight articles timed with each new series launch -
+Milestone press releases (download counts, partnerships, talent
+announcements)</p>
+<p><strong>Tier 2: Directory &amp; Listing Sites</strong> - Crunchbase,
+AngelList, Product Hunt launch - AlternativeTo (as free alternative to
+ReelShort/DramaBox/Tubi) - Wikipedia article (TechCrunch establishes
+notability threshold)</p>
+<p><strong>Tier 3: Content Backlinks</strong> - <strong>Medium
+publication:</strong> 2-3 articles/week for first 90 days - Article
+types: industry analysis, competitor comparisons, creator spotlights,
+cultural essays, how-tos - Example titles: - “The $14B Micro-Drama
+Market Has a Diversity Problem” - “ReelShort Charges $30/Month. VURT Is
+Free. Here’s Why.” - “How [Creator Name] Made a Micro-Series in 72 Hours
+on VURT” - Every article links to myvurt.com at least twice (contextual,
+not forced) - Contextual backlinks outperform profile bio links 5-10x
+(Google Jan 2026 “Authenticity Update” values first-hand experience) -
+<strong>LinkedIn articles:</strong> market reports, creator economy
+analysis (B2B visibility) - Guest posts on creator/filmmaker blogs</p>
+<p><strong>Tier 4: Community</strong> - <strong>Reddit:</strong>
+r/streaming, r/BlackFilm, r/filmmakers, r/shortfilm, r/cordcutters
+(genuine engagement first, max 1 self-promo per sub per month) -
+<strong>X / Twitter threads:</strong> “The VURT thesis,” competitor
+comparisons, creator spotlights, behind-the-series - X is now a ranking
+signal — Grok pulls from X data, Google counts social mentions for
+E-E-A-T - Quora answers about micro-drama and vertical streaming -
+Discord communities, film festival partnerships</p>
+<hr />
+<h2 id="part-8-keyword-strategy">PART 8: KEYWORD STRATEGY</h2>
+<h3 id="four-tier-framework">8.1 Four-Tier Framework</h3>
+<p><strong>Tier 1 — Brand (Must Own)</strong> VURT, VURT app, VURT
+streaming, myvurt, myvurt.com Should rank #1 with zero competition.
+Currently may not rank at all.</p>
+<p><strong>Tier 2 — Category (Compete)</strong> Micro drama app, short
+drama series, vertical video streaming, free drama streaming app
+Moderate competition but VURT’s “free” positioning is a strong
+differentiator.</p>
+<p><strong>Tier 3 — Long-Tail (Win These — Low Competition, High
+Intent)</strong> - “free Black drama series app” - “micro drama app like
+ReelShort but free” - “vertical drama series for phone” - “Black indie
+filmmaker streaming platform” - “micro drama app no paywall” - “free
+alternative to ReelShort” / “free alternative to DramaBox” - “vertical
+cinema platform”</p>
+<p><strong>Tier 4 — Cultural/Contextual (Authority Building)</strong>
+Black micro-drama, vertical filmmaking, micro-drama industry 2026, AVOD
+vs pay-per-episode, creator-owned streaming Content marketing keywords
+for Medium articles and blog posts.</p>
+<h3 id="open-territory-nobody-ranks-for-these">8.2 Open Territory —
+Nobody Ranks for These</h3>
+<p>These represent an immediate opportunity: - “free vertical drama
+streaming” - “Black micro drama app” - “indie filmmaker streaming
+submit” - “culture-driven streaming app” - “AVOD micro drama”</p>
+<p>With proper technical SEO, VURT can own these within 60-90 days by
+being the first credible result.</p>
+<hr />
+<h2 id="part-9-app-store-optimization-aso">PART 9: APP STORE
+OPTIMIZATION (ASO)</h2>
+<p>Unified with web SEO for maximum keyword convergence.</p>
+<h3 id="google-play">Google Play</h3>
+<ul>
+<li><strong>Title:</strong> Change from “VURT” to “VURT - Free Vertical
+Drama &amp; Micro-Series”</li>
+<li><strong>Description:</strong> Add keywords: “free streaming”,
+“micro-drama”, “vertical cinema”, “Black culture”, “short drama
+series”</li>
+<li><strong>What’s New:</strong> Keyword-rich update notes, not “Small
+updates, same big vision”</li>
+</ul>
+<h3 id="ios-app-store">iOS App Store</h3>
+<p>Same keyword optimization. Title/subtitle should mirror Google Play
+keywords. Keyword field should include all Tier 1-3 terms.</p>
+<hr />
+<h2 id="part-10-prioritized-action-plan">PART 10: PRIORITIZED ACTION
+PLAN</h2>
+<h3 id="priority-1-critical-do-this-week">PRIORITY 1: CRITICAL — Do This
+Week</h3>
+<p><em>Blocking ALL organic discovery. Nothing else works until these
+are fixed.</em></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Action Item</th>
+<th>Owner</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1A</td>
+<td><strong>Create unique URLs for every episode</strong> — series URLs
+exist (e.g., <code>/detail/micro_series/the-love-letter</code>) but
+episodes have none. Need
+<code>/detail/micro_series/{show-slug}/episode-{n}</code> or similar.
+URL must update in address bar when user switches episodes.</td>
+<td>Dev Team</td>
+<td>Unlocks all SEO</td>
+</tr>
+<tr class="even">
+<td>1A2</td>
+<td><strong>Redirect share links to myvurt.com</strong> — share button
+currently generates <code>vurt.enveu.link</code> short links, giving all
+SEO equity to enveu’s domain. Share must generate
+<code>myvurt.com</code> URLs.</td>
+<td>Dev Team</td>
+<td>Stops SEO value leak</td>
+</tr>
+<tr class="odd">
+<td>1A3</td>
+<td><strong>Fix deep links to episode level</strong> — app currently
+opens to show page, not specific episode, when opening shared link. App
+link handler must parse episode-level routing.</td>
+<td>Dev Team</td>
+<td>Fixes sharing UX</td>
+</tr>
+<tr class="even">
+<td>1B</td>
+<td>Populate sitemap.xml with all page URLs</td>
+<td>Dev Team</td>
+<td>Enables discovery</td>
+</tr>
+<tr class="odd">
+<td>1C</td>
+<td>Add meta tags (title, desc, OG, Twitter, canonical) to every
+page</td>
+<td>Dev + SEO</td>
+<td>On-page foundation</td>
+</tr>
+<tr class="even">
+<td>1D</td>
+<td>Fix broken internal URLs (www.myvurt.com doubled paths)</td>
+<td>Dev Team</td>
+<td>Stops crawl errors</td>
+</tr>
+<tr class="odd">
+<td>1E</td>
+<td>Add Sitemap reference to robots.txt</td>
+<td>Dev Team</td>
+<td>Crawler guidance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="priority-2-high-do-within-2-weeks">PRIORITY 2: HIGH — Do Within
+2 Weeks</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Action Item</th>
+<th>Owner</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2A</td>
+<td>Implement Schema.org structured data (JSON-LD) on all pages</td>
+<td>Dev Team</td>
+<td>Rich results + AI</td>
+</tr>
+<tr class="even">
+<td>2B</td>
+<td>Implement SSR or pre-rendering (Angular Universal /
+Prerender.io)</td>
+<td>Dev Team</td>
+<td>AI search visibility</td>
+</tr>
+<tr class="odd">
+<td>2C</td>
+<td>Fix image SEO: alt text, filenames, EXIF metadata</td>
+<td>Dev + Content</td>
+<td>Image search traffic</td>
+</tr>
+</tbody>
+</table>
+<h3 id="priority-3-medium-do-within-30-days">PRIORITY 3: MEDIUM — Do
+Within 30 Days</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Action Item</th>
+<th>Owner</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3A</td>
+<td>Fix homepage H1 to persistent keyword-rich heading</td>
+<td>Dev Team</td>
+<td>Homepage SEO</td>
+</tr>
+<tr class="even">
+<td>3B</td>
+<td>Fill empty pages (What’s New, Help/Support) with real content</td>
+<td>Content Team</td>
+<td>Quality signals</td>
+</tr>
+<tr class="odd">
+<td>3C</td>
+<td>Add press/social proof to homepage (TechCrunch, talent)</td>
+<td>Dev + Content</td>
+<td>Trust &amp; conversion</td>
+</tr>
+<tr class="even">
+<td>3D</td>
+<td>Register with Google Search Console &amp; Bing Webmaster Tools</td>
+<td>SEO Lead</td>
+<td>Monitoring &amp; AI index</td>
+</tr>
+<tr class="odd">
+<td>3E</td>
+<td>Optimize App Store listings (Google Play title, description)</td>
+<td>Marketing</td>
+<td>ASO traffic</td>
+</tr>
+<tr class="even">
+<td>3F</td>
+<td>Add security headers (CSP, X-Content-Type, X-Frame-Options)</td>
+<td>Dev Team</td>
+<td>Trust signals</td>
+</tr>
+<tr class="odd">
+<td>3G</td>
+<td>Add meta keywords to all pages (Bing/ChatGPT optimization)</td>
+<td>Dev Team</td>
+<td>AI search (Bing-powered)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="priority-4-ongoing-content-authority-building">PRIORITY 4:
+ONGOING — Content &amp; Authority Building</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Action Item</th>
+<th>Owner</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4A</td>
+<td>Launch Medium publication (2-3 articles/week)</td>
+<td>Content/SEO</td>
+<td>Backlinks + authority</td>
+</tr>
+<tr class="even">
+<td>4B</td>
+<td>Begin Reddit/community engagement strategy</td>
+<td>Marketing</td>
+<td>Community links + AI citation</td>
+</tr>
+<tr class="odd">
+<td>4C</td>
+<td>Pitch press (Variety, Deadline, Shadow and Act, etc.)</td>
+<td>PR/Marketing</td>
+<td>High-DA backlinks</td>
+</tr>
+<tr class="even">
+<td>4D</td>
+<td>Create directory listings (Crunchbase, Product Hunt,
+AlternativeTo)</td>
+<td>Marketing</td>
+<td>Entity building</td>
+</tr>
+<tr class="odd">
+<td>4E</td>
+<td>Launch X/Twitter thread strategy with keyword hooks</td>
+<td>Social/Content</td>
+<td>Social signals + Grok</td>
+</tr>
+<tr class="even">
+<td>4F</td>
+<td>Monthly AI search testing across ChatGPT/Perplexity/Google AI</td>
+<td>SEO Lead</td>
+<td>GEO measurement</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-11-questions-for-dev-team">PART 11: QUESTIONS FOR DEV
+TEAM</h2>
+<p>These must be answered before implementation:</p>
+<ol type="1">
+<li><strong>What can we customize in enveu?</strong> Meta tags, schema
+markup, URL structure, sitemap, image alt text, filenames?</li>
+<li><strong>Does enveu support Angular Universal (SSR)?</strong> If not,
+can we add Prerender.io as middleware?</li>
+<li><strong>Why don’t episodes have unique URLs?</strong> Series have
+them (<code>/detail/micro_series/{slug}</code>) but the URL doesn’t
+change when switching episodes. Is this an enveu limitation or a
+configuration issue?</li>
+<li><strong>Can share links point to myvurt.com instead of
+vurt.enveu.link?</strong> Currently every share generates a link on
+enveu’s domain — all SEO equity goes to them, not us. Is this
+configurable in enveu, or do we need a custom solution?</li>
+<li><strong>Can we inject custom scripts (JSON-LD) per page?</strong> Or
+do we need Google Tag Manager?</li>
+<li><strong>Who controls robots.txt and sitemap.xml?</strong> Can we
+edit them directly?</li>
+<li><strong>What’s the timeline?</strong> How quickly can Priority 1
+items be implemented?</li>
+<li><strong>Can we get Google Search Console / Bing Webmaster Tools
+access?</strong> Need to verify domain ownership.</li>
+<li><strong>How does the deep link handler work?</strong> Shared links
+open the app to the show page but not the specific episode — is the
+episode ID passed in the link? What would it take to fix episode-level
+routing in the app?</li>
+</ol>
+<hr />
+<h2 id="part-12-measurement-kpis">PART 12: MEASUREMENT &amp; KPIs</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Frequency</th>
+<th>Tool</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Referring domains (new backlinks)</td>
+<td>Weekly</td>
+<td>Ahrefs / SEMrush</td>
+</tr>
+<tr class="even">
+<td>Keyword rankings (Tier 2-3)</td>
+<td>Weekly</td>
+<td>Ahrefs / SEMrush</td>
+</tr>
+<tr class="odd">
+<td>AI search results appearance</td>
+<td>Monthly</td>
+<td>Manual testing</td>
+</tr>
+<tr class="even">
+<td>Organic traffic (sessions)</td>
+<td>Weekly</td>
+<td>Google Analytics</td>
+</tr>
+<tr class="odd">
+<td>Pages indexed in Google</td>
+<td>Weekly</td>
+<td>Google Search Console</td>
+</tr>
+<tr class="even">
+<td>Pages indexed in Bing</td>
+<td>Monthly</td>
+<td>Bing Webmaster Tools</td>
+</tr>
+<tr class="odd">
+<td>Medium views + referral traffic</td>
+<td>Weekly</td>
+<td>Medium Analytics + GA</td>
+</tr>
+<tr class="even">
+<td>X thread impressions + link clicks</td>
+<td>Weekly</td>
+<td>X Analytics</td>
+</tr>
+<tr class="odd">
+<td>Dead link audit</td>
+<td>Monthly</td>
+<td>Screaming Frog / Ahrefs</td>
+</tr>
+<tr class="even">
+<td>Core Web Vitals scores</td>
+<td>Monthly</td>
+<td>PageSpeed Insights</td>
+</tr>
+<tr class="odd">
+<td>App store rankings</td>
+<td>Weekly</td>
+<td>App Annie / Sensor Tower</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-13-content-calendar-first-30-days">PART 13: CONTENT
+CALENDAR — First 30 Days</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Week</th>
+<th>Medium</th>
+<th>X Threads</th>
+<th>Other</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Launch article + industry piece</td>
+<td>“The VURT thesis” thread</td>
+<td>Reddit intros (r/streaming, r/BlackFilm)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Competitor comparison + creator spotlight</td>
+<td>Creator spotlight thread</td>
+<td>LinkedIn, Product Hunt, Crunchbase</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Submission how-to + market analysis</td>
+<td>Comparison thread</td>
+<td>Reddit organic engagement</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Cultural essay + future of vertical</td>
+<td>Behind-the-series thread</td>
+<td>LinkedIn market report, AlternativeTo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="what-dioni-owns-content-strategy">WHAT DIONI OWNS (Content &amp;
+Strategy)</h2>
+<p><em>Dev team doesn’t need to focus on these. Sharing for alignment
+and expert review.</em></p>
+<ol type="1">
+<li><strong>Off-site SEO &amp; backlink strategy</strong> — Medium, X,
+LinkedIn, Reddit, press, community</li>
+<li><strong>Keyword strategy</strong> — 4-tier framework, open territory
+identification</li>
+<li><strong>App store copy</strong> — I write, dev team publishes</li>
+<li><strong>AI search optimization (GEO)</strong> — Entity building,
+answer-first content, monthly testing</li>
+<li><strong>Image EXIF &amp; asset SEO</strong> — Filename conventions,
+metadata embedding before upload</li>
+<li><strong>Press &amp; authority building</strong> — TechCrunch
+leverage, editorial pitching</li>
+<li><strong>Content calendar execution</strong> — Medium articles, X
+threads, Reddit engagement</li>
+<li><strong>Measurement</strong> — Weekly/monthly tracking across all
+KPI channels</li>
+</ol>
+<hr />
+<h2 id="the-bottom-line">THE BOTTOM LINE</h2>
+<p>Right now, if someone searches “free vertical drama app” or “micro
+drama like ReelShort but free” — VURT doesn’t appear. Not on Google, not
+in AI search, nowhere. 100+ titles are completely invisible to the
+internet.</p>
+<p><strong>The share link problem makes this worse.</strong> Every time
+a user shares an episode, the link
+(<code>vurt.enveu.link/dmqdikktzy</code>) sends all SEO value to enveu’s
+domain. VURT is actively generating backlinks — for someone else. The
+more users share, the more equity leaks. This needs to be fixed before
+any marketing push amplifies the problem.</p>
+<p>The Priority 1 fixes (episode URLs, share link redirect, sitemap,
+meta tags, broken link fix) are the foundation. Without them, nothing
+else works. Every day without these is organic traffic left on the table
+— especially with TechCrunch coverage driving awareness that should be
+compounding, not wasting.</p>
+<p>VURT has all the ingredients for SEO success: great content, notable
+talent, press coverage, and a free product in a growing market. The only
+thing missing is the technical foundation to let search engines see it.
+<strong>Fix the foundation, and the organic traffic will
+follow.</strong></p>
+
+</body>
+</html>

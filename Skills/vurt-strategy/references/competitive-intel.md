@@ -45,6 +45,27 @@ VURT is NOT trying to be ReelShort. The competitive frame is:
 - Closer analogy: Empire Distribution / UnitedMasters for film than Netflix for streaming
 - The moat is creator loyalty + cultural authenticity + infrastructure, not algorithm
 
+### Additional Competitors (from research, less data available)
+- **GammaTime** — Hollywood vets + tech investors. $14M raised (Ohanian/Jenner investors). Worth watching for content quality angle.
+- **My Drama** (Holywater, Ukrainian) — $22M raised. Freemium model. International player.
+- **MicroCo** — Partnered with Cineverse for distribution. Early stage.
+- **FlickReels** — Freemium model. Early stage competitor.
+- **VERZA TV** — Founded by Alan Mruvka (co-founder of E! Entertainment). Credibility play.
+- **Tattle TV** (UK) — UK-based micro-drama platform.
+- **muVpix** — Early stage competitor.
+
+### Reference Models (Not Competitors — Inspiration)
+- **Fixated** — Creator management + content studio. $50M from Eldridge/Todd Boehly. Vertically integrated: manage creators + produce + distribute. In-house clippers manufacture viral moments. Model: "guarantee eyeballs to our creators."
+- **Brat TV** — YouTube-first scripted Gen Z content. $40M+ funding. Key insight: cast the creator FIRST, build show around them. Chicken Girls 40M+ views. Dioni's playbook here: 0 → 5M subs, 500M+ views.
+- **Fishtank Live** — 24/7 interactive reality (Sam Hyde). Tokens control outcomes. Big Brother meets Twitch.
+
+### Quibi Failure Lessons (Mark Has Firsthand Knowledge)
+1. No screenshots/sharing — killed virality
+2. Over-invested in production ($1.75B burned, dead in 6 months)
+3. No social/community layer
+4. Bad timing (COVID killed commute use case)
+5. Content must be shareable to grow
+
 ## Key Metrics to Track
 - DAU/MAU and retention curves
 - Creator submission volume and approval rate

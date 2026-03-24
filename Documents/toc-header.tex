@@ -1,0 +1,13 @@
+\renewcommand{\contentsname}{}
+\usepackage{needspace}
+\AtBeginDocument{
+  \begin{center}
+  {\LARGE\bfseries VURT: Social Media \& Community Development Playbook}\\[0.5em]
+  {\itshape Prepared March 2026}
+  \end{center}
+  \vspace{0.5em}
+  {\Large\bfseries Index}
+  \vspace{0.2em}
+}
+\let\oldsubsection\subsection
+\renewcommand{\subsection}[1]{\needspace{5\baselineskip}\oldsubsection{#1}}

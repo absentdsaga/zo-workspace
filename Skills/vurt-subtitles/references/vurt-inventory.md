@@ -1,0 +1,185 @@
+# VURT Content Inventory
+
+Scraped: 2026-03-18 via enveu API
+
+- **176 total items**: 80 series, 88 videos, 8 seasons
+
+## Series
+
+- 12 Baes Of Christmas (ID: 296)
+- 35 & Ticking (ID: 1994)
+- A Twisted Affair (ID: 520)
+- Along Came Love (ID: 458)
+- Another Merry Deranged Holy Unhinged Christmas Affair (ID: 483)
+- Baby Daddy Alibi (ID: 3812)
+- Baby Mama (ID: 2217)
+- Behind Perfect (ID: 564)
+- Believe Me Or Not (ID: 300)
+- Bitter Pill (ID: 636)
+- Champagne (ID: 752)
+- Church Boy (ID: 814)
+- Come Back Dad (ID: 876)
+- Crossed Lines (ID: 926)
+- Dangerous Ties (ID: 999)
+- Demented (ID: 1049)
+- Devil You Know (ID: 1136)
+- Do It For The Gram (ID: 1163)
+- Double Deception (ID: 3706)
+- Drops Of Mercy (ID: 1337)
+- Due For Love  (ID: 3798)
+- Fatal Love (ID: 3790)
+- Fatal Lust (ID: 1277)
+- Favorite Son (ID: 1209)
+- Fell In Love With A Fed (ID: 1422)
+- Framed By My Ex (ID: 1508)
+- Girl In The Closet (ID: 362)
+- HIdden Love (ID: 1551)
+- Husband Material (ID: 1598)
+- Karma In Heels (ID: 3733)
+- Killer Stepdad (ID: 248)
+- Legal Love (ID: 1645)
+- Life Happened (ID: 1683)
+- Lil Duval - Living My Best Life (ID: 721)
+- Livestream Stalker (ID: 3806)
+- Lord, All Men Can't Be Dogs (ID: 1730)
+- Love Found Me (ID: 1781)
+- Love Me Right (ID: 1823)
+- Love Me Some More (ID: 1864)
+- Love Regardless (ID: 1905)
+- Love The One You're With (ID: 1959)
+- Loving Hearts (ID: 2044)
+- Miami Confidential (ID: 2085)
+- Miami Kingpins (ID: 350)
+- Mr. Babysitter (ID: 2185)
+- Mr. Right (ID: 2131)
+- My Big Brother (ID: 2251)
+- My Brother's Wife  (ID: 2308)
+- My Only Fan (ID: 1094)
+- One Night In Lagos (ID: 2375)
+- Pedigree (ID: 2413)
+- Pretty Kitty Cartel (ID: 2445)
+- Pride & Prejudice Atlanta (ID: 2461)
+- Saving Grace (ID: 2495)
+- Saving Westbrook High (ID: 2558)
+- Something About You (ID: 2876)
+- Something Like A Business  (ID: 1417)
+- Song Of Love  (ID: 2599)
+- Soul Ties (ID: 2998)
+- The Boy Next Door (ID: 2809)
+- The Dempsey Sisters (ID: 2916)
+- The Fallen (ID: 2950)
+- The Ideal Husband (ID: 3027)
+- The Love Letter (ID: 3670)
+- The Love You Save  (ID: 3056)
+- The Personal Assistant (ID: 3097)
+- The Pros Of Cons (ID: 3123)
+- The Special One (ID: 3241)
+- The Thing About Men (ID: 3272)
+- Through Thick and Thin (ID: 3629)
+- Thug Holiday (ID: 3620)
+- Trick I Got My Pots (ID: 3365)
+- Welcome To The A (ID: 3374)
+- What The Heart Wants (ID: 3568)
+- Where Love Meets (ID: 2645)
+- Who Stole My Wife? (ID: 2684)
+- Woman Of God (ID: 2710)
+- Work Wife  (ID: 2736)
+- Wrong Choice (ID: 3311)
+- Yes To Forever (ID: 2753)
+
+## Videos (episodes/movies)
+
+- KARMA_IN_HEELS_MOVIE_9x16_EP01 — 2.4min [Mux: vYOclBeuanmpwjmd4mrc...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP02 — 3.2min [Mux: 4Xnu01buOul4qj41qvqL...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP03 — 2.1min [Mux: 6Eh01IGTAIe77Zfi1DCG...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP04 — 3.2min [Mux: 5KiIJVTAMBSU00u8lDJl...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP05 — 2.9min [Mux: otb2XCzoiaon9L0066cf...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP06 — 1.8min [Mux: wO02qe5Ti01myyqwhRW0...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP07 — 3.2min [Mux: FAHwxk3PHCa33fQSQCJu...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP08 — 2.9min [Mux: Zt9hD61YH88rrS00Y9IQ...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP09 — 2.6min [Mux: nlRJQVTmc153Jx01Nfcb...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP10 — 2.1min [Mux: Mu7vth5IfuczKv02bukq...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP11 — 3.0min [Mux: 476imaawU1h00qRaUGtl...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP12 — 2.9min [Mux: WUHebRA01LoCFMttA1Y2...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP13 — 3.0min [Mux: DlvKnOnS3c8qfmdc2IX1...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP14 — 2.9min [Mux: qG00m02VldjBjmJyWKer...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP15 — 3.1min [Mux: gtRq5tzzaBsYVWKrhTAs...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP16 — 2.2min [Mux: Ct00uz12S3TLCEIXmdv8...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP17 — 1.6min [Mux: ktVJGYAIT02y9OlXTOQf...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP18 — 1.9min [Mux: rSFApFf95L47fd02aA02...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP19 — 3.1min [Mux: QwlfL4rKw6702KrURMmT...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP20 — 2.8min [Mux: JqQAKsQY7ypqaoULa64i...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP21 — 3.5min [Mux: UBYmndnLwbobpcyL2x8R...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP22 — 2.4min [Mux: lk9vof02readYAqXCVWN...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP23 — 2.8min [Mux: 9AFemukFFwfKzoZKsyG8...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP24 — 4.1min [Mux: ve37brk02J1N1jJ1TmaY...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP25 — 2.9min [Mux: 02iDBpqqKh6W1LW02zmz...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP26 — 3.6min [Mux: lFHNJxE02ypmzmAVcuYT...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP27 — 1.5min [Mux: ly6iV3k5YqSTy02SI6Az...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP28 — 2.5min [Mux: nXuE7NLmSqQyTXm00a01...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP29 — 3.6min [Mux: IAa6KT01K01bjx7VK5M4...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP30 — 3.7min [Mux: NpovfUqOyOb5m7y6UMST...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP31 — 2.3min [Mux: LEO01xz1gE8006aX3T4v...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP32 — 3.9min [Mux: maA3aVUn9CxgsHwpZJ4U...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP33 — 3.2min [Mux: 3E7s0002oEhaULHGdeMe...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP34 — 1.8min [Mux: 1rH00dP02W7Nkjv9Hybv...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP35 — 2.5min [Mux: 3GGnZVXyvOBjXC7C6kcq...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP36 — 3.0min [Mux: gwR01PkIBronYlIBolXO...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP37 — 4.0min [Mux: CK3LRSZ5bSiow8WYjpDR...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP38 — 1.5min [Mux: GHFWqLwZNc5L01Yh8yin...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP39 — 2.7min [Mux: 3WsOBqPVGsKoxVaSK76O...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP40 — 2.5min [Mux: x3gyvXhXhiOQZGRAErdF...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP41 — 1.8min [Mux: YH02lEH1fsBcpxRtXAMI...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP42 — 3.7min [Mux: pZOSBVe00NfqlstA6Hlk...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP43 — 2.6min [Mux: PBg3j4ylsl01qBLY02n7...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP44 — 2.8min [Mux: uV7KrTqk71JeymOhEoSl...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP45 — 2.2min [Mux: jEcMt7gVUnGYfj6vR01U...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP46 — 3.0min [Mux: h69L3qcHaAQctuBRjCTz...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP47 — 1.2min [Mux: C02EuMEGnEg01DMf00N9...]
+- KARMA_IN_HEELS_MOVIE_9x16_EP48 — 8.1min [Mux: s02y8ZHhNUt01lmwRaB2...]
+- KARMA_IN_HEELS_TRAILER_MASTER_9x16 — 1.1min [Mux: fI00bF9bKGWH00jJmVqT...]
+- VURT_TheLoveLetter_Ep06_9x16_v1 — 3.0min [Mux: IizV02W6TvqXbppVc1ft...]
+- VURT_TheLoveLetter_Ep07_9x16_v1 — 3.8min [Mux: MR4HVjZdgnQU9YC02qeB...]
+- VURT_TheLoveLetter_Ep08_9x16_v1 — 3.0min [Mux: kDi6j54jyB0224d3pzlU...]
+- VURT_TheLoveLetter_Ep09_9x16_v1 — 2.2min [Mux: RRhTk7vSaUiDT0200rVY...]
+- VURT_TheLoveLetter_Ep10_9x16_v1 — 3.8min [Mux: PEoHssm02XjDuVdjI7GY...]
+- VURT_TheLoveLetter_Ep11_9x16_v1 — 3.9min [Mux: fps6TlYyr1q3CwZoRSaR...]
+- VURT_TheLoveLetter_Ep12_9x16_v1 — 4.3min [Mux: 4Jji802ASNzHqHNg01Wa...]
+- VURT_TheLoveLetter_Ep13_9x16_v1 — 2.7min [Mux: o02X4zjIj02vPQSzzTSP...]
+- VURT_TheLoveLetter_Ep14_9x16_v1 — 3.2min [Mux: wDaFAa6cBhSk9Q019o40...]
+- VURT_TheLoveLetter_Ep15_9x16_v1 — 3.7min [Mux: GC8jhBRCZHRgyY4uhcmK...]
+- VURT_TheLoveLetter_Ep16_9x16_v1 — 3.8min [Mux: qe4ytDXaqTezU00vErcZ...]
+- VURT_TheLoveLetter_Ep17_9x16_v1 — 2.6min [Mux: tHoX4fn9cW81Il00bB00...]
+- VURT_TheLoveLetter_Ep18_9x16_v1 — 3.1min [Mux: ruHMyVW6afcgSR00601C...]
+- VURT_TheLoveLetter_Ep19_9x16_v1 — 3.5min [Mux: Lm00Ba44KfO9fABbL3B7...]
+- VURT_TheLoveLetter_Ep20_9x16_v1 — 2.6min [Mux: Zn02QFQzZCWzvEG0100L...]
+- VURT_TheLoveLetter_Ep24_9x16_v1 — 3.9min [Mux: LmXC4yMFVhQVoLUjlVq4...]
+- VURT_TheLoveLetter_Ep25_9x16_v1 — 3.0min [Mux: dV325h1pvgOtcjlX9per...]
+- VURT_TheLoveLetter_Ep26_9x16_v1 — 3.6min [Mux: Nt02aFR22BqH0101hjGG...]
+- VURT_TheLoveLetter_Ep27_9x16_v2 — 1.0min [Mux: CLbhf02ZBwujxNf025Rm...]
+- VURT_Welcome to the A_Ep04_9x16_v1 — 22.9min [Mux: VyjPDj45o1zXimdmGWjb...]
+- Vurt_DOUBLE DECEPTION E1 — 2.7min [Mux: gTEs18lytCl8yINBSlhT...]
+- Vurt_DOUBLE DECEPTION E10 — 3.4min [Mux: pOeoJcXTb7Yr4KeF3vyf...]
+- Vurt_DOUBLE DECEPTION E11 — 4.8min [Mux: 8RAsd02uOB3jFrUcWSMk...]
+- Vurt_DOUBLE DECEPTION E12 — 5.8min [Mux: YSyKnXuI6ZrH402l3hox...]
+- Vurt_DOUBLE DECEPTION E13 — 3.9min [Mux: ZJTWHB5uYqssU4sgspc5...]
+- Vurt_DOUBLE DECEPTION E14 — 2.9min [Mux: 8GZcLlPQElaDKS2nZ2C3...]
+- Vurt_DOUBLE DECEPTION E15 — 4.8min [Mux: ootj701018iXvyXTqMsx...]
+- Vurt_DOUBLE DECEPTION E16 — 4.6min [Mux: 3yGM000059H2ertODML4...]
+- Vurt_DOUBLE DECEPTION E17 — 3.6min [Mux: iY1KGmvMnhK01op6W800...]
+- Vurt_DOUBLE DECEPTION E18 — 4.1min [Mux: EKdHKKBdOsTYPRuWL01x...]
+- Vurt_DOUBLE DECEPTION E19 — 2.6min [Mux: QWt01Xauw7pQdNPP6X3p...]
+- Vurt_DOUBLE DECEPTION E2 — 5.0min [Mux: puQk200qyoplVo6lgdBu...]
+- Vurt_DOUBLE DECEPTION E3 — 3.5min [Mux: 4nM00UOOZYsTYHkBCGMT...]
+- Vurt_DOUBLE DECEPTION E4 — 2.0min [Mux: 7FJUTr005KI5pJ5gLg02...]
+- Vurt_DOUBLE DECEPTION E5 — 4.1min [Mux: BByOcbQXc4pw01hMU2pT...]
+- Vurt_DOUBLE DECEPTION E6 — 3.5min [Mux: GBxfekCrnipPenAZMEAo...]
+- Vurt_DOUBLE DECEPTION E7 — 3.3min [Mux: yrP7KjvPW9EU9IJW02bM...]
+- Vurt_DOUBLE DECEPTION E8 — 4.6min [Mux: r8YYdePDHoUeeKhFKj01...]
+- Vurt_DOUBLE DECEPTION E9 — 2.7min [Mux: 7jE01q1IvWHKwanqpCe5...]
+
+## Notes
+- Videos hosted on **Mux** (externalRefId = Mux Asset ID)
+- Streams are token-gated, need Mux API creds or enveu admin to get download URLs
+- enveu API key: WuxER0N62t73ifozgYFEga8TjXbEKDaX138vt2WC
+- enveu API base: https://frontend-api-us1.enveu.io/media-centre/fe/api/v5_0

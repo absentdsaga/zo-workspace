@@ -1,0 +1,40 @@
+{"timestamp": "2026-03-23T12:06:48.973383", "level": "task_start", "message": "Starting VURT Trello Daily Maintenance"}
+{"timestamp": "2026-03-23T12:06:48.973630", "level": "info", "message": "=== TASK 1: Sorting 'This Week' list by due date ==="}
+{"timestamp": "2026-03-23T12:06:49.096839", "level": "result", "message": "Found 5 lists on board", "data": {"lists": ["Inbox", "This Week", "In Progress", "Review / Blocked", "Done"]}}
+{"timestamp": "2026-03-23T12:06:49.097216", "level": "info", "message": "Found 'This Week' list", "data": {"list_id": "69c06762ac8ecd537850ba8e", "name": "This Week"}}
+{"timestamp": "2026-03-23T12:06:49.205160", "level": "result", "message": "Found 14 cards in 'This Week'", "data": {"card_count": 14}}
+{"timestamp": "2026-03-23T12:06:49.205544", "level": "info", "message": "Card sorted order: 1", "data": {"id": "69c070137e73a6466cc3cb0e", "name": "Set up Week 1 content calendar (Mar 24-30)", "due": "2026-03-24T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.205615", "level": "info", "message": "Card sorted order: 2", "data": {"id": "69c07ce2cbe901083513af72", "name": "INVESTIGATE: Web engagement dropped 90%+ -- likely backend issue", "due": "2026-03-25T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.205663", "level": "info", "message": "Card sorted order: 3", "data": {"id": "69c07be95174398ac2f62f5e", "name": "Wednesday deep dive with Tarik -- blitz sync + SEO timeline", "due": "2026-03-25T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.205704", "level": "info", "message": "Card sorted order: 4", "data": {"id": "69c070126cc5afe46f2162a5", "name": "Brief SimpleSocial on revised social strategy", "due": "2026-03-25T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.205745", "level": "info", "message": "Card sorted order: 5", "data": {"id": "69c07362fac76bd3ed31df5d", "name": "Cut up press release and post on socials", "due": "2026-03-25T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.205785", "level": "info", "message": "Card sorted order: 6", "data": {"id": "69c07365a697ce735e7e83f6", "name": "Get Dioni into TikTok accounts", "due": "2026-03-25T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.205826", "level": "info", "message": "Card sorted order: 7", "data": {"id": "69c07be9df5073b5305c921a", "name": "Get SEO update timeline from Enveu for Tarik", "due": "2026-03-25T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.205868", "level": "info", "message": "Card sorted order: 8", "data": {"id": "69c07010e2c5d0b192954140", "name": "Add Apple Smart App Banner to myvurt.com", "due": "2026-03-26T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.205908", "level": "info", "message": "Card sorted order: 9", "data": {"id": "69c0700d7eaf95089948f202", "name": "Fix mobile footer -- social links invisible on mobile", "due": "2026-03-28T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.205948", "level": "info", "message": "Card sorted order: 10", "data": {"id": "69c0700f41676b2729ca4f83", "name": "Fix share links routing to vurt.enveu.link", "due": "2026-03-28T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.205988", "level": "info", "message": "Card sorted order: 11", "data": {"id": "69c070119d577cef12b96481", "name": "Deploy foundation pixels via GTM", "due": "2026-03-28T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.206028", "level": "info", "message": "Card sorted order: 12", "data": {"id": "69c0735f9a9c5c9a5cd20c78", "name": "Move download app button to top of website", "due": "2026-03-28T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.206081", "level": "info", "message": "Card sorted order: 13", "data": {"id": "69c07360d2c4ee1b9163e163", "name": "Add age prompt after clicking on a title", "due": "2026-03-28T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.206136", "level": "info", "message": "Card sorted order: 14", "data": {"id": "69c07363484b3ee6329d05e4", "name": "Create asset tracker", "due": "2026-03-28T17:00:00.000Z"}}
+{"timestamp": "2026-03-23T12:06:49.399677", "level": "result", "message": "Updated card position", "data": {"card_id": "69c070137e73a6466cc3cb0e", "name": "Set up Week 1 content calendar (Mar 24-30)", "new_pos": 1024}}
+{"timestamp": "2026-03-23T12:06:49.602748", "level": "result", "message": "Updated card position", "data": {"card_id": "69c07ce2cbe901083513af72", "name": "INVESTIGATE: Web engagement dropped 90%+ -- likely backend issue", "new_pos": 2048}}
+{"timestamp": "2026-03-23T12:06:50.066745", "level": "result", "message": "Updated card position", "data": {"card_id": "69c07be95174398ac2f62f5e", "name": "Wednesday deep dive with Tarik -- blitz sync + SEO timeline", "new_pos": 3072}}
+{"timestamp": "2026-03-23T12:06:50.782116", "level": "result", "message": "Updated card position", "data": {"card_id": "69c070126cc5afe46f2162a5", "name": "Brief SimpleSocial on revised social strategy", "new_pos": 4096}}
+{"timestamp": "2026-03-23T12:06:50.994917", "level": "result", "message": "Updated card position", "data": {"card_id": "69c07362fac76bd3ed31df5d", "name": "Cut up press release and post on socials", "new_pos": 5120}}
+{"timestamp": "2026-03-23T12:06:51.219287", "level": "result", "message": "Updated card position", "data": {"card_id": "69c07365a697ce735e7e83f6", "name": "Get Dioni into TikTok accounts", "new_pos": 6144}}
+{"timestamp": "2026-03-23T12:06:51.413427", "level": "result", "message": "Updated card position", "data": {"card_id": "69c07be9df5073b5305c921a", "name": "Get SEO update timeline from Enveu for Tarik", "new_pos": 7168}}
+{"timestamp": "2026-03-23T12:06:51.729080", "level": "result", "message": "Updated card position", "data": {"card_id": "69c07010e2c5d0b192954140", "name": "Add Apple Smart App Banner to myvurt.com", "new_pos": 8192}}
+{"timestamp": "2026-03-23T12:06:51.993377", "level": "result", "message": "Updated card position", "data": {"card_id": "69c0700d7eaf95089948f202", "name": "Fix mobile footer -- social links invisible on mobile", "new_pos": 9216}}
+{"timestamp": "2026-03-23T12:06:52.263293", "level": "result", "message": "Updated card position", "data": {"card_id": "69c0700f41676b2729ca4f83", "name": "Fix share links routing to vurt.enveu.link", "new_pos": 10240}}
+{"timestamp": "2026-03-23T12:06:52.444356", "level": "result", "message": "Updated card position", "data": {"card_id": "69c070119d577cef12b96481", "name": "Deploy foundation pixels via GTM", "new_pos": 11264}}
+{"timestamp": "2026-03-23T12:06:52.674417", "level": "result", "message": "Updated card position", "data": {"card_id": "69c0735f9a9c5c9a5cd20c78", "name": "Move download app button to top of website", "new_pos": 12288}}
+{"timestamp": "2026-03-23T12:06:53.681932", "level": "result", "message": "Updated card position", "data": {"card_id": "69c07360d2c4ee1b9163e163", "name": "Add age prompt after clicking on a title", "new_pos": 13312}}
+{"timestamp": "2026-03-23T12:06:54.070606", "level": "result", "message": "Updated card position", "data": {"card_id": "69c07363484b3ee6329d05e4", "name": "Create asset tracker", "new_pos": 14336}}
+{"timestamp": "2026-03-23T12:06:54.070899", "level": "info", "message": "TASK 1 COMPLETE: Sorted 14 cards in 'This Week'"}
+{"timestamp": "2026-03-23T12:06:54.070957", "level": "info", "message": "=== TASK 2: Flagging stale cards in 'In Progress' ==="}
+{"timestamp": "2026-03-23T12:06:54.180526", "level": "info", "message": "Found 'In Progress' list", "data": {"list_id": "69c0676135c8a806ea58e2a5"}}
+{"timestamp": "2026-03-23T12:06:54.294506", "level": "result", "message": "Found 1 cards in 'In Progress'", "data": {"card_count": 1}}
+{"timestamp": "2026-03-23T12:06:54.406104", "level": "info", "message": "'Stale' label already exists", "data": {"label_id": "69c06d926bbfae785580fb39"}}
+{"timestamp": "2026-03-23T12:06:54.406370", "level": "info", "message": "TASK 2 COMPLETE: Flagged 0 stale cards in 'In Progress'"}
+{"timestamp": "2026-03-23T12:06:54.406430", "level": "task_complete", "message": "VURT Trello Daily Maintenance completed successfully"}
