@@ -113,7 +113,7 @@ async function requestTranscript(audioUrl: string): Promise<string> {
   const res = await fetch(`${BASE}/transcript`, {
     method: "POST",
     headers: HEADERS,
-    body: JSON.stringify({ audio_url: audioUrl }),
+    body: JSON.stringify({ audio_url: audioUrl, speech_models: ["universal-2"] }),
   });
   if (!res.ok) throw new Error(`Transcript request failed: ${res.status} ${await res.text()}`);
   const json = await res.json() as { id: string };

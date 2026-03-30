@@ -38,6 +38,13 @@ def generate_insights(data):
     events = data.get("events", [])
 
     # =========================================================================
+    # 0. TOP SIGNAL TODAY — the single most important thing that changed
+    # =========================================================================
+    top_signal = _top_signal_today(data)
+    if top_signal:
+        insights.append(top_signal)
+
+    # =========================================================================
     # 1. HEALTH SCORE — quick pulse check
     # =========================================================================
     health = _calculate_health_score(data)
@@ -60,9 +67,13 @@ def generate_insights(data):
     insights.extend(_analyze_retention(retention, tw, lw))
 
     # =========================================================================
-    # 5. CONTENT PERFORMANCE — what's working?
+    # 5. CONTENT PERFORMANCE — GA4 pages + NPAW video signals
     # =========================================================================
     insights.extend(_analyze_content(pages, landing))
+    npaw_top = data.get("npaw_top")
+    npaw_daily = data.get("npaw_daily")
+    if npaw_top and npaw_daily:
+        insights.extend(_analyze_npaw_content(npaw_top, npaw_daily))
 
     # =========================================================================
     # 6. GROWTH TRAJECTORY — momentum check
@@ -713,6 +724,178 @@ def _analyze_geo(geo):
             f"These are organic viewers finding VURT without targeting. "
             f"No action needed yet — bookmark for future expansion planning."
         )
+
+    return insights
+
+
+def _top_signal_today(data):
+    """Return the single most significant metric shift day-over-day."""
+    yd = data.get("yesterday", {})
+    db = data.get("day_before", {})
+    if not yd or not db:
+        return None
+
+    checks = [
+        ("engagedSessions", "Engaged sessions"),
+        ("activeUsers", "DAU"),
+        ("engagementRate", "Engagement rate"),
+        ("averageSessionDuration", "Avg session duration"),
+        ("sessions", "Sessions"),
+    ]
+
+    best = None
+    for key, label in checks:
+        try:
+            yd_val = float(yd.get(key, 0))
+            db_val = float(db.get(key, 0))
+            if db_val <= 0:
+                continue
+            pct = (yd_val - db_val) / db_val * 100
+            if best is None or abs(pct) > abs(best[0]):
+                best = (pct, label, yd_val, db_val, key)
+        except (ValueError, TypeError):
+            continue
+
+    if not best:
+        return None
+
+    pct, label, yd_val, db_val, key = best
+    arrow = "▲" if pct > 0 else "▼"
+    sign = "+" if pct > 0 else ""
+
+    if key == "engagementRate":
+        yd_fmt = f"{yd_val * 100:.1f}%"
+        db_fmt = f"{db_val * 100:.1f}%"
+    elif key == "averageSessionDuration":
+        yd_fmt = fmt_duration(str(yd_val))
+        db_fmt = fmt_duration(str(db_val))
+    else:
+        yd_fmt = fmt_num(str(yd_val))
+        db_fmt = fmt_num(str(db_val))
+
+    context = ""
+    if key == "engagedSessions" and pct < -20:
+        context = " — biggest drop in a key metric. Check if ad spend changed or if there's a content gap today."
+    elif key == "engagedSessions" and pct > 20:
+        context = " — strong engagement growth. Something is working today; identify what drove it."
+    elif key == "activeUsers" and pct > 50:
+        context = " — traffic spike. Likely an ad campaign push; watch if engaged sessions scale proportionally."
+    elif key == "activeUsers" and pct < -30:
+        context = " — sharp traffic drop. Check if ad spend paused or if there's a targeting issue."
+    elif key == "engagementRate" and pct > 10:
+        context = " — audience quality improving. More visitors are actually watching content."
+    elif key == "engagementRate" and pct < -10:
+        context = " — quality diluting. More traffic, less engagement — ad targeting may need tightening."
+
+    return (
+        f"**{arrow} TODAY'S KEY SIGNAL — {label}: {sign}{pct:.0f}% day-over-day** "
+        f"({db_fmt} → {yd_fmt}){context}"
+    )
+
+
+def _analyze_npaw_content(npaw_top_raw, npaw_daily_raw):
+    """Surface content performance signals from NPAW video data."""
+    import re as _re
+    import math as _math
+    insights = []
+
+    try:
+        from npaw_client import _extract_grouped_metrics, _extract_metrics, _engagement_score
+    except ImportError:
+        return insights
+
+    # Video error rate
+    try:
+        m = _extract_metrics(npaw_daily_raw)
+        views = m.get("views")
+        errors = m.get("errors")
+        if views and errors and float(views) > 0:
+            error_rate = float(errors) / float(views) * 100
+            if error_rate > 5:
+                insights.append(
+                    f"**High video error rate:** {error_rate:.1f}% of plays errored today "
+                    f"({int(float(errors))} errors / {int(float(views))} plays). "
+                    f"Investigate in NPAW — likely CDN, encoding, or device-specific."
+                )
+    except Exception:
+        pass
+
+    # Content signals from top content
+    try:
+        rows = _extract_grouped_metrics(npaw_top_raw)
+        if not rows:
+            return insights
+
+        for row in rows:
+            try:
+                row["_score"] = _engagement_score(row.get("views", 0), row.get("completionRate", 0))
+            except Exception:
+                row["_score"] = 0.0
+
+        valid = [r for r in rows if r.get("completionRate") and float(r.get("completionRate", 0)) > 0]
+
+        # Best completion rate — use in retargeting
+        if valid:
+            top_cr = max(valid, key=lambda r: float(r.get("completionRate", 0)))
+            cr = float(top_cr.get("completionRate", 0))
+            plays = float(top_cr.get("views", 0))
+            if cr > 25 and plays > 50:
+                insights.append(
+                    f"**Best completion rate (7d) — '{top_cr['title']}':** {cr:.1f}% watch-through "
+                    f"({int(plays):,} plays). This is your highest-quality content signal. "
+                    f"**Use it in retargeting ads** — viewers who finish content are your best conversion target."
+                )
+
+        # High volume, low completion — drop-off alarm
+        drop_off = [
+            r for r in valid
+            if float(r.get("views", 0)) > 300 and float(r.get("completionRate", 0)) < 8
+        ]
+        for r in drop_off[:1]:
+            plays = float(r.get("views", 0))
+            cr = float(r.get("completionRate", 0))
+            finished = int(plays * cr / 100)
+            insights.append(
+                f"**Drop-off alert — '{r['title']}':** {int(plays):,} plays, only {cr:.1f}% completion "
+                f"(~{finished} people finished). Something is breaking in the first 30-60 seconds — "
+                f"hook, loading issue, or quality gap. Watch the first minute on mobile and check NPAW error rate for this title."
+            )
+
+        # Episode-to-episode retention (series funnel)
+        series_map = {}
+        for r in rows:
+            title = r.get("title", "")
+            match = _re.match(r"Episode\s+(\d+)\s*[-–]\s*(.+)", title, _re.IGNORECASE)
+            if match:
+                ep_num = int(match.group(1))
+                series = match.group(2).strip()
+                if series not in series_map:
+                    series_map[series] = {}
+                series_map[series][ep_num] = r
+
+        for series, eps in series_map.items():
+            if 1 in eps and 2 in eps:
+                ep1_plays = float(eps[1].get("views", 0))
+                ep2_plays = float(eps[2].get("views", 0))
+                if ep1_plays > 50 and ep2_plays > 0:
+                    retention_pct = ep2_plays / ep1_plays * 100
+                    if retention_pct > 40:
+                        insights.append(
+                            f"**Strong series funnel — '{series}':** {retention_pct:.0f}% of Ep1 viewers "
+                            f"went to Ep2 ({int(ep1_plays):,} → {int(ep2_plays):,} plays). "
+                            f"High episode retention. Prioritize this series in paid ads — "
+                            f"viewers who start are likely to continue."
+                        )
+                    elif retention_pct < 15 and ep1_plays > 200:
+                        insights.append(
+                            f"**Series funnel leak — '{series}':** Only {retention_pct:.0f}% of Ep1 viewers "
+                            f"reached Ep2 ({int(ep1_plays):,} → {int(ep2_plays):,}). "
+                            f"Check: Is Ep1's ending strong enough to drive 'next episode'? "
+                            f"Is Ep2 auto-surfaced immediately after Ep1 ends on the platform?"
+                        )
+
+    except Exception:
+        pass
 
     return insights
 

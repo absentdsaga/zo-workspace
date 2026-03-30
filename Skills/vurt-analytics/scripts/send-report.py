@@ -88,6 +88,20 @@ def generate():
     print("REPORT_METADATA_END")
     print(f"\nHTML file: {html_path} ({os.path.getsize(html_path)} bytes)")
 
+    # Auto-send via gmail-send.py
+    import subprocess
+    script_dir = os.path.dirname(__file__)
+    for to_addr in metadata["to"]:
+        print(f"\nSending to {to_addr}...")
+        result = subprocess.run(
+            ["python3", os.path.join(script_dir, "gmail-send.py"),
+             html_path, metadata["subject"], to_addr],
+            capture_output=True, text=True
+        )
+        print(result.stdout)
+        if result.returncode != 0:
+            print(f"SEND ERROR: {result.stderr}")
+
     lock_fd.close()
 
 if __name__ == "__main__":

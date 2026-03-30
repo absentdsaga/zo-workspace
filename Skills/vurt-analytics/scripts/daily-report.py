@@ -8,24 +8,77 @@ from ga4_client import *
 from insights_engine import generate_insights
 from app_store_client import get_app_store_data
 from email_renderer import markdown_to_html
+from social_client import collect_social_data, format_social_report
+from npaw_client import get_top_content, get_daily_video_overview, get_device_breakdown as get_npaw_device_breakdown, get_cdn_breakdown, get_country_breakdown, get_isp_breakdown, get_content_quality, format_npaw_report
+from youtube_client import format_youtube_report
 from datetime import datetime, timedelta
 
 def get_overview():
-    result = run_report(
+    """Pull daily snapshot with automatic freshness detection.
+
+    Tries yesterday first. If engaged sessions are <30% of the 7-day daily
+    average, the data is still processing — falls back to 2daysAgo/3daysAgo.
+    Returns (latest_row, previous_row, freshness_info_dict).
+    """
+    overview_metrics = [
+        "activeUsers", "newUsers", "sessions", "averageSessionDuration",
+        "screenPageViews", "engagedSessions", "userEngagementDuration",
+        "sessionsPerUser", "engagementRate"
+    ]
+
+    # Pull yesterday + 7-day baseline in one call to check freshness
+    freshness_result = run_report(
         date_ranges=[
             {"startDate": "yesterday", "endDate": "yesterday", "name": "yesterday"},
-            {"startDate": "2daysAgo", "endDate": "2daysAgo", "name": "dayBefore"}
+            {"startDate": "8daysAgo", "endDate": "2daysAgo", "name": "baseline"}
         ],
-        metrics=[
-            "activeUsers", "newUsers", "sessions", "averageSessionDuration",
-            "screenPageViews", "engagedSessions", "userEngagementDuration",
-            "sessionsPerUser", "engagementRate"
-        ]
+        metrics=["engagedSessions", "activeUsers"]
     )
+    freshness_rows = extract_rows(freshness_result)
+    yd_check = next((r for r in freshness_rows if r.get("dateRange") == "yesterday"), {})
+    baseline = next((r for r in freshness_rows if r.get("dateRange") == "baseline"), {})
+
+    yd_engaged = float(yd_check.get("engagedSessions", "0"))
+    baseline_engaged = float(baseline.get("engagedSessions", "0"))
+    # Baseline covers 7 days, so daily average = total / 7
+    daily_avg_engaged = baseline_engaged / 7 if baseline_engaged > 0 else 1
+
+    freshness_ratio = yd_engaged / daily_avg_engaged if daily_avg_engaged > 0 else 0
+    yesterday_is_fresh = freshness_ratio >= 0.30
+
+    if yesterday_is_fresh:
+        # Yesterday's data looks complete — use it
+        result = run_report(
+            date_ranges=[
+                {"startDate": "yesterday", "endDate": "yesterday", "name": "latest"},
+                {"startDate": "2daysAgo", "endDate": "2daysAgo", "name": "previous"}
+            ],
+            metrics=overview_metrics
+        )
+        days_offset = (1, 2)
+    else:
+        # Yesterday still processing — fall back to finalized data
+        result = run_report(
+            date_ranges=[
+                {"startDate": "2daysAgo", "endDate": "2daysAgo", "name": "latest"},
+                {"startDate": "3daysAgo", "endDate": "3daysAgo", "name": "previous"}
+            ],
+            metrics=overview_metrics
+        )
+        days_offset = (2, 3)
+
     rows = extract_rows(result)
-    yesterday = next((r for r in rows if r.get("dateRange") == "date_range_0"), rows[0] if rows else {})
-    day_before = next((r for r in rows if r.get("dateRange") == "date_range_1"), rows[1] if len(rows) > 1 else {})
-    return yesterday, day_before
+    latest = next((r for r in rows if r.get("dateRange") == "latest"), rows[0] if rows else {})
+    previous = next((r for r in rows if r.get("dateRange") == "previous"), rows[1] if len(rows) > 1 else {})
+
+    freshness_info = {
+        "yesterday_fresh": yesterday_is_fresh,
+        "freshness_ratio": freshness_ratio,
+        "yd_engaged": yd_engaged,
+        "daily_avg_engaged": daily_avg_engaged,
+        "days_offset": days_offset,
+    }
+    return latest, previous, freshness_info
 
 def get_weekly_overview():
     result = run_report(
@@ -40,8 +93,8 @@ def get_weekly_overview():
         ]
     )
     rows = extract_rows(result)
-    this_week = next((r for r in rows if r.get("dateRange") == "date_range_0"), rows[0] if rows else {})
-    last_week = next((r for r in rows if r.get("dateRange") == "date_range_1"), rows[1] if len(rows) > 1 else {})
+    this_week = next((r for r in rows if r.get("dateRange") == "thisWeek"), rows[0] if rows else {})
+    last_week = next((r for r in rows if r.get("dateRange") == "lastWeek"), rows[1] if len(rows) > 1 else {})
     return this_week, last_week
 
 def get_traffic_sources():
@@ -159,14 +212,22 @@ def build_report():
         ("Engagement Rate", "engagementRate"),
     ]
 
-    # --- Yesterday vs Day Before ---
+    # --- Daily Snapshot with automatic freshness detection ---
     try:
-        yd, db = get_overview()
+        yd, db, freshness = get_overview()
         collected["yesterday"] = yd
         collected["day_before"] = db
-        lines.append("## Yesterday's Snapshot")
+        collected["freshness"] = freshness
+        latest_offset, prev_offset = freshness["days_offset"]
+        latest_date = (now - timedelta(days=latest_offset)).strftime("%A %m/%d")
+        prev_date = (now - timedelta(days=prev_offset)).strftime("%A %m/%d")
+        if freshness["yesterday_fresh"]:
+            freshness_label = "latest data"
+        else:
+            freshness_label = "finalized data"
+        lines.append(f"## Daily Snapshot ({freshness_label}: {latest_date} vs {prev_date})")
         lines.append("")
-        lines.append("| Metric | Yesterday | Day Before | Change |")
+        lines.append(f"| Metric | {latest_date} | {prev_date} | Change |")
         lines.append("|--------|-----------|------------|--------|")
         for label, key in metrics_display:
             yv = yd.get(key, "0")
@@ -246,7 +307,7 @@ def build_report():
         retention = get_retention()
         collected["retention"] = retention
         if retention:
-            tw_rows = [r for r in retention if r.get("dateRange") == "date_range_0"]
+            tw_rows = [r for r in retention if r.get("dateRange") == "thisWeek"]
             lines.append("## New vs Returning Users (7d)")
             lines.append("")
             lines.append("| Segment | Users | Sessions | Avg Duration | Engagement Rate |")
@@ -268,7 +329,8 @@ def build_report():
             lines.append("| Screen/Page | Views | Users | Engagement Time |")
             lines.append("|-------------|-------|-------|-----------------|")
             for p in pages:
-                lines.append(f"| {p.get('unifiedScreenName','?')[:50]} | {fmt_num(p.get('screenPageViews','0'))} | {fmt_num(p.get('activeUsers','0'))} | {fmt_duration(p.get('userEngagementDuration','0'))} |")
+                screen = p.get('unifiedScreenName','?').replace('|', '/').strip()[:50]
+                lines.append(f"| {screen} | {fmt_num(p.get('screenPageViews','0'))} | {fmt_num(p.get('activeUsers','0'))} | {fmt_duration(p.get('userEngagementDuration','0'))} |")
             lines.append("")
     except Exception as e:
         lines.append(f"*Top content unavailable: {e}*\n")
@@ -283,7 +345,7 @@ def build_report():
             lines.append("| Landing Page | Sessions | Avg Duration | Engagement Rate |")
             lines.append("|-------------|----------|-------------|-----------------|")
             for l in landing:
-                path = l.get("landingPagePlusQueryString", "?")
+                path = l.get("landingPagePlusQueryString", "?").replace('|', '/')
                 if len(path) > 60:
                     path = path[:57] + "..."
                 lines.append(f"| {path} | {fmt_num(l.get('sessions','0'))} | {fmt_duration(l.get('averageSessionDuration','0'))} | {fmt_pct(l.get('engagementRate','0'))} |")
@@ -349,6 +411,43 @@ def build_report():
     except:
         pass
 
+    # --- Social Media ---
+    try:
+        social_data = collect_social_data()
+        collected["social"] = social_data
+        social_md = format_social_report(social_data)
+        lines.extend(social_md.splitlines())
+        lines.append("")
+    except Exception as e:
+        lines.append(f"*Social media data unavailable: {e}*\n")
+
+    # --- YouTube ---
+    try:
+        yt_md, yt_data = format_youtube_report()
+        if yt_md:
+            collected["youtube"] = yt_data
+            lines.extend(yt_md.splitlines())
+            lines.append("")
+    except Exception as e:
+        lines.append(f"*YouTube data unavailable: {e}*\n")
+
+    # --- NPAW Video Performance ---
+    try:
+        npaw_top = get_top_content(days=7, limit=20)
+        npaw_daily = get_daily_video_overview()
+        npaw_devices = get_npaw_device_breakdown(days=7)
+        npaw_cdn = get_cdn_breakdown(days=7)
+        npaw_country = get_country_breakdown(days=7)
+        npaw_isp = get_isp_breakdown(days=7)
+        npaw_content_quality = get_content_quality(days=7, limit=20)
+        collected["npaw_top"] = npaw_top
+        collected["npaw_daily"] = npaw_daily
+        npaw_md = format_npaw_report(npaw_top, npaw_daily, npaw_devices, npaw_cdn, npaw_country, npaw_isp, npaw_content_quality)
+        lines.extend(npaw_md.splitlines())
+        lines.append("")
+    except Exception as e:
+        lines.append(f"*Video performance data unavailable: {e}*\n")
+
     # --- App Store Ratings ---
     try:
         collected["app_stores"] = get_app_store_data()
@@ -377,6 +476,8 @@ def build_report():
     lines.append("### Methodology")
     lines.append("- **Data source:** Google Analytics 4 (Property ID 518738893, myvurt.com)")
     lines.append("- **Engagement Rate:** % of sessions lasting >10s, with 2+ page views, or a key event (GA4 standard definition)")
+    lines.append("- **Daily Snapshot freshness:** Automatically uses yesterday's data when GA4 processing is complete (engaged sessions >= 30% of 7-day avg). Falls back to 2-days-ago when data is still processing.")
+    lines.append("- **Social media data:** Instagram via Meta Graph API (IG Business Account 17841479978232203), YouTube/TikTok/X via public profile scraping")
     lines.append("- **All numbers are pulled directly from GA4 APIs** — no manual adjustments or estimates except where explicitly labeled as projections")
     lines.append("- **Ad revenue projections** use verified AVOD CPM benchmarks ($15-25, Adwave 2025) and are scaling models, not forecasts")
     lines.append("- **Health Score** is a weighted composite: Growth (25), Engagement (25), Retention (25), Traffic Quality (25) — formulas shown inline")

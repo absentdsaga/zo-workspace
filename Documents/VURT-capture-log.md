@@ -121,3 +121,25 @@ Tracks what VURT information was persisted and when, to prevent context loss acr
 **Root cause of failure:** Contacts were discussed in a prior Zo conversation but only stored in the agent instruction — not persisted to master doc or memory. When the agent was recreated/updated, the contacts were lost.
 
 **Prevention:** Created `vurt-capture` skill + conditional rule to auto-capture VURT facts at end of every VURT conversation.
+
+---
+### 2026-03-28 — Social Ops Context Update
+
+**Captured:**
+- TikTok (@vurt_official) is ACTIVE — Dioni confirmed posting there alongside IG/FB/YT
+- 72-hour rule clarified: runs in parallel with posting, not a freeze. New clip every 2-3 days.
+- Platform exports simplified: one clean vertical export works for all platforms, only extra is SRT for YouTube
+- Weekly cadence for titles even with 10 clips — volume of director features means 1 title/week
+- Clip 2 for Karma in Heels: "I want to play... especially with this motherfucker." Two girls + one guy, camera spins, wide room, dark/menacing.
+- Clip 1 (the craziest of 5) was posted to all 4 platforms same day (stagger going forward)
+- Subtitles were missing from Clip 1 post — noted for future
+- "Be thoughtful and disciplined" quote = Ted Lucas (corrected from Mark)
+
+**Persisted to:**
+- Documents/VURT-Original-Launch-Playbook.md (posting schedule, weekend push, clip arc, exports)
+- Documents/VURT-Social-Media-Plan-of-Attack.md (TikTok active, exports simplified)
+- Documents/VURT-master.md (Ted attribution fix)
+- Skills/vurt-social-tracker/state.md (NEW — living state file)
+- Skills/vurt-social-tracker/SKILL.md (NEW — context tracker skill)
+- Memory: project_vurt_social_ops.md (TikTok active, cadence rules, Clip 2 info)
+- Memory: MEMORY.md (social tracker skill reference, TikTok active)

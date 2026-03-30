@@ -30,6 +30,28 @@ bun run Skills/vurt-subtitles/scripts/generate-srt.ts --input /path/to/videos/ -
 
 Output: SRT files saved alongside source files (or in `--output` dir), named `<filename>.srt`.
 
+## Frame.io → AssemblyAI (use this for VURT)
+
+Pull videos directly from Frame.io and transcribe them:
+
+```bash
+# Step 1: List your projects to get the project ID
+bun run Skills/vurt-subtitles/scripts/frameio-subtitles.ts --list
+
+# Step 2: Test batch (first 5 videos)
+bun run Skills/vurt-subtitles/scripts/frameio-subtitles.ts --project <project_id> --limit 5 --output ./srts
+
+# Full run on a project
+bun run Skills/vurt-subtitles/scripts/frameio-subtitles.ts --project <project_id> --limit 9999 --output ./srts
+
+# Process a specific folder
+bun run Skills/vurt-subtitles/scripts/frameio-subtitles.ts --folder <folder_id> --output ./srts
+```
+
+Requires both `FRAMEIO_API_KEY` and `ASSEMBLYAI_API_KEY` in Settings > Advanced.
+
+---
+
 ## Notes
 - Supported formats: mp4, mov, mkv, avi, webm, mp3, wav, m4a, flac, ogg
 - Accuracy is 95%+ on produced dialogue (VURT's content is clean audio, so expect high accuracy)

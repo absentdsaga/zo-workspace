@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Send the VURT daily report as inline HTML email body.
 
-Uses Zo's /zo/ask API to delegate email sending to a child agent
-that has access to Gmail tools.
+Uses Zo's /zo/tools/use_app_gmail/run API to send directly.
 
 Usage: python3 gmail-send.py <html_file> <subject> <to_email>
 """
-import sys, os, json, requests, base64, time
+import sys, os, json, requests
 
 def send_report(html_file, subject, to_email):
     token = os.environ.get("ZO_CLIENT_IDENTITY_TOKEN", "")
@@ -17,34 +16,39 @@ def send_report(html_file, subject, to_email):
     with open(html_file) as f:
         html = f.read()
 
-    # Split into chunks if needed — but first try sending via
-    # a child agent that reads the file directly
-    prompt = f"""You must send an email. Here are the steps:
-
-1. Read the file: {html_file}
-2. Use gmail-send-email with:
-   - to: {to_email}
-   - subject: {subject}
-   - bodyType: html
-   - body: the ENTIRE file contents from step 1
-
-Do this now. Respond with SENT and the message ID when done."""
-
     print(f"Sending report ({len(html)} chars) to {to_email}...")
-    
+
+    configured_props = json.dumps({
+        "to": to_email,
+        "subject": subject,
+        "bodyType": "html",
+        "body": html,
+    })
+
+    payload = {
+        "args": {
+            "tool_name": "gmail-send-email",
+            "email": "dioniproduces@gmail.com",
+            "configured_props": configured_props,
+        }
+    }
+
     try:
         resp = requests.post(
-            "https://api.zo.computer/zo/ask",
+            "https://api.zo.computer/zo/tools/use_app_gmail/run",
             headers={"authorization": token, "content-type": "application/json"},
-            json={"input": prompt, "model_name": "anthropic:claude-sonnet-4-5-20250929"},
-            timeout=120
+            json=payload,
+            timeout=120,
         )
-        
+
         if resp.status_code == 200:
             result = resp.json()
-            output = result.get("output", "")
-            print(f"Result: {output[:300]}")
-            return "SENT" in output.upper() or "success" in output.lower()
+            if result.get("success"):
+                print(f"SENT: {result.get('result', '')[:200]}")
+                return True
+            else:
+                print(f"Tool error: {result.get('error', result)}")
+                return False
         else:
             print(f"API error: {resp.status_code} {resp.text[:200]}")
             return False

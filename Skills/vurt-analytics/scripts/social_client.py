@@ -9,6 +9,7 @@ import json, os, re, subprocess, time
 from datetime import datetime
 
 CACHE_FILE = os.path.join(os.path.dirname(__file__), ".social-cache.json")
+CACHE_PREV_FILE = os.path.join(os.path.dirname(__file__), ".social-cache-prev.json")
 
 ACCOUNTS = {
     "instagram": {"handle": "myvurt", "url": "https://www.instagram.com/myvurt/"},
@@ -163,30 +164,135 @@ def scrape_x():
 
 
 def scrape_instagram():
-    """Instagram requires auth — returns cached/manual data or error."""
+    """Instagram via Meta Graph API — profile + 7-day insights."""
     data = {"platform": "instagram", "handle": "@myvurt",
-            "followers": None, "posts": None, "error": None}
+            "followers": None, "posts": None, "following": None,
+            "reach_7d": None, "profile_views_7d": None,
+            "accounts_engaged_7d": None, "total_interactions_7d": None,
+            "likes_7d": None, "comments_7d": None, "shares_7d": None, "saves_7d": None,
+            "top_posts": [], "error": None}
 
-    # Try Meta Graph API if token is available
-    ig_token = os.environ.get("VURT_INSTAGRAM_TOKEN")
-    ig_user_id = os.environ.get("VURT_INSTAGRAM_USER_ID")
+    ig_token = os.environ.get("VURT_META_ACCESS_TOKEN")
+    IG_USER_ID = "17841479978232203"
 
-    if ig_token and ig_user_id:
+    if not ig_token:
+        data["error"] = "VURT_META_ACCESS_TOKEN not set"
+        return data
+
+    try:
+        import urllib.request
+        from datetime import timedelta
+
+        def _graph_get(path, params=None):
+            params = params or {}
+            params["access_token"] = ig_token
+            qs = "&".join(f"{k}={v}" for k, v in params.items())
+            url = f"https://graph.facebook.com/v25.0/{path}?{qs}"
+            resp = urllib.request.urlopen(url, timeout=15)
+            return json.loads(resp.read())
+
+        # Profile
+        profile = _graph_get(IG_USER_ID, {
+            "fields": "followers_count,follows_count,media_count,username"
+        })
+        data["followers"] = profile.get("followers_count")
+        data["following"] = profile.get("follows_count")
+        data["posts"] = profile.get("media_count")
+
+        # 7-day insights (time-series metrics)
+        now = datetime.utcnow()
+        since = int((now - timedelta(days=7)).timestamp())
+        until = int(now.timestamp())
         try:
-            import urllib.request
-            url = f"https://graph.instagram.com/{ig_user_id}?fields=followers_count,media_count,username&access_token={ig_token}"
-            resp = urllib.request.urlopen(url, timeout=10)
-            info = json.loads(resp.read())
-            data["followers"] = info.get("followers_count")
-            data["posts"] = info.get("media_count")
-            return data
-        except Exception as e:
-            data["error"] = f"Graph API error: {e}"
-            return data
+            ts_insights = _graph_get(f"{IG_USER_ID}/insights", {
+                "metric": "reach,follower_count",
+                "period": "day",
+                "since": since, "until": until,
+            })
+            for m in ts_insights.get("data", []):
+                if m["name"] == "reach":
+                    data["reach_7d"] = sum(v["value"] for v in m.get("values", []))
+        except:
+            pass
 
-    # No API access — use last known data from audit
-    data["followers"] = None
-    data["error"] = "Requires Meta Graph API (VURT_INSTAGRAM_TOKEN). Last known: ~324 followers, 21 posts (Mar 17)"
+        # 7-day insights (total_value metrics)
+        try:
+            tv_insights = _graph_get(f"{IG_USER_ID}/insights", {
+                "metric": "profile_views,accounts_engaged,total_interactions,likes,comments,shares,saves",
+                "metric_type": "total_value",
+                "period": "day",
+                "since": since, "until": until,
+            })
+            for m in tv_insights.get("data", []):
+                val = m.get("total_value", {}).get("value", 0)
+                data[f"{m['name']}_7d"] = val
+        except:
+            pass
+
+        # Recent posts (top 15)
+        try:
+            media = _graph_get(f"{IG_USER_ID}/media", {
+                "fields": "id,caption,timestamp,like_count,comments_count,media_type,permalink",
+                "limit": "15",
+            })
+            all_comments = []
+            for post in media.get("data", []):
+                post_data = {
+                    "caption": (post.get("caption") or "")[:60],
+                    "likes": post.get("like_count", 0),
+                    "comments": post.get("comments_count", 0),
+                    "type": post.get("media_type", ""),
+                    "date": post.get("timestamp", "")[:10],
+                    "reach": None, "views": None, "saves": None, "shares": None,
+                    "comments_with_replies": 0,
+                }
+                try:
+                    # Use views (not plays — deprecated in v22+); works for VIDEO and IMAGE
+                    pi = _graph_get(f"{post['id']}/insights", {"metric": "reach,saved,shares,views"})
+                    for entry in pi.get("data", []):
+                        key = entry["name"] if entry["name"] != "saved" else "saves"
+                        post_data[key] = entry.get("values", [{}])[0].get("value", 0)
+                except:
+                    pass
+                # Pull comments + replies for accurate total count
+                if post_data["comments"] > 0:
+                    try:
+                        c_resp = _graph_get(f"{post['id']}/comments", {
+                            "fields": "text,username,timestamp,replies{text,username,timestamp}",
+                            "limit": "50",
+                        })
+                        comment_list = []
+                        reply_count = 0
+                        for c in c_resp.get("data", []):
+                            comment_list.append({
+                                "user": c.get("username",""),
+                                "text": c.get("text","")[:120],
+                                "date": c.get("timestamp","")[:10],
+                                "post_caption": (post.get("caption") or "")[:40],
+                            })
+                            replies = c.get("replies", {}).get("data", [])
+                            reply_count += len(replies)
+                            for r in replies:
+                                comment_list.append({
+                                    "user": r.get("username",""),
+                                    "text": f"↳ {r.get('text','')[:110]}",
+                                    "date": r.get("timestamp","")[:10],
+                                    "post_caption": (post.get("caption") or "")[:40],
+                                })
+                        post_data["comment_list"] = comment_list[:15]
+                        post_data["comments_with_replies"] = len(c_resp.get("data", [])) + reply_count
+                        all_comments.extend(comment_list)
+                    except:
+                        post_data["comment_list"] = []
+                data["top_posts"].append(post_data)
+            data["all_recent_comments"] = sorted(all_comments, key=lambda x: x.get("date",""), reverse=True)[:25]
+            data["total_comments_with_replies"] = sum(p.get("comments_with_replies", 0) for p in data["top_posts"])
+        except:
+            pass
+
+    except Exception as e:
+        data["error"] = f"Graph API error: {e}"
+
     return data
 
 
@@ -198,19 +304,238 @@ def load_cache():
 
 
 def save_cache(data):
+    today = datetime.now().strftime("%Y-%m-%d")
+    # If existing cache is from a previous day, promote it to prev before overwriting
+    if os.path.exists(CACHE_FILE):
+        try:
+            existing = json.load(open(CACHE_FILE))
+            existing_date = existing.get("timestamp", "")[:10]
+            if existing_date and existing_date != today:
+                with open(CACHE_PREV_FILE, "w") as f:
+                    json.dump(existing, f, indent=2)
+        except Exception:
+            pass
     with open(CACHE_FILE, "w") as f:
         json.dump(data, f, indent=2)
 
 
+def get_facebook_page():
+    """Facebook Page metrics via Meta Graph API (New Pages Experience)."""
+    data = {"platform": "facebook", "handle": "myvurt",
+            "followers": None, "talking_about": None, "recent_posts": [],
+            "total_post_reactions": 0, "total_post_shares": 0, "error": None}
+
+    user_token = os.environ.get("VURT_META_ACCESS_TOKEN")
+    PAGE_ID = "943789668811148"
+
+    if not user_token:
+        data["error"] = "VURT_META_ACCESS_TOKEN not set"
+        return data
+
+    try:
+        import urllib.request, urllib.parse
+
+        def _graph(path, params=None, token=None):
+            params = params or {}
+            params["access_token"] = token or user_token
+            url = f"https://graph.facebook.com/v19.0/{path}?{urllib.parse.urlencode(params)}"
+            return json.loads(urllib.request.urlopen(url, timeout=15).read())
+
+        # Try using stored token directly as page token (if it's already a page token)
+        # Otherwise fetch page token from page ID
+        page_token = user_token
+        try:
+            page = _graph(PAGE_ID, {"fields": "fan_count,followers_count,talking_about_count"}, token=page_token)
+            if not page.get("followers_count") and page.get("followers_count") != 0:
+                # Token might be a user token, get page token
+                pt = _graph(PAGE_ID, {"fields": "access_token"}).get("access_token")
+                if pt:
+                    page_token = pt
+                    page = _graph(PAGE_ID, {"fields": "fan_count,followers_count,talking_about_count"}, token=page_token)
+        except:
+            try:
+                pt = _graph(PAGE_ID, {"fields": "access_token"}).get("access_token")
+                if pt:
+                    page_token = pt
+                page = _graph(PAGE_ID, {"fields": "fan_count,followers_count,talking_about_count"}, token=page_token)
+            except Exception as e:
+                data["error"] = f"Could not access page: {e}"
+                return data
+
+        data["followers"] = page.get("followers_count")
+        data["talking_about"] = page.get("talking_about_count")
+
+        # Page-level insights (7d) — these capture ALL engagement including
+        # Facebook's recommendation engine distribution, which individual post
+        # endpoints do NOT return
+        try:
+            from datetime import timedelta
+            now = datetime.utcnow()
+            since = int((now - timedelta(days=7)).timestamp())
+            until = int(now.timestamp())
+
+            pi_resp = _graph(f"{PAGE_ID}/insights", {
+                "metric": "page_actions_post_reactions_total,page_post_engagements,page_video_views,page_video_views_organic,page_posts_impressions",
+                "period": "day",
+                "since": since,
+                "until": until,
+            }, token=page_token)
+
+            daily_breakdown = {}
+            for m in pi_resp.get("data", []):
+                name = m["name"]
+                for v in m.get("values", []):
+                    day = v["end_time"][:10]
+                    if day not in daily_breakdown:
+                        daily_breakdown[day] = {"date": day}
+                    val = v["value"]
+                    if name == "page_actions_post_reactions_total":
+                        if isinstance(val, dict):
+                            daily_breakdown[day]["reactions"] = sum(val.values())
+                            daily_breakdown[day]["reactions_by_type"] = val
+                        else:
+                            daily_breakdown[day]["reactions"] = val
+                    elif name == "page_post_engagements":
+                        daily_breakdown[day]["engagements"] = val
+                    elif name == "page_video_views":
+                        daily_breakdown[day]["video_views"] = val
+                    elif name == "page_video_views_organic":
+                        daily_breakdown[day]["video_views_organic"] = val
+                    elif name == "page_posts_impressions":
+                        daily_breakdown[day]["impressions"] = val
+
+            data["page_daily_breakdown"] = sorted(daily_breakdown.values(), key=lambda x: x["date"], reverse=True)
+            data["page_reactions_7d"] = sum(d.get("reactions", 0) for d in daily_breakdown.values())
+            data["page_engagements_7d"] = sum(d.get("engagements", 0) for d in daily_breakdown.values())
+            data["page_video_views_7d"] = sum(d.get("video_views", 0) for d in daily_breakdown.values())
+            data["page_video_views_organic_7d"] = sum(d.get("video_views_organic", 0) for d in daily_breakdown.values())
+            data["page_impressions_7d"] = sum(d.get("impressions", 0) for d in daily_breakdown.values())
+
+            # Aggregate reaction types across all days
+            all_types = {}
+            for d in daily_breakdown.values():
+                for rtype, count in d.get("reactions_by_type", {}).items():
+                    all_types[rtype] = all_types.get(rtype, 0) + count
+            data["page_reactions_by_type_7d"] = all_types
+        except Exception:
+            pass
+
+        # Use v19 /feed — v25 throws deprecation errors on aggregated fields
+        # Only request likes.summary and comments.summary (reactions.summary and shares are deprecated)
+        posts_resp = _graph(f"{PAGE_ID}/feed", {
+            "fields": "id,message,story,created_time,likes.summary(true),comments.summary(true),attachments",
+            "limit": "20",
+        }, token=page_token)
+
+        seen_ids = set()
+        for p in posts_resp.get("data", []):
+            post_id = p.get("id", "")
+            if post_id in seen_ids:
+                continue
+            seen_ids.add(post_id)
+
+            # Use likes count as reactions proxy (reactions.summary deprecated on feed)
+            reactions = p.get("likes", {}).get("summary", {}).get("total_count", 0)
+            comment_count = p.get("comments", {}).get("summary", {}).get("total_count", 0)
+            shares = 0  # shares field deprecated on feed with attachments
+            data["total_post_reactions"] += reactions
+            data["total_post_shares"] += shares
+            data["total_post_comments"] = data.get("total_post_comments", 0) + comment_count
+
+            caption = (p.get("message") or p.get("story") or "")[:60]
+
+            # Extract FB video views from attachment target (cross-posted IG reels)
+            video_views = None
+            is_reel = False
+            for att in (p.get("attachments", {}).get("data", [])):
+                att_type = att.get("type", "")
+                target = att.get("target", {})
+                target_id = target.get("id")
+                target_url = target.get("url", "")
+                if att_type == "video_inline" and target_id and "/reel/" in target_url:
+                    is_reel = True
+                    try:
+                        vr = _graph(target_id, {"fields": "views"}, token=page_token)
+                        video_views = vr.get("views")
+                    except Exception:
+                        pass
+                    break
+
+            # Pull comments + replies for accurate counts
+            recent_comments = []
+            total_with_replies = 0
+            if comment_count > 0:
+                try:
+                    comments_resp = _graph(f"{post_id}/comments", {
+                        "fields": "message,from,created_time,comments{message,from,created_time}",
+                        "limit": "50",
+                        "filter": "stream",
+                    }, token=page_token)
+                    for c in comments_resp.get("data", []):
+                        total_with_replies += 1
+                        recent_comments.append({
+                            "from": (c.get("from") or {}).get("name", ""),
+                            "text": (c.get("message") or "")[:120],
+                            "date": c.get("created_time", "")[:10],
+                        })
+                        nested = c.get("comments", {}).get("data", [])
+                        total_with_replies += len(nested)
+                        for nc in nested:
+                            recent_comments.append({
+                                "from": (nc.get("from") or {}).get("name", ""),
+                                "text": f"↳ {(nc.get('message') or '')[:110]}",
+                                "date": nc.get("created_time", "")[:10],
+                            })
+                except Exception:
+                    total_with_replies = comment_count
+
+            post_record = {
+                "date": p.get("created_time", "")[:10],
+                "reactions": reactions,
+                "comments": comment_count,
+                "comments_with_replies": total_with_replies,
+                "shares": shares,
+                "message": caption.replace("\n", " ").replace("|", "/"),
+                "recent_comments": recent_comments,
+            }
+            if is_reel:
+                post_record["is_reel"] = True
+                post_record["video_views"] = video_views
+                data["total_reel_views_feed"] = data.get("total_reel_views_feed", 0) + (video_views or 0)
+            data["recent_posts"].append(post_record)
+
+        # Sort by most recent first, keep top 15
+        data["recent_posts"].sort(key=lambda x: x.get("date", ""), reverse=True)
+        data["recent_posts"] = data["recent_posts"][:15]
+
+        # NOTE: Separate video_reels endpoint removed — reels already appear in feed
+        # with accurate FB views. The likes/comments on native FB reels are negligible
+        # compared to IG engagement (which Meta surfaces in FB notifications).
+
+    except Exception as e:
+        data["error"] = f"Graph API error: {e}"
+
+    return data
+
+
 def collect_social_data():
-    """Run all scrapers, compute deltas from cached previous run."""
-    previous = load_cache()
+    """Run all scrapers, compute deltas from yesterday's snapshot."""
+    # Always compare against the previous-day snapshot, not today's last run
+    previous = {}
+    if os.path.exists(CACHE_PREV_FILE):
+        try:
+            previous = json.load(open(CACHE_PREV_FILE))
+        except Exception:
+            pass
+    if not previous:
+        previous = load_cache()
 
     scrapers = [
         ("youtube", scrape_youtube),
         ("tiktok", scrape_tiktok),
         ("x", scrape_x),
         ("instagram", scrape_instagram),
+        ("facebook", get_facebook_page),
     ]
 
     current = {"timestamp": datetime.now().isoformat(), "platforms": {}}
@@ -227,7 +552,8 @@ def collect_social_data():
     for platform, data in current["platforms"].items():
         prev = prev_platforms.get(platform, {})
         data["_prev"] = prev
-        for key in ["followers", "subscribers", "likes", "posts", "videos", "total_views"]:
+        for key in ["followers", "subscribers", "likes", "posts", "videos", "total_views",
+                    "talking_about", "total_post_reactions"]:
             cur_val = data.get(key)
             prev_val = prev.get(key)
             if cur_val is not None and prev_val is not None:
@@ -262,38 +588,171 @@ def format_social_report(social_data):
     lines.append("")
 
     platforms = social_data.get("platforms", {})
+    ig = platforms.get("instagram", {})
+    fb = platforms.get("facebook", {})
+    yt = platforms.get("youtube", {})
+    tt = platforms.get("tiktok", {})
+    x = platforms.get("x", {})
 
     # Summary table
     lines.append("| Platform | Handle | Followers/Subs | Change | Activity |")
     lines.append("|----------|--------|---------------|--------|----------|")
 
-    # YouTube
-    yt = platforms.get("youtube", {})
+    ig_activity = f"{_fmt_val(ig.get('posts'))} posts" if ig.get("posts") else "API needed"
+    lines.append(f"| Instagram | @myvurt | {_fmt_val(ig.get('followers'))} | {_delta_str(ig, 'followers')} | {ig_activity} |")
+
+    if not fb.get("error"):
+        fb_activity = f"talking about: {_fmt_val(fb.get('talking_about'))}"
+        lines.append(f"| Facebook | myvurt | {_fmt_val(fb.get('followers'))} | {_delta_str(fb, 'followers')} | {fb_activity} |")
+
     yt_activity = f"{_fmt_val(yt.get('videos'))} videos, {_fmt_val(yt.get('total_views'))} total views"
     lines.append(f"| YouTube | @myVURT1 | {_fmt_val(yt.get('subscribers'))} | {_delta_str(yt, 'subscribers')} | {yt_activity} |")
 
-    # TikTok
-    tt = platforms.get("tiktok", {})
     tt_activity = f"{_fmt_val(tt.get('likes'))} likes"
     lines.append(f"| TikTok | @myvurt | {_fmt_val(tt.get('followers'))} | {_delta_str(tt, 'followers')} | {tt_activity} |")
 
-    # Instagram
-    ig = platforms.get("instagram", {})
-    ig_activity = f"{_fmt_val(ig.get('posts'))} posts" if ig.get("posts") else "API needed"
-    ig_followers = _fmt_val(ig.get("followers")) if ig.get("followers") else "~324*"
-    lines.append(f"| Instagram | @myvurt | {ig_followers} | {_delta_str(ig, 'followers')} | {ig_activity} |")
-
-    # X
-    x = platforms.get("x", {})
     x_activity = f"{_fmt_val(x.get('posts'))} posts"
     lines.append(f"| X | @myvurt | {_fmt_val(x.get('followers'))} | {_delta_str(x, 'followers')} | {x_activity} |")
 
     lines.append("")
 
-    # YouTube video breakdown (if available)
+    # Cross-platform totals
+    total_followers = sum(
+        (d.get("followers") or d.get("subscribers") or 0)
+        for p, d in platforms.items() if not d.get("error")
+    )
+    if total_followers > 0:
+        lines.append(f"**Total cross-platform reach:** {total_followers:,} followers")
+        lines.append("")
+
+    # Combined engagement summary — uses PAGE-LEVEL insights for FB (accurate)
+    # and per-post data for IG
+    fb_page_reactions = fb.get("page_reactions_7d", 0)
+    fb_page_engagements = fb.get("page_engagements_7d", 0)
+    fb_page_video_views = fb.get("page_video_views_7d", 0)
+    ig_cwr = ig.get("total_comments_with_replies", 0)
+    ig_likes_total = sum(p.get("likes", 0) for p in ig.get("top_posts", []))
+    ig_shares_total = sum(p.get("shares", 0) for p in ig.get("top_posts", []) if p.get("shares"))
+
+    if fb_page_reactions > 0 or ig_likes_total > 0:
+        lines.append("### Combined Engagement (7d)")
+        lines.append("")
+        lines.append("| Metric | IG | FB (Page Insights) | Total |")
+        lines.append("|--------|----|--------------------|------:|")
+        lines.append(f"| Reactions/Likes | {_fmt_val(ig_likes_total)} | {_fmt_val(fb_page_reactions)} | **{_fmt_val(ig_likes_total + fb_page_reactions)}** |")
+        lines.append(f"| Comments (w/ replies) | {ig_cwr} | — | **{ig_cwr}** |")
+        lines.append(f"| Shares | {_fmt_val(ig_shares_total)} | — | **{_fmt_val(ig_shares_total)}** |")
+        lines.append(f"| Total Engagements | — | {_fmt_val(fb_page_engagements)} | — |")
+        lines.append(f"| Video Views | — | {_fmt_val(fb_page_video_views)} | — |")
+        fb_impressions = fb.get("page_impressions_7d", 0)
+        if fb_impressions:
+            lines.append(f"| Impressions | — | {_fmt_val(fb_impressions)} | — |")
+        lines.append("")
+
+    # =========================================================================
+    # INSTAGRAM — lead with this since it drives the engagement in FB notifications
+    # =========================================================================
+    if ig.get("reach_7d") is not None:
+        lines.append("### Instagram Engagement (7d)")
+        lines.append("")
+        lines.append("| Metric | Value |")
+        lines.append("|--------|-------|")
+        ig_metrics = [
+            ("Reach", ig.get("reach_7d")),
+            ("Profile Views", ig.get("profile_views_7d")),
+            ("Accounts Engaged", ig.get("accounts_engaged_7d")),
+            ("Total Interactions", ig.get("total_interactions_7d")),
+            ("Likes", ig.get("likes_7d")),
+            ("Comments", ig.get("comments_7d")),
+            ("Shares", ig.get("shares_7d")),
+            ("Saves", ig.get("saves_7d")),
+        ]
+        for name, val in ig_metrics:
+            lines.append(f"| {name} | {_fmt_val(val)} |")
+        lines.append("")
+
+    ig_posts = ig.get("top_posts", [])
+    if ig_posts:
+        total_cwr = ig.get("total_comments_with_replies", 0)
+        if total_cwr:
+            lines.append(f"**Total IG comments (incl. replies):** {total_cwr}")
+            lines.append("")
+        lines.append("**Instagram Recent Posts:**")
+        lines.append("")
+        lines.append("| Date | Type | Likes | Comments (w/ replies) | Reach | Views | Saves | Shares | Caption |")
+        lines.append("|------|------|-------|-----------------------|-------|-------|-------|--------|---------|")
+        for p in ig_posts:
+            raw_caption = (p.get("caption") or "").replace("\n", " ").replace("|", "/")
+            caption = raw_caption[:45] + ("..." if len(raw_caption) > 45 else "")
+            cwr = p.get("comments_with_replies", p.get("comments", 0))
+            top_level = p.get("comments", 0)
+            comment_display = f"{cwr}" if cwr == top_level else f"{cwr} ({top_level})"
+            lines.append(f"| {p.get('date','')} | {p.get('type','')} | {_fmt_val(p.get('likes'))} | {comment_display} | {_fmt_val(p.get('reach'))} | {_fmt_val(p.get('views'))} | {_fmt_val(p.get('saves'))} | {_fmt_val(p.get('shares'))} | {caption} |")
+        lines.append("")
+
+    # =========================================================================
+    # FACEBOOK — page-level insights (real numbers) + feed posts for context
+    # =========================================================================
+    lines.append("### Facebook")
+    lines.append("")
+
+    # Page-level insights (7d) — the real numbers
+    if fb.get("page_reactions_7d"):
+        lines.append("**Page Insights (7d) — all engagement including recommendation distribution:**")
+        lines.append("")
+        lines.append("| Metric | 7d Total |")
+        lines.append("|--------|----------|")
+        lines.append(f"| Reactions | {_fmt_val(fb.get('page_reactions_7d'))} |")
+        rt = fb.get("page_reactions_by_type_7d", {})
+        if rt:
+            type_str = ", ".join(f"{k}: {v:,}" for k, v in sorted(rt.items(), key=lambda x: -x[1]) if v > 0)
+            lines.append(f"| Breakdown | {type_str} |")
+        lines.append(f"| Total Engagements | {_fmt_val(fb.get('page_engagements_7d'))} |")
+        lines.append(f"| Video Views | {_fmt_val(fb.get('page_video_views_7d'))} |")
+        organic = fb.get("page_video_views_organic_7d", 0)
+        total_vv = fb.get("page_video_views_7d", 0)
+        if total_vv and organic:
+            rec_pct = round((1 - organic / total_vv) * 100, 1) if total_vv else 0
+            lines.append(f"| Organic vs Recommended | {_fmt_val(organic)} organic / {_fmt_val(total_vv - organic)} recommended ({rec_pct}% from FB algorithm) |")
+        lines.append(f"| Post Impressions | {_fmt_val(fb.get('page_impressions_7d'))} |")
+        lines.append("")
+
+    # Daily breakdown with posts correlated — shows what was posted each day
+    # alongside page-level metrics so you can see which content drives spikes
+    daily = fb.get("page_daily_breakdown", [])
+    fb_posts = fb.get("recent_posts", []) if not fb.get("error") else []
+    if daily:
+        # Build posts-by-date lookup
+        posts_by_date = {}
+        for p in fb_posts:
+            d = p.get("date", "")
+            if d not in posts_by_date:
+                posts_by_date[d] = []
+            post_type = "Reel" if p.get("is_reel") else "Post"
+            msg = p.get("message", "").replace("\n", " ").replace("|", "/")[:45]
+            posts_by_date[d].append(f"{post_type}: {msg}")
+
+        lines.append("**Daily Performance + Content Posted:**")
+        lines.append("")
+        lines.append("| Date | Reactions | Engagements | Video Views | Impressions | Content Posted |")
+        lines.append("|------|-----------|-------------|-------------|-------------|----------------|")
+        for d in daily:
+            date = d.get("date", "")
+            posted = posts_by_date.get(date, [])
+            content_str = "; ".join(posted) if posted else "—"
+            # Truncate if too long
+            if len(content_str) > 80:
+                content_str = content_str[:77] + "..."
+            lines.append(f"| {date} | {_fmt_val(d.get('reactions'))} | {_fmt_val(d.get('engagements'))} | {_fmt_val(d.get('video_views'))} | {_fmt_val(d.get('impressions'))} | {content_str} |")
+        lines.append("")
+
+
+    # =========================================================================
+    # YOUTUBE
+    # =========================================================================
     yt_videos = yt.get("top_videos", [])
     if yt_videos:
-        lines.append("**YouTube Video Performance:**")
+        lines.append("### YouTube")
         lines.append("")
         lines.append("| Video | Views |")
         lines.append("|-------|-------|")
@@ -301,19 +760,10 @@ def format_social_report(social_data):
             lines.append(f"| {v['title']} | {v['views']:,} |")
         lines.append("")
 
-    # Cross-platform totals
-    total_followers = 0
-    for p, d in platforms.items():
-        f = d.get("followers") or d.get("subscribers") or 0
-        total_followers += f
-    if total_followers > 0:
-        lines.append(f"**Total cross-platform reach:** {total_followers:,} followers")
-        lines.append("")
-
     # Errors/notes
     errors = [(p, d.get("error")) for p, d in platforms.items() if d.get("error")]
     if errors:
-        lines.append("**Notes:**")
+        lines.append("**Data notes:**")
         for platform, err in errors:
             lines.append(f"- {platform}: {err}")
         lines.append("")

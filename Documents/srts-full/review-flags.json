@@ -1,0 +1,89 @@
+{
+  "timestamp": "2026-03-30T00:38:51Z",
+  "threshold": 0.6,
+  "min_cluster_words": 3,
+  "total_flags": 8,
+  "flagged_files": 8,
+  "flags": [
+    {
+      "name": "4022",
+      "start": "00:01:05",
+      "end": "00:01:06",
+      "start_ms": 65780,
+      "end_ms": 66100,
+      "avg_confidence": 0.319,
+      "word_count": 3,
+      "text": "that would have."
+    },
+    {
+      "name": "3959",
+      "start": "00:00:20",
+      "end": "00:00:20",
+      "start_ms": 20200,
+      "end_ms": 20880,
+      "avg_confidence": 0.356,
+      "word_count": 3,
+      "text": "her you for."
+    },
+    {
+      "name": "4020",
+      "start": "00:01:38",
+      "end": "00:01:38",
+      "start_ms": 98000,
+      "end_ms": 98720,
+      "avg_confidence": 0.461,
+      "word_count": 3,
+      "text": "women? Laugh. Why?"
+    },
+    {
+      "name": "3973",
+      "start": "00:01:18",
+      "end": "00:01:18",
+      "start_ms": 78260,
+      "end_ms": 78700,
+      "avg_confidence": 0.478,
+      "word_count": 3,
+      "text": "we have to"
+    },
+    {
+      "name": "3954",
+      "start": "00:00:30",
+      "end": "00:00:31",
+      "start_ms": 30880,
+      "end_ms": 31440,
+      "avg_confidence": 0.48,
+      "word_count": 3,
+      "text": "Where did you"
+    },
+    {
+      "name": "4067",
+      "start": "00:03:39",
+      "end": "00:03:40",
+      "start_ms": 219710,
+      "end_ms": 220390,
+      "avg_confidence": 0.496,
+      "word_count": 3,
+      "text": "back there. Did"
+    },
+    {
+      "name": "4021",
+      "start": "00:01:18",
+      "end": "00:01:19",
+      "start_ms": 78610,
+      "end_ms": 79490,
+      "avg_confidence": 0.545,
+      "word_count": 3,
+      "text": "Freaking pants. All"
+    },
+    {
+      "name": "3975",
+      "start": "00:01:16",
+      "end": "00:01:19",
+      "start_ms": 76750,
+      "end_ms": 79320,
+      "avg_confidence": 0.566,
+      "word_count": 4,
+      "text": "want me pants you"
+    }
+  ]
+}

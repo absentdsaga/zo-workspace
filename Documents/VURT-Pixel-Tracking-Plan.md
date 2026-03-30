@@ -312,7 +312,7 @@ Following up on our call. Here's the breakdown of our site and what we want to t
 
 **What does NOT have unique URLs:** Individual episodes within a series. Episode selection happens on the series page without a URL change. So episode-level tracking needs event-based pixels.
 
-**Also worth knowing:** The site has a built-in share feature that generates Enveu deep links (e.g., `https://vurt.enveu.link/ocjfpfvnwz`). These route to the right content across web and app. These may be relevant for campaign landing links.
+**Also worth knowing:** The site has a built-in share feature that generates Enveu deep links (e.g., `https://vurt.enveu.link/ocjfpfvnwz`). These route to the right content across web and app. However, we're working with the dev team to redirect these to myvurt.com URLs — the Enveu links build authority for their domain, not ours. Until that's fixed, prefer direct myvurt.com URLs for campaigns where possible.
 
 **Events we need custom pixels for (fire on user action, not page load):**
 

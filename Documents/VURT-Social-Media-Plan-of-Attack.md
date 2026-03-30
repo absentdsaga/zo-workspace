@@ -11,6 +11,21 @@ This is your operating manual for the next 2 weeks. Follow it exactly. The conte
 
 ---
 
+## Current Active Platforms (as of March 28, 2026)
+
+| Platform | Status | Notes |
+|----------|--------|-------|
+| **Instagram** (@myvurt) | ACTIVE | Primary platform right now |
+| **Facebook** (VURT page) | ACTIVE | Ramping up |
+| **YouTube Shorts** (VURT channel) | ACTIVE | Ramping up |
+| **TikTok** (@vurt_official) | ACTIVE | Posting clips alongside IG/FB/YT |
+| X (@myvurt) | Not yet active | Will add as team ramps |
+| LinkedIn | Founders only | B2B, not consumer content |
+
+**CTA Direction:** All CTAs drive to **myvurt.com** (web version). Do NOT drive to app stores -- they take large % fees.
+
+---
+
 ## The Mission
 
 VURT has 45-60 clips ready to deploy across 9+ approved titles. We have accounts on TikTok (@vurt_official), Instagram (@myvurt), Facebook, and YouTube. We have press from TechCrunch, Yahoo Tech, and REVOLT. We have a library of 100+ titles with real talent (Kevin Hart, Vivica A. Fox, Meagan Good, Lil Duval, T.I., Rotimi, Trick Daddy).
@@ -110,7 +125,7 @@ Increase cadence. Add YouTube Shorts. Start identifying what's working.
 
 - **Hook in the first 1.5 seconds.** The most dramatic, emotional, or shocking frame goes FIRST. If the viewer doesn't stop scrolling in 1.5 seconds, the clip is dead.
 - **Cut at peak tension.** Never resolve the scene. Cut at the slap, the reveal, the betrayal. Leave them wanting more.
-- **Text overlay on every clip:** "Watch the full episode on VURT" or "Full series streaming free on VURT"
+- **Text overlay on every clip:** "Watch the full episode on VURT" or "Full series streaming free on myvurt.com" (always drive to web, not app stores)
 - **Captions:** Short. Curiosity-gap energy. Examples:
   - "She wasn't supposed to find out like this."
   - "He thought nobody was watching."
@@ -323,7 +338,7 @@ Every platform bio should read:
 **Line 1:** Vertical cinema. Built for the culture.
 **Line 2:** New episodes every week.
 **Line 3:** Watch free ↓
-**Link:** myvurt.com (or smart link that routes to App Store/Google Play based on device)
+**Link:** myvurt.com (web version -- do NOT route to app stores, they take large % fees)
 
 Pin the TechCrunch article or best-performing clip to the top of every profile.
 
@@ -334,12 +349,69 @@ Pin the TechCrunch article or best-performing clip to the top of every profile.
 **Current state:** Clips have NO watermarks or text overlays. They only have a VURT logo card at the end.
 
 **Before posting any clip, add:**
-1. **Text overlay** on the video: "Watch the full episode on VURT" or "Full series streaming free on VURT" -- visible in the first 5 seconds or at the cliffhanger cut
+1. **Text overlay** on the video: "Watch the full episode on VURT" or "Full series streaming free on myvurt.com" -- visible in the first 5 seconds or at the cliffhanger cut. **IMPORTANT: Always drive to myvurt.com (web version), NOT app stores. App stores take large % fees.**
 2. The existing logo card at the end is fine to keep
 
 **Who does this:** Editor (preferred) or intern (if editor capacity is limited). This should be done in batch -- prep all Week 1 clips with overlays before the first post goes live.
 
 **Do NOT add watermarks that obscure the content.** The overlay should be clean, readable, and positioned to not block faces or key action. Bottom-center or top-left.
+
+---
+
+## Subtitles & Captions (Intern -- CapCut)
+
+Every clip needs dialogue subtitles before posting. Most people watch with sound off, especially on Facebook and Instagram. No subtitles = no engagement.
+
+**Tool:** CapCut Pro (the free version adds a watermark -- use Pro). CapCut is owned by ByteDance (TikTok's parent), so it integrates directly with TikTok and there is no algorithm penalty for using it. It is the standard tool for this.
+
+### How to Add Subtitles in CapCut
+
+1. Import the clip into CapCut
+2. Use the auto-captions feature (it transcribes the dialogue automatically)
+3. Review and fix any transcription errors -- watch the whole clip, don't skip this
+4. Apply the VURT caption style (see below)
+5. Add the CTA text overlay ("Watch the full episode on VURT" or "Full series streaming free on VURT")
+6. Export a separate version for each platform (do NOT post the same file to multiple platforms)
+
+### VURT Caption Style
+
+Lock in one consistent look across all clips. Do not use CapCut's default bouncing/colorful templates -- they don't match VURT's brand.
+
+- **Font:** Clean sans-serif (Montserrat, Helvetica, or similar)
+- **Color:** White text with a subtle black outline or drop shadow for readability
+- **Size:** Large enough to read on a phone but not overpowering -- test on your own phone before posting
+- **Position:** Bottom-center, above the platform UI elements (like/comment buttons)
+- **Style:** Static text, no bounce or word-by-word animation. Clean and cinematic.
+- **Save this as a CapCut preset/template** so every clip looks the same
+
+### Platform-Specific Export Rules
+
+All videos are vertical. One clean master export (with burned-in subtitles, no watermarks) works across all platforms. You do NOT need 4 separate exports.
+
+**What you actually need per clip:**
+1. **One clean vertical export** with burned-in subtitles (CapCut) + CTA overlay. No platform watermarks.
+2. **One SRT file** exported from CapCut for YouTube (upload as closed captions for search/SEO).
+3. **One cover frame** for IG grid (keep it cinematic).
+
+**The only things that differ by platform:**
+| Platform | Difference |
+|----------|-----------|
+| **TikTok** | Optional: TikTok-native caption font if you want that aesthetic. Otherwise same clean export. |
+| **Instagram** | IG detects TikTok watermarks and buries reach (31-44% penalty). Use your clean export, NOT a TikTok download. Add a cover frame for the grid. |
+| **Facebook** | Same clean export. Facebook auto-plays muted, so subtitles are critical. |
+| **YouTube Shorts** | Same clean export + upload the SRT file as closed captions. Add a title card in first 3 seconds. |
+
+### Batch Workflow
+
+Do not subtitle clips one at a time on posting day. Batch them.
+
+1. At the start of each week, take all clips for the week
+2. Subtitle and style all of them in one sitting in CapCut
+3. Export one clean master per clip + one SRT file per clip for YouTube
+4. Create cover frames for IG
+5. On posting day, the clip is ready to go -- just post
+
+This batch prep should take 1-2 hours for a full week of clips.
 
 ---
 

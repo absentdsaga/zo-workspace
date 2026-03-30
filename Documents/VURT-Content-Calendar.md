@@ -46,23 +46,23 @@ Based on title virality, genre heat, and clip quality signals from the tracker, 
 ---
 
 ## Week 1: Soft Launch (Ramp-Up)
-**Goal:** Establish rhythm. 1-2 posts/day. TikTok + Instagram + Facebook.
+**Goal:** Establish rhythm. 1-2 posts/day. TikTok + Instagram + Facebook + YouTube Shorts.
 
 *TikTok: @vurt_official (interim -- username change to @myvurt once cooldown clears, followers/content transfer automatically). Account is LIVE with 8 videos, 6 followers, 260 likes. Top performer: 35 & Ticking (1,305 views).*
 
-| Day | Date | TikTok (Lead) | IG Reels | FB Reels | IG Stories | Theme |
-|-----|------|--------------|----------|----------|------------|-------|
-| Mon | TBD | Killer Stepdad Clip 1 (strongest hook) | -- | -- | 3-5 stories: "Something's coming" teaser, poll | Fresh Drop Monday |
-| Tue | | Baby Mama Clip 1 | Killer Stepdad Clip 1 | -- | BTS stories, poll: "Which side are you on?" | Wild Card Tuesday |
-| Wed | | 35 & Ticking Clip 1 | Baby Mama Clip 1 | Killer Stepdad Clip 1 | "Tag someone who needs to see this" | Wild Card Wednesday |
-| Thu | | Drops Of Mercy Clip 1 | 35 & Ticking Clip 1 | Baby Mama Clip 1 | Countdown to next drop | Thriller Thursday |
-| Fri | | Church Boy Clip 1 | Drops Of Mercy Clip 1 | 35 & Ticking Clip 1 | Faith-related engagement stories | Faith Friday |
-| Sat | | -- (stories only) | Church Boy Clip 1 | Drops Of Mercy Clip 1 | Creator/cast spotlight, BTS | Spotlight Saturday |
-| Sun | | Repost best performer | -- | Church Boy Clip 1 | Relationship poll, "tag someone," week review | Soul Sunday |
+| Day | Date | TikTok (Lead) | IG Reels | FB Reels | YT Shorts | IG Stories | Theme |
+|-----|------|--------------|----------|----------|-----------|------------|-------|
+| Mon | TBD | 35 & Ticking Clip 1 (Kevin Hart, Meagan Good, Mike Epps) | -- | -- | -- | 3-5 stories: "Something's coming" teaser, poll | Fresh Drop Monday |
+| Tue | | Something Like A Business Clip 1 (Kevin Hart, Clifton Powell) | 35 & Ticking Clip 1 | -- | -- | BTS stories, poll: "Which side are you on?" | Wild Card Tuesday |
+| Wed | | Killer Stepdad Clip 1 | Something Like A Business Clip 1 | 35 & Ticking Clip 1 | 35 & Ticking Clip 1 | "Tag someone who needs to see this" | Thriller Wednesday |
+| Thu | | Favorite Son Clip 1 (Rotimi, Serayah) | Killer Stepdad Clip 1 | Something Like A Business Clip 1 | Something Like A Business Clip 1 | Countdown to next drop | Drama Thursday |
+| Fri | | The Love Letter Clip 1 (Keshia Knight Pulliam, Romeo Miller, Jackee Harry) | Favorite Son Clip 1 | Killer Stepdad Clip 1 | Killer Stepdad Clip 1 | Cast spotlight stories | Romance Friday |
+| Sat | | -- (stories only) | The Love Letter Clip 1 | Favorite Son Clip 1 | Favorite Son Clip 1 | Creator/cast spotlight, BTS | Spotlight Saturday |
+| Sun | | Repost best performer | -- | The Love Letter Clip 1 | The Love Letter Clip 1 | Relationship poll, "tag someone," week review | Soul Sunday |
 
-*Week 1 uses 5 approved titles only (Mon-Fri). Miami Kingpins, Miami Confidential, Fatal Lust slot in once editors deliver. Sat = stories only, Sun = repost winner.*
+*Week 1 titles (confirmed by Dioni): 35 & Ticking, Something Like A Business, Killer Stepdad, Favorite Son, The Love Letter. Selected for clip quality, star power, and genre variety. Remaining 5 green titles slot into Week 2. Yellow titles (Miami Kingpins, Miami Confidential, Fatal Lust, Come Back Dad, etc.) slot in once editors deliver approved clips.*
 
-**Week 1 output:** 5 new TikToks + 5 IG Reels + 5 FB Reels + 50+ IG Stories = sustainable pace for 1 intern.
+**Week 1 output:** 5 new TikToks + 5 IG Reels + 5 FB Reels + 5 YT Shorts + 50+ IG Stories = sustainable pace for 1 intern.
 
 ---
 

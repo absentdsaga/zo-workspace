@@ -239,6 +239,29 @@ Full inventory with enveu IDs and Mux asset references: `file 'Skills/vurt-subti
 
 ---
 
+## UPCOMING RELEASES & SCHEDULE (as of March 27, 2026)
+
+| Title | Type | Premiere Date | Status |
+|-------|------|--------------|--------|
+| **Karma in Heels** | Licensed (Swirl Films) | LIVE — push through weekend + leading up to next drop | Active social push |
+| **The Parking Lot Series** | VURT Original | April 1, 2026 | Next premiere |
+| **Schemers** | VURT Original | April 8, 2026 | Following week premiere |
+
+### "Original of the Week" Machine (Ted's Directive, March 27 2026)
+Ted's mandate: the original of the week is a repeatable machine. With these early releases, the team must establish the process so it's excellent every time. Key questions to answer and document:
+- What are the assets we need per release?
+- What do we need from the filmmaker? What do we need from the cast?
+- When do we post to which platforms?
+- Every experiment is a chance to learn what works. Be thoughtful and disciplined.
+- "Every series must be treated like it has the potential to take VURT to the next level."
+
+### Skills
+| Skill | Path | Purpose |
+|-------|------|---------|
+| vurt-captions | `file 'Skills/vurt-captions/'` | Social media caption engine — platform-optimized captions for clips |
+
+---
+
 ## PRODUCTION PIPELINE
 
 ### Working Document
@@ -299,6 +322,7 @@ OTR, Daniel, Brad, Wayne Alford
 | vurt-analytics | `file 'Skills/vurt-analytics/'` | GA4 queries, daily reports |
 | vurt-strategy/tracking-analytics | `file 'Skills/vurt-strategy/references/tracking-analytics.md'` | Pixel plan, UTM structure, user journey funnel, paid ads team reqs |
 | vurt-subtitles | `file 'Skills/vurt-subtitles/'` | Subtitle generation, content catalog |
+| vurt-captions | `file 'Skills/vurt-captions/'` | Social media caption engine for clip posts |
 
 ### Key External Docs
 | Document | Location |
@@ -649,3 +673,24 @@ Luanda, Montreal, Dakar, Salvador, Paris, São Paulo, Rio de Janeiro, Kinshasa, 
 7. Ted Lucas credentials
 
 ---
+
+
+---
+
+## FB/Meta Pixel Setup - March 24, 2026
+
+**Status:** Pixel created, app setup pending
+**Dataset ID:** 659791066496981
+**Contact:** Christian Guzman (christian@simplesocial.info)
+
+**Next Steps:**
+1. Dev team needs access to My Vurt Business Settings > Apps > App Dashboard
+2. Publish app to Meta platform
+3. Assign Alex as partner in Business Settings
+4. Add Dataset ID to GTM container
+
+**Blocker:** Dev team needs FB Business Settings access
+**Note:** Ari may have FB account access
+
+**Campaign Goal:** App Installs objective
+

@@ -104,6 +104,13 @@ def markdown_to_html(md_text):
             i += 1
             continue
 
+        # H3
+        if line.startswith('### '):
+            section = line[4:].strip()
+            html_parts.append(f'<h3 style="color:#ccc;font-size:14px;font-weight:600;margin:18px 0 6px 0;text-transform:uppercase;letter-spacing:0.5px;">{section}</h3>')
+            i += 1
+            continue
+
         # Table detection
         if '|' in line and i + 1 < len(lines) and '---' in lines[i + 1]:
             table_lines = []

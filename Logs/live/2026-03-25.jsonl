@@ -1,0 +1,22 @@
+{"ts": "2026-03-25T12:07:04.480403+00:00", "level": "INFO", "msg": "=== TASK 1: Sorting 'This Week' list by due date ==="}
+{"ts": "2026-03-25T12:07:04.712980+00:00", "level": "INFO", "msg": "Found 5 open lists", "data": {"names": ["Inbox", "This Week", "In Progress", "Review / Blocked", "Done"]}}
+{"ts": "2026-03-25T12:07:04.714132+00:00", "level": "INFO", "msg": "'This Week' list ID: 69c06762ac8ecd537850ba8e"}
+{"ts": "2026-03-25T12:07:04.912804+00:00", "level": "INFO", "msg": "Found 11 cards in 'This Week'"}
+{"ts": "2026-03-25T12:07:05.158093+00:00", "level": "INFO", "msg": "  Card 'Weekly Triage: Review Inbox, prioritize This Week' \u2192 pos=1024, due=2026-03-23T23:59:00.000Z"}
+{"ts": "2026-03-25T12:07:05.397274+00:00", "level": "INFO", "msg": "  Card 'Wednesday deep dive with Tarik -- blitz sync + SEO timeline' \u2192 pos=2048, due=2026-03-25T17:00:00.000Z"}
+{"ts": "2026-03-25T12:07:05.710192+00:00", "level": "INFO", "msg": "  Card '[DEV] Request Enveu: Add Meta SDK to VURT App' \u2192 pos=3072, due=2026-03-26T17:00:00.000Z"}
+{"ts": "2026-03-25T12:07:06.014182+00:00", "level": "INFO", "msg": "  Card 'Add Apple Smart App Banner to myvurt.com' \u2192 pos=4096, due=2026-03-26T17:00:00.000Z"}
+{"ts": "2026-03-25T12:07:06.375221+00:00", "level": "INFO", "msg": "  Card 'Fix mobile footer -- social links invisible on mobile' \u2192 pos=5120, due=2026-03-28T17:00:00.000Z"}
+{"ts": "2026-03-25T12:07:06.663066+00:00", "level": "INFO", "msg": "  Card 'Fix share links routing to vurt.enveu.link' \u2192 pos=6144, due=2026-03-28T17:00:00.000Z"}
+{"ts": "2026-03-25T12:07:07.042004+00:00", "level": "INFO", "msg": "  Card 'Deploy foundation pixels via GTM' \u2192 pos=7168, due=2026-03-28T17:00:00.000Z"}
+{"ts": "2026-03-25T12:07:07.359547+00:00", "level": "INFO", "msg": "  Card 'Move download app button to top of website' \u2192 pos=8192, due=2026-03-28T17:00:00.000Z"}
+{"ts": "2026-03-25T12:07:07.687407+00:00", "level": "INFO", "msg": "  Card 'Add age prompt after clicking on a title' \u2192 pos=9216, due=2026-03-28T17:00:00.000Z"}
+{"ts": "2026-03-25T12:07:08.057133+00:00", "level": "INFO", "msg": "  Card 'Send editable (word version) of VURT Target demographic research doc' \u2192 pos=10240, due=None"}
+{"ts": "2026-03-25T12:07:08.352803+00:00", "level": "INFO", "msg": "  Card 'Filmmaker spotlight post and promo for Nita K \\ Chicago Boogie' \u2192 pos=11264, due=None"}
+{"ts": "2026-03-25T12:07:08.353702+00:00", "level": "INFO", "msg": "TASK 1 COMPLETE: 11 cards sorted"}
+{"ts": "2026-03-25T12:07:08.354667+00:00", "level": "INFO", "msg": "=== TASK 2: Flagging stale cards in 'In Progress' ==="}
+{"ts": "2026-03-25T12:07:08.355150+00:00", "level": "INFO", "msg": "'In Progress' list ID: 69c0676135c8a806ea58e2a5"}
+{"ts": "2026-03-25T12:07:08.632131+00:00", "level": "INFO", "msg": "Found 5 cards in 'In Progress'"}
+{"ts": "2026-03-25T12:07:08.836744+00:00", "level": "INFO", "msg": "Found existing 'Stale' label: 69c06d926bbfae785580fb39"}
+{"ts": "2026-03-25T12:07:08.837553+00:00", "level": "INFO", "msg": "TASK 2 COMPLETE: 0 cards flagged as stale"}
+{"ts": "2026-03-25T12:07:08.838519+00:00", "level": "INFO", "msg": "=== ALL TASKS COMPLETE ==="}
