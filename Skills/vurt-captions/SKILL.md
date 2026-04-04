@@ -1,133 +1,129 @@
 ---
 name: vurt-captions
-description: World-class social media caption engine for VURT clips. Generates platform-optimized captions for TikTok, Instagram Reels, Stories, Facebook, YouTube Shorts, and X/Twitter. Knows VURT brand voice, caption formulas, hashtag strategy, and CTA patterns. Activate whenever writing captions for VURT social content.
-compatibility: Created for Zo Computer
+description: Expert social media caption writing for VURT micro-drama clips. Generates platform-native captions (TikTok, IG, FB, YouTube, LinkedIn) using the VURT brand voice and the 5-clip arc framework. Includes both manual guidance and automated draft generation via Notion API.
 metadata:
   author: dioni.zo.computer
 ---
 
-# VURT Caption Engine
+# VURT Captions Skill
 
-## When to Activate
-- User asks for captions for any VURT clip
-- User shares Frame.io clip details, dialogue, or scene descriptions
-- User is planning social posts for VURT titles
-- User wants caption variations across platforms
+## Capabilities
 
-## VURT Brand Voice (Non-Negotiable)
+### 1. Manual Caption Writing (Conversation-based)
+When a user provides dialogue transcript or scene description, generate captions following the framework below.
 
-**We are:** Confident, not loud. Culturally fluent as lived experience. Front porch, not a billboard.
+### 2. Automated Draft Generation (Script)
+`scripts/generate-captions.py` reads the Content Calendar Notion DB, identifies entries with empty Caption fields, and generates template-based draft captions using show profiles and hashtag config.
 
-**We sound like:**
-- "She wasn't supposed to find out like this."
-- "Full series. Free to watch. Link in bio."
-- "If you know, you know. If you don't, start here."
+```bash
+# Generate for all empty entries
+python3 scripts/generate-captions.py --all
 
-**We NEVER sound like:**
-- "OMG you guys!! New episode dropping!!! 🔥🔥🔥" — too thirsty
-- Generic AI copy — delete and start over
-- Hashtag spam with no substance
-- Desperate CTAs like "DOWNLOAD NOW!!!"
+# Only for a specific show
+python3 scripts/generate-captions.py --show karma
 
-## Caption Formulas
+# Preview without writing to Notion
+python3 scripts/generate-captions.py --dry-run
 
-### 1. The Curiosity Gap (Highest Performer)
-Pull a direct quote or describe the moment right before the reveal. Never resolve the tension.
-> "[Direct quote from the scene]"
-> …[one-line setup that makes you NEED to watch]
+# Combine flags
+python3 scripts/generate-captions.py --show parking-lot --dry-run
+```
 
-### 2. The One-Liner
-One declarative sentence that reframes the scene. Confident. No question marks.
-> Tyler thought she was bluffing. She wasn't.
+Requires: `VURT_NOTION_API_KEY` env var. Content Calendar DB: `a7587d5d-8f14-490d-a494-664bd80d6256`.
 
-### 3. The Callout
-Name the characters and what's at stake. Make the viewer feel like they're hearing gossip.
-> She came for Tyler, his brother, AND his whole fraternity. Nobody's safe.
+Generated captions are prefixed with `[DRAFT]` so the team knows to review before posting. Hashtags are also auto-filled if the Hashtags field is empty.
 
-### 4. The Scene-Setter
-For clips where the atmosphere matters more than a single moment.
-> Late night. Wrong house. Wrong decision.
+---
 
-### 5. The Cultural Mirror
-Connect the scene to a universal feeling or experience the audience recognizes.
-> That moment when you realize they never deserved your loyalty.
+## Manual Caption Framework
 
-### 6. The Quote-and-React
-Pull the most shocking line, then add a one-line audience reaction.
-> "I got a surprise for you. Better than this old thing."
-> Tyler should've left when she said wait.
+### Step 1 -- Identify the Clip
+From the dialogue/scene description, determine:
+- Which clip in the 5-clip arc is this? (Hook / Escalation / Twist / Confrontation / Edge of Resolution)
+- Who are the characters speaking?
+- What's the emotional hook?
 
-## Platform Rules
+### Step 2 -- Pull Title Data
+Check `data/shows.yaml` for:
+- Title, premiere date, current status
+- Cast and crew with social handles
+- Caption hooks and tone
+- Synopsis and themes
 
-### TikTok (@vurt_official → @myvurt)
-- **Priority:** #1 platform, 45% of effort
-- Caption: 1-3 lines max. Hook in first line.
-- End with: title name + "streaming free on VURT" or "link in bio"
-- Hashtags: max 5 (#VURT #[Title] #MicroDrama + 2 genre tags)
-- Pinned comment: "Link in bio to watch free"
+Check `data/titles.yaml` for:
+- Exec producer + handles
+- Director + handles
+- Top 2 actors + handles
+- Title-specific hashtag
+- myvurt.com URL slug
 
-### Instagram Reels (@myvurt)
-- **Priority:** #2 platform, 25% of effort
-- Caption: Can go longer (3-5 lines). DM-share energy — write it like you're texting a friend about the scene.
-- End with: "Full series streaming free on VURT. Link in bio."
-- Hashtags: 8-12 at END of caption
-- Core: #VURT #[Title] #MicroDrama #DramaTok #BlackCinema #IndieFilm #VerticalCinema + genre-specific
+### Step 3 -- Choose Platform Strategy
+Each platform needs a different angle:
 
-### Instagram Stories
-- Engagement-first: polls, questions, "which scene hit harder?"
-- Keep text overlay short (2 lines max on screen)
-- Use poll stickers for binary choices related to the scene
+**TikTok** -- Shortest, boldest. 1-2 sentences max. Key dialogue line + one context sentence. Trending/provocative hook. Fewer hashtags (5-7). No @mentions in caption. Ends with "myvurt.com" in caption AND pinned comment.
 
-### Facebook Reels
-- Same clip, 2-day stagger behind TikTok
-- Less meme-y, more narrative hook
-- Auto-captions critical (plays muted)
+**IG Reels** -- Slightly more polished. 2-4 sentences. Full hook setup with storytelling angle. Line breaks for readability. Tags everyone in caption body. Collaborate invites to top handles. Hashtags at end.
 
-### YouTube Shorts
-- Title IS the caption — keyword-rich for search
-- Format: "[Title] — [Hook Description] | VURT"
-- Let scenes breathe slightly longer than TikTok
+**YouTube Shorts** -- Description format. Hook line, 1 sentence about the show, "Stream free at myvurt.com", hashtags. Title IS the caption. Clean `| A VURT Original` format.
 
-### X/Twitter (@myvurt)
-- Conversation layer. React to the scene like a viewer would.
-- Quote the line + add a reaction
-- No hashtag spam — 1-2 max
+**Facebook** -- Conversational, medium length. More narrative setup. CTA to watch at myvurt.com. Clickable link in caption body.
 
-## Hashtag Bank
+**LinkedIn** -- Professional/industry angle. Frame as entertainment industry content. Mention cast credentials. Reference vertical cinema as a format.
 
-**Always include:**
-- #VURT
+### Step 4 -- Apply Caption Voice Rules
+1. Never give away the twist
+2. End every caption with a destination (VURT, myvurt.com, link in bio)
+3. Hashtags functional not performative
+4. No cursing unless scene dialogue IS the hook and authentic
+5. Tag minimum: exec producer + director + top 2 actors (IG only)
 
-**Genre tags (pick 2-3):**
-- Drama: #DramaTok #BlackDrama #IndieFilm
-- Thriller: #ThrillerTok #TrueCrime #Suspense
-- Comedy: #ComedyTok #BlackComedy
-- Romance: #RomanceTok #BlackLove
-- Faith: #FaithFilm #Inspiration
+### Step 5 -- Write Platform Versions
+Output exactly:
+- TikTok caption + pinned comment text
+- IG caption (with collaborator invite callout)
+- FB caption (with clickable link)
+- YT Shorts title + description
+- LinkedIn caption (if applicable)
 
-**Brand tags:**
-- #MicroDrama #VerticalCinema #BlackCinema #BuiltForTheCulture #IndieFilm #SwirlFilms (for licensed Swirl titles)
+## Clip Arc Context
+The 5-clip arc determines caption tone:
+- **Clip 1 (Hook)** -- Introduction, pull them in, set the premise
+- **Clip 2 (Escalation)** -- Stakes rising, tension building
+- **Clip 3 (Twist)** -- The unexpected turn, surprise element
+- **Clip 4 (Confrontation)** -- Peak conflict, face-to-face moment
+- **Clip 5 (Edge of Resolution)** -- Almost resolved, drives to full episode
 
-**Title-specific:** #KarmaInHeels #KillerStepdad #BabyMama #FatalLust #MiamiKingpins etc.
+## Caption Voice
+VURT is: confident, clean, culturally fluent, cinematic
+VURT is NOT: loud, hype, announcer-y, forced
 
-## Process: Writing a Caption
+**Good:** "She got caught and still made it his fault."
+**Bad:** "You guys HAVE to see this insane twist!!!"
 
-1. **Read the clip** — dialogue, scene description, tone, genre
-2. **Identify the hook** — what's the most scroll-stopping moment? The line that hits? The reveal?
-3. **Pick the formula** — which of the 6 formulas fits this clip's energy?
-4. **Write 3-4 options** — always give options across formulas
-5. **Adapt per platform** — TikTok short, IG longer, YouTube search-optimized, Stories engagement-driven
-6. **Recommend a pick** — always tell the team which one you'd lead with and why
+## Data Files
+- `data/shows.yaml` -- Show profiles with synopsis, tone, characters, caption hooks
+- `data/titles.yaml` -- Title roster with cast/crew/handles per title
+- `data/handles.yaml` -- Master platform handle list
+- `data/hashtags.yaml` -- Approved hashtag library (always + rotating + platform-specific)
 
-## Reference Files
-- Brand voice: `Documents/VURT-Social-Media-Plan-of-Attack.md`
-- Content calendar: `Documents/VURT-Content-Calendar.md`
-- Master doc: `Documents/VURT-master.md`
-- Playbook: `Documents/vurt-social-media-community-playbook.md`
+## How the Script Works
 
-## CTA Library (rotate these)
-- "Streaming free on VURT. Link in bio."
-- "Full series. Free to watch. Link in bio."
-- "Watch free on VURT 🔗 bio"
-- "Stream it now. VURT. Link in bio."
-- "This is just the clip. Full episode on VURT."
+1. Loads show profiles from `data/shows.yaml` (synopsis, tone, hooks, cast)
+2. Loads hashtag config from `data/hashtags.yaml` (always + rotating + platform tags)
+3. Queries Content Calendar Notion DB for all entries
+4. Filters to entries with empty Caption fields
+5. Matches each entry to a show profile by title keywords
+6. For each entry, generates a caption using:
+   - A hook from the show's `caption_hooks` list (rotated deterministically)
+   - Clip arc context (Clip 1 = introduction, Clip 5 = edge of resolution)
+   - Platform-specific formatting template
+   - Hashtags: always tags + 2-3 rotating + platform-specific
+7. Writes `[DRAFT] <caption>` to the Caption field
+8. Fills Hashtags field if also empty
+
+Caption variety comes from rotating through hooks and template structures using deterministic seeding (same entry always gets the same caption, but different entries get different combinations).
+
+## Related
+- See `Documents/VURT-Social-Playbook.md` for full posting rules
+- See `Skills/vurt-post-log/scripts/sync.py` for the post log sync that reads actual captions back from platforms
+- State snapshot: `.context/state-snapshot.md`

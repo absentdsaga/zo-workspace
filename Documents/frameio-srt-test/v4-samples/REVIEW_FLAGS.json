@@ -1,0 +1,428 @@
+{
+  "BLOODLINE_VURT_9x16_ep01": [
+    {
+      "type": "low_confidence",
+      "start_ms": 86052,
+      "end_ms": 86532,
+      "start_ts": "00:01:26,052",
+      "end_ts": "00:01:26,532",
+      "avg_confidence": 0.35740958666666667,
+      "word_count": 3,
+      "text": "this time the"
+    },
+    {
+      "type": "low_confidence",
+      "start_ms": 163816,
+      "end_ms": 164072,
+      "start_ts": "00:02:43,816",
+      "end_ts": "00:02:44,072",
+      "avg_confidence": 0.39586101333333334,
+      "word_count": 3,
+      "text": "the same question?"
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 70015,
+      "end_ms": 70447,
+      "start_ts": "00:01:10,015",
+      "end_ts": "00:01:10,447",
+      "duration_ms": 432,
+      "speaker": "C",
+      "text": "What?"
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 165611,
+      "end_ms": 166236,
+      "start_ts": "00:02:45,611",
+      "end_ts": "00:02:46,236",
+      "duration_ms": 625,
+      "speaker": "D",
+      "text": "I don't remember, man."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 170466,
+      "end_ms": 170963,
+      "start_ts": "00:02:50,466",
+      "end_ts": "00:02:50,963",
+      "duration_ms": 497,
+      "speaker": "E",
+      "text": "And then what?"
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 195664,
+      "end_ms": 195937,
+      "start_ts": "00:03:15,664",
+      "end_ts": "00:03:15,937",
+      "duration_ms": 273,
+      "speaker": "E",
+      "text": "Good."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 209233,
+      "end_ms": 210066,
+      "start_ts": "00:03:29,233",
+      "end_ts": "00:03:30,066",
+      "duration_ms": 833,
+      "speaker": "A",
+      "text": "Here they come, boy."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 224457,
+      "end_ms": 225098,
+      "start_ts": "00:03:44,457",
+      "end_ts": "00:03:45,098",
+      "duration_ms": 641,
+      "speaker": "E",
+      "text": "Damn, dog."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 225723,
+      "end_ms": 226636,
+      "start_ts": "00:03:45,723",
+      "end_ts": "00:03:46,636",
+      "duration_ms": 913,
+      "speaker": "F",
+      "text": "Have a seat, thank you."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 230477,
+      "end_ms": 230670,
+      "start_ts": "00:03:50,477",
+      "end_ts": "00:03:50,670",
+      "duration_ms": 193,
+      "speaker": "B",
+      "text": "Nah."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 243020,
+      "end_ms": 243197,
+      "start_ts": "00:04:03,020",
+      "end_ts": "00:04:03,197",
+      "duration_ms": 177,
+      "speaker": "B",
+      "text": "Fuck."
+    }
+  ],
+  "BLOODLINE_VURT_9x16_ep02": [
+    {
+      "type": "low_confidence",
+      "start_ms": 59209,
+      "end_ms": 74072,
+      "start_ts": "00:00:59,209",
+      "end_ts": "00:01:14,072",
+      "avg_confidence": 0.4034388933333333,
+      "word_count": 6,
+      "text": "Who let that goddamn dog out?"
+    },
+    {
+      "type": "low_confidence",
+      "start_ms": 80374,
+      "end_ms": 82970,
+      "start_ts": "00:01:20,374",
+      "end_ts": "00:01:22,970",
+      "avg_confidence": 0.56629984,
+      "word_count": 5,
+      "text": "me. Hey, Mark. Hey, Marcus."
+    },
+    {
+      "type": "low_confidence",
+      "start_ms": 110312,
+      "end_ms": 112856,
+      "start_ts": "00:01:50,312",
+      "end_ts": "00:01:52,856",
+      "avg_confidence": 0.40407926250000004,
+      "word_count": 4,
+      "text": "Ron? Damn, man, guys,"
+    },
+    {
+      "type": "low_confidence",
+      "start_ms": 142169,
+      "end_ms": 145949,
+      "start_ts": "00:02:22,169",
+      "end_ts": "00:02:25,949",
+      "avg_confidence": 0.3817687433333334,
+      "word_count": 3,
+      "text": "right, you motherfucker."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 3965,
+      "end_ms": 4497,
+      "start_ts": "00:00:03,965",
+      "end_ts": "00:00:04,497",
+      "duration_ms": 532,
+      "speaker": "B",
+      "text": "You know what?"
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 19440,
+      "end_ms": 19746,
+      "start_ts": "00:00:19,440",
+      "end_ts": "00:00:19,746",
+      "duration_ms": 306,
+      "speaker": "C",
+      "text": "I'm not talking to them."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 25571,
+      "end_ms": 25975,
+      "start_ts": "00:00:25,571",
+      "end_ts": "00:00:25,975",
+      "duration_ms": 404,
+      "speaker": "D",
+      "text": "Hey, man."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 75243,
+      "end_ms": 76076,
+      "start_ts": "00:01:15,243",
+      "end_ts": "00:01:16,076",
+      "duration_ms": 833,
+      "speaker": "A",
+      "text": "What, nigga?"
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 79973,
+      "end_ms": 80454,
+      "start_ts": "00:01:19,973",
+      "end_ts": "00:01:20,454",
+      "duration_ms": 481,
+      "speaker": "B",
+      "text": "You called me."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 80614,
+      "end_ms": 81031,
+      "start_ts": "00:01:20,614",
+      "end_ts": "00:01:21,031",
+      "duration_ms": 417,
+      "speaker": "F",
+      "text": "Hey, Mark."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 82360,
+      "end_ms": 82970,
+      "start_ts": "00:01:22,360",
+      "end_ts": "00:01:22,970",
+      "duration_ms": 610,
+      "speaker": "D",
+      "text": "Hey, Marcus."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 86489,
+      "end_ms": 87099,
+      "start_ts": "00:01:26,489",
+      "end_ts": "00:01:27,099",
+      "duration_ms": 610,
+      "speaker": "B",
+      "text": "Nigga, let me tell you."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 87196,
+      "end_ms": 87790,
+      "start_ts": "00:01:27,196",
+      "end_ts": "00:01:27,790",
+      "duration_ms": 594,
+      "speaker": "A",
+      "text": "Hold up, hold up."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 93965,
+      "end_ms": 94335,
+      "start_ts": "00:01:33,965",
+      "end_ts": "00:01:34,335",
+      "duration_ms": 370,
+      "speaker": "A",
+      "text": "You did."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 101761,
+      "end_ms": 102729,
+      "start_ts": "00:01:41,761",
+      "end_ts": "00:01:42,729",
+      "duration_ms": 968,
+      "speaker": "A",
+      "text": "He ain't going nowhere."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 110312,
+      "end_ms": 110715,
+      "start_ts": "00:01:50,312",
+      "end_ts": "00:01:50,715",
+      "duration_ms": 403,
+      "speaker": "B",
+      "text": "Ron?"
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 125794,
+      "end_ms": 126051,
+      "start_ts": "00:02:05,794",
+      "end_ts": "00:02:06,051",
+      "duration_ms": 257,
+      "speaker": "C",
+      "text": "Huh?"
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 151051,
+      "end_ms": 152036,
+      "start_ts": "00:02:31,051",
+      "end_ts": "00:02:32,036",
+      "duration_ms": 985,
+      "speaker": "E",
+      "text": "Stay up, bro."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 154037,
+      "end_ms": 154828,
+      "start_ts": "00:02:34,037",
+      "end_ts": "00:02:34,828",
+      "duration_ms": 791,
+      "speaker": "F",
+      "text": "Hold up, man."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 186743,
+      "end_ms": 187257,
+      "start_ts": "00:03:06,743",
+      "end_ts": "00:03:07,257",
+      "duration_ms": 514,
+      "speaker": "D",
+      "text": "You know what?"
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 202560,
+      "end_ms": 203026,
+      "start_ts": "00:03:22,560",
+      "end_ts": "00:03:23,026",
+      "duration_ms": 466,
+      "speaker": "A",
+      "text": "Aw, shit."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 214618,
+      "end_ms": 214987,
+      "start_ts": "00:03:34,618",
+      "end_ts": "00:03:34,987",
+      "duration_ms": 369,
+      "speaker": "B",
+      "text": "Dead."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 217973,
+      "end_ms": 218583,
+      "start_ts": "00:03:37,973",
+      "end_ts": "00:03:38,583",
+      "duration_ms": 610,
+      "speaker": "A",
+      "text": "You show me."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 218632,
+      "end_ms": 219450,
+      "start_ts": "00:03:38,632",
+      "end_ts": "00:03:39,450",
+      "duration_ms": 818,
+      "speaker": "F",
+      "text": "Yeah, I'mma show y'all."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 220783,
+      "end_ms": 221634,
+      "start_ts": "00:03:40,783",
+      "end_ts": "00:03:41,634",
+      "duration_ms": 851,
+      "speaker": "B",
+      "text": "Yeah. Shit."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 222155,
+      "end_ms": 222625,
+      "start_ts": "00:03:42,155",
+      "end_ts": "00:03:42,625",
+      "duration_ms": 470,
+      "speaker": "D",
+      "text": "Fuck that."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 226130,
+      "end_ms": 226536,
+      "start_ts": "00:03:46,130",
+      "end_ts": "00:03:46,536",
+      "duration_ms": 406,
+      "speaker": "D",
+      "text": "Loser."
+    }
+  ],
+  "BLOODLINE_VURT_9x16_ep03": [
+    {
+      "type": "short_utterance",
+      "start_ms": 57267,
+      "end_ms": 57968,
+      "start_ts": "00:00:57,267",
+      "end_ts": "00:00:57,968",
+      "duration_ms": 701,
+      "speaker": "A",
+      "text": "You kidding me, right?"
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 68969,
+      "end_ms": 69579,
+      "start_ts": "00:01:08,969",
+      "end_ts": "00:01:09,579",
+      "duration_ms": 610,
+      "speaker": "B",
+      "text": "I love you too, Dad."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 157000,
+      "end_ms": 157418,
+      "start_ts": "00:02:37,000",
+      "end_ts": "00:02:37,418",
+      "duration_ms": 418,
+      "speaker": "A",
+      "text": "Big Nate."
+    },
+    {
+      "type": "short_utterance",
+      "start_ms": 159746,
+      "end_ms": 160196,
+      "start_ts": "00:02:39,746",
+      "end_ts": "00:02:40,196",
+      "duration_ms": 450,
+      "speaker": "D",
+      "text": "I like that."
+    }
+  ]
+}

@@ -44,7 +44,7 @@ def get_overview():
     daily_avg_engaged = baseline_engaged / 7 if baseline_engaged > 0 else 1
 
     freshness_ratio = yd_engaged / daily_avg_engaged if daily_avg_engaged > 0 else 0
-    yesterday_is_fresh = freshness_ratio >= 0.30
+    yesterday_is_fresh = freshness_ratio >= 0.10
 
     if yesterday_is_fresh:
         # Yesterday's data looks complete — use it

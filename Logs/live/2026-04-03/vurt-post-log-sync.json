@@ -1,0 +1,23 @@
+{
+  "task": "VURT Post Log Sync",
+  "date": "2026-04-03",
+  "command": "python3 /home/workspace/Skills/vurt-post-log/scripts/sync.py --all",
+  "returncode": 0,
+  "summary": {
+    "entries_updated": 59,
+    "calendar_entries_reconciled": 0,
+    "calendar_entries_enriched": 0
+  },
+  "api_status": {
+    "instagram": "OK",
+    "youtube": "OK",
+    "facebook": "OK"
+  },
+  "failed_apis": [],
+  "metrics_sample": [
+    "Come Back Dad - IG → Views=108599, Likes=7452, Saves=1502, Shares=808, Comments Count=169, Reach=84761",
+    "THIS IS VURT Announcement - IG → Views=2925, Likes=102, Saves=11, Shares=42, Comments Count=27, Reach=1782",
+    "Karma in Heels Clip 4 - IG → Views=13460, Likes=217, Saves=63, Shares=35, Comments Count=3, Reach=11447",
+    "Ted Lucas Director Spotlight - IG → Views=4236, Likes=152, Saves=10, Shares=27, Comments Count=37, Reach=1825"
+  ]
+}

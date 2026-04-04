@@ -44,10 +44,11 @@ def send_report(html_file, subject, to_email):
         if resp.status_code == 200:
             result = resp.json()
             if result.get("success"):
-                print(f"SENT: {result.get('result', '')[:200]}")
+                res_str = str(result.get('result', ''))
+                print(f"SENT: {res_str[:200]}")
                 return True
             else:
-                print(f"Tool error: {result.get('error', result)}")
+                print(f"Tool error: {str(result.get('error', result))[:500]}")
                 return False
         else:
             print(f"API error: {resp.status_code} {resp.text[:200]}")

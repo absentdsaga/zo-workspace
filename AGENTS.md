@@ -59,6 +59,33 @@ Builds start perfect, then progressively degrade with each iteration until every
 - `workflow-orchestrator` - Master orchestration of all skills
 - ... (see Skills/ directory for full list)
 
+---
+
+## VURT Operation (Primary Active Project)
+
+**What VURT is:** Streaming platform for vertical micro-dramas. "Stories told OUR Way. Built for the Culture. Free."
+
+**Key docs — READ THESE FIRST in any VURT session:**
+- `Documents/VURT-Social-Playbook.md` — posting rules, caption formulas, platform guides, 5-clip arc
+- `.context/state-snapshot.md` — current posting status, open items, platform handles, keys
+- `Documents/VURT-Content-Calendar.md` — full launch sequence and cadence
+- `Documents/VURT-master.md` — full background on VURT strategy, team, titles
+
+**Caption formulas (known working):**
+- TikTok: `{key dialogue line}` + `{1-sentence context}` + `{title}. Free on VURT. Link in bio.` + `#VURT #{Title} #MicroDrama #DramaTok #IndieFilm`
+- IG Reels: Same structure, longer caption, always end with myvurt.com, add Link Reel to previous clip in series
+- YouTube Shorts: Title = `{Title} | A VURT Original` — title IS the caption
+
+**Platform handles:** TikTok @watchvurticals (→@myvurt pending), IG @watchvurt, FB VURT, YT VURT, LinkedIn VURT Company Page
+
+**5-clip arc per title:** Hook → Escalation → Twist → Confrontation → Edge of Resolution
+
+**Rules:** No Tubi credit on VURT originals. Subtitle every clip. Post individually to each platform (no IG→FB auto-post). Always do IG Stories after posting a Reel. Always pin a comment on TikTok ("Stream free at myvurt.com"). Director spotlight before premiere. 72-hour clip evaluation.
+
+**Current posting:** Karma in Heels (4 clips posted, Clip 5 pending). The Parking Lot premieres Apr 1.
+
+---
+
 ## Projects
 
 ### Survival Agent (`Projects/survival-agent/`)

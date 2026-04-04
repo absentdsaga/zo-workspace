@@ -1,0 +1,535 @@
+{
+  "timestamp": "2026-04-03T20:26:14.658372+00:00",
+  "date_ranges": {
+    "today_label": "yesterday (latest full day)",
+    "yesterday_label": "2 days ago",
+    "seven_day_label": "7-day avg (9d-3d ago)"
+  },
+  "data": {
+    "overview": {
+      "seven_day": {
+        "sessions": "40303",
+        "engagedSessions": "4294",
+        "bounceRate": "0.89345706274967129",
+        "engagementRate": "0.10654293725032876",
+        "activeUsers": "36483",
+        "newUsers": "36053",
+        "averageSessionDuration": "54.27493028938293",
+        "screenPageViews": "51763"
+      },
+      "today": {
+        "sessions": "2523",
+        "engagedSessions": "861",
+        "bounceRate": "0.65873959571938168",
+        "engagementRate": "0.34126040428061832",
+        "activeUsers": "2163",
+        "newUsers": "1955",
+        "averageSessionDuration": "214.41227979627425",
+        "screenPageViews": "4303"
+      },
+      "yesterday": {
+        "sessions": "2306",
+        "engagedSessions": "797",
+        "bounceRate": "0.65437987857762359",
+        "engagementRate": "0.34562012142237641",
+        "activeUsers": "1991",
+        "newUsers": "1818",
+        "averageSessionDuration": "175.02601466478751",
+        "screenPageViews": "4156"
+      }
+    },
+    "channels": {
+      "today": [
+        {
+          "sessionDefaultChannelGroup": "Paid Social",
+          "sessions": "2078",
+          "engagedSessions": "597",
+          "bounceRate": "0.71270452358036573",
+          "engagementRate": "0.28729547641963427"
+        },
+        {
+          "sessionDefaultChannelGroup": "Direct",
+          "sessions": "260",
+          "engagedSessions": "174",
+          "bounceRate": "0.33076923076923076",
+          "engagementRate": "0.66923076923076918"
+        },
+        {
+          "sessionDefaultChannelGroup": "Organic Social",
+          "sessions": "119",
+          "engagedSessions": "42",
+          "bounceRate": "0.6470588235294118",
+          "engagementRate": "0.35294117647058826"
+        },
+        {
+          "sessionDefaultChannelGroup": "Organic Search",
+          "sessions": "55",
+          "engagedSessions": "45",
+          "bounceRate": "0.18181818181818182",
+          "engagementRate": "0.81818181818181823"
+        },
+        {
+          "sessionDefaultChannelGroup": "Referral",
+          "sessions": "8",
+          "engagedSessions": "2",
+          "bounceRate": "0.75",
+          "engagementRate": "0.25"
+        },
+        {
+          "sessionDefaultChannelGroup": "Paid Other",
+          "sessions": "2",
+          "engagedSessions": "0",
+          "bounceRate": "1",
+          "engagementRate": "0"
+        },
+        {
+          "sessionDefaultChannelGroup": "Unassigned",
+          "sessions": "2",
+          "engagedSessions": "0",
+          "bounceRate": "1",
+          "engagementRate": "0"
+        }
+      ],
+      "yesterday": [
+        {
+          "sessionDefaultChannelGroup": "Paid Social",
+          "sessions": "1893",
+          "engagedSessions": "539",
+          "bounceRate": "0.71526677231907021",
+          "engagementRate": "0.28473322768092973"
+        },
+        {
+          "sessionDefaultChannelGroup": "Direct",
+          "sessions": "245",
+          "engagedSessions": "173",
+          "bounceRate": "0.29387755102040819",
+          "engagementRate": "0.70612244897959187"
+        },
+        {
+          "sessionDefaultChannelGroup": "Organic Social",
+          "sessions": "99",
+          "engagedSessions": "36",
+          "bounceRate": "0.63636363636363635",
+          "engagementRate": "0.36363636363636365"
+        },
+        {
+          "sessionDefaultChannelGroup": "Organic Search",
+          "sessions": "57",
+          "engagedSessions": "46",
+          "bounceRate": "0.19298245614035087",
+          "engagementRate": "0.80701754385964908"
+        },
+        {
+          "sessionDefaultChannelGroup": "Referral",
+          "sessions": "9",
+          "engagedSessions": "4",
+          "bounceRate": "0.55555555555555558",
+          "engagementRate": "0.44444444444444442"
+        },
+        {
+          "sessionDefaultChannelGroup": "Unassigned",
+          "sessions": "4",
+          "engagedSessions": "0",
+          "bounceRate": "1",
+          "engagementRate": "0"
+        },
+        {
+          "sessionDefaultChannelGroup": "Paid Other",
+          "sessions": "0",
+          "engagedSessions": "0",
+          "bounceRate": "0",
+          "engagementRate": "0"
+        }
+      ],
+      "seven_day": [
+        {
+          "sessionDefaultChannelGroup": "Paid Social",
+          "sessions": "38622",
+          "engagedSessions": "3069",
+          "bounceRate": "0.92053751747708557",
+          "engagementRate": "0.079462482522914407"
+        },
+        {
+          "sessionDefaultChannelGroup": "Direct",
+          "sessions": "1029",
+          "engagedSessions": "748",
+          "bounceRate": "0.27308066083576288",
+          "engagementRate": "0.72691933916423712"
+        },
+        {
+          "sessionDefaultChannelGroup": "Organic Social",
+          "sessions": "644",
+          "engagedSessions": "217",
+          "bounceRate": "0.66304347826086951",
+          "engagementRate": "0.33695652173913043"
+        },
+        {
+          "sessionDefaultChannelGroup": "Organic Search",
+          "sessions": "338",
+          "engagedSessions": "262",
+          "bounceRate": "0.22485207100591717",
+          "engagementRate": "0.7751479289940828"
+        },
+        {
+          "sessionDefaultChannelGroup": "Referral",
+          "sessions": "26",
+          "engagedSessions": "16",
+          "bounceRate": "0.38461538461538464",
+          "engagementRate": "0.61538461538461542"
+        },
+        {
+          "sessionDefaultChannelGroup": "Unassigned",
+          "sessions": "21",
+          "engagedSessions": "2",
+          "bounceRate": "0.90476190476190477",
+          "engagementRate": "0.095238095238095233"
+        },
+        {
+          "sessionDefaultChannelGroup": "Paid Other",
+          "sessions": "9",
+          "engagedSessions": "1",
+          "bounceRate": "0.88888888888888884",
+          "engagementRate": "0.1111111111111111"
+        }
+      ]
+    },
+    "campaigns": {
+      "today": [
+        {
+          "sessionCampaignName": "120247130906080029",
+          "sessions": "1503",
+          "engagedSessions": "484",
+          "bounceRate": "0.677977378576181",
+          "engagementRate": "0.32202262142381904"
+        },
+        {
+          "sessionCampaignName": "VURT $2500 Digital Ads",
+          "sessions": "363",
+          "engagedSessions": "82",
+          "bounceRate": "0.77410468319559234",
+          "engagementRate": "0.22589531680440772"
+        },
+        {
+          "sessionCampaignName": "(direct)",
+          "sessions": "263",
+          "engagedSessions": "176",
+          "bounceRate": "0.33079847908745247",
+          "engagementRate": "0.66920152091254748"
+        },
+        {
+          "sessionCampaignName": "VURT+$2500+Digital+Ads",
+          "sessions": "129",
+          "engagedSessions": "12",
+          "bounceRate": "0.90697674418604646",
+          "engagementRate": "0.093023255813953487"
+        },
+        {
+          "sessionCampaignName": "(referral)",
+          "sessions": "126",
+          "engagedSessions": "44",
+          "bounceRate": "0.65079365079365081",
+          "engagementRate": "0.34920634920634919"
+        },
+        {
+          "sessionCampaignName": "VURT - APRIL 1 \u2013 APRIL 15 $2500 Digital Ads",
+          "sessions": "60",
+          "engagedSessions": "16",
+          "bounceRate": "0.73333333333333328",
+          "engagementRate": "0.26666666666666666"
+        },
+        {
+          "sessionCampaignName": "(not set)",
+          "sessions": "41",
+          "engagedSessions": "32",
+          "bounceRate": "0.21951219512195122",
+          "engagementRate": "0.78048780487804881"
+        },
+        {
+          "sessionCampaignName": "VURT+-+APRIL+1+\u2013+APRIL+15+$2500+Digital+Ads",
+          "sessions": "18",
+          "engagedSessions": "2",
+          "bounceRate": "0.88888888888888884",
+          "engagementRate": "0.1111111111111111"
+        },
+        {
+          "sessionCampaignName": "(organic)",
+          "sessions": "15",
+          "engagedSessions": "11",
+          "bounceRate": "0.26666666666666666",
+          "engagementRate": "0.73333333333333328"
+        },
+        {
+          "sessionCampaignName": "120245604984150029",
+          "sessions": "5",
+          "engagedSessions": "1",
+          "bounceRate": "0.8",
+          "engagementRate": "0.2"
+        }
+      ],
+      "yesterday": [
+        {
+          "sessionCampaignName": "120247130906080029",
+          "sessions": "1888",
+          "engagedSessions": "537",
+          "bounceRate": "0.715572033898305",
+          "engagementRate": "0.28442796610169491"
+        },
+        {
+          "sessionCampaignName": "(direct)",
+          "sessions": "246",
+          "engagedSessions": "174",
+          "bounceRate": "0.29268292682926828",
+          "engagementRate": "0.70731707317073167"
+        },
+        {
+          "sessionCampaignName": "(referral)",
+          "sessions": "87",
+          "engagedSessions": "30",
+          "bounceRate": "0.65517241379310343",
+          "engagementRate": "0.34482758620689657"
+        },
+        {
+          "sessionCampaignName": "(not set)",
+          "sessions": "63",
+          "engagedSessions": "43",
+          "bounceRate": "0.31746031746031744",
+          "engagementRate": "0.68253968253968256"
+        },
+        {
+          "sessionCampaignName": "(organic)",
+          "sessions": "19",
+          "engagedSessions": "12",
+          "bounceRate": "0.36842105263157893",
+          "engagementRate": "0.631578947368421"
+        },
+        {
+          "sessionCampaignName": "120245604984150029",
+          "sessions": "5",
+          "engagedSessions": "2",
+          "bounceRate": "0.6",
+          "engagementRate": "0.4"
+        },
+        {
+          "sessionCampaignName": "VURT $2500 Digital Ads",
+          "sessions": "0",
+          "engagedSessions": "0",
+          "bounceRate": "0",
+          "engagementRate": "0"
+        },
+        {
+          "sessionCampaignName": "VURT - APRIL 1 \u2013 APRIL 15 $2500 Digital Ads",
+          "sessions": "0",
+          "engagedSessions": "0",
+          "bounceRate": "0",
+          "engagementRate": "0"
+        },
+        {
+          "sessionCampaignName": "VURT+$2500+Digital+Ads",
+          "sessions": "0",
+          "engagedSessions": "0",
+          "bounceRate": "0",
+          "engagementRate": "0"
+        },
+        {
+          "sessionCampaignName": "VURT+-+APRIL+1+\u2013+APRIL+15+$2500+Digital+Ads",
+          "sessions": "0",
+          "engagedSessions": "0",
+          "bounceRate": "0",
+          "engagementRate": "0"
+        }
+      ],
+      "seven_day": [
+        {
+          "sessionCampaignName": "120245604984150029",
+          "sessions": "38622",
+          "engagedSessions": "3069",
+          "bounceRate": "0.92053751747708557",
+          "engagementRate": "0.079462482522914407"
+        },
+        {
+          "sessionCampaignName": "(direct)",
+          "sessions": "1036",
+          "engagedSessions": "754",
+          "bounceRate": "0.27220077220077221",
+          "engagementRate": "0.72779922779922779"
+        },
+        {
+          "sessionCampaignName": "(referral)",
+          "sessions": "558",
+          "engagedSessions": "162",
+          "bounceRate": "0.70967741935483875",
+          "engagementRate": "0.29032258064516131"
+        },
+        {
+          "sessionCampaignName": "(not set)",
+          "sessions": "358",
+          "engagedSessions": "259",
+          "bounceRate": "0.276536312849162",
+          "engagementRate": "0.723463687150838"
+        },
+        {
+          "sessionCampaignName": "(organic)",
+          "sessions": "109",
+          "engagedSessions": "72",
+          "bounceRate": "0.33944954128440369",
+          "engagementRate": "0.66055045871559637"
+        },
+        {
+          "sessionCampaignName": "120247130906080029",
+          "sessions": "0",
+          "engagedSessions": "0",
+          "bounceRate": "0",
+          "engagementRate": "0"
+        },
+        {
+          "sessionCampaignName": "VURT $2500 Digital Ads",
+          "sessions": "0",
+          "engagedSessions": "0",
+          "bounceRate": "0",
+          "engagementRate": "0"
+        },
+        {
+          "sessionCampaignName": "VURT - APRIL 1 \u2013 APRIL 15 $2500 Digital Ads",
+          "sessions": "0",
+          "engagedSessions": "0",
+          "bounceRate": "0",
+          "engagementRate": "0"
+        },
+        {
+          "sessionCampaignName": "VURT+$2500+Digital+Ads",
+          "sessions": "0",
+          "engagedSessions": "0",
+          "bounceRate": "0",
+          "engagementRate": "0"
+        },
+        {
+          "sessionCampaignName": "VURT+-+APRIL+1+\u2013+APRIL+15+$2500+Digital+Ads",
+          "sessions": "0",
+          "engagedSessions": "0",
+          "bounceRate": "0",
+          "engagementRate": "0"
+        }
+      ]
+    },
+    "events": {
+      "play_content": {
+        "today": "0",
+        "yesterday": "0",
+        "seven_day": "0"
+      },
+      "sign_up": {
+        "today": "0",
+        "yesterday": "0",
+        "seven_day": "0"
+      },
+      "app_cta_click": {
+        "today": "0",
+        "yesterday": "0",
+        "seven_day": "0"
+      },
+      "share_content": {
+        "today": "41",
+        "yesterday": "26",
+        "seven_day": "86"
+      }
+    },
+    "alerts": [
+      {
+        "scope": "overall",
+        "metric": "Site Sessions",
+        "today": "2523",
+        "seven_day_avg": "5757.571428571428",
+        "delta_pct": -56.2,
+        "severity": "CRITICAL"
+      },
+      {
+        "scope": "overall",
+        "metric": "Active Users",
+        "today": "2163",
+        "seven_day_avg": "5211.857142857143",
+        "delta_pct": -58.5,
+        "severity": "CRITICAL"
+      },
+      {
+        "scope": "overall",
+        "metric": "New Users",
+        "today": "1955",
+        "seven_day_avg": "5150.428571428572",
+        "delta_pct": -62.0,
+        "severity": "CRITICAL"
+      },
+      {
+        "scope": "channel",
+        "channel": "Paid Social",
+        "metric": "Paid Social Sessions",
+        "today": "2078",
+        "seven_day_avg": "5517.428571428572",
+        "delta_pct": -62.3,
+        "severity": "CRITICAL"
+      },
+      {
+        "scope": "channel",
+        "channel": "Direct",
+        "metric": "Direct Bounce Rate",
+        "today": "0.33076923076923076",
+        "seven_day_avg": "0.27308066083576288",
+        "delta_pct": 21.1,
+        "severity": "WARNING"
+      },
+      {
+        "scope": "channel",
+        "channel": "Referral",
+        "metric": "Referral Bounce Rate",
+        "today": "0.75",
+        "seven_day_avg": "0.38461538461538464",
+        "delta_pct": 95.0,
+        "severity": "CRITICAL"
+      },
+      {
+        "scope": "channel",
+        "channel": "Referral",
+        "metric": "Referral Engagement Rate",
+        "today": "0.25",
+        "seven_day_avg": "0.61538461538461542",
+        "delta_pct": -59.4,
+        "severity": "CRITICAL"
+      },
+      {
+        "scope": "channel",
+        "channel": "Paid Other",
+        "metric": "Paid Other Engagement Rate",
+        "today": "0",
+        "seven_day_avg": "0.1111111111111111",
+        "delta_pct": -100.0,
+        "severity": "CRITICAL"
+      },
+      {
+        "scope": "channel",
+        "channel": "Unassigned",
+        "metric": "Unassigned Engagement Rate",
+        "today": "0",
+        "seven_day_avg": "0.095238095238095233",
+        "delta_pct": -100.0,
+        "severity": "CRITICAL"
+      },
+      {
+        "scope": "channel",
+        "channel": "Unassigned",
+        "metric": "Unassigned Sessions",
+        "today": "2",
+        "seven_day_avg": "3.0",
+        "delta_pct": -33.3,
+        "severity": "CRITICAL"
+      },
+      {
+        "scope": "campaign",
+        "campaign": "120245604984150029",
+        "metric": "Campaign '120245604984150029' Sessions",
+        "today": "5",
+        "seven_day_avg": "5517.428571428572",
+        "delta_pct": -99.9,
+        "severity": "CRITICAL"
+      }
+    ]
+  }
+}

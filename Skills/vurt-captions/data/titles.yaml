@@ -1,0 +1,228 @@
+# VURT Title Roster
+# Updated: March 31, 2026
+
+titles:
+  karma_in_heels:
+    display_title: "Karma in Heels"
+    slug: karma-in-heels
+    status: active
+    premiere_date: 2026-03-17
+    url: https://myvurt.com/karma-in-heels
+    genre: drama
+    clip_count: 5
+    clips_posted: 4
+    clip_arc:
+      - { number: 1, function: hook, dialogue: "Tyler thought she was bluffing. She wasn't." }
+      - { number: 2, function: escalation, dialogue: "I want to play… especially with this one." }
+      - { number: 3, function: twist, dialogue: "He doesn't know the new you from a can of paint." }
+      - { number: 4, function: confrontation, dialogue: "You did this to me. I was just a toy on your initiation night." }
+      - { number: 5, function: edge_of_resolution, dialogue: TBD }
+    exec_producer:
+      name: Vernon "Snooperstar" Robinson
+      ig: "@snooperstar"
+      tt: "@snooperstar"
+    director:
+      name: Dameon King
+      ig: unknown
+      tt: unknown
+    director_2:
+      name: Kendra Rainey-King
+      ig: "@authorkendra_rainey"
+      tt: unknown
+    actors:
+      - name: Britton Adams
+        ig: "@badams_35"
+        tt: unknown
+        role: lead
+      - name: Diane August
+        ig: "@dianeaugust_theactress"
+        tt: unknown
+        role: lead
+    hashtags:
+      - "#KarmaInHeels"
+      - "#VURT"
+      - "#MicroDrama"
+      - "#DramaTok"
+      - "#IndieFilm"
+      - "#FreeStreaming"
+
+  the_parking_lot:
+    display_title: "The Parking Lot Series"
+    slug: the-parking-lot
+    status: premiere_imminent
+    premiere_date: 2026-04-01
+    url: https://myvurt.com/the-parking-lot
+    genre: drama
+    clip_count: 5
+    clips_posted: 0
+    director:
+      name: Steven Alan Davis
+      ig: "@stevanalondavis"
+      tt: unknown
+    exec_producer:
+      name: TBD
+      ig: TBD
+      tt: TBD
+    actors:
+      - name: Nicki Micheaux
+        ig: "@nickimicheaux"
+        tt: unknown
+        role: lead
+      - name: Eric Marts
+        ig: unknown
+        tt: unknown
+        role: lead
+    hashtags:
+      - "#TheParkingLot"
+      - "#VURT"
+      - "#MicroDrama"
+      - "#DramaTok"
+      - "#IndieFilm"
+
+  killer_stepdad:
+    display_title: "Killer Stepdad"
+    status: queued
+    premiere_date: TBD
+    genre: thriller
+    clip_count: 5
+    clips_posted: 0
+    hashtags:
+      - "#KillerStepdad"
+      - "#VURT"
+      - "#MicroDrama"
+      - "#ThrillerTok"
+
+  35_and_ticking:
+    display_title: "35 & Ticking"
+    status: queued
+    premiere_date: TBD
+    genre: drama
+    clip_count: 5
+    clips_posted: 0
+    hashtags:
+      - "#35AndTicking"
+      - "#VURT"
+      - "#MicroDrama"
+
+  something_like_a_business:
+    display_title: "Something Like A Business"
+    status: queued
+    premiere_date: TBD
+    genre: comedy
+    clip_count: 5
+    clips_posted: 0
+    hashtags:
+      - "#SomethingLikeABusiness"
+      - "#VURT"
+      - "#MicroDrama"
+      - "#ComedyTok"
+
+  baby_mama:
+    display_title: "Baby Mama"
+    status: queued
+    premiere_date: TBD
+    genre: drama
+    clip_count: 5
+    clips_posted: 0
+    hashtags:
+      - "#BabyMama"
+      - "#VURT"
+      - "#MicroDrama"
+
+  fatal_lust:
+    display_title: "Fatal Lust"
+    status: queued
+    premiere_date: TBD
+    genre: thriller
+    clip_count: 5
+    clips_posted: 0
+    hashtags:
+      - "#FatalLust"
+      - "#VURT"
+      - "#MicroDrama"
+      - "#ThrillerTok"
+
+  miami_kingpins:
+    display_title: "Miami Kingpins"
+    status: queued
+    premiere_date: TBD
+    genre: crime
+    clip_count: 5
+    clips_posted: 0
+    hashtags:
+      - "#MiamiKingpins"
+      - "#VURT"
+      - "#MicroDrama"
+      - "#CrimeTok"
+
+  miami_confidential:
+    display_title: "Miami Confidential"
+    status: queued
+    premiere_date: TBD
+    genre: crime
+    clip_count: 5
+    clips_posted: 0
+    hashtags:
+      - "#MiamiConfidential"
+      - "#VURT"
+      - "#MicroDrama"
+
+  favorite_son:
+    display_title: "Favorite Son"
+    status: queued
+    premiere_date: TBD
+    genre: drama
+    clip_count: 5
+    clips_posted: 0
+    hashtags:
+      - "#FavoriteSon"
+      - "#VURT"
+      - "#MicroDrama"
+
+  the_love_letter:
+    display_title: "The Love Letter"
+    status: queued
+    premiere_date: TBD
+    genre: drama
+    clip_count: 5
+    clips_posted: 0
+    hashtags:
+      - "#TheLoveLetter"
+      - "#VURT"
+      - "#MicroDrama"
+
+  church_boy:
+    display_title: "Church Boy"
+    status: queued
+    premiere_date: TBD
+    genre: drama
+    clip_count: 5
+    clips_posted: 0
+    hashtags:
+      - "#ChurchBoy"
+      - "#VURT"
+      - "#MicroDrama"
+
+  come_back_dad:
+    display_title: "Come Back Dad"
+    status: queued
+    premiere_date: TBD
+    genre: drama
+    clip_count: 5
+    clips_posted: 0
+    hashtags:
+      - "#ComeBackDad"
+      - "#VURT"
+      - "#MicroDrama"
+
+  drops_of_mercy:
+    display_title: "Drops Of Mercy"
+    status: queued
+    premiere_date: TBD
+    genre: drama
+    clip_count: 5
+    clips_posted: 0
+    hashtags:
+      - "#DropsOfMercy"
+      - "#VURT"
+      - "#MicroDrama"

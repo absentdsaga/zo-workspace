@@ -1,0 +1,76 @@
+# VURT Platform Handles Master List
+# Updated: March 31, 2026
+
+vurt_accounts:
+  tiktok: "@watchvurticals"
+  instagram: "@watchvurt"
+  facebook: "VURT"
+  youtube: "VURT"
+  linkedin: "VURT"
+  website: "myvurt.com"
+
+vurt_team:
+  dioni_vasquez:
+    name: "Dioni Vasquez"
+    role: "Co-Founder / Head of Distribution & Operations"
+    ig: "@dionivasquez"
+    email: "dioni@myvurt.com"
+  mark_samuels:
+    name: "Mark A. Samuels"
+    role: "Co-Founder / Director of Production"
+    ig: "@kingcolosus"
+    email: "mark@myvurt.com"
+  ted_lucas:
+    name: "Ted Lucas"
+    role: "Founder"
+    ig: unknown
+    tt: unknown
+  ari:
+    name: "Ari"
+    role: "Internal team — platform access"
+
+stakeholders:
+  snooperstar:
+    name: "Vernon 'Snooperstar' Robinson"
+    role: "Exec Producer — Karma in Heels"
+    ig: "@snooperstar"
+    tt: "@snooperstar"
+
+filmmakers:
+  steven_alan_davis:
+    name: "Steven Alan Davis"
+    role: "Director — The Parking Lot"
+    ig: "@stevanalondavis"
+    tt: unknown
+  dameon_king:
+    name: "Dameon King"
+    role: "Director — Karma in Heels"
+    ig: unknown
+    tt: unknown
+  kendra_rainey_king:
+    name: "Kendra Rainey-King"
+    role: "Director — Karma in Heels"
+    ig: "@authorkendra_rainey"
+    tt: unknown
+
+actors:
+  britton_adams:
+    name: "Britton Adams"
+    role: "Lead — Karma in Heels"
+    ig: "@badams_35"
+    tt: unknown
+  diane_august:
+    name: "Diane August"
+    role: "Lead — Karma in Heels"
+    ig: "@dianeaugust_theactress"
+    tt: unknown
+  nicki_micheaux:
+    name: "Nicki Micheaux"
+    role: "Lead — The Parking Lot"
+    ig: "@nickimicheaux"
+    tt: unknown
+  eric_marts:
+    name: "Eric Marts"
+    role: "Lead — The Parking Lot"
+    ig: unknown
+    tt: unknown

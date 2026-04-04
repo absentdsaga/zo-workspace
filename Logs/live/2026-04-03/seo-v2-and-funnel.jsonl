@@ -1,0 +1,6 @@
+{"type":"task_start","ts":"2026-04-03T20:25:00Z","task":"SEO v2 CSV generation + funnel tracker first run","conversation":"con_v55GP1lr46UmN5fa"}
+{"type":"tool_call","ts":"2026-04-03T20:26:00Z","tool":"funnel-check.py","result":"11 regressions detected, paid social sessions -62.3% vs 7d avg"}
+{"type":"decision","ts":"2026-04-03T20:27:00Z","decision":"Research missing VURT shows to expand metadata from 113 to 135 entries"}
+{"type":"tool_call","ts":"2026-04-03T20:28:00Z","tool":"web_search","result":"Found real metadata for Girl in the Closet, Karma in Heels, Comeback Dad, Lord All Men Can't Be Dogs, Pride & Prejudice Atlanta, Killer Stepdad, Saving Westbrook, Framed by My Ex, One Night in Lagos"}
+{"type":"tool_call","ts":"2026-04-03T20:35:00Z","tool":"enveu-seo.py export-csv --v2","result":"3818 items exported. Actionable: 2347, Partial: 471, Needs-metadata: 229, Asset: 663, Blank: 95"}
+{"type":"result","ts":"2026-04-03T20:40:00Z","result":"v2 CSV at Documents/VURT-SEO-Fill-Preview-v2.csv. Metadata coverage improved from 1886 to 2818 items. Funnel tracker output at Logs/live/2026-04-03_funnel-check.json"}

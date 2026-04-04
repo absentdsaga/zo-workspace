@@ -1,0 +1,3 @@
+{"timestamp": "2026-03-30T20:50:00Z", "type": "task_start", "task": "VURT Post Log sync --all"}
+{"timestamp": "2026-03-30T20:50:00Z", "type": "tool_call", "tool": "run_bash_command", "command": "python3 /home/workspace/Skills/vurt-post-log/scripts/sync.py --all"}
+{"timestamp": "2026-03-30T20:50:00Z", "type": "result", "summary": "Sync completed successfully", "details": {"notion_entries": 58, "ig_posts": 26, "fb_posts": 25, "yt_videos": 10, "urls_updated": 0, "metrics_updated": 38, "calendar_reconciled": 0, "calendar_enriched": 1}}

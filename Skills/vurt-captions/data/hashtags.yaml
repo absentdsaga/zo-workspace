@@ -1,0 +1,98 @@
+# VURT Hashtag Configuration
+# Per-show hashtag sets for social posting
+# Updated: April 2, 2026
+
+shows:
+  karma-in-heels:
+    display_name: "Karma in Heels"
+    always:
+      - "#KarmaInHeels"
+      - "#VURT"
+      - "#ShortFilm"
+    rotating:
+      - "#Drama"
+      - "#IndieFilm"
+      - "#BlackCinema"
+      - "#WomenInFilm"
+      - "#ShortFilmSeries"
+    testing:
+      - "#ReelsOfTheDay"
+      - "#FilmTok"
+      - "#DramaTok"
+  parking-lot-series:
+    display_name: "Parking Lot Series"
+    always:
+      - "#ParkingLotSeries"
+      - "#VURT"
+      - "#ShortFilm"
+    rotating:
+      - "#Comedy"
+      - "#IndieFilm"
+      - "#BlackComedy"
+      - "#ShortFilmSeries"
+    testing:
+      - "#ComedyReels"
+      - "#FilmTok"
+  come-back-dad:
+    display_name: "Come Back Dad"
+    always:
+      - "#ComeBackDad"
+      - "#VURT"
+      - "#ShortFilm"
+    rotating:
+      - "#Drama"
+      - "#FamilyDrama"
+      - "#IndieFilm"
+      - "#BlackCinema"
+    testing:
+      - "#DramaTok"
+      - "#FilmReels"
+  director-spotlight:
+    display_name: "Director Spotlight"
+    always:
+      - "#VURTFilmmakers"
+      - "#VURT"
+      - "#DirectorSpotlight"
+    rotating:
+      - "#IndieFilmmaker"
+      - "#FilmDirector"
+      - "#BehindTheScenes"
+    testing:
+      - "#FilmmakerLife"
+      - "#DirectorLife"
+  default:
+    always:
+      - "#VURT"
+      - "#ShortFilm"
+    rotating:
+      - "#IndieFilm"
+      - "#StreamingNow"
+      - "#WatchNow"
+    testing: []
+
+global:
+  always:
+    - "#VURT"
+  platform_specific:
+    instagram:
+      - "#Reels"
+      - "#IGReels"
+    tiktok:
+      - "#FYP"
+      - "#ForYouPage"
+    youtube:
+      - "#Shorts"
+      - "#YouTubeShorts"
+    facebook: []
+    linkedin:
+      - "#Entertainment"
+      - "#Streaming"
+
+# Do NOT use (blacklisted)
+avoid:
+  - "#Content"
+  - "#Influencer"
+  - "#Snackable"
+  - "#UserGenerated"
+  - "#Viral"
+  - "#AI"

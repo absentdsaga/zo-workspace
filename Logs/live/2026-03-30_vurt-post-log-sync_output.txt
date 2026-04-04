@@ -1,0 +1,59 @@
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:77: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow()
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:165: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  after = (datetime.utcnow() - timedelta(days=days)).strftime("%Y-%m-%dT00:00:00Z")
+Fetching Post Log from Notion...
+  Found 55 entries
+
+Fetching Instagram posts...
+  Found 25 IG posts
+Fetching Facebook posts...
+  Found 25 FB posts
+Fetching YouTube videos...
+  Found 9 YT videos
+
+Syncing URLs...
+  0 URLs updated
+
+Syncing metrics...
+  Metrics: Karma in Heels Clip 3 - Facebook → Views=0, Likes=0, Shares=0, Comments Count=0, Reach=41
+  Metrics: THIS IS VURT Announcement - FB → Views=330, Likes=0, Shares=0, Comments Count=0, Reach=611
+  Metrics: Karma in Heels Clip 2 - IG → Views=0, Likes=16, Saves=0, Shares=0, Comments Count=5, Reach=0 ⏳
+  Metrics: VURT 100 Series Post - IG → Views=356, Likes=12, Saves=0, Shares=2, Comments Count=1, Reach=230, Engagement=16
+  Metrics: Karma in Heels Clip 1 - Facebook → Views=0, Likes=1, Shares=1, Comments Count=0, Reach=210
+  Metrics: Karma in Heels Clip 2 - Facebook → Views=274, Likes=3, Shares=0, Comments Count=0, Reach=414
+  Metrics: Charles S. Dutton Family Reel - IG → Views=0, Likes=36, Saves=0, Shares=0, Comments Count=2, Reach=0
+  Metrics: My Brother's Wife Clip - IG → Views=0, Likes=0, Saves=0, Shares=0, Comments Count=0, Reach=0
+  Metrics: Miami Kingpins Liberty City - FB → Views=190, Likes=1, Shares=0, Comments Count=0, Reach=469
+  Metrics: Nita K Filmmaker Spotlight - IG → Views=735, Likes=33, Saves=0, Shares=6, Comments Count=24, Reach=373, Engagement=68
+  Metrics: Brand Post - Every Episode - IG → Views=419, Likes=6, Saves=1, Shares=3, Comments Count=0, Reach=247, Engagement=11
+  Metrics: Parking Lot Series Announcement - IG → Views=910, Likes=30, Saves=0, Shares=3, Comments Count=3, Reach=307, Engagement=41
+  Metrics: Karma in Heels Clip 1 - IG → Views=0, Likes=21, Saves=0, Shares=0, Comments Count=6, Reach=0
+  Metrics: SCHEMERS Announcement - IG → Views=0, Likes=36, Saves=0, Shares=0, Comments Count=18, Reach=0
+  Metrics: Pre-Launch Teaser - IG → Views=395, Likes=9, Saves=0, Shares=2, Comments Count=1, Reach=196, Engagement=13
+  Metrics: Ted Lucas Director Spotlight - IG → Views=4074, Likes=148, Saves=8, Shares=27, Comments Count=37, Reach=1677, Engagement=234
+  Metrics: VURT 100 Series Post - IG → Views=410, Likes=11, Saves=1, Shares=3, Comments Count=0, Reach=247, Engagement=17
+  Metrics: 35 and Ticking Promo - FB → Views=1579, Likes=25, Shares=1, Comments Count=0, Reach=2322
+  Metrics: Miami Confidential Clip - IG → Views=0, Likes=0, Saves=0, Shares=0, Comments Count=0, Reach=0
+  Metrics: Karma in Heels Promo (Patricia Sandoval) - FB → Views=0, Likes=2, Shares=1, Comments Count=2, Reach=298
+  Metrics: Miami Kingpins Black Miami - FB → Views=84, Likes=0, Shares=0, Comments Count=0, Reach=331
+  Metrics: THIS IS VURT Announcement - IG → Views=0, Likes=91, Saves=0, Shares=0, Comments Count=27, Reach=0
+  Metrics: My Brother's Wife Clip - FB → Views=425, Likes=3, Shares=0, Comments Count=1, Reach=831
+  Metrics: Baby Mama Clip - IG → Views=0, Likes=50, Saves=0, Shares=0, Comments Count=11, Reach=0
+  Metrics: Karma in Heels Clip 1 - YT Shorts → Views=1160, Likes=10, Comments Count=0
+  Metrics: March 15 Full Launch - FB → Views=0, Likes=0, Shares=0, Comments Count=0, Reach=210
+  Metrics: Come Back Dad - IG → Views=0, Likes=2851, Saves=0, Shares=0, Comments Count=78, Reach=0
+  Metrics: SCHEMERS Announcement - FB → Views=219, Likes=1, Shares=0, Comments Count=0, Reach=542
+  Metrics: Miami Kingpins Black Miami - IG → Views=0, Likes=21, Saves=0, Shares=0, Comments Count=1, Reach=0
+  Metrics: Brand Post - Your Story - IG → Views=411, Likes=12, Saves=1, Shares=1, Comments Count=1, Reach=248, Engagement=15
+  Metrics: Karma in Heels Promo (Patricia Sandoval) - IG → Views=0, Likes=42, Saves=0, Shares=0, Comments Count=9, Reach=0
+  Metrics: 35 and Ticking Promo - IG → Views=0, Likes=62, Saves=0, Shares=0, Comments Count=6, Reach=0
+  Metrics: Karma in Heels Clip 3 - YT Shorts → Views=1156, Likes=12, Comments Count=0
+  Metrics: VURT Launch Day - IG → Views=0, Likes=26, Saves=0, Shares=0, Comments Count=4, Reach=0
+  Metrics: Miami Kingpins Liberty City - IG → Views=0, Likes=26, Saves=0, Shares=0, Comments Count=5, Reach=0
+  Metrics: Industry Shifting Post - IG → Views=2219, Likes=50, Saves=8, Shares=24, Comments Count=13, Reach=992, Engagement=100
+  Metrics: Karma in Heels Clip 3 - IG → Views=0, Likes=11, Saves=0, Shares=0, Comments Count=0, Reach=0 ⏳
+  Metrics: Karma in Heels Clip 2 - YT Shorts → Views=1156, Likes=12, Comments Count=0
+  38 entries updated with metrics
+
+Done.

@@ -1,0 +1,34 @@
+{
+  "task": "VURT Post Log Sync",
+  "date": "2026-04-01",
+  "command": "python3 /home/workspace/Skills/vurt-post-log/scripts/sync.py --all",
+  "returncode": 0,
+  "summary": {
+    "notion_entries_found": 60,
+    "ig_posts": 27,
+    "fb_posts": 33,
+    "yt_videos": 11,
+    "urls_updated": 0,
+    "metrics_updated": 59,
+    "calendar_entries_reconciled": 0,
+    "calendar_entries_enriched": 0
+  },
+  "metrics_synced": [
+    {"name": "Karma in Heels Clip 3 - Facebook", "views": 229, "likes": 2, "shares": 0, "comments": 0, "reach": 438},
+    {"name": "THIS IS VURT Announcement - FB", "views": 355, "likes": 0, "shares": 1, "comments": 0, "reach": 657},
+    {"name": "Karma in Heels Clip 2 - IG", "views": 1200, "likes": 17, "saves": 3, "shares": 1, "comments": 6, "reach": 969, "avg_watch_time": 8.0, "engagement": 28},
+    {"name": "VURT 100 Series Post - IG", "views": 375, "likes": 13, "saves": 0, "shares": 2, "comments": 1, "reach": 246, "engagement": 17},
+    {"name": "Karma in Heels Clip 1 - TikTok", "views": 20, "likes": 1, "comments": 3, "shares": 0, "saves": 0},
+    {"name": "Charles S. Dutton Family Reel - IG", "views": 777, "likes": 40, "saves": 3, "shares": 7, "comments": 2, "reach": 620, "avg_watch_time": 25.2, "engagement": 56},
+    {"name": "Nita K Filmmaker Spotlight - IG", "views": 798, "likes": 33, "saves": 0, "shares": 6, "comments": 24, "reach": 411, "engagement": 68},
+    {"name": "Parking Lot Series Announcement - IG", "views": 1044, "likes": 34, "saves": 0, "shares": 3, "comments": 4, "reach": 379, "engagement": 48},
+    {"name": "SCHEMERS Announcement - IG", "views": 822, "likes": 37, "saves": 3, "shares": 3, "comments": 18, "reach": 642, "avg_watch_time": 8.6, "engagement": 66},
+    {"name": "Ted Lucas Director Spotlight - IG", "views": 4137, "likes": 149, "saves": 8, "shares": 27, "comments": 37, "reach": 1730, "engagement": 235},
+    {"name": "THIS IS VURT Announcement - IG", "views": 2827, "likes": 98, "saves": 11, "shares": 42, "comments": 27, "reach": 1723, "avg_watch_time": 10.9, "engagement": 185},
+    {"name": "Baby Mama Clip - IG", "views": 1202, "likes": 55, "saves": 13, "shares": 15, "comments": 11, "reach": 832, "avg_watch_time": 18.2, "engagement": 101},
+    {"name": "Come Back Dad - IG", "views": 77825, "likes": 5299, "saves": 1073, "shares": 568, "comments": 144, "reach": 62054, "avg_watch_time": 63.4, "engagement": 7245},
+    {"name": "35 and Ticking Promo - IG", "views": 1276, "likes": 70, "saves": 12, "shares": 4, "comments": 6, "reach": 983, "avg_watch_time": 22.2, "engagement": 98},
+    {"name": "Karma in Heels Clip 4 - IG", "views": 11075, "likes": 144, "saves": 51, "shares": 26, "comments": 3, "reach": 9573, "avg_watch_time": 13.8, "engagement": 233},
+    {"name": "Parking Lot Series Director Spotlight - IG", "views": 866, "likes": 65, "saves": 1, "shares": 5, "comments": 24, "reach": 412, "engagement": 100}
+  ]
+}

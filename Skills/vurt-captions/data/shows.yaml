@@ -1,0 +1,445 @@
+# VURT Show Profiles — Deep Research for Caption Generation
+# Updated: 2026-04-02
+# Source: SRT transcripts, YouTube descriptions, web research, titles.yaml
+
+shows:
+
+  karma-in-heels:
+    display_name: "Karma in Heels"
+    genre: Drama
+    status: LIVE
+    premiere: "2026-03-17"
+    episodes: 48
+    clip_count: 5
+    synopsis: >
+      A drama about power, loyalty, and betrayal between women navigating a world
+      that underestimates them. The story centers on a woman who appears to be
+      caught — but has been running the entire operation from the start. Themes of
+      female agency, double-crossing, and the cost of ambition. The twist: the woman
+      everyone thought was the victim is actually the one pulling all the strings.
+    characters:
+      - name: "Lead Female"
+        role: "The woman running things behind the scenes"
+        actor: "Britton Adams"
+        ig: "@badams_35"
+      - name: "Supporting Female"
+        role: "Ally/confidante who won't back down"
+        actor: "Diane August"
+        ig: "@dianeaugust_theactress"
+    exec_producer:
+      name: "Vernon 'Snooperstar' Robinson"
+      ig: "@snooperstar"
+    directors:
+      - name: "Dameon King"
+      - name: "Kendra Rainey-King"
+        ig: "@authorkendra_rainey"
+    tone: "Sharp, suspenseful, empowering. Think power moves and plot twists."
+    themes:
+      - Female agency and power
+      - Betrayal and loyalty
+      - The hunter becoming the hunted
+      - Ambition and its cost
+    caption_hooks:
+      - "He thinks he caught her. She's been running this the whole time."
+      - "She came back for everyone."
+      - "You came here to do a job."
+      - "She's not letting her back down."
+      - "Karma doesn't wear sneakers. She wears heels."
+    yt_descriptions:
+      - "He thinks he caught her. She's been running this the whole time."
+      - "You came here to do a job."
+      - "She already decided. He's just standing there."
+      - "She came back for everyone."
+
+  parking-lot-series:
+    display_name: "The Parking Lot Series"
+    genre: Drama
+    status: LIVE
+    premiere: "2026-04-01"
+    episodes: null
+    clip_count: 5
+    synopsis: >
+      A tense confrontation drama centered on a parking lot — a liminal space that's
+      not quite public, not quite private. A woman tells a man to leave. He doesn't
+      listen. What unfolds is a contained, escalating standoff about boundaries,
+      power, and what happens when "no" isn't accepted. The parking lot becomes a
+      battleground where vulnerability meets defiance.
+    characters:
+      - name: "Lead Female"
+        actor: "Nicki Micheaux"
+        ig: "@nickimicheaux"
+        bio: >
+          Detroit-born actress with 30 years of credits. Best known for Lincoln Heights
+          (ABC Family, 2x NAACP Image Award nominee). Credits include Six Feet Under (HBO),
+          The Shield (FX), Soul Food (Showtime), Animal Kingdom (TNT), S.W.A.T. (CBS).
+          Also directed Summer of Violence (2024, acquired by Quiver Distribution).
+      - name: "Lead Male"
+        actor: "Eric Marts"
+    director:
+      name: "Steven Alan Davis"
+      ig: "@stevanalondavis"
+      bio: "Director/actor/cinematographer. Known for Lipstick the Series (2015), Loyalty (2018), The Black League of Superheroes (2021)."
+    tone: "Tense, claustrophobic, slow-burn. Grounded realism with an empowering undercurrent."
+    themes:
+      - Boundaries and consent
+      - Power dynamics
+      - Vulnerability in public spaces
+      - Female agency under pressure
+    caption_hooks:
+      - "She said leave. He didn't listen."
+      - "She told him once. She won't tell him again."
+      - "Some men hear 'leave' and think it's a suggestion."
+      - "The parking lot. No witnesses. No backup. Just her word against his ego."
+      - "She didn't raise her voice. She didn't have to."
+      - "He thought she was bluffing. She wasn't asking."
+      - "Nicki Micheaux in the role you won't forget."
+      - "From Lincoln Heights to VURT — Nicki Micheaux in The Parking Lot."
+
+  mardi-gras:
+    display_name: "VURT Mardi Gras"
+    genre: Family Drama
+    status: queued
+    episodes: 40
+    clip_count: 5
+    synopsis: >
+      A New Orleans family saga set during the Christmas/holiday season. Donald "Donnie"
+      Henson, a man who built a career and life away from his roots, is forced to
+      confront mortality, family, and unresolved relationships after receiving a terminal
+      diagnosis — Goodpasture syndrome, three weeks to live without a transplant. He
+      returns to New Orleans, drops his boys off with his grandmother Mama Rose, and
+      navigates a love triangle with Leah and her partner Leon that escalates to
+      violence. The arc goes from diagnosis to devastation to redemption — ending with
+      Donnie opening a bookstore (the Henson Agency) and finding faith, family, and
+      forgiveness. Heavy New Orleans flavor: po' boys, daiquiris, cash-only spots,
+      and Mama Rose's house.
+    characters:
+      - name: "Donald 'Donnie' Henson"
+        role: "Protagonist. Estranged father, terminal diagnosis, seeking redemption."
+      - name: "Mama Rose"
+        role: "Family matriarch. Grandmother. Emotional anchor."
+      - name: "Darius"
+        role: "Donnie's brother/cousin. Recently out of jail, working construction. The connector."
+      - name: "Leah"
+        role: "Love interest caught between Donnie and Leon. Sees through Donnie's pain."
+      - name: "Leon"
+        role: "Leah's partner. Jealous, territorial. The antagonist in the love triangle."
+      - name: "Dr. Vero"
+        role: "Physician who delivers the terminal diagnosis."
+    tone: "Heavy emotional drama with warmth and New Orleans flavor. Tearjerker to feel-good redemption."
+    themes:
+      - Mortality as catalyst for reconnection
+      - Estranged fatherhood and guilt
+      - Homecoming and identity
+      - Love triangles and loyalty
+      - Faith and forgiveness
+      - New beginnings from endings
+    key_moments:
+      - ep: 7
+        moment: "The Diagnosis"
+        quote: "The prognosis is three weeks."
+      - ep: 8
+        moment: "Dropping the Boys Off"
+        quote: "I'm coming back. Don't look at me like that."
+      - ep: 15
+        moment: "Po' Boy Reconnection"
+        quote: "Stealing quarters from Mama Rose's coin tub"
+      - ep: 35
+        moment: "The Breakdown"
+        quote: "I don't want to die."
+      - ep: 40
+        moment: "Bookstore Opening"
+        quote: "Loving, family, blessings and forgiveness."
+    caption_hooks:
+      - "The doctor said three weeks. His family didn't know yet."
+      - "He told his boys he'd come back. He wasn't sure he could."
+      - "She chose to find him when she could've gone home. That's love."
+      - "He left New Orleans to make it. He came back to survive."
+      - "From a hospital bed to a bookstore opening — Donnie Henson's not done yet."
+
+  marry-me-for-christmas:
+    display_name: "Marry Me For Christmas"
+    genre: Romantic Comedy-Drama
+    status: queued
+    episodes: 31
+    clip_count: 5
+    synopsis: >
+      A holiday romantic comedy about Marcy Leanne Jewel Chandler, a driven NYC
+      advertising executive who hasn't been home to Atlanta in years. When her favorite
+      cousin Dana announces she's leaving for 5 years of missionary work in Haiti,
+      Marcy feels compelled to go home for Christmas — but dreads the family pressure
+      about her love life. She convinces her employee Adam to pose as her fiancé.
+      What starts as a fake engagement gradually becomes real, set against the backdrop
+      of a big, loud, loving Black Southern family Christmas. The emotional core: a
+      daughter who stayed away too long, a mother who feels abandoned, and the fear of
+      never being enough. Mom knew the engagement was fake all along.
+    characters:
+      - name: "Marcy Leanne Jewel Chandler"
+        role: "Protagonist. NYC ad exec, workaholic, feels like the family underachiever."
+      - name: "Adam"
+        role: "Marcy's employee turned fake fiancé turned real love interest. From Chicago."
+      - name: "Stephanie (Mom)"
+        role: "Marcy's mother. Warm but direct. Knew the fake engagement all along."
+      - name: "Dana"
+        role: "Marcy's favorite cousin. Leaving for Haiti — the catalyst."
+      - name: "Liz"
+        role: "Comic relief family member. 'Too fabulous to sit in the middle.'"
+      - name: "Aunt Myra"
+        role: "Family organizer. Runs Christmas shopping with a whistle and timers."
+    tone: "Warm, funny, emotionally grounded. Tyler Perry/BET holiday movie energy."
+    themes:
+      - Family vs ambition
+      - The pressure to perform
+      - Authenticity and vulnerability
+      - Homecoming and forgiveness
+      - Love sneaking in when you stop performing
+    key_moments:
+      - ep: 1
+        moment: "Dana's bombshell call"
+      - ep: 5
+        moment: "Mom's porch speech"
+        quote: "Your happiness is all the medicine Mother needs."
+      - ep: 10
+        moment: "Adam overheard scheming"
+        quote: "Her company's about to explode and as her husband..."
+      - ep: 15
+        moment: "Mom confronts Marcy at the mall"
+        quote: "I have missed my daughter. Do you understand me?"
+      - ep: 25
+        moment: "Marcy's confession"
+        quote: "I was always the flighty one."
+      - ep: 31
+        moment: "Real proposal"
+        quote: "I'm pretty sure I've loved you my whole life."
+    caption_hooks:
+      - "She faked an engagement to survive Christmas with her family... then it got real."
+      - "'Your happiness is all the medicine Mother needs.' — If this line doesn't break you, nothing will."
+      - "She built an empire to prove she wasn't the family failure. But all her mom wanted was her daughter home."
+      - "They planned a fake breakup after the holidays. Nobody planned on catching feelings."
+      - "She told the whole family the truth. Turns out, they already knew."
+
+  my-first-love:
+    display_name: "My First Love"
+    genre: Romantic Drama
+    status: queued
+    episodes: 34
+    clip_count: 5
+    synopsis: >
+      A romantic drama about Omar and Carmen Wright, a married couple whose marriage
+      collapses under Omar's workaholism at Wright's Investments. Carmen files for
+      divorce expecting Omar to fight — but he signs the papers instead. The bluff
+      backfires. Carmen buys her own house and plans to move out. Omar prepares to
+      sell the family home and expand to Europe. Then Carmen discovers she's pregnant —
+      a near-miracle the doctor said had a "one in a billion chance." Omar shows up
+      with the same note he wrote her in fourth grade: "Carmen, would you please be
+      my girlfriend? Yes. Maybe. No. P.S. please say yes." They've known each other
+      since childhood. The arc goes from quiet resentment to explosive confrontation
+      to tender reunion.
+    characters:
+      - name: "Omar Wright"
+        role: "Protagonist. Runs Wright's Investments. Workaholic who loves his wife but can't show it."
+      - name: "Carmen (Elizabeth) Wright"
+        role: "Omar's wife. Filed for divorce as a bluff. Fierce, emotional, pregnant."
+      - name: "Karina"
+        role: "Omar's business associate. Source of Carmen's jealousy."
+      - name: "Jasmine"
+        role: "Carmen's best friend. Blunt truth-teller."
+      - name: "Samira"
+        role: "Carmen's friend. Part of the support circle."
+    tone: "Emotional, grounded, soap-opera DNA. Quiet resentment to explosive confrontation to tender reunion."
+    themes:
+      - Work vs love
+      - The bluff that backfired
+      - Miracle and second chances
+      - Childhood love as foundation
+      - Pride and vulnerability
+    key_moments:
+      - ep: 5
+        moment: "The phone demand"
+        quote: "Is there something you're hiding?"
+      - ep: 10
+        moment: "The divorce ambush"
+        quote: "You left me a long time ago, Omar."
+      - ep: 25
+        moment: "Friends tell Carmen she was wrong"
+        quote: "You ambushed the man. It was like a mob hit."
+      - ep: 30
+        moment: "Carmen discovers pregnancy"
+        quote: "This baby is a blessing."
+      - ep: 34
+        moment: "Fourth-grade note / grand gesture"
+        quote: "Carmen, would you please be my girlfriend? P.S. please say yes."
+    caption_hooks:
+      - "She filed for divorce hoping he'd fight. He signed the papers instead."
+      - "Known each other since the fourth grade. Falling apart after fifteen years of marriage."
+      - "The doctor said one in a billion. The universe said otherwise."
+      - "She wanted him to fight for her the way he fights for his business."
+      - "He showed up with the same note he wrote her in fourth grade. That's when she knew."
+
+  come-back-dad:
+    display_name: "Come Back Dad"
+    genre: Family Drama
+    status: queued
+    episodes: null
+    clip_count: 5
+    synopsis: >
+      A drama about Nima, an accomplished pianist who runs her own music school.
+      Her life is disrupted when the alcoholic father who abandoned her years ago
+      returns trying to make amends. Nima begins an eye-opening journey to overcome
+      the pain of her father's abandonment. Directed by Russ Parr. This title had
+      57K views on Instagram — proven performer. The father-daughter redemption angle
+      is extremely potent for short-form clips.
+    director: "Russ Parr"
+    cast:
+      - name: "Tatyana Ali"
+        role: "Nima (lead)"
+        known_for: "Fresh Prince of Bel-Air"
+      - name: "Charles S. Dutton"
+        role: "The father"
+        known_for: "NAACP Image Award nominee for this role (2015)"
+    tone: "Emotional, redemptive, grounded. TV-PG."
+    themes:
+      - Father-daughter abandonment and redemption
+      - Forgiveness as a journey
+      - Building a life despite being left behind
+    caption_hooks:
+      - "He left when she needed him most. Now he's back — but is sorry enough?"
+      - "She built her whole life without him. Now he wants back in."
+      - "Tatyana Ali and Charles S. Dutton in a story about the hardest forgiveness — forgiving your father."
+
+  35-and-ticking:
+    display_name: "35 and Ticking"
+    genre: Romantic Comedy
+    status: queued
+    episodes: null
+    clip_count: 5
+    synopsis: >
+      A romantic comedy following four friends over 35 who are all struggling to
+      build families. Cleavon is still searching for love, Victoria is married to
+      a man who doesn't want kids, Zenobia is too awkward to find a partner, and
+      Phil is married with kids but his wife has no interest in being a mother.
+      Directed by Russ Parr. Ensemble cast energy. Theatrically released 2011.
+    director: "Russ Parr"
+    cast:
+      - name: "Kevin Hart"
+        role: "Cleavon"
+      - name: "Tamala Jones"
+        role: "Victoria"
+      - name: "Nicole Ari Parker"
+        role: "Zenobia"
+      - name: "Keith Robinson"
+        role: "Phil"
+      - name: "Meagan Good"
+      - name: "Wendy Raquel Robinson"
+      - name: "Mike Epps"
+      - name: "Kym Whitley"
+    tone: "Funny, relatable, ensemble energy. Slice-of-life."
+    themes:
+      - The pressure of age and milestones
+      - Love after 35
+      - Friendship through life transitions
+      - What it means to build a family
+    caption_hooks:
+      - "35. Single. No kids. The clock is loud."
+      - "Your friends are all married. You're still on apps. 35 & Ticking hits different after 30."
+      - "She married the perfect man — except he doesn't want kids. Now what?"
+      - "Kevin Hart, Meagan Good, Nicole Ari Parker. Before they were everywhere."
+
+  something-like-a-business:
+    display_name: "Something Like A Business"
+    genre: Comedy
+    status: queued
+    episodes: null
+    clip_count: 5
+    synopsis: >
+      A raunchy comedy about JoJo, a naive young man who inherits his late uncle
+      3D's "escort" business. JoJo tries to make it legitimate using his 2-year
+      degree, but faces competition from rival pimp Sexy Silk, unhelpful employees,
+      and police who want a cut. Directed by Russ Parr. Over-the-top sketch-style humor.
+    director: "Russ Parr"
+    cast:
+      - name: "Kevin Hart"
+        role: "JoJo"
+      - name: "David Alan Grier"
+        role: "3D (Uncle)"
+      - name: "Donnell Rawlings"
+        role: "Avery"
+      - name: "Leslie Jones"
+      - name: "Tasha Smith"
+        role: "Angela"
+      - name: "Clifton Powell"
+        role: "Sexy Silk"
+    tone: "Raunchy, chaotic, ensemble comedy. Over-the-top."
+    themes:
+      - Hustle and legitimacy
+      - Inheriting chaos
+      - Comedy of errors
+    caption_hooks:
+      - "Kevin Hart inherited a business. That business? Escorts."
+      - "Kevin Hart, Leslie Jones, David Alan Grier, Donnell Rawlings in one movie. It went exactly how you'd expect."
+      - "'Call me out of my name again.' JoJo's employees are NOT having it."
+
+  killer-stepdad:
+    display_name: "Killer Stepdad"
+    genre: Thriller
+    status: queued
+    episodes: null
+    clip_count: 5
+    synopsis: >
+      A thriller about a daughter who struggles to accept her mom's new husband.
+      When she sets out to dig up dirt on his past, she gets far more than she
+      bargained for. Directed by Neeta Cole, written by Dominic L. Santana. 2025 release.
+    director: "Neeta Cole"
+    writer: "Dominic L. Santana"
+    cast:
+      - name: "Bakari L. Brown"
+        role: "Julius"
+      - name: "Chanel Young"
+        role: "Vanessa"
+    tone: "Tense, domestic thriller. Dark."
+    themes:
+      - Trust and suspicion
+      - Family secrets
+      - The danger of digging too deep
+    caption_hooks:
+      - "She didn't trust her new stepdad. Turns out her instincts were right."
+      - "Mom's in love. Daughter's suspicious. The truth is worse than either of them imagined."
+      - "Some secrets should stay buried. She dug anyway."
+
+  director-spotlight:
+    display_name: "Director Spotlight"
+    genre: Behind-the-Scenes / Documentary
+    status: LIVE
+    synopsis: >
+      Recurring content series featuring VURT filmmakers. Short-form spotlight posts
+      introducing directors, their vision, and their connection to their VURT projects.
+      First spotlight: Steven Alan Davis (The Parking Lot Series).
+    tone: "Authentic, creator-focused, celebratory."
+    themes:
+      - Filmmaker stories
+      - The people behind the camera
+      - Independent cinema
+    caption_hooks:
+      - "Meet the filmmaker behind your next obsession."
+      - "Every VURT Original starts with a vision. This is theirs."
+      - "The directors you should know. VURT Filmmakers Spotlight."
+
+  vurt-brand:
+    display_name: "VURT Brand"
+    genre: Brand / Platform
+    status: LIVE
+    synopsis: >
+      Platform-level content: launch announcements, culture commentary, Black History
+      Month pieces, Liberty City documentary content, talent callouts (Mike Epps,
+      Wendy Raquel Robinson), creator upload CTAs. Not tied to a specific title —
+      this is VURT speaking as VURT.
+    tone: "Bold, culture-forward, cinematic. No apologies."
+    themes:
+      - Vertical cinema as a new medium
+      - Black storytelling without translation
+      - Independent creator empowerment
+      - Culture and history
+    caption_hooks:
+      - "Cinema that knows the culture without explaining it."
+      - "Stories with weight. No gatekeepers."
+      - "The wait is over. VURT is live."
+      - "Upload your vertical series directly. No gatekeepers."

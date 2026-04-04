@@ -4,12 +4,46 @@
       "followed_at": "2026-03-04T19:18:44.876828+00:00",
       "source": "seed:canadasdatingcoach",
       "followed_back": false
+    },
+    "menonthemenu": {
+      "followed_at": "2026-04-02T00:12:16.234095+00:00",
+      "source": "seed:alittlenudge",
+      "followed_back": false
+    },
+    "life_with_emmariley": {
+      "followed_at": "2026-04-03T00:19:24.951102+00:00",
+      "source": "seed:dating.intentionally",
+      "followed_back": false
+    },
+    "piper__dailyy": {
+      "followed_at": "2026-04-03T14:16:40.690014+00:00",
+      "source": "seed:damonahoffman",
+      "followed_back": false
+    },
+    "sambeliev": {
+      "followed_at": "2026-04-03T14:28:46.951511+00:00",
+      "source": "seed:theartofcharm",
+      "followed_back": false
     }
   },
-  "unfollowed": {},
+  "unfollowed": {
+    "carlaminoauthor": {
+      "unfollowed_at": "2026-04-02T00:17:10.449443+00:00"
+    }
+  },
   "daily_counts": {
     "2026-03-04": {
       "follows": 1,
+      "unfollows": 0,
+      "likes": 0
+    },
+    "2026-04-02": {
+      "follows": 1,
+      "unfollows": 1,
+      "likes": 0
+    },
+    "2026-04-03": {
+      "follows": 3,
       "unfollows": 0,
       "likes": 0
     }

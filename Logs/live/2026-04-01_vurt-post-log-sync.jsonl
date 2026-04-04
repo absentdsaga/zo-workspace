@@ -1,0 +1,4 @@
+{"type":"task_start","timestamp":"2026-04-01T14:50:00Z","task":"VURT Post Log sync","description":"Sync post metrics from Instagram and YouTube APIs to Notion Post Log database"}
+{"type":"tool_call","timestamp":"2026-04-01T14:50:01Z","tool":"run_bash_command","command":"python3 /home/workspace/Skills/vurt-post-log/scripts/sync.py --all"}
+{"type":"result","timestamp":"2026-04-01T14:50:02Z","summary":"Sync completed successfully","details":{"notion_entries":60,"ig_posts":28,"fb_posts":33,"yt_videos":11,"urls_updated":0,"metrics_updated":59,"calendar_reconciled":0,"calendar_enriched":0}}
+{"type":"decision","timestamp":"2026-04-01T14:50:02Z","reasoning":"Log saved to /home/workspace/Logs/live/2026-04-01_vurt-post-log-sync.jsonl for audit trail"}
