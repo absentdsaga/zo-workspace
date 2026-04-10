@@ -26,14 +26,23 @@ SHOW_KEYWORDS = [
     ("fatal lust", "Fatal Lust"),
     ("miami kingpin", "Miami Kingpins"),
     ("schemers", "SCHEMERS"),
+    ("something like a business", "Something Like A Business"),
+    ("kevin hart", "Something Like A Business"),
     ("nita k", "Nita K Spotlight"),
     ("ted lucas", "Ted Lucas Spotlight"),
+    ("99 jamz", "99 Jamz x VURT"),
     ("vurt 100", "THIS IS VURT"),
     ("vurt100", "THIS IS VURT"),
     ("this is vurt", "THIS IS VURT"),
+    ("miami confidential", "Miami Confidential"),
+    ("35 and ticking", "35 and Ticking"),
+    ("my brother", "My Brother's Wife"),
     ("director", "Director Spotlight"),
     ("spotlight", "Director Spotlight"),
     ("filmmaker", "Director Spotlight"),
+    ("milestone", "VURT Brand"),
+    ("brand post", "VURT Brand"),
+    ("industry", "VURT Brand"),
 ]
 
 
@@ -315,15 +324,18 @@ def sync_urls(entries, ig_posts, yt_videos, dry_run=False):
                         break
 
         elif entry["platform"] == "YT Shorts":
+            title_words = [w.lower() for w in entry["title"].split() if len(w) > 3]
             for vid in yt_videos:
                 if vid["publishedAt"] == entry["date"]:
-                    updates.append({
-                        "entry": entry,
-                        "url": vid["url"],
-                        "source": "YT Data API",
-                    })
-                    yt_videos.remove(vid)
-                    break
+                    vid_title = vid.get("title", "").lower()
+                    if any(w in vid_title for w in title_words[:3]):
+                        updates.append({
+                            "entry": entry,
+                            "url": vid["url"],
+                            "source": "YT Data API",
+                        })
+                        yt_videos.remove(vid)
+                        break
 
     for u in updates:
         print(f"  URL: {u['entry']['title']} → {u['url']} (from {u['source']})")
@@ -389,14 +401,30 @@ def sync_metrics(entries, ig_posts, yt_videos, fb_posts=None, dry_run=False):
                     props_update["Post URL"] = {"url": matched_post["permalink"]}
 
         elif entry["platform"] == "YT Shorts":
-            for vid in yt_videos:
-                if vid.get("url") == entry["url"] or vid["publishedAt"] == entry["date"]:
-                    props_update = {
-                        "Views": {"number": vid["views"]},
-                        "Likes": {"number": vid["likes"]},
-                        "Comments Count": {"number": vid["comments"]},
-                    }
-                    break
+            matched_yt = None
+            if entry["url"]:
+                entry_vid_id = entry["url"].rstrip("/").split("/")[-1]
+                for vid in yt_videos:
+                    vid_id = vid.get("url", "").rstrip("/").split("/")[-1]
+                    if entry_vid_id and vid_id and entry_vid_id == vid_id:
+                        matched_yt = vid
+                        break
+            if not matched_yt and entry["date"]:
+                title_words = [w.lower() for w in entry["title"].split() if len(w) > 3]
+                for vid in yt_videos:
+                    if vid["publishedAt"] == entry["date"]:
+                        vid_title = vid.get("title", "").lower()
+                        if any(w in vid_title for w in title_words[:3]):
+                            matched_yt = vid
+                            break
+            if matched_yt:
+                props_update = {
+                    "Views": {"number": matched_yt["views"]},
+                    "Likes": {"number": matched_yt["likes"]},
+                    "Comments Count": {"number": matched_yt["comments"]},
+                }
+                if not entry["url"] and matched_yt.get("url"):
+                    props_update["Post URL"] = {"url": matched_yt["url"]}
 
         elif entry["platform"] == "Facebook":
             matched_fb = None
@@ -487,49 +515,25 @@ PLAT_ARROW = {
 def reconcile_calendar(dry_run=False):
     print("\nReconciling Content Calendar with Post Log...")
     log_pages = get_post_log_entries()
-    posted = {}
+
+    # Build lookup of ALL posted entries (not just clips)
+    all_posted = []
     for p in log_pages:
         props = p["properties"]
         title = "".join(t["plain_text"] for t in props.get("Post Title", {}).get("title", []))
         plat = (props.get("Platform", {}).get("select") or {}).get("name", "")
         date = (props.get("Date Posted", {}).get("date") or {}).get("start", "")
         url = props.get("Post URL", {}).get("url", "") or ""
-        if not date:
+        if not date or not plat:
             continue
+        show = detect_show(title) or "VURT"
         m = re.search(r"Clip\s*(\d+)", title)
-        if not m:
-            continue
-        clip_num = int(m.group(1))
-        show = detect_show(title)
-        if not show:
-            continue
-        posted[(show, clip_num, plat)] = {"date": date, "url": url, "page_id": p["id"]}
+        clip_num = int(m.group(1)) if m else None
+        all_posted.append({"title": title, "platform": plat, "date": date,
+                           "url": url, "show": show, "clip_num": clip_num,
+                           "page_id": p["id"]})
 
-    # Snap same-clip dates: if all platforms for a clip posted within 24hrs,
-    # use the earliest date (user posts all platforms at once, APIs lag)
-    from collections import defaultdict
-    clip_dates = defaultdict(list)
-    for (show, clip_num, plat), info in posted.items():
-        clip_dates[(show, clip_num)].append((plat, info))
-    for (show, clip_num), entries in clip_dates.items():
-        dates = [e[1]["date"] for e in entries]
-        if len(set(dates)) > 1:
-            sorted_dates = sorted(dates)
-            earliest = sorted_dates[0]
-            latest = sorted_dates[-1]
-            d1 = datetime.strptime(earliest, "%Y-%m-%d")
-            d2 = datetime.strptime(latest, "%Y-%m-%d")
-            if (d2 - d1).days <= 1:
-                for plat, info in entries:
-                    if info["date"] != earliest:
-                        print(f"  Snap: {show} Clip {clip_num} {plat} {info['date']}→{earliest}")
-                        info["date"] = earliest
-                        if not dry_run and info.get("page_id"):
-                            try:
-                                update_page(info["page_id"], {"Date Posted": {"date": {"start": earliest}}})
-                            except Exception:
-                                pass
-
+    # Get current calendar entries
     cal_results = []
     payload = {"page_size": 100}
     while True:
@@ -539,46 +543,127 @@ def reconcile_calendar(dry_run=False):
             break
         payload["start_cursor"] = data["next_cursor"]
 
-    updated = 0
+    # Build set of (platform, post_url) and (platform, date, title_key) for existing calendar entries
+    cal_existing = set()
+    cal_by_clip = {}
     for e in cal_results:
         props = e["properties"]
         cal_title = "".join(t["plain_text"] for t in props.get("Title", {}).get("title", []))
         cal_date = (props.get("Post Date", {}).get("date") or {}).get("start", "")
-        clip_num = props.get("Clip #", {}).get("number")
         platforms = [s["name"] for s in props.get("Platform", {}).get("multi_select", [])]
         status = (props.get("Status", {}).get("select") or {}).get("name", "")
-
-        if not clip_num or not platforms:
-            continue
-
+        clip_num = props.get("Clip #", {}).get("number")
         show = detect_show(cal_title)
-        if not show:
+        for plat in platforms:
+            cal_existing.add((plat, cal_date, cal_title.lower()[:30]))
+            if show and clip_num:
+                cal_by_clip[(show, clip_num, plat)] = {"id": e["id"], "status": status, "date": cal_date, "title": cal_title}
+
+    # Phase 1: Update existing calendar entries that match posted clips
+    updated = 0
+    for post in all_posted:
+        if post["clip_num"] is None:
+            continue
+        key = (post["show"], post["clip_num"], post["platform"])
+        if key in cal_by_clip:
+            cal_entry = cal_by_clip[key]
+            patch = {}
+            if cal_entry["date"] != post["date"]:
+                patch["Post Date"] = {"date": {"start": post["date"]}}
+            if cal_entry["status"] != "Posted":
+                patch["Status"] = {"select": {"name": "Posted"}}
+            if patch:
+                tag = f" (date {cal_entry['date']}→{post['date']})" if cal_entry["date"] != post["date"] else ""
+                print(f"  Calendar fix: {cal_entry['title']}{tag} → Posted")
+                if not dry_run:
+                    try:
+                        update_page(cal_entry["id"], patch)
+                    except Exception as ex:
+                        print(f"    Failed: {ex}")
+                updated += 1
+
+    # Phase 2: Create calendar entries for posts NOT in calendar
+    created = 0
+    for post in all_posted:
+        # Check if already in calendar by clip match
+        if post["clip_num"] is not None:
+            key = (post["show"], post["clip_num"], post["platform"])
+            if key in cal_by_clip:
+                continue
+
+        # Check by platform + date + title similarity
+        title_key = post["title"].lower()[:30]
+        already = False
+        for (p, d, tk) in cal_existing:
+            if p == post["platform"] and d == post["date"]:
+                # Close enough title match
+                words = [w for w in title_key.split() if len(w) > 3]
+                if any(w in tk for w in words[:2]):
+                    already = True
+                    break
+        if already:
             continue
 
-        for plat in platforms:
-            key = (show, int(clip_num), plat)
-            if key in posted:
-                info = posted[key]
-                needs_update = False
-                patch = {}
-                if info["date"] != cal_date:
-                    patch["Post Date"] = {"date": {"start": info["date"]}}
-                    needs_update = True
-                if status != "Posted":
-                    patch["Status"] = {"select": {"name": "Posted"}}
-                    needs_update = True
-                if needs_update:
-                    tag = f" (date {cal_date}→{info['date']})" if info["date"] != cal_date else ""
-                    print(f"  Calendar fix: {cal_title}{tag} → Posted")
-                    if not dry_run:
-                        try:
-                            update_page(e["id"], patch)
-                        except Exception as ex:
-                            print(f"    Failed: {ex}")
-                    updated += 1
+        # Create new calendar entry
+        plat_emoji = {"Instagram": "🔵", "Facebook": "🟢", "TikTok": "🟣",
+                      "YT Shorts": "🔴", "LinkedIn": "🟤"}
+        emoji = plat_emoji.get(post["platform"], "⚪")
+        plat_short = {"Instagram": "IG", "Facebook": "FB", "TikTok": "TikTok",
+                      "YT Shorts": "YT Shorts", "LinkedIn": "LinkedIn"}
+        suffix = plat_short.get(post["platform"], post["platform"])
 
-    print(f"  {updated} calendar entries {'would be ' if dry_run else ''}reconciled")
-    return updated
+        # Clean title for calendar (remove platform suffix if present)
+        clean_title = re.sub(r'\s*-\s*(IG|FB|TikTok|YT Shorts|LinkedIn|Facebook)\s*$', '', post["title"])
+        cal_title = f"{emoji} {clean_title} → {suffix}"
+
+        props_new = {
+            "Title": {"title": [{"text": {"content": cal_title[:100]}}]},
+            "Post Date": {"date": {"start": post["date"]}},
+            "Platform": {"multi_select": [{"name": post["platform"]}]},
+            "Status": {"select": {"name": "Posted"}},
+        }
+        if post["show"]:
+            props_new["Show"] = {"select": {"name": post["show"]}}
+        if post["clip_num"]:
+            props_new["Clip #"] = {"number": post["clip_num"]}
+
+        print(f"  Calendar create: {cal_title} ({post['date']})")
+        if not dry_run:
+            try:
+                notion_request("POST", "pages", {
+                    "parent": {"database_id": CAL_DB_ID},
+                    "properties": props_new,
+                })
+                created += 1
+            except Exception as ex:
+                print(f"    Failed: {ex}")
+        else:
+            created += 1
+
+        # Track so we don't double-create
+        cal_existing.add((post["platform"], post["date"], title_key))
+
+    # Phase 3: Archive stale planned entries (planned date passed, never posted)
+    archived = 0
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    for e in cal_results:
+        props = e["properties"]
+        status = (props.get("Status", {}).get("select") or {}).get("name", "")
+        cal_date = (props.get("Post Date", {}).get("date") or {}).get("start", "")
+        if status in ("Planned", "Ready") and cal_date and cal_date < today:
+            cal_title = "".join(t["plain_text"] for t in props.get("Title", {}).get("title", []))
+            print(f"  Archive stale: {cal_title} ({cal_date}, was {status})")
+            if not dry_run:
+                try:
+                    notion_request("PATCH", f"pages/{e['id']}", {"archived": True})
+                    archived += 1
+                except Exception as ex:
+                    print(f"    Failed: {ex}")
+            else:
+                archived += 1
+
+    print(f"  {updated} updated, {created} created, {archived} stale archived")
+    return updated + created + archived
 
 
 def enrich_calendar(ig_posts, dry_run=False):
@@ -699,20 +784,321 @@ def enrich_calendar(ig_posts, dry_run=False):
     return updated
 
 
+SHOW_PATTERNS = [
+    (r"karma\s*in\s*heels", "Karma in Heels"),
+    (r"parking\s*lot", "Parking Lot Series"),
+    (r"schemers", "Schemers"),
+    (r"come\s*back\s*dad", "Come Back Dad"),
+    (r"baby\s*mama", "Baby Mama"),
+    (r"my\s*brother.?s\s*wife", "My Brother's Wife"),
+    (r"miami\s*confidential", "Miami Confidential"),
+    (r"miami\s*kingpins", "Miami Kingpins"),
+    (r"liberty\s*city", "Miami Kingpins"),
+    (r"35\s*and\s*ticking", "35 and Ticking"),
+    (r"charles\s*s\.?\s*dutton", "Charles S. Dutton Family"),
+    (r"ted\s*lucas", "Ted Lucas"),
+    (r"nita\s*k", "Nita K"),
+    (r"steven\s*alan\s*davis", "Steven Alan Davis"),
+    (r"99\s*jamz", "99 Jamz x VURT"),
+]
+
+
+def detect_show_from_caption(caption):
+    if not caption:
+        return "VURT"
+    cl = caption.lower()
+    for pattern, show in SHOW_PATTERNS:
+        if re.search(pattern, cl):
+            return show
+    return "VURT"
+
+
+def generate_post_title(caption, platform, show):
+    plat_suffix = {"Instagram": "IG", "Facebook": "FB", "TikTok": "TikTok", "YT Shorts": "YT Shorts"}
+    suffix = plat_suffix.get(platform, platform)
+    cl = (caption or "").lower()
+    if "spotlight" in cl or "filmmaker" in cl:
+        return f"{show} Filmmaker Spotlight - {suffix}"
+    if "bts" in cl or "behind the scenes" in cl or "live at" in cl:
+        return f"{show} BTS - {suffix}"
+    if "just added" in cl or "now streaming" in cl:
+        return f"{show} Announcement - {suffix}"
+    if any(x in cl for x in ["100+ titles", "first two weeks", "2 weeks", "milestone"]):
+        return f"VURT Milestone Post - {suffix}"
+    if "netflix" in cl and "tiktok" in cl:
+        return f"VURT Brand Post - Netflix TikTok VURT - {suffix}"
+    if "director" in cl and ("put the word" in cl or "said it himself" in cl):
+        return f"{show} Director Drop - {suffix}"
+    return f"{show} Clip - {suffix}"
+
+
+def auto_create_entries(ig_posts, yt_videos, fb_posts, dry_run=False):
+    print("\nAuto-creating missing Post Log entries...")
+    pages = get_post_log_entries()
+    existing_urls = set()
+    for p in pages:
+        url = p["properties"].get("Post URL", {}).get("url")
+        if url:
+            existing_urls.add(url)
+
+    created = 0
+
+    for post in ig_posts:
+        permalink = post.get("permalink", "")
+        if permalink in existing_urls:
+            continue
+        date = post.get("timestamp", "")[:10]
+        caption = post.get("caption", "") or ""
+        show = detect_show_from_caption(caption)
+        title = generate_post_title(caption, "Instagram", show)
+        day_name = DAYS[datetime.strptime(date, "%Y-%m-%d").weekday()]
+        props = {
+            "Post Title": {"title": [{"text": {"content": title}}]},
+            "Platform": {"select": {"name": "Instagram"}},
+            "Date Posted": {"date": {"start": date}},
+            "Day": {"select": {"name": day_name}},
+            "Post URL": {"url": permalink},
+        }
+        if caption:
+            props["Caption"] = {"rich_text": [{"text": {"content": caption[:2000]}}]}
+        print(f"  {'[DRY] ' if dry_run else ''}CREATE: {title} | {date}")
+        if not dry_run:
+            try:
+                notion_request("POST", "pages", {"parent": {"database_id": NOTION_DB_ID}, "properties": props})
+            except Exception:
+                safe = {k: v for k, v in props.items() if k in ("Post Title", "Platform", "Date Posted", "Post URL")}
+                try:
+                    notion_request("POST", "pages", {"parent": {"database_id": NOTION_DB_ID}, "properties": safe})
+                except Exception as e2:
+                    print(f"    Failed: {e2}")
+                    continue
+        existing_urls.add(permalink)
+        created += 1
+
+    for post in fb_posts:
+        url = post.get("permalink_url", "")
+        if url in existing_urls:
+            continue
+        date = post.get("created_time", "")[:10]
+        caption = post.get("message", "") or ""
+        show = detect_show_from_caption(caption)
+        title = generate_post_title(caption, "Facebook", show)
+        day_name = DAYS[datetime.strptime(date, "%Y-%m-%d").weekday()]
+        props = {
+            "Post Title": {"title": [{"text": {"content": title}}]},
+            "Platform": {"select": {"name": "Facebook"}},
+            "Date Posted": {"date": {"start": date}},
+            "Day": {"select": {"name": day_name}},
+            "Post URL": {"url": url},
+        }
+        if caption:
+            props["Caption"] = {"rich_text": [{"text": {"content": caption[:2000]}}]}
+        print(f"  {'[DRY] ' if dry_run else ''}CREATE: {title} | {date}")
+        if not dry_run:
+            try:
+                notion_request("POST", "pages", {"parent": {"database_id": NOTION_DB_ID}, "properties": props})
+            except Exception:
+                safe = {k: v for k, v in props.items() if k in ("Post Title", "Platform", "Date Posted", "Post URL")}
+                try:
+                    notion_request("POST", "pages", {"parent": {"database_id": NOTION_DB_ID}, "properties": safe})
+                except Exception as e2:
+                    print(f"    Failed: {e2}")
+                    continue
+        existing_urls.add(url)
+        created += 1
+
+    for v in yt_videos:
+        vid_id = v.get("videoId") or v.get("id", "")
+        yt_url = f"https://youtube.com/shorts/{vid_id}"
+        if yt_url in existing_urls:
+            continue
+        yt_title = v.get("title", "") or v.get("snippet", {}).get("title", "")
+        date = (v.get("publishedAt") or v.get("snippet", {}).get("publishedAt", ""))[:10]
+        show = detect_show_from_caption(yt_title)
+        title = generate_post_title(yt_title, "YT Shorts", show)
+        if len(yt_title) < 55:
+            title = f"{yt_title} - YT Shorts"
+        day_name = DAYS[datetime.strptime(date, "%Y-%m-%d").weekday()]
+        props = {
+            "Post Title": {"title": [{"text": {"content": title[:100]}}]},
+            "Platform": {"select": {"name": "YT Shorts"}},
+            "Date Posted": {"date": {"start": date}},
+            "Day": {"select": {"name": day_name}},
+            "Post URL": {"url": yt_url},
+        }
+        print(f"  {'[DRY] ' if dry_run else ''}CREATE: {title} | {date}")
+        if not dry_run:
+            try:
+                notion_request("POST", "pages", {"parent": {"database_id": NOTION_DB_ID}, "properties": props})
+            except Exception:
+                safe = {k: v for k, v in props.items() if k in ("Post Title", "Platform", "Date Posted", "Post URL")}
+                try:
+                    notion_request("POST", "pages", {"parent": {"database_id": NOTION_DB_ID}, "properties": safe})
+                except Exception as e2:
+                    print(f"    Failed: {e2}")
+                    continue
+        existing_urls.add(yt_url)
+        created += 1
+
+    print(f"  {created} new entries {'would be ' if dry_run else ''}created")
+    return created
+
+
+FRAMEIO_CACHE_FILE = os.path.join(os.path.dirname(__file__), ".frameio-cache.json")
+FRAMEIO_CACHE_TTL = 3600 * 4  # 4 hours
+
+
+def _load_frameio_cache():
+    """Load cached Frame.io assets if fresh enough."""
+    try:
+        with open(FRAMEIO_CACHE_FILE) as f:
+            cache = json.load(f)
+        age = (datetime.utcnow() - datetime.fromisoformat(cache["timestamp"])).total_seconds()
+        if age < FRAMEIO_CACHE_TTL:
+            print(f"  Using cached Frame.io data ({len(cache['assets'])} clips, {int(age/60)}min old)")
+            return cache["assets"]
+    except Exception:
+        pass
+    return None
+
+
+def _save_frameio_cache(assets):
+    with open(FRAMEIO_CACHE_FILE, "w") as f:
+        json.dump({"timestamp": datetime.utcnow().isoformat(), "assets": assets}, f)
+
+
+def _normalize_show_name(name):
+    """Normalize show names for matching between Frame.io and Notion."""
+    return re.sub(r'[^a-z0-9]', '', name.lower())
+
+
+def sync_frameio_assets(dry_run=False):
+    """Match Frame.io social clips to Content Calendar entries and populate Asset Link."""
+    print("\nSyncing Frame.io assets to Content Calendar...")
+
+    # Import Frame.io client
+    try:
+        import frameio_client
+    except ImportError:
+        sys.path.insert(0, os.path.dirname(__file__))
+        import frameio_client
+
+    # Get Frame.io assets (cached or fresh crawl)
+    assets = _load_frameio_cache()
+    if assets is None:
+        try:
+            assets = frameio_client.get_all_social_assets()
+            _save_frameio_cache(assets)
+        except Exception as e:
+            print(f"  Frame.io crawl failed: {e}", file=sys.stderr)
+            return 0
+
+    # Build lookup: normalized_show_name → {clip_num → best_asset}
+    # Prefer version_stack > file, and prefer "Social" subfolder clips
+    show_clips = {}
+    for asset in assets:
+        show = asset.get("show_name", "")
+        if not show:
+            continue
+        norm = _normalize_show_name(show)
+        clip_num = frameio_client.match_clip_to_title(asset["name"], show)
+        if clip_num is None:
+            # Try extracting episode number from filename like VURT_ShowName_Ep03_9x16_v1.mp4
+            m = re.search(r'[Ee]p\s*(\d+)', asset["name"])
+            if m:
+                clip_num = int(m.group(1))
+        if clip_num is None:
+            continue
+
+        key = (norm, clip_num)
+        existing = show_clips.get(key)
+        # Prefer clips from Social-named subfolders, then version_stacks over files
+        subfolder = asset.get("subfolder", "")
+        is_social = "social" in subfolder.lower() if subfolder else False
+        if existing is None:
+            show_clips[key] = asset
+        elif is_social and "social" not in existing.get("subfolder", "").lower():
+            show_clips[key] = asset
+        elif asset["type"] == "version_stack" and existing["type"] != "version_stack":
+            show_clips[key] = asset
+
+    print(f"  Frame.io: {len(show_clips)} unique show/clip combinations indexed")
+
+    # Get calendar entries
+    cal_results = []
+    payload = {"page_size": 100}
+    while True:
+        data = notion_request("POST", f"databases/{CAL_DB_ID}/query", payload)
+        cal_results.extend(data.get("results", []))
+        if not data.get("has_more"):
+            break
+        payload["start_cursor"] = data["next_cursor"]
+
+    updated = 0
+    for entry in cal_results:
+        props = entry["properties"]
+        existing_asset = props.get("Asset Link", {}).get("url")
+        if existing_asset:
+            continue  # already has an asset link
+
+        clip_num = props.get("Clip #", {}).get("number")
+        if clip_num is None:
+            continue
+
+        cal_title = "".join(t["plain_text"] for t in props.get("Title", {}).get("title", []))
+        show_sel = (props.get("Show", {}).get("select") or {}).get("name", "")
+
+        # Try to match by show name from Notion
+        matched = None
+        if show_sel:
+            norm = _normalize_show_name(show_sel)
+            matched = show_clips.get((norm, clip_num))
+
+        # Fallback: detect show from calendar title
+        if not matched:
+            detected = detect_show(cal_title)
+            if detected:
+                norm = _normalize_show_name(detected)
+                matched = show_clips.get((norm, clip_num))
+
+        if not matched:
+            continue
+
+        view_url = matched.get("file_view_url") or matched.get("view_url", "")
+        if not view_url:
+            continue
+
+        print(f"  Asset: {cal_title} → {view_url}")
+        if not dry_run:
+            try:
+                update_page(entry["id"], {"Asset Link": {"url": view_url}})
+            except Exception as ex:
+                print(f"    Failed: {ex}")
+                continue
+        updated += 1
+
+    print(f"  {updated} calendar entries {'would get' if dry_run else 'got'} Frame.io asset links")
+    return updated
+
+
 def main():
     parser = argparse.ArgumentParser(description="Sync Post Log with platform data")
     parser.add_argument("--urls", action="store_true", help="Sync post URLs")
     parser.add_argument("--metrics", action="store_true", help="Sync post metrics")
     parser.add_argument("--all", action="store_true", help="Sync both URLs and metrics")
+    parser.add_argument("--auto-create", action="store_true", help="Auto-create missing entries")
+    parser.add_argument("--frameio", action="store_true", help="Sync Frame.io asset links to calendar")
     parser.add_argument("--dry-run", action="store_true", help="Preview without writing")
     args = parser.parse_args()
 
-    if not (args.urls or args.metrics or args.all):
+    if not (args.urls or args.metrics or args.all or args.auto_create or args.frameio):
         parser.print_help()
         sys.exit(1)
 
     do_urls = args.urls or args.all
     do_metrics = args.metrics or args.all
+    do_auto_create = args.auto_create or args.all
+    do_frameio = args.frameio or args.all
 
     print("Fetching Post Log from Notion...")
     pages = get_post_log_entries()
@@ -743,11 +1129,17 @@ def main():
         except Exception as e:
             print(f"  YT fetch failed: {e}", file=sys.stderr)
 
+    if do_auto_create:
+        n = auto_create_entries(ig_posts, yt_videos, fb_posts, args.dry_run)
+        if n and not args.dry_run:
+            pages = get_post_log_entries()
+            entries = [extract_entry(p) for p in pages]
+            print(f"  Re-fetched {len(entries)} entries after auto-create")
+
     if do_urls:
         print(f"\n{'[DRY RUN] ' if args.dry_run else ''}Syncing URLs...")
         n = sync_urls(entries, list(ig_posts), list(yt_videos), args.dry_run)
         print(f"  {n} URLs {'would be ' if args.dry_run else ''}updated")
-        # Re-fetch entries if we updated URLs and need metrics too
         if n and do_metrics and not args.dry_run:
             pages = get_post_log_entries()
             entries = [extract_entry(p) for p in pages]
@@ -760,6 +1152,9 @@ def main():
     if do_metrics or args.all:
         reconcile_calendar(args.dry_run)
         enrich_calendar(ig_posts, args.dry_run)
+
+    if do_frameio:
+        sync_frameio_assets(args.dry_run)
 
     print("\nDone.")
 

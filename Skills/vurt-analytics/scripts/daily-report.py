@@ -9,7 +9,7 @@ from insights_engine import generate_insights
 from app_store_client import get_app_store_data
 from email_renderer import markdown_to_html
 from social_client import collect_social_data, format_social_report
-from npaw_client import get_top_content, get_daily_video_overview, get_device_breakdown as get_npaw_device_breakdown, get_cdn_breakdown, get_country_breakdown, get_isp_breakdown, get_content_quality, format_npaw_report
+from npaw_client import get_top_content, get_daily_video_overview, get_device_breakdown as get_npaw_device_breakdown, get_cdn_breakdown, get_country_breakdown, get_isp_breakdown, get_content_quality, get_daily_buffer_trend, format_npaw_report
 from youtube_client import format_youtube_report
 from datetime import datetime, timedelta
 
@@ -23,7 +23,7 @@ def get_overview():
     overview_metrics = [
         "activeUsers", "newUsers", "sessions", "averageSessionDuration",
         "screenPageViews", "engagedSessions", "userEngagementDuration",
-        "sessionsPerUser", "engagementRate"
+        "sessionsPerUser", "engagementRate", "bounceRate"
     ]
 
     # Pull yesterday + 7-day baseline in one call to check freshness
@@ -89,7 +89,7 @@ def get_weekly_overview():
         metrics=[
             "activeUsers", "newUsers", "sessions", "averageSessionDuration",
             "screenPageViews", "engagedSessions", "userEngagementDuration",
-            "sessionsPerUser", "engagementRate"
+            "sessionsPerUser", "engagementRate", "bounceRate"
         ]
     )
     rows = extract_rows(result)
@@ -101,7 +101,7 @@ def get_traffic_sources():
     result = run_report(
         date_ranges=[{"startDate": "7daysAgo", "endDate": "yesterday"}],
         metrics=["activeUsers", "sessions", "engagementRate", "averageSessionDuration",
-                 "screenPageViews", "engagedSessions"],
+                 "screenPageViews", "engagedSessions", "bounceRate"],
         dimensions=["sessionDefaultChannelGroup"],
         order_bys=[{"metric": {"metricName": "sessions"}, "desc": True}],
         limit=10
@@ -142,7 +142,7 @@ def get_daily_trend():
     result = run_report(
         date_ranges=[{"startDate": "14daysAgo", "endDate": "yesterday"}],
         metrics=["activeUsers", "sessions", "screenPageViews", "engagementRate",
-                 "averageSessionDuration"],
+                 "averageSessionDuration", "bounceRate"],
         dimensions=["date"],
         order_bys=[{"dimension": {"dimensionName": "date"}, "desc": False}]
     )
@@ -171,7 +171,7 @@ def get_device_breakdown():
 def get_landing_pages():
     result = run_report(
         date_ranges=[{"startDate": "7daysAgo", "endDate": "yesterday"}],
-        metrics=["sessions", "engagementRate", "averageSessionDuration", "activeUsers"],
+        metrics=["sessions", "engagementRate", "averageSessionDuration", "activeUsers", "bounceRate"],
         dimensions=["landingPagePlusQueryString"],
         order_bys=[{"metric": {"metricName": "sessions"}, "desc": True}],
         limit=10
@@ -210,6 +210,7 @@ def build_report():
         ("Total Engagement Time", "userEngagementDuration"),
         ("Sessions per User", "sessionsPerUser"),
         ("Engagement Rate", "engagementRate"),
+        ("Bounce Rate", "bounceRate"),
     ]
 
     # --- Daily Snapshot with automatic freshness detection ---
@@ -294,10 +295,10 @@ def build_report():
         if sources:
             lines.append("## Traffic Sources (7d)")
             lines.append("")
-            lines.append("| Channel | Users | Sessions | Avg Duration | Engagement Rate |")
-            lines.append("|---------|-------|----------|-------------|-----------------|")
+            lines.append("| Channel | Users | Sessions | Avg Duration | Engagement Rate | Bounce Rate |")
+            lines.append("|---------|-------|----------|-------------|-----------------|-------------|")
             for s in sources:
-                lines.append(f"| {s.get('sessionDefaultChannelGroup','?')} | {fmt_num(s.get('activeUsers','0'))} | {fmt_num(s.get('sessions','0'))} | {fmt_duration(s.get('averageSessionDuration','0'))} | {fmt_pct(s.get('engagementRate','0'))} |")
+                lines.append(f"| {s.get('sessionDefaultChannelGroup','?')} | {fmt_num(s.get('activeUsers','0'))} | {fmt_num(s.get('sessions','0'))} | {fmt_duration(s.get('averageSessionDuration','0'))} | {fmt_pct(s.get('engagementRate','0'))} | {fmt_pct(s.get('bounceRate','0'))} |")
             lines.append("")
     except Exception as e:
         lines.append(f"*Traffic sources unavailable: {e}*\n")
@@ -342,13 +343,13 @@ def build_report():
         if landing:
             lines.append("## Top Landing Pages (7d)")
             lines.append("")
-            lines.append("| Landing Page | Sessions | Avg Duration | Engagement Rate |")
-            lines.append("|-------------|----------|-------------|-----------------|")
+            lines.append("| Landing Page | Sessions | Avg Duration | Engagement Rate | Bounce Rate |")
+            lines.append("|-------------|----------|-------------|-----------------|-------------|")
             for l in landing:
                 path = l.get("landingPagePlusQueryString", "?").replace('|', '/')
                 if len(path) > 60:
                     path = path[:57] + "..."
-                lines.append(f"| {path} | {fmt_num(l.get('sessions','0'))} | {fmt_duration(l.get('averageSessionDuration','0'))} | {fmt_pct(l.get('engagementRate','0'))} |")
+                lines.append(f"| {path} | {fmt_num(l.get('sessions','0'))} | {fmt_duration(l.get('averageSessionDuration','0'))} | {fmt_pct(l.get('engagementRate','0'))} | {fmt_pct(l.get('bounceRate','0'))} |")
             lines.append("")
     except Exception as e:
         lines.append(f"*Landing page data unavailable: {e}*\n")
@@ -375,12 +376,12 @@ def build_report():
         if trend:
             lines.append("## 14-Day DAU Trend")
             lines.append("")
-            lines.append("| Date | DAU | Sessions | Views | Eng Rate |")
-            lines.append("|------|-----|----------|-------|----------|")
+            lines.append("| Date | DAU | Sessions | Views | Eng Rate | Bounce Rate |")
+            lines.append("|------|-----|----------|-------|----------|-------------|")
             for t in trend:
                 d = t.get("date", "")
                 date_fmt = f"{d[4:6]}/{d[6:8]}" if len(d) == 8 else d
-                lines.append(f"| {date_fmt} | {fmt_num(t.get('activeUsers','0'))} | {fmt_num(t.get('sessions','0'))} | {fmt_num(t.get('screenPageViews','0'))} | {fmt_pct(t.get('engagementRate','0'))} |")
+                lines.append(f"| {date_fmt} | {fmt_num(t.get('activeUsers','0'))} | {fmt_num(t.get('sessions','0'))} | {fmt_num(t.get('screenPageViews','0'))} | {fmt_pct(t.get('engagementRate','0'))} | {fmt_pct(t.get('bounceRate','0'))} |")
             lines.append("")
     except Exception as e:
         lines.append(f"*Trend data unavailable: {e}*\n")
@@ -440,9 +441,10 @@ def build_report():
         npaw_country = get_country_breakdown(days=7)
         npaw_isp = get_isp_breakdown(days=7)
         npaw_content_quality = get_content_quality(days=7, limit=20)
+        npaw_buffer_trend = get_daily_buffer_trend(days=7)
         collected["npaw_top"] = npaw_top
         collected["npaw_daily"] = npaw_daily
-        npaw_md = format_npaw_report(npaw_top, npaw_daily, npaw_devices, npaw_cdn, npaw_country, npaw_isp, npaw_content_quality)
+        npaw_md = format_npaw_report(npaw_top, npaw_daily, npaw_devices, npaw_cdn, npaw_country, npaw_isp, npaw_content_quality, npaw_buffer_trend)
         lines.extend(npaw_md.splitlines())
         lines.append("")
     except Exception as e:
@@ -476,6 +478,7 @@ def build_report():
     lines.append("### Methodology")
     lines.append("- **Data source:** Google Analytics 4 (Property ID 518738893, myvurt.com)")
     lines.append("- **Engagement Rate:** % of sessions lasting >10s, with 2+ page views, or a key event (GA4 standard definition)")
+    lines.append("- **Bounce Rate:** % of sessions that were NOT engaged (inverse of engagement rate — session lasted <10s, had only 1 page view, and no key events)")
     lines.append("- **Daily Snapshot freshness:** Automatically uses yesterday's data when GA4 processing is complete (engaged sessions >= 30% of 7-day avg). Falls back to 2-days-ago when data is still processing.")
     lines.append("- **Social media data:** Instagram via Meta Graph API (IG Business Account 17841479978232203), YouTube/TikTok/X via public profile scraping")
     lines.append("- **All numbers are pulled directly from GA4 APIs** — no manual adjustments or estimates except where explicitly labeled as projections")

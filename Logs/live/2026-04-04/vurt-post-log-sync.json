@@ -1,18 +1,11 @@
 {
-  "task": "VURT Post Log Sync",
-  "timestamp": "2026-04-04T08:05:00Z",
+  "timestamp": "2026-04-04T22:05:00Z",
+  "task": "VURT Post Log sync",
   "command": "python3 /home/workspace/Skills/vurt-post-log/scripts/sync.py --all",
   "status": "success",
-  "results": {
-    "entries_updated": 59,
-    "calendar_reconciled": 0,
-    "calendar_enriched": 0
-  },
-  "api_status": {
-    "instagram": "success",
-    "facebook": "success",
-    "youtube": "success",
-    "tiktok": "success"
-  },
-  "summary": "59 post entries updated with fresh metrics across IG, FB, YT, and TikTok. No API failures detected. No calendar reconciliation or enrichment needed (0 entries)."
+  "entries_updated": 59,
+  "calendar_reconciled": 0,
+  "calendar_enriched": 0,
+  "api_failures": [],
+  "summary": "59 entries updated with metrics across Instagram, YouTube, Facebook, and TikTok. No API failures detected. Content Calendar reconciliation and enrichment resulted in 0 entries processed (may indicate no pending items)."
 }

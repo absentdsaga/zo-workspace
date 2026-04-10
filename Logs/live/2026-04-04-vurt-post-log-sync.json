@@ -1,15 +1,24 @@
 {
-  "task": "VURT Post Log Sync",
+  "task": "VURT Post Log sync",
   "date": "2026-04-04",
   "command": "python3 /home/workspace/Skills/vurt-post-log/scripts/sync.py --all",
-  "status": "success",
+  "returncode": 0,
   "summary": {
     "notion_entries": 60,
-    "ig_posts": 32,
-    "fb_posts": 37,
-    "yt_videos": 15,
-    "metrics_updated": 59
+    "ig_posts": 33,
+    "fb_posts": 38,
+    "yt_videos": 0,
+    "urls_updated": 0,
+    "metrics_updated": 56,
+    "calendar_entries_reconciled": 0,
+    "calendar_entries_enriched": 0
   },
-  "output": "Fetching Post Log from Notion...\n  Found 60 entries\n\nFetching Instagram posts...\n  Found 32 IG posts\nFetching Facebook posts...\n  FB enriching 1/37...\n  ... (59 FB posts enriched)\n  Found 37 FB posts\nFetching YouTube videos...\n  Found 15 YT videos\n\nSyncing URLs...\n  0 URLs updated\n\nSyncing metrics...\n  Metrics: Karma in Heels Clip 3 - Facebook → Views=264, Likes=3, Shares=0, Comments Count=0, Reach=476\n  ... (59 entries updated with metrics)\n\nReconciling Content Calendar with Post Log...\n  0 calendar entries reconciled\n\nEnriching Content Calendar with IG post data...\n  0 calendar entries enriched\n\nDone.",
-  "returncode": 0
+  "top_posts_by_views": [
+    {"name": "Come Back Dad - IG", "views": 122188},
+    {"name": "Karma in Heels Clip 4 - IG", "views": 13965},
+    {"name": "Ted Lucas Director Spotlight - IG", "views": 4252},
+    {"name": "Industry Shifting Post - IG", "views": 2445},
+    {"name": "THIS IS VURT Announcement - IG", "views": 2961}
+  ],
+  "errors": ["DeprecationWarnings for datetime.utcnow() (non-critical)"]
 }

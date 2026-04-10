@@ -1,0 +1,33 @@
+{"ts": "2026-04-05T12:04:18.204808", "level": "info", "msg": "=== VURT Trello Daily Maintenance Started ==="}
+{"ts": "2026-04-05T12:04:18.205448", "level": "info", "msg": "Fetching all lists on board..."}
+{"ts": "2026-04-05T12:04:18.396131", "level": "info", "msg": "Found lists", "data": {"lists": ["Inbox", "This Week", "In Progress", "Review / Blocked", "Done"]}}
+{"ts": "2026-04-05T12:04:18.399643", "level": "info", "msg": "TASK 1: Sorting 'This Week' (id=69c06762ac8ecd537850ba8e)"}
+{"ts": "2026-04-05T12:04:18.547860", "level": "error", "msg": "API error 401 for GET /lists/69c06762ac8ecd537850ba8e/cards", "data": {"body": "unauthorized permission requested"}}
+{"ts": "2026-04-05T12:05:28.297471+00:00", "level": "info", "msg": "=== VURT Trello Daily Maintenance Started ==="}
+{"ts": "2026-04-05T12:05:28.297732+00:00", "level": "info", "msg": "Fetching all lists on board..."}
+{"ts": "2026-04-05T12:05:28.517407+00:00", "level": "info", "msg": "Found lists", "data": {"lists": ["Inbox", "This Week", "In Progress", "Review / Blocked", "Done"]}}
+{"ts": "2026-04-05T12:05:28.518020+00:00", "level": "info", "msg": "TASK 1: Sorting 'This Week' (id=69c06762ac8ecd537850ba8e)"}
+{"ts": "2026-04-05T12:05:28.641983+00:00", "level": "error", "msg": "API error 401 for GET /boards/69c067605dae4ae03cd62807/cards", "data": {"body": "unauthorized permission requested"}}
+{"ts": "2026-04-05T12:07:07.658522+00:00", "level": "info", "msg": "=== VURT Trello Daily Maintenance Started ==="}
+{"ts": "2026-04-05T12:07:07.658838+00:00", "level": "info", "msg": "TASK 1: Sorting 'This Week' by due date"}
+{"ts": "2026-04-05T12:07:07.842497+00:00", "level": "info", "msg": "  10 cards with due dates, 2 without"}
+{"ts": "2026-04-05T12:07:07.995909+00:00", "level": "info", "msg": "  [1/12] Weekly Triage: Review Inbox, prioritize This Week", "data": {"due": "2026-03-23T23:59:00.000Z", "pos": 1024}}
+{"ts": "2026-04-05T12:07:08.180320+00:00", "level": "info", "msg": "  [2/12] Wednesday deep dive with Tarik -- blitz sync + SEO timeline", "data": {"due": "2026-03-25T17:00:00.000Z", "pos": 2048}}
+{"ts": "2026-04-05T12:07:08.348251+00:00", "level": "info", "msg": "  [3/12] [DEV] Request Enveu: Add Meta SDK to VURT App", "data": {"due": "2026-03-26T17:00:00.000Z", "pos": 3072}}
+{"ts": "2026-04-05T12:07:08.530321+00:00", "level": "info", "msg": "  [4/12] Add Apple Smart App Banner to myvurt.com", "data": {"due": "2026-03-26T17:00:00.000Z", "pos": 4096}}
+{"ts": "2026-04-05T12:07:08.692729+00:00", "level": "info", "msg": "  [5/12] Fix mobile footer -- social links invisible on mobile", "data": {"due": "2026-03-28T17:00:00.000Z", "pos": 5120}}
+{"ts": "2026-04-05T12:07:08.867439+00:00", "level": "info", "msg": "  [6/12] Fix share links routing to vurt.enveu.link", "data": {"due": "2026-03-28T17:00:00.000Z", "pos": 6144}}
+{"ts": "2026-04-05T12:07:09.053740+00:00", "level": "info", "msg": "  [7/12] Deploy foundation pixels via GTM", "data": {"due": "2026-03-28T17:00:00.000Z", "pos": 7168}}
+{"ts": "2026-04-05T12:07:09.223152+00:00", "level": "info", "msg": "  [8/12] Move download app button to top of website", "data": {"due": "2026-03-28T17:00:00.000Z", "pos": 8192}}
+{"ts": "2026-04-05T12:07:09.404764+00:00", "level": "info", "msg": "  [9/12] Add age prompt after clicking on a title", "data": {"due": "2026-03-28T17:00:00.000Z", "pos": 9216}}
+{"ts": "2026-04-05T12:07:09.573126+00:00", "level": "info", "msg": "  [10/12] Weekly Triage: Review Inbox, prioritize This Week", "data": {"due": "2026-03-30T23:59:00.000Z", "pos": 10240}}
+{"ts": "2026-04-05T12:07:09.736102+00:00", "level": "info", "msg": "  [11/12] Filmmaker spotlight post and promo for Nita K \\ Chicago Boog", "data": {"due": null, "pos": 11264}}
+{"ts": "2026-04-05T12:07:09.884985+00:00", "level": "info", "msg": "  [12/12] Send editable (word version) of VURT Target demographic rese", "data": {"due": null, "pos": 12288}}
+{"ts": "2026-04-05T12:07:09.885471+00:00", "level": "info", "msg": "TASK 2: Flagging stale cards in 'In Progress'"}
+{"ts": "2026-04-05T12:07:10.050702+00:00", "level": "info", "msg": "  Already stale (skip) | Get SEO update timeline from Enveu for Tarik", "data": {"lastActivity": "2026-03-30T12:04:16.722Z"}}
+{"ts": "2026-04-05T12:07:10.051110+00:00", "level": "info", "msg": "  Already stale (skip) | Set up Week 1 content calendar (Mar 24-30)", "data": {"lastActivity": "2026-03-30T12:04:17.077Z"}}
+{"ts": "2026-04-05T12:07:10.051305+00:00", "level": "info", "msg": "  Already stale (skip) | Need VURT drops from Karma In Hills director and actors", "data": {"lastActivity": "2026-03-29T12:06:01.040Z"}}
+{"ts": "2026-04-05T12:07:10.051379+00:00", "level": "info", "msg": "  Already stale (skip) | Create a \"CREATOR SPOTLIGHT\" schedule", "data": {"lastActivity": "2026-03-29T12:06:01.326Z"}}
+{"ts": "2026-04-05T12:07:10.051427+00:00", "level": "info", "msg": "  Already stale (skip) | Bus Ad \u2014 Static Design (Stars + Titles + App GFX)", "data": {"lastActivity": "2026-03-30T12:04:17.533Z"}}
+{"ts": "2026-04-05T12:07:10.051565+00:00", "level": "info", "msg": "  New stale flags applied: 0"}
+{"ts": "2026-04-05T12:07:10.051616+00:00", "level": "info", "msg": "=== VURT Trello Daily Maintenance Completed ==="}

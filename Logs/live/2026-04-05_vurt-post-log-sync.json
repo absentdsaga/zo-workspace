@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-05",
+  "task": "VURT Post Log sync",
+  "status": "success",
+  "summary": {
+    "entries_updated": 59,
+    "calendar_entries_reconciled": 0,
+    "calendar_entries_enriched": 0
+  },
+  "api_results": {
+    "instagram": "success",
+    "youtube": "success",
+    "facebook": "success",
+    "tiktok": "success"
+  },
+  "failed_apis": [],
+  "metrics_pulled": [
+    {"post": "Come Back Dad - IG", "views": 136602, "likes": 9193, "saves": 1844, "shares": 1004, "comments": 200, "reach": 107782},
+    {"post": "Karma in Heels Clip 4 - IG", "views": 14355, "likes": 243, "saves": 67, "shares": 40, "comments": 4, "reach": 12242},
+    {"post": "THIS IS VURT Announcement - IG", "views": 2979, "likes": 105, "saves": 11, "shares": 42, "comments": 27, "reach": 1813},
+    {"post": "Ted Lucas Director Spotlight - IG", "views": 4284, "likes": 154, "saves": 10, "shares": 27, "comments": 37, "reach": 1912},
+    {"post": "35 and Ticking Promo - FB", "views": 1604, "likes": 25, "shares": 1, "comments": 0, "reach": 2376},
+    {"post": "Baby Mama Clip - IG", "views": 1329, "likes": 60, "saves": 19, "shares": 16, "comments": 11, "reach": 920},
+    {"post": "Karma in Heels Clip 3 - YT Shorts", "views": 1730, "likes": 15, "comments": 0},
+    {"post": "Karma in Heels Clip 1 - YT Shorts", "views": 1180, "likes": 11, "comments": 0},
+    {"post": "Karma in Heels Clip 2 - YT Shorts", "views": 1044, "likes": 7, "comments": 0},
+    {"post": "Karma in Heels Clip 3 - TikTok", "views": 205, "likes": 11, "comments": 0, "shares": 1},
+    {"post": "Karma in Heels Clip 4 - TikTok", "views": 329, "likes": 17, "comments": 0, "shares": 1},
+    {"post": "Karma in Heels Clip 2 - TikTok", "views": 182, "likes": 10, "comments": 2, "shares": 4}
+  ],
+  "notes": "All APIs completed successfully. No token expired or rate limit errors detected. 59 post entries updated with fresh metrics from IG, FB, YT, and TikTok."
+}

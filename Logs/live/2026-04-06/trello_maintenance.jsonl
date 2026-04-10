@@ -1,0 +1,29 @@
+{"ts": "2026-04-06T12:03:54.980924", "type": "task_start", "data": {"board_id": "PVtV7XaC", "board_full_id": "69c067605dae4ae03cd62807"}}
+{"ts": "2026-04-06T12:03:54.981345", "type": "decision", "data": "Starting TASK 1: Sort 'This Week' list by due date ascending"}
+{"ts": "2026-04-06T12:03:55.132103", "type": "result", "data": "Found 'This Week' list: 69c06762ac8ecd537850ba8e"}
+{"ts": "2026-04-06T12:03:55.278839", "type": "result", "data": "Found 12 cards in 'This Week'"}
+{"ts": "2026-04-06T12:03:55.282938", "type": "result", "data": "Sorted order: ['Weekly Triage: Review Inbox, prioritize This Week', 'Wednesday deep dive with Tarik -- blitz sync + SEO timeline', '[DEV] Request Enveu: Add Meta SDK to VURT App', 'Add Apple Smart App Banner to myvurt.com', 'Fix mobile footer -- social links invisible on mobile', 'Fix share links routing to vurt.enveu.link', 'Deploy foundation pixels via GTM', 'Move download app button to top of website', 'Add age prompt after clicking on a title', 'Weekly Triage: Review Inbox, prioritize This Week', 'Filmmaker spotlight post and promo for Nita K \\\\ Chicago Boogie', 'Send editable (word version) of VURT Target demographic research doc']"}
+{"ts": "2026-04-06T12:03:55.447228", "type": "tool_call", "data": "Reordered card 'Weekly Triage: Review Inbox, prioritize This Week' pos=1024"}
+{"ts": "2026-04-06T12:03:55.580103", "type": "tool_call", "data": "Reordered card 'Wednesday deep dive with Tarik -- blitz sync + SEO timeline' pos=2048"}
+{"ts": "2026-04-06T12:03:55.713181", "type": "tool_call", "data": "Reordered card '[DEV] Request Enveu: Add Meta SDK to VURT App' pos=3072"}
+{"ts": "2026-04-06T12:03:55.964580", "type": "tool_call", "data": "Reordered card 'Add Apple Smart App Banner to myvurt.com' pos=4096"}
+{"ts": "2026-04-06T12:03:56.120025", "type": "tool_call", "data": "Reordered card 'Fix mobile footer -- social links invisible on mobile' pos=5120"}
+{"ts": "2026-04-06T12:03:56.289982", "type": "tool_call", "data": "Reordered card 'Fix share links routing to vurt.enveu.link' pos=6144"}
+{"ts": "2026-04-06T12:03:56.435574", "type": "tool_call", "data": "Reordered card 'Deploy foundation pixels via GTM' pos=7168"}
+{"ts": "2026-04-06T12:03:56.667969", "type": "tool_call", "data": "Reordered card 'Move download app button to top of website' pos=8192"}
+{"ts": "2026-04-06T12:03:56.870719", "type": "tool_call", "data": "Reordered card 'Add age prompt after clicking on a title' pos=9216"}
+{"ts": "2026-04-06T12:03:57.009776", "type": "tool_call", "data": "Reordered card 'Weekly Triage: Review Inbox, prioritize This Week' pos=10240"}
+{"ts": "2026-04-06T12:03:57.159696", "type": "tool_call", "data": "Reordered card 'Filmmaker spotlight post and promo for Nita K \\ Chicago Boogie' pos=11264"}
+{"ts": "2026-04-06T12:03:57.315222", "type": "tool_call", "data": "Reordered card 'Send editable (word version) of VURT Target demographic research doc' pos=12288"}
+{"ts": "2026-04-06T12:03:57.315546", "type": "result", "data": "Sorted 12 cards in 'This Week' by due date (nulls last)"}
+{"ts": "2026-04-06T12:03:57.315795", "type": "decision", "data": "Starting TASK 2: Flag stale cards in 'In Progress' list"}
+{"ts": "2026-04-06T12:03:57.315869", "type": "result", "data": "Found 'In Progress' list: 69c0676135c8a806ea58e2a5"}
+{"ts": "2026-04-06T12:03:57.873943", "type": "result", "data": "Found 6 cards in 'In Progress'"}
+{"ts": "2026-04-06T12:03:57.974732", "type": "result", "data": "Using existing 'Stale' label: 69c06d926bbfae785580fb39"}
+{"ts": "2026-04-06T12:03:57.975188", "type": "tool_call", "data": "Card 'Get SEO update timeline from Enveu for Tarik' already has 'Stale' label"}
+{"ts": "2026-04-06T12:03:57.975277", "type": "tool_call", "data": "Card 'Set up Week 1 content calendar (Mar 24-30)' already has 'Stale' label"}
+{"ts": "2026-04-06T12:03:57.975319", "type": "tool_call", "data": "Card 'Need VURT drops from Karma In Hills director and actors' already has 'Stale' label"}
+{"ts": "2026-04-06T12:03:57.975350", "type": "tool_call", "data": "Card 'Create a \"CREATOR SPOTLIGHT\" schedule' already has 'Stale' label"}
+{"ts": "2026-04-06T12:03:57.975431", "type": "tool_call", "data": "Card 'Bus Ad \u2014 Static Design (Stars + Titles + App GFX)' already has 'Stale' label"}
+{"ts": "2026-04-06T12:03:57.975535", "type": "result", "data": "Flagged 0 stale cards in 'In Progress' (cutoff: 2026-04-01T12:03:57.975166+00:00)"}
+{"ts": "2026-04-06T12:03:57.975598", "type": "task_complete", "data": {"today": "2026-04-06", "log_path": "/home/workspace/Logs/live/2026-04-06/trello_maintenance.jsonl"}}

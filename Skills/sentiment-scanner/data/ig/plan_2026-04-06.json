@@ -1,0 +1,51 @@
+{
+  "date": "2026-04-06",
+  "warm_up_day": 5,
+  "follow_limit": 10,
+  "follows_remaining": 9,
+  "unfollows_remaining": 35,
+  "follow_actions": [
+    {
+      "type": "follow_from_seed",
+      "seed_account": "datingbyblaine",
+      "count": 1,
+      "instruction": "Go to https://www.instagram.com/datingbyblaine/followers/. Scroll the followers dialog to load more. For each user shown that has a 'Follow' button (not 'Following'), like 1-2 of their recent posts, then follow them. Do 1 follows, waiting 2-4 minutes between each. Skip accounts with 10K+ followers or no posts."
+    },
+    {
+      "type": "follow_from_seed",
+      "seed_account": "dating.intentionally",
+      "count": 1,
+      "instruction": "Go to https://www.instagram.com/dating.intentionally/followers/. Scroll the followers dialog to load more. For each user shown that has a 'Follow' button (not 'Following'), like 1-2 of their recent posts, then follow them. Do 1 follows, waiting 2-4 minutes between each. Skip accounts with 10K+ followers or no posts."
+    },
+    {
+      "type": "follow_from_seed",
+      "seed_account": "realevanmarckatz",
+      "count": 1,
+      "instruction": "Go to https://www.instagram.com/realevanmarckatz/followers/. Scroll the followers dialog to load more. For each user shown that has a 'Follow' button (not 'Following'), like 1-2 of their recent posts, then follow them. Do 1 follows, waiting 2-4 minutes between each. Skip accounts with 10K+ followers or no posts."
+    },
+    {
+      "type": "follow_from_hashtag",
+      "hashtag": "datingtips",
+      "count": 2,
+      "instruction": "Go to https://www.instagram.com/explore/tags/datingtips/. Click on recent posts. For each post, like it, then visit the creator's profile. If they have under 10K followers and posted in the last 7 days, follow them. Do 2 follows, waiting 2-4 minutes between each."
+    },
+    {
+      "type": "follow_from_hashtag",
+      "hashtag": "deletedatingapps",
+      "count": 2,
+      "instruction": "Go to https://www.instagram.com/explore/tags/deletedatingapps/. Click on recent posts. For each post, like it, then visit the creator's profile. If they have under 10K followers and posted in the last 7 days, follow them. Do 2 follows, waiting 2-4 minutes between each."
+    }
+  ],
+  "unfollow_targets": [
+    "menonthemenu"
+  ],
+  "already_followed": [
+    "carlaminoauthor",
+    "menonthemenu",
+    "life_with_emmariley",
+    "piper__dailyy",
+    "sambeliev",
+    "polishedprincesse"
+  ],
+  "unfollow_instruction": "For each username in the unfollow list, go to their profile, click 'Following', then click 'Unfollow'. Wait 60-120 seconds between each. Unfollow these 1 accounts: menonthemenu"
+}

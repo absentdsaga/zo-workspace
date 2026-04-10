@@ -1,0 +1,98 @@
+<script>
+(function() {
+  if (window.location.search.indexOf('diag=1') === -1) return;
+
+  var DIAG = {
+    start: Date.now(),
+    gtagScripts: [],
+    gtagCalls: [],
+    beacons: [],
+    dataLayerPushes: [],
+    errors: []
+  };
+  window.__GA4_DIAG = DIAG;
+
+  function ms() { return Date.now() - DIAG.start; }
+
+  // Watch for gtag/google scripts being added
+  new MutationObserver(function(muts) {
+    muts.forEach(function(m) {
+      m.addedNodes.forEach(function(n) {
+        if (n.tagName === 'SCRIPT' && n.src && (n.src.indexOf('gtag') > -1 || n.src.indexOf('googletagmanager') > -1)) {
+          DIAG.gtagScripts.push({ ms: ms(), src: n.src });
+        }
+      });
+    });
+  }).observe(document.documentElement, { childList: true, subtree: true });
+
+  // Intercept sendBeacon
+  var origBeacon = navigator.sendBeacon.bind(navigator);
+  navigator.sendBeacon = function(url, data) {
+    if (url.indexOf('g/collect') > -1 || url.indexOf('google-analytics') > -1) {
+      DIAG.beacons.push({ ms: ms(), url: url.substring(0, 120), size: data ? data.length || data.size || 0 : 0 });
+    }
+    return origBeacon(url, data);
+  };
+
+  // Intercept gtag()
+  var origGtag = window.gtag;
+  window.gtag = function() {
+    var args = Array.prototype.slice.call(arguments);
+    try {
+      DIAG.gtagCalls.push({ ms: ms(), cmd: args[0], target: args[1], params: JSON.stringify(args[2] || {}).substring(0, 200) });
+    } catch(e) {}
+    if (origGtag) origGtag.apply(window, arguments);
+    (window.dataLayer || []).push(arguments);
+  };
+
+  // Intercept dataLayer.push
+  var origPush = (window.dataLayer || []).push;
+  (window.dataLayer || []).push = function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.forEach(function(a) {
+      try {
+        DIAG.dataLayerPushes.push({ ms: ms(), data: JSON.stringify(a).substring(0, 200) });
+      } catch(e) {}
+    });
+    return origPush.apply(this, arguments);
+  };
+
+  // Overlay
+  function render() {
+    var el = document.getElementById('ga4diag');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'ga4diag';
+      el.style.cssText = 'position:fixed;bottom:0;left:0;right:0;max-height:40vh;overflow-y:auto;background:rgba(0,0,0,0.93);color:#0f0;font:11px/1.4 monospace;z-index:999999;padding:10px;border-top:2px solid #0f0;';
+      document.body.appendChild(el);
+    }
+    var secs = (ms() / 1000).toFixed(1);
+    var ids = [];
+    DIAG.gtagCalls.forEach(function(c) { if (c.cmd === 'config' && c.target && c.target.indexOf('G-') === 0 && ids.indexOf(c.target) === -1) ids.push(c.target); });
+    el.innerHTML = '<b style="color:#ff0">GA4 DIAG</b> ' + secs + 's | ' +
+      'Scripts: <b>' + DIAG.gtagScripts.length + '</b> | ' +
+      'IDs: <b>' + (ids.join(', ') || 'none yet') + '</b> | ' +
+      'gtag(): <b>' + DIAG.gtagCalls.length + '</b> | ' +
+      'Beacons: <b>' + DIAG.beacons.length + '</b> | ' +
+      'dataLayer: <b>' + DIAG.dataLayerPushes.length + '</b>' +
+      '<br><br><b>gtag() calls:</b><br>' +
+      DIAG.gtagCalls.map(function(c) { return '@' + c.ms + 'ms ' + c.cmd + ' ' + c.target + ' ' + c.params; }).join('<br>') +
+      '<br><br><b>Beacons:</b><br>' +
+      DIAG.beacons.map(function(b) { return '@' + b.ms + 'ms ' + b.url; }).join('<br>');
+  }
+  setInterval(render, 500);
+
+  // Send report at 15s
+  setTimeout(function() {
+    var report = JSON.parse(JSON.stringify(DIAG));
+    report.elapsed = ms();
+    report.url = window.location.href;
+    report.ua = navigator.userAgent;
+    fetch('https://dioni.zo.space/api/lifecycle-collector', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ session: 'gtm-ga4-diag-' + Date.now(), data: report })
+    });
+  }, 15000);
+})();
+</script>

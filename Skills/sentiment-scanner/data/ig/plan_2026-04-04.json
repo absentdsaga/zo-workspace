@@ -7,15 +7,15 @@
   "follow_actions": [
     {
       "type": "follow_from_seed",
-      "seed_account": "elsamoreck",
+      "seed_account": "alittlenudge",
       "count": 1,
-      "instruction": "Go to https://www.instagram.com/elsamoreck/followers/. Scroll the followers dialog to load more. For each user shown that has a 'Follow' button (not 'Following'), like 1-2 of their recent posts, then follow them. Do 1 follows, waiting 2-4 minutes between each. Skip accounts with 10K+ followers or no posts."
+      "instruction": "Go to https://www.instagram.com/alittlenudge/followers/. Scroll the followers dialog to load more. For each user shown that has a 'Follow' button (not 'Following'), like 1-2 of their recent posts, then follow them. Do 1 follows, waiting 2-4 minutes between each. Skip accounts with 10K+ followers or no posts."
     },
     {
       "type": "follow_from_seed",
-      "seed_account": "datingbyblaine",
+      "seed_account": "damonahoffman",
       "count": 1,
-      "instruction": "Go to https://www.instagram.com/datingbyblaine/followers/. Scroll the followers dialog to load more. For each user shown that has a 'Follow' button (not 'Following'), like 1-2 of their recent posts, then follow them. Do 1 follows, waiting 2-4 minutes between each. Skip accounts with 10K+ followers or no posts."
+      "instruction": "Go to https://www.instagram.com/damonahoffman/followers/. Scroll the followers dialog to load more. For each user shown that has a 'Follow' button (not 'Following'), like 1-2 of their recent posts, then follow them. Do 1 follows, waiting 2-4 minutes between each. Skip accounts with 10K+ followers or no posts."
     },
     {
       "type": "follow_from_seed",
@@ -25,15 +25,15 @@
     },
     {
       "type": "follow_from_hashtag",
-      "hashtag": "offlinedating",
+      "hashtag": "meetpeopleinreallife",
       "count": 2,
-      "instruction": "Go to https://www.instagram.com/explore/tags/offlinedating/. Click on recent posts. For each post, like it, then visit the creator's profile. If they have under 10K followers and posted in the last 7 days, follow them. Do 2 follows, waiting 2-4 minutes between each."
+      "instruction": "Go to https://www.instagram.com/explore/tags/meetpeopleinreallife/. Click on recent posts. For each post, like it, then visit the creator's profile. If they have under 10K followers and posted in the last 7 days, follow them. Do 2 follows, waiting 2-4 minutes between each."
     },
     {
       "type": "follow_from_hashtag",
-      "hashtag": "relationshipadvice",
+      "hashtag": "datingadvice",
       "count": 2,
-      "instruction": "Go to https://www.instagram.com/explore/tags/relationshipadvice/. Click on recent posts. For each post, like it, then visit the creator's profile. If they have under 10K followers and posted in the last 7 days, follow them. Do 2 follows, waiting 2-4 minutes between each."
+      "instruction": "Go to https://www.instagram.com/explore/tags/datingadvice/. Click on recent posts. For each post, like it, then visit the creator's profile. If they have under 10K followers and posted in the last 7 days, follow them. Do 2 follows, waiting 2-4 minutes between each."
     }
   ],
   "unfollow_targets": [],

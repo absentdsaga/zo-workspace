@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-04-06T08:05:00Z",
+  "task": "VURT Post Log Sync",
+  "script": "/home/workspace/Skills/vurt-post-log/scripts/sync.py --all",
+  "result": "SUCCESS",
+  "summary": {
+    "entries_updated_with_metrics": 59,
+    "calendar_entries_reconciled": 0,
+    "calendar_entries_enriched": 0
+  },
+  "platforms_synced": ["Instagram", "YouTube", "Facebook", "TikTok"],
+  "api_failures": [],
+  "top_posts": [
+    {"title": "Come Back Dad - IG", "views": 139140, "likes": 9367, "reach": 109605, "engagement": 12776},
+    {"title": "THIS IS VURT Announcement - IG", "views": 2984, "likes": 106, "reach": 1820, "engagement": 193},
+    {"title": "Ted Lucas Director Spotlight - IG", "views": 4289, "likes": 154, "reach": 1917, "engagement": 241},
+    {"title": "Karma in Heels Clip 4 - IG", "views": 14445, "likes": 249, "reach": 12289, "engagement": 372}
+  ],
+  "notes": "All APIs succeeded. No token expired or rate limit issues."
+}

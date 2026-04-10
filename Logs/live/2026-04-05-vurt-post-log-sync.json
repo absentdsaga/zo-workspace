@@ -1,0 +1,19 @@
+{
+  "date": "2026-04-05",
+  "task": "VURT Post Log Sync",
+  "command": "python3 /home/workspace/Skills/vurt-post-log/scripts/sync.py --all",
+  "status": "success",
+  "entries_updated": 59,
+  "calendar_reconciled": 0,
+  "calendar_enriched": 0,
+  "platforms": ["Instagram", "YouTube", "Facebook", "TikTok"],
+  "summary": "59 entries updated with fresh metrics from Instagram, YouTube, Facebook, and TikTok APIs. Content Calendar reconciliation and enrichment returned 0 entries (may indicate no pending calendar items).",
+  "api_failures": [],
+  "metrics_sample": [
+    {"post": "Come Back Dad - IG", "views": 133071, "likes": 9000, "reach": 105033, "engagement": 12279},
+    {"post": "THIS IS VURT Announcement - IG", "views": 2973, "likes": 105, "reach": 1811, "engagement": 192},
+    {"post": "Karma in Heels Clip 4 - IG", "views": 14271, "likes": 243, "reach": 12137, "engagement": 363},
+    {"post": "VURT 100 Series Post - IG", "views": 460, "likes": 12, "reach": 295},
+    {"post": "35 and Ticking Promo - FB", "views": 1604, "likes": 25, "reach": 2376}
+  ]
+}

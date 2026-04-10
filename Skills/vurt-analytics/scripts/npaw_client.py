@@ -176,6 +176,35 @@ def get_isp_breakdown(days=7):
     )
 
 
+def _extract_timeseries(response, metric_code):
+    """
+    Extract daily time-series for a single metric from an ungrouped NPAW response.
+    Returns list of [timestamp_ms, value] pairs sorted by date ascending.
+    """
+    points = []
+    try:
+        block = response.get("data", [{}])[0]
+        for metric in block.get("metrics", []):
+            if metric.get("code") == metric_code:
+                data_points = metric.get("values", [{}])[0].get("data", [])
+                for pt in data_points:
+                    if len(pt) >= 2 and pt[1] is not None:
+                        points.append(pt)
+                break
+    except Exception:
+        pass
+    return sorted(points, key=lambda x: x[0])
+
+
+def get_daily_buffer_trend(days=7):
+    """Daily buffer ratio + views trend for the last N days."""
+    return npaw_request(
+        metrics=["bufferRatio", "views"],
+        from_date=f"last{days}days",
+        granularity="day",
+    )
+
+
 def fmt_val(v, decimals=2):
     """Format a metric value for display."""
     if v is None:
@@ -198,7 +227,8 @@ def _engagement_score(plays, completion_rate):
 
 
 def format_npaw_report(top_content_raw, daily_overview_raw, device_breakdown_raw=None,
-                       cdn_raw=None, country_raw=None, isp_raw=None, content_quality_raw=None):
+                       cdn_raw=None, country_raw=None, isp_raw=None, content_quality_raw=None,
+                       daily_buffer_raw=None):
     """Format NPAW data as markdown for the daily report."""
     lines = []
     lines.append("## Video Performance (NPAW)")
@@ -223,6 +253,37 @@ def format_npaw_report(top_content_raw, daily_overview_raw, device_breakdown_raw
         lines.append("")
     except Exception as e:
         lines.append(f"*Daily video overview unavailable: {e}*\n")
+
+    # Daily buffer rate trend
+    if daily_buffer_raw:
+        try:
+            buf_series = _extract_timeseries(daily_buffer_raw, "bufferRatio")
+            view_series = _extract_timeseries(daily_buffer_raw, "views")
+            view_by_ts = {pt[0]: pt[1] for pt in view_series}
+            if buf_series:
+                lines.append("### Daily Buffer Rate Trend")
+                lines.append("")
+                lines.append("| Date | Views | Buffer Ratio |")
+                lines.append("|------|-------|--------------|")
+                from datetime import datetime, timezone, timedelta
+                eastern = timezone(timedelta(hours=-4))
+                today_eastern = datetime.now(eastern).date()
+                for ts, buf in buf_series:
+                    try:
+                        dt = datetime.fromtimestamp(ts / 1000, tz=timezone.utc)
+                        if dt.date() > today_eastern:
+                            continue
+                        date_str = dt.strftime("%m/%d")
+                    except Exception:
+                        date_str = str(ts)
+                    buf_pct = f"{float(buf):.1f}%" if buf is not None else "N/A"
+                    if buf is not None and float(buf) > 2:
+                        buf_pct += "  ⚠️"
+                    views_val = fmt_val(view_by_ts.get(ts))
+                    lines.append(f"| {date_str} | {views_val} | {buf_pct} |")
+                lines.append("")
+        except Exception as e:
+            lines.append(f"*Daily buffer trend unavailable: {e}*\n")
 
     # Top content — two cuts
     try:
