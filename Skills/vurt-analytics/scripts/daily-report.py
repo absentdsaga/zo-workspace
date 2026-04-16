@@ -159,6 +159,74 @@ def get_retention():
     )
     return extract_rows(result)
 
+
+def get_cohort_retention_by_source(cohort_days=7, window_days=7):
+    """Day-N retention by acquisition channel.
+
+    Builds `cohort_days` daily cohorts (e.g. last 7 days), tracks each
+    cohort forward for `window_days`, aggregates across cohorts by the
+    channel the user was first acquired through.
+
+    Returns a list of dicts per channel:
+        {channel, d0, d1_pct, d3_pct, d7_pct, d1_users, d3_users, d7_users}
+    """
+    from collections import defaultdict
+    from datetime import date, timedelta
+
+    today = date.today()
+    cohorts = []
+    for i in range(cohort_days, 0, -1):
+        d = (today - timedelta(days=i)).isoformat()
+        cohorts.append({
+            "name": f"d_{d}",
+            "dimension": "firstSessionDate",
+            "dateRange": {"startDate": d, "endDate": d},
+        })
+
+    try:
+        result = run_cohort_report(
+            cohorts=cohorts,
+            metrics=["cohortActiveUsers"],
+            dimensions=["firstUserDefaultChannelGroup"],
+            days_forward=window_days,
+            limit=2000,
+        )
+    except Exception as e:
+        print(f"Cohort retention query failed: {e}", file=sys.stderr)
+        return []
+
+    # channel -> nth_day -> total users across all cohorts
+    by_channel = defaultdict(lambda: defaultdict(int))
+    for r in result.get("rows", []):
+        vals = [v["value"] for v in r.get("dimensionValues", [])]
+        if len(vals) < 3:
+            continue
+        _cohort, nth_day, channel = vals[0], vals[1], vals[2]
+        try:
+            users = int(r["metricValues"][0]["value"])
+            n = int(nth_day)
+        except (KeyError, ValueError, IndexError):
+            continue
+        by_channel[channel][n] += users
+
+    rows = []
+    for channel, days in by_channel.items():
+        d0 = days.get(0, 0)
+        if d0 == 0:
+            continue
+        rows.append({
+            "channel": channel,
+            "d0": d0,
+            "d1_users": days.get(1, 0),
+            "d3_users": days.get(3, 0),
+            "d7_users": days.get(7, 0),
+            "d1_pct": 100.0 * days.get(1, 0) / d0,
+            "d3_pct": 100.0 * days.get(3, 0) / d0,
+            "d7_pct": 100.0 * days.get(7, 0) / d0 if window_days >= 7 else None,
+        })
+    rows.sort(key=lambda r: r["d0"], reverse=True)
+    return rows
+
 def get_device_breakdown():
     result = run_report(
         date_ranges=[{"startDate": "7daysAgo", "endDate": "yesterday"}],
@@ -333,6 +401,36 @@ def build_report():
             lines.append("")
     except:
         pass
+
+    # --- Cohort Retention by Acquisition Source (v5) ---
+    try:
+        cohort_ret = get_cohort_retention_by_source(cohort_days=7, window_days=7)
+        collected["cohort_retention"] = cohort_ret
+        if cohort_ret:
+            lines.append("## Cohort Retention by Acquisition Source (last 7 daily cohorts)")
+            lines.append("")
+            lines.append("How many of the users we acquired each day actually came back. "
+                         "Day 0 = sessions on acquisition day. D1/D3/D7 = % of that cohort returning N days later.")
+            lines.append("")
+            lines.append("| Channel | D0 Users | D1 Return | D3 Return | D7 Return |")
+            lines.append("|---------|----------|-----------|-----------|-----------|")
+            for r in cohort_ret:
+                d7 = f"{r['d7_pct']:.1f}%" if r.get("d7_pct") is not None else "—"
+                lines.append(f"| {r['channel']} | {fmt_num(r['d0'])} | "
+                             f"{r['d1_pct']:.1f}% | {r['d3_pct']:.1f}% | {d7} |")
+            lines.append("")
+            # Quick interpretation line — flag the worst-performing high-volume channel
+            high_vol = [r for r in cohort_ret if r["d0"] >= 500]
+            if high_vol:
+                worst = min(high_vol, key=lambda r: r["d1_pct"])
+                best = max(cohort_ret, key=lambda r: r["d1_pct"])
+                if worst["d1_pct"] < 5 and best["d1_pct"] > worst["d1_pct"] * 3:
+                    lines.append(f"_{worst['channel']} brings volume ({fmt_num(worst['d0'])} users) "
+                                 f"but {worst['d1_pct']:.1f}% D1 return vs {best['channel']} at "
+                                 f"{best['d1_pct']:.1f}% — flag for audience-quality review._")
+                    lines.append("")
+    except Exception as e:
+        lines.append(f"*Cohort retention data unavailable: {e}*\n")
 
     # --- Channel x Landing Page Crossover (v4) ---
     try:

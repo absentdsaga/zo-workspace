@@ -37,6 +37,37 @@ def run_report(date_ranges, metrics, dimensions=None, order_bys=None, limit=None
     resp = urllib.request.urlopen(req)
     return json.loads(resp.read())
 
+def run_cohort_report(cohorts, metrics, dimensions=None, days_forward=7, granularity="DAILY", limit=1000):
+    """Run a GA4 cohort report.
+
+    cohorts: list of dicts like {"name": "...", "dimension": "firstSessionDate",
+             "dateRange": {"startDate": "...", "endDate": "..."}}
+    dimensions: optional list of dimension names; "cohort" and "cohortNthDay" are
+                always added so callers don't have to remember.
+    """
+    token = get_access_token()
+    base_dims = ["cohort", "cohortNthDay"]
+    extra_dims = [d for d in (dimensions or []) if d not in base_dims]
+    body = {
+        "cohortSpec": {
+            "cohorts": cohorts,
+            "cohortsRange": {"granularity": granularity, "startOffset": 0, "endOffset": days_forward},
+        },
+        "dimensions": [{"name": d} for d in base_dims + extra_dims],
+        "metrics": [{"name": m} for m in metrics],
+        "limit": str(limit),
+    }
+    data = json.dumps(body).encode()
+    req = urllib.request.Request(
+        f"{DATA_API}/properties/{PROPERTY_ID}:runReport",
+        data=data,
+        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+        method="POST",
+    )
+    resp = urllib.request.urlopen(req)
+    return json.loads(resp.read())
+
+
 def run_realtime_report(metrics, dimensions=None):
     token = get_access_token()
     body = {"metrics": [{"name": m} for m in metrics]}

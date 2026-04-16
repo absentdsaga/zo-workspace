@@ -68,6 +68,7 @@ def generate_insights(data):
     # 4. RETENTION & STICKINESS — are people coming back?
     # =========================================================================
     insights.extend(_analyze_retention(retention, tw, lw))
+    insights.extend(_analyze_cohort_retention(data.get("cohort_retention", [])))
 
     # =========================================================================
     # 5. CONTENT PERFORMANCE — GA4 pages + NPAW video signals
@@ -406,6 +407,50 @@ def _analyze_retention(retention, tw, lw):
                 f"within the same week. For a content platform, target is 2.0+. "
                 f"**This is the leaky bucket:** paid ads bring people in, they watch once (or bounce), "
                 f"and don't return. Solve this before scaling ad spend further."
+            )
+
+    return insights
+
+
+def _analyze_cohort_retention(cohort_rows):
+    """Surface acquisition channels with weak D1 retention vs healthy ones."""
+    insights = []
+    if not cohort_rows:
+        return insights
+
+    # Only compare channels with enough volume to be meaningful
+    high_vol = [r for r in cohort_rows if r["d0"] >= 500]
+    healthy = [r for r in cohort_rows if r["d0"] >= 50 and r["d1_pct"] >= 5]
+
+    if high_vol:
+        worst = min(high_vol, key=lambda r: r["d1_pct"])
+        if worst["d1_pct"] < 1:
+            insights.append(
+                f"**Cohort retention red flag — {worst['channel']}:** "
+                f"{fmt_num(str(worst['d0']))} users acquired this week, only "
+                f"{worst['d1_pct']:.1f}% returned the next day. "
+                f"At this volume + this return rate, the channel is delivering bouncers, not viewers. "
+                f"**Actions:** (1) Audit the creative — does it set the right expectation? "
+                f"(2) Check landing page bounce isolated to this channel. "
+                f"(3) Compare D1 across creatives to find the few that actually retain."
+            )
+        elif worst["d1_pct"] < 3 and healthy:
+            best = max(healthy, key=lambda r: r["d1_pct"])
+            ratio = best["d1_pct"] / max(worst["d1_pct"], 0.1)
+            insights.append(
+                f"**Acquisition quality gap:** {worst['channel']} returns at "
+                f"{worst['d1_pct']:.1f}% D1 vs {best['channel']} at {best['d1_pct']:.1f}% "
+                f"({ratio:.0f}x better). The lower-volume channel is bringing higher-intent users — "
+                f"worth investigating what makes those users different and whether spend can shift."
+            )
+
+    # Highlight any standout retainer regardless of volume
+    if healthy:
+        top = max(healthy, key=lambda r: r["d1_pct"])
+        if top["d1_pct"] >= 10 and top["d0"] >= 100:
+            insights.append(
+                f"**Strong cohort — {top['channel']}:** {top['d1_pct']:.1f}% D1 return on "
+                f"{fmt_num(str(top['d0']))} users. This is the channel mix to scale, not the cheapest one."
             )
 
     return insights
