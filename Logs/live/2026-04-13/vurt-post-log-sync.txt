@@ -1,0 +1,224 @@
+Fetching Post Log from Notion...
+  Found 145 entries
+
+Fetching Instagram posts...
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:120: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow()
+  Found 51 IG posts
+Fetching Facebook posts...
+  FB enriching 1/50...
+  FB enriching 2/50...
+  FB enriching 3/50...
+  FB enriching 4/50...
+  FB enriching 5/50...
+  FB enriching 6/50...
+  FB enriching 7/50...
+  FB enriching 8/50...
+  FB enriching 9/50...
+  FB enriching 10/50...
+  FB enriching 11/50...
+  FB enriching 12/50...
+  FB enriching 13/50...
+  FB enriching 14/50...
+  FB enriching 15/50...
+  FB enriching 16/50...
+  FB enriching 17/50...
+  FB enriching 18/50...
+  FB enriching 19/50...
+  FB enriching 20/50...
+  FB enriching 21/50...
+  FB enriching 22/50...
+  FB enriching 23/50...
+  FB enriching 24/50...
+  FB enriching 25/50...
+  FB enriching 26/50...
+  FB enriching 27/50...
+  FB enriching 28/50...
+  FB enriching 29/50...
+  FB enriching 30/50...
+  FB enriching 31/50...
+  FB enriching 32/50...
+  FB enriching 33/50...
+  FB enriching 34/50...
+  FB enriching 35/50...
+  FB enriching 36/50...
+  FB enriching 37/50...
+  FB enriching 38/50...
+  FB enriching 39/50...
+  FB enriching 40/50...
+  FB enriching 41/50...
+  FB enriching 42/50...
+  FB enriching 43/50...
+  FB enriching 44/50...
+  FB enriching 45/50...
+  FB enriching 46/50...
+  FB enriching 47/50...
+  FB enriching 48/50...
+  FB enriching 49/50...
+  FB enriching 50/50...
+  Found 50 FB posts
+Fetching YouTube videos...
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:212: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  after = (datetime.utcnow() - timedelta(days=days)).strftime("%Y-%m-%dT00:00:00Z")
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:272: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  start = (datetime.utcnow() - timedelta(days=days)).strftime("%Y-%m-%d")
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:273: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  end = datetime.utcnow().strftime("%Y-%m-%d")
+  YT Analytics query failed (may need channel owner OAuth): HTTP Error 403: Forbidden
+  Found 33 YT videos
+
+Auto-creating missing Post Log entries...
+  0 new entries created
+
+Syncing URLs...
+  0 URLs updated
+
+Syncing metrics...
+  Metrics: Karma in Heels Clip 3 - Facebook → Views=287, Likes=3, Shares=0, Comments Count=0, Reach=520
+  Metrics: THIS IS VURT Announcement - FB → Views=407, Likes=2, Shares=1, Comments Count=0, Reach=728
+  Metrics: Karma in Heels Clip 2 - IG → Views=1537, Likes=23, Saves=7, Shares=1, Comments Count=6, Reach=1282, Avg Watch Time (s)=8.3, Engagement=38
+  Metrics: VURT 100 Series Post - IG → Views=450, Likes=13, Saves=0, Shares=2, Comments Count=1, Reach=301, Engagement=18
+  Metrics: Karma in Heels Clip 1 - TikTok → Views=22, Likes=1, Comments Count=3, Shares=0, Saves=0
+  Metrics: Karma in Heels Clip 1 - Facebook → Views=429, Likes=3, Shares=0, Comments Count=0, Reach=776
+  Metrics: Karma in Heels Clip 2 - Facebook → Views=388, Likes=4, Shares=0, Comments Count=0, Reach=551
+  Metrics: Charles S. Dutton Family Reel - IG → Views=934, Likes=48, Saves=3, Shares=7, Comments Count=2, Reach=737, Avg Watch Time (s)=28.0, Engagement=64
+  Metrics: My Brother's Wife Clip - IG → Views=118, Likes=0, Saves=0, Shares=0, Comments Count=0, Reach=109, Avg Watch Time (s)=3.2
+  Metrics: Miami Kingpins Liberty City - FB → Views=202, Likes=1, Shares=0, Comments Count=0, Reach=503
+  Metrics: Nita K Filmmaker Spotlight - IG → Views=1003, Likes=34, Saves=0, Shares=7, Comments Count=24, Reach=517, Engagement=70
+  Metrics: Brand Post - Every Episode - IG → Views=596, Likes=8, Saves=1, Shares=3, Comments Count=0, Reach=366, Engagement=13
+  Metrics: Come Back Dad - FB → Views=750, Likes=10, Shares=1, Comments Count=0, Reach=1303
+  Metrics: Parking Lot Series Announcement - IG → Views=1272, Likes=41, Saves=2, Shares=3, Comments Count=4, Reach=535, Engagement=57
+  Metrics: Brand Post - Unexpected Endings - FB → Views=0, Likes=1, Shares=2, Comments Count=0, Reach=363
+  Metrics: Karma in Heels Clip 1 - IG → Views=1328, Likes=32, Saves=2, Shares=6, Comments Count=6, Reach=1008, Avg Watch Time (s)=9.0, Engagement=50
+  Metrics: SCHEMERS Announcement - IG → Views=1120, Likes=51, Saves=3, Shares=3, Comments Count=18, Reach=889, Avg Watch Time (s)=9.1, Engagement=80
+  Metrics: Baby Mama Clip - FB → Views=227, Likes=2, Shares=0, Comments Count=0, Reach=495
+  Metrics: Pre-Launch Teaser - IG → Views=477, Likes=9, Saves=0, Shares=2, Comments Count=1, Reach=253, Engagement=13
+  Metrics: Ted Lucas Director Spotlight - IG → Views=4641, Likes=163, Saves=11, Shares=27, Comments Count=39, Reach=2104, Engagement=253
+  Metrics: VURT 100 Series Post - IG → Views=481, Likes=12, Saves=1, Shares=3, Comments Count=0, Reach=310, Engagement=18
+  Metrics: Parking Lot Series Announcement - FB → Views=0, Likes=2, Shares=0, Comments Count=2, Reach=344
+  Metrics: Come Back Dad - FB (2026-03-04) → Views=384, Likes=7, Shares=1, Comments Count=0, Reach=592
+  Metrics: Brand Post - Every Episode - FB → Views=0, Likes=0, Shares=0, Comments Count=0, Reach=471
+  Metrics: 35 and Ticking Promo - FB → Views=1614, Likes=25, Shares=1, Comments Count=0, Reach=2395
+  Metrics: Miami Confidential Clip - IG → Views=87, Likes=0, Saves=0, Shares=0, Comments Count=0, Reach=82, Avg Watch Time (s)=4.9
+  Metrics: Karma in Heels Promo (Patricia Sandoval) - FB → Views=187, Likes=1, Shares=0, Comments Count=0, Reach=550
+  Metrics: Brand Post - Your Story - FB → Views=0, Likes=0, Shares=0, Comments Count=0, Reach=456
+  Metrics: Miami Kingpins Black Miami - FB → Views=100, Likes=0, Shares=0, Comments Count=0, Reach=367
+  Metrics: THIS IS VURT Announcement - IG → Views=3126, Likes=113, Saves=12, Shares=42, Comments Count=27, Reach=1941, Avg Watch Time (s)=17.0, Engagement=201
+  Metrics: My Brother's Wife Clip - FB → Views=465, Likes=3, Shares=0, Comments Count=1, Reach=914
+  Metrics: Karma in Heels Clip 2 - TikTok → Views=289, Likes=11, Comments Count=2, Shares=4, Saves=0
+  Metrics: Baby Mama Clip - IG → Views=1412, Likes=67, Saves=22, Shares=16, Comments Count=11, Reach=979, Avg Watch Time (s)=20.6, Engagement=123
+  Metrics: FB Post 2026-02-24 → Views=0, Likes=0, Shares=0, Comments Count=0, Reach=177
+  Metrics: Karma in Heels Clip 1 - YT Shorts → Views=1226, Likes=11, Comments Count=0
+  Metrics: March 15 Full Launch - FB → Views=0, Likes=0, Shares=0, Comments Count=0, Reach=221
+  Metrics: Brand Post - Strong Short - FB → Views=0, Likes=1, Shares=1, Comments Count=0, Reach=270
+  Metrics: Come Back Dad - IG → Views=231516, Likes=15261, Saves=2866, Shares=1570, Comments Count=335, Reach=183843, Avg Watch Time (s)=61.2, Engagement=20530
+  Metrics: SCHEMERS Announcement - FB → Views=236, Likes=1, Shares=0, Comments Count=0, Reach=605
+  Metrics: Miami Kingpins Black Miami - IG → Views=552, Likes=25, Saves=3, Shares=2, Comments Count=1, Reach=502, Avg Watch Time (s)=5.2, Engagement=34
+  Metrics: Brand Post - Your Story - IG → Views=799, Likes=13, Saves=2, Shares=2, Comments Count=1, Reach=499, Engagement=18
+  Metrics: Miami Confidential Clip - FB → Views=314, Likes=1, Shares=0, Comments Count=0, Reach=751
+  Metrics: Brand Post - Film Flattened - FB → Views=0, Likes=0, Shares=0, Comments Count=0, Reach=398
+  Metrics: Karma in Heels Promo (Patricia Sandoval) - IG → Views=1211, Likes=49, Saves=2, Shares=4, Comments Count=10, Reach=804, Avg Watch Time (s)=8.9, Engagement=71
+  Metrics: Karma in Heels Clip 3 - TikTok → Views=281, Likes=12, Comments Count=0, Shares=1, Saves=0
+  Metrics: 35 and Ticking Promo - IG → Views=1553, Likes=81, Saves=20, Shares=4, Comments Count=6, Reach=1216, Avg Watch Time (s)=24.0, Engagement=118
+  Metrics: Karma in Heels Clip 3 - YT Shorts → Views=1791, Likes=15, Comments Count=0
+  Metrics: VURT Launch Day - IG → Views=846, Likes=29, Saves=0, Shares=37, Comments Count=4, Reach=612, Avg Watch Time (s)=8.5, Engagement=74
+  Metrics: Miami Kingpins Liberty City - IG → Views=530, Likes=32, Saves=3, Shares=4, Comments Count=5, Reach=535, Avg Watch Time (s)=6.7, Engagement=46
+  Metrics: Industry Shifting Post - IG → Views=2858, Likes=64, Saves=11, Shares=27, Comments Count=21, Reach=1333, Engagement=128
+  Metrics: Karma in Heels Clip 3 - IG → Views=1158, Likes=18, Saves=1, Shares=2, Comments Count=2, Reach=950, Avg Watch Time (s)=7.7, Engagement=24
+  Metrics: Karma in Heels Clip 2 - YT Shorts → Views=1077, Likes=7, Comments Count=0
+  Metrics: Karma in Heels Clip 4 - IG → Views=16079, Likes=286, Saves=81, Shares=50, Comments Count=5, Reach=13513, Avg Watch Time (s)=13.8, Engagement=434
+  Metrics: Karma in Heels Clip 4 - TikTok → Views=958, Likes=20, Comments Count=0, Shares=1, Saves=0
+  Metrics: Karma in Heels Clip 4 - Facebook → Views=290, Likes=4, Shares=0, Comments Count=2, Reach=413
+  Metrics: Parking Lot Series Director Spotlight - IG → Views=1277, Likes=73, Saves=1, Shares=6, Comments Count=24, Reach=607, Engagement=109
+  Metrics: VURT Brand Post - Netflix TikTok VURT - FB → Views=95, Likes=0, Shares=0, Comments Count=0, Reach=237
+  Metrics: VURT Clip - FB → Views=0, Likes=0, Shares=0, Comments Count=0, Reach=124
+  Metrics: Parking Lot Series Clip - FB → Views=137, Likes=2, Shares=1, Comments Count=0, Reach=292
+  Metrics: Parking Lot Series Clip - YT Shorts → Views=678, Likes=22, Comments Count=0
+  Metrics: Parking Lot Series Clip - FB → Views=212, Likes=2, Shares=10, Comments Count=0, Reach=312
+  Metrics: Parking Lot Series Clip - FB → Views=437, Likes=3, Shares=0, Comments Count=0, Reach=1074
+  Metrics: Parking Lot Series Clip - IG → Views=1076, Likes=22, Saves=2, Shares=4, Comments Count=2, Reach=937, Avg Watch Time (s)=6.5, Engagement=30
+  Metrics: VURT Clip - YT Shorts → Views=827, Likes=40, Comments Count=0
+  Metrics: VURT Filmmaker Spotlight - FB → Views=0, Likes=1, Shares=0, Comments Count=0, Reach=104
+  Metrics: Parking Lot Series Clip - YT Shorts → Views=359, Likes=6, Comments Count=0
+  Metrics: Parking Lot Series Clip - YT Shorts → Views=755, Likes=19, Comments Count=0
+  Metrics: Parking Lot Series Filmmaker Spotlight - FB → Views=0, Likes=4, Shares=2, Comments Count=0, Reach=317
+  Metrics: Black History Month:Overtown Built Black Miami - YT Shorts → Views=1142, Likes=48, Comments Count=0
+  Metrics: Parking Lot Series Clip - FB → Views=0, Likes=1, Shares=0, Comments Count=0, Reach=292
+  Metrics: Parking Lot Series Director Drop - IG → Views=1327, Likes=83, Saves=0, Shares=11, Comments Count=22, Reach=917, Avg Watch Time (s)=7.4, Engagement=120
+  Metrics: The Parking Lot Series | A VURT Original - YT Shorts → Views=1175, Likes=19, Comments Count=0
+  Metrics: Parking Lot Series Clip - FB → Views=127, Likes=2, Shares=1, Comments Count=0, Reach=303
+  Metrics: Parking Lot Series Clip - FB → Views=211, Likes=4, Shares=0, Comments Count=0, Reach=347
+  Metrics: Karma in Heels | A VURT Original - YT Shorts → Views=921, Likes=13, Comments Count=0
+  Metrics: VURT Milestone Post - IG → Views=3973, Likes=221, Saves=12, Shares=44, Comments Count=44, Reach=2366, Engagement=334
+  Metrics: 99 Jamz x VURT BTS - YT Shorts → Views=1965, Likes=9, Comments Count=0
+  Metrics: 99 Jamz x VURT BTS - FB → Views=71, Likes=4, Shares=0, Comments Count=0, Reach=214
+  Metrics: The wait is over. VURT is live today - YT Shorts → Views=147, Likes=1, Comments Count=0
+  Metrics: Parking Lot Series Clip - IG → Views=1565, Likes=46, Saves=1, Shares=10, Comments Count=8, Reach=1141, Avg Watch Time (s)=7.1, Engagement=65
+  Metrics: Parking Lot Series Clip - IG → Views=1654, Likes=31, Saves=2, Shares=7, Comments Count=5, Reach=1410, Avg Watch Time (s)=5.3, Engagement=48
+  Metrics: Liberty City holds a history Miami does not get to skip - YT Shorts → Views=260, Likes=16, Comments Count=0
+  Metrics: Ted Lucas on VURT: "Netflix and TikTok had a baby" - YT Shorts → Views=263, Likes=5, Comments Count=0
+  Metrics: Parking Lot Series Clip - YT Shorts → Views=953, Likes=27, Comments Count=0
+  Metrics: Schemers Filmmaker Spotlight - FB → Views=0, Likes=0, Shares=0, Comments Count=0, Reach=47
+  Metrics: Schemers Clip - IG → Views=1250, Likes=37, Saves=5, Shares=15, Comments Count=12, Reach=1000, Avg Watch Time (s)=9.9, Engagement=74
+  Metrics: VURT Clip - YT Shorts → Views=235, Likes=8, Comments Count=0
+  Metrics: Parking Lot Series Clip - YT Shorts → Views=288, Likes=5, Comments Count=0
+  Metrics: 99 Jamz x VURT BTS - IG → Views=1048, Likes=77, Saves=0, Shares=6, Comments Count=30, Reach=757, Avg Watch Time (s)=8.8, Engagement=121
+  Metrics: Parking Lot Series Announcement - FB → Views=65, Likes=3, Shares=1, Comments Count=0, Reach=235
+  Metrics: Schemers Filmmaker Spotlight - IG → Views=1261, Likes=95, Saves=1, Shares=7, Comments Count=35, Reach=645, Engagement=143
+  Metrics: VURT Clip - YT Shorts → Views=30, Likes=3, Comments Count=0
+  Metrics: Parking Lot Series Clip - IG → Views=1349, Likes=28, Saves=3, Shares=3, Comments Count=6, Reach=1039, Avg Watch Time (s)=9.7, Engagement=43
+  Metrics: Schemers | A VURT Original - YT Shorts → Views=857, Likes=42, Comments Count=0
+  Metrics: VURT Brand Post - Netflix TikTok VURT - IG → Views=924, Likes=55, Saves=3, Shares=19, Comments Count=13, Reach=760, Avg Watch Time (s)=9.4, Engagement=99
+  Metrics: 35 and Ticking Announcement - FB → Views=1011, Likes=11, Shares=1, Comments Count=0, Reach=1815
+  Metrics: Parking Lot Series Clip - IG → Views=558, Likes=12, Saves=0, Shares=0, Comments Count=2, Reach=498, Avg Watch Time (s)=9.4, Engagement=15
+  Metrics: VURT Filmmaker Spotlight - IG → Views=1518, Likes=50, Saves=1, Shares=14, Comments Count=15, Reach=703, Engagement=83
+  Metrics: Schemers Clip - FB → Views=147, Likes=2, Shares=1, Comments Count=0, Reach=429
+  Metrics: Schemers Clip - IG → Views=10978, Likes=390, Saves=52, Shares=40, Comments Count=15, Reach=9591, Avg Watch Time (s)=25.7, Engagement=522
+  Metrics: Schemers Clip - FB → Views=186, Likes=0, Shares=0, Comments Count=0, Reach=275
+  Metrics: Schemers Clip - FB → Views=8, Likes=0, Shares=0, Comments Count=0, Reach=39
+  Metrics: Schemers Clip - IG → Views=663, Likes=32, Saves=2, Shares=4, Comments Count=10, Reach=486, Avg Watch Time (s)=9.6, Engagement=51
+  Metrics: Schemers | A VURT Original - YT Shorts → Views=493, Likes=10, Comments Count=0
+  Metrics: VURT Clip - YT Shorts → Views=1349, Likes=84, Comments Count=0
+  Metrics: Schemers | A VURT Original - YT Shorts → Views=8582, Likes=277, Comments Count=4
+  Metrics: Schemers Clip - FB → Views=176, Likes=2, Shares=0, Comments Count=0, Reach=317
+  Metrics: Schemers | A VURT Original - YT Shorts → Views=464, Likes=6, Comments Count=0
+  Metrics: Schemers Clip - FB → Views=11, Likes=2, Shares=1, Comments Count=0, Reach=42
+  Metrics: VURT Clip - FB → Views=706, Likes=7, Shares=0, Comments Count=0, Reach=1086
+  Metrics: Schemers Clip - IG → Views=611, Likes=28, Saves=0, Shares=4, Comments Count=3, Reach=466, Avg Watch Time (s)=5.6, Engagement=41
+  Metrics: VURT Clip - YT Shorts → Views=268, Likes=2, Comments Count=0
+  Metrics: VURT Filmmaker Spotlight - IG → Views=1310, Likes=93, Saves=6, Shares=21, Comments Count=29, Reach=867, Avg Watch Time (s)=11.8, Engagement=175
+  Metrics: VURT Clip - IG → Views=4204, Likes=189, Saves=30, Shares=26, Comments Count=7, Reach=3789, Avg Watch Time (s)=14.6, Engagement=260
+  Metrics: Schemers Clip - IG → Views=1691, Likes=43, Saves=3, Shares=4, Comments Count=4, Reach=1414, Avg Watch Time (s)=15.4, Engagement=57
+  Metrics: Schemers | A VURT Original - YT Shorts → Views=464, Likes=6, Comments Count=0
+  Metrics: Come Back Dad | A VURT Original - YT Shorts → Views=101629, Likes=4008, Comments Count=64
+  Metrics: Schemers | A VURT Original - YT Shorts → Views=765, Likes=46, Comments Count=0
+  Metrics: VURT Filmmaker Spotlight - FB → Views=0, Likes=1, Shares=11, Comments Count=0, Reach=301
+  Metrics: Schemers Clip - FB → Views=17, Likes=0, Shares=0, Comments Count=0, Reach=47
+  Metrics: Schemers   A VURT Original - YT Shorts → Views=1205, Likes=38, Comments Count=0
+  Metrics: VURT Filmmaker Spotlight - IG → Views=272, Likes=10, Saves=0, Shares=2, Comments Count=1, Reach=156, Engagement=17
+  Metrics: Schemers Clip - IG → Views=1593, Likes=87, Saves=1, Shares=8, Comments Count=13, Reach=1169, Avg Watch Time (s)=6.7, Engagement=114
+  Metrics: Schemers Clip - IG → Views=4055, Likes=137, Saves=17, Shares=60, Comments Count=9, Reach=3397, Avg Watch Time (s)=31.2, Engagement=230
+  Metrics: Schemers | A VURT Original - YT Shorts → Views=458, Likes=4, Comments Count=1
+  Metrics: 35 & Ticking | Watch on VURT - YT Shorts → Views=1047, Likes=98, Comments Count=0
+  Metrics: Schemers Clip - FB → Views=27, Likes=2, Shares=0, Comments Count=0, Reach=43
+  Metrics: VURT Filmmaker Spotlight - IG → Views=189, Likes=6, Saves=1, Shares=1, Comments Count=0, Reach=94, Engagement=8 ⏳
+  Metrics: Schemers Clip - IG → Views=4055, Likes=137, Saves=17, Shares=60, Comments Count=9, Reach=3397, Avg Watch Time (s)=31.2, Engagement=230
+  Metrics: Schemers Clip - FB → Views=165, Likes=1, Shares=0, Comments Count=0, Reach=456
+  Metrics: VURT Filmmaker Spotlight - FB → Views=0, Likes=1, Shares=0, Comments Count=0, Reach=17
+  Metrics: The World's First African Vertical Drama - YT Shorts → Views=110, Likes=2, Comments Count=0
+  Metrics: Schemers | A VURT Original - YT Shorts → Views=409, Likes=6, Comments Count=2
+  Metrics: Schemers Clip - IG → Views=1810, Likes=31, Saves=1, Shares=4, Comments Count=8, Reach=1622, Avg Watch Time (s)=8.0, Engagement=47 ⏳
+  Metrics: Schemers Clip - IG → Views=1209, Likes=13, Saves=0, Shares=0, Comments Count=0, Reach=1064, Avg Watch Time (s)=5.5, Engagement=13 ⏳
+  Metrics: VURT Clip - IG → Views=130, Likes=6, Saves=0, Shares=1, Comments Count=2, Reach=53, Engagement=10 ⏳
+  Metrics: Come Back Dad | A VURT Premiere - YT Shorts → Views=4891, Likes=529, Comments Count=12
+  Metrics: Schemers Clip - FB → Views=459, Likes=6, Shares=0, Comments Count=0, Reach=984
+  Metrics: Schemers | A VURT Original - YT Shorts → Views=910, Likes=9, Comments Count=0
+  Metrics: VURT Clip - FB → Views=0, Likes=0, Shares=0, Comments Count=0, Reach=13
+  140 entries updated with metrics
+
+Reconciling Content Calendar with Post Log...
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:723: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  today = datetime.utcnow().strftime("%Y-%m-%d")
+  0 updated, 0 created, 0 stale archived
+
+Enriching Content Calendar with IG post data...

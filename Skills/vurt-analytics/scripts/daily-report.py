@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""VURT Daily Analytics Report — generates a markdown report with WoW comparisons and insights."""
+"""VURT Daily Analytics Report v4 — generates a markdown report with WoW comparisons and insights."""
 
 import sys, os
 sys.path.insert(0, os.path.dirname(__file__))
@@ -169,12 +169,26 @@ def get_device_breakdown():
     return extract_rows(result)
 
 def get_landing_pages():
+    """Landing pages using landingPage (no query string) to avoid fbclid/utm fragmentation."""
     result = run_report(
         date_ranges=[{"startDate": "7daysAgo", "endDate": "yesterday"}],
         metrics=["sessions", "engagementRate", "averageSessionDuration", "activeUsers", "bounceRate"],
-        dimensions=["landingPagePlusQueryString"],
+        dimensions=["landingPage"],
         order_bys=[{"metric": {"metricName": "sessions"}, "desc": True}],
-        limit=10
+        limit=50
+    )
+    return extract_rows(result)
+
+
+def get_channel_x_landing():
+    """Channel x Landing Page crossover — uses landingPage (not landingPagePlusQueryString)
+    to avoid fbclid/utm fragmentation that causes GA4 to threshold/drop rows."""
+    result = run_report(
+        date_ranges=[{"startDate": "7daysAgo", "endDate": "yesterday"}],
+        metrics=["sessions", "bounceRate", "activeUsers", "engagementRate", "averageSessionDuration"],
+        dimensions=["sessionDefaultChannelGroup", "landingPage"],
+        order_bys=[{"metric": {"metricName": "sessions"}, "desc": True}],
+        limit=1000
     )
     return extract_rows(result)
 
@@ -303,6 +317,55 @@ def build_report():
     except Exception as e:
         lines.append(f"*Traffic sources unavailable: {e}*\n")
 
+    # --- Paid Ads Activity Flag (v4) ---
+    try:
+        if sources:
+            paid_social = next((s for s in sources if s.get("sessionDefaultChannelGroup") == "Paid Social"), None)
+            paid_sessions = int(paid_social.get("sessions", 0)) if paid_social else 0
+            if paid_sessions > 100:
+                paid_status = "ACTIVE"
+                paid_bounce = fmt_pct(paid_social.get("bounceRate", "0"))
+                lines.append(f"**Paid Social: {paid_status}** ({fmt_num(paid_sessions)} sessions this week, {paid_bounce} bounce)")
+            elif paid_sessions > 0:
+                lines.append(f"**Paid Social: LOW VOLUME** ({fmt_num(paid_sessions)} sessions this week)")
+            else:
+                lines.append("**Paid Social: PAUSED** (0 sessions this week)")
+            lines.append("")
+    except:
+        pass
+
+    # --- Channel x Landing Page Crossover (v4) ---
+    try:
+        channel_landing = get_channel_x_landing()
+        collected["channel_x_landing"] = channel_landing
+        if channel_landing:
+            # Group by channel, show top landing pages per channel
+            from collections import defaultdict
+            by_channel = defaultdict(list)
+            for row in channel_landing:
+                ch = row.get("sessionDefaultChannelGroup", "?")
+                by_channel[ch].append(row)
+
+            # Sort channels by total sessions
+            channel_totals = [(ch, sum(int(r.get("sessions", 0)) for r in rows)) for ch, rows in by_channel.items()]
+            channel_totals.sort(key=lambda x: x[1], reverse=True)
+
+            lines.append("## Where Each Channel Lands (7d)")
+            lines.append("")
+            lines.append("| Channel | Landing Page | Sessions | Bounce Rate | Avg Duration |")
+            lines.append("|---------|-------------|----------|-------------|--------------|")
+            for ch, total in channel_totals[:6]:
+                top_pages = sorted(by_channel[ch], key=lambda r: int(r.get("sessions", 0)), reverse=True)[:3]
+                for i, r in enumerate(top_pages):
+                    path = r.get("landingPage", "?")
+                    if len(path) > 45:
+                        path = path[:42] + "..."
+                    ch_label = f"**{ch}** ({fmt_num(total)})" if i == 0 else ""
+                    lines.append(f"| {ch_label} | {path} | {fmt_num(r.get('sessions','0'))} | {fmt_pct(r.get('bounceRate','0'))} | {fmt_duration(r.get('averageSessionDuration','0'))} |")
+            lines.append("")
+    except Exception as e:
+        lines.append(f"*Channel x Landing Page data unavailable: {e}*\n")
+
     # --- Retention ---
     try:
         retention = get_retention()
@@ -343,28 +406,58 @@ def build_report():
         if landing:
             lines.append("## Top Landing Pages (7d)")
             lines.append("")
-            lines.append("| Landing Page | Sessions | Avg Duration | Engagement Rate | Bounce Rate |")
-            lines.append("|-------------|----------|-------------|-----------------|-------------|")
-            for l in landing:
-                path = l.get("landingPagePlusQueryString", "?").replace('|', '/')
+            lines.append("| Landing Page | Sessions | Users | Avg Duration | Engagement Rate | Bounce Rate |")
+            lines.append("|-------------|----------|-------|-------------|-----------------|-------------|")
+            for l in landing[:15]:
+                path = l.get("landingPage", "?").replace('|', '/')
                 if len(path) > 60:
                     path = path[:57] + "..."
-                lines.append(f"| {path} | {fmt_num(l.get('sessions','0'))} | {fmt_duration(l.get('averageSessionDuration','0'))} | {fmt_pct(l.get('engagementRate','0'))} | {fmt_pct(l.get('bounceRate','0'))} |")
+                lines.append(f"| {path} | {fmt_num(l.get('sessions','0'))} | {fmt_num(l.get('activeUsers','0'))} | {fmt_duration(l.get('averageSessionDuration','0'))} | {fmt_pct(l.get('engagementRate','0'))} | {fmt_pct(l.get('bounceRate','0'))} |")
             lines.append("")
+
+            # --- Detail Page Bounce Summary (v4) ---
+            detail_pages = [r for r in landing if "/detail/" in r.get("landingPage", "")]
+            homepage = [r for r in landing if r.get("landingPage", "") == "/"]
+            if detail_pages:
+                total_detail_sessions = sum(int(r.get("sessions", 0)) for r in detail_pages)
+                total_detail_bounce_weighted = sum(float(r.get("bounceRate", 0)) * int(r.get("sessions", 0)) for r in detail_pages)
+                avg_detail_bounce = total_detail_bounce_weighted / total_detail_sessions if total_detail_sessions else 0
+                hp_sessions = int(homepage[0].get("sessions", 0)) if homepage else 0
+                hp_bounce = float(homepage[0].get("bounceRate", 0)) if homepage else 0
+                lines.append("### Landing Page Health: Homepage vs Show Pages")
+                lines.append("")
+                lines.append("| Destination | Sessions | Bounce Rate | Interpretation |")
+                lines.append("|-------------|----------|-------------|----------------|")
+                hp_interp = "Browse entry" if hp_bounce < 0.5 else "High bounce on homepage"
+                detail_interp = "Paid social landing" if avg_detail_bounce > 0.7 else "Healthy engagement"
+                lines.append(f"| Homepage (/) | {fmt_num(hp_sessions)} | {fmt_pct(hp_bounce)} | {hp_interp} |")
+                lines.append(f"| Show detail pages | {fmt_num(total_detail_sessions)} | {fmt_pct(avg_detail_bounce)} | {detail_interp} |")
+                lines.append("")
+                lines.append("*Show detail pages are the primary landing destination for paid social ads. High bounce here = users arriving from ads but not engaging past the age gate.*")
+                lines.append("")
     except Exception as e:
         lines.append(f"*Landing page data unavailable: {e}*\n")
 
-    # --- Geography ---
+    # --- Geography with Efficiency Score (v4) ---
     try:
         geo = get_geo()
         collected["geo"] = geo
         if geo:
             lines.append("## Top Countries (7d)")
+            lines.append("*Efficiency = engagement rate x sessions. High efficiency = valuable traffic. Low efficiency + high sessions = ad waste.*")
             lines.append("")
-            lines.append("| Country | Users | Sessions | Avg Duration | Engagement Rate |")
-            lines.append("|---------|-------|----------|-------------|-----------------|")
+            lines.append("| Country | Users | Sessions | Engagement Rate | Avg Duration | Efficiency | Flag |")
+            lines.append("|---------|-------|----------|-----------------|-------------|------------|------|")
             for g in geo:
-                lines.append(f"| {g.get('country','?')} | {fmt_num(g.get('activeUsers','0'))} | {fmt_num(g.get('sessions','0'))} | {fmt_duration(g.get('averageSessionDuration','0'))} | {fmt_pct(g.get('engagementRate','0'))} |")
+                sessions = int(g.get("sessions", 0))
+                eng_rate = float(g.get("engagementRate", 0))
+                efficiency = eng_rate * sessions
+                flag = ""
+                if sessions > 50 and eng_rate < 0.10:
+                    flag = "Waste"
+                elif sessions > 50 and eng_rate > 0.30:
+                    flag = "Strong"
+                lines.append(f"| {g.get('country','?')} | {fmt_num(g.get('activeUsers','0'))} | {fmt_num(sessions)} | {fmt_pct(eng_rate)} | {fmt_duration(g.get('averageSessionDuration','0'))} | {efficiency:.0f} | {flag} |")
             lines.append("")
     except Exception as e:
         lines.append(f"*Geo data unavailable: {e}*\n")
@@ -386,21 +479,30 @@ def build_report():
     except Exception as e:
         lines.append(f"*Trend data unavailable: {e}*\n")
 
-    # --- Peak Hours ---
+    # --- Peak Hours (v4: compressed to top 5 + quiet hours) ---
     try:
         hours = get_hour_of_day()
         collected["hours"] = hours
         if hours:
-            lines.append("## Hourly Activity (7d)")
+            sorted_hours = sorted(hours, key=lambda h: int(h.get("sessions", 0)), reverse=True)
+            peak_5 = sorted_hours[:5]
+            quiet_5 = sorted_hours[-3:]
+            lines.append("## Peak Hours (7d)")
             lines.append("")
-            lines.append("| Hour | Users | Sessions |")
-            lines.append("|------|-------|----------|")
-            for h in hours:
+            lines.append("| Hour | Users | Sessions | Note |")
+            lines.append("|------|-------|----------|------|")
+            for h in sorted(peak_5, key=lambda x: int(x.get("hour", 0))):
                 hr = int(h.get("hour", 0))
                 ampm = "AM" if hr < 12 else "PM"
                 hr12 = hr if hr <= 12 else hr - 12
                 if hr12 == 0: hr12 = 12
-                lines.append(f"| {hr12}{ampm} | {fmt_num(h.get('activeUsers','0'))} | {fmt_num(h.get('sessions','0'))} |")
+                lines.append(f"| {hr12}{ampm} | {fmt_num(h.get('activeUsers','0'))} | {fmt_num(h.get('sessions','0'))} | Peak |")
+            for h in sorted(quiet_5, key=lambda x: int(x.get("hour", 0))):
+                hr = int(h.get("hour", 0))
+                ampm = "AM" if hr < 12 else "PM"
+                hr12 = hr if hr <= 12 else hr - 12
+                if hr12 == 0: hr12 = 12
+                lines.append(f"| {hr12}{ampm} | {fmt_num(h.get('activeUsers','0'))} | {fmt_num(h.get('sessions','0'))} | Quiet |")
             lines.append("")
     except Exception as e:
         lines.append(f"*Hourly data unavailable: {e}*\n")
@@ -447,12 +549,72 @@ def build_report():
         npaw_md = format_npaw_report(npaw_top, npaw_daily, npaw_devices, npaw_cdn, npaw_country, npaw_isp, npaw_content_quality, npaw_buffer_trend)
         lines.extend(npaw_md.splitlines())
         lines.append("")
+        lines.append("*Note: NPAW buffer ratios may differ from Mux dashboard values. NPAW measures client-side buffering events; Mux measures server-side delivery. Both are directional. Cross-reference when investigating specific shows.*")
+        lines.append("")
+
+        # --- Video Play Funnel (v4) ---
+        try:
+            npaw_m = {}
+            block = npaw_daily.get("data", [{}])[0]
+            for metric in block.get("metrics", []):
+                code = metric.get("code", "")
+                try:
+                    val = metric["values"][0]["data"][0][1]
+                except (IndexError, KeyError, TypeError):
+                    val = None
+                npaw_m[code] = val
+
+            plays = npaw_m.get("plays")
+            views = npaw_m.get("views")
+            if plays is not None and views is not None:
+                plays_f = float(plays)
+                views_f = float(views)
+                # views = play events that loaded, plays = actual play starts
+                # Completion data is per-title, we can show aggregate from top content
+                top_rows = []
+                try:
+                    from npaw_client import _extract_grouped_metrics
+                    top_rows = _extract_grouped_metrics(npaw_top)
+                except:
+                    pass
+                total_views_top = sum(float(r.get("views", 0)) for r in top_rows)
+                weighted_completion = sum(float(r.get("completionRate", 0)) * float(r.get("views", 0)) for r in top_rows if r.get("completionRate") is not None)
+                avg_completion = weighted_completion / total_views_top if total_views_top > 0 else 0
+                estimated_completions = plays_f * (avg_completion / 100) if avg_completion > 0 else 0
+
+                lines.append("### Video Play Funnel (Yesterday)")
+                lines.append("")
+                lines.append("| Stage | Count | Drop-off |")
+                lines.append("|-------|-------|----------|")
+                lines.append(f"| Page views (GA4) | {fmt_num(collected.get('yesterday', {}).get('screenPageViews', '?'))} | - |")
+                lines.append(f"| Play starts | {fmt_num(plays)} | - |")
+                start_to_view = f"{views_f/plays_f*100:.0f}%" if plays_f > 0 else "-"
+                lines.append(f"| View events | {fmt_num(views)} | {start_to_view} retention |")
+                if avg_completion > 0:
+                    lines.append(f"| Est. completions | {fmt_num(estimated_completions)} | {avg_completion:.0f}% avg completion (7d) |")
+                lines.append("")
+        except:
+            pass
+
     except Exception as e:
         lines.append(f"*Video performance data unavailable: {e}*\n")
 
-    # --- App Store Ratings ---
+    # --- App Store Ratings (v4: now rendered) ---
     try:
-        collected["app_stores"] = get_app_store_data()
+        app_data = get_app_store_data()
+        collected["app_stores"] = app_data
+        if app_data:
+            lines.append("## App Store Ratings")
+            lines.append("")
+            lines.append("| Store | Rating | Reviews | Version |")
+            lines.append("|-------|--------|---------|---------|")
+            ios = app_data.get("ios", {})
+            android = app_data.get("android", {})
+            if ios:
+                lines.append(f"| iOS | {ios.get('rating', 'N/A')} | {ios.get('reviews', 'N/A')} | {ios.get('version', '?')} |")
+            if android:
+                lines.append(f"| Android | {android.get('rating', 'N/A')} | {android.get('reviews', 'N/A')} | {android.get('version', '?')} |")
+            lines.append("")
     except:
         pass
 
@@ -461,6 +623,44 @@ def build_report():
         collected["timezone"] = get_property_timezone()
     except:
         collected["timezone"] = "UTC"
+
+    # --- Content Velocity (v4) ---
+    try:
+        social = collected.get("social", {})
+        ig_posts = social.get("ig", {}).get("recent_posts", [])
+        fb_posts = social.get("fb", {}).get("recent_posts", [])
+        # Count posts in last 7 days
+        from datetime import timezone as tz
+        seven_days_ago = now - timedelta(days=7)
+        ig_this_week = 0
+        fb_this_week = 0
+        for p in ig_posts:
+            ts = p.get("timestamp", "")
+            if ts and ts[:10] >= seven_days_ago.strftime("%Y-%m-%d"):
+                ig_this_week += 1
+        for p in fb_posts:
+            ts = p.get("created_time", "")
+            if ts and ts[:10] >= seven_days_ago.strftime("%Y-%m-%d"):
+                fb_this_week += 1
+
+        total_social_posts = ig_this_week + fb_this_week
+        total_sessions = int(collected.get("this_week", {}).get("sessions", 0))
+
+        if total_social_posts > 0 or total_sessions > 0:
+            lines.append("## Content Velocity (7d)")
+            lines.append("")
+            lines.append("| Metric | Value |")
+            lines.append("|--------|-------|")
+            lines.append(f"| IG posts this week | {ig_this_week} |")
+            lines.append(f"| FB posts this week | {fb_this_week} |")
+            lines.append(f"| Total social posts | {total_social_posts} |")
+            lines.append(f"| GA4 sessions this week | {fmt_num(total_sessions)} |")
+            if total_social_posts > 0:
+                ratio = total_sessions / total_social_posts
+                lines.append(f"| Sessions per post | {ratio:.0f} |")
+            lines.append("")
+    except:
+        pass
 
     # --- INSIGHTS ---
     try:
@@ -477,22 +677,26 @@ def build_report():
     lines.append("---")
     lines.append("### Methodology")
     lines.append("- **Data source:** Google Analytics 4 (Property ID 518738893, myvurt.com)")
+    lines.append("- **Video data:** NPAW Youbora (client-side buffering/plays/completion). Note: NPAW and Mux may report different buffer rates — NPAW measures client-side events, Mux measures server-side delivery.")
+    lines.append("- **Landing page queries** use `landingPage` (path only, no query strings) to prevent fbclid/utm parameter fragmentation from causing GA4 to drop rows. Cross-dimension totals are verified against single-dimension totals.")
     lines.append("- **Engagement Rate:** % of sessions lasting >10s, with 2+ page views, or a key event (GA4 standard definition)")
-    lines.append("- **Bounce Rate:** % of sessions that were NOT engaged (inverse of engagement rate — session lasted <10s, had only 1 page view, and no key events)")
-    lines.append("- **Daily Snapshot freshness:** Automatically uses yesterday's data when GA4 processing is complete (engaged sessions >= 30% of 7-day avg). Falls back to 2-days-ago when data is still processing.")
+    lines.append("- **Bounce Rate:** % of sessions that were NOT engaged (inverse of engagement rate)")
+    lines.append("- **Geo Efficiency Score:** engagement rate x sessions. Surfaces high-volume/low-engagement geos (ad waste) vs high-quality traffic.")
+    lines.append("- **Daily Snapshot freshness:** Automatically uses yesterday's data when GA4 processing is complete (engaged sessions >= 10% of 7-day avg). Falls back to 2-days-ago when data is still processing.")
     lines.append("- **Social media data:** Instagram via Meta Graph API (IG Business Account 17841479978232203), YouTube/TikTok/X via public profile scraping")
-    lines.append("- **All numbers are pulled directly from GA4 APIs** — no manual adjustments or estimates except where explicitly labeled as projections")
-    lines.append("- **Ad revenue projections** use verified AVOD CPM benchmarks ($15-25, Adwave 2025) and are scaling models, not forecasts")
-    lines.append("- **Health Score** is a weighted composite: Growth (25), Engagement (25), Retention (25), Traffic Quality (25) — formulas shown inline")
+    lines.append("- **All numbers are pulled directly from APIs** — no manual adjustments or estimates except where explicitly labeled")
+    lines.append("- **Health Score** is a weighted composite: Growth (25), Engagement (25), Retention (25), Traffic Quality (25)")
     lines.append("- **'(not set)' entries** indicate GA4 tracking gaps where screen names aren't being passed in analytics events")
     lines.append("")
-    lines.append("*Generated by Zo · VURT Analytics Skill*")
+    lines.append("*Generated by Zo · VURT Analytics Skill v4*")
 
     return "\n".join(lines)
 
 if __name__ == "__main__":
+    import signal
+    signal.alarm(240)  # 4 min hard timeout to prevent infinite hangs
+
     report = build_report()
-    print(report)
 
     report_dir = "/home/workspace/Documents/analytics-reports"
     os.makedirs(report_dir, exist_ok=True)
@@ -500,11 +704,10 @@ if __name__ == "__main__":
     filepath = f"{report_dir}/vurt-daily-{date_str}.md"
     with open(filepath, "w") as f:
         f.write(report)
-    print(f"\nReport saved to: {filepath}")
+    print(f"Report saved to: {filepath}", flush=True)
 
-    # Generate HTML email version
     html = markdown_to_html(report)
     html_path = f"{report_dir}/vurt-daily-{date_str}.html"
     with open(html_path, "w") as f:
         f.write(html)
-    print(f"HTML email saved to: {html_path}")
+    print(f"HTML email saved to: {html_path} ({len(html)} bytes)", flush=True)

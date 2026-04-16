@@ -1,5 +1,5 @@
-# VURT Social Ops — Live State
-### Last Updated: 2026-03-28
+# VURT Social Ops -- Live State
+### Last Updated: 2026-04-16
 
 ---
 
@@ -7,75 +7,100 @@
 | Platform | Handle | Status |
 |----------|--------|--------|
 | Instagram | @myvurt | ACTIVE (primary) |
-| TikTok | @vurt_official | ACTIVE |
+| TikTok | @watchvurticals | ACTIVE (Business account, verified) |
 | Facebook | VURT page | ACTIVE |
 | YouTube Shorts | VURT channel | ACTIVE |
+| LinkedIn | VURT company page | ACTIVE (B2B, filmmaker spotlights) |
 | X | @myvurt | Not yet |
-| LinkedIn | Founders only | B2B only |
 
 ## CTA Direction
-All CTAs drive to **myvurt.com** (web). NOT app stores (they take large % fees).
+All CTAs drive to **myvurt.com** (web). NOT app stores.
 
 ## Content Priority Order
 1. VURT Originals (full machine treatment)
 2. Submissions
 3. Backlog (previously released on other platforms)
 
-## Posting Cadence Rules
-- **1-week sprint per title:** 1 clip per day, all platforms same day (no stagger)
-- Core arc (5 clips) finishes in 5 days. Remaining clips (6-10) = backfill between next title's drops.
-- 72-hour rule = EVALUATE in parallel, not a posting freeze
-- Director features coming weekly, so each title gets a 1-week window before the next one starts
-
 ---
 
 ## ACTIVE TITLES
 
-### Karma in Heels (Killer in Heels)
-- **Type:** Licensed (Swirl Films)
-- **Total clips:** 10
-- **Clip 1 (The Hook):** POSTED 2026-03-28 to IG, TikTok, FB, YT Shorts (all platforms same day)
-  - Content: Killer woman stabs someone during an intimate moment. Strongest hook.
-  - Collaborators invited: Kendra Rainey, Snoop Robinson, Diane August
-  - Tagged on media: people visually in clip only
-  - Caption @mentions: cast not in collab slots
-  - Missing: subtitles were not added before posting (noted for next time -- use CapCut)
-  - 72-hour assessment due: 2026-03-31 (Sunday night)
-- **Clip 2 (The Escalation):** READY, dropping 2026-03-29 (Sat) to all platforms
-  - Content: Two girls + one guy in a wide room, camera spins around them. "I want to play... especially with this motherfucker." Dark/menacing energy.
-  - **Captions (written 2026-03-28):**
-    - TikTok: `"I want to play… especially with this motherfucker." / She picked a side. Watch what happens next. / Karma in Heels. Streaming free on VURT. Link in bio. / #VURT #KarmaInHeels #MicroDrama #DramaTok #IndieFilm`
-    - IG Reel: `"I want to play… especially with this motherfucker." / Two girls. One guy. The camera spins and you already know somebody's losing tonight. / Karma in Heels — streaming free on VURT. Full series. Link in bio. / #VURT #KarmaInHeels #MicroDrama #DramaTok #IndieFilm #VerticalCinema #SwirlFilms #BuiltForTheCulture`
-    - YT Shorts title: `"Especially with this motherf***er." | Karma in Heels — VURT`
-    - YT Shorts desc: `Two girls. One guy. The room shifts fast. / Full series streaming free at myvurt.com`
-- **Clips 3-10:** All ready. Schedule:
-  - Clip 3: Sun 2026-03-30
-  - Clip 4: Mon 2026-03-31
-  - Clip 5: Tue 2026-04-01
-  - Clips 6-10: Backfill between next title's drops (starting ~Wed 2026-04-02)
-- **Next title starts:** ~week of 2026-04-02
-- **Trailer:** In Frame.io (Mark confirmed). Drop as separate piece during the sprint week.
-- **Cast/crew for tagging:** INCOMPLETE. Need full cast list from Dioni. Only confirmed: Kendra Rainey, Snoop Robinson, Diane August + one more lead actor (not named yet, not in Clip 1).
+### The Love Network Jam (CURRENT PUSH)
+- **Type:** Original
+- **Platforms:** Rolling out now
+- **Active dates:** Apr 14 - (ONGOING)
+- **Note:** Current primary title being pushed across platforms
 
-### Chief Keef / Glo Navy (Unscripted)
-- **Type:** Original (unscripted)
-- **Status:** In production, not yet in social pipeline
-- **Notes:** Active project, don't forget VURT does unscripted too
+### SCHEMERS (35 posts -- winding down)
+- **Type:** Original (UGC handoff received)
+- **Platforms:** IG (13), FB (12), YT Shorts (10)
+- **Active dates:** Mar 25 - Apr 14
+- **Top performer:** IG clips getting 1,600-4,400 views
+- **Note:** Last posts went up from UGC handoff, not the active push anymore
 
----
+### Come Back Dad (6 posts)
+- **Type:** Licensed
+- **Platforms:** IG (1), FB (2), YT Shorts (3)
+- **Active dates:** Mar 4 - Apr 14 (ONGOING)
+- **Note:** Had a viral moment (243K views on one IG post)
 
-## PENDING DECISIONS
-- Full cast list for Karma in Heels (who else to tag?)
-- Which title is next after Karma in Heels?
-- Mark mentioned: "the original of the week is a machine" — which title is this week's?
+### 99 Jamz x VURT (5 posts)
+- **Platforms:** IG (1), FB (2), YT Shorts (2)
+- **Active dates:** Apr 2 - Apr 14 (ONGOING)
 
-## RECENT CORRECTIONS
-- 2026-03-28: TikTok is ACTIVE (was incorrectly marked as "not yet")
-- 2026-03-28: "4 exports per clip" simplified — one clean vertical export works for all platforms, only extra is SRT for YouTube
-- 2026-03-28: 72-hour rule clarified as parallel evaluation, not a posting freeze
-- 2026-03-28: "Be thoughtful and disciplined" quote = Ted Lucas, not Mark
+### Director Spotlight series (8 posts)
+- **Type:** Filmmaker features
+- **Platforms:** IG (4), FB (3), LinkedIn (1)
+- **Active dates:** Mar 30 - Apr 11
+- **Cadence:** Weekly features
 
 ---
 
 ## ARCHIVE (Completed Title Cycles)
-(none yet)
+
+### Karma in Heels (18 posts -- COMPLETE)
+- **All platforms:** IG (5), FB (5), TikTok (4), YT Shorts (4)
+- **Dates:** Mar 26 - Mar 30
+- **Note:** First full title cycle
+
+### Parking Lot Series (23 posts -- COMPLETE)
+- **Platforms:** IG (8), FB (9), YT Shorts (6)
+- **Dates:** Mar 26 - Apr 6
+
+---
+
+## PIPELINE (Frame.io -- 153 social clips ready across 25 shows)
+Shows with social clips ready: Frenemies (10), The Love Network Jam (12), Something Like A Business (6), Soul Ties (6), She's Not Our Sister (7), Saving Grace (5), Saving Westbrook High (6), Through Thick and Thin (6), The Wrong Choice (6), and 15+ more.
+
+---
+
+## TIKTOK STATUS
+- **Business Center:** Verified, active (URL verification complete Apr 15)
+- **Ads Manager:** VURT_adv account approved, billing set up
+- **Team access:** Alex (Simple Social) + Mark invited as members
+- **Developer API:** App submitted for review Apr 16 (status: In Review on TikTok for Developers)
+- **TikTok Pixel (Web):** ID `D7GJKJBC77UBV63HQDUG` -- LIVE via GTM (GTM-MN8TR3CR), tag name `TT-D7GJKJBC77UBV63HQDUG-Web-Tag-Pixel_Setup`, trigger: All Pages. AAM enabled (all 5 data types). GTM Version 3 published Apr 16. All 6 setup steps complete. **VERIFIED FIRING 2026-04-16:** TikTok Events Manager shows "You're all set" with 21 total events received on the VURT Web Pixel dataset. Pixel is live and ingesting traffic.
+- **Posting:** No TikTok posts synced via API yet (manual only until dev app approved)
+
+---
+
+## WEB TRACKING STATE (myvurt.com)
+### GTM Container `GTM-MN8TR3CR` -- 2 tags live (Apr 16):
+1. `Meta Pixel - Base` (Custom HTML, installed ~Apr 1) -- All Pages trigger
+2. `TT-D7GJKJBC77UBV63HQDUG-Web-Tag-Pixel_Setup` (Custom HTML, Apr 16) -- All Pages trigger
+
+### NOT in GTM (needs investigation):
+- GA4 -- either hardcoded by Enveu or missing entirely
+- Firebase Analytics -- hardcoded in Angular (expected)
+- Custom events (signup, video_play, age_gate_passed) -- unknown location
+
+### Codebase migration prep
+Handoff doc in progress: `Documents/VURT-Tracking-Migration-Handoff.md`. Audit request to Enveu pending. Key unknowns: GA4 install method, Firebase project ownership, DNS/CloudFlare account ownership, custom event inventory.
+
+---
+
+## PENDING
+- TikTok API verification (dev team blocker)
+- YouTube Analytics deep metrics (needs Ari's OAuth from ari@thesourcegroups.com)
+- Full Frame.io <-> Calendar linking
+- Chief Keef / Glo Navy (unscripted) -- in production, not yet in social pipeline

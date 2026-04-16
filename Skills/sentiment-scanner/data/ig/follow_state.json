@@ -44,6 +44,21 @@
       "followed_at": "2026-04-09T00:19:23.684576+00:00",
       "source": "seed:datingwithgracie",
       "followed_back": false
+    },
+    "joshcapeder": {
+      "followed_at": "2026-04-10T18:19:50.765423+00:00",
+      "source": "seed:datingwithgracie",
+      "followed_back": false
+    },
+    "saracourtneywrites": {
+      "followed_at": "2026-04-11T14:14:32.218955+00:00",
+      "source": "seed:realevanmarckatz",
+      "followed_back": false
+    },
+    "unwantedlove96": {
+      "followed_at": "2026-04-11T18:16:51.684898+00:00",
+      "source": "seed:jamiedate",
+      "followed_back": false
     }
   },
   "unfollowed": {
@@ -52,6 +67,15 @@
     },
     "menonthemenu": {
       "unfollowed_at": "2026-04-07T14:22:17.926951+00:00"
+    },
+    "sambeliev": {
+      "unfollowed_at": "2026-04-12T14:21:19.720378+00:00"
+    },
+    "polishedprincesse": {
+      "unfollowed_at": "2026-04-12T14:21:19.721000+00:00"
+    },
+    "brenmarrick": {
+      "unfollowed_at": "2026-04-12T14:21:19.721110+00:00"
     }
   },
   "daily_counts": {
@@ -88,6 +112,21 @@
     "2026-04-09": {
       "follows": 1,
       "unfollows": 0,
+      "likes": 0
+    },
+    "2026-04-10": {
+      "follows": 1,
+      "unfollows": 0,
+      "likes": 0
+    },
+    "2026-04-11": {
+      "follows": 2,
+      "unfollows": 0,
+      "likes": 0
+    },
+    "2026-04-12": {
+      "follows": 0,
+      "unfollows": 3,
       "likes": 0
     }
   },

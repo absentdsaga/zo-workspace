@@ -139,6 +139,19 @@ def _is_social_folder(name):
     return any(kw in lower for kw in SOCIAL_FOLDER_KEYWORDS)
 
 
+def _extract_review_status(clip):
+    """Extract review status (Posted/Approved/Needs Review) from metadata."""
+    metadata = clip.get("metadata", [])
+    if not isinstance(metadata, list):
+        return ""
+    for field in metadata:
+        if field.get("field_definition_name") == "Status" and field.get("field_type") == "select":
+            values = field.get("value", [])
+            if isinstance(values, list) and values:
+                return values[0].get("display_name", "")
+    return ""
+
+
 def _parse_clip(clip):
     """Parse a clip/file/version_stack into a standard dict."""
     entry = {
@@ -148,6 +161,7 @@ def _parse_clip(clip):
         "view_url": clip.get("view_url", ""),
         "created_at": clip.get("created_at", ""),
         "updated_at": clip.get("updated_at", ""),
+        "review_status": _extract_review_status(clip),
     }
     if clip["type"] == "version_stack":
         head = clip.get("head_version", {})
@@ -165,40 +179,71 @@ def _parse_clip(clip):
     return entry
 
 
-def get_social_clips(show_folder_id):
-    """Find 'Social' subfolders and return all clips inside them.
+def _find_social_folders(folder_id, depth=0, max_depth=4):
+    """Recursively walk folders to find any with 'social' in the name.
 
-    Only matches folders with 'social' in the name (e.g. Social, Social Media Clips,
-    Social_Exports). Does NOT match Vertical Episodes/Videos folders, which contain
+    Stops descending into a branch once a Social folder is found at that level
+    (the social folder itself is collected; we don't go below it here).
+    """
+    if depth > max_depth:
+        return []
+    try:
+        children = api_get_paginated(f"/accounts/{ACCT_ID}/folders/{folder_id}/children")
+    except Exception:
+        return []
+    found = []
+    for c in children:
+        if c["type"] != "folder":
+            continue
+        if _is_social_folder(c["name"]):
+            found.append(c)
+        else:
+            found.extend(_find_social_folders(c["id"], depth + 1, max_depth))
+    return found
+
+
+def _collect_clips_recursive(folder_id, subfolder_label, depth=0, max_depth=3):
+    """Walk a Social folder recursively and collect all clips at any depth."""
+    if depth > max_depth:
+        return []
+    try:
+        children = api_get_paginated(
+            f"/accounts/{ACCT_ID}/folders/{folder_id}/children",
+            params={"include": "metadata"},
+        )
+    except Exception:
+        return []
+    result = []
+    for c in children:
+        if c["type"] in ("file", "version_stack"):
+            entry = _parse_clip(c)
+            entry["subfolder"] = subfolder_label
+            result.append(entry)
+        elif c["type"] == "folder":
+            result.extend(_collect_clips_recursive(
+                c["id"], f"{subfolder_label}/{c['name']}", depth + 1, max_depth,
+            ))
+    return result
+
+
+def get_social_clips(show_folder_id):
+    """Find any 'Social' subfolders (any depth) and return all clips inside them.
+
+    Recursively walks up to 4 levels deep looking for folders with 'social' in
+    the name (e.g. Social, Social Media Clips, Social_Exports). Once a Social
+    folder is found, its clips are collected recursively (3 more levels) so
+    nested per-episode or per-week subfolders are not missed.
+
+    Does NOT collect from Vertical Episodes/Videos folders, which contain
     chopped show episodes rather than social media clips.
     """
-    children = api_get_paginated(f"/accounts/{ACCT_ID}/folders/{show_folder_id}/children")
-
-    # Collect social clip folders at this level
-    social_folders = [c for c in children if c["type"] == "folder" and _is_social_folder(c["name"])]
-
-    # Also check one level deeper for season/subfolder structure
-    # (e.g. Show / Season 1 / Social Edits)
-    if not social_folders:
-        non_social_folders = [c for c in children if c["type"] == "folder" and not _is_social_folder(c["name"])]
-        for subfolder in non_social_folders:
-            sub_children = api_get_paginated(f"/accounts/{ACCT_ID}/folders/{subfolder['id']}/children")
-            for sc in sub_children:
-                if sc["type"] == "folder" and _is_social_folder(sc["name"]):
-                    social_folders.append(sc)
-
+    social_folders = _find_social_folders(show_folder_id)
     if not social_folders:
         return []
 
     result = []
     for sf in social_folders:
-        sf_children = api_get_paginated(f"/accounts/{ACCT_ID}/folders/{sf['id']}/children")
-        for clip in sf_children:
-            if clip["type"] in ("file", "version_stack"):
-                clip_entry = _parse_clip(clip)
-                clip_entry["subfolder"] = sf["name"]
-                result.append(clip_entry)
-
+        result.extend(_collect_clips_recursive(sf["id"], sf["name"]))
     return result
 
 
@@ -229,13 +274,49 @@ def get_all_social_assets():
 def match_clip_to_title(clip_name, show_name):
     """Extract clip number from filename like KARMA_IN_HEELS_SocialEdit_003-v3.mp4"""
     import re
-    m = re.search(r'(?:social\s*edit|clip|ep)[\s_]*(\d+)', clip_name, re.IGNORECASE)
+    # Priority 1: Social Edit number (most reliable for calendar clip #)
+    m = re.search(r'(?:social\s*edit|social\s*media|social)[\s_-]*(\d+)', clip_name, re.IGNORECASE)
     if m:
         return int(m.group(1))
+    # Priority 2: Clip number
+    m = re.search(r'clip[\s_-]*(\d+)', clip_name, re.IGNORECASE)
+    if m:
+        return int(m.group(1))
+    # Priority 3: SM number (e.g. SM1, SM2)
+    m = re.search(r'SM[\s_-]*(\d+)', clip_name)
+    if m:
+        return int(m.group(1))
+    # Priority 4: Episode number (fallback)
+    m = re.search(r'[Ee]p[\s_-]*(\d+)', clip_name)
+    if m:
+        return int(m.group(1))
+    # Priority 5: 3-digit number in filename
     m = re.search(r'_(\d{3})', clip_name)
     if m:
         return int(m.group(1))
     return None
+
+
+READY_STATUSES = {"approved", "scheduled to post"}
+
+
+def get_approved_clips(show_name=None):
+    """Get clips ready for posting (Approved or Scheduled to Post)."""
+    assets = get_all_social_assets()
+    ready = [a for a in assets if a.get("review_status", "").lower() in READY_STATUSES]
+    if show_name:
+        ready = [a for a in ready if show_name.lower() in a["show_name"].lower()]
+    return ready
+
+
+def get_clips_by_status(status_filter=None, show_name=None):
+    """Get clips filtered by review status. None = all clips."""
+    assets = get_all_social_assets()
+    if status_filter:
+        assets = [a for a in assets if a.get("review_status", "").lower() == status_filter.lower()]
+    if show_name:
+        assets = [a for a in assets if show_name.lower() in a["show_name"].lower()]
+    return assets
 
 
 if __name__ == "__main__":
@@ -245,6 +326,9 @@ if __name__ == "__main__":
     parser.add_argument("--list-shows", action="store_true", help="List all shows")
     parser.add_argument("--list-clips", type=str, help="List social clips for a show folder ID")
     parser.add_argument("--all-assets", action="store_true", help="Crawl all social assets")
+    parser.add_argument("--approved", action="store_true", help="Show only Approved clips (ready to post)")
+    parser.add_argument("--status", type=str, help="Filter by review status (Approved/Posted/Needs Review)")
+    parser.add_argument("--show", type=str, help="Filter by show name")
     args = parser.parse_args()
 
     if args.test:
@@ -264,11 +348,36 @@ if __name__ == "__main__":
         clips = get_social_clips(args.list_clips)
         for c in clips:
             num = match_clip_to_title(c["name"], "")
-            print(f"  Clip {num or '?'}: {c['name']} | {c['view_url']}")
+            tag = f" [{c['review_status']}]" if c.get("review_status") else ""
+            print(f"  Clip {num or '?'}: {c['name']}{tag} | {c['view_url']}")
+
+    elif args.approved:
+        clips = get_approved_clips(args.show)
+        if not clips:
+            print("  No clips with 'Approved' status found.")
+        for a in clips:
+            num = match_clip_to_title(a["name"], a["show_name"])
+            print(f"  [{a['show_name']}] Clip {num or '?'}: {a['name']}")
+            print(f"    URL: {a['view_url']}")
+
+    elif args.status:
+        clips = get_clips_by_status(args.status, args.show)
+        print(f"  {len(clips)} clips with status '{args.status}':")
+        for a in clips:
+            num = match_clip_to_title(a["name"], a["show_name"])
+            print(f"  [{a['show_name']}] Clip {num or '?'}: {a['name']}")
+            print(f"    URL: {a['view_url']}")
 
     elif args.all_assets:
         assets = get_all_social_assets()
+        from collections import Counter
+        status_counts = Counter(a.get("review_status", "") or "No Status" for a in assets)
+        print(f"\n  Status breakdown:")
+        for s, c in status_counts.most_common():
+            print(f"    {s}: {c}")
+        print()
         for a in assets:
             num = match_clip_to_title(a["name"], a["show_name"])
-            print(f"  [{a['show_name']}] Clip {num or '?'}: {a['name']}")
+            tag = f" [{a['review_status']}]" if a.get("review_status") else ""
+            print(f"  [{a['show_name']}] Clip {num or '?'}: {a['name']}{tag}")
             print(f"    URL: {a['view_url']}")

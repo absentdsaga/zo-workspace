@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-04-15",
+  "tasks": [
+    {
+      "name": "Sort This Week by due date",
+      "actions": [
+        "Found This Week list: 69c06762ac8ecd537850ba8e",
+        "Found 14 cards",
+        "Sorted order: ['Weekly Triage: Review Inbox, p', 'Wednesday deep dive with Tarik', '[DEV] Request Enveu: Add Meta ', 'Add Apple Smart App Banner to ', 'Fix mobile footer -- social li', 'Fix share links routing to vur', 'Deploy foundation pixels via G', 'Move download app button to to', 'Add age prompt after clicking ', 'Weekly Triage: Review Inbox, p', 'Weekly Triage: Review Inbox, p', 'Weekly Triage: Review Inbox, p', 'Filmmaker spotlight post and p', 'Send editable (word version) o']",
+        "Set pos=1024 for Weekly Triage: Review Inbox, prioritize ",
+        "Set pos=2048 for Wednesday deep dive with Tarik -- blitz ",
+        "Set pos=3072 for [DEV] Request Enveu: Add Meta SDK to VUR",
+        "Set pos=4096 for Add Apple Smart App Banner to myvurt.com",
+        "Set pos=5120 for Fix mobile footer -- social links invisi",
+        "Set pos=6144 for Fix share links routing to vurt.enveu.li",
+        "Set pos=7168 for Deploy foundation pixels via GTM",
+        "Set pos=8192 for Move download app button to top of websi",
+        "Set pos=9216 for Add age prompt after clicking on a title",
+        "Set pos=10240 for Weekly Triage: Review Inbox, prioritize ",
+        "Set pos=11264 for Weekly Triage: Review Inbox, prioritize ",
+        "Set pos=12288 for Weekly Triage: Review Inbox, prioritize ",
+        "Set pos=13312 for Filmmaker spotlight post and promo for N",
+        "Set pos=14336 for Send editable (word version) of VURT Tar"
+      ],
+      "result": "Sorted 14 cards"
+    },
+    {
+      "name": "Flag stale cards in In Progress",
+      "actions": [
+        "Found In Progress list: 69c0676135c8a806ea58e2a5",
+        "Found 6 cards",
+        "Found existing Stale label: 69c06d926bbfae785580fb39",
+        "Found 6 stale cards (inactive > 5 days)",
+        "Already has Stale: Get subtitles vendor -- evaluate Rev.com",
+        "Already has Stale: Get SEO update timeline from Enveu for T",
+        "Already has Stale: Set up Week 1 content calendar (Mar 24-3",
+        "Already has Stale: Need VURT drops from Karma In Hills dire",
+        "Already has Stale: Create a \"CREATOR SPOTLIGHT\" schedule",
+        "Already has Stale: Bus Ad \u2014 Static Design (Stars + Titles +"
+      ],
+      "result": "Flagged 6 stale cards"
+    }
+  ]
+}

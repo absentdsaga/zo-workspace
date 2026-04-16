@@ -1,0 +1,46 @@
+{"ts": "2026-04-13T12:07:59.328640+00:00", "level": "info", "msg": "=== VURT Trello Daily Maintenance Started ==="}
+{"ts": "2026-04-13T12:07:59.329073+00:00", "level": "info", "msg": "TASK 1: Fetching board lists to locate 'This Week'"}
+{"ts": "2026-04-13T12:07:59.534728+00:00", "level": "debug", "msg": "GET /boards/PVtV7XaC/lists -> 200"}
+{"ts": "2026-04-13T12:07:59.535585+00:00", "level": "info", "msg": "'This Week' list ID: 69c06762ac8ecd537850ba8e"}
+{"ts": "2026-04-13T12:07:59.762145+00:00", "level": "debug", "msg": "GET /lists/69c06762ac8ecd537850ba8e/cards -> 200"}
+{"ts": "2026-04-13T12:07:59.763343+00:00", "level": "info", "msg": "Found 13 cards in 'This Week'"}
+{"ts": "2026-04-13T12:08:00.044260+00:00", "level": "debug", "msg": "PUT /cards/69c13e5a3dbe8f1f5c6769a4 -> 200"}
+{"ts": "2026-04-13T12:08:00.045176+00:00", "level": "info", "msg": "  [1] Weekly Triage: Review Inbox, prioritize This Week | due=2026-03-23T23:59:00.000Z | pos=1024"}
+{"ts": "2026-04-13T12:08:00.337795+00:00", "level": "debug", "msg": "PUT /cards/69c07be95174398ac2f62f5e -> 200"}
+{"ts": "2026-04-13T12:08:00.338699+00:00", "level": "info", "msg": "  [2] Wednesday deep dive with Tarik -- blitz sync + SEO | due=2026-03-25T17:00:00.000Z | pos=2048"}
+{"ts": "2026-04-13T12:08:00.575383+00:00", "level": "debug", "msg": "PUT /cards/69c1c3298cb6cc5194236ea4 -> 200"}
+{"ts": "2026-04-13T12:08:00.576319+00:00", "level": "info", "msg": "  [3] [DEV] Request Enveu: Add Meta SDK to VURT App | due=2026-03-26T17:00:00.000Z | pos=3072"}
+{"ts": "2026-04-13T12:08:00.811840+00:00", "level": "debug", "msg": "PUT /cards/69c07010e2c5d0b192954140 -> 200"}
+{"ts": "2026-04-13T12:08:00.814851+00:00", "level": "info", "msg": "  [4] Add Apple Smart App Banner to myvurt.com | due=2026-03-26T17:00:00.000Z | pos=4096"}
+{"ts": "2026-04-13T12:08:01.042915+00:00", "level": "debug", "msg": "PUT /cards/69c0700d7eaf95089948f202 -> 200"}
+{"ts": "2026-04-13T12:08:01.044380+00:00", "level": "info", "msg": "  [5] Fix mobile footer -- social links invisible on mob | due=2026-03-28T17:00:00.000Z | pos=5120"}
+{"ts": "2026-04-13T12:08:01.319442+00:00", "level": "debug", "msg": "PUT /cards/69c0700f41676b2729ca4f83 -> 200"}
+{"ts": "2026-04-13T12:08:01.323364+00:00", "level": "info", "msg": "  [6] Fix share links routing to vurt.enveu.link | due=2026-03-28T17:00:00.000Z | pos=6144"}
+{"ts": "2026-04-13T12:08:01.565192+00:00", "level": "debug", "msg": "PUT /cards/69c070119d577cef12b96481 -> 200"}
+{"ts": "2026-04-13T12:08:01.566326+00:00", "level": "info", "msg": "  [7] Deploy foundation pixels via GTM | due=2026-03-28T17:00:00.000Z | pos=7168"}
+{"ts": "2026-04-13T12:08:01.800059+00:00", "level": "debug", "msg": "PUT /cards/69c0735f9a9c5c9a5cd20c78 -> 200"}
+{"ts": "2026-04-13T12:08:01.801197+00:00", "level": "info", "msg": "  [8] Move download app button to top of website | due=2026-03-28T17:00:00.000Z | pos=8192"}
+{"ts": "2026-04-13T12:08:02.025086+00:00", "level": "debug", "msg": "PUT /cards/69c07360d2c4ee1b9163e163 -> 200"}
+{"ts": "2026-04-13T12:08:02.027923+00:00", "level": "info", "msg": "  [9] Add age prompt after clicking on a title | due=2026-03-28T17:00:00.000Z | pos=9216"}
+{"ts": "2026-04-13T12:08:02.255171+00:00", "level": "debug", "msg": "PUT /cards/69ca74be0b6472576d867e13 -> 200"}
+{"ts": "2026-04-13T12:08:02.258280+00:00", "level": "info", "msg": "  [10] Weekly Triage: Review Inbox, prioritize This Week | due=2026-03-30T23:59:00.000Z | pos=10240"}
+{"ts": "2026-04-13T12:08:02.601337+00:00", "level": "debug", "msg": "PUT /cards/69d3af508e89b6abeff8c400 -> 200"}
+{"ts": "2026-04-13T12:08:02.604235+00:00", "level": "info", "msg": "  [11] Weekly Triage: Review Inbox, prioritize This Week | due=2026-04-06T23:59:00.000Z | pos=11264"}
+{"ts": "2026-04-13T12:08:02.848009+00:00", "level": "debug", "msg": "PUT /cards/69c1a6b3809d6602e7977279 -> 200"}
+{"ts": "2026-04-13T12:08:02.849420+00:00", "level": "info", "msg": "  [12] Send editable (word version) of VURT Target demogr | due=None | pos=12288"}
+{"ts": "2026-04-13T12:08:03.112949+00:00", "level": "debug", "msg": "PUT /cards/69c2f7d6a5ac90a63a76edfd -> 200"}
+{"ts": "2026-04-13T12:08:03.114410+00:00", "level": "info", "msg": "  [13] Filmmaker spotlight post and promo for Nita K \\ Ch | due=None | pos=13312"}
+{"ts": "2026-04-13T12:08:03.114859+00:00", "level": "info", "msg": "TASK 1 complete: sorted 13 cards"}
+{"ts": "2026-04-13T12:08:03.114948+00:00", "level": "info", "msg": "'In Progress' list ID: 69c0676135c8a806ea58e2a5"}
+{"ts": "2026-04-13T12:08:03.327981+00:00", "level": "debug", "msg": "GET /lists/69c0676135c8a806ea58e2a5/cards -> 200"}
+{"ts": "2026-04-13T12:08:03.329072+00:00", "level": "info", "msg": "Found 6 cards in 'In Progress'"}
+{"ts": "2026-04-13T12:08:03.544542+00:00", "level": "debug", "msg": "GET /boards/PVtV7XaC/labels -> 200"}
+{"ts": "2026-04-13T12:08:03.545677+00:00", "level": "info", "msg": "Stale label already exists: 69c06d926bbfae785580fb39"}
+{"ts": "2026-04-13T12:08:03.546033+00:00", "level": "info", "msg": "  Already stale: Get subtitles vendor -- evaluate Rev.com vs Assemb"}
+{"ts": "2026-04-13T12:08:03.546150+00:00", "level": "info", "msg": "  Already stale: Get SEO update timeline from Enveu for Tarik"}
+{"ts": "2026-04-13T12:08:03.546203+00:00", "level": "info", "msg": "  Already stale: Set up Week 1 content calendar (Mar 24-30)"}
+{"ts": "2026-04-13T12:08:03.546267+00:00", "level": "info", "msg": "  Already stale: Need VURT drops from Karma In Hills director and a"}
+{"ts": "2026-04-13T12:08:03.546364+00:00", "level": "info", "msg": "  Already stale: Create a \"CREATOR SPOTLIGHT\" schedule"}
+{"ts": "2026-04-13T12:08:03.546407+00:00", "level": "info", "msg": "  Already stale: Bus Ad \u2014 Static Design (Stars + Titles + App GFX)"}
+{"ts": "2026-04-13T12:08:03.546471+00:00", "level": "info", "msg": "TASK 2 complete: flagged 0 stale cards"}
+{"ts": "2026-04-13T12:08:03.546503+00:00", "level": "info", "msg": "=== VURT Trello Daily Maintenance Complete ==="}

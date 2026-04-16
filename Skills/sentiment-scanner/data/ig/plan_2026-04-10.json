@@ -13,9 +13,9 @@
     },
     {
       "type": "follow_from_seed",
-      "seed_account": "apollonia_ponti",
+      "seed_account": "damonahoffman",
       "count": 3,
-      "instruction": "Go to https://www.instagram.com/apollonia_ponti/followers/. Scroll the followers dialog to load more. For each user shown that has a 'Follow' button (not 'Following'), like 1-2 of their recent posts, then follow them. Do 3 follows, waiting 2-4 minutes between each. Skip accounts with 10K+ followers or no posts."
+      "instruction": "Go to https://www.instagram.com/damonahoffman/followers/. Scroll the followers dialog to load more. For each user shown that has a 'Follow' button (not 'Following'), like 1-2 of their recent posts, then follow them. Do 3 follows, waiting 2-4 minutes between each. Skip accounts with 10K+ followers or no posts."
     },
     {
       "type": "follow_from_seed",
@@ -31,15 +31,16 @@
     },
     {
       "type": "follow_from_hashtag",
-      "hashtag": "datingcoach",
+      "hashtag": "datingadvice",
       "count": 5,
-      "instruction": "Go to https://www.instagram.com/explore/tags/datingcoach/. Click on recent posts. For each post, like it, then visit the creator's profile. If they have under 10K followers and posted in the last 7 days, follow them. Do 5 follows, waiting 2-4 minutes between each."
+      "instruction": "Go to https://www.instagram.com/explore/tags/datingadvice/. Click on recent posts. For each post, like it, then visit the creator's profile. If they have under 10K followers and posted in the last 7 days, follow them. Do 5 follows, waiting 2-4 minutes between each."
     }
   ],
   "unfollow_targets": [
     "life_with_emmariley",
     "piper__dailyy",
-    "sambeliev"
+    "sambeliev",
+    "polishedprincesse"
   ],
   "already_followed": [
     "carlaminoauthor",
@@ -52,5 +53,5 @@
     "thelauragrubb",
     "ellerodriguez__"
   ],
-  "unfollow_instruction": "For each username in the unfollow list, go to their profile, click 'Following', then click 'Unfollow'. Wait 60-120 seconds between each. Unfollow these 3 accounts: life_with_emmariley, piper__dailyy, sambeliev"
+  "unfollow_instruction": "For each username in the unfollow list, go to their profile, click 'Following', then click 'Unfollow'. Wait 60-120 seconds between each. Unfollow these 4 accounts: life_with_emmariley, piper__dailyy, sambeliev, polishedprincesse"
 }

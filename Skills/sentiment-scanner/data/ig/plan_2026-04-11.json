@@ -1,0 +1,60 @@
+{
+  "date": "2026-04-11",
+  "warm_up_day": 10,
+  "follow_limit": 20,
+  "follows_remaining": 19,
+  "unfollows_remaining": 35,
+  "follow_actions": [
+    {
+      "type": "follow_from_seed",
+      "seed_account": "jamiedate",
+      "count": 3,
+      "instruction": "Go to https://www.instagram.com/jamiedate/followers/. Scroll the followers dialog to load more. For each user shown that has a 'Follow' button (not 'Following'), like 1-2 of their recent posts, then follow them. Do 3 follows, waiting 2-4 minutes between each. Skip accounts with 10K+ followers or no posts."
+    },
+    {
+      "type": "follow_from_seed",
+      "seed_account": "apollonia_ponti",
+      "count": 3,
+      "instruction": "Go to https://www.instagram.com/apollonia_ponti/followers/. Scroll the followers dialog to load more. For each user shown that has a 'Follow' button (not 'Following'), like 1-2 of their recent posts, then follow them. Do 3 follows, waiting 2-4 minutes between each. Skip accounts with 10K+ followers or no posts."
+    },
+    {
+      "type": "follow_from_seed",
+      "seed_account": "damonahoffman",
+      "count": 3,
+      "instruction": "Go to https://www.instagram.com/damonahoffman/followers/. Scroll the followers dialog to load more. For each user shown that has a 'Follow' button (not 'Following'), like 1-2 of their recent posts, then follow them. Do 3 follows, waiting 2-4 minutes between each. Skip accounts with 10K+ followers or no posts."
+    },
+    {
+      "type": "follow_from_hashtag",
+      "hashtag": "datingoffline",
+      "count": 5,
+      "instruction": "Go to https://www.instagram.com/explore/tags/datingoffline/. Click on recent posts. For each post, like it, then visit the creator's profile. If they have under 10K followers and posted in the last 7 days, follow them. Do 5 follows, waiting 2-4 minutes between each."
+    },
+    {
+      "type": "follow_from_hashtag",
+      "hashtag": "relationshipadvice",
+      "count": 5,
+      "instruction": "Go to https://www.instagram.com/explore/tags/relationshipadvice/. Click on recent posts. For each post, like it, then visit the creator's profile. If they have under 10K followers and posted in the last 7 days, follow them. Do 5 follows, waiting 2-4 minutes between each."
+    }
+  ],
+  "unfollow_targets": [
+    "life_with_emmariley",
+    "piper__dailyy",
+    "sambeliev",
+    "polishedprincesse",
+    "brenmarrick"
+  ],
+  "already_followed": [
+    "carlaminoauthor",
+    "menonthemenu",
+    "life_with_emmariley",
+    "piper__dailyy",
+    "sambeliev",
+    "polishedprincesse",
+    "brenmarrick",
+    "thelauragrubb",
+    "ellerodriguez__",
+    "joshcapeder",
+    "saracourtneywrites"
+  ],
+  "unfollow_instruction": "For each username in the unfollow list, go to their profile, click 'Following', then click 'Unfollow'. Wait 60-120 seconds between each. Unfollow these 5 accounts: life_with_emmariley, piper__dailyy, sambeliev, polishedprincesse, brenmarrick"
+}

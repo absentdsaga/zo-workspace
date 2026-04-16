@@ -1,0 +1,1 @@
+{"timestamp": "2026-04-14T03:50:00Z", "type": "error", "task": "vurt-post-log-sync", "error": "Missing environment variables: VURT_NOTION_API_KEY, VURT_META_ACCESS_TOKEN, VURT_YOUTUBE_API_KEY. These need to be configured in Zo Settings > Advanced as secrets.", "command": "python3 Skills/vurt-post-log/scripts/sync.py --all"}

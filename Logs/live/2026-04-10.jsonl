@@ -1,0 +1,31 @@
+{"timestamp": "2026-04-10T12:06:14.439750", "action": "task_start", "data": {"task": "sort_this_week_by_due_date"}}
+{"timestamp": "2026-04-10T12:06:14.656126", "action": "lists_retrieved", "data": {"count": 5, "list_names": ["Inbox", "This Week", "In Progress", "Review / Blocked", "Done"]}}
+{"timestamp": "2026-04-10T12:06:14.656526", "action": "found_list", "data": {"name": "This Week", "id": "69c06762ac8ecd537850ba8e"}}
+{"timestamp": "2026-04-10T12:06:14.999169", "action": "cards_retrieved", "data": {"list": "This Week", "count": 13}}
+{"timestamp": "2026-04-10T12:06:14.999576", "action": "cards_sorted", "data": {"count": 13}}
+{"timestamp": "2026-04-10T12:06:15.281846", "action": "card_position_updated", "data": {"card": "Weekly Triage: Review Inbox, prioritize This Week", "new_pos": 1024}}
+{"timestamp": "2026-04-10T12:06:15.522646", "action": "card_position_updated", "data": {"card": "Wednesday deep dive with Tarik -- blitz sync + SEO timeline", "new_pos": 2048}}
+{"timestamp": "2026-04-10T12:06:15.743009", "action": "card_position_updated", "data": {"card": "[DEV] Request Enveu: Add Meta SDK to VURT App", "new_pos": 3072}}
+{"timestamp": "2026-04-10T12:06:15.993036", "action": "card_position_updated", "data": {"card": "Add Apple Smart App Banner to myvurt.com", "new_pos": 4096}}
+{"timestamp": "2026-04-10T12:06:16.304397", "action": "card_position_updated", "data": {"card": "Fix mobile footer -- social links invisible on mobile", "new_pos": 5120}}
+{"timestamp": "2026-04-10T12:06:16.711490", "action": "card_position_updated", "data": {"card": "Fix share links routing to vurt.enveu.link", "new_pos": 6144}}
+{"timestamp": "2026-04-10T12:06:16.931337", "action": "card_position_updated", "data": {"card": "Deploy foundation pixels via GTM", "new_pos": 7168}}
+{"timestamp": "2026-04-10T12:06:17.145647", "action": "card_position_updated", "data": {"card": "Move download app button to top of website", "new_pos": 8192}}
+{"timestamp": "2026-04-10T12:06:17.431592", "action": "card_position_updated", "data": {"card": "Add age prompt after clicking on a title", "new_pos": 9216}}
+{"timestamp": "2026-04-10T12:06:17.660549", "action": "card_position_updated", "data": {"card": "Weekly Triage: Review Inbox, prioritize This Week", "new_pos": 10240}}
+{"timestamp": "2026-04-10T12:06:17.971630", "action": "card_position_updated", "data": {"card": "Weekly Triage: Review Inbox, prioritize This Week", "new_pos": 11264}}
+{"timestamp": "2026-04-10T12:06:18.208920", "action": "card_position_updated", "data": {"card": "Send editable (word version) of VURT Target demographic research doc", "new_pos": 12288}}
+{"timestamp": "2026-04-10T12:06:18.470014", "action": "card_position_updated", "data": {"card": "Filmmaker spotlight post and promo for Nita K \\ Chicago Boogie", "new_pos": 13312}}
+{"timestamp": "2026-04-10T12:06:18.470407", "action": "task_complete", "data": {"task": "sort_this_week", "cards_sorted": 13}}
+{"timestamp": "2026-04-10T12:06:18.470479", "action": "task_start", "data": {"task": "flag_stale_cards_in_progress"}}
+{"timestamp": "2026-04-10T12:06:18.470522", "action": "found_list", "data": {"name": "In Progress", "id": "69c0676135c8a806ea58e2a5"}}
+{"timestamp": "2026-04-10T12:06:18.660446", "action": "cards_retrieved", "data": {"list": "In Progress", "count": 6}}
+{"timestamp": "2026-04-10T12:06:18.859555", "action": "board_labels_retrieved", "data": {"count": 9}}
+{"timestamp": "2026-04-10T12:06:18.859939", "action": "label_exists", "data": {"id": "69c06d926bbfae785580fb39", "name": "Stale"}}
+{"timestamp": "2026-04-10T12:06:18.861490", "action": "card_already_stale", "data": {"card": "Get subtitles vendor -- evaluate Rev.com vs AssemblyAI plugin"}}
+{"timestamp": "2026-04-10T12:06:18.861621", "action": "card_already_stale", "data": {"card": "Get SEO update timeline from Enveu for Tarik"}}
+{"timestamp": "2026-04-10T12:06:18.861699", "action": "card_already_stale", "data": {"card": "Set up Week 1 content calendar (Mar 24-30)"}}
+{"timestamp": "2026-04-10T12:06:18.861760", "action": "card_already_stale", "data": {"card": "Need VURT drops from Karma In Hills director and actors"}}
+{"timestamp": "2026-04-10T12:06:18.861828", "action": "card_already_stale", "data": {"card": "Create a \"CREATOR SPOTLIGHT\" schedule"}}
+{"timestamp": "2026-04-10T12:06:18.861889", "action": "card_already_stale", "data": {"card": "Bus Ad \u2014 Static Design (Stars + Titles + App GFX)"}}
+{"timestamp": "2026-04-10T12:06:18.861933", "action": "task_complete", "data": {"task": "flag_stale_cards", "cards_flagged": 0}}

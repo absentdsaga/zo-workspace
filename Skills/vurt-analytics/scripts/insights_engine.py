@@ -9,7 +9,10 @@ Business context this engine understands:
 - Current audience skews female 40s — growth target is 18-30
 - Flywheel: content → distribution → community → interactivity → IRL → ads
 - Key moats: cultural authenticity, creator ownership, no paywall
-- Web is enveu Angular SPA (bad SEO, no SSR). App experience is 10x better.
+- Web is enveu Angular 17.0.8 with SSR (verified live Apr 2026). App is more engaging but web is primary revenue channel (AVOD).
+- Paid social is ~84% of traffic and drives almost entirely to show detail pages (80-98% bounce)
+- Age verification gate is the first thing users see on detail pages (not a signup wall)
+- 10th video signup rule applies to all platforms (web + app). Primary KPI is video views, not sign-ups.
 - Revenue model is AVOD + product placement (not yet live)
 - 80 series in library, notable talent (Kevin Hart, Vivica A. Fox, etc.)
 - Competitor benchmarks: ReelShort ~$1.2B gross, DramaBox $323M rev
@@ -57,7 +60,7 @@ def generate_insights(data):
     insights.extend(_analyze_acquisition(sources, tw))
 
     # =========================================================================
-    # 3. PLATFORM CONVERSION — web is leaking, app retains
+    # 3. PLATFORM CONVERSION — web vs app engagement gap
     # =========================================================================
     insights.extend(_analyze_platform_gap(platforms, data))
 
@@ -224,8 +227,9 @@ def _analyze_acquisition(sources, tw):
             f"**Acquisition efficiency problem:** {dominant['name']} is {dominant['share']:.0f}% of traffic "
             f"but {waste_pct:.0f}% of those sessions don't engage (avg {dominant['avg_dur']:.0f}s). "
             f"That's ~{fmt_num(str(total_dom_sessions - dom_engaged))} wasted sessions this week. "
-            f"**Action:** Test deep-linking ads to specific series pages (Favorite Son, Girl In The Closet) "
-            f"instead of the homepage. Test video-first ad creative showing actual show clips. "
+            f"**Action:** Paid social already deep-links to show detail pages (99%+ of paid sessions). "
+            f"Focus on reducing detail page bounce — age gate friction and 27MB page weight are primary causes. "
+            f"Test video-first ad creative showing actual show clips. "
             f"Tighten targeting to 18-50 interest-based audiences."
         )
 
@@ -243,9 +247,9 @@ def _analyze_acquisition(sources, tw):
             f"but it drives {organic_eng*100:.0f}% engagement — {organic_eng / max(dominant['eng_rate'], 0.01):.0f}x "
             f"more valuable per session than paid. Best channel: {best['name']} at "
             f"{best['eng_rate']*100:.0f}% engagement, {fmt_duration(str(best['avg_dur']))} avg. "
-            f"**Action:** Prioritize the SEO fixes from the dev call — "
-            f"auto-populated sitemap, SSR/pre-rendering for Angular, unique episode URLs, "
-            f"and per-page meta tags. Each fix directly grows this high-value channel."
+            f"**Action:** SSR is live — focus remaining SEO wins: "
+            f"auto-populated sitemap, unique episode URLs, "
+            f"and per-page meta tags. Each fix directly grows this high-value organic channel."
         )
 
     return insights
@@ -275,15 +279,14 @@ def _analyze_platform_gap(platforms, data):
 
     if app_eng > web_eng * 2:
         insights.append(
-            f"**The app is the product, the web is the funnel:** App engagement is "
+            f"**Web vs app engagement gap:** App engagement is "
             f"{app_eng*100:.0f}% with {fmt_duration(str(app_dur))} sessions. "
             f"Web is {web_eng*100:.0f}% with {fmt_duration(str(web_dur))}. "
             f"That's a {app_eng/max(web_eng, 0.01):.0f}x gap — {fmt_num(str(web_users))} web users "
             f"vs {fmt_num(str(app_users))} on app. "
-            f"**Action:** Measure web-to-app conversion rate. "
-            f"Ensure app download CTAs are prominent on mobile web (above the fold, post-episode). "
-            f"Given the {app_eng/max(web_eng, 0.01):.0f}x engagement difference, "
-            f"every percentage point of web→app conversion meaningfully grows engaged users."
+            f"**Note:** Web is the primary AVOD revenue channel — improving web engagement "
+            f"directly increases ad revenue. Focus on reducing detail page bounce and "
+            f"improving time-to-video on web, rather than funneling users to app."
         )
 
     # Platform-specific metrics
@@ -468,7 +471,7 @@ def _analyze_content(pages, landing):
                 f"{', '.join(paths)} ({fmt_num(str(total_wasted))} sessions, 100% bounce, 0s duration). "
                 f"**Needs investigation.** Possible causes (in order of likelihood): "
                 f"(1) Ad bot/crawler traffic inflating session counts, "
-                f"(2) Angular SPA not hydrating on direct URL access — content doesn't render, "
+                f"(2) SSR rendering issue on specific detail page routes, "
                 f"(3) Slow page load causing users to leave before GA4 engagement threshold (10s). "
                 f"**Test:** Open these URLs directly in a browser and verify content loads."
             )

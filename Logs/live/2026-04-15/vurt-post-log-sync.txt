@@ -1,0 +1,80 @@
+  Metrics: Schemers Clip - FB → Views=78, Likes=2, Shares=0, Comments Count=0, Reach=69
+  Metrics: VURT Filmmaker Spotlight - IG → Views=221, Likes=6, Saves=1, Shares=1, Comments Count=0, Reach=117, Engagement=8
+  Metrics: Schemers Clip - IG → Views=4450, Likes=152, Saves=18, Shares=76, Comments Count=9, Reach=3726, Avg Watch Time (s)=31.3, Engagement=264
+  Metrics: Schemers Clip - FB → Views=511, Likes=1, Shares=0, Comments Count=0, Reach=471
+  Metrics: VURT Filmmaker Spotlight - FB → Views=52, Likes=1, Shares=0, Comments Count=0, Reach=33
+  Metrics: The World's First African Vertical Drama - YT Shorts → Views=158, Likes=5, Comments Count=0
+  Metrics: Schemers | A VURT Original - YT Shorts → Views=498, Likes=8, Comments Count=2
+  Metrics: Schemers Clip - IG → Views=1980, Likes=33, Saves=2, Shares=4, Comments Count=8, Reach=1776, Avg Watch Time (s)=8.0, Engagement=50
+  Metrics: Schemers Clip - IG → Views=2535, Likes=34, Saves=3, Shares=5, Comments Count=0, Reach=2249, Avg Watch Time (s)=8.2, Engagement=42
+  Metrics: VURT Clip - IG → Views=212, Likes=7, Saves=0, Shares=1, Comments Count=2, Reach=100, Engagement=11
+  Metrics: Come Back Dad | A VURT Premiere - YT Shorts → Views=1127, Likes=19, Comments Count=0
+  Metrics: Schemers Clip - FB → Views=1120, Likes=7, Shares=0, Comments Count=0, Reach=1036
+  Metrics: Schemers | A VURT Original - YT Shorts → Views=1127, Likes=19, Comments Count=0
+  Metrics: VURT Clip - FB → Views=58, Likes=0, Shares=0, Comments Count=0, Reach=38
+  Metrics: VURT Clip - IG → Views=638, Likes=27, Saves=0, Shares=8, Comments Count=9, Reach=516, Avg Watch Time (s)=17.9, Engagement=51 ⏳
+  Metrics: The Love Network Jam | A VURT Premiere - YT Shorts → Views=84, Likes=2, Comments Count=0
+  Metrics: Something Like A Business | A VURT Premiere - YT Shorts → Views=68474, Likes=2339, Comments Count=70
+  Metrics: VURT Clip - FB → Views=335, Likes=3, Shares=0, Comments Count=0, Reach=317
+  Metrics: VURT Clip - IG → Views=4742, Likes=217, Saves=25, Shares=38, Comments Count=5, Reach=4238, Avg Watch Time (s)=20.8, Engagement=299 ⏳
+  Metrics: 99 Jamz x VURT Clip - YT Shorts → Views=346, Likes=8, Comments Count=0
+  Metrics: VURT Clip - FB → Views=454, Likes=6, Shares=0, Comments Count=0, Reach=428
+  Metrics: Schemers Clip - IG → Views=3674, Likes=229, Saves=9, Shares=24, Comments Count=35, Reach=2294, Avg Watch Time (s)=12.5, Engagement=315 ⏳
+  Metrics: 99 Jamz x VURT Clip - FB → Views=302, Likes=3, Shares=0, Comments Count=0, Reach=264
+  Metrics: Come Back Dad | A VURT Premiere - YT Shorts → Views=1319, Likes=82, Comments Count=4
+  Metrics: VURT Clip - IG → Views=1185, Likes=43, Saves=1, Shares=8, Comments Count=6, Reach=786, Avg Watch Time (s)=8.6, Engagement=69 ⏳
+  Metrics: VURT Announcement - FB → Views=24, Likes=0, Shares=0, Comments Count=0, Reach=17
+  Metrics: The Love Network Jam | A VURT Premiere - YT Shorts → Views=289, Likes=10, Comments Count=0
+  Metrics: The Love Network Jam | A VURT Premiere - YT Shorts → Views=260, Likes=7, Comments Count=0
+  Metrics: VURT Announcement - IG → Views=306, Likes=9, Saves=0, Shares=4, Comments Count=2, Reach=228, Avg Watch Time (s)=6.9, Engagement=19 ⏳
+  Metrics: Schemers Clip - FB → Views=150, Likes=0, Shares=0, Comments Count=0, Reach=128
+  Metrics: VURT Announcement - FB → Views=51, Likes=0, Shares=0, Comments Count=0, Reach=42
+  Metrics: VURT Announcement - IG → Views=228, Likes=13, Saves=0, Shares=5, Comments Count=4, Reach=111, Engagement=27 ⏳
+  Metrics: VURT Clip - FB → Views=51, Likes=0, Shares=0, Comments Count=0, Reach=42
+  Metrics: VURT Clip - IG → Views=306, Likes=9, Saves=0, Shares=4, Comments Count=2, Reach=228, Avg Watch Time (s)=6.9, Engagement=19 ⏳
+  154 entries updated with metrics
+
+Reconciling Content Calendar with Post Log...
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:723: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  today = datetime.utcnow().strftime("%Y-%m-%d")
+  0 updated, 0 created, 0 stale archived
+
+Enriching Content Calendar with IG post data...
+  0 calendar entries enriched
+
+Syncing Frame.io assets to Content Calendar...
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:1031: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  age = (datetime.utcnow() - datetime.fromisoformat(cache["timestamp"])).total_seconds()
+  Crawling Frame.io for social assets...
+  Frame.io token refreshed (expires in 3599s)
+  Found 120 shows in Frame.io
+    The Love Network Jam: 15 social clips
+    The Parking Lot Series: 8 social clips
+    Schemers: 12 social clips
+    Chicago Boogie: 1 social clips
+    V2: 5 social clips
+    Frenemies: 10 social clips
+    Karma in Heels: 10 social clips
+    The Love Letter: 5 social clips
+    35 & Ticking: 5 social clips
+    Your Husband Is Mine: 5 social clips
+    Yes To Forever: 5 social clips
+    Work Wife: 5 social clips
+    Woman Of God: 5 social clips
+    Who Stole My Wife : 5 social clips
+    Where Love Meets: 5 social clips
+    When Men Cry: 3 social clips
+    What The Heart Wants: 6 social clips
+    Through Thick and Thin: 6 social clips
+    The Wrong Choice: 6 social clips
+    Soul Ties: 6 social clips
+    Song Of Love - Solomon & Sheba: 4 social clips
+    Something Like A Business: 6 social clips
+  Total: 138 social clips across all shows
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:1042: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  json.dump({"timestamp": datetime.utcnow().isoformat(), "assets": assets}, f)
+  Frame.io: 98 unique show/clip combinations indexed
+  Frame.io: 22 unique show names
+  0 calendar entries got Frame.io asset links
+
+Done.

@@ -16,6 +16,62 @@ from datetime import datetime, timedelta
 
 DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
+# Minimum keyword overlap required to call a fuzzy (date + caption) match a match.
+# Below this we either skip or flag for manual review.
+MIN_KEYWORD_OVERLAP = 2
+# Words shorter than this are ignored for overlap scoring.
+KEYWORD_MIN_LEN = 4
+# Ambiguous matches are logged here for manual review instead of auto-picked.
+AMBIGUOUS_MATCHES = []
+
+
+def _title_keywords(title):
+    """Extract significant keywords from a title for overlap scoring."""
+    stop = {"the", "and", "for", "with", "from", "this", "that", "into", "your", "you",
+            "our", "out", "off", "are", "was", "were", "vurt", "clip", "episode", "ep"}
+    words = re.findall(r"[a-z0-9]+", (title or "").lower())
+    return {w for w in words if len(w) >= KEYWORD_MIN_LEN and w not in stop}
+
+
+def _score_match(entry_title, candidate_text):
+    """Return number of significant keywords from entry_title appearing in candidate_text."""
+    if not entry_title or not candidate_text:
+        return 0
+    kws = _title_keywords(entry_title)
+    if not kws:
+        return 0
+    ctext = (candidate_text or "").lower()
+    return sum(1 for w in kws if w in ctext)
+
+
+def _pick_best_match(entry, candidates, text_getter, min_overlap=MIN_KEYWORD_OVERLAP, context=""):
+    """Score candidates by keyword overlap. Return best if unambiguous, else log + return None.
+
+    - Requires at least `min_overlap` keywords in common with the entry title.
+    - If multiple candidates tie on the top score, flag as ambiguous and return None.
+    """
+    if not candidates:
+        return None
+    scored = [(_score_match(entry["title"], text_getter(c)), c) for c in candidates]
+    scored = [(s, c) for s, c in scored if s >= min_overlap]
+    if not scored:
+        return None
+    scored.sort(key=lambda x: x[0], reverse=True)
+    top_score = scored[0][0]
+    top_matches = [c for s, c in scored if s == top_score]
+    if len(top_matches) > 1:
+        AMBIGUOUS_MATCHES.append({
+            "context": context,
+            "entry_title": entry["title"],
+            "entry_date": entry.get("date"),
+            "platform": entry.get("platform"),
+            "candidate_count": len(top_matches),
+            "score": top_score,
+            "candidate_preview": [text_getter(c)[:80] for c in top_matches[:3]],
+        })
+        return None
+    return top_matches[0]
+
 SHOW_KEYWORDS = [
     ("karma", "Karma in Heels"),
     ("parking", "Parking Lot Series"),
@@ -183,7 +239,7 @@ def get_fb_posts(limit=50):
         post["share_count"] = post.get("shares", {}).get("count", 0)
         post["video_views"] = 0
         try:
-            vv_url = f"{META_BASE}/{post['id']}/insights/post_video_views/lifetime?access_token={token}"
+            vv_url = f"{META_BASE}/{post['id']}/insights/post_media_view/lifetime?access_token={token}"
             vv_resp = json.loads(urllib.request.urlopen(vv_url, timeout=15).read())
             for m in vv_resp.get("data", []):
                 post["video_views"] = m.get("values", [{}])[0].get("value", 0)
@@ -192,7 +248,7 @@ def get_fb_posts(limit=50):
 
         post["reach"] = 0
         try:
-            r_url = f"{META_BASE}/{post['id']}/insights/post_impressions_unique/lifetime?access_token={token}"
+            r_url = f"{META_BASE}/{post['id']}/insights/post_total_media_view_unique/lifetime?access_token={token}"
             r_resp = json.loads(urllib.request.urlopen(r_url, timeout=15).read())
             for m in r_resp.get("data", []):
                 post["reach"] = m.get("values", [{}])[0].get("value", 0)
@@ -242,10 +298,96 @@ def get_yt_videos(days=60):
             "likes": int(s.get("likeCount", 0)),
             "comments": int(s.get("commentCount", 0)),
         })
+    # Enrich with YouTube Analytics API data (OAuth) if available
+    enrich_yt_analytics(videos, days)
     return videos
 
 
-# --- TikTok (scrape from page HTML, no API key needed) ---
+def enrich_yt_analytics(videos, days=60):
+    """Add watch time, avg duration, avg view %, subs gained from YT Analytics API."""
+    refresh = os.environ.get("VURT_YOUTUBE_REFRESH_TOKEN", "")
+    oauth_raw = os.environ.get("VURT_GOOGLE_OAUTH_CLIENT", "")
+    if not refresh or not oauth_raw:
+        return
+    try:
+        creds = json.loads(oauth_raw)
+        installed = creds.get("installed", creds)
+        client_id, client_secret = installed["client_id"], installed["client_secret"]
+        token_data = urllib.parse.urlencode({
+            "client_id": client_id, "client_secret": client_secret,
+            "refresh_token": refresh, "grant_type": "refresh_token",
+        }).encode()
+        req = urllib.request.Request("https://oauth2.googleapis.com/token", data=token_data, method="POST")
+        req.add_header("Content-Type", "application/x-www-form-urlencoded")
+        resp = urllib.request.urlopen(req, timeout=10)
+        access_token = json.loads(resp.read())["access_token"]
+    except Exception as e:
+        print(f"  YT Analytics OAuth failed: {e}", file=sys.stderr)
+        return
+
+    start = (datetime.utcnow() - timedelta(days=days)).strftime("%Y-%m-%d")
+    end = datetime.utcnow().strftime("%Y-%m-%d")
+    params = urllib.parse.urlencode({
+        "ids": "channel==MINE",
+        "startDate": start, "endDate": end,
+        "metrics": "views,estimatedMinutesWatched,averageViewDuration,averageViewPercentage,subscribersGained",
+        "dimensions": "video",
+        "sort": "-views",
+        "maxResults": "50",
+    })
+    try:
+        url = f"https://youtubeanalytics.googleapis.com/v2/reports?{params}"
+        req2 = urllib.request.Request(url)
+        req2.add_header("Authorization", f"Bearer {access_token}")
+        resp2 = urllib.request.urlopen(req2, timeout=15)
+        result = json.loads(resp2.read())
+    except Exception as e:
+        print(f"  YT Analytics query failed (may need channel owner OAuth): {e}", file=sys.stderr)
+        return
+
+    analytics_by_id = {}
+    for row in result.get("rows", []):
+        analytics_by_id[row[0]] = {
+            "watchMinutes": round(row[2], 1),
+            "avgDuration": int(row[3]),
+            "avgViewPct": round(row[4], 1),
+            "subsGained": int(row[5]),
+        }
+
+    enriched = 0
+    for vid in videos:
+        vid_id = vid.get("videoId", "")
+        if vid_id in analytics_by_id:
+            vid.update(analytics_by_id[vid_id])
+            enriched += 1
+    if enriched:
+        print(f"  YT Analytics: enriched {enriched}/{len(videos)} videos with watch time + retention")
+
+
+# --- TikTok ---
+def get_tiktok_api_videos():
+    """Pull the authenticated user's TikTok videos via the Display API.
+
+    Returns a list of video dicts with share_url + metrics, or [] if
+    OAuth tokens are missing or the call fails.
+    """
+    try:
+        from tiktok_client import get_all_videos
+    except Exception:
+        try:
+            import sys as _sys, os as _os
+            _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+            from tiktok_client import get_all_videos
+        except Exception as e:
+            print(f"  TikTok client unavailable: {e}", file=sys.stderr)
+            return []
+    try:
+        return get_all_videos(limit=200)
+    except Exception as e:
+        print(f"  TikTok API fetch failed: {e}", file=sys.stderr)
+        return []
+
+
 def get_tiktok_stats(url):
     """Scrape TikTok video stats from page HTML."""
     import time
@@ -309,33 +451,34 @@ def sync_urls(entries, ig_posts, yt_videos, dry_run=False):
             continue
 
         if entry["platform"] == "Instagram":
-            for post in ig_posts:
-                post_date = post.get("timestamp", "")[:10]
-                if post_date == entry["date"]:
-                    caption_snip = (post.get("caption") or "")[:30].lower()
-                    title_lower = entry["title"].lower()
-                    if any(word in caption_snip for word in title_lower.split()[:3]) or post_date == entry["date"]:
-                        updates.append({
-                            "entry": entry,
-                            "url": post["permalink"],
-                            "source": "IG Graph API",
-                        })
-                        ig_posts.remove(post)
-                        break
+            same_day = [p for p in ig_posts if p.get("timestamp", "")[:10] == entry["date"]]
+            match = _pick_best_match(
+                entry, same_day,
+                lambda p: p.get("caption") or "",
+                context="sync_urls IG",
+            )
+            if match:
+                updates.append({
+                    "entry": entry,
+                    "url": match["permalink"],
+                    "source": "IG Graph API",
+                })
+                ig_posts.remove(match)
 
         elif entry["platform"] == "YT Shorts":
-            title_words = [w.lower() for w in entry["title"].split() if len(w) > 3]
-            for vid in yt_videos:
-                if vid["publishedAt"] == entry["date"]:
-                    vid_title = vid.get("title", "").lower()
-                    if any(w in vid_title for w in title_words[:3]):
-                        updates.append({
-                            "entry": entry,
-                            "url": vid["url"],
-                            "source": "YT Data API",
-                        })
-                        yt_videos.remove(vid)
-                        break
+            same_day = [v for v in yt_videos if v.get("publishedAt") == entry["date"]]
+            match = _pick_best_match(
+                entry, same_day,
+                lambda v: v.get("title", ""),
+                context="sync_urls YT",
+            )
+            if match:
+                updates.append({
+                    "entry": entry,
+                    "url": match["url"],
+                    "source": "YT Data API",
+                })
+                yt_videos.remove(match)
 
     for u in updates:
         print(f"  URL: {u['entry']['title']} → {u['url']} (from {u['source']})")
@@ -344,8 +487,15 @@ def sync_urls(entries, ig_posts, yt_videos, dry_run=False):
     return len(updates)
 
 
-def sync_metrics(entries, ig_posts, yt_videos, fb_posts=None, dry_run=False):
+def sync_metrics(entries, ig_posts, yt_videos, fb_posts=None, tiktok_videos=None, dry_run=False):
     fb_posts = fb_posts or []
+    tiktok_videos = tiktok_videos or []
+    # Build share_url -> video lookup for TikTok API matching
+    tiktok_by_url = {}
+    for v in tiktok_videos:
+        share_url = (v.get("share_url") or "").rstrip("/")
+        if share_url:
+            tiktok_by_url[share_url] = v
     updates = 0
     for entry in entries:
         props_update = {}
@@ -359,15 +509,14 @@ def sync_metrics(entries, ig_posts, yt_videos, fb_posts=None, dry_run=False):
                     if post.get("permalink") == entry["url"]:
                         matched_post = post
                         break
-            # Priority 2: match by date + caption keywords (fallback)
+            # Priority 2: match by date + caption keyword overlap (fallback, scored)
             if not matched_post and entry["date"]:
-                title_words = [w.lower() for w in entry["title"].split() if len(w) > 3]
-                for post in ig_posts:
-                    if post.get("timestamp", "")[:10] == entry["date"]:
-                        caption = (post.get("caption") or "").lower()
-                        if any(w in caption for w in title_words[:3]):
-                            matched_post = post
-                            break
+                same_day = [p for p in ig_posts if p.get("timestamp", "")[:10] == entry["date"]]
+                matched_post = _pick_best_match(
+                    entry, same_day,
+                    lambda p: p.get("caption") or "",
+                    context="sync_metrics IG",
+                )
             if matched_post:
                 preliminary = matched_post.get("_views_preliminary", False)
                 mtype = matched_post.get("media_type", "")
@@ -410,19 +559,30 @@ def sync_metrics(entries, ig_posts, yt_videos, fb_posts=None, dry_run=False):
                         matched_yt = vid
                         break
             if not matched_yt and entry["date"]:
-                title_words = [w.lower() for w in entry["title"].split() if len(w) > 3]
-                for vid in yt_videos:
-                    if vid["publishedAt"] == entry["date"]:
-                        vid_title = vid.get("title", "").lower()
-                        if any(w in vid_title for w in title_words[:3]):
-                            matched_yt = vid
-                            break
+                same_day = [v for v in yt_videos if v.get("publishedAt") == entry["date"]]
+                matched_yt = _pick_best_match(
+                    entry, same_day,
+                    lambda v: v.get("title", ""),
+                    context="sync_metrics YT",
+                )
             if matched_yt:
                 props_update = {
                     "Views": {"number": matched_yt["views"]},
                     "Likes": {"number": matched_yt["likes"]},
                     "Comments Count": {"number": matched_yt["comments"]},
                 }
+                if matched_yt.get("watchMinutes"):
+                    props_update["Total Watch Time (min)"] = {"number": matched_yt["watchMinutes"]}
+                if matched_yt.get("avgDuration"):
+                    props_update["Avg Watch Time (s)"] = {"number": matched_yt["avgDuration"]}
+                if matched_yt.get("avgViewPct"):
+                    engagement_score = matched_yt["views"] + matched_yt["likes"] * 2 + matched_yt["comments"] * 3
+                    props_update["Engagement"] = {"number": engagement_score}
+                    props_update["Completion Rate"] = {"rich_text": [{"text": {"content": f"{matched_yt['avgViewPct']}%"}}]}
+                if matched_yt.get("subsGained") and matched_yt["subsGained"] > 0:
+                    notes_val = f"+{matched_yt['subsGained']} subs gained"
+                    if not entry.get("notes"):
+                        props_update["Notes"] = {"rich_text": [{"text": {"content": notes_val}}]}
                 if not entry["url"] and matched_yt.get("url"):
                     props_update["Post URL"] = {"url": matched_yt["url"]}
 
@@ -434,13 +594,12 @@ def sync_metrics(entries, ig_posts, yt_videos, fb_posts=None, dry_run=False):
                         matched_fb = post
                         break
             if not matched_fb and entry["date"]:
-                title_words = [w.lower() for w in entry["title"].split() if len(w) > 3]
-                for post in fb_posts:
-                    if post.get("created_time", "")[:10] == entry["date"]:
-                        msg = (post.get("message") or "").lower()
-                        if any(w in msg for w in title_words[:3]) or not entry["url"]:
-                            matched_fb = post
-                            break
+                same_day = [p for p in fb_posts if p.get("created_time", "")[:10] == entry["date"]]
+                matched_fb = _pick_best_match(
+                    entry, same_day,
+                    lambda p: p.get("message") or "",
+                    context="sync_metrics FB",
+                )
             if matched_fb:
                 props_update = {
                     "Views": {"number": matched_fb.get("video_views", 0)},
@@ -457,16 +616,31 @@ def sync_metrics(entries, ig_posts, yt_videos, fb_posts=None, dry_run=False):
         elif entry["platform"] == "TikTok":
             if entry["url"] and "tiktok.com" in entry["url"]:
                 import time
-                stats = get_tiktok_stats(entry["url"])
-                if stats:
+                matched_tt = None
+                url_key = entry["url"].rstrip("/")
+                if url_key in tiktok_by_url:
+                    matched_tt = tiktok_by_url[url_key]
+                if matched_tt:
                     props_update = {
-                        "Views": {"number": stats.get("playCount", 0)},
-                        "Likes": {"number": stats.get("diggCount", 0)},
-                        "Comments Count": {"number": stats.get("commentCount", 0)},
-                        "Shares": {"number": stats.get("shareCount", 0)},
-                        "Saves": {"number": stats.get("collectCount", 0)},
+                        "Views": {"number": matched_tt.get("view_count", 0) or 0},
+                        "Likes": {"number": matched_tt.get("like_count", 0) or 0},
+                        "Comments Count": {"number": matched_tt.get("comment_count", 0) or 0},
+                        "Shares": {"number": matched_tt.get("share_count", 0) or 0},
                     }
-                time.sleep(1)
+                    desc = matched_tt.get("video_description") or matched_tt.get("title") or ""
+                    if desc and not entry.get("caption"):
+                        props_update["Caption"] = {"rich_text": [{"text": {"content": desc[:2000]}}]}
+                else:
+                    stats = get_tiktok_stats(entry["url"])
+                    if stats:
+                        props_update = {
+                            "Views": {"number": stats.get("playCount", 0)},
+                            "Likes": {"number": stats.get("diggCount", 0)},
+                            "Comments Count": {"number": stats.get("commentCount", 0)},
+                            "Shares": {"number": stats.get("shareCount", 0)},
+                            "Saves": {"number": stats.get("collectCount", 0)},
+                        }
+                    time.sleep(1)
 
         if props_update:
             if preliminary:
@@ -968,8 +1142,64 @@ def _save_frameio_cache(assets):
 
 
 def _normalize_show_name(name):
-    """Normalize show names for matching between Frame.io and Notion."""
-    return re.sub(r'[^a-z0-9]', '', name.lower())
+    """Normalize show names for matching between Frame.io and Notion.
+
+    Handles: case, 'The ' prefix, '&' vs 'and', punctuation, whitespace.
+    """
+    n = name.lower().strip()
+    # Normalize '&' to 'and' before stripping punctuation
+    n = n.replace('&', 'and')
+    # Strip all non-alphanumeric
+    n = re.sub(r'[^a-z0-9]', '', n)
+    # Strip leading 'the'
+    if n.startswith("the"):
+        n = n[3:]
+    return n
+
+
+def _show_name_keywords(name):
+    """Extract meaningful keywords from a show name for overlap matching."""
+    n = name.lower().strip()
+    n = n.replace('&', 'and')
+    # Remove common filler words
+    stop = {'the', 'a', 'an', 'of', 'in', 'and', 'or', 'to', 'is', 'my', 'x'}
+    words = re.findall(r'[a-z0-9]+', n)
+    return {w for w in words if w not in stop and len(w) > 1}
+
+
+def _match_show_name(cal_show, frameio_show_norms):
+    """Try to match a calendar show name against Frame.io show names.
+
+    Attempts: exact normalized match → keyword overlap (>= 60% Jaccard).
+    Returns the matching normalized key or None.
+    """
+    norm = _normalize_show_name(cal_show)
+    if norm in frameio_show_norms:
+        return norm
+
+    # Keyword overlap: find best match among Frame.io shows
+    cal_kw = _show_name_keywords(cal_show)
+    if not cal_kw:
+        return None
+
+    best_score = 0
+    best_norm = None
+    for fio_norm, fio_original in frameio_show_norms.items():
+        fio_kw = _show_name_keywords(fio_original)
+        if not fio_kw:
+            continue
+        overlap = len(cal_kw & fio_kw)
+        union = len(cal_kw | fio_kw)
+        score = overlap / union if union else 0
+        if score > best_score:
+            best_score = score
+            best_norm = fio_norm
+
+    # Require at least 60% keyword overlap (e.g. 2/3 words matching)
+    if best_score >= 0.6:
+        return best_norm
+
+    return None
 
 
 def sync_frameio_assets(dry_run=False):
@@ -994,13 +1224,16 @@ def sync_frameio_assets(dry_run=False):
             return 0
 
     # Build lookup: normalized_show_name → {clip_num → best_asset}
+    # Also build norm → original_name map for keyword overlap matching
     # Prefer version_stack > file, and prefer "Social" subfolder clips
     show_clips = {}
+    frameio_show_norms = {}  # norm → original_name (for fuzzy matching)
     for asset in assets:
         show = asset.get("show_name", "")
         if not show:
             continue
         norm = _normalize_show_name(show)
+        frameio_show_norms[norm] = show
         clip_num = frameio_client.match_clip_to_title(asset["name"], show)
         if clip_num is None:
             # Try extracting episode number from filename like VURT_ShowName_Ep03_9x16_v1.mp4
@@ -1023,6 +1256,7 @@ def sync_frameio_assets(dry_run=False):
             show_clips[key] = asset
 
     print(f"  Frame.io: {len(show_clips)} unique show/clip combinations indexed")
+    print(f"  Frame.io: {len(frameio_show_norms)} unique show names")
 
     # Get calendar entries
     cal_results = []
@@ -1048,17 +1282,25 @@ def sync_frameio_assets(dry_run=False):
         cal_title = "".join(t["plain_text"] for t in props.get("Title", {}).get("title", []))
         show_sel = (props.get("Show", {}).get("select") or {}).get("name", "")
 
-        # Try to match by show name from Notion
+        # Try to match by show name from Notion (exact → normalized → keyword overlap)
         matched = None
         if show_sel:
-            norm = _normalize_show_name(show_sel)
-            matched = show_clips.get((norm, clip_num))
+            norm = _match_show_name(show_sel, frameio_show_norms)
+            if norm:
+                matched = show_clips.get((norm, clip_num))
 
-        # Fallback: detect show from calendar title
+        # Fallback: detect show from calendar title via SHOW_KEYWORDS
         if not matched:
             detected = detect_show(cal_title)
             if detected:
-                norm = _normalize_show_name(detected)
+                norm = _match_show_name(detected, frameio_show_norms)
+                if norm:
+                    matched = show_clips.get((norm, clip_num))
+
+        # Last resort: try matching the raw calendar title against Frame.io shows
+        if not matched and cal_title:
+            norm = _match_show_name(cal_title, frameio_show_norms)
+            if norm:
                 matched = show_clips.get((norm, clip_num))
 
         if not matched:
@@ -1081,6 +1323,93 @@ def sync_frameio_assets(dry_run=False):
     return updated
 
 
+def populate_from_approved(dry_run=False):
+    """Create Content Calendar entries from Frame.io clips marked Approved/Scheduled to Post."""
+    print("\nPopulating Content Calendar from approved Frame.io clips...")
+
+    try:
+        import frameio_client
+    except ImportError:
+        sys.path.insert(0, os.path.dirname(__file__))
+        import frameio_client
+
+    approved = frameio_client.get_approved_clips()
+    if not approved:
+        print("  No approved clips found in Frame.io.")
+        return 0
+
+    print(f"  Found {len(approved)} approved clips in Frame.io")
+
+    cal_results = []
+    payload = {"page_size": 100}
+    while True:
+        data = notion_request("POST", f"databases/{CAL_DB_ID}/query", payload)
+        cal_results.extend(data.get("results", []))
+        if not data.get("has_more"):
+            break
+        payload["start_cursor"] = data["next_cursor"]
+
+    existing_keys = set()
+    for e in cal_results:
+        props = e["properties"]
+        show_sel = (props.get("Show", {}).get("select") or {}).get("name", "")
+        clip_num = props.get("Clip #", {}).get("number")
+        platforms = [s["name"] for s in props.get("Platform", {}).get("multi_select", [])]
+        if show_sel and clip_num:
+            for plat in platforms:
+                existing_keys.add((_normalize_show_name(show_sel), clip_num, plat))
+
+    PLATFORM_TARGETS = ["Instagram", "TikTok", "Facebook", "YT Shorts"]
+    plat_emoji = {"Instagram": "🔵", "Facebook": "🟢", "TikTok": "🟣", "YT Shorts": "🔴"}
+
+    created = 0
+    for clip in approved:
+        show_name = clip.get("show_name", "")
+        norm = _normalize_show_name(show_name)
+        clip_num = frameio_client.match_clip_to_title(clip["name"], show_name)
+        if clip_num is None:
+            continue
+
+        view_url = clip.get("file_view_url") or clip.get("view_url", "")
+
+        for plat in PLATFORM_TARGETS:
+            key = (norm, clip_num, plat)
+            if key in existing_keys:
+                continue
+
+            emoji = plat_emoji.get(plat, "⚪")
+            plat_short = {"Instagram": "IG", "Facebook": "FB", "TikTok": "TikTok", "YT Shorts": "YT Shorts"}.get(plat, plat)
+            cal_title = f"{emoji} {show_name} Clip {clip_num} → {plat_short}"
+
+            props_new = {
+                "Title": {"title": [{"text": {"content": cal_title[:100]}}]},
+                "Platform": {"multi_select": [{"name": plat}]},
+                "Status": {"select": {"name": "Ready"}},
+                "Show": {"select": {"name": show_name}},
+                "Clip #": {"number": clip_num},
+            }
+            if view_url:
+                props_new["Asset Link"] = {"url": view_url}
+
+            print(f"  {'[DRY] ' if dry_run else ''}CREATE: {cal_title}")
+            if not dry_run:
+                try:
+                    notion_request("POST", "pages", {
+                        "parent": {"database_id": CAL_DB_ID},
+                        "properties": props_new,
+                    })
+                    created += 1
+                except Exception as ex:
+                    print(f"    Failed: {ex}")
+            else:
+                created += 1
+
+            existing_keys.add(key)
+
+    print(f"  {created} calendar entries {'would be ' if dry_run else ''}created from approved clips")
+    return created
+
+
 def main():
     parser = argparse.ArgumentParser(description="Sync Post Log with platform data")
     parser.add_argument("--urls", action="store_true", help="Sync post URLs")
@@ -1088,10 +1417,11 @@ def main():
     parser.add_argument("--all", action="store_true", help="Sync both URLs and metrics")
     parser.add_argument("--auto-create", action="store_true", help="Auto-create missing entries")
     parser.add_argument("--frameio", action="store_true", help="Sync Frame.io asset links to calendar")
+    parser.add_argument("--populate", action="store_true", help="Create calendar entries from approved Frame.io clips")
     parser.add_argument("--dry-run", action="store_true", help="Preview without writing")
     args = parser.parse_args()
 
-    if not (args.urls or args.metrics or args.all or args.auto_create or args.frameio):
+    if not (args.urls or args.metrics or args.all or args.auto_create or args.frameio or args.populate):
         parser.print_help()
         sys.exit(1)
 
@@ -1100,12 +1430,14 @@ def main():
     do_auto_create = args.auto_create or args.all
     do_frameio = args.frameio or args.all
 
-    print("Fetching Post Log from Notion...")
-    pages = get_post_log_entries()
-    entries = [extract_entry(p) for p in pages]
-    print(f"  Found {len(entries)} entries")
+    pages, entries = [], []
+    ig_posts, yt_videos, fb_posts, tiktok_videos = [], [], [], []
 
-    ig_posts, yt_videos, fb_posts = [], [], []
+    if do_urls or do_metrics or do_auto_create:
+        print("Fetching Post Log from Notion...")
+        pages = get_post_log_entries()
+        entries = [extract_entry(p) for p in pages]
+        print(f"  Found {len(entries)} entries")
 
     if do_urls or do_metrics:
         print("\nFetching Instagram posts...")
@@ -1129,6 +1461,13 @@ def main():
         except Exception as e:
             print(f"  YT fetch failed: {e}", file=sys.stderr)
 
+        print("Fetching TikTok videos...")
+        tiktok_videos = get_tiktok_api_videos()
+        if tiktok_videos:
+            print(f"  Found {len(tiktok_videos)} TikTok videos (via API)")
+        else:
+            print("  No TikTok API data (will fall back to HTML scrape per URL)")
+
     if do_auto_create:
         n = auto_create_entries(ig_posts, yt_videos, fb_posts, args.dry_run)
         if n and not args.dry_run:
@@ -1146,7 +1485,7 @@ def main():
 
     if do_metrics:
         print(f"\n{'[DRY RUN] ' if args.dry_run else ''}Syncing metrics...")
-        n = sync_metrics(entries, ig_posts, yt_videos, fb_posts, args.dry_run)
+        n = sync_metrics(entries, ig_posts, yt_videos, fb_posts, tiktok_videos, args.dry_run)
         print(f"  {n} entries {'would be ' if args.dry_run else ''}updated with metrics")
 
     if do_metrics or args.all:
@@ -1155,6 +1494,17 @@ def main():
 
     if do_frameio:
         sync_frameio_assets(args.dry_run)
+
+    if args.populate:
+        populate_from_approved(args.dry_run)
+
+    if AMBIGUOUS_MATCHES:
+        print(f"\n[REVIEW] {len(AMBIGUOUS_MATCHES)} ambiguous matches were skipped (need manual review):")
+        for m in AMBIGUOUS_MATCHES:
+            print(f"  - [{m['platform']}] {m['entry_title']} ({m['entry_date']}) "
+                  f"in {m['context']}: {m['candidate_count']} candidates tied at score {m['score']}")
+            for prev in m["candidate_preview"]:
+                print(f"      • {prev}")
 
     print("\nDone.")
 
