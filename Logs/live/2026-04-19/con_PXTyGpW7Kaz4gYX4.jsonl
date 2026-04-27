@@ -1,0 +1,2 @@
+{"type": "task_start", "timestamp": "2026-04-19T04:05:26.181697Z", "data": {"task": "VURT Post Log Sync", "flags": "--all (urls + metrics + auto-create + frameio)", "script": "Skills/vurt-post-log/scripts/sync.py"}}
+{"type": "result", "timestamp": "2026-04-19T04:05:26.181697Z", "data": {"notion_entries": "Found 199 entries", "ig_posts": "Found 58 IG posts", "fb_posts": "Found 50 FB posts", "yt_videos": "Found 38 YT videos", "urls_updated": "0 URLs updated", "metrics_updated": "150 entries updated with metrics", "status": "Done", "full_output_lines": 248}}

@@ -1,0 +1,64 @@
+{
+  "text": "The bride's father, Mr. Othello Babineaux. [FOREIGN LANGUAGE]",
+  "audio_duration": 68,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "The bride's father, Mr. Othello Babineaux. [FOREIGN LANGUAGE]",
+      "confidence": 0.64676976,
+      "start": 100,
+      "end": 3248,
+      "words": [
+        {
+          "text": "The",
+          "start": 100,
+          "end": 132,
+          "confidence": 0.7033468,
+          "speaker": "A"
+        },
+        {
+          "text": "bride's",
+          "start": 197,
+          "end": 687,
+          "confidence": 0.9941869,
+          "speaker": "A"
+        },
+        {
+          "text": "father,",
+          "start": 687,
+          "end": 1144,
+          "confidence": 0.9754441,
+          "speaker": "A"
+        },
+        {
+          "text": "Mr.",
+          "start": 1519,
+          "end": 1698,
+          "confidence": 0.9855487,
+          "speaker": "A"
+        },
+        {
+          "text": "Othello",
+          "start": 1747,
+          "end": 2742,
+          "confidence": 0.37493,
+          "speaker": "A"
+        },
+        {
+          "text": "Babineaux.",
+          "start": 2742,
+          "end": 3248,
+          "confidence": 0.2621946,
+          "speaker": "A"
+        },
+        {
+          "text": "[FOREIGN LANGUAGE]",
+          "start": 3248,
+          "end": 3248,
+          "confidence": 0.23173733,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

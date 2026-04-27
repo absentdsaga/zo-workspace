@@ -1,0 +1,841 @@
+{
+  "text": "You buy now, you leave. I don't know what I want yet. All right, the strawberry coolness. Do it really taste like strawberry, or is it, is it like strawberry? I had some before and it wasn't really that strawberry. Okay, um. The banana daiquiri mix. Does it really taste like bananas? It taste like banana. But is it the bananiest? 'Cause they don't always\u2014 I do not have all day for you. I want a bananary tasting daiquiri. That's what I want. You fucking making me sick. You know what? Just give me some beer. Is it beer-berry? It's not the beeriest? Go, go, go, go, go! Is this beer? Is\u2014 am I going to get drunk?",
+  "audio_duration": 63,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "You buy now, you leave. I don't know what I want yet. All right, the strawberry coolness. Do it really taste like strawberry, or is it, is it like strawberry? I had some before and it wasn't really that strawberry. Okay, um. The banana daiquiri mix. Does it really taste like bananas? It taste like banana. But is it the bananiest? 'Cause they don't always\u2014 I do not have all day for you. I want a bananary tasting daiquiri. That's what I want. You fucking making me sick. You know what? Just give me some beer. Is it beer-berry? It's not the beeriest? Go, go, go, go, go! Is this beer? Is\u2014 am I going to get drunk?",
+      "confidence": 0.8480633,
+      "start": 9978,
+      "end": 61794,
+      "words": [
+        {
+          "text": "You",
+          "start": 9978,
+          "end": 10203,
+          "confidence": 0.74087006,
+          "speaker": "A"
+        },
+        {
+          "text": "buy",
+          "start": 10219,
+          "end": 10460,
+          "confidence": 0.99620557,
+          "speaker": "A"
+        },
+        {
+          "text": "now,",
+          "start": 10460,
+          "end": 10652,
+          "confidence": 0.66626984,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 11085,
+          "end": 11149,
+          "confidence": 0.98017156,
+          "speaker": "A"
+        },
+        {
+          "text": "leave.",
+          "start": 11342,
+          "end": 11470,
+          "confidence": 0.75506884,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 11968,
+          "end": 11984,
+          "confidence": 0.9952769,
+          "speaker": "A"
+        },
+        {
+          "text": "don't",
+          "start": 11984,
+          "end": 12064,
+          "confidence": 0.9957637,
+          "speaker": "A"
+        },
+        {
+          "text": "know",
+          "start": 12064,
+          "end": 12144,
+          "confidence": 0.9998493,
+          "speaker": "A"
+        },
+        {
+          "text": "what",
+          "start": 12144,
+          "end": 12288,
+          "confidence": 0.9998282,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 12288,
+          "end": 12353,
+          "confidence": 0.999892,
+          "speaker": "A"
+        },
+        {
+          "text": "want",
+          "start": 12449,
+          "end": 12674,
+          "confidence": 0.9998318,
+          "speaker": "A"
+        },
+        {
+          "text": "yet.",
+          "start": 12690,
+          "end": 12850,
+          "confidence": 0.98004866,
+          "speaker": "A"
+        },
+        {
+          "text": "All",
+          "start": 13524,
+          "end": 13877,
+          "confidence": 0.7242283,
+          "speaker": "A"
+        },
+        {
+          "text": "right,",
+          "start": 14535,
+          "end": 15658,
+          "confidence": 0.8773938,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 15978,
+          "end": 16075,
+          "confidence": 0.8883226,
+          "speaker": "A"
+        },
+        {
+          "text": "strawberry",
+          "start": 16075,
+          "end": 16444,
+          "confidence": 0.7176779,
+          "speaker": "A"
+        },
+        {
+          "text": "coolness.",
+          "start": 16476,
+          "end": 16861,
+          "confidence": 0.14638226,
+          "speaker": "A"
+        },
+        {
+          "text": "Do",
+          "start": 17037,
+          "end": 17198,
+          "confidence": 0.95743465,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 17198,
+          "end": 17278,
+          "confidence": 0.9984794,
+          "speaker": "A"
+        },
+        {
+          "text": "really",
+          "start": 17278,
+          "end": 17502,
+          "confidence": 0.9994667,
+          "speaker": "A"
+        },
+        {
+          "text": "taste",
+          "start": 17502,
+          "end": 17679,
+          "confidence": 0.99306667,
+          "speaker": "A"
+        },
+        {
+          "text": "like",
+          "start": 17679,
+          "end": 17839,
+          "confidence": 0.99971694,
+          "speaker": "A"
+        },
+        {
+          "text": "strawberry,",
+          "start": 17839,
+          "end": 18208,
+          "confidence": 0.43699396,
+          "speaker": "A"
+        },
+        {
+          "text": "or",
+          "start": 18497,
+          "end": 18946,
+          "confidence": 0.99417347,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 19749,
+          "end": 19861,
+          "confidence": 0.9898657,
+          "speaker": "A"
+        },
+        {
+          "text": "it,",
+          "start": 19861,
+          "end": 20005,
+          "confidence": 0.32144108,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 20150,
+          "end": 20246,
+          "confidence": 0.978618,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 20246,
+          "end": 20390,
+          "confidence": 0.55849266,
+          "speaker": "A"
+        },
+        {
+          "text": "like",
+          "start": 20390,
+          "end": 20551,
+          "confidence": 0.984165,
+          "speaker": "A"
+        },
+        {
+          "text": "strawberry?",
+          "start": 20551,
+          "end": 21417,
+          "confidence": 0.86908025,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 22476,
+          "end": 22556,
+          "confidence": 0.9989642,
+          "speaker": "A"
+        },
+        {
+          "text": "had",
+          "start": 22556,
+          "end": 22781,
+          "confidence": 0.9422563,
+          "speaker": "A"
+        },
+        {
+          "text": "some",
+          "start": 22797,
+          "end": 22973,
+          "confidence": 0.99371487,
+          "speaker": "A"
+        },
+        {
+          "text": "before",
+          "start": 22973,
+          "end": 23246,
+          "confidence": 0.9999229,
+          "speaker": "A"
+        },
+        {
+          "text": "and",
+          "start": 23278,
+          "end": 23342,
+          "confidence": 0.54069495,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 23374,
+          "end": 23454,
+          "confidence": 0.99654007,
+          "speaker": "A"
+        },
+        {
+          "text": "wasn't",
+          "start": 23454,
+          "end": 23695,
+          "confidence": 0.999713,
+          "speaker": "A"
+        },
+        {
+          "text": "really",
+          "start": 23695,
+          "end": 23840,
+          "confidence": 0.9998511,
+          "speaker": "A"
+        },
+        {
+          "text": "that",
+          "start": 23856,
+          "end": 24032,
+          "confidence": 0.97928315,
+          "speaker": "A"
+        },
+        {
+          "text": "strawberry.",
+          "start": 24032,
+          "end": 24465,
+          "confidence": 0.91234183,
+          "speaker": "A"
+        },
+        {
+          "text": "Okay,",
+          "start": 25219,
+          "end": 25380,
+          "confidence": 0.75170827,
+          "speaker": "A"
+        },
+        {
+          "text": "um.",
+          "start": 25684,
+          "end": 25797,
+          "confidence": 0.264433,
+          "speaker": "A"
+        },
+        {
+          "text": "The",
+          "start": 26503,
+          "end": 26583,
+          "confidence": 0.3874378,
+          "speaker": "A"
+        },
+        {
+          "text": "banana",
+          "start": 26583,
+          "end": 26888,
+          "confidence": 0.82708806,
+          "speaker": "A"
+        },
+        {
+          "text": "daiquiri",
+          "start": 26888,
+          "end": 27466,
+          "confidence": 0.82743484,
+          "speaker": "A"
+        },
+        {
+          "text": "mix.",
+          "start": 27466,
+          "end": 27691,
+          "confidence": 0.7032099,
+          "speaker": "A"
+        },
+        {
+          "text": "Does",
+          "start": 28093,
+          "end": 28333,
+          "confidence": 0.9974235,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 28333,
+          "end": 28430,
+          "confidence": 0.9988951,
+          "speaker": "A"
+        },
+        {
+          "text": "really",
+          "start": 28430,
+          "end": 28639,
+          "confidence": 0.9996239,
+          "speaker": "A"
+        },
+        {
+          "text": "taste",
+          "start": 28671,
+          "end": 28912,
+          "confidence": 0.9989888,
+          "speaker": "A"
+        },
+        {
+          "text": "like",
+          "start": 28912,
+          "end": 29056,
+          "confidence": 0.99958307,
+          "speaker": "A"
+        },
+        {
+          "text": "bananas?",
+          "start": 29056,
+          "end": 29441,
+          "confidence": 0.9940526,
+          "speaker": "A"
+        },
+        {
+          "text": "It",
+          "start": 30437,
+          "end": 30485,
+          "confidence": 0.8667177,
+          "speaker": "A"
+        },
+        {
+          "text": "taste",
+          "start": 30758,
+          "end": 31352,
+          "confidence": 0.59716445,
+          "speaker": "A"
+        },
+        {
+          "text": "like",
+          "start": 31384,
+          "end": 31721,
+          "confidence": 0.99420303,
+          "speaker": "A"
+        },
+        {
+          "text": "banana.",
+          "start": 31721,
+          "end": 32364,
+          "confidence": 0.48516116,
+          "speaker": "A"
+        },
+        {
+          "text": "But",
+          "start": 32829,
+          "end": 32926,
+          "confidence": 0.9858401,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 32926,
+          "end": 33054,
+          "confidence": 0.9421943,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 33102,
+          "end": 33150,
+          "confidence": 0.87046623,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 33150,
+          "end": 33231,
+          "confidence": 0.9866789,
+          "speaker": "A"
+        },
+        {
+          "text": "bananiest?",
+          "start": 33231,
+          "end": 33793,
+          "confidence": 0.47675365,
+          "speaker": "A"
+        },
+        {
+          "text": "'Cause",
+          "start": 34114,
+          "end": 34258,
+          "confidence": 0.5358201,
+          "speaker": "A"
+        },
+        {
+          "text": "they",
+          "start": 34290,
+          "end": 34371,
+          "confidence": 0.9988856,
+          "speaker": "A"
+        },
+        {
+          "text": "don't",
+          "start": 34451,
+          "end": 34596,
+          "confidence": 0.99836504,
+          "speaker": "A"
+        },
+        {
+          "text": "always\u2014",
+          "start": 34612,
+          "end": 34981,
+          "confidence": 0.80745584,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 34997,
+          "end": 35093,
+          "confidence": 0.99290776,
+          "speaker": "A"
+        },
+        {
+          "text": "do",
+          "start": 35093,
+          "end": 35238,
+          "confidence": 0.98896784,
+          "speaker": "A"
+        },
+        {
+          "text": "not",
+          "start": 35254,
+          "end": 35414,
+          "confidence": 0.9994117,
+          "speaker": "A"
+        },
+        {
+          "text": "have",
+          "start": 35414,
+          "end": 35655,
+          "confidence": 0.9974618,
+          "speaker": "A"
+        },
+        {
+          "text": "all",
+          "start": 35655,
+          "end": 35960,
+          "confidence": 0.79874337,
+          "speaker": "A"
+        },
+        {
+          "text": "day",
+          "start": 35960,
+          "end": 36137,
+          "confidence": 0.99833953,
+          "speaker": "A"
+        },
+        {
+          "text": "for",
+          "start": 36137,
+          "end": 36314,
+          "confidence": 0.9990483,
+          "speaker": "A"
+        },
+        {
+          "text": "you.",
+          "start": 36362,
+          "end": 36442,
+          "confidence": 0.84207124,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 36522,
+          "end": 36538,
+          "confidence": 0.99936014,
+          "speaker": "A"
+        },
+        {
+          "text": "want",
+          "start": 36603,
+          "end": 36763,
+          "confidence": 0.9869464,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 36763,
+          "end": 36779,
+          "confidence": 0.9875016,
+          "speaker": "A"
+        },
+        {
+          "text": "bananary",
+          "start": 36779,
+          "end": 37245,
+          "confidence": 0.32528162,
+          "speaker": "A"
+        },
+        {
+          "text": "tasting",
+          "start": 37245,
+          "end": 37550,
+          "confidence": 0.56225276,
+          "speaker": "A"
+        },
+        {
+          "text": "daiquiri.",
+          "start": 37582,
+          "end": 37919,
+          "confidence": 0.6989762,
+          "speaker": "A"
+        },
+        {
+          "text": "That's",
+          "start": 37984,
+          "end": 38144,
+          "confidence": 0.9907353,
+          "speaker": "A"
+        },
+        {
+          "text": "what",
+          "start": 38144,
+          "end": 38289,
+          "confidence": 0.99970883,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 38289,
+          "end": 38305,
+          "confidence": 0.9998766,
+          "speaker": "A"
+        },
+        {
+          "text": "want.",
+          "start": 38385,
+          "end": 38706,
+          "confidence": 0.9953387,
+          "speaker": "A"
+        },
+        {
+          "text": "You",
+          "start": 38867,
+          "end": 38915,
+          "confidence": 0.9367058,
+          "speaker": "A"
+        },
+        {
+          "text": "fucking",
+          "start": 38947,
+          "end": 39396,
+          "confidence": 0.76429266,
+          "speaker": "A"
+        },
+        {
+          "text": "making",
+          "start": 39413,
+          "end": 39814,
+          "confidence": 0.96163243,
+          "speaker": "A"
+        },
+        {
+          "text": "me",
+          "start": 39814,
+          "end": 40071,
+          "confidence": 0.9971295,
+          "speaker": "A"
+        },
+        {
+          "text": "sick.",
+          "start": 40071,
+          "end": 40392,
+          "confidence": 0.9920883,
+          "speaker": "A"
+        },
+        {
+          "text": "You",
+          "start": 41098,
+          "end": 41131,
+          "confidence": 0.99697125,
+          "speaker": "A"
+        },
+        {
+          "text": "know",
+          "start": 41131,
+          "end": 41211,
+          "confidence": 0.9999652,
+          "speaker": "A"
+        },
+        {
+          "text": "what?",
+          "start": 41275,
+          "end": 41500,
+          "confidence": 0.86913204,
+          "speaker": "A"
+        },
+        {
+          "text": "Just",
+          "start": 41677,
+          "end": 41837,
+          "confidence": 0.9993747,
+          "speaker": "A"
+        },
+        {
+          "text": "give",
+          "start": 41837,
+          "end": 41917,
+          "confidence": 0.8712609,
+          "speaker": "A"
+        },
+        {
+          "text": "me",
+          "start": 41917,
+          "end": 41998,
+          "confidence": 0.9995548,
+          "speaker": "A"
+        },
+        {
+          "text": "some",
+          "start": 41998,
+          "end": 42158,
+          "confidence": 0.99934655,
+          "speaker": "A"
+        },
+        {
+          "text": "beer.",
+          "start": 42158,
+          "end": 42399,
+          "confidence": 0.99674994,
+          "speaker": "A"
+        },
+        {
+          "text": "Is",
+          "start": 47923,
+          "end": 48035,
+          "confidence": 0.86286414,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 48035,
+          "end": 48147,
+          "confidence": 0.7365476,
+          "speaker": "A"
+        },
+        {
+          "text": "beer-berry?",
+          "start": 48179,
+          "end": 48870,
+          "confidence": 0.119253814,
+          "speaker": "A"
+        },
+        {
+          "text": "It's",
+          "start": 50443,
+          "end": 50540,
+          "confidence": 0.73565626,
+          "speaker": "A"
+        },
+        {
+          "text": "not",
+          "start": 50540,
+          "end": 50684,
+          "confidence": 0.9987239,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 50684,
+          "end": 50813,
+          "confidence": 0.9869364,
+          "speaker": "A"
+        },
+        {
+          "text": "beeriest?",
+          "start": 50813,
+          "end": 51134,
+          "confidence": 0.4909711,
+          "speaker": "A"
+        },
+        {
+          "text": "Go,",
+          "start": 55826,
+          "end": 56068,
+          "confidence": 0.3154901,
+          "speaker": "A"
+        },
+        {
+          "text": "go,",
+          "start": 56939,
+          "end": 56971,
+          "confidence": 0.9246102,
+          "speaker": "A"
+        },
+        {
+          "text": "go,",
+          "start": 57761,
+          "end": 58068,
+          "confidence": 0.80413085,
+          "speaker": "A"
+        },
+        {
+          "text": "go,",
+          "start": 58245,
+          "end": 58406,
+          "confidence": 0.6641522,
+          "speaker": "A"
+        },
+        {
+          "text": "go!",
+          "start": 58713,
+          "end": 58971,
+          "confidence": 0.59806144,
+          "speaker": "A"
+        },
+        {
+          "text": "Is",
+          "start": 59310,
+          "end": 59390,
+          "confidence": 0.9500556,
+          "speaker": "A"
+        },
+        {
+          "text": "this",
+          "start": 59390,
+          "end": 59600,
+          "confidence": 0.99557734,
+          "speaker": "A"
+        },
+        {
+          "text": "beer?",
+          "start": 59600,
+          "end": 59874,
+          "confidence": 0.66670936,
+          "speaker": "A"
+        },
+        {
+          "text": "Is\u2014",
+          "start": 60745,
+          "end": 60891,
+          "confidence": 0.22303022,
+          "speaker": "A"
+        },
+        {
+          "text": "am",
+          "start": 61068,
+          "end": 61213,
+          "confidence": 0.66588986,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 61213,
+          "end": 61229,
+          "confidence": 0.99961805,
+          "speaker": "A"
+        },
+        {
+          "text": "going",
+          "start": 61229,
+          "end": 61342,
+          "confidence": 0.5921631,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 61342,
+          "end": 61391,
+          "confidence": 0.99962044,
+          "speaker": "A"
+        },
+        {
+          "text": "get",
+          "start": 61391,
+          "end": 61536,
+          "confidence": 0.99978584,
+          "speaker": "A"
+        },
+        {
+          "text": "drunk?",
+          "start": 61536,
+          "end": 61794,
+          "confidence": 0.99154127,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

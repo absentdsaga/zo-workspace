@@ -322,16 +322,31 @@ shows:
     cast:
       - name: "Kevin Hart"
         role: "Cleavon"
+        ig: "@kevinhart4real"
       - name: "Tamala Jones"
-        role: "Victoria"
+        role: "Victoria (37, married 3 yrs to Austin, desperate for kids, eventually divorces him)"
+        ig: "@tamjones1"
       - name: "Nicole Ari Parker"
-        role: "Zenobia"
+        role: "Zenobia (successful, single, seeking stability)"
       - name: "Keith Robinson"
-        role: "Phil"
+        role: "Phil (married with kids to Koko, who is considering leaving him for an NBA star)"
+      - name: "Dondre Whitfield"
+        role: "Austin — Victoria's husband, refuses to have kids, impregnates another woman after their divorce"
+        ig: "@alldondre"
+      - name: "Jill Marie Jones"
+        role: "Koko (Phil's wife)"
+      - name: "Darius McCrary"
+        role: "NBA star Koko is considering leaving Phil for"
       - name: "Meagan Good"
       - name: "Wendy Raquel Robinson"
       - name: "Mike Epps"
       - name: "Kym Whitley"
+    producer: "Swirl Films (Eric Tomosunas — VURT co-founder)"
+    kitchen_scene_context: |
+      Clip 2: Victoria offers Austin "20 minutes for dessert" in their kitchen; he dismisses her.
+      Payoff across the film: Austin DOES have the time — just not for her. After the divorce,
+      he impregnates another woman. The viewer who knows the film hears "I ain't got no time
+      for that" as the marriage's actual end, not a one-off rejection.
     tone: "Funny, relatable, ensemble energy. Slice-of-life."
     themes:
       - The pressure of age and milestones
@@ -422,6 +437,137 @@ shows:
       - "Meet the filmmaker behind your next obsession."
       - "Every VURT Original starts with a vision. This is theirs."
       - "The directors you should know. VURT Filmmakers Spotlight."
+
+  favorite-son:
+    display_name: "Favorite Son"
+    vurt_url: "https://www.myvurt.com/detail/micro_series/favorite-son"
+    genre: Church Drama
+    status: LIVE
+    source_film: "Favorite Son (2021) BET+ original. NOT the 2023 Christmas sequel."
+    synopsis: >
+      Two brothers, Blaine and Camden Wilson, front the gospel group SO G.I.F.T.E.D.
+      under the strict control of their father Pastor B.C. Wilson, who runs the
+      Graceway megachurch. Blaine is the charismatic, self-destructive one; Camden
+      is the steady, faithful one. Blaine is dating Dawn, who the whole church
+      expects will marry him. A pre-marital encounter between Blaine and Dawn —
+      during a vulnerable moment tied to rumors about Camden — results in pregnancy,
+      fractures the brothers' relationship, and becomes the central betrayal that
+      defines the entire Wilson family saga. Directed by Robin Givens. Produced by
+      Swirl Films. Based on Tiffany L. Warren's novel "The Favorite Son."
+    characters:
+      - name: "Blaine Wilson"
+        role: "The 'favorite son.' Charismatic frontman of SO G.I.F.T.E.D. Dating Dawn. Breaks the rule that starts the whole saga."
+        actor: "Rotimi"
+        ig: "@rotimi"
+      - name: "Camden Wilson"
+        role: "The steady brother. Gospel group member. Betrayed by Blaine and Dawn."
+        actor: "Jonathan McReynolds"
+        ig: "@jonmcreynolds"
+      - name: "Dawn"
+        role: "Blaine's girlfriend. Church-raised. At the center of the pre-marital encounter that fractures the family."
+        actor: "Serayah"
+        ig: "@serayah"
+      - name: "Lady Rita Wilson"
+        role: "First Lady / matriarch. WIFE of Pastor B.C. Wilson (who is ALIVE in this film). MOTHER of Blaine and Camden. NOT a romantic character for the brothers."
+        actor: "Lisa Arrindell"
+        ig: "@lisaarrindell"
+      - name: "Pastor B.C. Wilson"
+        role: "The patriarch. Strict megachurch pastor. Alive in this film (dies before the 2023 Christmas sequel)."
+        actor: "E. Roger Mitchell"
+        ig: "@eroger4real"
+      - name: "Amber"
+        role: "Camden's love interest."
+        actor: "Loren Lott"
+        ig: "@lorensharice"
+    director:
+      name: "Robin Givens"
+      ig: "@robingivens"
+    production:
+      company: "Swirl Films"
+      ig: "@swirlfilmsig"
+    source_material:
+      author: "Tiffany L. Warren"
+      ig: "@tiffanylwarren"
+      title: "The Favorite Son (novel)"
+    tone: "Church drama. Faith, legacy, brotherly rivalry, the cost of pre-marital choices."
+    themes:
+      - The rule a pastor's son is raised to keep
+      - Brotherly betrayal
+      - Legacy and the weight of a family name
+      - Faith tested by desire
+      - How one moment fractures a family
+    key_relationships:
+      - "Blaine + Dawn = defining couple. Their pre-marital encounter IS the origin of the Wilson family rift — not a flashback, the actual event in this film."
+      - "Blaine vs Camden = brothers in a gospel group. Dawn becomes the fault line between them."
+      - "Rita = MOTHER to Blaine and Camden, WIFE of B.C. Wilson. Never frame Rita as a love interest for her sons."
+    warnings:
+      - "Do not confuse with 'Favorite Son Christmas' (2023 sequel). That film has Tank playing Blaine, a dead B.C. Wilson, and divorced Blaine/Dawn. The 2021 original on VURT has Rotimi as Blaine and B.C. Wilson alive."
+    caption_hooks:
+      - "The rule a pastor's son makes. The one a pastor's son breaks."
+      - "This is the moment before everything breaks."
+      - "One choice. Two brothers. A family that never goes back."
+      - "The betrayal that starts a decade of silence."
+
+  bound:
+    display_name: "Bound"
+    genre: Erotic Thriller / Revenge
+    status: LIVE
+    year: 2015
+    source: Licensed
+    vurt_url: https://myvurt.com/detail/micro_series/bound
+    synopsis: >
+      A frustrated divorced real-estate broker and single mom is seduced by a younger
+      man with dangerous eyes. He leads her into the BDSM world, then crosses into
+      physical and mental abuse, ultimately stalking her teenage daughter. She uses
+      her newly awakened power to turn the tables, ending with him chained in a
+      dungeon of her making.
+    characters:
+      - name: "Michelle Mulan"
+        role: "Lead. Divorced broker, single mom, eventually flips the dom/sub dynamic."
+        actor: "Charisma Carpenter"
+        ig: "@charismacarpenter"
+        tt: "@charisma_carpenter"
+        x: "@AllCharisma"
+      - name: "Ryan Black"
+        role: "Antagonist. 15 years younger, seduces Michelle, escalates to abuse."
+        actor: "Bryce Draper"
+        ig: unknown
+      - name: "Walter Mulan"
+        role: "Michelle's father, chairman of the real-estate firm."
+        actor: "Daniel Baldwin"
+        ig: "@thedanielbaldwin"
+        x: "@DanielBaldwin"
+      - name: "Dara"
+        role: "Michelle's teenage daughter. Ryan stalking her is the breaking point."
+        actor: "Morgan Obenreder"
+    director:
+      name: "Jared Cohn"
+      ig: "@jaredcohn1"
+    exec_producer:
+      name: "TBD — VURT detail page shows no credits yet. Check back when page goes live."
+      ig: TBD
+    production_company: "The Asylum"
+    tone: "Tense erotic thriller. Slow seduction that curdles into abuse, then flips into empowerment. Not romantic — predatory until she reclaims control."
+    themes:
+      - Power and submission — and who actually holds it
+      - A mother protecting her daughter
+      - The moment a woman stops flinching
+      - Seduction as control vs. seduction as reclamation
+      - Dom/sub dynamic inverted
+    warnings:
+      - "Charisma Carpenter is publicly outspoken on the Joss Whedon abuse allegations (2021). Never use victim-framing aimed at Michelle. The reclaim-power angle works. Abuse-is-funny does not."
+      - "This is a 2015 Asylum mockbuster. Do NOT reference Fifty Shades of Grey, Tubi, or The Asylum in captions."
+    caption_hooks:
+      - "He told her she was weak, pathetic. He should've let her leave."
+      - "She came back for her daughter. She walked out in charge."
+      - "The moment she stopped flinching."
+      - "Wrong woman. Wrong day."
+      - "Some men learn the word no the hard way."
+      - "He thought he built her. She used every tool he gave her."
+    yt_descriptions:
+      - "Charisma Carpenter as Michelle Mulan. A mother who came back for her daughter and found her power."
+      - "The moment a woman stops apologizing for being underestimated."
+      - "He called her weak. She showed him exactly what weak looks like."
 
   vurt-brand:
     display_name: "VURT Brand"

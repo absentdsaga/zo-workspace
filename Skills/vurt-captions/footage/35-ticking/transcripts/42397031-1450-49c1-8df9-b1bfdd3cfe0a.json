@@ -1,0 +1,638 @@
+{
+  "text": "Hey, Z! Shaboom! Happy birthday, girl! Thank you. When we going to get some more drinks? You know what, it's Jackie's birthday too. Who's Jackie? Jackie? I'm on the phone. Oh, oh, oh, what's that? What's that? Are you talking to me? Come on now, I'm looking you right in your face, silly girl. It's a pomegranate Sockatini, okay? Hey, and how you doing? Oh, this is Victoria. Hey, Vicki! She cute. Look here, y'all, it's all upstairs. All right, come on, Pho. Come on, La. Come on, Pho.",
+  "audio_duration": 45,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Hey, Z! Shaboom! Happy birthday, girl! Thank you. When we going to get some more drinks? You know what, it's Jackie's birthday too. Who's Jackie? Jackie? I'm on the phone. Oh, oh, oh, what's that? What's that? Are you talking to me? Come on now, I'm looking you right in your face, silly girl. It's a pomegranate Sockatini, okay? Hey, and how you doing? Oh, this is Victoria. Hey, Vicki! She cute. Look here, y'all, it's all upstairs. All right, come on, Pho. Come on, La. Come on, Pho.",
+      "confidence": 0.857102,
+      "start": 919,
+      "end": 34564,
+      "words": [
+        {
+          "text": "Hey,",
+          "start": 919,
+          "end": 1097,
+          "confidence": 0.5839976,
+          "speaker": "A"
+        },
+        {
+          "text": "Z!",
+          "start": 1179,
+          "end": 1374,
+          "confidence": 0.46635824,
+          "speaker": "A"
+        },
+        {
+          "text": "Shaboom!",
+          "start": 2479,
+          "end": 3016,
+          "confidence": 0.24404195,
+          "speaker": "A"
+        },
+        {
+          "text": "Happy",
+          "start": 3146,
+          "end": 3439,
+          "confidence": 0.98522574,
+          "speaker": "A"
+        },
+        {
+          "text": "birthday,",
+          "start": 3536,
+          "end": 4024,
+          "confidence": 0.99108446,
+          "speaker": "A"
+        },
+        {
+          "text": "girl!",
+          "start": 4040,
+          "end": 4642,
+          "confidence": 0.57636815,
+          "speaker": "A"
+        },
+        {
+          "text": "Thank",
+          "start": 4853,
+          "end": 5243,
+          "confidence": 0.9982723,
+          "speaker": "A"
+        },
+        {
+          "text": "you.",
+          "start": 5243,
+          "end": 5406,
+          "confidence": 0.70041585,
+          "speaker": "A"
+        },
+        {
+          "text": "When",
+          "start": 5991,
+          "end": 6203,
+          "confidence": 0.70517904,
+          "speaker": "A"
+        },
+        {
+          "text": "we",
+          "start": 6219,
+          "end": 6316,
+          "confidence": 0.9598151,
+          "speaker": "A"
+        },
+        {
+          "text": "going",
+          "start": 6316,
+          "end": 6495,
+          "confidence": 0.61179715,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 6495,
+          "end": 6560,
+          "confidence": 0.99537873,
+          "speaker": "A"
+        },
+        {
+          "text": "get",
+          "start": 6560,
+          "end": 6690,
+          "confidence": 0.9996648,
+          "speaker": "A"
+        },
+        {
+          "text": "some",
+          "start": 6723,
+          "end": 6886,
+          "confidence": 0.99406,
+          "speaker": "A"
+        },
+        {
+          "text": "more",
+          "start": 6886,
+          "end": 7146,
+          "confidence": 0.9113141,
+          "speaker": "A"
+        },
+        {
+          "text": "drinks?",
+          "start": 7146,
+          "end": 7764,
+          "confidence": 0.9556563,
+          "speaker": "A"
+        },
+        {
+          "text": "You",
+          "start": 9160,
+          "end": 9224,
+          "confidence": 0.9913933,
+          "speaker": "A"
+        },
+        {
+          "text": "know",
+          "start": 9224,
+          "end": 9256,
+          "confidence": 0.9999136,
+          "speaker": "A"
+        },
+        {
+          "text": "what,",
+          "start": 9256,
+          "end": 9352,
+          "confidence": 0.526874,
+          "speaker": "A"
+        },
+        {
+          "text": "it's",
+          "start": 9368,
+          "end": 9593,
+          "confidence": 0.9990347,
+          "speaker": "A"
+        },
+        {
+          "text": "Jackie's",
+          "start": 9593,
+          "end": 10076,
+          "confidence": 0.99350965,
+          "speaker": "A"
+        },
+        {
+          "text": "birthday",
+          "start": 10076,
+          "end": 10477,
+          "confidence": 0.9999325,
+          "speaker": "A"
+        },
+        {
+          "text": "too.",
+          "start": 10622,
+          "end": 10751,
+          "confidence": 0.933492,
+          "speaker": "A"
+        },
+        {
+          "text": "Who's",
+          "start": 11104,
+          "end": 11281,
+          "confidence": 0.9908073,
+          "speaker": "A"
+        },
+        {
+          "text": "Jackie?",
+          "start": 11281,
+          "end": 11650,
+          "confidence": 0.99541223,
+          "speaker": "A"
+        },
+        {
+          "text": "Jackie?",
+          "start": 12036,
+          "end": 12454,
+          "confidence": 0.3133544,
+          "speaker": "A"
+        },
+        {
+          "text": "I'm",
+          "start": 12647,
+          "end": 12872,
+          "confidence": 0.9660213,
+          "speaker": "A"
+        },
+        {
+          "text": "on",
+          "start": 12872,
+          "end": 12904,
+          "confidence": 0.9992526,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 12904,
+          "end": 12984,
+          "confidence": 0.9995479,
+          "speaker": "A"
+        },
+        {
+          "text": "phone.",
+          "start": 12984,
+          "end": 13338,
+          "confidence": 0.9589211,
+          "speaker": "A"
+        },
+        {
+          "text": "Oh,",
+          "start": 13708,
+          "end": 13756,
+          "confidence": 0.8399107,
+          "speaker": "A"
+        },
+        {
+          "text": "oh,",
+          "start": 13933,
+          "end": 14109,
+          "confidence": 0.57827884,
+          "speaker": "A"
+        },
+        {
+          "text": "oh,",
+          "start": 14479,
+          "end": 14591,
+          "confidence": 0.61071306,
+          "speaker": "A"
+        },
+        {
+          "text": "what's",
+          "start": 14720,
+          "end": 15057,
+          "confidence": 0.9897539,
+          "speaker": "A"
+        },
+        {
+          "text": "that?",
+          "start": 15057,
+          "end": 15234,
+          "confidence": 0.7529144,
+          "speaker": "A"
+        },
+        {
+          "text": "What's",
+          "start": 15299,
+          "end": 16022,
+          "confidence": 0.9987682,
+          "speaker": "A"
+        },
+        {
+          "text": "that?",
+          "start": 16086,
+          "end": 16681,
+          "confidence": 0.9964809,
+          "speaker": "A"
+        },
+        {
+          "text": "Are",
+          "start": 16890,
+          "end": 17629,
+          "confidence": 0.9695995,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 17629,
+          "end": 17709,
+          "confidence": 0.9998652,
+          "speaker": "A"
+        },
+        {
+          "text": "talking",
+          "start": 17709,
+          "end": 17982,
+          "confidence": 0.99947137,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 17982,
+          "end": 18159,
+          "confidence": 0.9993536,
+          "speaker": "A"
+        },
+        {
+          "text": "me?",
+          "start": 18692,
+          "end": 19128,
+          "confidence": 0.99937147,
+          "speaker": "A"
+        },
+        {
+          "text": "Come",
+          "start": 19872,
+          "end": 20001,
+          "confidence": 0.99759465,
+          "speaker": "A"
+        },
+        {
+          "text": "on",
+          "start": 20049,
+          "end": 20130,
+          "confidence": 0.9998809,
+          "speaker": "A"
+        },
+        {
+          "text": "now,",
+          "start": 20130,
+          "end": 20243,
+          "confidence": 0.9324908,
+          "speaker": "A"
+        },
+        {
+          "text": "I'm",
+          "start": 20453,
+          "end": 20550,
+          "confidence": 0.9994601,
+          "speaker": "A"
+        },
+        {
+          "text": "looking",
+          "start": 20599,
+          "end": 20744,
+          "confidence": 0.9985421,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 20776,
+          "end": 20906,
+          "confidence": 0.9402903,
+          "speaker": "A"
+        },
+        {
+          "text": "right",
+          "start": 20922,
+          "end": 21100,
+          "confidence": 0.9995499,
+          "speaker": "A"
+        },
+        {
+          "text": "in",
+          "start": 21100,
+          "end": 21164,
+          "confidence": 0.9996352,
+          "speaker": "A"
+        },
+        {
+          "text": "your",
+          "start": 21164,
+          "end": 21245,
+          "confidence": 0.99971896,
+          "speaker": "A"
+        },
+        {
+          "text": "face,",
+          "start": 21261,
+          "end": 21552,
+          "confidence": 0.9911202,
+          "speaker": "A"
+        },
+        {
+          "text": "silly",
+          "start": 21584,
+          "end": 21891,
+          "confidence": 0.9997141,
+          "speaker": "A"
+        },
+        {
+          "text": "girl.",
+          "start": 21891,
+          "end": 22231,
+          "confidence": 0.7857378,
+          "speaker": "A"
+        },
+        {
+          "text": "It's",
+          "start": 22408,
+          "end": 22570,
+          "confidence": 0.99817634,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 22570,
+          "end": 22699,
+          "confidence": 0.9976047,
+          "speaker": "A"
+        },
+        {
+          "text": "pomegranate",
+          "start": 22699,
+          "end": 23426,
+          "confidence": 0.97054285,
+          "speaker": "A"
+        },
+        {
+          "text": "Sockatini,",
+          "start": 23426,
+          "end": 24073,
+          "confidence": 0.038921323,
+          "speaker": "A"
+        },
+        {
+          "text": "okay?",
+          "start": 24089,
+          "end": 24267,
+          "confidence": 0.8854574,
+          "speaker": "A"
+        },
+        {
+          "text": "Hey,",
+          "start": 24396,
+          "end": 24574,
+          "confidence": 0.8183961,
+          "speaker": "A"
+        },
+        {
+          "text": "and",
+          "start": 25204,
+          "end": 25349,
+          "confidence": 0.92746913,
+          "speaker": "A"
+        },
+        {
+          "text": "how",
+          "start": 25349,
+          "end": 25414,
+          "confidence": 0.99466974,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 25527,
+          "end": 25608,
+          "confidence": 0.9272813,
+          "speaker": "A"
+        },
+        {
+          "text": "doing?",
+          "start": 25608,
+          "end": 25915,
+          "confidence": 0.6457296,
+          "speaker": "A"
+        },
+        {
+          "text": "Oh,",
+          "start": 26092,
+          "end": 26109,
+          "confidence": 0.99530417,
+          "speaker": "A"
+        },
+        {
+          "text": "this",
+          "start": 26173,
+          "end": 26238,
+          "confidence": 0.9988594,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 26351,
+          "end": 26400,
+          "confidence": 0.99477154,
+          "speaker": "A"
+        },
+        {
+          "text": "Victoria.",
+          "start": 26500,
+          "end": 26856,
+          "confidence": 0.7796784,
+          "speaker": "A"
+        },
+        {
+          "text": "Hey,",
+          "start": 27082,
+          "end": 27342,
+          "confidence": 0.759315,
+          "speaker": "A"
+        },
+        {
+          "text": "Vicki!",
+          "start": 28070,
+          "end": 28929,
+          "confidence": 0.20642917,
+          "speaker": "A"
+        },
+        {
+          "text": "She",
+          "start": 29188,
+          "end": 29301,
+          "confidence": 0.9440653,
+          "speaker": "A"
+        },
+        {
+          "text": "cute.",
+          "start": 29301,
+          "end": 29706,
+          "confidence": 0.7678192,
+          "speaker": "A"
+        },
+        {
+          "text": "Look",
+          "start": 29933,
+          "end": 30095,
+          "confidence": 0.99766773,
+          "speaker": "A"
+        },
+        {
+          "text": "here,",
+          "start": 30095,
+          "end": 30192,
+          "confidence": 0.9081639,
+          "speaker": "A"
+        },
+        {
+          "text": "y'all,",
+          "start": 30240,
+          "end": 30402,
+          "confidence": 0.77366763,
+          "speaker": "A"
+        },
+        {
+          "text": "it's",
+          "start": 30435,
+          "end": 30645,
+          "confidence": 0.78085226,
+          "speaker": "A"
+        },
+        {
+          "text": "all",
+          "start": 30645,
+          "end": 30759,
+          "confidence": 0.9863149,
+          "speaker": "A"
+        },
+        {
+          "text": "upstairs.",
+          "start": 30807,
+          "end": 31196,
+          "confidence": 0.7528616,
+          "speaker": "A"
+        },
+        {
+          "text": "All",
+          "start": 31471,
+          "end": 31617,
+          "confidence": 0.9862727,
+          "speaker": "A"
+        },
+        {
+          "text": "right,",
+          "start": 31617,
+          "end": 31795,
+          "confidence": 0.9587724,
+          "speaker": "A"
+        },
+        {
+          "text": "come",
+          "start": 32038,
+          "end": 32200,
+          "confidence": 0.99949133,
+          "speaker": "A"
+        },
+        {
+          "text": "on,",
+          "start": 32265,
+          "end": 32329,
+          "confidence": 0.87966514,
+          "speaker": "A"
+        },
+        {
+          "text": "Pho.",
+          "start": 32427,
+          "end": 32702,
+          "confidence": 0.024605013,
+          "speaker": "A"
+        },
+        {
+          "text": "Come",
+          "start": 32929,
+          "end": 33172,
+          "confidence": 0.99881184,
+          "speaker": "A"
+        },
+        {
+          "text": "on,",
+          "start": 33172,
+          "end": 33220,
+          "confidence": 0.91103524,
+          "speaker": "A"
+        },
+        {
+          "text": "La.",
+          "start": 33398,
+          "end": 33528,
+          "confidence": 0.2514675,
+          "speaker": "A"
+        },
+        {
+          "text": "Come",
+          "start": 33900,
+          "end": 34127,
+          "confidence": 0.9947471,
+          "speaker": "A"
+        },
+        {
+          "text": "on,",
+          "start": 34127,
+          "end": 34192,
+          "confidence": 0.8741037,
+          "speaker": "A"
+        },
+        {
+          "text": "Pho.",
+          "start": 34289,
+          "end": 34564,
+          "confidence": 0.8287712,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

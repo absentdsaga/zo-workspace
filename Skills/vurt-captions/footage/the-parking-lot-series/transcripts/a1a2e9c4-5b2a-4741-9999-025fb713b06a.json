@@ -1,0 +1,222 @@
+{
+  "text": "You been following her? Nah, I'm waiting. Waiting for what? I'm waiting for the truth to come up. Nah, nigga, don't go nowhere, nigga. Don't go nowhere.",
+  "audio_duration": 29,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "You been following her?",
+      "confidence": 0.9465581,
+      "start": 1782,
+      "end": 3421,
+      "words": [
+        {
+          "text": "You",
+          "start": 1782,
+          "end": 1863,
+          "confidence": 0.9738507,
+          "speaker": "A"
+        },
+        {
+          "text": "been",
+          "start": 1863,
+          "end": 1975,
+          "confidence": 0.89733243,
+          "speaker": "A"
+        },
+        {
+          "text": "following",
+          "start": 1975,
+          "end": 2409,
+          "confidence": 0.9843093,
+          "speaker": "A"
+        },
+        {
+          "text": "her?",
+          "start": 3389,
+          "end": 3421,
+          "confidence": 0.9307401,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Nah, I'm waiting. Waiting for what? I'm waiting for the truth to come up.",
+      "confidence": 0.96431905,
+      "start": 7260,
+      "end": 15950,
+      "words": [
+        {
+          "text": "Nah,",
+          "start": 7260,
+          "end": 7340,
+          "confidence": 0.6827672,
+          "speaker": "B"
+        },
+        {
+          "text": "I'm",
+          "start": 8641,
+          "end": 8995,
+          "confidence": 0.9958505,
+          "speaker": "B"
+        },
+        {
+          "text": "waiting.",
+          "start": 9107,
+          "end": 9477,
+          "confidence": 0.9632552,
+          "speaker": "B"
+        },
+        {
+          "text": "Waiting",
+          "start": 10713,
+          "end": 10922,
+          "confidence": 0.998293,
+          "speaker": "B"
+        },
+        {
+          "text": "for",
+          "start": 11019,
+          "end": 11179,
+          "confidence": 0.999706,
+          "speaker": "B"
+        },
+        {
+          "text": "what?",
+          "start": 11179,
+          "end": 11516,
+          "confidence": 0.99858034,
+          "speaker": "B"
+        },
+        {
+          "text": "I'm",
+          "start": 12496,
+          "end": 13251,
+          "confidence": 0.99763083,
+          "speaker": "B"
+        },
+        {
+          "text": "waiting",
+          "start": 13589,
+          "end": 13781,
+          "confidence": 0.99890125,
+          "speaker": "B"
+        },
+        {
+          "text": "for",
+          "start": 13830,
+          "end": 13926,
+          "confidence": 0.999775,
+          "speaker": "B"
+        },
+        {
+          "text": "the",
+          "start": 13926,
+          "end": 14006,
+          "confidence": 0.99947864,
+          "speaker": "B"
+        },
+        {
+          "text": "truth",
+          "start": 14070,
+          "end": 14295,
+          "confidence": 0.9995041,
+          "speaker": "B"
+        },
+        {
+          "text": "to",
+          "start": 14327,
+          "end": 14456,
+          "confidence": 0.99941516,
+          "speaker": "B"
+        },
+        {
+          "text": "come",
+          "start": 14472,
+          "end": 14649,
+          "confidence": 0.9999119,
+          "speaker": "B"
+        },
+        {
+          "text": "up.",
+          "start": 14649,
+          "end": 15950,
+          "confidence": 0.86739767,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "Nah, nigga, don't go nowhere, nigga. Don't go nowhere.",
+      "confidence": 0.8770574,
+      "start": 16175,
+      "end": 18680,
+      "words": [
+        {
+          "text": "Nah,",
+          "start": 16175,
+          "end": 16287,
+          "confidence": 0.5629311,
+          "speaker": "A"
+        },
+        {
+          "text": "nigga,",
+          "start": 16335,
+          "end": 16544,
+          "confidence": 0.8604925,
+          "speaker": "A"
+        },
+        {
+          "text": "don't",
+          "start": 16576,
+          "end": 16737,
+          "confidence": 0.9958971,
+          "speaker": "A"
+        },
+        {
+          "text": "go",
+          "start": 16737,
+          "end": 16881,
+          "confidence": 0.99989974,
+          "speaker": "A"
+        },
+        {
+          "text": "nowhere,",
+          "start": 16898,
+          "end": 17219,
+          "confidence": 0.69879544,
+          "speaker": "A"
+        },
+        {
+          "text": "nigga.",
+          "start": 17235,
+          "end": 17524,
+          "confidence": 0.81616175,
+          "speaker": "A"
+        },
+        {
+          "text": "Don't",
+          "start": 17861,
+          "end": 18006,
+          "confidence": 0.99840254,
+          "speaker": "A"
+        },
+        {
+          "text": "go",
+          "start": 18022,
+          "end": 18199,
+          "confidence": 0.9999496,
+          "speaker": "A"
+        },
+        {
+          "text": "nowhere.",
+          "start": 18199,
+          "end": 18680,
+          "confidence": 0.9609866,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

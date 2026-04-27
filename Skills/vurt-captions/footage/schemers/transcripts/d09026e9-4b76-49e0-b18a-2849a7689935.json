@@ -1,0 +1,512 @@
+{
+  "text": "Hey, what's up everybody? It's your boy, producer K Spence, Spence World Studios. One of the executive producers of the movie Schemers, along with my partner in crime, my brother Courtney. Hey, Schemers is streaming right now on VIRT. Check it out, Schemers, VIRT. Check it out, it's streaming right now. Go check it out. Trina, Safaree, Donna, Fredro Starr, Omar Gooding, all on VIRT right now. Check it out, Schemers.",
+  "audio_duration": 20,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Hey, what's up everybody? It's your boy, producer K Spence, Spence World Studios. One of the executive producers of the movie Schemers, along with my partner in crime, my brother Courtney. Hey, Schemers is streaming right now on VIRT. Check it out, Schemers, VIRT. Check it out, it's streaming right now. Go check it out. Trina, Safaree, Donna, Fredro Starr, Omar Gooding, all on VIRT right now. Check it out, Schemers.",
+      "confidence": 0.8908793,
+      "start": 0,
+      "end": 19457,
+      "words": [
+        {
+          "text": "Hey,",
+          "start": 0,
+          "end": 48,
+          "confidence": 0.85823655,
+          "speaker": "A"
+        },
+        {
+          "text": "what's",
+          "start": 96,
+          "end": 257,
+          "confidence": 0.9877731,
+          "speaker": "A"
+        },
+        {
+          "text": "up",
+          "start": 257,
+          "end": 353,
+          "confidence": 0.99840873,
+          "speaker": "A"
+        },
+        {
+          "text": "everybody?",
+          "start": 353,
+          "end": 627,
+          "confidence": 0.72340125,
+          "speaker": "A"
+        },
+        {
+          "text": "It's",
+          "start": 675,
+          "end": 771,
+          "confidence": 0.9467705,
+          "speaker": "A"
+        },
+        {
+          "text": "your",
+          "start": 771,
+          "end": 900,
+          "confidence": 0.98076266,
+          "speaker": "A"
+        },
+        {
+          "text": "boy,",
+          "start": 900,
+          "end": 997,
+          "confidence": 0.39802662,
+          "speaker": "A"
+        },
+        {
+          "text": "producer",
+          "start": 1077,
+          "end": 1382,
+          "confidence": 0.6490864,
+          "speaker": "A"
+        },
+        {
+          "text": "K",
+          "start": 1382,
+          "end": 1495,
+          "confidence": 0.7479113,
+          "speaker": "A"
+        },
+        {
+          "text": "Spence,",
+          "start": 1495,
+          "end": 1801,
+          "confidence": 0.48256224,
+          "speaker": "A"
+        },
+        {
+          "text": "Spence",
+          "start": 1817,
+          "end": 2187,
+          "confidence": 0.9285648,
+          "speaker": "A"
+        },
+        {
+          "text": "World",
+          "start": 2187,
+          "end": 2283,
+          "confidence": 0.68291086,
+          "speaker": "A"
+        },
+        {
+          "text": "Studios.",
+          "start": 2283,
+          "end": 2782,
+          "confidence": 0.5860258,
+          "speaker": "A"
+        },
+        {
+          "text": "One",
+          "start": 3087,
+          "end": 3184,
+          "confidence": 0.9778357,
+          "speaker": "A"
+        },
+        {
+          "text": "of",
+          "start": 3184,
+          "end": 3232,
+          "confidence": 0.99945253,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 3232,
+          "end": 3312,
+          "confidence": 0.9991027,
+          "speaker": "A"
+        },
+        {
+          "text": "executive",
+          "start": 3312,
+          "end": 3634,
+          "confidence": 0.9950317,
+          "speaker": "A"
+        },
+        {
+          "text": "producers",
+          "start": 3634,
+          "end": 3988,
+          "confidence": 0.999572,
+          "speaker": "A"
+        },
+        {
+          "text": "of",
+          "start": 4052,
+          "end": 4084,
+          "confidence": 0.99295443,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 4084,
+          "end": 4197,
+          "confidence": 0.99895835,
+          "speaker": "A"
+        },
+        {
+          "text": "movie",
+          "start": 4197,
+          "end": 4374,
+          "confidence": 0.999076,
+          "speaker": "A"
+        },
+        {
+          "text": "Schemers,",
+          "start": 4374,
+          "end": 4840,
+          "confidence": 0.47278336,
+          "speaker": "A"
+        },
+        {
+          "text": "along",
+          "start": 4856,
+          "end": 5065,
+          "confidence": 0.9738966,
+          "speaker": "A"
+        },
+        {
+          "text": "with",
+          "start": 5081,
+          "end": 5129,
+          "confidence": 0.9936505,
+          "speaker": "A"
+        },
+        {
+          "text": "my",
+          "start": 5129,
+          "end": 5242,
+          "confidence": 0.99531543,
+          "speaker": "A"
+        },
+        {
+          "text": "partner",
+          "start": 5242,
+          "end": 5483,
+          "confidence": 0.9967348,
+          "speaker": "A"
+        },
+        {
+          "text": "in",
+          "start": 5564,
+          "end": 5628,
+          "confidence": 0.9578955,
+          "speaker": "A"
+        },
+        {
+          "text": "crime,",
+          "start": 5644,
+          "end": 5853,
+          "confidence": 0.99408835,
+          "speaker": "A"
+        },
+        {
+          "text": "my",
+          "start": 5901,
+          "end": 5933,
+          "confidence": 0.9974957,
+          "speaker": "A"
+        },
+        {
+          "text": "brother",
+          "start": 5982,
+          "end": 6223,
+          "confidence": 0.99831724,
+          "speaker": "A"
+        },
+        {
+          "text": "Courtney.",
+          "start": 6223,
+          "end": 6593,
+          "confidence": 0.87003046,
+          "speaker": "A"
+        },
+        {
+          "text": "Hey,",
+          "start": 6946,
+          "end": 7027,
+          "confidence": 0.5198068,
+          "speaker": "A"
+        },
+        {
+          "text": "Schemers",
+          "start": 7445,
+          "end": 7879,
+          "confidence": 0.9953791,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 8169,
+          "end": 8233,
+          "confidence": 0.9401296,
+          "speaker": "A"
+        },
+        {
+          "text": "streaming",
+          "start": 8233,
+          "end": 8603,
+          "confidence": 0.99771607,
+          "speaker": "A"
+        },
+        {
+          "text": "right",
+          "start": 8619,
+          "end": 8796,
+          "confidence": 0.9993006,
+          "speaker": "A"
+        },
+        {
+          "text": "now",
+          "start": 8796,
+          "end": 8989,
+          "confidence": 0.9993666,
+          "speaker": "A"
+        },
+        {
+          "text": "on",
+          "start": 9037,
+          "end": 9182,
+          "confidence": 0.98333746,
+          "speaker": "A"
+        },
+        {
+          "text": "VIRT.",
+          "start": 9198,
+          "end": 9359,
+          "confidence": 0.42856383,
+          "speaker": "A"
+        },
+        {
+          "text": "Check",
+          "start": 9825,
+          "end": 9938,
+          "confidence": 0.99944335,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 9938,
+          "end": 10002,
+          "confidence": 0.99965215,
+          "speaker": "A"
+        },
+        {
+          "text": "out,",
+          "start": 10002,
+          "end": 10114,
+          "confidence": 0.5136339,
+          "speaker": "A"
+        },
+        {
+          "text": "Schemers,",
+          "start": 10259,
+          "end": 10693,
+          "confidence": 0.7715117,
+          "speaker": "A"
+        },
+        {
+          "text": "VIRT.",
+          "start": 10967,
+          "end": 11208,
+          "confidence": 0.63787293,
+          "speaker": "A"
+        },
+        {
+          "text": "Check",
+          "start": 11610,
+          "end": 11771,
+          "confidence": 0.9986947,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 11771,
+          "end": 11819,
+          "confidence": 0.9997441,
+          "speaker": "A"
+        },
+        {
+          "text": "out,",
+          "start": 11851,
+          "end": 11899,
+          "confidence": 0.8483109,
+          "speaker": "A"
+        },
+        {
+          "text": "it's",
+          "start": 11948,
+          "end": 12044,
+          "confidence": 0.94940495,
+          "speaker": "A"
+        },
+        {
+          "text": "streaming",
+          "start": 12060,
+          "end": 12301,
+          "confidence": 0.9995142,
+          "speaker": "A"
+        },
+        {
+          "text": "right",
+          "start": 12318,
+          "end": 12478,
+          "confidence": 0.99953103,
+          "speaker": "A"
+        },
+        {
+          "text": "now.",
+          "start": 12478,
+          "end": 12559,
+          "confidence": 0.86094135,
+          "speaker": "A"
+        },
+        {
+          "text": "Go",
+          "start": 12655,
+          "end": 12800,
+          "confidence": 0.9900192,
+          "speaker": "A"
+        },
+        {
+          "text": "check",
+          "start": 12800,
+          "end": 12961,
+          "confidence": 0.9992107,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 12961,
+          "end": 13041,
+          "confidence": 0.9992454,
+          "speaker": "A"
+        },
+        {
+          "text": "out.",
+          "start": 13041,
+          "end": 13154,
+          "confidence": 0.7990733,
+          "speaker": "A"
+        },
+        {
+          "text": "Trina,",
+          "start": 13218,
+          "end": 13540,
+          "confidence": 0.9733198,
+          "speaker": "A"
+        },
+        {
+          "text": "Safaree,",
+          "start": 13556,
+          "end": 14183,
+          "confidence": 0.8595354,
+          "speaker": "A"
+        },
+        {
+          "text": "Donna,",
+          "start": 14408,
+          "end": 14810,
+          "confidence": 0.9006306,
+          "speaker": "A"
+        },
+        {
+          "text": "Fredro",
+          "start": 15148,
+          "end": 15453,
+          "confidence": 0.5681146,
+          "speaker": "A"
+        },
+        {
+          "text": "Starr,",
+          "start": 15485,
+          "end": 16016,
+          "confidence": 0.98961055,
+          "speaker": "A"
+        },
+        {
+          "text": "Omar",
+          "start": 16097,
+          "end": 16434,
+          "confidence": 0.9982988,
+          "speaker": "A"
+        },
+        {
+          "text": "Gooding,",
+          "start": 16434,
+          "end": 16724,
+          "confidence": 0.77023214,
+          "speaker": "A"
+        },
+        {
+          "text": "all",
+          "start": 17463,
+          "end": 17512,
+          "confidence": 0.9989208,
+          "speaker": "A"
+        },
+        {
+          "text": "on",
+          "start": 17560,
+          "end": 17705,
+          "confidence": 0.99940896,
+          "speaker": "A"
+        },
+        {
+          "text": "VIRT",
+          "start": 17705,
+          "end": 17994,
+          "confidence": 0.99798954,
+          "speaker": "A"
+        },
+        {
+          "text": "right",
+          "start": 18123,
+          "end": 18284,
+          "confidence": 0.9387097,
+          "speaker": "A"
+        },
+        {
+          "text": "now.",
+          "start": 18284,
+          "end": 18525,
+          "confidence": 0.95652044,
+          "speaker": "A"
+        },
+        {
+          "text": "Check",
+          "start": 18605,
+          "end": 18766,
+          "confidence": 0.99877924,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 18766,
+          "end": 18830,
+          "confidence": 0.99963987,
+          "speaker": "A"
+        },
+        {
+          "text": "out,",
+          "start": 18830,
+          "end": 18879,
+          "confidence": 0.910571,
+          "speaker": "A"
+        },
+        {
+          "text": "Schemers.",
+          "start": 19088,
+          "end": 19457,
+          "confidence": 0.9801113,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

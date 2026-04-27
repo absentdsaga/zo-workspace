@@ -9,10 +9,13 @@ import argparse
 import json
 import os
 import re
+import socket
 import sys
 import urllib.request
 import urllib.parse
 from datetime import datetime, timedelta
+
+socket.setdefaulttimeout(12)
 
 DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
@@ -389,26 +392,29 @@ def get_tiktok_api_videos():
 
 
 def get_tiktok_stats(url):
-    """Scrape TikTok video stats from page HTML."""
-    import time
+    """Scrape TikTok video stats from page HTML via the structured parser.
+
+    Returns a dict with playCount/diggCount/commentCount/shareCount/collectCount
+    plus 'caption' for backwards compatibility with the previous shape.
+    """
     try:
-        req = urllib.request.Request(url, headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        })
-        resp = urllib.request.urlopen(req, timeout=15)
-        html = resp.read().decode("utf-8", errors="ignore")
-        match = re.search(r'<script id="__UNIVERSAL_DATA_FOR_REHYDRATION__"[^>]*>(.*?)</script>', html, re.DOTALL)
-        if not match:
-            return None
-        s = match.group(1)
-        stats = {}
-        for metric in ["playCount", "diggCount", "shareCount", "commentCount", "collectCount"]:
-            vals = re.findall(rf'"{metric}":\s*(\d+)', s)
-            if vals:
-                stats[metric] = int(vals[0])
-        return stats
-    except Exception:
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+        from tiktok_scraper import scrape_video
+    except Exception as e:
+        print(f"  tiktok_scraper unavailable: {e}", file=sys.stderr)
         return None
+    data = scrape_video(url)
+    if not data:
+        return None
+    return {
+        "playCount": data["views"],
+        "diggCount": data["likes"],
+        "commentCount": data["comments"],
+        "shareCount": data["shares"],
+        "collectCount": data["saves"],
+        "caption": data["caption"],
+    }
 
 
 # --- Matching + Sync ---
@@ -640,7 +646,10 @@ def sync_metrics(entries, ig_posts, yt_videos, fb_posts=None, tiktok_videos=None
                             "Shares": {"number": stats.get("shareCount", 0)},
                             "Saves": {"number": stats.get("collectCount", 0)},
                         }
-                    time.sleep(1)
+                        cap = stats.get("caption") or ""
+                        if cap and not entry.get("caption"):
+                            props_update["Caption"] = {"rich_text": [{"text": {"content": cap[:2000]}}]}
+                    time.sleep(1.5)
 
         if props_update:
             if preliminary:

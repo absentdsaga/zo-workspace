@@ -1,0 +1,638 @@
+{
+  "text": "Call me out of my name again. Say it again. To her face? Say it again. Okay. Oh, you must think it's a game. I said I'm\u2014 Oh, Jesus. Okay, watch it. Okay, um, give me half of it if you want. I don't even mind getting a half. Okay, um, you got a check? If a check\u2014 a check would do for real. Okay, that's the one. Okay. I think I'm singing better. Did I do good though? To the best of my ability. Where's more? Oh, Jesus.",
+  "audio_duration": 36,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Call me out of my name again. Say it again. To her face? Say it again. Okay. Oh, you must think it's a game. I said I'm\u2014 Oh, Jesus. Okay, watch it. Okay, um, give me half of it if you want. I don't even mind getting a half. Okay, um, you got a check? If a check\u2014 a check would do for real. Okay, that's the one. Okay. I think I'm singing better. Did I do good though? To the best of my ability. Where's more? Oh, Jesus.",
+      "confidence": 0.8256666,
+      "start": 132,
+      "end": 26242,
+      "words": [
+        {
+          "text": "Call",
+          "start": 132,
+          "end": 456,
+          "confidence": 0.9344483,
+          "speaker": "A"
+        },
+        {
+          "text": "me",
+          "start": 456,
+          "end": 602,
+          "confidence": 0.99951935,
+          "speaker": "A"
+        },
+        {
+          "text": "out",
+          "start": 683,
+          "end": 796,
+          "confidence": 0.9996667,
+          "speaker": "A"
+        },
+        {
+          "text": "of",
+          "start": 796,
+          "end": 828,
+          "confidence": 0.8008027,
+          "speaker": "A"
+        },
+        {
+          "text": "my",
+          "start": 828,
+          "end": 1023,
+          "confidence": 0.99972826,
+          "speaker": "A"
+        },
+        {
+          "text": "name",
+          "start": 1023,
+          "end": 1298,
+          "confidence": 0.99994683,
+          "speaker": "A"
+        },
+        {
+          "text": "again.",
+          "start": 1347,
+          "end": 1800,
+          "confidence": 0.61885,
+          "speaker": "A"
+        },
+        {
+          "text": "Say",
+          "start": 3112,
+          "end": 3290,
+          "confidence": 0.9924638,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 3290,
+          "end": 3387,
+          "confidence": 0.9981071,
+          "speaker": "A"
+        },
+        {
+          "text": "again.",
+          "start": 3387,
+          "end": 3695,
+          "confidence": 0.8863267,
+          "speaker": "A"
+        },
+        {
+          "text": "To",
+          "start": 4667,
+          "end": 4732,
+          "confidence": 0.9087654,
+          "speaker": "A"
+        },
+        {
+          "text": "her",
+          "start": 4732,
+          "end": 4926,
+          "confidence": 0.9390084,
+          "speaker": "A"
+        },
+        {
+          "text": "face?",
+          "start": 4975,
+          "end": 5282,
+          "confidence": 0.8109103,
+          "speaker": "A"
+        },
+        {
+          "text": "Say",
+          "start": 5331,
+          "end": 5558,
+          "confidence": 0.9934443,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 5558,
+          "end": 5639,
+          "confidence": 0.97914094,
+          "speaker": "A"
+        },
+        {
+          "text": "again.",
+          "start": 5639,
+          "end": 5849,
+          "confidence": 0.98415554,
+          "speaker": "A"
+        },
+        {
+          "text": "Okay.",
+          "start": 6368,
+          "end": 6546,
+          "confidence": 0.7260709,
+          "speaker": "A"
+        },
+        {
+          "text": "Oh,",
+          "start": 8052,
+          "end": 8068,
+          "confidence": 0.97416973,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 8084,
+          "end": 8230,
+          "confidence": 0.99953985,
+          "speaker": "A"
+        },
+        {
+          "text": "must",
+          "start": 8230,
+          "end": 8392,
+          "confidence": 0.9972875,
+          "speaker": "A"
+        },
+        {
+          "text": "think",
+          "start": 8392,
+          "end": 8554,
+          "confidence": 0.9995061,
+          "speaker": "A"
+        },
+        {
+          "text": "it's",
+          "start": 8554,
+          "end": 8635,
+          "confidence": 0.98008853,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 8635,
+          "end": 8700,
+          "confidence": 0.9975636,
+          "speaker": "A"
+        },
+        {
+          "text": "game.",
+          "start": 8700,
+          "end": 8813,
+          "confidence": 0.90170264,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 9617,
+          "end": 9633,
+          "confidence": 0.9647717,
+          "speaker": "A"
+        },
+        {
+          "text": "said",
+          "start": 9633,
+          "end": 9681,
+          "confidence": 0.99642354,
+          "speaker": "A"
+        },
+        {
+          "text": "I'm\u2014",
+          "start": 9681,
+          "end": 9875,
+          "confidence": 0.17060739,
+          "speaker": "A"
+        },
+        {
+          "text": "Oh,",
+          "start": 9940,
+          "end": 10085,
+          "confidence": 0.38194692,
+          "speaker": "A"
+        },
+        {
+          "text": "Jesus.",
+          "start": 10279,
+          "end": 10684,
+          "confidence": 0.72486037,
+          "speaker": "A"
+        },
+        {
+          "text": "Okay,",
+          "start": 10765,
+          "end": 11088,
+          "confidence": 0.5229579,
+          "speaker": "A"
+        },
+        {
+          "text": "watch",
+          "start": 11250,
+          "end": 11460,
+          "confidence": 0.9994905,
+          "speaker": "A"
+        },
+        {
+          "text": "it.",
+          "start": 11492,
+          "end": 11589,
+          "confidence": 0.9735839,
+          "speaker": "A"
+        },
+        {
+          "text": "Okay,",
+          "start": 11977,
+          "end": 12365,
+          "confidence": 0.72157556,
+          "speaker": "A"
+        },
+        {
+          "text": "um,",
+          "start": 12527,
+          "end": 12867,
+          "confidence": 0.5546226,
+          "speaker": "A"
+        },
+        {
+          "text": "give",
+          "start": 13190,
+          "end": 13335,
+          "confidence": 0.8833689,
+          "speaker": "A"
+        },
+        {
+          "text": "me",
+          "start": 13352,
+          "end": 13433,
+          "confidence": 0.9993899,
+          "speaker": "A"
+        },
+        {
+          "text": "half",
+          "start": 13497,
+          "end": 13821,
+          "confidence": 0.99399275,
+          "speaker": "A"
+        },
+        {
+          "text": "of",
+          "start": 13821,
+          "end": 13918,
+          "confidence": 0.99373853,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 13918,
+          "end": 14063,
+          "confidence": 0.9990546,
+          "speaker": "A"
+        },
+        {
+          "text": "if",
+          "start": 14063,
+          "end": 14112,
+          "confidence": 0.9139756,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 14144,
+          "end": 14241,
+          "confidence": 0.9997501,
+          "speaker": "A"
+        },
+        {
+          "text": "want.",
+          "start": 14241,
+          "end": 14354,
+          "confidence": 0.8613679,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 14419,
+          "end": 14435,
+          "confidence": 0.9978309,
+          "speaker": "A"
+        },
+        {
+          "text": "don't",
+          "start": 14435,
+          "end": 14629,
+          "confidence": 0.99935704,
+          "speaker": "A"
+        },
+        {
+          "text": "even",
+          "start": 14629,
+          "end": 14742,
+          "confidence": 0.99676466,
+          "speaker": "A"
+        },
+        {
+          "text": "mind",
+          "start": 14742,
+          "end": 15049,
+          "confidence": 0.98344535,
+          "speaker": "A"
+        },
+        {
+          "text": "getting",
+          "start": 15049,
+          "end": 15179,
+          "confidence": 0.65273297,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 15276,
+          "end": 15292,
+          "confidence": 0.7698463,
+          "speaker": "A"
+        },
+        {
+          "text": "half.",
+          "start": 15292,
+          "end": 15551,
+          "confidence": 0.8825167,
+          "speaker": "A"
+        },
+        {
+          "text": "Okay,",
+          "start": 15696,
+          "end": 16036,
+          "confidence": 0.8027282,
+          "speaker": "A"
+        },
+        {
+          "text": "um,",
+          "start": 16246,
+          "end": 16375,
+          "confidence": 0.8284364,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 17135,
+          "end": 17168,
+          "confidence": 0.9880917,
+          "speaker": "A"
+        },
+        {
+          "text": "got",
+          "start": 17168,
+          "end": 17362,
+          "confidence": 0.9067607,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 17362,
+          "end": 17378,
+          "confidence": 0.98354673,
+          "speaker": "A"
+        },
+        {
+          "text": "check?",
+          "start": 17378,
+          "end": 17637,
+          "confidence": 0.95101357,
+          "speaker": "A"
+        },
+        {
+          "text": "If",
+          "start": 17863,
+          "end": 18057,
+          "confidence": 0.93520683,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 18122,
+          "end": 18138,
+          "confidence": 0.8622147,
+          "speaker": "A"
+        },
+        {
+          "text": "check\u2014",
+          "start": 18203,
+          "end": 18542,
+          "confidence": 0.46543038,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 18591,
+          "end": 18607,
+          "confidence": 0.65937185,
+          "speaker": "A"
+        },
+        {
+          "text": "check",
+          "start": 18607,
+          "end": 18833,
+          "confidence": 0.98026854,
+          "speaker": "A"
+        },
+        {
+          "text": "would",
+          "start": 18833,
+          "end": 18914,
+          "confidence": 0.32062337,
+          "speaker": "A"
+        },
+        {
+          "text": "do",
+          "start": 18914,
+          "end": 19108,
+          "confidence": 0.99883527,
+          "speaker": "A"
+        },
+        {
+          "text": "for",
+          "start": 19060,
+          "end": 19270,
+          "confidence": 0.8907785,
+          "speaker": "A"
+        },
+        {
+          "text": "real.",
+          "start": 19270,
+          "end": 19577,
+          "confidence": 0.45749187,
+          "speaker": "A"
+        },
+        {
+          "text": "Okay,",
+          "start": 19723,
+          "end": 20046,
+          "confidence": 0.9126706,
+          "speaker": "A"
+        },
+        {
+          "text": "that's",
+          "start": 20062,
+          "end": 20240,
+          "confidence": 0.9986801,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 20240,
+          "end": 20370,
+          "confidence": 0.9994056,
+          "speaker": "A"
+        },
+        {
+          "text": "one.",
+          "start": 20370,
+          "end": 20531,
+          "confidence": 0.55419767,
+          "speaker": "A"
+        },
+        {
+          "text": "Okay.",
+          "start": 20629,
+          "end": 20790,
+          "confidence": 0.4075464,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 21033,
+          "end": 21114,
+          "confidence": 0.9676289,
+          "speaker": "A"
+        },
+        {
+          "text": "think",
+          "start": 21114,
+          "end": 21243,
+          "confidence": 0.9988558,
+          "speaker": "A"
+        },
+        {
+          "text": "I'm",
+          "start": 21243,
+          "end": 21373,
+          "confidence": 0.9974003,
+          "speaker": "A"
+        },
+        {
+          "text": "singing",
+          "start": 21373,
+          "end": 22003,
+          "confidence": 0.4505533,
+          "speaker": "A"
+        },
+        {
+          "text": "better.",
+          "start": 22068,
+          "end": 22311,
+          "confidence": 0.20925081,
+          "speaker": "A"
+        },
+        {
+          "text": "Did",
+          "start": 22570,
+          "end": 22667,
+          "confidence": 0.98291415,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 22667,
+          "end": 22812,
+          "confidence": 0.98986924,
+          "speaker": "A"
+        },
+        {
+          "text": "do",
+          "start": 22812,
+          "end": 22974,
+          "confidence": 0.70805323,
+          "speaker": "A"
+        },
+        {
+          "text": "good",
+          "start": 22974,
+          "end": 23298,
+          "confidence": 0.99924076,
+          "speaker": "A"
+        },
+        {
+          "text": "though?",
+          "start": 23298,
+          "end": 23540,
+          "confidence": 0.44367772,
+          "speaker": "A"
+        },
+        {
+          "text": "To",
+          "start": 23767,
+          "end": 23799,
+          "confidence": 0.4278689,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 23799,
+          "end": 23928,
+          "confidence": 0.9966048,
+          "speaker": "A"
+        },
+        {
+          "text": "best",
+          "start": 23928,
+          "end": 24009,
+          "confidence": 0.77564496,
+          "speaker": "A"
+        },
+        {
+          "text": "of",
+          "start": 24009,
+          "end": 24074,
+          "confidence": 0.71410906,
+          "speaker": "A"
+        },
+        {
+          "text": "my",
+          "start": 24090,
+          "end": 24155,
+          "confidence": 0.6383164,
+          "speaker": "A"
+        },
+        {
+          "text": "ability.",
+          "start": 24155,
+          "end": 24365,
+          "confidence": 0.5739137,
+          "speaker": "A"
+        },
+        {
+          "text": "Where's",
+          "start": 24430,
+          "end": 24672,
+          "confidence": 0.4097752,
+          "speaker": "A"
+        },
+        {
+          "text": "more?",
+          "start": 24672,
+          "end": 24980,
+          "confidence": 0.22977369,
+          "speaker": "A"
+        },
+        {
+          "text": "Oh,",
+          "start": 25627,
+          "end": 25805,
+          "confidence": 0.7808847,
+          "speaker": "A"
+        },
+        {
+          "text": "Jesus.",
+          "start": 26031,
+          "end": 26242,
+          "confidence": 0.9275097,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

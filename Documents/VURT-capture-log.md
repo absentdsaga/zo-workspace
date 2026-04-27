@@ -18,7 +18,7 @@
 - Diane August — NOT in Karma in Heels (was incorrect early research, corrected)
 
 **Decisions:**
-- VURT handle everywhere: @watchvurt (IG), @watchvurticals (TikTok pending → @myvurt), FB/YT "VURT"
+- VURT handle everywhere: @watchvurt (IG), @myvurt (TikTok), FB/YT "VURT"
 - Caption voice: "Stories told OUR Way. Built for the Culture. Free on VURT."
 - Platform rules: No IG→FB auto-post. No Tubi credit. Always subtitle. Always IG Stories after Reel. Always pin comment on TikTok.
 - 5-clip arc: Hook → Escalation → Twist → Confrontation → Edge of Resolution

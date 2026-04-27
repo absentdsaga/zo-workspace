@@ -1,7 +1,9 @@
 # VURT Social Playbook
 
-**Version 1.0 | March 31, 2026**\
+**Version 1.3 | April 27, 2026**\
 *A living document — update after every posting sprint*
+
+**v1.3 changes:** Story stack tiers (interactive returns for premieres/Clip 1/emotional beats). New "Interactive Engagement" section covering polls, questions, quiz, slider, Add Yours, Q&A, DM stickers, and music sticker plays.
 
 ---
 
@@ -93,11 +95,24 @@ Before the spotlight post, confirm you have:
 
 **Immediately after posting — Stories:**
 
-1. **Story 1 — Reshare the Reel.** Add caption overlay + Link sticker (myvurt.com or direct show URL). Example: *"She got caught and still made it his fault. Watch this."*
-2. **Story 2 — Cast tags.** Black background or still frame. Tag everyone (exec producer, director, cast). No caption. They repost, their audiences see VURT.
-3. **Story 3 — Poll or Question sticker.** Fit the question to the scene. Example: *"Would you go back for revenge?" YES / ABSOLUTELY*
+Use the right stack for the moment. Don't default to 2; don't always do 3. Match the tier to the clip.
 
-*Note: Vary Story 3 format over time — sometimes a poll, sometimes a question, sometimes a "this or that." Keep it fresh.*
+**3-story stack (interactive)** — premieres, Clip 1 of any new arc, premiere-day reposts, and any clip with a built-in question the scene gives you (betrayal, choice, "what would you do"). Interactive stories spike completion rate and DM replies, both of which feed reach.
+
+1. **Story 1 — Reshare the Reel.** Caption overlay + Link sticker (myvurt.com or direct show URL).
+2. **Story 2 — Cast tags.** Black background or still frame. Tag everyone (exec producer, director, cast). No caption. They repost, their audiences see VURT.
+3. **Story 3 — Interactive sticker.** Poll, question, quiz, slider, or "this or that" — pick the one the scene hands you. (See "Interactive Engagement" section below for the picker.)
+
+**2-story stack (routine)** — mid-arc clips (2, 3, 4) where the scene doesn't naturally provoke a question, or BTS reposts that don't warrant a poll.
+
+1. Story 1 — Reshare with overlay + Link sticker.
+2. Story 2 — Cast tags.
+
+**1-story stack (light touch)** — UGC reposts, filmmaker testimonials, press reposts where the post itself is the engagement.
+
+1. Reshare + Link sticker only.
+
+*Rule: every premiere day and every Clip 1 gets the 3-story stack — no exceptions.*
 
 **Caption formula:**
 
@@ -274,6 +289,77 @@ myvurt.com
 4. **No cursing in captions** unless the scene dialogue is the hook and it's authentic to the moment.
 5. **Tag the team** — every caption should tag at minimum the exec producer, director, and top 2 actors if IG handles exist.
 6. **Platform voice:** TikTok is fastest/boldest. IG is slightly more polished. Facebook is conversational. YouTube title IS the caption — keep it clean.
+
+---
+
+## Interactive Engagement
+
+Interactive stickers and prompts are the cheapest, most underused reach lever VURT has. Polls and questions don't just get replies — they push completion rate, DM volume, and dwell time, all three of which the algorithms weight. We were defaulting to 2-story stacks and skipping these. Stop doing that.
+
+### IG Stories — Picker
+
+Pick the sticker that matches what the scene is doing, not what's trendy.
+
+| If the scene is… | Use this sticker | Example prompt |
+| --- | --- | --- |
+| A choice / dilemma | **Poll** (binary) | "She said her phone was dead. The phone is ringing. Pick it up / Hand her the phone." |
+| An emotional reaction | **Slider** (emoji) | "How did this scene hit you?" 🔥 |
+| A character trait moment | **This or That** quiz | "Tyler — red flag or just dumb?" |
+| A theory-bait moment | **Question sticker** | "What do you think she does next?" |
+| A relatable scene | **Add Yours** | "Reply with the line that hit you the hardest." |
+| BTS / UGC clip | **Q&A or DM sticker** | "Ask the cast anything — DM us your question." |
+| Premiere countdown | **Countdown** | "Schemers premieres Wed — set the reminder." |
+| Music-driven clip | **Music sticker + emoji slider** | Drop the scene's track + emoji slider for vibe. |
+
+**Rules:**
+1. One sticker per story. Stacking stickers tanks engagement and looks busy.
+2. Story 3 in a 3-stack is the interactive slot. Don't bury it on Story 1 (people swipe past Story 1 fastest).
+3. Replies and votes are reach signals. Reply to every DM that comes in within 24 hours — IG reads back-and-forth as engagement.
+4. Polls should be binary and dramatic. "Would you?" / "Would you not?" beats neutral options.
+
+### TikTok — Engagement Plays
+
+TikTok rewards comment volume + watch time. Build engagement into the post itself.
+
+1. **End the caption with a question.** "What would you do?" / "Was she wrong?" — gives every viewer an excuse to comment.
+2. **Pin a comment that asks a question** — different from the caption question. Example caption: "Karma in Heels. Free on VURT." Pinned comment: "Y'all think she's the villain or the hero in this? 👇"
+3. **Reply to comments with video replies** — TikTok pushes video replies into the FYP of the original commenter's followers. Free reach.
+4. **Use the Q&A profile feature** (Settings → Creator Tools → Q&A) — followers submit questions, you answer with videos. Stockpiles engagement-rich content.
+5. **Stitch and Duet bait** — when a clip naturally invites a reaction ("would you do this?"), allow Stitches and explicitly invite them in the pinned comment.
+
+### Facebook — Engagement Plays
+
+FB rewards comments and shares above all else.
+
+1. **Question in caption** — works the same as TikTok. End with "What would you have done?"
+2. **Tag relevant Pages** in the caption (filmmaker pages, Black indie film communities). They get notified, often share.
+3. **Reply to commenters by tagging them back** — FB's algorithm reads thread depth as engagement.
+4. **Share to relevant FB Groups** (only the ones VURT belongs to or is welcome in — don't spam). One group share can outreach the original post.
+
+### YouTube Shorts — Engagement Plays
+
+YouTube rewards retention and channel-time. Comments are secondary but still help.
+
+1. **Pinned comment with a question.** "Drop a 🔥 if you'd watch the whole thing." Triggers reply chains.
+2. **End screen** — Subscribe + link to most recent VURT Short. Always.
+3. **Reply to early commenters within the first hour** — early engagement signals push the Short into Shorts shelf rotation.
+4. **Use community posts** (when VURT hits the threshold) for polls between clips: "Which series should we drop next?"
+
+### Cross-Platform Engagement Cadence
+
+| Day | Action |
+| --- | --- |
+| Day 0 (post day) | Post + interactive sticker + pinned comment with question |
+| Day 1 | Reply to every comment/DM. Repost top fan reactions to Stories. |
+| Day 2-3 | Use 72-hr eval data to pick a winner — re-cut for other platforms with engagement bait built in. |
+| Day 7 | If poll/question got strong response, repurpose the data into a follow-up post ("Y'all said she should pick up the phone — here's what happens when she does."). |
+
+### What to Never Skip
+
+- ❌ Don't post a premiere or Clip 1 without an interactive Story 3.
+- ❌ Don't write a caption that doesn't end with either a destination (myvurt.com) or a question.
+- ❌ Don't ignore replies or comments for more than 24 hours — engagement decays fast.
+- ❌ Don't use the same poll/question template twice in a week. Variety prevents fatigue.
 
 ---
 

@@ -1,0 +1,489 @@
+{
+  "text": "Hey. Oh, did you get my calls? Baby, my, um, my phone is dead, so\u2014 Couldn't you have called? I was actually worried about you. No, that I was out with my girls. Yeah, I know that, but you could have called and checked on your kids. I told you my phone is dead. And you know what? I don't\u2014",
+  "audio_duration": 41,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Hey.",
+      "confidence": 0.22326338,
+      "start": 3864,
+      "end": 4121,
+      "words": [
+        {
+          "text": "Hey.",
+          "start": 3864,
+          "end": 4121,
+          "confidence": 0.22326338,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Oh, did you get my calls?",
+      "confidence": 0.72080183,
+      "start": 7873,
+      "end": 14112,
+      "words": [
+        {
+          "text": "Oh,",
+          "start": 7873,
+          "end": 8050,
+          "confidence": 0.29539925,
+          "speaker": "B"
+        },
+        {
+          "text": "did",
+          "start": 13246,
+          "end": 13406,
+          "confidence": 0.24257293,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 13406,
+          "end": 13486,
+          "confidence": 0.9970005,
+          "speaker": "B"
+        },
+        {
+          "text": "get",
+          "start": 13486,
+          "end": 13646,
+          "confidence": 0.9973356,
+          "speaker": "B"
+        },
+        {
+          "text": "my",
+          "start": 13646,
+          "end": 13743,
+          "confidence": 0.9998927,
+          "speaker": "B"
+        },
+        {
+          "text": "calls?",
+          "start": 13743,
+          "end": 14112,
+          "confidence": 0.79261,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "Baby, my, um, my phone is dead, so\u2014",
+      "confidence": 0.7989208,
+      "start": 15170,
+      "end": 20895,
+      "words": [
+        {
+          "text": "Baby,",
+          "start": 15170,
+          "end": 15555,
+          "confidence": 0.38808778,
+          "speaker": "A"
+        },
+        {
+          "text": "my,",
+          "start": 15667,
+          "end": 15908,
+          "confidence": 0.7772836,
+          "speaker": "A"
+        },
+        {
+          "text": "um,",
+          "start": 16052,
+          "end": 16453,
+          "confidence": 0.97848076,
+          "speaker": "A"
+        },
+        {
+          "text": "my",
+          "start": 18730,
+          "end": 18874,
+          "confidence": 0.9947956,
+          "speaker": "A"
+        },
+        {
+          "text": "phone",
+          "start": 18874,
+          "end": 19259,
+          "confidence": 0.9999354,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 19259,
+          "end": 19323,
+          "confidence": 0.99896336,
+          "speaker": "A"
+        },
+        {
+          "text": "dead,",
+          "start": 19355,
+          "end": 19564,
+          "confidence": 0.6423951,
+          "speaker": "A"
+        },
+        {
+          "text": "so\u2014",
+          "start": 20574,
+          "end": 20895,
+          "confidence": 0.61142504,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Couldn't you have called? I was actually worried about you.",
+      "confidence": 0.9606306,
+      "start": 21424,
+      "end": 23381,
+      "words": [
+        {
+          "text": "Couldn't",
+          "start": 21424,
+          "end": 21584,
+          "confidence": 0.6264872,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 21584,
+          "end": 21617,
+          "confidence": 0.9970291,
+          "speaker": "B"
+        },
+        {
+          "text": "have",
+          "start": 21617,
+          "end": 21729,
+          "confidence": 0.99851114,
+          "speaker": "B"
+        },
+        {
+          "text": "called?",
+          "start": 21761,
+          "end": 22098,
+          "confidence": 0.9994751,
+          "speaker": "B"
+        },
+        {
+          "text": "I",
+          "start": 22146,
+          "end": 22162,
+          "confidence": 0.999801,
+          "speaker": "B"
+        },
+        {
+          "text": "was",
+          "start": 22162,
+          "end": 22290,
+          "confidence": 0.999694,
+          "speaker": "B"
+        },
+        {
+          "text": "actually",
+          "start": 22322,
+          "end": 22611,
+          "confidence": 0.99955577,
+          "speaker": "B"
+        },
+        {
+          "text": "worried",
+          "start": 22627,
+          "end": 22899,
+          "confidence": 0.9999063,
+          "speaker": "B"
+        },
+        {
+          "text": "about",
+          "start": 22899,
+          "end": 23124,
+          "confidence": 0.99965,
+          "speaker": "B"
+        },
+        {
+          "text": "you.",
+          "start": 23124,
+          "end": 23381,
+          "confidence": 0.98619616,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "No, that I was out with my girls.",
+      "confidence": 0.88316774,
+      "start": 23685,
+      "end": 26299,
+      "words": [
+        {
+          "text": "No,",
+          "start": 23685,
+          "end": 23781,
+          "confidence": 0.37398374,
+          "speaker": "A"
+        },
+        {
+          "text": "that",
+          "start": 23942,
+          "end": 24279,
+          "confidence": 0.84518796,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 24311,
+          "end": 24359,
+          "confidence": 0.9535835,
+          "speaker": "A"
+        },
+        {
+          "text": "was",
+          "start": 25032,
+          "end": 25177,
+          "confidence": 0.9992267,
+          "speaker": "A"
+        },
+        {
+          "text": "out",
+          "start": 25353,
+          "end": 25401,
+          "confidence": 0.9996338,
+          "speaker": "A"
+        },
+        {
+          "text": "with",
+          "start": 25449,
+          "end": 25610,
+          "confidence": 0.99973494,
+          "speaker": "A"
+        },
+        {
+          "text": "my",
+          "start": 25610,
+          "end": 25850,
+          "confidence": 0.9994772,
+          "speaker": "A"
+        },
+        {
+          "text": "girls.",
+          "start": 25850,
+          "end": 26299,
+          "confidence": 0.89451426,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Yeah, I know that, but you could have called and checked on your kids.",
+      "confidence": 0.93228555,
+      "start": 26560,
+      "end": 28590,
+      "words": [
+        {
+          "text": "Yeah,",
+          "start": 26560,
+          "end": 26657,
+          "confidence": 0.60391355,
+          "speaker": "B"
+        },
+        {
+          "text": "I",
+          "start": 26738,
+          "end": 26754,
+          "confidence": 0.9969734,
+          "speaker": "B"
+        },
+        {
+          "text": "know",
+          "start": 26771,
+          "end": 26982,
+          "confidence": 0.9996748,
+          "speaker": "B"
+        },
+        {
+          "text": "that,",
+          "start": 26998,
+          "end": 27144,
+          "confidence": 0.89048725,
+          "speaker": "B"
+        },
+        {
+          "text": "but",
+          "start": 27161,
+          "end": 27323,
+          "confidence": 0.99952114,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 27323,
+          "end": 27469,
+          "confidence": 0.998804,
+          "speaker": "B"
+        },
+        {
+          "text": "could",
+          "start": 27469,
+          "end": 27534,
+          "confidence": 0.99856454,
+          "speaker": "B"
+        },
+        {
+          "text": "have",
+          "start": 27648,
+          "end": 27762,
+          "confidence": 0.70283383,
+          "speaker": "B"
+        },
+        {
+          "text": "called",
+          "start": 27762,
+          "end": 27957,
+          "confidence": 0.9996809,
+          "speaker": "B"
+        },
+        {
+          "text": "and",
+          "start": 27973,
+          "end": 28038,
+          "confidence": 0.997595,
+          "speaker": "B"
+        },
+        {
+          "text": "checked",
+          "start": 28054,
+          "end": 28314,
+          "confidence": 0.9995449,
+          "speaker": "B"
+        },
+        {
+          "text": "on",
+          "start": 28314,
+          "end": 28347,
+          "confidence": 0.9984251,
+          "speaker": "B"
+        },
+        {
+          "text": "your",
+          "start": 28347,
+          "end": 28412,
+          "confidence": 0.90715116,
+          "speaker": "B"
+        },
+        {
+          "text": "kids.",
+          "start": 28412,
+          "end": 28590,
+          "confidence": 0.95882815,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "I told you my phone is dead. And you know what? I don't\u2014",
+      "confidence": 0.9149329,
+      "start": 28688,
+      "end": 31856,
+      "words": [
+        {
+          "text": "I",
+          "start": 28688,
+          "end": 28704,
+          "confidence": 0.9809879,
+          "speaker": "A"
+        },
+        {
+          "text": "told",
+          "start": 28980,
+          "end": 29338,
+          "confidence": 0.99714065,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 29338,
+          "end": 29500,
+          "confidence": 0.9994721,
+          "speaker": "A"
+        },
+        {
+          "text": "my",
+          "start": 29516,
+          "end": 29679,
+          "confidence": 0.7851048,
+          "speaker": "A"
+        },
+        {
+          "text": "phone",
+          "start": 29679,
+          "end": 30004,
+          "confidence": 0.99983716,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 30004,
+          "end": 30052,
+          "confidence": 0.99581474,
+          "speaker": "A"
+        },
+        {
+          "text": "dead.",
+          "start": 30166,
+          "end": 30475,
+          "confidence": 0.53872305,
+          "speaker": "A"
+        },
+        {
+          "text": "And",
+          "start": 30556,
+          "end": 30637,
+          "confidence": 0.9948369,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 30637,
+          "end": 30670,
+          "confidence": 0.9850011,
+          "speaker": "A"
+        },
+        {
+          "text": "know",
+          "start": 30670,
+          "end": 30881,
+          "confidence": 0.99993575,
+          "speaker": "A"
+        },
+        {
+          "text": "what?",
+          "start": 30881,
+          "end": 31076,
+          "confidence": 0.77230024,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 31222,
+          "end": 31255,
+          "confidence": 0.9942384,
+          "speaker": "A"
+        },
+        {
+          "text": "don't\u2014",
+          "start": 31255,
+          "end": 31856,
+          "confidence": 0.8507353,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

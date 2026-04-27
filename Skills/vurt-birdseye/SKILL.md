@@ -1,6 +1,6 @@
 ---
 name: vurt-birdseye
-description: Living birds-eye-view of all VURT data. Aggregates latest metrics from GA4, NPAW, Meta (IG + FB), YouTube into a single state file. READ data/state.json at the start of EVERY VURT conversation to have full context. Run scripts/snapshot.py to refresh.
+description: Living birds-eye-view of all VURT data. Aggregates latest metrics from GA4, Mux, Meta (IG + FB), YouTube into a single state file. READ data/state.json at the start of EVERY VURT conversation to have full context. Run scripts/snapshot.py to refresh.
 compatibility: Created for Zo Computer
 metadata:
   author: dioni.zo.computer
@@ -24,7 +24,7 @@ cd /home/workspace/Skills/vurt-analytics/scripts && python3 /home/workspace/Skil
 
 ### What's in the state file
 - **GA4**: Daily snapshot, weekly overview, ALL traffic sources (no truncation), ALL landing pages with bounce rates, ALL landing pages × channel crossover, geo, platforms, devices, 14-day trend
-- **NPAW**: Top content, daily video overview, buffer trend, device/CDN/country breakdown
+- **Mux** (video analytics, replaced NPAW on 2026-04-22): Top content by video_id, daily overview (views, rebuffer %, playback failure %, startup time, completion), daily rebuffer trend, device/CDN/country breakdown. Note: `videoTitle`/`videoSeries` metadata is not yet populated in the player — top content shows video IDs until devs wire those fields into the Mux config.
 - **Meta IG**: Follower count, recent posts with engagement (likes, comments)
 - **Meta FB**: Page followers, recent posts with engagement
 - **YouTube**: Channel stats, recent video performance

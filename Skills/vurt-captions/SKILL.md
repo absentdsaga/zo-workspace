@@ -7,6 +7,17 @@ metadata:
 
 # VURT Captions Skill
 
+## ⚠ Mandatory Protocol
+
+**Every caption brief MUST follow `references/protocol.md`.** That file is the pre-flight + output checklist — no exceptions. It exists because Dioni has flagged dropped platforms (YT, upper-third overlays, FB titles) and unresearched captions repeatedly, and the protocol is what stops those failures.
+
+Sequence for every brief:
+1. Run pre-flight (research the show, place the scene, declare the 70/20/10 slot, check brand guardrails)
+2. Write all 7 deliverables (TT caption + upper-third + TT Stories, IG Reels, IG Stories 3-funnel, FB w/ link + title, YT Shorts title + description) — only skip a platform if Dioni names a subset
+3. Output check before delivering
+
+Patterns we clone are in `references/winning-patterns.md` (refreshed weekly from daily-report data).
+
 ## Capabilities
 
 ### 1. Manual Caption Writing (Conversation-based)
@@ -60,7 +71,7 @@ Check `data/titles.yaml` for:
 ### Step 3 -- Choose Platform Strategy
 Each platform needs a different angle:
 
-**TikTok** -- Shortest, boldest. 1-2 sentences max. Key dialogue line + one context sentence. Trending/provocative hook. Fewer hashtags (5-7). No @mentions in caption. Ends with "myvurt.com" in caption AND pinned comment.
+**TikTok** -- Shortest, boldest. 1-2 sentences max. Key dialogue line + one context sentence. Trending/provocative hook. Fewer hashtags (5-7). No @mentions in caption. Ends with "myvurt.com" in caption AND pinned comment. **Always include an on-video text overlay** (short hook phrase baked into the video itself) -- testing whether overlays increase engagement vs. caption-only.
 
 **IG Reels** -- Slightly more polished. 2-4 sentences. Full hook setup with storytelling angle. Line breaks for readability. Tags everyone in caption body. Collaborate invites to top handles. Hashtags at end.
 
@@ -123,7 +134,45 @@ VURT is NOT: loud, hype, announcer-y, forced
 
 Caption variety comes from rotating through hooks and template structures using deterministic seeding (same entry always gets the same caption, but different entries get different combinations).
 
+## Frame.io Footage Review Workflow
+
+Before writing captions for a show, ground the work in the actual footage — not Dioni's descriptions and not transcript-only repackaging.
+
+### 0. Rule: Frame.io social folders ≠ TikTok posted clips
+Not every file in `Social Media Clips/` was actually posted. Some are unused takes, alt cuts, or pending. Match by dialogue → TikTok caption before assuming anything is live.
+
+### 1. Pull + transcribe
+```bash
+# VURT_FRAMEIO_* secrets only work in Zo bash
+python3 Skills/vurt-captions/scripts/download_cbd_social.py   # template — clone per show
+python3 Skills/vurt-captions/scripts/transcribe_cbd_social.py # AssemblyAI upload + transcribe
+```
+- Downloader uses `frameio_client.get_access_token()` + `/accounts/{ACCT_ID}/files/{id}?include=media_links.original` for signed S3 URLs.
+- Transcriber uploads local files to AssemblyAI (key `ASSEMBLYAI_API_KEY`), writes `.json` + `.txt` per clip to `footage/<show>/transcripts/`.
+
+### 2. Match to TikTok posts
+Load `Skills/vurt-post-log/data/tiktok_user_url_scrape.json`. For each transcript, search n-grams of the dialogue against every post caption. Bucket each clip as:
+- **POSTED** (transcript fragment appears in a caption) → record views/likes/saves/shares
+- **UNUSED** (no caption match) → candidate for next post
+- **SILENT** (empty transcript) → extract stills via ffmpeg, ID visually
+- **UNCLEAR** → ask Dioni
+
+Write results to `footage/<show>/CLIP_MAP.md`.
+
+### 3. Analyze what's working
+With POSTED clips scored by view/save/like rate, identify structural patterns. Write `footage/<show>/BREAKOUT_ANALYSIS.md` covering:
+- The formula shared by top organic clips (opening punch, wound, receipts, accusation, open ending)
+- Save rate vs like rate split (save = "this is me"; like = "go off sis")
+- Which unused clips fit the formula, which don't
+
+### 4. Recommend next posts
+Rank UNUSED clips against the formula. For each recommended post write actual cut notes + per-platform captions. Output `footage/<show>/NEXT_POSTS.md`.
+
+### 5. Caption writing pulls from real scenes
+Now when writing captions (per the framework above), cite the exact dialogue, scene beat, and character — never repackage the transcript back as caption.
+
 ## Related
 - See `Documents/VURT-Social-Playbook.md` for full posting rules
 - See `Skills/vurt-post-log/scripts/sync.py` for the post log sync that reads actual captions back from platforms
 - State snapshot: `.context/state-snapshot.md`
+- Example application: `footage/come-back-dad/` (CLIP_MAP.md, BREAKOUT_ANALYSIS.md, NEXT_POSTS.md) — CBD pass done 2026-04-22

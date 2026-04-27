@@ -1,5 +1,9 @@
 # VURT Social Ops -- Live State
-### Last Updated: 2026-04-16
+### Last Updated: 2026-04-23 (verified live APIs: Meta Graph, YT Data, GA4, Mux)
+
+> Companion: `data/channel-winners.md` (per-channel top performers from daily reports).
+> Captions playbook: `Skills/vurt-captions/references/winning-patterns.md` (TikTok save-rate winners, IG clip reel patterns, FB double-drop, YT premiere strategy).
+> Video editor guide: `Documents/VURT-Social-Video-Editor-Guide.md` (v1 2026-04-23) — cut rules with the WHY, per-platform specs, Frame.io tag workflow, paid/organic distinction.
 
 ---
 
@@ -7,7 +11,7 @@
 | Platform | Handle | Status |
 |----------|--------|--------|
 | Instagram | @myvurt | ACTIVE (primary) |
-| TikTok | @watchvurticals | ACTIVE (Business account, verified) |
+| TikTok | @myvurt | ACTIVE (Business account, verified) |
 | Facebook | VURT page | ACTIVE |
 | YouTube Shorts | VURT channel | ACTIVE |
 | LinkedIn | VURT company page | ACTIVE (B2B, filmmaker spotlights) |
@@ -104,3 +108,44 @@ Handoff doc in progress: `Documents/VURT-Tracking-Migration-Handoff.md`. Audit r
 - YouTube Analytics deep metrics (needs Ari's OAuth from ari@thesourcegroups.com)
 - Full Frame.io <-> Calendar linking
 - Chief Keef / Glo Navy (unscripted) -- in production, not yet in social pipeline
+
+---
+
+## DATA-DRIVEN DIRECTIVES (as of 2026-04-23 live pull)
+
+### Two material corrections from prior state
+
+1. **FB is ~98% paid, not 98% "Recommended algo."** 14d FB page video views = 447,266 total → **439,260 paid / 8,006 organic** (verified via `page_video_views_paid` Graph API). The old script computed `(total − organic)` and labeled it Recommended; that bucket is ad spend, primarily Simple Social's campaigns.
+2. **YT top 3 aren't full-episode premieres.** They're 56s–2:30 catalog clips labeled "Premiere" in title (none use YT's actual Premiere feature — zero `liveStreamingDetails` across 42 uploads). The "full episodes win" claim was wrong; we've never uploaded one to test.
+
+### Cross-channel
+- **Clone TikTok's 4 save-rate winners' structure (70%),** run adjacent hypothesis-driven experiments (20%), leave one wild slot per week (10%). Details in `Skills/vurt-captions/references/winning-patterns.md`.
+- **Pull Girl in the Closet into social rotation NOW.** Mux 14d: Ep1 13,131 views @ 68% completion, Eps 2-7 at **91–93% completion** (highest on platform). Biggest untapped clip source. Still absent from posting.
+- **Mine Come Back Dad deeper.** Tatyana Ali ("Spence") monologue is the #1 TikTok save winner (2.47%). Mux: 80–93% completion across all 7 episodes. Under-clipped relative to proven appetite.
+
+### IG: clip reels with character voice
+- 14d totals: 38,161 reach / 222 saves / 329 shares. Top posts are 2,600–5,985 reach on in-world character lines. Brand/feed plateau: 78–200 reach.
+- Top save-rate IG Reel (14d): "The rule they swore they'd keep" (Favorite Son) 0.79%. IG save-rate runs lower than TikTok; use reach + watch-time (AvgWatch ms) as tiebreakers.
+- Move director spotlights to LinkedIn or IG Stories.
+
+### TikTok: save rate is the KPI, upper-third overlay every post
+- 25 of 29 recent posts failed the 1% save threshold. The 4 winners share structure — clone it, run adjacent experiments with written hypotheses (see 70/20/10 framework).
+- Save rate is the leading indicator because: saves = intent to return, algo re-surfaces high-save videos, shares/F2F too noisy at our volume, and it separates FYP blasts (high-view/low-save) from real appetite.
+- Dev API still in review (submitted Apr 16). Manual posting until then. Share/view/like/comment/save counts ARE available via public scraper (`Skills/vurt-post-log/data/tiktok_user_url_scrape.json`, 41 posts); only F2F (follows-from-FYP) blocked on dev API.
+- **TikTok Boost counts as paid social.** The two top TikTok posts by views — SLAB "He tried to stand up" (380K) and KIH "You did this" (189.6K) — were boosted in-app. Exclude them from organic pattern cloning; bucket them with Meta ads when accounting for paid-social reach.
+
+### FB: treat as a paid-ads channel, not a content channel
+- Organic FB reach is effectively dead at this page size (~570 organic video views/day across the whole page).
+- `myvurt.com` clickable in line 1 still required (only surface where it routes in-feed).
+- Posting continues for hygiene + ad attribution; don't set editorial targets against FB view totals — those move with ad spend, not content quality.
+
+### YouTube: catalog clips, real premieres worth testing
+- 42 uploads, 320,576 total channel views. Three breakouts (166K / 74K / 40K) are short catalog clips on named shows, not full episodes.
+- Keep current cadence (catalog-AM / premiere-PM, per Dioni's flow).
+- **Test YT's actual Premiere feature** for new originals — scheduled with countdown + live chat. Cheap A/B worth running this month.
+- Full-episode uploads = untested, business-case-dependent. Decide cannibalization vs growth before testing.
+
+### GA4 reality check (14d)
+- **Paid Social = 87.2% of sessions, 5.9% engagement.** fb/paid_ads alone: 73,436 sessions at 4.9% eng. Not a quality stream.
+- **Organic Search = 686 sessions, 74.5% engagement.** Tiny but gold — don't strip cast/director/show names from captions, they compound here.
+- **Paid destination red flags:** karma-in-hells 53,609 sessions @ 2.0% eng; killer-stepdad 10,926 @ 3.8%; baby-mama 2,525 @ 3.5%. Flag to Simple Social — creative-page mismatch.

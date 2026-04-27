@@ -1,0 +1,241 @@
+{
+  "text": "Back after introduction. I see you tonight. I booked everything. I'mma send you the information. Okay. I can't believe I'm about to lose my virginity to the man of my dream.",
+  "audio_duration": 27,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Back after introduction. I see you tonight. I booked everything.",
+      "confidence": 0.8303246,
+      "start": 100,
+      "end": 3558,
+      "words": [
+        {
+          "text": "Back",
+          "start": 100,
+          "end": 180,
+          "confidence": 0.3794061,
+          "speaker": "A"
+        },
+        {
+          "text": "after",
+          "start": 180,
+          "end": 309,
+          "confidence": 0.9767725,
+          "speaker": "A"
+        },
+        {
+          "text": "introduction.",
+          "start": 309,
+          "end": 1065,
+          "confidence": 0.712064,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 1676,
+          "end": 1692,
+          "confidence": 0.9892709,
+          "speaker": "A"
+        },
+        {
+          "text": "see",
+          "start": 1740,
+          "end": 1885,
+          "confidence": 0.6775245,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 1885,
+          "end": 1917,
+          "confidence": 0.9976549,
+          "speaker": "A"
+        },
+        {
+          "text": "tonight.",
+          "start": 1917,
+          "end": 2400,
+          "confidence": 0.85378045,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 2786,
+          "end": 2931,
+          "confidence": 0.9992047,
+          "speaker": "A"
+        },
+        {
+          "text": "booked",
+          "start": 2947,
+          "end": 3188,
+          "confidence": 0.9935115,
+          "speaker": "A"
+        },
+        {
+          "text": "everything.",
+          "start": 3188,
+          "end": 3558,
+          "confidence": 0.724056,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "I'mma send you the information. Okay. I can't believe I'm about to lose my virginity to the man of my dream.",
+      "confidence": 0.8984569,
+      "start": 3751,
+      "end": 14864,
+      "words": [
+        {
+          "text": "I'mma",
+          "start": 3751,
+          "end": 4234,
+          "confidence": 0.4055347,
+          "speaker": "B"
+        },
+        {
+          "text": "send",
+          "start": 4234,
+          "end": 4926,
+          "confidence": 0.99073094,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 5521,
+          "end": 5585,
+          "confidence": 0.9941561,
+          "speaker": "B"
+        },
+        {
+          "text": "the",
+          "start": 5666,
+          "end": 5875,
+          "confidence": 0.96200615,
+          "speaker": "B"
+        },
+        {
+          "text": "information.",
+          "start": 6406,
+          "end": 9108,
+          "confidence": 0.7531356,
+          "speaker": "B"
+        },
+        {
+          "text": "Okay.",
+          "start": 9333,
+          "end": 10460,
+          "confidence": 0.66362643,
+          "speaker": "B"
+        },
+        {
+          "text": "I",
+          "start": 11410,
+          "end": 11507,
+          "confidence": 0.6096328,
+          "speaker": "B"
+        },
+        {
+          "text": "can't",
+          "start": 11604,
+          "end": 11847,
+          "confidence": 0.9960127,
+          "speaker": "B"
+        },
+        {
+          "text": "believe",
+          "start": 11847,
+          "end": 12269,
+          "confidence": 0.9994708,
+          "speaker": "B"
+        },
+        {
+          "text": "I'm",
+          "start": 12269,
+          "end": 12383,
+          "confidence": 0.99677324,
+          "speaker": "B"
+        },
+        {
+          "text": "about",
+          "start": 12383,
+          "end": 12593,
+          "confidence": 0.99397486,
+          "speaker": "B"
+        },
+        {
+          "text": "to",
+          "start": 12593,
+          "end": 12756,
+          "confidence": 0.9994685,
+          "speaker": "B"
+        },
+        {
+          "text": "lose",
+          "start": 12756,
+          "end": 12869,
+          "confidence": 0.99943346,
+          "speaker": "B"
+        },
+        {
+          "text": "my",
+          "start": 12901,
+          "end": 12983,
+          "confidence": 0.9995316,
+          "speaker": "B"
+        },
+        {
+          "text": "virginity",
+          "start": 13064,
+          "end": 13550,
+          "confidence": 0.99942213,
+          "speaker": "B"
+        },
+        {
+          "text": "to",
+          "start": 13550,
+          "end": 13647,
+          "confidence": 0.99790984,
+          "speaker": "B"
+        },
+        {
+          "text": "the",
+          "start": 13647,
+          "end": 13777,
+          "confidence": 0.9973296,
+          "speaker": "B"
+        },
+        {
+          "text": "man",
+          "start": 13777,
+          "end": 14102,
+          "confidence": 0.99031454,
+          "speaker": "B"
+        },
+        {
+          "text": "of",
+          "start": 14102,
+          "end": 14150,
+          "confidence": 0.9948783,
+          "speaker": "B"
+        },
+        {
+          "text": "my",
+          "start": 14183,
+          "end": 14215,
+          "confidence": 0.9996803,
+          "speaker": "B"
+        },
+        {
+          "text": "dream.",
+          "start": 14361,
+          "end": 14864,
+          "confidence": 0.52457124,
+          "speaker": "B"
+        }
+      ]
+    }
+  ]
+}

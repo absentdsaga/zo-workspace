@@ -1,0 +1,210 @@
+/* VURT dark-theme print stylesheet — matches VURT-Pixel-Tracking-Plan-dark */
+@page {
+    size: Letter;
+    margin: 0.7in 0.7in 0.7in 0.7in;
+    background: #0a0e1a;
+}
+
+html, body {
+    background: #0a0e1a !important;
+    color: #d8e0ea;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0.1in 0.2in;
+    background-image:
+        radial-gradient(circle at 20% 10%, rgba(0, 212, 255, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(255, 77, 159, 0.04) 0%, transparent 40%);
+}
+
+/* H1 — title */
+h1 {
+    font-size: 28pt;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0 0 0.2em 0;
+    padding: 0 0 0.3em 0;
+    color: #00d4ff;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg, #00d4ff 0%, #ff4d9f 100%) 1;
+    display: block;
+}
+
+/* H2 — cyan section header */
+h2 {
+    font-size: 16pt;
+    font-weight: 700;
+    color: #00d4ff;
+    letter-spacing: -0.01em;
+    margin-top: 1.3em;
+    margin-bottom: 0.4em;
+    padding-top: 0.3em;
+    border-top: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+/* H3 — pink/magenta subhead */
+h3 {
+    font-size: 13pt;
+    font-weight: 700;
+    color: #ff4d9f;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+}
+
+h4 {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #a0e8ff;
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+p, li {
+    color: #d8e0ea;
+    orphans: 3;
+    widows: 3;
+}
+
+strong {
+    color: #f4f8fc;
+    font-weight: 700;
+}
+
+em {
+    color: #ffd4e6;
+    font-style: italic;
+}
+
+a {
+    color: #00d4ff;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(0, 212, 255, 0.4);
+}
+
+/* Inline code */
+code {
+    font-family: 'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace;
+    background: rgba(0, 212, 255, 0.08);
+    color: #7ef0c8;
+    padding: 0.08em 0.4em;
+    border-radius: 3px;
+    font-size: 0.88em;
+    border: 1px solid rgba(0, 212, 255, 0.12);
+}
+
+/* Code blocks */
+pre {
+    background: #060a14;
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 6px;
+    padding: 12px 14px;
+    overflow-x: auto;
+    page-break-inside: avoid;
+}
+
+pre code {
+    background: transparent;
+    border: none;
+    color: #b8f4ff;
+    padding: 0;
+}
+
+/* Blockquote as callout card */
+blockquote {
+    background: #101828;
+    border-left: 3px solid #ff4d9f;
+    border-radius: 4px;
+    margin: 0.8em 0;
+    padding: 0.6em 1em;
+    color: #e8eef6;
+    page-break-inside: avoid;
+}
+
+blockquote p {
+    margin: 0.3em 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.8em 0;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+    background: #0e1422;
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th {
+    background: linear-gradient(180deg, #12203a 0%, #0e1a30 100%);
+    color: #00d4ff;
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 8.5pt;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+td {
+    padding: 7px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    color: #d8e0ea;
+    vertical-align: top;
+}
+
+tr:nth-child(even) td {
+    background: rgba(0, 212, 255, 0.015);
+}
+
+/* Lists */
+ul, ol {
+    padding-left: 1.4em;
+}
+
+li {
+    margin-bottom: 0.25em;
+}
+
+ul li::marker {
+    color: #ff4d9f;
+}
+
+ol li::marker {
+    color: #00d4ff;
+    font-weight: 700;
+}
+
+/* Horizontal rule */
+hr {
+    border: none;
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    margin: 1.5em 0;
+    page-break-after: avoid;
+}
+
+/* Page break hints */
+h1, h2 {
+    page-break-after: avoid;
+}
+
+h1 + p, h2 + p, h3 + p {
+    page-break-before: avoid;
+}
+
+/* Checkbox list items */
+ul li input[type="checkbox"] {
+    accent-color: #00d4ff;
+    margin-right: 0.4em;
+}

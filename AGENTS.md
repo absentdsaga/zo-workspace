@@ -76,7 +76,7 @@ Builds start perfect, then progressively degrade with each iteration until every
 - IG Reels: Same structure, longer caption, always end with myvurt.com, add Link Reel to previous clip in series
 - YouTube Shorts: Title = `{Title} | A VURT Original` — title IS the caption
 
-**Platform handles:** TikTok @watchvurticals (→@myvurt pending), IG @watchvurt, FB VURT, YT VURT, LinkedIn VURT Company Page
+**Platform handles:** TikTok @myvurt, IG @watchvurt, FB VURT, YT VURT, LinkedIn VURT Company Page
 
 **5-clip arc per title:** Hook → Escalation → Twist → Confrontation → Edge of Resolution
 

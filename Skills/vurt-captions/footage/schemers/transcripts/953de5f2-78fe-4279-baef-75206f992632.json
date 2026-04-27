@@ -1,0 +1,253 @@
+{
+  "text": "I mean, it's a beautiful day. What you think? Because this week I'm good, all right? Hey, I have to call you back, man. Oh, shit! Get up, man! Get up! Hello? Go! Go!",
+  "audio_duration": 68,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "I mean, it's a beautiful day. What you think? Because this week I'm good, all right? Hey, I have to call you back, man. Oh, shit! Get up, man! Get up! Hello? Go! Go!",
+      "confidence": 0.75036323,
+      "start": 1808,
+      "end": 42068,
+      "words": [
+        {
+          "text": "I",
+          "start": 1808,
+          "end": 1825,
+          "confidence": 0.819477,
+          "speaker": "A"
+        },
+        {
+          "text": "mean,",
+          "start": 1825,
+          "end": 2020,
+          "confidence": 0.91576445,
+          "speaker": "A"
+        },
+        {
+          "text": "it's",
+          "start": 2640,
+          "end": 2835,
+          "confidence": 0.9966177,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 2950,
+          "end": 2966,
+          "confidence": 0.9991339,
+          "speaker": "A"
+        },
+        {
+          "text": "beautiful",
+          "start": 2966,
+          "end": 3422,
+          "confidence": 0.9997497,
+          "speaker": "A"
+        },
+        {
+          "text": "day.",
+          "start": 3422,
+          "end": 3586,
+          "confidence": 0.82944167,
+          "speaker": "A"
+        },
+        {
+          "text": "What",
+          "start": 4417,
+          "end": 4531,
+          "confidence": 0.7212732,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 4580,
+          "end": 4662,
+          "confidence": 0.8339485,
+          "speaker": "A"
+        },
+        {
+          "text": "think?",
+          "start": 4662,
+          "end": 4923,
+          "confidence": 0.58536065,
+          "speaker": "A"
+        },
+        {
+          "text": "Because",
+          "start": 5803,
+          "end": 6064,
+          "confidence": 0.5897662,
+          "speaker": "A"
+        },
+        {
+          "text": "this",
+          "start": 6064,
+          "end": 6292,
+          "confidence": 0.98010796,
+          "speaker": "A"
+        },
+        {
+          "text": "week",
+          "start": 6292,
+          "end": 6455,
+          "confidence": 0.9287252,
+          "speaker": "A"
+        },
+        {
+          "text": "I'm",
+          "start": 6455,
+          "end": 6553,
+          "confidence": 0.8728095,
+          "speaker": "A"
+        },
+        {
+          "text": "good,",
+          "start": 6553,
+          "end": 6895,
+          "confidence": 0.5505848,
+          "speaker": "A"
+        },
+        {
+          "text": "all",
+          "start": 6928,
+          "end": 7026,
+          "confidence": 0.5122183,
+          "speaker": "A"
+        },
+        {
+          "text": "right?",
+          "start": 7026,
+          "end": 7238,
+          "confidence": 0.819668,
+          "speaker": "A"
+        },
+        {
+          "text": "Hey,",
+          "start": 8331,
+          "end": 8476,
+          "confidence": 0.70472693,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 8572,
+          "end": 8653,
+          "confidence": 0.76067847,
+          "speaker": "A"
+        },
+        {
+          "text": "have",
+          "start": 8653,
+          "end": 8814,
+          "confidence": 0.93066275,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 8894,
+          "end": 9023,
+          "confidence": 0.99869776,
+          "speaker": "A"
+        },
+        {
+          "text": "call",
+          "start": 9039,
+          "end": 9200,
+          "confidence": 0.9996464,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 9200,
+          "end": 9264,
+          "confidence": 0.99959797,
+          "speaker": "A"
+        },
+        {
+          "text": "back,",
+          "start": 9297,
+          "end": 9522,
+          "confidence": 0.9910988,
+          "speaker": "A"
+        },
+        {
+          "text": "man.",
+          "start": 9538,
+          "end": 9634,
+          "confidence": 0.89306223,
+          "speaker": "A"
+        },
+        {
+          "text": "Oh,",
+          "start": 9699,
+          "end": 9763,
+          "confidence": 0.43051836,
+          "speaker": "A"
+        },
+        {
+          "text": "shit!",
+          "start": 9844,
+          "end": 10005,
+          "confidence": 0.49877924,
+          "speaker": "A"
+        },
+        {
+          "text": "Get",
+          "start": 10342,
+          "end": 11292,
+          "confidence": 0.7853044,
+          "speaker": "A"
+        },
+        {
+          "text": "up,",
+          "start": 11292,
+          "end": 12997,
+          "confidence": 0.43682608,
+          "speaker": "A"
+        },
+        {
+          "text": "man!",
+          "start": 14043,
+          "end": 14381,
+          "confidence": 0.7594146,
+          "speaker": "A"
+        },
+        {
+          "text": "Get",
+          "start": 14445,
+          "end": 15089,
+          "confidence": 0.63830584,
+          "speaker": "A"
+        },
+        {
+          "text": "up!",
+          "start": 15234,
+          "end": 15411,
+          "confidence": 0.3556525,
+          "speaker": "A"
+        },
+        {
+          "text": "Hello?",
+          "start": 15636,
+          "end": 16151,
+          "confidence": 0.48186865,
+          "speaker": "A"
+        },
+        {
+          "text": "Go!",
+          "start": 32000,
+          "end": 40372,
+          "confidence": 0.17542861,
+          "speaker": "A"
+        },
+        {
+          "text": "Go!",
+          "start": 41859,
+          "end": 42068,
+          "confidence": 0.71743256,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

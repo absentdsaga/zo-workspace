@@ -1,8 +1,9 @@
 import os, json, urllib.request, urllib.parse
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
 CHANNEL_ID = "UCB7B5ifo5Pgfc-j_uJGQG1g"
 YT_API = "https://www.googleapis.com/youtube/v3"
+YT_ANALYTICS_API = "https://youtubeanalytics.googleapis.com/v2"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 
 def get_youtube_access_token():
@@ -26,6 +27,89 @@ def _yt_get(path, params, token):
     req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
     resp = urllib.request.urlopen(req)
     return json.loads(resp.read())
+
+def _yt_analytics_get(params, token):
+    qs = urllib.parse.urlencode(params)
+    url = f"{YT_ANALYTICS_API}/reports?{qs}"
+    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
+    resp = urllib.request.urlopen(req)
+    return json.loads(resp.read())
+
+def get_channel_analytics(days=7):
+    """Channel-level analytics for the trailing window. Public Analytics API
+    does not expose browse/suggested impressions or CTR (those are Studio-UI
+    only); this returns what's actually queryable."""
+    token = get_youtube_access_token()
+    if not token:
+        return None
+    end = date.today() - timedelta(days=1)
+    start = end - timedelta(days=days - 1)
+    metrics = ",".join([
+        "views", "estimatedMinutesWatched", "averageViewDuration",
+        "averageViewPercentage", "subscribersGained", "subscribersLost",
+        "likes", "shares", "comments",
+        "cardImpressions", "cardClickRate", "cardClicks",
+    ])
+    try:
+        resp = _yt_analytics_get({
+            "ids": "channel==MINE",
+            "startDate": start.isoformat(),
+            "endDate": end.isoformat(),
+            "metrics": metrics,
+        }, token)
+    except Exception:
+        return None
+    rows = resp.get("rows") or []
+    if not rows:
+        return None
+    headers = [c["name"] for c in resp.get("columnHeaders", [])]
+    row = dict(zip(headers, rows[0]))
+    return {
+        "window_days": days,
+        "start": start.isoformat(),
+        "end": end.isoformat(),
+        "views": int(row.get("views") or 0),
+        "minutesWatched": int(row.get("estimatedMinutesWatched") or 0),
+        "avgViewDurationSec": int(row.get("averageViewDuration") or 0),
+        "avgViewPercentage": float(row.get("averageViewPercentage") or 0),
+        "subscribersGained": int(row.get("subscribersGained") or 0),
+        "subscribersLost": int(row.get("subscribersLost") or 0),
+        "likes": int(row.get("likes") or 0),
+        "shares": int(row.get("shares") or 0),
+        "comments": int(row.get("comments") or 0),
+        "cardImpressions": int(row.get("cardImpressions") or 0),
+        "cardClicks": int(row.get("cardClicks") or 0),
+        "cardClickRate": float(row.get("cardClickRate") or 0),
+    }
+
+def get_traffic_sources(days=7):
+    """Top traffic sources (Browse, Suggested, Search, External, etc.) for
+    the trailing window. Returns list of {source, views, minutesWatched}."""
+    token = get_youtube_access_token()
+    if not token:
+        return []
+    end = date.today() - timedelta(days=1)
+    start = end - timedelta(days=days - 1)
+    try:
+        resp = _yt_analytics_get({
+            "ids": "channel==MINE",
+            "startDate": start.isoformat(),
+            "endDate": end.isoformat(),
+            "metrics": "views,estimatedMinutesWatched",
+            "dimensions": "insightTrafficSourceType",
+            "sort": "-views",
+        }, token)
+    except Exception:
+        return []
+    rows = resp.get("rows") or []
+    out = []
+    for r in rows:
+        out.append({
+            "source": r[0],
+            "views": int(r[1] or 0),
+            "minutesWatched": int(r[2] or 0),
+        })
+    return out
 
 def get_channel_stats():
     token = get_youtube_access_token()
@@ -98,6 +182,42 @@ def format_youtube_report():
     lines.append(f"**{channel['title']}** — {_fmt(channel['subscribers'])} subscribers · {_fmt(channel['totalViews'])} total views · {channel['videoCount']} videos")
     lines.append("")
 
+    analytics = None
+    try:
+        analytics = get_channel_analytics(days=7)
+    except Exception:
+        analytics = None
+
+    if analytics:
+        net_subs = analytics["subscribersGained"] - analytics["subscribersLost"]
+        lines.append("### 7d Channel Analytics")
+        lines.append("")
+        lines.append(f"**{_fmt(analytics['views'])} views** · "
+                     f"{_fmt(analytics['minutesWatched'])} min watched · "
+                     f"{analytics['avgViewDurationSec']}s avg · "
+                     f"{analytics['avgViewPercentage']:.1f}% avg view")
+        lines.append("")
+        lines.append(f"**Subs:** +{analytics['subscribersGained']} / "
+                     f"-{analytics['subscribersLost']} (net {net_subs:+d})  ·  "
+                     f"**Engagement:** {_fmt(analytics['likes'])} likes · "
+                     f"{_fmt(analytics['shares'])} shares · "
+                     f"{_fmt(analytics['comments'])} comments")
+        lines.append("")
+
+    sources = []
+    try:
+        sources = get_traffic_sources(days=7)
+    except Exception:
+        sources = []
+    if sources:
+        lines.append("### Traffic Sources (7d)")
+        lines.append("")
+        lines.append("| Source | Views | Min Watched |")
+        lines.append("|--------|-------|-------------|")
+        for s in sources[:8]:
+            lines.append(f"| {s['source']} | {_fmt(s['views'])} | {_fmt(s['minutesWatched'])} |")
+        lines.append("")
+
     try:
         videos = get_recent_videos(days=7)
     except Exception:
@@ -124,6 +244,8 @@ def format_youtube_report():
 
     collected = {
         "channel": channel,
+        "analytics_7d": analytics,
+        "traffic_sources_7d": sources,
         "recent_videos": videos,
     }
     return "\n".join(lines), collected

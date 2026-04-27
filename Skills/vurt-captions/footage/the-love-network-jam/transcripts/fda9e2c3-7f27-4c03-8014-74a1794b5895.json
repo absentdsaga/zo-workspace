@@ -1,0 +1,597 @@
+{
+  "text": "What? What's up? I left my phone again. Don't start, Chris. Oh, left it in Mombra. Those savages. If anyone has even touched that phone, I feel sorry for them in advance. I know, right? Can we now go? Hey. Hey, have you seen a beautiful lady in red? They left her phone. Where is it? Is this your phone? No, I found it. So you're the one who takes people's things? We go, we go, we go!",
+  "audio_duration": 55,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "What? What's up? I left my phone again. Don't start, Chris.",
+      "confidence": 0.8906324,
+      "start": 738,
+      "end": 6051,
+      "words": [
+        {
+          "text": "What?",
+          "start": 738,
+          "end": 866,
+          "confidence": 0.60065544,
+          "speaker": "A"
+        },
+        {
+          "text": "What's",
+          "start": 995,
+          "end": 1396,
+          "confidence": 0.99787605,
+          "speaker": "A"
+        },
+        {
+          "text": "up?",
+          "start": 1541,
+          "end": 1637,
+          "confidence": 0.9980884,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 2343,
+          "end": 2359,
+          "confidence": 0.9981918,
+          "speaker": "A"
+        },
+        {
+          "text": "left",
+          "start": 2359,
+          "end": 2584,
+          "confidence": 0.99558914,
+          "speaker": "A"
+        },
+        {
+          "text": "my",
+          "start": 2584,
+          "end": 2632,
+          "confidence": 0.99956626,
+          "speaker": "A"
+        },
+        {
+          "text": "phone",
+          "start": 2680,
+          "end": 3932,
+          "confidence": 0.9998772,
+          "speaker": "A"
+        },
+        {
+          "text": "again.",
+          "start": 4109,
+          "end": 4847,
+          "confidence": 0.5549875,
+          "speaker": "A"
+        },
+        {
+          "text": "Don't",
+          "start": 5152,
+          "end": 5313,
+          "confidence": 0.88649964,
+          "speaker": "A"
+        },
+        {
+          "text": "start,",
+          "start": 5313,
+          "end": 5634,
+          "confidence": 0.9658566,
+          "speaker": "A"
+        },
+        {
+          "text": "Chris.",
+          "start": 5650,
+          "end": 6051,
+          "confidence": 0.7997682,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Oh, left it in Mombra. Those savages. If anyone has even touched that phone, I feel sorry for them in advance.",
+      "confidence": 0.82464767,
+      "start": 7239,
+      "end": 14479,
+      "words": [
+        {
+          "text": "Oh,",
+          "start": 7239,
+          "end": 7255,
+          "confidence": 0.2900886,
+          "speaker": "B"
+        },
+        {
+          "text": "left",
+          "start": 7335,
+          "end": 7560,
+          "confidence": 0.19928886,
+          "speaker": "B"
+        },
+        {
+          "text": "it",
+          "start": 7560,
+          "end": 7721,
+          "confidence": 0.88733345,
+          "speaker": "B"
+        },
+        {
+          "text": "in",
+          "start": 7721,
+          "end": 7801,
+          "confidence": 0.9490258,
+          "speaker": "B"
+        },
+        {
+          "text": "Mombra.",
+          "start": 7801,
+          "end": 9085,
+          "confidence": 0.26173678,
+          "speaker": "B"
+        },
+        {
+          "text": "Those",
+          "start": 9278,
+          "end": 9551,
+          "confidence": 0.5952652,
+          "speaker": "B"
+        },
+        {
+          "text": "savages.",
+          "start": 9663,
+          "end": 10305,
+          "confidence": 0.5347524,
+          "speaker": "B"
+        },
+        {
+          "text": "If",
+          "start": 10546,
+          "end": 10883,
+          "confidence": 0.9770244,
+          "speaker": "B"
+        },
+        {
+          "text": "anyone",
+          "start": 10947,
+          "end": 11220,
+          "confidence": 0.9999335,
+          "speaker": "B"
+        },
+        {
+          "text": "has",
+          "start": 11252,
+          "end": 11397,
+          "confidence": 0.999255,
+          "speaker": "B"
+        },
+        {
+          "text": "even",
+          "start": 11429,
+          "end": 11718,
+          "confidence": 0.9995326,
+          "speaker": "B"
+        },
+        {
+          "text": "touched",
+          "start": 11750,
+          "end": 12151,
+          "confidence": 0.99968493,
+          "speaker": "B"
+        },
+        {
+          "text": "that",
+          "start": 12151,
+          "end": 12472,
+          "confidence": 0.9998154,
+          "speaker": "B"
+        },
+        {
+          "text": "phone,",
+          "start": 12472,
+          "end": 12761,
+          "confidence": 0.9901719,
+          "speaker": "B"
+        },
+        {
+          "text": "I",
+          "start": 12777,
+          "end": 12954,
+          "confidence": 0.6383253,
+          "speaker": "B"
+        },
+        {
+          "text": "feel",
+          "start": 13018,
+          "end": 13146,
+          "confidence": 0.9996625,
+          "speaker": "B"
+        },
+        {
+          "text": "sorry",
+          "start": 13194,
+          "end": 13403,
+          "confidence": 0.9999212,
+          "speaker": "B"
+        },
+        {
+          "text": "for",
+          "start": 13515,
+          "end": 13676,
+          "confidence": 0.999948,
+          "speaker": "B"
+        },
+        {
+          "text": "them",
+          "start": 13676,
+          "end": 13917,
+          "confidence": 0.99993575,
+          "speaker": "B"
+        },
+        {
+          "text": "in",
+          "start": 13917,
+          "end": 13997,
+          "confidence": 0.998718,
+          "speaker": "B"
+        },
+        {
+          "text": "advance.",
+          "start": 13997,
+          "end": 14479,
+          "confidence": 0.9981814,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "I know, right? Can we now go?",
+      "confidence": 0.87881374,
+      "start": 15265,
+      "end": 22184,
+      "words": [
+        {
+          "text": "I",
+          "start": 15265,
+          "end": 15281,
+          "confidence": 0.99139374,
+          "speaker": "A"
+        },
+        {
+          "text": "know,",
+          "start": 15281,
+          "end": 15506,
+          "confidence": 0.9918255,
+          "speaker": "A"
+        },
+        {
+          "text": "right?",
+          "start": 15586,
+          "end": 16036,
+          "confidence": 0.98200667,
+          "speaker": "A"
+        },
+        {
+          "text": "Can",
+          "start": 19696,
+          "end": 19856,
+          "confidence": 0.60862565,
+          "speaker": "A"
+        },
+        {
+          "text": "we",
+          "start": 19856,
+          "end": 19936,
+          "confidence": 0.7345315,
+          "speaker": "A"
+        },
+        {
+          "text": "now",
+          "start": 19936,
+          "end": 20065,
+          "confidence": 0.91805243,
+          "speaker": "A"
+        },
+        {
+          "text": "go?",
+          "start": 20161,
+          "end": 22184,
+          "confidence": 0.92526066,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Hey.",
+      "confidence": 0.28459898,
+      "start": 24206,
+      "end": 24591,
+      "words": [
+        {
+          "text": "Hey.",
+          "start": 24206,
+          "end": 24591,
+          "confidence": 0.28459898,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "Hey, have you seen a beautiful lady in red? They left her phone. Where is it? Is this your phone? No, I found it. So you're the one who takes people's things? We go, we go, we go!",
+      "confidence": 0.940335,
+      "start": 29367,
+      "end": 45734,
+      "words": [
+        {
+          "text": "Hey,",
+          "start": 29367,
+          "end": 29464,
+          "confidence": 0.94439936,
+          "speaker": "A"
+        },
+        {
+          "text": "have",
+          "start": 29852,
+          "end": 29997,
+          "confidence": 0.9900388,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 30013,
+          "end": 30046,
+          "confidence": 0.9993148,
+          "speaker": "A"
+        },
+        {
+          "text": "seen",
+          "start": 30046,
+          "end": 30159,
+          "confidence": 0.9999201,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 30207,
+          "end": 30272,
+          "confidence": 0.9960006,
+          "speaker": "A"
+        },
+        {
+          "text": "beautiful",
+          "start": 30272,
+          "end": 30595,
+          "confidence": 0.99982697,
+          "speaker": "A"
+        },
+        {
+          "text": "lady",
+          "start": 30595,
+          "end": 30838,
+          "confidence": 0.99983037,
+          "speaker": "A"
+        },
+        {
+          "text": "in",
+          "start": 30838,
+          "end": 31064,
+          "confidence": 0.9991918,
+          "speaker": "A"
+        },
+        {
+          "text": "red?",
+          "start": 31064,
+          "end": 31291,
+          "confidence": 0.99388653,
+          "speaker": "A"
+        },
+        {
+          "text": "They",
+          "start": 31986,
+          "end": 32067,
+          "confidence": 0.7331449,
+          "speaker": "A"
+        },
+        {
+          "text": "left",
+          "start": 32115,
+          "end": 32261,
+          "confidence": 0.9980697,
+          "speaker": "A"
+        },
+        {
+          "text": "her",
+          "start": 32261,
+          "end": 32374,
+          "confidence": 0.7911399,
+          "speaker": "A"
+        },
+        {
+          "text": "phone.",
+          "start": 32374,
+          "end": 32665,
+          "confidence": 0.82436794,
+          "speaker": "A"
+        },
+        {
+          "text": "Where",
+          "start": 34961,
+          "end": 35284,
+          "confidence": 0.9512629,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 35284,
+          "end": 35333,
+          "confidence": 0.9948259,
+          "speaker": "A"
+        },
+        {
+          "text": "it?",
+          "start": 35381,
+          "end": 35704,
+          "confidence": 0.9878752,
+          "speaker": "A"
+        },
+        {
+          "text": "Is",
+          "start": 36319,
+          "end": 36755,
+          "confidence": 0.68840444,
+          "speaker": "A"
+        },
+        {
+          "text": "this",
+          "start": 36804,
+          "end": 36965,
+          "confidence": 0.99539185,
+          "speaker": "A"
+        },
+        {
+          "text": "your",
+          "start": 36965,
+          "end": 37127,
+          "confidence": 0.9987159,
+          "speaker": "A"
+        },
+        {
+          "text": "phone?",
+          "start": 37127,
+          "end": 37354,
+          "confidence": 0.9989605,
+          "speaker": "A"
+        },
+        {
+          "text": "No,",
+          "start": 37628,
+          "end": 37661,
+          "confidence": 0.8459622,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 37855,
+          "end": 37952,
+          "confidence": 0.9943705,
+          "speaker": "A"
+        },
+        {
+          "text": "found",
+          "start": 37952,
+          "end": 38210,
+          "confidence": 0.9785568,
+          "speaker": "A"
+        },
+        {
+          "text": "it.",
+          "start": 38210,
+          "end": 38291,
+          "confidence": 0.9538147,
+          "speaker": "A"
+        },
+        {
+          "text": "So",
+          "start": 38421,
+          "end": 38598,
+          "confidence": 0.9911171,
+          "speaker": "A"
+        },
+        {
+          "text": "you're",
+          "start": 38598,
+          "end": 38825,
+          "confidence": 0.96320826,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 38825,
+          "end": 38954,
+          "confidence": 0.99972767,
+          "speaker": "A"
+        },
+        {
+          "text": "one",
+          "start": 38890,
+          "end": 38938,
+          "confidence": 0.99985147,
+          "speaker": "A"
+        },
+        {
+          "text": "who",
+          "start": 38938,
+          "end": 38987,
+          "confidence": 0.9995505,
+          "speaker": "A"
+        },
+        {
+          "text": "takes",
+          "start": 38987,
+          "end": 39117,
+          "confidence": 0.99778736,
+          "speaker": "A"
+        },
+        {
+          "text": "people's",
+          "start": 39149,
+          "end": 39798,
+          "confidence": 0.9148869,
+          "speaker": "A"
+        },
+        {
+          "text": "things?",
+          "start": 39976,
+          "end": 40917,
+          "confidence": 0.7679908,
+          "speaker": "A"
+        },
+        {
+          "text": "We",
+          "start": 41095,
+          "end": 41128,
+          "confidence": 0.69235915,
+          "speaker": "A"
+        },
+        {
+          "text": "go,",
+          "start": 42166,
+          "end": 42425,
+          "confidence": 0.94688785,
+          "speaker": "A"
+        },
+        {
+          "text": "we",
+          "start": 45069,
+          "end": 45101,
+          "confidence": 0.9983119,
+          "speaker": "A"
+        },
+        {
+          "text": "go,",
+          "start": 45166,
+          "end": 45312,
+          "confidence": 0.9964324,
+          "speaker": "A"
+        },
+        {
+          "text": "we",
+          "start": 45328,
+          "end": 45474,
+          "confidence": 0.99457884,
+          "speaker": "A"
+        },
+        {
+          "text": "go!",
+          "start": 45474,
+          "end": 45734,
+          "confidence": 0.8127657,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

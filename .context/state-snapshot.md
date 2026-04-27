@@ -51,7 +51,7 @@
 
 | Platform | Handle | Status |
 |----------|--------|--------|
-| TikTok | @watchvurticals → @myvurt | Pending handle change |
+| TikTok | @myvurt | Completed |
 | IG | @watchvurt | Active |
 | FB | VURT | Active |
 | YT | VURT | Active |

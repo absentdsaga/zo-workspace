@@ -1,0 +1,8 @@
+{"ts": "2026-04-23T12:07:44.356127+00:00", "type": "task_start", "data": {"description": "VURT Trello Daily Maintenance", "board": "PVtV7XaC"}, "task": "vurt-trello-daily-maintenance"}
+{"ts": "2026-04-23T12:07:44.356681+00:00", "type": "info", "data": {"step": "task1_start", "description": "Fetching board lists"}, "task": "vurt-trello-daily-maintenance"}
+{"ts": "2026-04-23T12:07:44.596905+00:00", "type": "info", "data": {"step": "task1", "list_id": "69c06762ac8ecd537850ba8e", "list_name": "This Week"}, "task": "vurt-trello-daily-maintenance"}
+{"ts": "2026-04-23T12:07:48.714040+00:00", "type": "result", "data": {"step": "task1_complete", "cards_sorted": 15}, "task": "vurt-trello-daily-maintenance"}
+{"ts": "2026-04-23T12:07:48.714615+00:00", "type": "info", "data": {"step": "task2_start", "description": "Flagging stale cards"}, "task": "vurt-trello-daily-maintenance"}
+{"ts": "2026-04-23T12:07:48.714707+00:00", "type": "info", "data": {"step": "task2", "list_id": "69c0676135c8a806ea58e2a5", "list_name": "In Progress"}, "task": "vurt-trello-daily-maintenance"}
+{"ts": "2026-04-23T12:07:49.088952+00:00", "type": "result", "data": {"step": "task2_complete", "cards_flagged": 0, "total_checked": 6}, "task": "vurt-trello-daily-maintenance"}
+{"ts": "2026-04-23T12:07:49.089303+00:00", "type": "task_complete", "data": {"ts": "2026-04-23T12:07:49.089288+00:00"}, "task": "vurt-trello-daily-maintenance"}

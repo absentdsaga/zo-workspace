@@ -2,7 +2,7 @@
 # Updated: March 31, 2026
 
 vurt_accounts:
-  tiktok: "@watchvurticals"
+  tiktok: "@myvurt"
   instagram: "@watchvurt"
   facebook: "VURT"
   youtube: "VURT"
@@ -28,6 +28,27 @@ vurt_team:
   ari:
     name: "Ari"
     role: "Internal team — platform access"
+
+studios:
+  binyuma_tv:
+    name: "Binyuma TV"
+    role: "Studio — The Love Network Jam"
+    about: "Africa's first vertical drama platform. Ugandan (Kampala). 'Binyuma' = 'it's entertaining.' Founders: Edwin Ruyonga, Ivan Kasagama. Format: 20-50 ultra-short episodes, under 1 min each."
+    ig: "@binyumatv"
+    yt: "@binyumatv"
+    website: "binyumatv.com"
+
+love_network_jam_cast:
+  izzo_isaac:
+    name: "Isaac (Awake C)"
+    character: "Izzo — main character"
+    ig: unknown
+    tt: unknown
+  rue_ryan:
+    name: "Ryan (Drew)"
+    character: "Rue — connector / best friend"
+    ig: unknown
+    tt: unknown
 
 stakeholders:
   snooperstar:
@@ -73,4 +94,219 @@ actors:
     name: "Eric Marts"
     role: "Lead — The Parking Lot"
     ig: unknown
+    tt: unknown
+  rotimi:
+    name: "Rotimi"
+    role: "Blaine Wilson — Favorite Son (2021, on VURT)"
+    ig: "@rotimi"
+    tt: "@rotimi"
+  jonathan_mcreynolds:
+    name: "Jonathan McReynolds"
+    role: "Camden Wilson — Favorite Son (2021, on VURT)"
+    ig: "@jonmcreynolds"
+    tt: "@jonmcreynoldstok"
+  serayah:
+    name: "Serayah"
+    role: "Dawn — Favorite Son (Blaine's girlfriend; pre-marital encounter arc)"
+    ig: "@serayah"
+    tt: "@serayah"
+  lisa_arrindell:
+    name: "Lisa Arrindell"
+    role: "First Lady Wilson (mother of Blaine and Camden, wife of Pastor B.C. Wilson) — Favorite Son. Never a romantic character for the brothers."
+    ig: "@lisaarrindell"
+    tt: "@lisa.arrindell"
+  e_roger_mitchell:
+    name: "E. Roger Mitchell"
+    role: "Pastor B.C. Wilson — Favorite Son (patriarch, alive in this film). Appears inactive on social — verify before tagging."
+    ig: "@eroger4real"
+    tt: unknown
+  loren_lott:
+    name: "Loren Lott"
+    role: "Amber — Favorite Son (Camden's love interest)"
+    ig: "@lorensharice"
+    tt: "@lorensharice"
+  amy_hui:
+    name: "Amy Hui"
+    role: "Dr. Miller — Favorite Son. Official handle not confirmed — do not tag until verified."
+    ig: unknown
+    tt: unknown
+  darryl_w_handy:
+    name: "Darryl W. Handy"
+    role: "Dr. Norman — Favorite Son"
+    ig: "@darrylwhandy_actor"
+    tt: unknown
+  anton_peeples:
+    name: "Anton Peeples"
+    role: "Akil — Favorite Son"
+    ig: "@antonpeeples"
+    tt: "@antonpeeples"
+  anthony_evans:
+    name: "Anthony Evans"
+    role: "Cast — Favorite Son"
+    ig: "@anthonyevansjr"
+    tt: "@anthonyevansofficial"
+  keke_wyatt:
+    name: "Keke Wyatt"
+    role: "Cast — Favorite Son"
+    ig: "@keke_wyatt"
+    tt: unknown
+  zane_stephens:
+    name: "Zane Stephens"
+    role: "Staffer — Favorite Son"
+    ig: unknown
+    tt: unknown
+  robin_givens:
+    name: "Robin Givens"
+    role: "Director — Favorite Son"
+    ig: "@robingivens"
+    tt: unknown
+  patricia_cuffie_jones:
+    name: "Patricia Cuffie-Jones"
+    role: "Writer — Favorite Son"
+    ig: "@pcuffiejones"
+    tt: unknown
+  tiffany_l_warren:
+    name: "Tiffany L. Warren"
+    role: "Writer / EP — Favorite Son (also wrote the source novel)"
+    ig: "@tiffanylwarren"
+    tt: "@tiffanylwarren"
+  eric_tomosunas:
+    name: "Eric Tomosunas"
+    role: "EP — Favorite Son. Swirl Films founder. VURT connection."
+    ig: "@erictswirl"
+    tt: unknown
+  swirl_films:
+    name: "Swirl Films"
+    role: "Production — Favorite Son"
+    ig: "@swirlfilmsig"
+    tt: unknown
+  tank:
+    name: "Tank (Durrell Babbs)"
+    role: "Blaine in Favorite Son CHRISTMAS (2023 sequel). NOT in the 2021 Favorite Son that is on VURT — do not tag Tank for Favorite Son captions."
+    ig: "@therealtank"
+    tt: unknown
+
+  # === 35 & Ticking (2011) cast + crew — IMDB tt1652287 ===
+  tamala_jones:
+    name: "Tamala Jones"
+    role: "Victoria — 35 & Ticking (wife of Austin; the kitchen-scene wife who can't get Austin to give her kids)"
+    ig: "@tamjones1"
+    tt: "@itslashai"
+    tt_note: "Active — 89 videos, 20K followers. @tamjones1 on TikTok is empty placeholder, do not use."
+  nicole_ari_parker:
+    name: "Nicole Ari Parker"
+    role: "Zenobia — 35 & Ticking (single, looking for a man)"
+    ig: "@nicoleariparker"
+    tt: none
+    tt_note: "@nicoleariparker on TikTok is a SQUATTER selling the handle. No verified personal TikTok found. Do not tag on TT."
+  kevin_hart:
+    name: "Kevin Hart"
+    role: "Cleavon — 35 & Ticking (geeky friend trying to land a woman). Massive megastar — tagging him is high-leverage but unlikely to be reposted."
+    ig: "@kevinhart4real"
+    tt: "@imkevinhart"
+  keith_d_robinson:
+    name: "Keith D. Robinson"
+    role: "Phil — 35 & Ticking (already married with kids, wife doesn't want to parent). Also Dreamgirls, Dear John. Singer."
+    ig: "@keithsings"
+    tt: "@keithsings"
+  darius_mccrary:
+    name: "Darius McCrary"
+    role: "Nick West — 35 & Ticking. Family Matters' Eddie Winslow."
+    ig: "@dariusmccrary"
+    tt: none
+    tt_note: "@darius_mccrary exists but only 25 followers / 2 videos — likely fan/imposter. Do not tag on TT."
+  meagan_good:
+    name: "Meagan Good"
+    role: "Falinda — 35 & Ticking"
+    ig: "@meagangood"
+    tt: "@meagan_good3"
+  dondre_whitfield:
+    name: "Dondre Whitfield"
+    role: "Austin — 35 & Ticking (Victoria's husband; refuses kids, later impregnates another woman post-divorce). Cosby Show. Queen Sugar."
+    ig: "@alldondre"
+    tt: "@alldondre"
+    tt_note: "Confirmed — same handle as IG. Bio: 'Acting is my passion but activation is my purpose.' 1,317 followers, 10 videos."
+  jill_marie_jones:
+    name: "Jill Marie Jones"
+    role: "Coco — 35 & Ticking. Girlfriends (Toni)."
+    ig: "@itsmejillmarie"
+    tt: "@jillmariejones"
+  clifton_powell:
+    name: "Clifton Powell"
+    role: "Zane — 35 & Ticking. Ray, Next Friday, Menace II Society."
+    ig: "@itscliftonpowell"
+    tt: none
+    tt_note: "@cliftonpowell on TikTok is a parked/empty placeholder (0 videos). No active account found. Do not tag on TT."
+  wendy_raquel_robinson:
+    name: "Wendy Raquel Robinson"
+    role: "Callise — 35 & Ticking. The Game. The Steve Harvey Show."
+    ig: "@iamwendyraquel"
+    tt: "@iamwendyraquel"
+  luenell:
+    name: "Luenell"
+    role: "Donya — 35 & Ticking. Comedian."
+    ig: "@luenell"
+    tt: "@theofficialluenell"
+  mike_epps:
+    name: "Mike Epps"
+    role: "Harold — 35 & Ticking. Comedian."
+    ig: "@therealmikeepps"
+    tt: "@therealmikeepps"
+  karon_riley:
+    name: "Karon Riley"
+    role: "Roderick — 35 & Ticking"
+    ig: "@karonjosephriley"
+    tt: "@karonjosephriley"
+    tt_note: "Confirmed — same handle as IG. 2,584 followers, 39 videos, 98K hearts."
+  kym_whitley:
+    name: "Kym Whitley"
+    role: "Shavelle — 35 & Ticking. Comedian."
+    ig: "@kymwhitley"
+    tt: "@kymwhitley_"
+  mechelle_mccain:
+    name: "Mechelle McCain"
+    role: "LaLa — 35 & Ticking"
+    ig: "@mechellemccain"
+    tt: "@mechellemccain"
+    tt_note: "Confirmed — same handle as IG. 7,770 followers, 45 videos."
+  carnetta_jones:
+    name: "Carnetta Jones"
+    role: "Dr. Handcock — 35 & Ticking. Mother of Eniko Hart (Kevin Hart's mother-in-law)."
+    ig: "@mamanetta34"
+    tt: none
+    tt_note: "No active TikTok found. @carnettajones is empty placeholder."
+  mari_morrow:
+    name: "Mari Morrow"
+    role: "Toi — 35 & Ticking. The Parkers, Family Matters."
+    ig: "@marimorrowofficial"
+    tt: "@marimorrowofficial"
+    tt_note: "Confirmed — same handle as IG. 410 followers, 5 videos."
+  nicholas_c_williams:
+    name: "Nicholas C. Williams"
+    role: "PJ — 35 & Ticking. Official handle not confirmed — do not tag until verified."
+    ig: unknown
+    tt: unknown
+  aaron_d_spears:
+    name: "Aaron D. Spears"
+    role: "Cast — 35 & Ticking. NOTE: Aaron D. Spears passed away in May 2024. Do not tag in posts — use 'tribute to' framing only if referenced."
+    ig: "@aarondspears"
+    tt: unknown
+    deceased: true
+  russ_parr:
+    name: "Russ Parr"
+    role: "Director / Writer / Producer — 35 & Ticking. Russ Parr Morning Show radio host."
+    ig: "@russparrshow"
+    tt: none
+    tt_note: "No active TikTok. @russparr exists but is parked/empty. Morning Show ended after 27 years. Use IG only."
+  brett_dismuke:
+    name: "Brett Dismuke"
+    role: "Producer — 35 & Ticking. Head of ALLBLK / WE TV (AMC Networks). Former Swirl Group President."
+    ig: "@mastermyndbrett"
+    ig_note: "Confirmed — bio 'ALLBLK.tv', 5,658 followers, posts ALLBLK/WE TV originals."
+    tt: unknown
+  david_eubanks:
+    name: "David Eubanks"
+    role: "Producer — 35 & Ticking. Swirl Films."
+    ig: none
+    ig_note: "Checked @dave_eubanks (wildlife biologist), @cfeubanks (CrossFit), @david.eubanks (Texas family), @deubanks842 (private, unverifiable). None confirmed as the Swirl producer. LinkedIn /in/davideubanks/ is his verified pro presence."
     tt: unknown

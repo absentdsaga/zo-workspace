@@ -9,7 +9,17 @@ from insights_engine import generate_insights
 from app_store_client import get_app_store_data
 from email_renderer import markdown_to_html
 from social_client import collect_social_data, format_social_report
-from npaw_client import get_top_content, get_daily_video_overview, get_device_breakdown as get_npaw_device_breakdown, get_cdn_breakdown, get_country_breakdown, get_isp_breakdown, get_content_quality, get_daily_buffer_trend, format_npaw_report
+from mux_client import (
+    get_top_content as get_mux_top_content,
+    get_daily_video_overview as get_mux_daily_overview,
+    get_device_breakdown as get_mux_device_breakdown,
+    get_cdn_breakdown as get_mux_cdn_breakdown,
+    get_country_breakdown as get_mux_country_breakdown,
+    get_isp_breakdown as get_mux_isp_breakdown,
+    get_content_quality as get_mux_content_quality,
+    get_daily_buffer_trend as get_mux_buffer_trend,
+    format_mux_report,
+)
 from youtube_client import format_youtube_report
 from datetime import datetime, timedelta
 
@@ -622,6 +632,74 @@ def build_report():
     except Exception as e:
         lines.append(f"*Social media data unavailable: {e}*\n")
 
+    # --- TikTok Top Performers (by views, last 60 days in cache) ---
+    try:
+        sys.path.insert(0, "/home/workspace/Skills/vurt-post-log/scripts")
+        from tiktok_profile import get_top_performers
+        tt_top = get_top_performers(limit=5, min_views=100)
+        if tt_top.get("top"):
+            lines.append("### TikTok Top Performers (@myvurt)")
+            lines.append("")
+            lines.append(f"*Ranked by views across {tt_top['count']} cached posts (scraped {tt_top['cache_age_hours']}h ago).*")
+            lines.append("")
+            lines.append("| # | Caption | Views | Likes | Saves | Save % |")
+            lines.append("|---|---------|------:|------:|------:|-------:|")
+            for i, r in enumerate(tt_top["top"], 1):
+                cap = r["caption"].replace("|", "/")
+                lines.append(f"| {i} | {cap} | {fmt_num(r['views'])} | {fmt_num(r['likes'])} | {fmt_num(r['saves'])} | {r['save_rate']*100:.2f}% |")
+            lines.append("")
+            collected["tiktok_top_performers"] = tt_top
+    except Exception as e:
+        lines.append(f"*TikTok top performers unavailable: {e}*\n")
+
+    # --- TikTok Save Rate Leaderboard ---
+    # Save rate (saves/views) is the bookmark signal TikTok's algorithm weights
+    # highest for re-surfacing. >1% = elite. Leads likes and views as a predictor.
+    try:
+        import json as _json
+        tt_path = "/home/workspace/Skills/vurt-post-log/data/tiktok_user_url_scrape.json"
+        tt_posts = _json.load(open(tt_path))
+        scraped_ts = max((p.get("scraped_at", 0) for p in tt_posts), default=0)
+        age_h = (datetime.now().timestamp() - scraped_ts) / 3600 if scraped_ts else 9999
+        ranked = []
+        for p in tt_posts:
+            v = p.get("views") or 0
+            if v < 100:
+                continue
+            s = p.get("saves") or 0
+            l = p.get("likes") or 0
+            ranked.append({
+                "caption": (p.get("caption") or "").strip().split("\n")[0][:60],
+                "url": p.get("url", ""),
+                "views": v,
+                "likes": l,
+                "saves": s,
+                "save_rate": s / v if v else 0,
+                "like_rate": l / v if v else 0,
+            })
+        ranked.sort(key=lambda r: r["save_rate"], reverse=True)
+        top = ranked[:10]
+        if top:
+            lines.append("### TikTok Save Rate Leaderboard")
+            lines.append("")
+            lines.append(f"*Saves-per-view is the strongest algorithmic signal for re-surfacing. >1% = bookmark-worthy. Based on {len(ranked)} @myvurt posts (>=100 views), scraped {age_h:.0f}h ago.*")
+            lines.append("")
+            lines.append("| # | Caption | Views | Saves | Save % | Like % |")
+            lines.append("|---|---------|------:|------:|-------:|-------:|")
+            for i, r in enumerate(top, 1):
+                flag = " **" if r["save_rate"] >= 0.01 else ""
+                end = "**" if r["save_rate"] >= 0.01 else ""
+                cap = r["caption"].replace("|", "/")
+                lines.append(f"| {i} |{flag}{cap}{end} | {fmt_num(r['views'])} | {fmt_num(r['saves'])} | {r['save_rate']*100:.2f}% | {r['like_rate']*100:.1f}% |")
+            lines.append("")
+            elite = [r for r in ranked if r["save_rate"] >= 0.01]
+            if elite:
+                lines.append(f"**{len(elite)} post{'s' if len(elite)!=1 else ''} cleared the 1% save rate threshold.** These are the patterns to clone.")
+                lines.append("")
+            collected["tiktok_save_leaderboard"] = top
+    except Exception as e:
+        lines.append(f"*TikTok save rate data unavailable: {e}*\n")
+
     # --- YouTube ---
     try:
         yt_md, yt_data = format_youtube_report()
@@ -632,66 +710,38 @@ def build_report():
     except Exception as e:
         lines.append(f"*YouTube data unavailable: {e}*\n")
 
-    # --- NPAW Video Performance ---
+    # --- Mux Video Performance (replaces NPAW as of 2026-04-22) ---
     try:
-        npaw_top = get_top_content(days=7, limit=20)
-        npaw_daily = get_daily_video_overview()
-        npaw_devices = get_npaw_device_breakdown(days=7)
-        npaw_cdn = get_cdn_breakdown(days=7)
-        npaw_country = get_country_breakdown(days=7)
-        npaw_isp = get_isp_breakdown(days=7)
-        npaw_content_quality = get_content_quality(days=7, limit=20)
-        npaw_buffer_trend = get_daily_buffer_trend(days=7)
-        collected["npaw_top"] = npaw_top
-        collected["npaw_daily"] = npaw_daily
-        npaw_md = format_npaw_report(npaw_top, npaw_daily, npaw_devices, npaw_cdn, npaw_country, npaw_isp, npaw_content_quality, npaw_buffer_trend)
-        lines.extend(npaw_md.splitlines())
-        lines.append("")
-        lines.append("*Note: NPAW buffer ratios may differ from Mux dashboard values. NPAW measures client-side buffering events; Mux measures server-side delivery. Both are directional. Cross-reference when investigating specific shows.*")
+        mux_top = get_mux_top_content(days=7, limit=30)
+        mux_daily = get_mux_daily_overview()
+        mux_devices = get_mux_device_breakdown(days=7)
+        mux_cdn = get_mux_cdn_breakdown(days=7)
+        mux_country = get_mux_country_breakdown(days=7)
+        mux_buffer_trend = get_mux_buffer_trend(days=7)
+        collected["mux_top"] = mux_top
+        collected["mux_daily"] = mux_daily
+        mux_md = format_mux_report(mux_top, mux_daily, mux_devices, mux_cdn, mux_country,
+                                   daily_buffer_trend=mux_buffer_trend)
+        lines.extend(mux_md.splitlines())
         lines.append("")
 
-        # --- Video Play Funnel (v4) ---
+        # --- Video Play Funnel (v4, Mux-powered) ---
         try:
-            npaw_m = {}
-            block = npaw_daily.get("data", [{}])[0]
-            for metric in block.get("metrics", []):
-                code = metric.get("code", "")
-                try:
-                    val = metric["values"][0]["data"][0][1]
-                except (IndexError, KeyError, TypeError):
-                    val = None
-                npaw_m[code] = val
-
-            plays = npaw_m.get("plays")
-            views = npaw_m.get("views")
-            if plays is not None and views is not None:
-                plays_f = float(plays)
-                views_f = float(views)
-                # views = play events that loaded, plays = actual play starts
-                # Completion data is per-title, we can show aggregate from top content
-                top_rows = []
-                try:
-                    from npaw_client import _extract_grouped_metrics
-                    top_rows = _extract_grouped_metrics(npaw_top)
-                except:
-                    pass
-                total_views_top = sum(float(r.get("views", 0)) for r in top_rows)
-                weighted_completion = sum(float(r.get("completionRate", 0)) * float(r.get("views", 0)) for r in top_rows if r.get("completionRate") is not None)
-                avg_completion = weighted_completion / total_views_top if total_views_top > 0 else 0
-                estimated_completions = plays_f * (avg_completion / 100) if avg_completion > 0 else 0
-
+            views = mux_daily.get("views")
+            compl = mux_daily.get("completionRate")
+            page_views = collected.get("yesterday", {}).get("screenPageViews")
+            if views is not None:
                 lines.append("### Video Play Funnel (Yesterday)")
                 lines.append("")
                 lines.append("| Stage | Count | Drop-off |")
                 lines.append("|-------|-------|----------|")
-                lines.append(f"| Page views (GA4) | {fmt_num(collected.get('yesterday', {}).get('screenPageViews', '?'))} | - |")
-                lines.append(f"| Play starts | {fmt_num(plays)} | - |")
-                start_to_view = f"{views_f/plays_f*100:.0f}%" if plays_f > 0 else "-"
-                lines.append(f"| View events | {fmt_num(views)} | {start_to_view} retention |")
-                if avg_completion > 0:
-                    lines.append(f"| Est. completions | {fmt_num(estimated_completions)} | {avg_completion:.0f}% avg completion (7d) |")
+                lines.append(f"| Page views (GA4) | {fmt_num(page_views) if page_views is not None else '?'} | - |")
+                lines.append(f"| Video views (Mux) | {fmt_num(views)} | - |")
+                if compl is not None:
+                    est_completions = float(views) * (float(compl) / 100.0)
+                    lines.append(f"| Est. completions | {fmt_num(est_completions)} | {float(compl):.0f}% avg completion |")
                 lines.append("")
-        except:
+        except Exception:
             pass
 
     except Exception as e:
@@ -775,7 +825,7 @@ def build_report():
     lines.append("---")
     lines.append("### Methodology")
     lines.append("- **Data source:** Google Analytics 4 (Property ID 518738893, myvurt.com)")
-    lines.append("- **Video data:** NPAW Youbora (client-side buffering/plays/completion). Note: NPAW and Mux may report different buffer rates — NPAW measures client-side events, Mux measures server-side delivery.")
+    lines.append("- **Video data:** Mux Data API (views, rebuffer %, playback failures, completion, startup time). Migrated from NPAW on 2026-04-22 — Mux is the new source of truth. `videoTitle`/`videoSeries` metadata is not yet populated in the player, so top-content tables show video IDs; once devs wire those fields, titles will resolve to show names.")
     lines.append("- **Landing page queries** use `landingPage` (path only, no query strings) to prevent fbclid/utm parameter fragmentation from causing GA4 to drop rows. Cross-dimension totals are verified against single-dimension totals.")
     lines.append("- **Engagement Rate:** % of sessions lasting >10s, with 2+ page views, or a key event (GA4 standard definition)")
     lines.append("- **Bounce Rate:** % of sessions that were NOT engaged (inverse of engagement rate)")

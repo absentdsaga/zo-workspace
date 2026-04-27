@@ -1,0 +1,78 @@
+{
+  "text": "Be ready to move. Okay. Aha. Who is this?",
+  "audio_duration": 22,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Be ready to move. Okay. Aha. Who is this?",
+      "confidence": 0.7655167,
+      "start": 196,
+      "end": 8447,
+      "words": [
+        {
+          "text": "Be",
+          "start": 196,
+          "end": 229,
+          "confidence": 0.5180494,
+          "speaker": "A"
+        },
+        {
+          "text": "ready",
+          "start": 939,
+          "end": 1552,
+          "confidence": 0.9987902,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 1585,
+          "end": 1665,
+          "confidence": 0.9967618,
+          "speaker": "A"
+        },
+        {
+          "text": "move.",
+          "start": 1665,
+          "end": 3603,
+          "confidence": 0.73954374,
+          "speaker": "A"
+        },
+        {
+          "text": "Okay.",
+          "start": 3780,
+          "end": 4167,
+          "confidence": 0.712045,
+          "speaker": "A"
+        },
+        {
+          "text": "Aha.",
+          "start": 4636,
+          "end": 5782,
+          "confidence": 0.21734083,
+          "speaker": "A"
+        },
+        {
+          "text": "Who",
+          "start": 7876,
+          "end": 8022,
+          "confidence": 0.7434167,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 8055,
+          "end": 8104,
+          "confidence": 0.99309254,
+          "speaker": "A"
+        },
+        {
+          "text": "this?",
+          "start": 8218,
+          "end": 8447,
+          "confidence": 0.97061026,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

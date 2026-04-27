@@ -1,0 +1,273 @@
+{
+  "text": "Uh, we shouldn't. Yeah, you're right. Or we could skip dinner and\u2014 I thought we were trying to wait till\u2014 Till marriage? Are you gonna let me in on when that's gonna be?",
+  "audio_duration": 40,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Uh, we shouldn't.",
+      "confidence": 0.52740616,
+      "start": 3541,
+      "end": 5303,
+      "words": [
+        {
+          "text": "Uh,",
+          "start": 3541,
+          "end": 3653,
+          "confidence": 0.0820329,
+          "speaker": "A"
+        },
+        {
+          "text": "we",
+          "start": 4663,
+          "end": 4759,
+          "confidence": 0.9835585,
+          "speaker": "A"
+        },
+        {
+          "text": "shouldn't.",
+          "start": 4759,
+          "end": 5303,
+          "confidence": 0.5166271,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Yeah, you're right.",
+      "confidence": 0.94229925,
+      "start": 6265,
+      "end": 6874,
+      "words": [
+        {
+          "text": "Yeah,",
+          "start": 6265,
+          "end": 6457,
+          "confidence": 0.89855015,
+          "speaker": "B"
+        },
+        {
+          "text": "you're",
+          "start": 6505,
+          "end": 6601,
+          "confidence": 0.9929813,
+          "speaker": "B"
+        },
+        {
+          "text": "right.",
+          "start": 6601,
+          "end": 6874,
+          "confidence": 0.9353663,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "Or we could skip dinner and\u2014 I thought we were trying to wait till\u2014 Till marriage?",
+      "confidence": 0.8917356,
+      "start": 9790,
+      "end": 16072,
+      "words": [
+        {
+          "text": "Or",
+          "start": 9790,
+          "end": 9983,
+          "confidence": 0.9785276,
+          "speaker": "A"
+        },
+        {
+          "text": "we",
+          "start": 10047,
+          "end": 10127,
+          "confidence": 0.9796356,
+          "speaker": "A"
+        },
+        {
+          "text": "could",
+          "start": 10191,
+          "end": 10383,
+          "confidence": 0.9946951,
+          "speaker": "A"
+        },
+        {
+          "text": "skip",
+          "start": 10383,
+          "end": 10848,
+          "confidence": 0.99976534,
+          "speaker": "A"
+        },
+        {
+          "text": "dinner",
+          "start": 10848,
+          "end": 11345,
+          "confidence": 0.99969256,
+          "speaker": "A"
+        },
+        {
+          "text": "and\u2014",
+          "start": 11729,
+          "end": 12450,
+          "confidence": 0.43418705,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 12466,
+          "end": 12482,
+          "confidence": 0.99206185,
+          "speaker": "A"
+        },
+        {
+          "text": "thought",
+          "start": 12675,
+          "end": 12803,
+          "confidence": 0.99938285,
+          "speaker": "A"
+        },
+        {
+          "text": "we",
+          "start": 12851,
+          "end": 12995,
+          "confidence": 0.99902165,
+          "speaker": "A"
+        },
+        {
+          "text": "were",
+          "start": 12995,
+          "end": 13091,
+          "confidence": 0.9992131,
+          "speaker": "A"
+        },
+        {
+          "text": "trying",
+          "start": 13091,
+          "end": 13620,
+          "confidence": 0.99978334,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 14053,
+          "end": 14181,
+          "confidence": 0.99165374,
+          "speaker": "A"
+        },
+        {
+          "text": "wait",
+          "start": 14293,
+          "end": 14630,
+          "confidence": 0.9994759,
+          "speaker": "A"
+        },
+        {
+          "text": "till\u2014",
+          "start": 15158,
+          "end": 15351,
+          "confidence": 0.67007554,
+          "speaker": "A"
+        },
+        {
+          "text": "Till",
+          "start": 15495,
+          "end": 15655,
+          "confidence": 0.48320118,
+          "speaker": "A"
+        },
+        {
+          "text": "marriage?",
+          "start": 15655,
+          "end": 16072,
+          "confidence": 0.74739784,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Are you gonna let me in on when that's gonna be?",
+      "confidence": 0.92577827,
+      "start": 23747,
+      "end": 26151,
+      "words": [
+        {
+          "text": "Are",
+          "start": 23747,
+          "end": 23827,
+          "confidence": 0.62129766,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 23827,
+          "end": 23908,
+          "confidence": 0.99974746,
+          "speaker": "B"
+        },
+        {
+          "text": "gonna",
+          "start": 23908,
+          "end": 24212,
+          "confidence": 0.59243435,
+          "speaker": "B"
+        },
+        {
+          "text": "let",
+          "start": 24212,
+          "end": 24340,
+          "confidence": 0.9999442,
+          "speaker": "B"
+        },
+        {
+          "text": "me",
+          "start": 24388,
+          "end": 24613,
+          "confidence": 0.99996483,
+          "speaker": "B"
+        },
+        {
+          "text": "in",
+          "start": 24693,
+          "end": 24917,
+          "confidence": 0.99925107,
+          "speaker": "B"
+        },
+        {
+          "text": "on",
+          "start": 25013,
+          "end": 25061,
+          "confidence": 0.99968386,
+          "speaker": "B"
+        },
+        {
+          "text": "when",
+          "start": 25254,
+          "end": 25318,
+          "confidence": 0.9998419,
+          "speaker": "B"
+        },
+        {
+          "text": "that's",
+          "start": 25414,
+          "end": 25670,
+          "confidence": 0.9993303,
+          "speaker": "B"
+        },
+        {
+          "text": "gonna",
+          "start": 25670,
+          "end": 25911,
+          "confidence": 0.98741084,
+          "speaker": "B"
+        },
+        {
+          "text": "be?",
+          "start": 25911,
+          "end": 26151,
+          "confidence": 0.9846547,
+          "speaker": "B"
+        }
+      ]
+    }
+  ]
+}

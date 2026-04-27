@@ -1,0 +1,685 @@
+{
+  "text": "What we gonna do, y'all? I know, I know what to do, y'all. Run, run, run! Go, go! You order! You order now! You get the same thing every night. Shrimp fried rice. Well, I might want something different today, all right? Uh, what's in the, uh, chicken teriyaki? Chicken! You know it's chicken. What's in the broccoli and shrimp? What? You want ovary? My name is Avery, not ovary. You know my name is Avery. Just give me the shrimp fried rice. You make me sick. Ah!",
+  "audio_duration": 59,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "What we gonna do, y'all?",
+      "confidence": 0.7391959,
+      "start": 357,
+      "end": 2888,
+      "words": [
+        {
+          "text": "What",
+          "start": 357,
+          "end": 938,
+          "confidence": 0.37865975,
+          "speaker": "A"
+        },
+        {
+          "text": "we",
+          "start": 938,
+          "end": 1034,
+          "confidence": 0.8040185,
+          "speaker": "A"
+        },
+        {
+          "text": "gonna",
+          "start": 1244,
+          "end": 1486,
+          "confidence": 0.5885679,
+          "speaker": "A"
+        },
+        {
+          "text": "do,",
+          "start": 1486,
+          "end": 1566,
+          "confidence": 0.95220983,
+          "speaker": "A"
+        },
+        {
+          "text": "y'all?",
+          "start": 1583,
+          "end": 2888,
+          "confidence": 0.97252333,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "I know, I know what to do, y'all.",
+      "confidence": 0.87928045,
+      "start": 2953,
+      "end": 12061,
+      "words": [
+        {
+          "text": "I",
+          "start": 2953,
+          "end": 3033,
+          "confidence": 0.7315033,
+          "speaker": "B"
+        },
+        {
+          "text": "know,",
+          "start": 3033,
+          "end": 3195,
+          "confidence": 0.49485534,
+          "speaker": "B"
+        },
+        {
+          "text": "I",
+          "start": 3340,
+          "end": 3453,
+          "confidence": 0.99958545,
+          "speaker": "B"
+        },
+        {
+          "text": "know",
+          "start": 3453,
+          "end": 3582,
+          "confidence": 0.9999026,
+          "speaker": "B"
+        },
+        {
+          "text": "what",
+          "start": 3582,
+          "end": 3678,
+          "confidence": 0.9939877,
+          "speaker": "B"
+        },
+        {
+          "text": "to",
+          "start": 3678,
+          "end": 3759,
+          "confidence": 0.99954176,
+          "speaker": "B"
+        },
+        {
+          "text": "do,",
+          "start": 3759,
+          "end": 4017,
+          "confidence": 0.86499214,
+          "speaker": "B"
+        },
+        {
+          "text": "y'all.",
+          "start": 6580,
+          "end": 12061,
+          "confidence": 0.9498752,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "Run, run, run!",
+      "confidence": 0.5777945,
+      "start": 13028,
+      "end": 16170,
+      "words": [
+        {
+          "text": "Run,",
+          "start": 13028,
+          "end": 13222,
+          "confidence": 0.53383917,
+          "speaker": "A"
+        },
+        {
+          "text": "run,",
+          "start": 14890,
+          "end": 15668,
+          "confidence": 0.75856805,
+          "speaker": "A"
+        },
+        {
+          "text": "run!",
+          "start": 16008,
+          "end": 16170,
+          "confidence": 0.4409763,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "C",
+      "text": "Go, go! You order! You order now! You get the same thing every night. Shrimp fried rice.",
+      "confidence": 0.8590455,
+      "start": 22088,
+      "end": 33272,
+      "words": [
+        {
+          "text": "Go,",
+          "start": 22088,
+          "end": 22673,
+          "confidence": 0.5510277,
+          "speaker": "C"
+        },
+        {
+          "text": "go!",
+          "start": 23648,
+          "end": 24396,
+          "confidence": 0.9262968,
+          "speaker": "C"
+        },
+        {
+          "text": "You",
+          "start": 27710,
+          "end": 27806,
+          "confidence": 0.9758875,
+          "speaker": "C"
+        },
+        {
+          "text": "order!",
+          "start": 27806,
+          "end": 28479,
+          "confidence": 0.34741646,
+          "speaker": "C"
+        },
+        {
+          "text": "You",
+          "start": 28591,
+          "end": 28640,
+          "confidence": 0.9472917,
+          "speaker": "C"
+        },
+        {
+          "text": "order",
+          "start": 28848,
+          "end": 29088,
+          "confidence": 0.99955744,
+          "speaker": "C"
+        },
+        {
+          "text": "now!",
+          "start": 29088,
+          "end": 29425,
+          "confidence": 0.7721202,
+          "speaker": "C"
+        },
+        {
+          "text": "You",
+          "start": 29714,
+          "end": 29778,
+          "confidence": 0.9910314,
+          "speaker": "C"
+        },
+        {
+          "text": "get",
+          "start": 30034,
+          "end": 30243,
+          "confidence": 0.9973115,
+          "speaker": "C"
+        },
+        {
+          "text": "the",
+          "start": 30291,
+          "end": 30371,
+          "confidence": 0.9964521,
+          "speaker": "C"
+        },
+        {
+          "text": "same",
+          "start": 30371,
+          "end": 30820,
+          "confidence": 0.99985754,
+          "speaker": "C"
+        },
+        {
+          "text": "thing",
+          "start": 30852,
+          "end": 30980,
+          "confidence": 0.99843615,
+          "speaker": "C"
+        },
+        {
+          "text": "every",
+          "start": 31237,
+          "end": 31541,
+          "confidence": 0.9952561,
+          "speaker": "C"
+        },
+        {
+          "text": "night.",
+          "start": 31589,
+          "end": 31766,
+          "confidence": 0.37923136,
+          "speaker": "C"
+        },
+        {
+          "text": "Shrimp",
+          "start": 32054,
+          "end": 32615,
+          "confidence": 0.99744076,
+          "speaker": "C"
+        },
+        {
+          "text": "fried",
+          "start": 32615,
+          "end": 32968,
+          "confidence": 0.94457746,
+          "speaker": "C"
+        },
+        {
+          "text": "rice.",
+          "start": 32968,
+          "end": 33272,
+          "confidence": 0.7845815,
+          "speaker": "C"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "Well, I might want something different today, all right? Uh, what's in the, uh, chicken teriyaki? Chicken! You know it's chicken. What's in the broccoli and shrimp?",
+      "confidence": 0.90363514,
+      "start": 33641,
+      "end": 45664,
+      "words": [
+        {
+          "text": "Well,",
+          "start": 33641,
+          "end": 33785,
+          "confidence": 0.82450205,
+          "speaker": "B"
+        },
+        {
+          "text": "I",
+          "start": 33834,
+          "end": 33850,
+          "confidence": 0.9985561,
+          "speaker": "B"
+        },
+        {
+          "text": "might",
+          "start": 33850,
+          "end": 33946,
+          "confidence": 0.9966618,
+          "speaker": "B"
+        },
+        {
+          "text": "want",
+          "start": 33978,
+          "end": 34106,
+          "confidence": 0.9986926,
+          "speaker": "B"
+        },
+        {
+          "text": "something",
+          "start": 34202,
+          "end": 34427,
+          "confidence": 0.9629299,
+          "speaker": "B"
+        },
+        {
+          "text": "different",
+          "start": 34443,
+          "end": 34811,
+          "confidence": 0.99980277,
+          "speaker": "B"
+        },
+        {
+          "text": "today,",
+          "start": 34811,
+          "end": 35020,
+          "confidence": 0.74961656,
+          "speaker": "B"
+        },
+        {
+          "text": "all",
+          "start": 35180,
+          "end": 35260,
+          "confidence": 0.54228765,
+          "speaker": "B"
+        },
+        {
+          "text": "right?",
+          "start": 35260,
+          "end": 36254,
+          "confidence": 0.90466994,
+          "speaker": "B"
+        },
+        {
+          "text": "Uh,",
+          "start": 38130,
+          "end": 38306,
+          "confidence": 0.9252364,
+          "speaker": "B"
+        },
+        {
+          "text": "what's",
+          "start": 38370,
+          "end": 38627,
+          "confidence": 0.9974728,
+          "speaker": "B"
+        },
+        {
+          "text": "in",
+          "start": 38627,
+          "end": 38771,
+          "confidence": 0.9903893,
+          "speaker": "B"
+        },
+        {
+          "text": "the,",
+          "start": 38771,
+          "end": 39028,
+          "confidence": 0.5148426,
+          "speaker": "B"
+        },
+        {
+          "text": "uh,",
+          "start": 39252,
+          "end": 39428,
+          "confidence": 0.92737925,
+          "speaker": "B"
+        },
+        {
+          "text": "chicken",
+          "start": 40454,
+          "end": 40711,
+          "confidence": 0.8943261,
+          "speaker": "B"
+        },
+        {
+          "text": "teriyaki?",
+          "start": 40775,
+          "end": 41240,
+          "confidence": 0.9954922,
+          "speaker": "B"
+        },
+        {
+          "text": "Chicken!",
+          "start": 41657,
+          "end": 41961,
+          "confidence": 0.68916374,
+          "speaker": "B"
+        },
+        {
+          "text": "You",
+          "start": 42635,
+          "end": 42795,
+          "confidence": 0.991631,
+          "speaker": "B"
+        },
+        {
+          "text": "know",
+          "start": 42795,
+          "end": 43019,
+          "confidence": 0.9990251,
+          "speaker": "B"
+        },
+        {
+          "text": "it's",
+          "start": 43019,
+          "end": 43308,
+          "confidence": 0.8723102,
+          "speaker": "B"
+        },
+        {
+          "text": "chicken.",
+          "start": 43340,
+          "end": 43564,
+          "confidence": 0.67751426,
+          "speaker": "B"
+        },
+        {
+          "text": "What's",
+          "start": 44157,
+          "end": 44318,
+          "confidence": 0.9989083,
+          "speaker": "B"
+        },
+        {
+          "text": "in",
+          "start": 44318,
+          "end": 44366,
+          "confidence": 0.9984157,
+          "speaker": "B"
+        },
+        {
+          "text": "the",
+          "start": 44462,
+          "end": 44558,
+          "confidence": 0.9896479,
+          "speaker": "B"
+        },
+        {
+          "text": "broccoli",
+          "start": 44558,
+          "end": 45039,
+          "confidence": 0.9985876,
+          "speaker": "B"
+        },
+        {
+          "text": "and",
+          "start": 45039,
+          "end": 45119,
+          "confidence": 0.9610382,
+          "speaker": "B"
+        },
+        {
+          "text": "shrimp?",
+          "start": 45119,
+          "end": 45664,
+          "confidence": 0.9990488,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "C",
+      "text": "What? You want ovary?",
+      "confidence": 0.8821478,
+      "start": 45905,
+      "end": 47973,
+      "words": [
+        {
+          "text": "What?",
+          "start": 45905,
+          "end": 46161,
+          "confidence": 0.62158805,
+          "speaker": "C"
+        },
+        {
+          "text": "You",
+          "start": 46562,
+          "end": 46690,
+          "confidence": 0.9966677,
+          "speaker": "C"
+        },
+        {
+          "text": "want",
+          "start": 46867,
+          "end": 47219,
+          "confidence": 0.99980825,
+          "speaker": "C"
+        },
+        {
+          "text": "ovary?",
+          "start": 47508,
+          "end": 47973,
+          "confidence": 0.9105273,
+          "speaker": "C"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "My name is Avery, not ovary. You know my name is Avery. Just give me the shrimp fried rice. You make me sick. Ah!",
+      "confidence": 0.86786073,
+      "start": 48181,
+      "end": 56918,
+      "words": [
+        {
+          "text": "My",
+          "start": 48181,
+          "end": 48261,
+          "confidence": 0.9991678,
+          "speaker": "B"
+        },
+        {
+          "text": "name",
+          "start": 48309,
+          "end": 48614,
+          "confidence": 0.99998033,
+          "speaker": "B"
+        },
+        {
+          "text": "is",
+          "start": 48726,
+          "end": 48774,
+          "confidence": 0.99960417,
+          "speaker": "B"
+        },
+        {
+          "text": "Avery,",
+          "start": 49031,
+          "end": 49448,
+          "confidence": 0.9457329,
+          "speaker": "B"
+        },
+        {
+          "text": "not",
+          "start": 49464,
+          "end": 49752,
+          "confidence": 0.99825305,
+          "speaker": "B"
+        },
+        {
+          "text": "ovary.",
+          "start": 49832,
+          "end": 50169,
+          "confidence": 0.57033896,
+          "speaker": "B"
+        },
+        {
+          "text": "You",
+          "start": 50329,
+          "end": 50377,
+          "confidence": 0.99898416,
+          "speaker": "B"
+        },
+        {
+          "text": "know",
+          "start": 50377,
+          "end": 50490,
+          "confidence": 0.99995923,
+          "speaker": "B"
+        },
+        {
+          "text": "my",
+          "start": 50506,
+          "end": 50650,
+          "confidence": 0.992759,
+          "speaker": "B"
+        },
+        {
+          "text": "name",
+          "start": 50650,
+          "end": 50890,
+          "confidence": 0.99997926,
+          "speaker": "B"
+        },
+        {
+          "text": "is",
+          "start": 50890,
+          "end": 50971,
+          "confidence": 0.9985304,
+          "speaker": "B"
+        },
+        {
+          "text": "Avery.",
+          "start": 50971,
+          "end": 51275,
+          "confidence": 0.9225642,
+          "speaker": "B"
+        },
+        {
+          "text": "Just",
+          "start": 51947,
+          "end": 52092,
+          "confidence": 0.8763295,
+          "speaker": "B"
+        },
+        {
+          "text": "give",
+          "start": 52109,
+          "end": 52206,
+          "confidence": 0.8015256,
+          "speaker": "B"
+        },
+        {
+          "text": "me",
+          "start": 52206,
+          "end": 52287,
+          "confidence": 0.9985158,
+          "speaker": "B"
+        },
+        {
+          "text": "the",
+          "start": 52287,
+          "end": 52368,
+          "confidence": 0.9600953,
+          "speaker": "B"
+        },
+        {
+          "text": "shrimp",
+          "start": 52368,
+          "end": 52691,
+          "confidence": 0.9739206,
+          "speaker": "B"
+        },
+        {
+          "text": "fried",
+          "start": 52691,
+          "end": 52837,
+          "confidence": 0.83893406,
+          "speaker": "B"
+        },
+        {
+          "text": "rice.",
+          "start": 52934,
+          "end": 53161,
+          "confidence": 0.8639739,
+          "speaker": "B"
+        },
+        {
+          "text": "You",
+          "start": 54456,
+          "end": 54505,
+          "confidence": 0.2592732,
+          "speaker": "B"
+        },
+        {
+          "text": "make",
+          "start": 54505,
+          "end": 54813,
+          "confidence": 0.9939715,
+          "speaker": "B"
+        },
+        {
+          "text": "me",
+          "start": 54877,
+          "end": 54942,
+          "confidence": 0.9955048,
+          "speaker": "B"
+        },
+        {
+          "text": "sick.",
+          "start": 54942,
+          "end": 55039,
+          "confidence": 0.7386887,
+          "speaker": "B"
+        },
+        {
+          "text": "Ah!",
+          "start": 56885,
+          "end": 56918,
+          "confidence": 0.10207139,
+          "speaker": "B"
+        }
+      ]
+    }
+  ]
+}

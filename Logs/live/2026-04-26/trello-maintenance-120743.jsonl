@@ -1,0 +1,28 @@
+{"ts": "2026-04-26T12:07:39.598174", "event": "INFO", "data": "Fetching board lists..."}
+{"ts": "2026-04-26T12:07:39.803031", "event": "RESULT", "data": "Found lists: ['Inbox', 'This Week', 'In Progress', 'Review / Blocked', 'Done']"}
+{"ts": "2026-04-26T12:07:39.803045", "event": "INFO", "data": "Task 1: Sorting 'This Week' by due date..."}
+{"ts": "2026-04-26T12:07:39.976092", "event": "RESULT", "data": "  Ordered 15 cards"}
+{"ts": "2026-04-26T12:07:40.165458", "event": "INFO", "data": "  [1] pos=1024 | Weekly Triage: Review Inbox, prioritize  | due=2026-03-23T23:59:00.000Z"}
+{"ts": "2026-04-26T12:07:40.356340", "event": "INFO", "data": "  [2] pos=2048 | Wednesday deep dive with Tarik -- blitz  | due=2026-03-25T17:00:00.000Z"}
+{"ts": "2026-04-26T12:07:40.577501", "event": "INFO", "data": "  [3] pos=3072 | [DEV] Request Enveu: Add Meta SDK to VUR | due=2026-03-26T17:00:00.000Z"}
+{"ts": "2026-04-26T12:07:40.876249", "event": "INFO", "data": "  [4] pos=4096 | Add Apple Smart App Banner to myvurt.com | due=2026-03-26T17:00:00.000Z"}
+{"ts": "2026-04-26T12:07:41.076437", "event": "INFO", "data": "  [5] pos=5120 | Fix mobile footer -- social links invisi | due=2026-03-28T17:00:00.000Z"}
+{"ts": "2026-04-26T12:07:41.282484", "event": "INFO", "data": "  [6] pos=6144 | Fix share links routing to vurt.enveu.li | due=2026-03-28T17:00:00.000Z"}
+{"ts": "2026-04-26T12:07:41.471699", "event": "INFO", "data": "  [7] pos=7168 | Deploy foundation pixels via GTM | due=2026-03-28T17:00:00.000Z"}
+{"ts": "2026-04-26T12:07:41.684605", "event": "INFO", "data": "  [8] pos=8192 | Move download app button to top of websi | due=2026-03-28T17:00:00.000Z"}
+{"ts": "2026-04-26T12:07:41.865661", "event": "INFO", "data": "  [9] pos=9216 | Add age prompt after clicking on a title | due=2026-03-28T17:00:00.000Z"}
+{"ts": "2026-04-26T12:07:42.063775", "event": "INFO", "data": "  [10] pos=10240 | Weekly Triage: Review Inbox, prioritize  | due=2026-03-30T23:59:00.000Z"}
+{"ts": "2026-04-26T12:07:42.286334", "event": "INFO", "data": "  [11] pos=11264 | Weekly Triage: Review Inbox, prioritize  | due=2026-04-06T23:59:00.000Z"}
+{"ts": "2026-04-26T12:07:42.482409", "event": "INFO", "data": "  [12] pos=12288 | Weekly Triage: Review Inbox, prioritize  | due=2026-04-13T23:59:00.000Z"}
+{"ts": "2026-04-26T12:07:42.678961", "event": "INFO", "data": "  [13] pos=13312 | Weekly Triage: Review Inbox, prioritize  | due=2026-04-20T23:59:00.000Z"}
+{"ts": "2026-04-26T12:07:42.875090", "event": "INFO", "data": "  [14] pos=14336 | Send editable (word version) of VURT Tar | due=None"}
+{"ts": "2026-04-26T12:07:43.070856", "event": "INFO", "data": "  [15] pos=15360 | Filmmaker spotlight post and promo for N | due=None"}
+{"ts": "2026-04-26T12:07:43.070879", "event": "INFO", "data": "Task 2: Flagging stale cards in 'In Progress'..."}
+{"ts": "2026-04-26T12:07:43.417672", "event": "RESULT", "data": "  Using existing Stale label: 69c06d926bbfae785580fb39"}
+{"ts": "2026-04-26T12:07:43.417834", "event": "INFO", "data": "  Already stale (skip): Get subtitles vendor -- evaluate Rev.com vs Assemb"}
+{"ts": "2026-04-26T12:07:43.417847", "event": "INFO", "data": "  Already stale (skip): Get SEO update timeline from Enveu for Tarik"}
+{"ts": "2026-04-26T12:07:43.417854", "event": "INFO", "data": "  Already stale (skip): Set up Week 1 content calendar (Mar 24-30)"}
+{"ts": "2026-04-26T12:07:43.417860", "event": "INFO", "data": "  Already stale (skip): Need VURT drops from Karma In Hills director and a"}
+{"ts": "2026-04-26T12:07:43.417867", "event": "INFO", "data": "  Already stale (skip): Create a \"CREATOR SPOTLIGHT\" schedule"}
+{"ts": "2026-04-26T12:07:43.417873", "event": "INFO", "data": "  Already stale (skip): Bus Ad \u2014 Static Design (Stars + Titles + App GFX)"}
+{"ts": "2026-04-26T12:07:43.417879", "event": "RESULT", "data": "  0 cards labeled as stale"}

@@ -1,0 +1,29 @@
+{
+  "text": "Leave! Sit!",
+  "audio_duration": 23,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Leave! Sit!",
+      "confidence": 0.5180679,
+      "start": 3988,
+      "end": 9956,
+      "words": [
+        {
+          "text": "Leave!",
+          "start": 3988,
+          "end": 4680,
+          "confidence": 0.8235628,
+          "speaker": "A"
+        },
+        {
+          "text": "Sit!",
+          "start": 9438,
+          "end": 9956,
+          "confidence": 0.21257298,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

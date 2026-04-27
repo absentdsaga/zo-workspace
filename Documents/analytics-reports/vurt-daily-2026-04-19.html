@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{background:#0a0a0a;color:#e0e0e0;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:0;padding:0}
+.wrap{max-width:720px;margin:0 auto;padding:32px 24px;background:#0a0a0a}
+h1{color:#fff;font-size:26px;font-weight:700;margin:0 0 4px 0}
+h2{color:#fff;font-size:18px;font-weight:600;margin:32px 0 12px 0;border-bottom:1px solid #333;padding-bottom:6px}
+h3{color:#ccc;font-size:14px;font-weight:600;margin:18px 0 6px 0;text-transform:uppercase;letter-spacing:.5px}
+p{margin:8px 0;line-height:1.6;font-size:14px;color:#e0e0e0}
+.date{color:#888;font-size:14px;margin-bottom:24px}
+table{width:100%;border-collapse:collapse;margin:8px 0 16px 0;font-size:13px}
+th{background:#1a1a1a;color:#aaa;text-align:left;padding:8px 10px;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #333}
+td{padding:7px 10px;border-bottom:1px solid #1f1f1f;color:#ccc}
+.pos{color:#4ade80}
+.neg{color:#f87171}
+.ins{background:#111;border-left:3px solid #6c63ff;padding:10px 14px;margin:10px 0;border-radius:3px;font-size:14px;line-height:1.65;color:#ccc}
+.ins-n{color:#6c63ff;font-weight:700;margin-right:4px}
+.ft{margin-top:32px;padding-top:16px;border-top:1px solid #222;color:#555;font-size:12px}
+a{color:#818cf8}
+strong{color:#fff}
+em{color:#a78bfa;font-style:italic}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>VURT Daily Analytics Report</h1>
+<p class="date">April 19, 2026</p>
+<h2>Daily Snapshot (latest data: Saturday 04/18 vs Friday 04/17)</h2>
+<table>
+<thead><tr><th>Metric</th><th>Saturday 04/18</th><th>Friday 04/17</th><th>Change</th></tr></thead>
+<tbody>
+<tr><td>Daily Active Users</td><td><strong>11.4K</strong></td><td>6.2K</td><td><span class="pos">+85.3%</span></td></tr>
+<tr><td>New Users</td><td><strong>11.3K</strong></td><td>6.1K</td><td><span class="pos">+84.5%</span></td></tr>
+<tr><td>Sessions</td><td><strong>12.2K</strong></td><td>6.8K</td><td><span class="pos">+80.6%</span></td></tr>
+<tr><td>Avg Session Duration</td><td><strong>0m 39s</strong></td><td>0m 52s</td><td><span class="neg">-24.4%</span></td></tr>
+<tr><td>Page/Screen Views</td><td><strong>14.0K</strong></td><td>8.0K</td><td><span class="pos">+75.3%</span></td></tr>
+<tr><td>Engaged Sessions</td><td><strong>929</strong></td><td>782</td><td><span class="pos">+18.8%</span></td></tr>
+<tr><td>Total Engagement Time</td><td><strong>1890m 5s</strong></td><td>1332m 54s</td><td><span class="pos">+41.8%</span></td></tr>
+<tr><td>Sessions per User</td><td><strong>1.1</strong></td><td>1.1</td><td><span class="neg">-2.5%</span></td></tr>
+<tr><td>Engagement Rate</td><td><strong>7.6%</strong></td><td>11.6%</td><td><span class="neg">-34.2%</span></td></tr>
+<tr><td>Bounce Rate</td><td><strong>92.4%</strong></td><td>88.4%</td><td><span class="pos">+4.5%</span></td></tr>
+</tbody></table>
+
+<h2>7-Day Overview (WoW)</h2>
+<table>
+<thead><tr><th>Metric</th><th>This Week</th><th>Last Week</th><th>Change</th></tr></thead>
+<tbody>
+<tr><td>Daily Active Users</td><td><strong>49.4K</strong></td><td>12.5K</td><td><span class="pos">+295.3%</span></td></tr>
+<tr><td>New Users</td><td><strong>48.7K</strong></td><td>11.9K</td><td><span class="pos">+310.6%</span></td></tr>
+<tr><td>Sessions</td><td><strong>54.2K</strong></td><td>14.9K</td><td><span class="pos">+264.5%</span></td></tr>
+<tr><td>Avg Session Duration</td><td><strong>1m 3s</strong></td><td>3m 29s</td><td><span class="neg">-69.7%</span></td></tr>
+<tr><td>Page/Screen Views</td><td><strong>63.8K</strong></td><td>21.2K</td><td><span class="pos">+201.0%</span></td></tr>
+<tr><td>Engaged Sessions</td><td><strong>5.3K</strong></td><td>3.6K</td><td><span class="pos">+46.6%</span></td></tr>
+<tr><td>Total Engagement Time</td><td><strong>12754m 36s</strong></td><td>11588m 46s</td><td><span class="pos">+10.1%</span></td></tr>
+<tr><td>Sessions per User</td><td><strong>1.1</strong></td><td>1.2</td><td><span class="neg">-7.8%</span></td></tr>
+<tr><td>Engagement Rate</td><td><strong>9.7%</strong></td><td>24.2%</td><td><span class="neg">-59.8%</span></td></tr>
+<tr><td>Bounce Rate</td><td><strong>90.3%</strong></td><td>75.8%</td><td><span class="pos">+19.1%</span></td></tr>
+</tbody></table>
+
+<h2>Platform Breakdown (7d)</h2>
+<table>
+<thead><tr><th>Platform</th><th>Users</th><th>Sessions</th><th>Avg Duration</th><th>Engagement Rate</th></tr></thead>
+<tbody>
+<tr><td>web</td><td>49.0K</td><td>53.4K</td><td>0m 26s</td><td>9.0%</td></tr>
+<tr><td>iOS</td><td>195</td><td>291</td><td>19m 16s</td><td>88.3%</td></tr>
+<tr><td>Android</td><td>162</td><td>273</td><td>101m 45s</td><td>88.3%</td></tr>
+</tbody></table>
+
+<h2>Traffic Sources (7d)</h2>
+<table>
+<thead><tr><th>Channel</th><th>Users</th><th>Sessions</th><th>Avg Duration</th><th>Engagement Rate</th><th>Bounce Rate</th></tr></thead>
+<tbody>
+<tr><td>Paid Social</td><td>42.5K</td><td>45.8K</td><td>0m 18s</td><td>7.9%</td><td>92.1%</td></tr>
+<tr><td>Direct</td><td>5.8K</td><td>6.8K</td><td>2m 18s</td><td>16.2%</td><td>83.8%</td></tr>
+<tr><td>Organic Social</td><td>659</td><td>728</td><td>0m 57s</td><td>27.7%</td><td>72.3%</td></tr>
+<tr><td>Organic Search</td><td>234</td><td>396</td><td>65m 9s</td><td>77.8%</td><td>22.2%</td></tr>
+<tr><td>Referral</td><td>25</td><td>114</td><td>6m 57s</td><td>56.1%</td><td>43.9%</td></tr>
+<tr><td>Unassigned</td><td>25</td><td>41</td><td>4m 17s</td><td>19.5%</td><td>80.5%</td></tr>
+<tr><td>Paid Other</td><td>14</td><td>15</td><td>0m 34s</td><td>33.3%</td><td>66.7%</td></tr>
+</tbody></table>
+
+<p><strong>Paid Social: ACTIVE</strong> (45.8K sessions this week, 92.1% bounce)</p>
+<h2>Cohort Retention by Acquisition Source (last 7 daily cohorts)</h2>
+<p>How many of the users we acquired each day actually came back. Day 0 = sessions on acquisition day. D1/D3/D7 = % of that cohort returning N days later.</p>
+<table>
+<thead><tr><th>Channel</th><th>D0 Users</th><th>D1 Return</th><th>D3 Return</th><th>D7 Return</th></tr></thead>
+<tbody>
+<tr><td>Paid Social</td><td>42.1K</td><td>0.1%</td><td>0.0%</td><td>0.0%</td></tr>
+<tr><td>Direct</td><td>5.7K</td><td>1.2%</td><td>0.1%</td><td>0.0%</td></tr>
+<tr><td>Organic Social</td><td>609</td><td>0.2%</td><td>0.0%</td><td>0.0%</td></tr>
+<tr><td>Organic Search</td><td>165</td><td>9.7%</td><td>2.4%</td><td>0.6%</td></tr>
+<tr><td>Paid Other</td><td>14</td><td>7.1%</td><td>0.0%</td><td>0.0%</td></tr>
+<tr><td>Referral</td><td>12</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
+<tr><td>Unassigned</td><td>1</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
+</tbody></table>
+
+<p>_Paid Social brings volume (42.1K users) but 0.1% D1 return vs Organic Search at 9.7% — flag for audience-quality review._</p>
+<h2>Where Each Channel Lands (7d)</h2>
+<table>
+<thead><tr><th>Channel</th><th>Landing Page</th><th>Sessions</th><th>Bounce Rate</th><th>Avg Duration</th></tr></thead>
+<tbody>
+<tr><td><strong>Paid Social</strong> (46.4K)</td><td>/detail/micro_series/karma-in-hells</td><td>18.6K</td><td>97.8%</td><td>0m 4s</td></tr>
+<tr><td></td><td>/detail/micro_series/girl-in-the-closet</td><td>14.9K</td><td>86.2%</td><td>0m 29s</td></tr>
+<tr><td></td><td>/detail/micro_series/killer-stepdad</td><td>6.3K</td><td>96.0%</td><td>0m 12s</td></tr>
+<tr><td><strong>Direct</strong> (6.9K)</td><td>/detail/micro_series/something-like-a-busi...</td><td>3.0K</td><td>94.5%</td><td>0m 21s</td></tr>
+<tr><td></td><td>/detail/micro_series/karma-in-hells</td><td>2.4K</td><td>93.8%</td><td>0m 31s</td></tr>
+<tr><td></td><td>/</td><td>826</td><td>46.7%</td><td>5m 18s</td></tr>
+<tr><td><strong>Organic Social</strong> (727)</td><td>/</td><td>444</td><td>63.5%</td><td>1m 9s</td></tr>
+<tr><td></td><td>/detail/micro_series/baby-mama</td><td>102</td><td>97.1%</td><td>0m 10s</td></tr>
+<tr><td></td><td>/detail/micro_series/killer-stepdad</td><td>52</td><td>96.2%</td><td>0m 0s</td></tr>
+<tr><td><strong>Organic Search</strong> (395)</td><td>(not set)</td><td>244</td><td>13.5%</td><td>102m 48s</td></tr>
+<tr><td></td><td>/</td><td>123</td><td>30.9%</td><td>4m 57s</td></tr>
+<tr><td></td><td>/detail/micro_series/come-back-dad</td><td>7</td><td>71.4%</td><td>3m 19s</td></tr>
+<tr><td><strong>Referral</strong> (114)</td><td>/</td><td>57</td><td>26.3%</td><td>8m 17s</td></tr>
+<tr><td></td><td>(not set)</td><td>26</td><td>84.6%</td><td>3m 55s</td></tr>
+<tr><td></td><td>/detail/micro_series/the-love-network-jam</td><td>7</td><td>14.3%</td><td>3m 45s</td></tr>
+<tr><td><strong>Unassigned</strong> (41)</td><td>(not set)</td><td>13</td><td>100.0%</td><td>8m 37s</td></tr>
+<tr><td></td><td>/</td><td>11</td><td>45.5%</td><td>2m 18s</td></tr>
+<tr><td></td><td>/detail/micro_series/favorite-son</td><td>3</td><td>100.0%</td><td>0m 0s</td></tr>
+</tbody></table>
+
+<h2>New vs Returning Users (7d)</h2>
+<table>
+<thead><tr><th>Segment</th><th>Users</th><th>Sessions</th><th>Avg Duration</th><th>Engagement Rate</th></tr></thead>
+<tbody>
+<tr><td>New</td><td>48.8K</td><td>47.9K</td><td>0m 23s</td><td>8.5%</td></tr>
+<tr><td>Returning</td><td>1.7K</td><td>2.3K</td><td>7m 59s</td><td>50.4%</td></tr>
+<tr><td>(not set)</td><td>0</td><td>3.3K</td><td>5m 57s</td><td>1.7%</td></tr>
+</tbody></table>
+
+<h2>Top Content (7d)</h2>
+<table>
+<thead><tr><th>Screen/Page</th><th>Views</th><th>Users</th><th>Engagement Time</th></tr></thead>
+<tbody>
+<tr><td>VURT — Free Vertical Drama & Micro-Series / Stream</td><td>23.3K</td><td>21.2K</td><td>6189m 59s</td></tr>
+<tr><td>Vurt / Micro Series / Karma In Hells / VURT — Watc</td><td>11.7K</td><td>11.0K</td><td>23m 52s</td></tr>
+<tr><td>Vurt / Micro Series / Girl In The Closet / VURT —</td><td>9.3K</td><td>8.0K</td><td>3m 18s</td></tr>
+<tr><td>(not set)</td><td>5.5K</td><td>363</td><td>5423m 36s</td></tr>
+<tr><td>Vurt / Micro Series / Killer Stepdad / VURT — Watc</td><td>3.7K</td><td>3.2K</td><td>0m 3s</td></tr>
+<tr><td>Vurt / Micro Series / Girl In The Closet / Episode</td><td>2.4K</td><td>2.2K</td><td>21m 28s</td></tr>
+<tr><td>Vurt / Micro Series / Come Back Dad / VURT — Watch</td><td>1.7K</td><td>1.5K</td><td>0m 37s</td></tr>
+<tr><td>Vurt / Micro Series / Something Like A Business /</td><td>1.3K</td><td>1.2K</td><td>0m 10s</td></tr>
+<tr><td>Vurt / Micro Series / Baby Mama / VURT — Watch Fre</td><td>1.2K</td><td>1.0K</td><td>0m 4s</td></tr>
+<tr><td>Vurt / Micro Series / Favorite Son / VURT — Watch</td><td>982</td><td>807</td><td>0m 12s</td></tr>
+</tbody></table>
+
+<h2>Top Landing Pages (7d)</h2>
+<table>
+<thead><tr><th>Landing Page</th><th>Sessions</th><th>Users</th><th>Avg Duration</th><th>Engagement Rate</th><th>Bounce Rate</th></tr></thead>
+<tbody>
+<tr><td>/detail/micro_series/karma-in-hells</td><td>20.9K</td><td>20.3K</td><td>0m 7s</td><td>2.7%</td><td>97.3%</td></tr>
+<tr><td>/detail/micro_series/girl-in-the-closet</td><td>15.0K</td><td>13.9K</td><td>0m 30s</td><td>13.9%</td><td>86.1%</td></tr>
+<tr><td>/detail/micro_series/killer-stepdad</td><td>6.3K</td><td>5.6K</td><td>0m 12s</td><td>4.0%</td><td>96.0%</td></tr>
+<tr><td>/detail/micro_series/something-like-a-business</td><td>3.4K</td><td>3.1K</td><td>0m 22s</td><td>6.1%</td><td>93.9%</td></tr>
+<tr><td>/detail/micro_series/come-back-dad</td><td>2.8K</td><td>2.6K</td><td>0m 46s</td><td>17.9%</td><td>82.1%</td></tr>
+<tr><td>/detail/micro_series/baby-mama</td><td>2.0K</td><td>1.7K</td><td>0m 8s</td><td>3.8%</td><td>96.2%</td></tr>
+<tr><td>/</td><td>1.5K</td><td>1.2K</td><td>4m 1s</td><td>49.8%</td><td>50.2%</td></tr>
+<tr><td>/detail/micro_series/favorite-son</td><td>1.4K</td><td>1.3K</td><td>0m 27s</td><td>12.0%</td><td>88.0%</td></tr>
+<tr><td>(not set)</td><td>793</td><td>511</td><td>42m 30s</td><td>67.6%</td><td>32.4%</td></tr>
+<tr><td>/detail/micro_series/drops-of-mercy</td><td>51</td><td>42</td><td>0m 12s</td><td>11.8%</td><td>88.2%</td></tr>
+<tr><td>/signup</td><td>41</td><td>28</td><td>5m 30s</td><td>24.4%</td><td>75.6%</td></tr>
+<tr><td>/detail/micro_series/love-the-one-youre-with</td><td>28</td><td>21</td><td>0m 51s</td><td>25.0%</td><td>75.0%</td></tr>
+<tr><td>/detail/micro_series/the-love-network-jam</td><td>26</td><td>18</td><td>8m 6s</td><td>53.8%</td><td>46.2%</td></tr>
+<tr><td>/categories</td><td>22</td><td>19</td><td>1m 1s</td><td>36.4%</td><td>63.6%</td></tr>
+<tr><td>/detail/micro_series/schemers</td><td>18</td><td>12</td><td>2m 18s</td><td>50.0%</td><td>50.0%</td></tr>
+</tbody></table>
+
+<h3>Landing Page Health: Homepage vs Show Pages</h3>
+<table>
+<thead><tr><th>Destination</th><th>Sessions</th><th>Bounce Rate</th><th>Interpretation</th></tr></thead>
+<tbody>
+<tr><td>Homepage (/)</td><td>1.5K</td><td>50.2%</td><td>High bounce on homepage</td></tr>
+<tr><td>Show detail pages</td><td>52.0K</td><td>92.4%</td><td>Paid social landing</td></tr>
+</tbody></table>
+
+<p><em>Show detail pages are the primary landing destination for paid social ads. High bounce here = users arriving from ads but not engaging past the age gate.</em></p>
+<h2>Top Countries (7d)</h2>
+<p><em>Efficiency = engagement rate x sessions. High efficiency = valuable traffic. Low efficiency + high sessions = ad waste.</em></p>
+<table>
+<thead><tr><th>Country</th><th>Users</th><th>Sessions</th><th>Engagement Rate</th><th>Avg Duration</th><th>Efficiency</th><th>Flag</th></tr></thead>
+<tbody>
+<tr><td>United States</td><td>24.4K</td><td>26.4K</td><td>12.3%</td><td>1m 15s</td><td>3249</td><td></td></tr>
+<tr><td>Trinidad & Tobago</td><td>7.9K</td><td>9.4K</td><td>7.6%</td><td>0m 25s</td><td>712</td><td>Waste</td></tr>
+<tr><td>Nigeria</td><td>4.7K</td><td>4.8K</td><td>3.3%</td><td>0m 6s</td><td>158</td><td>Waste</td></tr>
+<tr><td>Kenya</td><td>2.7K</td><td>2.9K</td><td>5.0%</td><td>0m 13s</td><td>146</td><td>Waste</td></tr>
+<tr><td>United Kingdom</td><td>2.6K</td><td>2.7K</td><td>6.9%</td><td>0m 48s</td><td>189</td><td>Waste</td></tr>
+<tr><td>Belgium</td><td>1.8K</td><td>2.0K</td><td>5.9%</td><td>0m 26s</td><td>121</td><td>Waste</td></tr>
+<tr><td>South Africa</td><td>1.1K</td><td>1.1K</td><td>7.2%</td><td>0m 16s</td><td>80</td><td>Waste</td></tr>
+<tr><td>Canada</td><td>1.0K</td><td>1.1K</td><td>6.1%</td><td>0m 12s</td><td>66</td><td>Waste</td></tr>
+<tr><td>Tanzania</td><td>567</td><td>608</td><td>5.9%</td><td>4m 4s</td><td>36</td><td>Waste</td></tr>
+<tr><td>Australia</td><td>509</td><td>517</td><td>3.9%</td><td>0m 5s</td><td>20</td><td>Waste</td></tr>
+</tbody></table>
+
+<h2>14-Day DAU Trend</h2>
+<table>
+<thead><tr><th>Date</th><th>DAU</th><th>Sessions</th><th>Views</th><th>Eng Rate</th><th>Bounce Rate</th></tr></thead>
+<tbody>
+<tr><td>04/05</td><td>1.8K</td><td>2.1K</td><td>2.9K</td><td>28.0%</td><td>72.0%</td></tr>
+<tr><td>04/06</td><td>2.0K</td><td>2.3K</td><td>3.2K</td><td>27.9%</td><td>72.1%</td></tr>
+<tr><td>04/07</td><td>2.6K</td><td>3.0K</td><td>4.1K</td><td>24.4%</td><td>75.6%</td></tr>
+<tr><td>04/08</td><td>2.0K</td><td>2.3K</td><td>3.3K</td><td>23.1%</td><td>76.9%</td></tr>
+<tr><td>04/09</td><td>1.7K</td><td>1.9K</td><td>3.2K</td><td>21.7%</td><td>78.3%</td></tr>
+<tr><td>04/10</td><td>1.2K</td><td>1.5K</td><td>2.3K</td><td>22.2%</td><td>77.8%</td></tr>
+<tr><td>04/11</td><td>1.6K</td><td>1.8K</td><td>2.4K</td><td>20.8%</td><td>79.2%</td></tr>
+<tr><td>04/12</td><td>1.3K</td><td>1.6K</td><td>2.2K</td><td>18.5%</td><td>81.5%</td></tr>
+<tr><td>04/13</td><td>3.8K</td><td>4.3K</td><td>4.9K</td><td>10.1%</td><td>89.9%</td></tr>
+<tr><td>04/14</td><td>11.6K</td><td>12.5K</td><td>14.6K</td><td>9.8%</td><td>90.2%</td></tr>
+<tr><td>04/15</td><td>3.2K</td><td>3.6K</td><td>4.9K</td><td>13.6%</td><td>86.4%</td></tr>
+<tr><td>04/16</td><td>12.2K</td><td>12.9K</td><td>15.2K</td><td>8.7%</td><td>91.3%</td></tr>
+<tr><td>04/17</td><td>6.2K</td><td>6.8K</td><td>8.0K</td><td>11.6%</td><td>88.4%</td></tr>
+<tr><td>04/18</td><td>11.4K</td><td>12.2K</td><td>14.0K</td><td>7.6%</td><td>92.4%</td></tr>
+</tbody></table>
+
+<h2>Peak Hours (7d)</h2>
+<table>
+<thead><tr><th>Hour</th><th>Users</th><th>Sessions</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>3AM</td><td>2.6K</td><td>2.8K</td><td>Peak</td></tr>
+<tr><td>5AM</td><td>3.0K</td><td>3.2K</td><td>Peak</td></tr>
+<tr><td>11AM</td><td>2.7K</td><td>2.9K</td><td>Peak</td></tr>
+<tr><td>3PM</td><td>2.6K</td><td>2.8K</td><td>Peak</td></tr>
+<tr><td>11PM</td><td>2.6K</td><td>2.8K</td><td>Peak</td></tr>
+<tr><td>6PM</td><td>1.3K</td><td>1.4K</td><td>Quiet</td></tr>
+<tr><td>7PM</td><td>1.4K</td><td>1.5K</td><td>Quiet</td></tr>
+<tr><td>8PM</td><td>1.5K</td><td>1.6K</td><td>Quiet</td></tr>
+</tbody></table>
+
+<h2>Social Media Overview</h2>
+<table>
+<thead><tr><th>Platform</th><th>Handle</th><th>Followers/Subs</th><th>Change</th><th>Activity</th></tr></thead>
+<tbody>
+<tr><td>Instagram</td><td>@myvurt</td><td>8,367</td><td>▲ +140</td><td>69 posts</td></tr>
+<tr><td>Facebook</td><td>myvurt</td><td>374</td><td>▲ +3</td><td>talking about: 20,535</td></tr>
+<tr><td>YouTube</td><td>@myVURT1</td><td>—</td><td>—</td><td>— videos, — total views</td></tr>
+<tr><td>TikTok</td><td>@myvurt</td><td>82</td><td>▲ +7</td><td>1,679 likes</td></tr>
+<tr><td>X</td><td>@myvurt</td><td>8</td><td>→ 0</td><td>13 posts</td></tr>
+</tbody></table>
+
+<p><strong>Total cross-platform reach:</strong> 8,831 followers</p>
+<h3>Combined Engagement (7d)</h3>
+<table>
+<thead><tr><th>Metric</th><th>IG</th><th>FB (Page Insights)</th><th>Total</th></tr></thead>
+<tbody>
+<tr><td>Reactions/Likes</td><td>854</td><td>20,128</td><td><strong>20,982</strong></td></tr>
+<tr><td>Comments (w/ replies)</td><td>62</td><td>—</td><td><strong>62</strong></td></tr>
+<tr><td>Shares</td><td>161</td><td>—</td><td><strong>161</strong></td></tr>
+<tr><td>Total Engagements</td><td>—</td><td>75,962</td><td>—</td></tr>
+<tr><td>Video Views</td><td>—</td><td>292,865</td><td>—</td></tr>
+<tr><td>Impressions</td><td>—</td><td>423,048</td><td>—</td></tr>
+</tbody></table>
+
+<h3>Instagram Engagement (7d)</h3>
+<table>
+<thead><tr><th>Metric</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Reach</td><td>182,570</td></tr>
+<tr><td>Profile Views</td><td>2,427</td></tr>
+<tr><td>Accounts Engaged</td><td>8,454</td></tr>
+<tr><td>Total Interactions</td><td>11,628</td></tr>
+<tr><td>Likes</td><td>8,002</td></tr>
+<tr><td>Comments</td><td>246</td></tr>
+<tr><td>Shares</td><td>980</td></tr>
+<tr><td>Saves</td><td>968</td></tr>
+</tbody></table>
+
+<p><strong>Total IG comments (incl. replies):</strong> 62</p>
+<p><strong>Instagram Recent Posts:</strong></p>
+<table>
+<thead><tr><th>Date</th><th>Type</th><th>Likes</th><th>Comments (w/ replies)</th><th>Reach</th><th>Views</th><th>Saves</th><th>Shares</th><th>Caption</th></tr></thead>
+<tbody>
+<tr><td>2026-04-19</td><td>IMAGE</td><td>6</td><td>0</td><td>27</td><td>62</td><td>0</td><td>1</td><td>The way audiences pay for content is changing...</td></tr>
+<tr><td>2026-04-18</td><td>VIDEO</td><td>14</td><td>2</td><td>115</td><td>176</td><td>0</td><td>3</td><td>Rue sees the whole board. He tried to teach I...</td></tr>
+<tr><td>2026-04-18</td><td>VIDEO</td><td>65</td><td>4</td><td>2,637</td><td>3,084</td><td>16</td><td>18</td><td>“I am more than your party planner. I am your...</td></tr>
+<tr><td>2026-04-17</td><td>VIDEO</td><td>44</td><td>2</td><td>485</td><td>645</td><td>1</td><td>5</td><td>He tried to return a phone. Now he’s the one ...</td></tr>
+<tr><td>2026-04-17</td><td>IMAGE</td><td>13</td><td>2</td><td>138</td><td>270</td><td>1</td><td>2</td><td>Most creators aren’t lacking talent. They’re ...</td></tr>
+<tr><td>2026-04-17</td><td>VIDEO</td><td>61</td><td>0</td><td>2,366</td><td>2,645</td><td>15</td><td>5</td><td>Vanity handles business. Avery can’t even ord...</td></tr>
+<tr><td>2026-04-16</td><td>VIDEO</td><td>31</td><td>4</td><td>393</td><td>533</td><td>1</td><td>4</td><td>A crush. A lost phone. A good deed that turns...</td></tr>
+<tr><td>2026-04-16</td><td>VIDEO</td><td>27</td><td>7</td><td>581</td><td>839</td><td>3</td><td>13</td><td>Less than 30 days in and the world is already...</td></tr>
+<tr><td>2026-04-16</td><td>VIDEO</td><td>10</td><td>0</td><td>323</td><td>401</td><td>0</td><td>3</td><td>One parking lot started it all. New episode t...</td></tr>
+<tr><td>2026-04-16</td><td>IMAGE</td><td>14</td><td>0</td><td>208</td><td>358</td><td>0</td><td>3</td><td>Vertical video is built for how people actual...</td></tr>
+<tr><td>2026-04-16</td><td>CAROUSEL_ALBUM</td><td>66</td><td>13</td><td>608</td><td>1,182</td><td>2</td><td>19</td><td>Too many filmmakers are creating powerful wor...</td></tr>
+<tr><td>2026-04-15</td><td>VIDEO</td><td>127</td><td>11</td><td>1,112</td><td>1,675</td><td>5</td><td>8</td><td>She keeps losing this phone. He keeps finding...</td></tr>
+<tr><td>2026-04-15</td><td>IMAGE</td><td>65</td><td>4</td><td>465</td><td>766</td><td>1</td><td>3</td><td>Africa’s first vertical drama. Made in Kampal...</td></tr>
+<tr><td>2026-04-15</td><td>VIDEO</td><td>256</td><td>11</td><td>4,560</td><td>5,279</td><td>40</td><td>66</td><td>JoJo struck out at little league. Uncle 3D sa...</td></tr>
+<tr><td>2026-04-14</td><td>VIDEO</td><td>55</td><td>2</td><td>733</td><td>1,052</td><td>1</td><td>8</td><td>It started with a phone. A simple favor in Ka...</td></tr>
+</tbody></table>
+
+<h3>Facebook</h3>
+<p><strong>Page Insights (7d) — all engagement including recommendation distribution:</strong></p>
+<table>
+<thead><tr><th>Metric</th><th>7d Total</th></tr></thead>
+<tbody>
+<tr><td>Reactions</td><td>20,128</td></tr>
+<tr><td>Breakdown</td><td>like: 19,626, haha: 228, love: 200, wow: 57, sorry: 12, anger: 5</td></tr>
+<tr><td>Total Engagements</td><td>75,962</td></tr>
+<tr><td>Video Views</td><td>292,865</td></tr>
+<tr><td>Organic vs Recommended</td><td>5,683 organic / 287,182 recommended (98.1% from FB algorithm)</td></tr>
+<tr><td>Post Impressions</td><td>423,048</td></tr>
+</tbody></table>
+
+<p><strong>Daily Performance + Content Posted:</strong></p>
+<table>
+<thead><tr><th>Date</th><th>Reactions</th><th>Engagements</th><th>Video Views</th><th>Impressions</th><th>Content Posted</th></tr></thead>
+<tbody>
+<tr><td>2026-04-20</td><td>160</td><td>2,675</td><td>7,231</td><td>9,777</td><td>—</td></tr>
+<tr><td>2026-04-19</td><td>920</td><td>9,841</td><td>25,908</td><td>34,601</td><td>—</td></tr>
+<tr><td>2026-04-18</td><td>1,211</td><td>6,671</td><td>19,847</td><td>27,004</td><td>Reel: Rue knows everyone. Top, middle, bottom. Two ; Reel: "I am more than yo...</td></tr>
+<tr><td>2026-04-17</td><td>3,657</td><td>15,669</td><td>75,719</td><td>99,333</td><td>Reel: He tried to return a phone. Now they have his; Reel: Vanity runs the ro...</td></tr>
+<tr><td>2026-04-16</td><td>5,081</td><td>11,947</td><td>55,007</td><td>83,317</td><td>Reel: A crush. A lost phone. A good deed that turns; Reel: One parking lot st...</td></tr>
+<tr><td>2026-04-15</td><td>7,475</td><td>20,360</td><td>78,164</td><td>120,488</td><td>Reel: She lost her phone. Again. Eezo found it. Aga; Post: Africa's first ori...</td></tr>
+<tr><td>2026-04-14</td><td>1,624</td><td>8,799</td><td>30,989</td><td>48,528</td><td>Reel: He returned a phone. One favor. That's all it; Post: Just added. The Lo...</td></tr>
+</tbody></table>
+
+<p><strong>Data notes:</strong></p>
+<p>- youtube: Could not parse subscribers</p>
+<h2>YouTube</h2>
+<p><strong>VURT</strong> — 859 subscribers · 316.0K total views · 39 videos</p>
+<h3>Recent Videos (7d)</h3>
+<table>
+<thead><tr><th>Video</th><th>Published</th><th>Views</th><th>Likes</th><th>Comments</th></tr></thead>
+<tbody>
+<tr><td>Something Like A Business</td><td>A VURT Premiere</td><td>2026-04-13</td><td>74.6K</td><td>2.4K</td><td>79</td></tr>
+<tr><td>Something Like A Business</td><td>A VURT Original</td><td>2026-04-16</td><td>39.0K</td><td>1.8K</td><td>27</td></tr>
+<tr><td>Come Back Dad</td><td>A VURT Premiere</td><td>2026-04-14</td><td>2.5K</td><td>146</td><td>4</td></tr>
+<tr><td>Something Like A Business</td><td>A VURT Original</td><td>2026-04-17</td><td>2.3K</td><td>115</td><td>1</td></tr>
+<tr><td>The Love Network Jam</td><td>A VURT Original</td><td>2026-04-17</td><td>825</td><td>15</td><td>0</td></tr>
+<tr><td>Come Back Dad</td><td>A VURT Premiere</td><td>2026-04-15</td><td>818</td><td>62</td><td>0</td></tr>
+<tr><td>The Parking Lot</td><td>A VURT Original</td><td>2026-04-16</td><td>675</td><td>11</td><td>0</td></tr>
+<tr><td>100K Users Since Launch</td><td>Mark Samuels on 99J...</td><td>2026-04-14</td><td>660</td><td>12</td><td>0</td></tr>
+<tr><td>The Love Network Jam</td><td>A VURT Original</td><td>2026-04-15</td><td>629</td><td>13</td><td>0</td></tr>
+<tr><td>The Love Network Jam</td><td>A VURT Premiere</td><td>2026-04-14</td><td>496</td><td>15</td><td>2</td></tr>
+<tr><td>The Love Network Jam</td><td>A VURT Premiere</td><td>2026-04-13</td><td>345</td><td>11</td><td>0</td></tr>
+<tr><td>Bride to Be</td><td>First Australian Micro-Drama Pr...</td><td>2026-04-16</td><td>116</td><td>2</td><td>0</td></tr>
+<tr><td>The Love Network Jam</td><td>A VURT Premiere</td><td>2026-04-13</td><td>104</td><td>3</td><td>0</td></tr>
+<tr><td>The Love Network Jam</td><td>A VURT Original</td><td>2026-04-17</td><td>17</td><td>1</td><td>0</td></tr>
+<tr><td>Meet Rue — The Connector</td><td>The Love Network J...</td><td>2026-04-18</td><td>1</td><td>0</td><td>0</td></tr>
+</tbody></table>
+
+<p><strong>7d totals:</strong> 123.1K views · 4.6K likes · 113 comments</p>
+<h2>Video Performance (NPAW)</h2>
+<h3>Yesterday</h3>
+<table>
+<thead><tr><th>Unique Viewers</th><th>Play Starts</th><th>View Events</th><th>Errors</th><th>Error Rate</th><th>Buffer Ratio</th></tr></thead>
+<tbody>
+<tr><td>N/A</td><td>7,288</td><td>14,578</td><td>10</td><td>0.1%</td><td>17.1% ⚠️</td></tr>
+</tbody></table>
+
+<h3>Daily Buffer Rate Trend</h3>
+<table>
+<thead><tr><th>Date</th><th>Views</th><th>Buffer Ratio</th></tr></thead>
+<tbody>
+<tr><td>04/12</td><td>2,451</td><td>29.2%  ⚠️</td></tr>
+<tr><td>04/13</td><td>1,804</td><td>25.6%  ⚠️</td></tr>
+<tr><td>04/14</td><td>7,495</td><td>15.6%  ⚠️</td></tr>
+<tr><td>04/15</td><td>4,820</td><td>4.6%  ⚠️</td></tr>
+<tr><td>04/16</td><td>5,655</td><td>12.3%  ⚠️</td></tr>
+<tr><td>04/17</td><td>3,542</td><td>14.6%  ⚠️</td></tr>
+<tr><td>04/18</td><td>7,288</td><td>17.1%  ⚠️</td></tr>
+<tr><td>04/19</td><td>3,467</td><td>18.5%  ⚠️</td></tr>
+</tbody></table>
+
+<h3>Top 5 by Engagement Score (7d) — quality × reach</h3>
+<p><em>Score = completion rate × log10(plays). Best candidates for paid traffic.</em></p>
+<table>
+<thead><tr><th>#</th><th>Title</th><th>Views</th><th>Completion Rate</th><th>Score</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Episode 2 - Favorite Son</td><td>212</td><td>24.21%</td><td>56.4</td></tr>
+<tr><td>2</td><td>Episode 2 - Come Back Dad</td><td>717</td><td>17.98%</td><td>51.4</td></tr>
+<tr><td>3</td><td>Episode 3 - Come Back Dad</td><td>463</td><td>19.02%</td><td>50.7</td></tr>
+<tr><td>4</td><td>Episode 5 - Come Back Dad</td><td>219</td><td>21.55%</td><td>50.5</td></tr>
+<tr><td>5</td><td>Episode 2 - Girl In The Closet</td><td>1,608</td><td>15.04%</td><td>48.2</td></tr>
+</tbody></table>
+
+<h3>Top 5 by Raw Views (7d) — volume leaders</h3>
+<table>
+<thead><tr><th>#</th><th>Title</th><th>Views</th><th>Completion Rate</th><th>Eff. Playtime (hrs)</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Episode 1 - Girl In The Closet</td><td>7,309</td><td>8.12%</td><td>1.14</td></tr>
+<tr><td>2</td><td>Episode  - Karma In Heels</td><td>3,352</td><td>9.84%</td><td>1.50</td></tr>
+<tr><td>3</td><td>Episode 1 - Come Back Dad</td><td>2,061</td><td>6.74%</td><td>1.74</td></tr>
+<tr><td>4</td><td>Episode 2 - Girl In The Closet</td><td>1,608</td><td>15.04%</td><td>3.10</td></tr>
+<tr><td>5</td><td>Episode 1 - Killer Stepdad</td><td>1,056</td><td>5.46%</td><td>2.02</td></tr>
+</tbody></table>
+
+<h3>At-Risk Content (7d) — high views but viewers not finishing</h3>
+<p><em>These shows have audience but are losing them. Investigate episode hooks and pacing — early drop-off (first 30s) = weak hook, gradual decline = pacing issue. Check completion rate trend week-over-week.</em></p>
+<table>
+<thead><tr><th>Title</th><th>Views</th><th>Completion Rate</th></tr></thead>
+<tbody>
+<tr><td>Episode 1 - Girl In The Closet</td><td>7,309</td><td>8.12%</td></tr>
+<tr><td>Episode  - Karma In Heels</td><td>3,352</td><td>9.84%</td></tr>
+<tr><td>Episode 1 - Come Back Dad</td><td>2,061</td><td>6.74%</td></tr>
+<tr><td>Episode 2 - Girl In The Closet</td><td>1,608</td><td>15.04%</td></tr>
+<tr><td>Episode 1 - Killer Stepdad</td><td>1,056</td><td>5.46%</td></tr>
+</tbody></table>
+
+<h3>Content QoS Issues (7d) — shows with high buffer ratio</h3>
+<p><em>Flag to Enveu/CDN team. High buffer ratio = viewers experiencing stalls.</em></p>
+<table>
+<thead><tr><th>Title</th><th>Views</th><th>Buffer Ratio</th><th>Errors</th></tr></thead>
+<tbody>
+<tr><td>Episode 5 - Girl In The Closet</td><td>384</td><td>59.7%  ⚠️</td><td>0</td></tr>
+<tr><td>Episode 4 - Girl In The Closet</td><td>723</td><td>51.8%  ⚠️</td><td>1</td></tr>
+<tr><td>Episode 3 - Girl In The Closet</td><td>921</td><td>46.6%  ⚠️</td><td>2</td></tr>
+<tr><td>Episode 2 - Girl In The Closet</td><td>1,608</td><td>43.8%  ⚠️</td><td>0</td></tr>
+<tr><td>Episode 7 - Girl In The Closet</td><td>235</td><td>39.5%  ⚠️</td><td>0</td></tr>
+<tr><td>Episode 1 - Girl In The Closet</td><td>7,309</td><td>32.2%  ⚠️</td><td>8</td></tr>
+<tr><td>Episode 4 - Come Back Dad</td><td>339</td><td>31.8%  ⚠️</td><td>0</td></tr>
+<tr><td>Episode 1 - Killer Stepdad</td><td>1,056</td><td>29.1%  ⚠️</td><td>2</td></tr>
+</tbody></table>
+
+<h3>Video Views by Device (7d)</h3>
+<p><em>Web: 1,523 views (4% of total) — App: 34,999 views</em></p>
+<table>
+<thead><tr><th>Device</th><th>Views</th><th>% of Total</th></tr></thead>
+<tbody>
+<tr><td>iPhone</td><td>19,042</td><td>52%</td></tr>
+<tr><td>Android</td><td>15,096</td><td>41%</td></tr>
+<tr><td>PC( MAC )</td><td>1,029</td><td>3%</td></tr>
+<tr><td>iPad</td><td>710</td><td>2%</td></tr>
+<tr><td>PC( Windows )</td><td>476</td><td>1%</td></tr>
+<tr><td>PC( Linux )</td><td>98</td><td>0%</td></tr>
+<tr><td>Unknown</td><td>41</td><td>0%</td></tr>
+<tr><td>Chrome OS</td><td>18</td><td>0%</td></tr>
+<tr><td>FireTV</td><td>8</td><td>0%</td></tr>
+<tr><td>Sony</td><td>4</td><td>0%</td></tr>
+</tbody></table>
+
+<h3>CDN Quality (7d)</h3>
+<table>
+<thead><tr><th>CDN</th><th>Views</th><th>Buffer Ratio</th><th>Errors</th></tr></thead>
+<tbody>
+<tr><td>Fastly</td><td>18,225</td><td>55.4%  ⚠️</td><td>24</td></tr>
+<tr><td>CloudFlare</td><td>15,504</td><td>2.0%</td><td>40</td></tr>
+<tr><td>Unknown</td><td>1,848</td><td>0.1%</td><td>7</td></tr>
+<tr><td>Not Reported</td><td>925</td><td>0.0%</td><td>0</td></tr>
+<tr><td>Amazon</td><td>20</td><td>0.0%</td><td>0</td></tr>
+</tbody></table>
+
+<h3>Viewership by Country (7d)</h3>
+<table>
+<thead><tr><th>Country</th><th>Views</th><th>%</th><th>Buffer Ratio</th></tr></thead>
+<tbody>
+<tr><td>United States</td><td>23,134</td><td>65%</td><td>21.1%  ⚠️</td></tr>
+<tr><td>Trinidad and Tobago</td><td>6,910</td><td>20%</td><td>9.6%  ⚠️</td></tr>
+<tr><td>United Kingdom</td><td>1,605</td><td>5%</td><td>29.5%  ⚠️</td></tr>
+<tr><td>India</td><td>1,140</td><td>3%</td><td>2.2%</td></tr>
+<tr><td>Kenya</td><td>616</td><td>2%</td><td>5.4%  ⚠️</td></tr>
+<tr><td>Belgium</td><td>521</td><td>1%</td><td>8.4%  ⚠️</td></tr>
+<tr><td>Canada</td><td>419</td><td>1%</td><td>30.1%  ⚠️</td></tr>
+<tr><td>Nigeria</td><td>385</td><td>1%</td><td>10.6%  ⚠️</td></tr>
+<tr><td>South Africa</td><td>368</td><td>1%</td><td>11.1%  ⚠️</td></tr>
+<tr><td>Uganda</td><td>302</td><td>1%</td><td>4.6%</td></tr>
+</tbody></table>
+
+<h3>Buffer Ratio by ISP (7d) — top 10 by views</h3>
+<table>
+<thead><tr><th>ISP</th><th>Views</th><th>Buffer Ratio</th></tr></thead>
+<tbody>
+<tr><td>Comcast Cable</td><td>6,385</td><td>31.0%  ⚠️</td></tr>
+<tr><td>T-Mobile USA</td><td>3,018</td><td>20.9%  ⚠️</td></tr>
+<tr><td>AT&T Internet</td><td>2,643</td><td>36.8%  ⚠️</td></tr>
+<tr><td>Digicel Trinidad & Tobago</td><td>2,310</td><td>12.4%  ⚠️</td></tr>
+<tr><td>Spectrum</td><td>2,260</td><td>37.2%  ⚠️</td></tr>
+<tr><td>Flow Trinidad</td><td>1,542</td><td>27.0%  ⚠️</td></tr>
+<tr><td>Amplia Communications Ltd.</td><td>1,456</td><td>17.9%  ⚠️</td></tr>
+<tr><td>AT&T Wireless</td><td>1,238</td><td>38.7%  ⚠️</td></tr>
+<tr><td>Verizon Fios</td><td>1,083</td><td>44.2%  ⚠️</td></tr>
+<tr><td>T-Mobile Home Internet</td><td>972</td><td>54.6%  ⚠️</td></tr>
+</tbody></table>
+
+<p><em>Note: NPAW buffer ratios may differ from Mux dashboard values. NPAW measures client-side buffering events; Mux measures server-side delivery. Both are directional. Cross-reference when investigating specific shows.</em></p>
+<h3>Video Play Funnel (Yesterday)</h3>
+<table>
+<thead><tr><th>Stage</th><th>Count</th><th>Drop-off</th></tr></thead>
+<tbody>
+<tr><td>Page views (GA4)</td><td>14.0K</td><td>-</td></tr>
+<tr><td>Play starts</td><td>7.3K</td><td>-</td></tr>
+<tr><td>View events</td><td>14.6K</td><td>200% retention</td></tr>
+<tr><td>Est. completions</td><td>751.3</td><td>10% avg completion (7d)</td></tr>
+</tbody></table>
+
+<h2>App Store Ratings</h2>
+<table>
+<thead><tr><th>Store</th><th>Rating</th><th>Reviews</th><th>Version</th></tr></thead>
+<tbody>
+<tr><td>iOS</td><td>5</td><td>N/A</td><td>1.0.9</td></tr>
+<tr><td>Android</td><td>None</td><td>N/A</td><td>?</td></tr>
+</tbody></table>
+
+<h2>Content Velocity (7d)</h2>
+<table>
+<thead><tr><th>Metric</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>IG posts this week</td><td>0</td></tr>
+<tr><td>FB posts this week</td><td>0</td></tr>
+<tr><td>Total social posts</td><td>0</td></tr>
+<tr><td>GA4 sessions this week</td><td>54.2K</td></tr>
+</tbody></table>
+
+<h2>Insights & Actions</h2>
+<div class="ins"><span class="ins-n">1.</span> <strong>▲ TODAY'S KEY SIGNAL — DAU: +85% day-over-day</strong> (6.2K → 11.4K) — traffic spike. Likely an ad campaign push; watch if engaged sessions scale proportionally.</div>
+<div class="ins"><span class="ins-n">2.</span> <strong>Platform Health Score: 33/100 (D)</strong> Growth: 14/25 | Engagement: 9/25 | Retention: 3/25 | Traffic Quality: 7/25 <strong>How it's scored:</strong> Growth (14/25): WoW user growth 295% — 500%+ = 25/25 | Engagement (9/25): 9.7% engagement rate — 25%+ = 25/25 | Retention (3/25): GA4 not reporting new vs returning — scored 3 (data gap) | Traffic Quality (7/25): 15% organic/direct traffic — 50%+ = 25/25 <em>For a 4-week-old platform, focus on Engagement and Retention — Growth can be bought, stickiness can't.</em></div>
+<div class="ins"><span class="ins-n">3.</span> <strong>Acquisition efficiency problem:</strong> Paid Social is 85% of traffic but 92% of those sessions don't engage (avg 18s). That's ~42.2K wasted sessions this week. <strong>Action:</strong> Paid social already deep-links to show detail pages (99%+ of paid sessions). Focus on reducing detail page bounce — age gate friction and 27MB page weight are primary causes. Test video-first ad creative showing actual show clips. Tighten targeting to 18-50 interest-based audiences.</div>
+<div class="ins"><span class="ins-n">4.</span> <strong>Organic signal:</strong> 15% of traffic is organic/direct, but it drives 21% engagement — 3x more valuable per session than paid. Best channel: Organic Search at 78% engagement, 65m 9s avg. <strong>Action:</strong> SSR is live — focus remaining SEO wins: auto-populated sitemap, unique episode URLs, and per-page meta tags. Each fix directly grows this high-value organic channel.</div>
+<div class="ins"><span class="ins-n">5.</span> <strong>Web vs app engagement gap:</strong> App engagement is 88% with 60m 31s sessions. Web is 9% with 0m 26s. That's a 10x gap — 49.0K web users vs 357 on app. <strong>Note:</strong> Web is the primary AVOD revenue channel — improving web engagement directly increases ad revenue. Focus on reducing detail page bounce and improving time-to-video on web, rather than funneling users to app.</div>
+<div class="ins"><span class="ins-n">6.</span> <strong>Android users are power viewers:</strong> 101m 45s avg sessions vs 19m 16s on iOS. Only 162 Android users vs 195 iOS — but they watch longer. Store ratings: iOS: 5.0★ (14 ratings), Android: 0 ratings.</div>
+<div class="ins"><span class="ins-n">7.</span> <strong>Retention data gap:</strong> GA4 isn't splitting new vs returning users cleanly. This may be a data stream configuration issue — worth flagging to enveu's dev team.</div>
+<div class="ins"><span class="ins-n">8.</span> <strong>Low session depth:</strong> 1.1 sessions per user means almost nobody comes back within the same week. For a content platform, target is 2.0+. <strong>This is the leaky bucket:</strong> paid ads bring people in, they watch once (or bounce), and don't return. Solve this before scaling ad spend further.</div>
+<div class="ins"><span class="ins-n">9.</span> <strong>Cohort retention red flag — Paid Social:</strong> 42.1K users acquired this week, only 0.1% returned the next day. At this volume + this return rate, the channel is delivering bouncers, not viewers. <strong>Actions:</strong> (1) Audit the creative — does it set the right expectation? (2) Check landing page bounce isolated to this channel. (3) Compare D1 across creatives to find the few that actually retain.</div>
+<div class="ins"><span class="ins-n">10.</span> <strong>Tracking gap:</strong> 363 users spent avg 14m 56s on content GA4 labels '(not set)'. This means screen names aren't being passed in GA4 screen_view events for these views. <strong>Action for dev team:</strong> Ensure every screen_view event includes the series/episode title so this engagement can be properly attributed.</div>
+<div class="ins"><span class="ins-n">11.</span> <strong>Drop-off alert — 'Episode 1 - Come Back Dad':</strong> 2,061 plays, only 6.7% completion (~138 people finished). Something is breaking in the first 30-60 seconds — hook, loading issue, or quality gap. Watch the first minute on mobile and check NPAW error rate for this title.</div>
+<div class="ins"><span class="ins-n">12.</span> <strong>Strong series funnel — 'Favorite Son':</strong> 41% of Ep1 viewers went to Ep2 (522 → 212 plays). High episode retention. Prioritize this series in paid ads — viewers who start are likely to continue.</div>
+<div class="ins"><span class="ins-n">13.</span> <strong>Quality dilution pattern:</strong> Engagement rate fell from 27% (pre-scale) to 9% (current). This is the classic paid acquisition tradeoff — more users, lower quality per user. <strong>Not alarming yet</strong>, but if engaged sessions plateau while DAU grows, you're buying vanity metrics. The target: grow engaged sessions 20%+ WoW.</div>
+<div class="ins"><span class="ins-n">14.</span> <strong>DAU volatility:</strong> 1.3K to 12.2K range in 7 days (9x swing). Traffic is campaign-dependent. <strong>Organic baseline</strong> (pre-paid days) appears to be ~1.3K. Goal: raise that organic floor through SEO, social, and retention.</div>
+<div class="ins"><span class="ins-n">15.</span> <strong>Engaged sessions (the real metric): 5.3K</strong> (+47% WoW). That's 10% of total sessions. These are people who actually watched content. Growing but monitor closely.</div>
+<div class="ins"><span class="ins-n">16.</span> <strong>Evening prime-time audience:</strong> GA4 reports in UTC. Peak: 5AM, 11AM, 11PM UTC = <strong>1AM, 7AM, 7PM ET</strong> (8.3K users). Classic wind-down viewing window. <strong>Actions:</strong> Schedule content drops for 7-8 PM ET. Social posts 1-2 hours before peak to prime the pipeline.</div>
+<div class="ins"><span class="ins-n">17.</span> <strong>Ad revenue potential (projection, not current revenue):</strong> 213 total watch-hours this week. Using AVOD benchmark range of $15-25 CPM (Adwave, verified for Pluto TV/Tubi tier) with ~5 ads/hr (industry standard ad load), est. $16-$27/week at current scale. VURT is not yet running ads. This is a scaling model, not a forecast. The direct lever is growing engaged watch-hours.</div>
+<div class="ins"><span class="ins-n">18.</span> <strong>Flywheel check:</strong> 85% of traffic is paid — the flywheel hasn't kicked in yet. VURT's thesis is: content → distribution → community → retention → organic growth. Right now it's: money → eyeballs → bounce. <strong>The unlock:</strong> shareable content moments. Clips people screenshot and repost. The share link fix (vurt.enveu.link → myvurt.com) is prerequisite #1. Community features (comments, watchlists, fan theories) are prerequisite #2. Until these exist, paid will remain the only growth engine.</div>
+<h3>Methodology</h3>
+<p>- <strong>Data source:</strong> Google Analytics 4 (Property ID 518738893, myvurt.com)</p>
+<p>- <strong>Video data:</strong> NPAW Youbora (client-side buffering/plays/completion). Note: NPAW and Mux may report different buffer rates — NPAW measures client-side events, Mux measures server-side delivery.</p>
+<p>- <strong>Landing page queries</strong> use <code>landingPage</code> (path only, no query strings) to prevent fbclid/utm parameter fragmentation from causing GA4 to drop rows. Cross-dimension totals are verified against single-dimension totals.</p>
+<p>- <strong>Engagement Rate:</strong> % of sessions lasting >10s, with 2+ page views, or a key event (GA4 standard definition)</p>
+<p>- <strong>Bounce Rate:</strong> % of sessions that were NOT engaged (inverse of engagement rate)</p>
+<p>- <strong>Geo Efficiency Score:</strong> engagement rate x sessions. Surfaces high-volume/low-engagement geos (ad waste) vs high-quality traffic.</p>
+<p>- <strong>Daily Snapshot freshness:</strong> Automatically uses yesterday's data when GA4 processing is complete (engaged sessions >= 10% of 7-day avg). Falls back to 2-days-ago when data is still processing.</p>
+<p>- <strong>Social media data:</strong> Instagram via Meta Graph API (IG Business Account 17841479978232203), YouTube/TikTok/X via public profile scraping</p>
+<p>- <strong>All numbers are pulled directly from APIs</strong> — no manual adjustments or estimates except where explicitly labeled</p>
+<p>- <strong>Health Score</strong> is a weighted composite: Growth (25), Engagement (25), Retention (25), Traffic Quality (25)</p>
+<p>- <strong>'(not set)' entries</strong> indicate GA4 tracking gaps where screen names aren't being passed in analytics events</p>
+<div class="ft">Generated by Zo · VURT Analytics Skill v4</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{"action": "task_start", "task": "sort_this_week", "timestamp": "2026-04-25T12:08:23.087145"}
+{"action": "info", "message": "Found lists: ['Inbox', 'This Week', 'In Progress', 'Review / Blocked', 'Done']", "timestamp": "2026-04-25T12:08:23.310264"}
+{"action": "info", "message": "Sorting 15 cards in This Week by due date", "timestamp": "2026-04-25T12:08:23.504300"}
+{"action": "card_reorder", "card": "Weekly Triage: Review Inbox, prioritize This Week", "due": "2026-03-23T23:59:00.000Z", "pos": 1024, "timestamp": "2026-04-25T12:08:23.708322"}
+{"action": "card_reorder", "card": "Wednesday deep dive with Tarik -- blitz sync + SEO timeline", "due": "2026-03-25T17:00:00.000Z", "pos": 2048, "timestamp": "2026-04-25T12:08:23.914455"}
+{"action": "card_reorder", "card": "[DEV] Request Enveu: Add Meta SDK to VURT App", "due": "2026-03-26T17:00:00.000Z", "pos": 3072, "timestamp": "2026-04-25T12:08:24.118995"}
+{"action": "card_reorder", "card": "Add Apple Smart App Banner to myvurt.com", "due": "2026-03-26T17:00:00.000Z", "pos": 4096, "timestamp": "2026-04-25T12:08:24.328361"}
+{"action": "card_reorder", "card": "Fix mobile footer -- social links invisible on mobile", "due": "2026-03-28T17:00:00.000Z", "pos": 5120, "timestamp": "2026-04-25T12:08:24.536789"}
+{"action": "card_reorder", "card": "Fix share links routing to vurt.enveu.link", "due": "2026-03-28T17:00:00.000Z", "pos": 6144, "timestamp": "2026-04-25T12:08:24.742597"}
+{"action": "card_reorder", "card": "Deploy foundation pixels via GTM", "due": "2026-03-28T17:00:00.000Z", "pos": 7168, "timestamp": "2026-04-25T12:08:24.954952"}
+{"action": "card_reorder", "card": "Move download app button to top of website", "due": "2026-03-28T17:00:00.000Z", "pos": 8192, "timestamp": "2026-04-25T12:08:25.174891"}
+{"action": "card_reorder", "card": "Add age prompt after clicking on a title", "due": "2026-03-28T17:00:00.000Z", "pos": 9216, "timestamp": "2026-04-25T12:08:25.375787"}
+{"action": "card_reorder", "card": "Weekly Triage: Review Inbox, prioritize This Week", "due": "2026-03-30T23:59:00.000Z", "pos": 10240, "timestamp": "2026-04-25T12:08:25.591987"}
+{"action": "card_reorder", "card": "Weekly Triage: Review Inbox, prioritize This Week", "due": "2026-04-06T23:59:00.000Z", "pos": 11264, "timestamp": "2026-04-25T12:08:25.844984"}
+{"action": "card_reorder", "card": "Weekly Triage: Review Inbox, prioritize This Week", "due": "2026-04-13T23:59:00.000Z", "pos": 12288, "timestamp": "2026-04-25T12:08:26.068015"}
+{"action": "card_reorder", "card": "Weekly Triage: Review Inbox, prioritize This Week", "due": "2026-04-20T23:59:00.000Z", "pos": 13312, "timestamp": "2026-04-25T12:08:26.276662"}
+{"action": "card_reorder", "card": "Send editable (word version) of VURT Target demographic research doc", "due": null, "pos": 14336, "timestamp": "2026-04-25T12:08:26.493544"}
+{"action": "card_reorder", "card": "Filmmaker spotlight post and promo for Nita K \\ Chicago Boogie", "due": null, "pos": 15360, "timestamp": "2026-04-25T12:08:26.714582"}
+{"action": "task_done", "task": "sort_this_week", "cards_sorted": 15, "timestamp": "2026-04-25T12:08:26.715122"}
+{"action": "task_start", "task": "flag_stale", "timestamp": "2026-04-25T12:08:26.715273"}
+{"action": "info", "message": "Found 6 cards in In Progress", "timestamp": "2026-04-25T12:08:26.901049"}
+{"action": "info", "message": "Stale label already exists: 69c06d926bbfae785580fb39", "timestamp": "2026-04-25T12:08:27.090041"}
+{"action": "task_start", "task": "sort_this_week", "timestamp": "2026-04-25T12:09:37.759917"}
+{"action": "info", "message": "Sorting 15 cards in This Week by due date", "timestamp": "2026-04-25T12:09:38.195950"}
+{"action": "card_reorder", "card": "Weekly Triage: Review Inbox, prioritize This Week", "due": "2026-03-23T23:59:00.000Z", "pos": 1024, "timestamp": "2026-04-25T12:09:38.414664"}
+{"action": "card_reorder", "card": "Wednesday deep dive with Tarik -- blitz sync + SEO timeline", "due": "2026-03-25T17:00:00.000Z", "pos": 2048, "timestamp": "2026-04-25T12:09:38.663914"}
+{"action": "card_reorder", "card": "[DEV] Request Enveu: Add Meta SDK to VURT App", "due": "2026-03-26T17:00:00.000Z", "pos": 3072, "timestamp": "2026-04-25T12:09:38.882313"}
+{"action": "card_reorder", "card": "Add Apple Smart App Banner to myvurt.com", "due": "2026-03-26T17:00:00.000Z", "pos": 4096, "timestamp": "2026-04-25T12:09:39.095908"}
+{"action": "card_reorder", "card": "Fix mobile footer -- social links invisible on mobile", "due": "2026-03-28T17:00:00.000Z", "pos": 5120, "timestamp": "2026-04-25T12:09:39.322115"}
+{"action": "card_reorder", "card": "Fix share links routing to vurt.enveu.link", "due": "2026-03-28T17:00:00.000Z", "pos": 6144, "timestamp": "2026-04-25T12:09:39.535039"}
+{"action": "card_reorder", "card": "Deploy foundation pixels via GTM", "due": "2026-03-28T17:00:00.000Z", "pos": 7168, "timestamp": "2026-04-25T12:09:39.751668"}
+{"action": "card_reorder", "card": "Move download app button to top of website", "due": "2026-03-28T17:00:00.000Z", "pos": 8192, "timestamp": "2026-04-25T12:09:39.966130"}
+{"action": "card_reorder", "card": "Add age prompt after clicking on a title", "due": "2026-03-28T17:00:00.000Z", "pos": 9216, "timestamp": "2026-04-25T12:09:40.169980"}
+{"action": "card_reorder", "card": "Weekly Triage: Review Inbox, prioritize This Week", "due": "2026-03-30T23:59:00.000Z", "pos": 10240, "timestamp": "2026-04-25T12:09:40.380617"}
+{"action": "card_reorder", "card": "Weekly Triage: Review Inbox, prioritize This Week", "due": "2026-04-06T23:59:00.000Z", "pos": 11264, "timestamp": "2026-04-25T12:09:40.596456"}
+{"action": "card_reorder", "card": "Weekly Triage: Review Inbox, prioritize This Week", "due": "2026-04-13T23:59:00.000Z", "pos": 12288, "timestamp": "2026-04-25T12:09:40.826594"}
+{"action": "card_reorder", "card": "Weekly Triage: Review Inbox, prioritize This Week", "due": "2026-04-20T23:59:00.000Z", "pos": 13312, "timestamp": "2026-04-25T12:09:41.260060"}
+{"action": "card_reorder", "card": "Send editable (word version) of VURT Target demographic research doc", "due": null, "pos": 14336, "timestamp": "2026-04-25T12:09:41.474648"}
+{"action": "card_reorder", "card": "Filmmaker spotlight post and promo for Nita K \\ Chicago Boogie", "due": null, "pos": 15360, "timestamp": "2026-04-25T12:09:41.706879"}
+{"action": "task_done", "task": "sort_this_week", "cards_sorted": 15, "timestamp": "2026-04-25T12:09:41.707497"}
+{"action": "task_start", "task": "flag_stale", "timestamp": "2026-04-25T12:09:41.707911"}
+{"action": "info", "message": "Found 6 cards in In Progress", "timestamp": "2026-04-25T12:09:41.899697"}
+{"action": "info", "message": "Stale label exists: 69c06d926bbfae785580fb39", "timestamp": "2026-04-25T12:09:42.091902"}
+{"action": "skip", "card": "Get subtitles vendor -- evaluate Rev.com vs AssemblyAI plugin", "reason": "already has Stale", "timestamp": "2026-04-25T12:09:42.092239"}
+{"action": "skip", "card": "Get SEO update timeline from Enveu for Tarik", "reason": "already has Stale", "timestamp": "2026-04-25T12:09:42.092329"}
+{"action": "skip", "card": "Set up Week 1 content calendar (Mar 24-30)", "reason": "already has Stale", "timestamp": "2026-04-25T12:09:42.092610"}
+{"action": "skip", "card": "Need VURT drops from Karma In Hills director and actors", "reason": "already has Stale", "timestamp": "2026-04-25T12:09:42.092791"}
+{"action": "skip", "card": "Create a \"CREATOR SPOTLIGHT\" schedule", "reason": "already has Stale", "timestamp": "2026-04-25T12:09:42.092845"}
+{"action": "skip", "card": "Bus Ad \u2014 Static Design (Stars + Titles + App GFX)", "reason": "already has Stale", "timestamp": "2026-04-25T12:09:42.092882"}
+{"action": "task_done", "task": "flag_stale", "cards_flagged": 0, "timestamp": "2026-04-25T12:09:42.092917"}

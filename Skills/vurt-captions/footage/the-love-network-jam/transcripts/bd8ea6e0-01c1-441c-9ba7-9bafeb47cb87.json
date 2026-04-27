@@ -1,0 +1,505 @@
+{
+  "text": "Ru actually told me you got my phone back, so I came to get it. Do you really have it? Oh yes, I have it. Here it is. Ah! I'm here, you! Oh, Ezra! You really made my day. Denise, wait, Denise. This looks like a public road. Anyone could see us. Who cares? You really made me happy. Oh, Denise. Isu! Wait, what? But Isu, have you gone mad?",
+  "audio_duration": 51,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Ru actually told me you got my phone back, so I came to get it. Do you really have it? Oh yes, I have it. Here it is. Ah! I'm here, you! Oh, Ezra! You really made my day. Denise, wait, Denise. This looks like a public road. Anyone could see us. Who cares? You really made me happy. Oh, Denise. Isu! Wait, what? But Isu, have you gone mad?",
+      "confidence": 0.82396823,
+      "start": 293,
+      "end": 42933,
+      "words": [
+        {
+          "text": "Ru",
+          "start": 293,
+          "end": 438,
+          "confidence": 0.6885638,
+          "speaker": "A"
+        },
+        {
+          "text": "actually",
+          "start": 600,
+          "end": 1019,
+          "confidence": 0.9896131,
+          "speaker": "A"
+        },
+        {
+          "text": "told",
+          "start": 1084,
+          "end": 1358,
+          "confidence": 0.9992275,
+          "speaker": "A"
+        },
+        {
+          "text": "me",
+          "start": 1407,
+          "end": 1568,
+          "confidence": 0.9994823,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 1568,
+          "end": 1794,
+          "confidence": 0.9665,
+          "speaker": "A"
+        },
+        {
+          "text": "got",
+          "start": 1810,
+          "end": 2085,
+          "confidence": 0.89037484,
+          "speaker": "A"
+        },
+        {
+          "text": "my",
+          "start": 2085,
+          "end": 2295,
+          "confidence": 0.99887544,
+          "speaker": "A"
+        },
+        {
+          "text": "phone",
+          "start": 2295,
+          "end": 2504,
+          "confidence": 0.9990356,
+          "speaker": "A"
+        },
+        {
+          "text": "back,",
+          "start": 2634,
+          "end": 3102,
+          "confidence": 0.59561294,
+          "speaker": "A"
+        },
+        {
+          "text": "so",
+          "start": 3295,
+          "end": 3376,
+          "confidence": 0.9987206,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 3424,
+          "end": 3521,
+          "confidence": 0.9991448,
+          "speaker": "A"
+        },
+        {
+          "text": "came",
+          "start": 3521,
+          "end": 3666,
+          "confidence": 0.99535155,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 3666,
+          "end": 3763,
+          "confidence": 0.99679774,
+          "speaker": "A"
+        },
+        {
+          "text": "get",
+          "start": 3763,
+          "end": 3925,
+          "confidence": 0.9994081,
+          "speaker": "A"
+        },
+        {
+          "text": "it.",
+          "start": 3925,
+          "end": 4086,
+          "confidence": 0.99138767,
+          "speaker": "A"
+        },
+        {
+          "text": "Do",
+          "start": 4909,
+          "end": 5006,
+          "confidence": 0.9956352,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 5038,
+          "end": 5151,
+          "confidence": 0.99982375,
+          "speaker": "A"
+        },
+        {
+          "text": "really",
+          "start": 5200,
+          "end": 5426,
+          "confidence": 0.9884411,
+          "speaker": "A"
+        },
+        {
+          "text": "have",
+          "start": 5426,
+          "end": 5490,
+          "confidence": 0.99967456,
+          "speaker": "A"
+        },
+        {
+          "text": "it?",
+          "start": 5619,
+          "end": 5781,
+          "confidence": 0.9982278,
+          "speaker": "A"
+        },
+        {
+          "text": "Oh",
+          "start": 6572,
+          "end": 6717,
+          "confidence": 0.84341866,
+          "speaker": "A"
+        },
+        {
+          "text": "yes,",
+          "start": 6749,
+          "end": 7088,
+          "confidence": 0.73956454,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 7298,
+          "end": 7427,
+          "confidence": 0.9991936,
+          "speaker": "A"
+        },
+        {
+          "text": "have",
+          "start": 7540,
+          "end": 7944,
+          "confidence": 0.9989492,
+          "speaker": "A"
+        },
+        {
+          "text": "it.",
+          "start": 7944,
+          "end": 8105,
+          "confidence": 0.80996144,
+          "speaker": "A"
+        },
+        {
+          "text": "Here",
+          "start": 8912,
+          "end": 9186,
+          "confidence": 0.99687105,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 9235,
+          "end": 11156,
+          "confidence": 0.99906486,
+          "speaker": "A"
+        },
+        {
+          "text": "is.",
+          "start": 9556,
+          "end": 9700,
+          "confidence": 0.8808418,
+          "speaker": "A"
+        },
+        {
+          "text": "Ah!",
+          "start": 10359,
+          "end": 10408,
+          "confidence": 0.17234199,
+          "speaker": "A"
+        },
+        {
+          "text": "I'm",
+          "start": 11822,
+          "end": 12208,
+          "confidence": 0.42105758,
+          "speaker": "A"
+        },
+        {
+          "text": "here,",
+          "start": 12706,
+          "end": 12867,
+          "confidence": 0.5436815,
+          "speaker": "A"
+        },
+        {
+          "text": "you!",
+          "start": 13429,
+          "end": 13574,
+          "confidence": 0.64931375,
+          "speaker": "A"
+        },
+        {
+          "text": "Oh,",
+          "start": 13670,
+          "end": 13847,
+          "confidence": 0.15794432,
+          "speaker": "A"
+        },
+        {
+          "text": "Ezra!",
+          "start": 14056,
+          "end": 14651,
+          "confidence": 0.13739625,
+          "speaker": "A"
+        },
+        {
+          "text": "You",
+          "start": 14796,
+          "end": 15037,
+          "confidence": 0.9417896,
+          "speaker": "A"
+        },
+        {
+          "text": "really",
+          "start": 16001,
+          "end": 17737,
+          "confidence": 0.94902986,
+          "speaker": "A"
+        },
+        {
+          "text": "made",
+          "start": 17753,
+          "end": 18091,
+          "confidence": 0.998723,
+          "speaker": "A"
+        },
+        {
+          "text": "my",
+          "start": 18060,
+          "end": 18108,
+          "confidence": 0.9998037,
+          "speaker": "A"
+        },
+        {
+          "text": "day.",
+          "start": 18334,
+          "end": 18577,
+          "confidence": 0.64430034,
+          "speaker": "A"
+        },
+        {
+          "text": "Denise,",
+          "start": 18900,
+          "end": 19288,
+          "confidence": 0.24282092,
+          "speaker": "A"
+        },
+        {
+          "text": "wait,",
+          "start": 19368,
+          "end": 19643,
+          "confidence": 0.50743055,
+          "speaker": "A"
+        },
+        {
+          "text": "Denise.",
+          "start": 19692,
+          "end": 20500,
+          "confidence": 0.63035434,
+          "speaker": "A"
+        },
+        {
+          "text": "This",
+          "start": 20597,
+          "end": 20710,
+          "confidence": 0.9574939,
+          "speaker": "A"
+        },
+        {
+          "text": "looks",
+          "start": 21081,
+          "end": 21566,
+          "confidence": 0.99641305,
+          "speaker": "A"
+        },
+        {
+          "text": "like",
+          "start": 21566,
+          "end": 21873,
+          "confidence": 0.9986835,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 21873,
+          "end": 21889,
+          "confidence": 0.9883465,
+          "speaker": "A"
+        },
+        {
+          "text": "public",
+          "start": 21889,
+          "end": 22229,
+          "confidence": 0.9998035,
+          "speaker": "A"
+        },
+        {
+          "text": "road.",
+          "start": 22358,
+          "end": 22536,
+          "confidence": 0.73441565,
+          "speaker": "A"
+        },
+        {
+          "text": "Anyone",
+          "start": 22778,
+          "end": 22988,
+          "confidence": 0.9977714,
+          "speaker": "A"
+        },
+        {
+          "text": "could",
+          "start": 23037,
+          "end": 23198,
+          "confidence": 0.69143116,
+          "speaker": "A"
+        },
+        {
+          "text": "see",
+          "start": 23198,
+          "end": 23425,
+          "confidence": 0.9995372,
+          "speaker": "A"
+        },
+        {
+          "text": "us.",
+          "start": 23425,
+          "end": 23489,
+          "confidence": 0.9893182,
+          "speaker": "A"
+        },
+        {
+          "text": "Who",
+          "start": 23651,
+          "end": 23748,
+          "confidence": 0.66545284,
+          "speaker": "A"
+        },
+        {
+          "text": "cares?",
+          "start": 24152,
+          "end": 24524,
+          "confidence": 0.8737096,
+          "speaker": "A"
+        },
+        {
+          "text": "You",
+          "start": 24717,
+          "end": 24879,
+          "confidence": 0.97912014,
+          "speaker": "A"
+        },
+        {
+          "text": "really",
+          "start": 24879,
+          "end": 25251,
+          "confidence": 0.9399819,
+          "speaker": "A"
+        },
+        {
+          "text": "made",
+          "start": 25525,
+          "end": 25736,
+          "confidence": 0.99769574,
+          "speaker": "A"
+        },
+        {
+          "text": "me",
+          "start": 25752,
+          "end": 26010,
+          "confidence": 0.99942064,
+          "speaker": "A"
+        },
+        {
+          "text": "happy.",
+          "start": 26140,
+          "end": 26335,
+          "confidence": 0.9518202,
+          "speaker": "A"
+        },
+        {
+          "text": "Oh,",
+          "start": 26564,
+          "end": 26744,
+          "confidence": 0.20896839,
+          "speaker": "A"
+        },
+        {
+          "text": "Denise.",
+          "start": 27152,
+          "end": 28147,
+          "confidence": 0.09297364,
+          "speaker": "A"
+        },
+        {
+          "text": "Isu!",
+          "start": 39390,
+          "end": 39720,
+          "confidence": 0.057372343,
+          "speaker": "A"
+        },
+        {
+          "text": "Wait,",
+          "start": 40017,
+          "end": 40363,
+          "confidence": 0.73169714,
+          "speaker": "A"
+        },
+        {
+          "text": "what?",
+          "start": 40610,
+          "end": 41285,
+          "confidence": 0.9371163,
+          "speaker": "A"
+        },
+        {
+          "text": "But",
+          "start": 41846,
+          "end": 42010,
+          "confidence": 0.97185713,
+          "speaker": "A"
+        },
+        {
+          "text": "Isu,",
+          "start": 42010,
+          "end": 42142,
+          "confidence": 0.6143564,
+          "speaker": "A"
+        },
+        {
+          "text": "have",
+          "start": 42159,
+          "end": 42258,
+          "confidence": 0.997184,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 42258,
+          "end": 42406,
+          "confidence": 0.99962115,
+          "speaker": "A"
+        },
+        {
+          "text": "gone",
+          "start": 42406,
+          "end": 42554,
+          "confidence": 0.9985178,
+          "speaker": "A"
+        },
+        {
+          "text": "mad?",
+          "start": 42670,
+          "end": 42933,
+          "confidence": 0.95394623,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

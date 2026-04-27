@@ -194,19 +194,30 @@ def pull_ga4():
     return data
 
 
-def pull_npaw():
-    from npaw_client import (get_top_content, get_daily_video_overview, get_device_breakdown,
-                              get_cdn_breakdown, get_country_breakdown, get_isp_breakdown,
-                              get_content_quality, get_daily_buffer_trend)
-    data = {}
-    data["top_content"] = safe_call(get_top_content, "NPAW top content", days=7, limit=30) or []
-    data["daily_overview"] = safe_call(get_daily_video_overview, "NPAW daily overview") or {}
-    data["devices"] = safe_call(get_device_breakdown, "NPAW devices", days=7) or []
-    data["cdn"] = safe_call(get_cdn_breakdown, "NPAW CDN", days=7) or []
-    data["country"] = safe_call(get_country_breakdown, "NPAW country", days=7) or []
-    data["isp"] = safe_call(get_isp_breakdown, "NPAW ISP", days=7) or []
-    data["content_quality"] = safe_call(get_content_quality, "NPAW quality", days=7, limit=30) or []
-    data["buffer_trend"] = safe_call(get_daily_buffer_trend, "NPAW buffer trend", days=7) or []
+def refresh_mux_title_map():
+    """Rebuild the {playback_id -> show/episode title} cache from the public
+    Enveu storefront API. Lets get_top_content show real names instead of opaque
+    Mux IDs without depending on the dev team to wire videoTitle metadata."""
+    from mux_title_resolver import build_map, save_map
+    m = build_map(verbose=False)
+    save_map(m)
+    return {"count": len(m)}
+
+
+def pull_mux():
+    """Pull Mux Data API metrics (replaced NPAW on 2026-04-22)."""
+    from mux_client import (get_top_content, get_daily_video_overview, get_device_breakdown,
+                             get_cdn_breakdown, get_country_breakdown, get_isp_breakdown,
+                             get_content_quality, get_daily_buffer_trend)
+    data = {"source": "mux"}
+    data["top_content"] = safe_call(get_top_content, "Mux top content", days=7, limit=30) or []
+    data["daily_overview"] = safe_call(get_daily_video_overview, "Mux daily overview") or {}
+    data["devices"] = safe_call(get_device_breakdown, "Mux devices", days=7) or []
+    data["cdn"] = safe_call(get_cdn_breakdown, "Mux CDN", days=7) or []
+    data["country"] = safe_call(get_country_breakdown, "Mux country", days=7) or []
+    data["isp"] = safe_call(get_isp_breakdown, "Mux ISP/ASN", days=7) or []
+    data["content_quality"] = safe_call(get_content_quality, "Mux quality", days=7, limit=30) or []
+    data["buffer_trend"] = safe_call(get_daily_buffer_trend, "Mux buffer trend", days=7) or {}
     return data
 
 
@@ -283,6 +294,16 @@ def pull_app_stores():
         return {}
 
 
+def pull_tiktok():
+    """Pull TikTok @myvurt profile stats + recent + top performers."""
+    sys.path.insert(0, "/home/workspace/Skills/vurt-post-log/scripts")
+    try:
+        from tiktok_profile import get_profile_summary
+        return get_profile_summary(handle="myvurt", top_limit=10)
+    except Exception:
+        return {}
+
+
 def main():
     print("VURT Birds-Eye-View Snapshot")
     print(f"Time: {datetime.now(ET).strftime('%Y-%m-%d %I:%M %p ET')}")
@@ -297,22 +318,26 @@ def main():
         }
     }
 
-    print("\n[1/6] Pulling GA4...")
+    print("\n[1/7] Pulling GA4...")
     state["ga4"] = safe_call(pull_ga4, "GA4 full pull") or {}
 
-    print("\n[2/6] Pulling NPAW...")
-    state["npaw"] = safe_call(pull_npaw, "NPAW full pull") or {}
+    print("\n[2/7] Pulling Mux...")
+    state["mux_title_map"] = safe_call(refresh_mux_title_map, "Mux title map refresh") or {}
+    state["mux"] = safe_call(pull_mux, "Mux full pull") or {}
 
-    print("\n[3/6] Pulling Instagram...")
+    print("\n[3/7] Pulling Instagram...")
     state["ig"] = safe_call(pull_meta_ig, "Instagram") or {}
 
-    print("\n[4/6] Pulling Facebook...")
+    print("\n[4/7] Pulling Facebook...")
     state["fb"] = safe_call(pull_meta_fb, "Facebook") or {}
 
-    print("\n[5/6] Pulling YouTube...")
+    print("\n[5/7] Pulling YouTube...")
     state["youtube"] = safe_call(pull_youtube, "YouTube") or {}
 
-    print("\n[6/6] Pulling App Stores...")
+    print("\n[6/7] Pulling TikTok...")
+    state["tiktok"] = safe_call(pull_tiktok, "TikTok") or {}
+
+    print("\n[7/7] Pulling App Stores...")
     state["app_stores"] = safe_call(pull_app_stores, "App Stores") or {}
 
     # Write state

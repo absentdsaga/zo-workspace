@@ -1,0 +1,773 @@
+{
+  "text": "Show me what you got, boss lady. We have all of these. Wow, wow. I have these too. Sheesh, it's nice. Oh, diamonds, ice. So how much you want for all of this? Um, I don't know, how much you offering? Watches, chains, say about $50K. For the diamonds, $40,000, $45,000. Bullshit. This watch alone here is $40,000. Yeah, but these watches got serial numbers. Nitronic and knock. I gotta melt these shits down. And these diamonds, shit, they cloudy. What you want from me? A better offer. Well, bring me some better merchandise, baby girl. Fuck you.",
+  "audio_duration": 64,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Show me what you got, boss lady.",
+      "confidence": 0.96714693,
+      "start": 722,
+      "end": 2067,
+      "words": [
+        {
+          "text": "Show",
+          "start": 722,
+          "end": 884,
+          "confidence": 0.98178446,
+          "speaker": "A"
+        },
+        {
+          "text": "me",
+          "start": 900,
+          "end": 1030,
+          "confidence": 0.9997367,
+          "speaker": "A"
+        },
+        {
+          "text": "what",
+          "start": 1030,
+          "end": 1095,
+          "confidence": 0.9996716,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 1127,
+          "end": 1273,
+          "confidence": 0.999806,
+          "speaker": "A"
+        },
+        {
+          "text": "got,",
+          "start": 1273,
+          "end": 1468,
+          "confidence": 0.97446036,
+          "speaker": "A"
+        },
+        {
+          "text": "boss",
+          "start": 1516,
+          "end": 1662,
+          "confidence": 0.84642094,
+          "speaker": "A"
+        },
+        {
+          "text": "lady.",
+          "start": 1841,
+          "end": 2067,
+          "confidence": 0.9681486,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "We have all of these.",
+      "confidence": 0.96482325,
+      "start": 6072,
+      "end": 8147,
+      "words": [
+        {
+          "text": "We",
+          "start": 6072,
+          "end": 6218,
+          "confidence": 0.9952684,
+          "speaker": "B"
+        },
+        {
+          "text": "have",
+          "start": 6218,
+          "end": 6558,
+          "confidence": 0.99930644,
+          "speaker": "B"
+        },
+        {
+          "text": "all",
+          "start": 7028,
+          "end": 7093,
+          "confidence": 0.8583132,
+          "speaker": "B"
+        },
+        {
+          "text": "of",
+          "start": 7515,
+          "end": 7660,
+          "confidence": 0.99298394,
+          "speaker": "B"
+        },
+        {
+          "text": "these.",
+          "start": 7677,
+          "end": 8147,
+          "confidence": 0.9782441,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "Wow, wow.",
+      "confidence": 0.6567018,
+      "start": 9152,
+      "end": 9827,
+      "words": [
+        {
+          "text": "Wow,",
+          "start": 9152,
+          "end": 9345,
+          "confidence": 0.7907002,
+          "speaker": "A"
+        },
+        {
+          "text": "wow.",
+          "start": 9634,
+          "end": 9827,
+          "confidence": 0.5227034,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "I have these too.",
+      "confidence": 0.98804253,
+      "start": 10695,
+      "end": 11611,
+      "words": [
+        {
+          "text": "I",
+          "start": 10695,
+          "end": 10727,
+          "confidence": 0.9980141,
+          "speaker": "B"
+        },
+        {
+          "text": "have",
+          "start": 10743,
+          "end": 10968,
+          "confidence": 0.9993094,
+          "speaker": "B"
+        },
+        {
+          "text": "these",
+          "start": 11000,
+          "end": 11290,
+          "confidence": 0.9974137,
+          "speaker": "B"
+        },
+        {
+          "text": "too.",
+          "start": 11483,
+          "end": 11611,
+          "confidence": 0.9574329,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "Sheesh, it's nice. Oh, diamonds, ice. So how much you want for all of this?",
+      "confidence": 0.85101753,
+      "start": 12447,
+      "end": 21308,
+      "words": [
+        {
+          "text": "Sheesh,",
+          "start": 12447,
+          "end": 13058,
+          "confidence": 0.40915132,
+          "speaker": "A"
+        },
+        {
+          "text": "it's",
+          "start": 14216,
+          "end": 14843,
+          "confidence": 0.33367428,
+          "speaker": "A"
+        },
+        {
+          "text": "nice.",
+          "start": 14843,
+          "end": 15277,
+          "confidence": 0.97638184,
+          "speaker": "A"
+        },
+        {
+          "text": "Oh,",
+          "start": 17560,
+          "end": 17656,
+          "confidence": 0.98887855,
+          "speaker": "A"
+        },
+        {
+          "text": "diamonds,",
+          "start": 17736,
+          "end": 18283,
+          "confidence": 0.33111098,
+          "speaker": "A"
+        },
+        {
+          "text": "ice.",
+          "start": 18396,
+          "end": 18895,
+          "confidence": 0.7986564,
+          "speaker": "A"
+        },
+        {
+          "text": "So",
+          "start": 20149,
+          "end": 20214,
+          "confidence": 0.9812261,
+          "speaker": "A"
+        },
+        {
+          "text": "how",
+          "start": 20214,
+          "end": 20246,
+          "confidence": 0.9649411,
+          "speaker": "A"
+        },
+        {
+          "text": "much",
+          "start": 20262,
+          "end": 20471,
+          "confidence": 0.9998167,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 20471,
+          "end": 20535,
+          "confidence": 0.9988733,
+          "speaker": "A"
+        },
+        {
+          "text": "want",
+          "start": 20552,
+          "end": 20712,
+          "confidence": 0.9998666,
+          "speaker": "A"
+        },
+        {
+          "text": "for",
+          "start": 20712,
+          "end": 20873,
+          "confidence": 0.99924636,
+          "speaker": "A"
+        },
+        {
+          "text": "all",
+          "start": 20873,
+          "end": 21050,
+          "confidence": 0.9995982,
+          "speaker": "A"
+        },
+        {
+          "text": "of",
+          "start": 21050,
+          "end": 21115,
+          "confidence": 0.9963582,
+          "speaker": "A"
+        },
+        {
+          "text": "this?",
+          "start": 21115,
+          "end": 21308,
+          "confidence": 0.9874832,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "C",
+      "text": "Um, I don't know, how much you offering?",
+      "confidence": 0.9460868,
+      "start": 22160,
+      "end": 24879,
+      "words": [
+        {
+          "text": "Um,",
+          "start": 22160,
+          "end": 22434,
+          "confidence": 0.9965976,
+          "speaker": "C"
+        },
+        {
+          "text": "I",
+          "start": 22562,
+          "end": 22659,
+          "confidence": 0.9978581,
+          "speaker": "C"
+        },
+        {
+          "text": "don't",
+          "start": 22659,
+          "end": 22997,
+          "confidence": 0.9982249,
+          "speaker": "C"
+        },
+        {
+          "text": "know,",
+          "start": 23141,
+          "end": 23463,
+          "confidence": 0.5889806,
+          "speaker": "C"
+        },
+        {
+          "text": "how",
+          "start": 23769,
+          "end": 23946,
+          "confidence": 0.99974626,
+          "speaker": "C"
+        },
+        {
+          "text": "much",
+          "start": 23946,
+          "end": 24074,
+          "confidence": 0.9996427,
+          "speaker": "C"
+        },
+        {
+          "text": "you",
+          "start": 24171,
+          "end": 24316,
+          "confidence": 0.9984219,
+          "speaker": "C"
+        },
+        {
+          "text": "offering?",
+          "start": 24332,
+          "end": 24879,
+          "confidence": 0.9892224,
+          "speaker": "C"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "Watches, chains, say about $50K. For the diamonds, $40,000, $45,000.",
+      "confidence": 0.7916668,
+      "start": 26538,
+      "end": 38254,
+      "words": [
+        {
+          "text": "Watches,",
+          "start": 26538,
+          "end": 27404,
+          "confidence": 0.40773994,
+          "speaker": "A"
+        },
+        {
+          "text": "chains,",
+          "start": 29844,
+          "end": 30454,
+          "confidence": 0.64864236,
+          "speaker": "A"
+        },
+        {
+          "text": "say",
+          "start": 32091,
+          "end": 32316,
+          "confidence": 0.9446694,
+          "speaker": "A"
+        },
+        {
+          "text": "about",
+          "start": 32316,
+          "end": 32492,
+          "confidence": 0.99037933,
+          "speaker": "A"
+        },
+        {
+          "text": "$50K.",
+          "start": 32492,
+          "end": 33134,
+          "confidence": 0.5789259,
+          "speaker": "A"
+        },
+        {
+          "text": "For",
+          "start": 34563,
+          "end": 34675,
+          "confidence": 0.9854116,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 34675,
+          "end": 34803,
+          "confidence": 0.9968375,
+          "speaker": "A"
+        },
+        {
+          "text": "diamonds,",
+          "start": 34803,
+          "end": 35269,
+          "confidence": 0.9132128,
+          "speaker": "A"
+        },
+        {
+          "text": "$40,000,",
+          "start": 35782,
+          "end": 37018,
+          "confidence": 0.46160138,
+          "speaker": "A"
+        },
+        {
+          "text": "$45,000.",
+          "start": 37147,
+          "end": 38254,
+          "confidence": 0.9892477,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "D",
+      "text": "Bullshit. This watch alone here is $40,000.",
+      "confidence": 0.90067595,
+      "start": 38350,
+      "end": 41303,
+      "words": [
+        {
+          "text": "Bullshit.",
+          "start": 38350,
+          "end": 38976,
+          "confidence": 0.3931227,
+          "speaker": "D"
+        },
+        {
+          "text": "This",
+          "start": 39538,
+          "end": 39602,
+          "confidence": 0.9991202,
+          "speaker": "D"
+        },
+        {
+          "text": "watch",
+          "start": 39698,
+          "end": 39939,
+          "confidence": 0.9997856,
+          "speaker": "D"
+        },
+        {
+          "text": "alone",
+          "start": 39939,
+          "end": 40164,
+          "confidence": 0.9951208,
+          "speaker": "D"
+        },
+        {
+          "text": "here",
+          "start": 40196,
+          "end": 40308,
+          "confidence": 0.9550001,
+          "speaker": "D"
+        },
+        {
+          "text": "is",
+          "start": 40356,
+          "end": 40405,
+          "confidence": 0.9811786,
+          "speaker": "D"
+        },
+        {
+          "text": "$40,000.",
+          "start": 40501,
+          "end": 41303,
+          "confidence": 0.9814036,
+          "speaker": "D"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "Yeah, but these watches got serial numbers. Nitronic and knock. I gotta melt these shits down. And these diamonds, shit, they cloudy. What you want from me? A better offer. Well, bring me some better merchandise, baby girl. Fuck you.",
+      "confidence": 0.905784,
+      "start": 41785,
+      "end": 54434,
+      "words": [
+        {
+          "text": "Yeah,",
+          "start": 41785,
+          "end": 41945,
+          "confidence": 0.9805709,
+          "speaker": "A"
+        },
+        {
+          "text": "but",
+          "start": 41961,
+          "end": 42106,
+          "confidence": 0.99900925,
+          "speaker": "A"
+        },
+        {
+          "text": "these",
+          "start": 42106,
+          "end": 42250,
+          "confidence": 0.9989642,
+          "speaker": "A"
+        },
+        {
+          "text": "watches",
+          "start": 42282,
+          "end": 42571,
+          "confidence": 0.99587196,
+          "speaker": "A"
+        },
+        {
+          "text": "got",
+          "start": 42668,
+          "end": 42780,
+          "confidence": 0.99415636,
+          "speaker": "A"
+        },
+        {
+          "text": "serial",
+          "start": 42780,
+          "end": 43245,
+          "confidence": 0.9989254,
+          "speaker": "A"
+        },
+        {
+          "text": "numbers.",
+          "start": 43245,
+          "end": 43582,
+          "confidence": 0.8215073,
+          "speaker": "A"
+        },
+        {
+          "text": "Nitronic",
+          "start": 44289,
+          "end": 44914,
+          "confidence": 0.3991453,
+          "speaker": "A"
+        },
+        {
+          "text": "and",
+          "start": 44914,
+          "end": 44995,
+          "confidence": 0.51570064,
+          "speaker": "A"
+        },
+        {
+          "text": "knock.",
+          "start": 44995,
+          "end": 45107,
+          "confidence": 0.20131217,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 45171,
+          "end": 45187,
+          "confidence": 0.99883467,
+          "speaker": "A"
+        },
+        {
+          "text": "gotta",
+          "start": 45252,
+          "end": 45412,
+          "confidence": 0.7498482,
+          "speaker": "A"
+        },
+        {
+          "text": "melt",
+          "start": 45412,
+          "end": 45573,
+          "confidence": 0.9996637,
+          "speaker": "A"
+        },
+        {
+          "text": "these",
+          "start": 45573,
+          "end": 45717,
+          "confidence": 0.9980021,
+          "speaker": "A"
+        },
+        {
+          "text": "shits",
+          "start": 45717,
+          "end": 46022,
+          "confidence": 0.9839491,
+          "speaker": "A"
+        },
+        {
+          "text": "down.",
+          "start": 46038,
+          "end": 46263,
+          "confidence": 0.839979,
+          "speaker": "A"
+        },
+        {
+          "text": "And",
+          "start": 46471,
+          "end": 46744,
+          "confidence": 0.9213486,
+          "speaker": "A"
+        },
+        {
+          "text": "these",
+          "start": 47177,
+          "end": 47386,
+          "confidence": 0.9995035,
+          "speaker": "A"
+        },
+        {
+          "text": "diamonds,",
+          "start": 47418,
+          "end": 47868,
+          "confidence": 0.8876724,
+          "speaker": "A"
+        },
+        {
+          "text": "shit,",
+          "start": 48847,
+          "end": 49103,
+          "confidence": 0.9263096,
+          "speaker": "A"
+        },
+        {
+          "text": "they",
+          "start": 49408,
+          "end": 49440,
+          "confidence": 0.9983139,
+          "speaker": "A"
+        },
+        {
+          "text": "cloudy.",
+          "start": 49489,
+          "end": 49826,
+          "confidence": 0.9487639,
+          "speaker": "A"
+        },
+        {
+          "text": "What",
+          "start": 49890,
+          "end": 49986,
+          "confidence": 0.99802005,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 49986,
+          "end": 50131,
+          "confidence": 0.9962579,
+          "speaker": "A"
+        },
+        {
+          "text": "want",
+          "start": 50131,
+          "end": 50227,
+          "confidence": 0.99954176,
+          "speaker": "A"
+        },
+        {
+          "text": "from",
+          "start": 50227,
+          "end": 50436,
+          "confidence": 0.98037857,
+          "speaker": "A"
+        },
+        {
+          "text": "me?",
+          "start": 50452,
+          "end": 50564,
+          "confidence": 0.9952667,
+          "speaker": "A"
+        },
+        {
+          "text": "A",
+          "start": 50869,
+          "end": 50885,
+          "confidence": 0.9973116,
+          "speaker": "A"
+        },
+        {
+          "text": "better",
+          "start": 50949,
+          "end": 51190,
+          "confidence": 0.9996742,
+          "speaker": "A"
+        },
+        {
+          "text": "offer.",
+          "start": 51190,
+          "end": 51463,
+          "confidence": 0.90410995,
+          "speaker": "A"
+        },
+        {
+          "text": "Well,",
+          "start": 51752,
+          "end": 51881,
+          "confidence": 0.9505768,
+          "speaker": "A"
+        },
+        {
+          "text": "bring",
+          "start": 51897,
+          "end": 52059,
+          "confidence": 0.99918216,
+          "speaker": "A"
+        },
+        {
+          "text": "me",
+          "start": 52059,
+          "end": 52091,
+          "confidence": 0.99650663,
+          "speaker": "A"
+        },
+        {
+          "text": "some",
+          "start": 52091,
+          "end": 52317,
+          "confidence": 0.9993875,
+          "speaker": "A"
+        },
+        {
+          "text": "better",
+          "start": 52317,
+          "end": 52511,
+          "confidence": 0.99954706,
+          "speaker": "A"
+        },
+        {
+          "text": "merchandise,",
+          "start": 52543,
+          "end": 53093,
+          "confidence": 0.98146963,
+          "speaker": "A"
+        },
+        {
+          "text": "baby",
+          "start": 53125,
+          "end": 53416,
+          "confidence": 0.97707146,
+          "speaker": "A"
+        },
+        {
+          "text": "girl.",
+          "start": 53432,
+          "end": 53674,
+          "confidence": 0.7951868,
+          "speaker": "A"
+        },
+        {
+          "text": "Fuck",
+          "start": 53836,
+          "end": 54321,
+          "confidence": 0.98196065,
+          "speaker": "A"
+        },
+        {
+          "text": "you.",
+          "start": 54321,
+          "end": 54434,
+          "confidence": 0.52255845,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

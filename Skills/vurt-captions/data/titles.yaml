@@ -179,6 +179,56 @@ titles:
       - "#VURT"
       - "#MicroDrama"
 
+  bound:
+    display_title: "Bound"
+    slug: bound
+    status: live
+    year: 2015
+    source: licensed
+    url: https://myvurt.com/detail/micro_series/bound
+    genre: erotic_thriller
+    clip_count: TBD
+    clips_posted: 0
+    exec_producer:
+      name: TBD
+      ig: TBD
+      tt: TBD
+    director:
+      name: Jared Cohn
+      ig: "@jaredcohn1"
+      tt: unknown
+    actors:
+      - name: Charisma Carpenter
+        character: Michelle Mulan
+        ig: "@charismacarpenter"
+        tt: "@charisma_carpenter"
+        x: "@AllCharisma"
+        role: lead
+      - name: Daniel Baldwin
+        character: Walter Mulan
+        ig: "@thedanielbaldwin"
+        x: "@DanielBaldwin"
+        tt: unknown
+        role: supporting
+      - name: Bryce Draper
+        character: Ryan Black
+        ig: unknown
+        tt: unknown
+        role: antagonist
+      - name: Morgan Obenreder
+        character: Dara
+        ig: unknown
+        tt: unknown
+        role: supporting
+    hashtags:
+      - "#BoundMovie"
+      - "#CharismaCarpenter"
+      - "#VURT"
+      - "#microdrama"
+      - "#thrillertok"
+      - "#revengeera"
+      - "#verticalcinema"
+
   the_love_letter:
     display_title: "The Love Letter"
     status: queued

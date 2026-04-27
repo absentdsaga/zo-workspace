@@ -5,7 +5,7 @@ Uses agent-browser CLI to scrape public profiles. Instagram requires Meta Graph 
 (not scrapable without auth). Data is cached for day-over-day comparison.
 """
 
-import json, os, re, subprocess, time
+import json, os, re, subprocess, sys, time
 from datetime import datetime
 
 CACHE_FILE = os.path.join(os.path.dirname(__file__), ".social-cache.json")
@@ -56,81 +56,56 @@ def _parse_count(text):
 
 
 def scrape_youtube():
-    """Scrape YouTube channel — subscribers, video count, per-video views."""
+    """Fetch YouTube channel stats via Data API (subscribers, video count, total views)."""
     data = {"platform": "youtube", "handle": "@myVURT1",
-            "subscribers": None, "videos": None, "top_videos": [], "error": None}
+            "subscribers": None, "videos": None, "total_views": None, "top_videos": [], "error": None}
     try:
-        snap = _agent_browser_snapshot(ACCOUNTS["youtube"]["url"], wait=3)
-
-        # Subscribers: "11 subscribers"
-        m = re.search(r"(\d[\d,.]*[KMB]?)\s+subscribers", snap)
-        if m:
-            data["subscribers"] = _parse_count(m.group(1))
-
-        # Videos: "6 videos"
-        m = re.search(r"(\d[\d,.]*)\s+videos?", snap)
-        if m:
-            data["videos"] = _parse_count(m.group(1))
-
-        # Per-video views: lines like "769 views"
-        view_matches = re.findall(r"([\d,.]+[KMB]?)\s+views?", snap)
-        total_views = 0
-        for v in view_matches:
-            total_views += _parse_count(v)
-        if total_views > 0:
-            data["total_views"] = total_views
-
-        # Extract video titles and views from snapshot lines
-        # Pattern: link "Title" line, then within next 3 lines "text: N views"
-        lines = snap.split("\n")
-        for i, line in enumerate(lines):
-            m_title = re.search(r"""link ['"]?["']?(.+?)['"]?["']?\s*[\[']""", line)
-            if not m_title:
-                m_title = re.search(r'link "(.+?)"', line)
-            if m_title:
-                title = m_title.group(1).strip('"\'')
-                if any(skip in title.lower() for skip in ["home", "sign in", "shorts", "subscriptions", "you", "youtube"]):
-                    continue
-                # Check next 3 lines for views
-                for j in range(1, 4):
-                    if i + j >= len(lines):
-                        break
-                    m_views = re.search(r"([\d,.]+[KMB]?)\s+views?", lines[i + j])
-                    if m_views:
-                        data["top_videos"].append({"title": title[:60], "views": _parse_count(m_views.group(1))})
-                        break
-
-        if data["subscribers"] is None:
-            data["error"] = "Could not parse subscribers"
+        sys.path.insert(0, os.path.dirname(__file__))
+        from youtube_client import get_channel_stats
+        stats = get_channel_stats()
+        data["subscribers"] = stats.get("subscribers")
+        data["videos"] = stats.get("videoCount")
+        data["total_views"] = stats.get("totalViews")
     except Exception as e:
         data["error"] = str(e)
     return data
 
 
 def scrape_tiktok():
-    """Scrape TikTok public profile — followers, likes."""
+    """Fetch TikTok @myvurt stats + recent + top performers.
+
+    Uses tiktok_profile.get_profile_summary() which parses the static profile
+    HTML blob (no browser) and reads the per-video scrape cache populated by
+    tiktok_url_harvest + tiktok_scraper.
+    """
     data = {"platform": "tiktok", "handle": "@myvurt",
-            "followers": None, "likes": None, "following": None, "error": None}
+            "followers": None, "likes": None, "following": None,
+            "posts": None, "top_posts": [], "recent_7d": {}, "error": None}
     try:
-        snap = _agent_browser_snapshot(ACCOUNTS["tiktok"]["url"], wait=4)
-
-        # TikTok snapshot has a heading like: "0 Following 5 Followers 112 Likes"
-        m = re.search(r"(\d[\d,.]*[KMB]?)\s*Following\s+(\d[\d,.]*[KMB]?)\s*Followers\s+(\d[\d,.]*[KMB]?)\s*Likes", snap)
-        if m:
-            data["following"] = _parse_count(m.group(1))
-            data["followers"] = _parse_count(m.group(2))
-            data["likes"] = _parse_count(m.group(3))
-        else:
-            # Fallback: individual matches
-            m = re.search(r'"(\d[\d,.]*[KMB]?)"\s*.*?Followers', snap)
-            if m:
-                data["followers"] = _parse_count(m.group(1))
-            m = re.search(r'"(\d[\d,.]*[KMB]?)"\s*.*?Likes', snap)
-            if m:
-                data["likes"] = _parse_count(m.group(1))
-
-        if data["followers"] is None:
-            data["error"] = "Could not parse followers"
+        sys.path.insert(0, "/home/workspace/Skills/vurt-post-log/scripts")
+        from tiktok_profile import get_profile_summary
+        summary = get_profile_summary(handle="myvurt", top_limit=5)
+        stats = summary["stats"]
+        if stats.get("error"):
+            data["error"] = stats["error"]
+        data["followers"] = stats.get("followers")
+        data["following"] = stats.get("following")
+        data["likes"] = stats.get("likes")
+        data["posts"] = stats.get("video_count")
+        data["recent_7d"] = summary.get("recent", {})
+        data["top_posts"] = [
+            {
+                "caption": t["caption"],
+                "url": t["url"],
+                "views": t["views"],
+                "likes": t["likes"],
+                "saves": t["saves"],
+                "save_rate": t["save_rate"],
+            }
+            for t in summary.get("top_performers", {}).get("top", [])
+        ]
+        if data["followers"] is None and not data["error"]:
+            data["error"] = "Could not parse followers from profile blob"
     except Exception as e:
         data["error"] = str(e)
     return data
@@ -170,6 +145,9 @@ def scrape_instagram():
             "reach_7d": None, "profile_views_7d": None,
             "accounts_engaged_7d": None, "total_interactions_7d": None,
             "likes_7d": None, "comments_7d": None, "shares_7d": None, "saves_7d": None,
+            "active_stories": [], "active_stories_count": 0,
+            "active_stories_reach_total": 0, "active_stories_replies_total": 0,
+            "active_stories_link_clicks_total": 0,
             "top_posts": [], "error": None}
 
     ig_token = os.environ.get("VURT_META_ACCESS_TOKEN")
@@ -228,6 +206,90 @@ def scrape_instagram():
                 data[f"{m['name']}_7d"] = val
         except:
             pass
+
+        # Active Stories (last 24h) — tracks the "stories ladder" per Reel
+        # Metrics: reach, replies, navigation (taps_forward/taps_back/exits/swipe_away),
+        #   profile_visits, link_clicks (when a link sticker is present).
+        # We use these to flag Reels that did NOT get a stories ladder (i.e. Reel
+        # published in last 24h but <3 active stories around it).
+        try:
+            stories_resp = _graph_get(f"{IG_USER_ID}/stories", {
+                "fields": "id,media_type,media_url,permalink,timestamp",
+                "limit": "50",
+            })
+            stories_list = []
+            for s in stories_resp.get("data", []):
+                story_item = {
+                    "id": s["id"],
+                    "type": s.get("media_type", ""),
+                    "permalink": s.get("permalink", ""),
+                    "timestamp": s.get("timestamp", ""),
+                    "date": s.get("timestamp", "")[:10],
+                    "reach": None,
+                    "replies": None,
+                    "taps_forward": None,
+                    "taps_back": None,
+                    "exits": None,
+                    "profile_visits": None,
+                    "link_clicks": None,
+                }
+                try:
+                    si = _graph_get(f"{s['id']}/insights", {
+                        "metric": "reach,replies,profile_visits",
+                    })
+                    for entry in si.get("data", []):
+                        name = entry["name"]
+                        val = entry.get("values", [{}])[0].get("value")
+                        if val is None:
+                            val = entry.get("total_value", {}).get("value", 0)
+                        story_item[name] = val
+                except Exception:
+                    pass
+                # Navigation needs its own call w/ breakdown param
+                try:
+                    nav = _graph_get(f"{s['id']}/insights", {
+                        "metric": "navigation",
+                        "breakdown": "story_navigation_action_type",
+                        "metric_type": "total_value",
+                    })
+                    for entry in nav.get("data", []):
+                        for bd in entry.get("total_value", {}).get("breakdowns", []):
+                            for r in bd.get("results", []):
+                                dim = (r.get("dimension_values") or [""])[0]
+                                v = r.get("value", 0)
+                                if dim == "tap_forward":
+                                    story_item["taps_forward"] = v
+                                elif dim == "tap_back":
+                                    story_item["taps_back"] = v
+                                elif dim == "tap_exit":
+                                    story_item["exits"] = v
+                                elif dim == "swipe_forward":
+                                    story_item["swipes"] = v
+                except Exception:
+                    pass
+                # Link clicks — only exists if story had a link sticker; metric fails silently otherwise
+                try:
+                    lc = _graph_get(f"{s['id']}/insights", {"metric": "website_clicks"})
+                    for entry in lc.get("data", []):
+                        val = entry.get("values", [{}])[0].get("value", 0)
+                        if val:
+                            story_item["link_clicks"] = val
+                except Exception:
+                    pass
+                stories_list.append(story_item)
+            data["active_stories"] = stories_list
+            data["active_stories_count"] = len(stories_list)
+            data["active_stories_reach_total"] = sum(
+                (s.get("reach") or 0) for s in stories_list
+            )
+            data["active_stories_replies_total"] = sum(
+                (s.get("replies") or 0) for s in stories_list
+            )
+            data["active_stories_link_clicks_total"] = sum(
+                (s.get("link_clicks") or 0) for s in stories_list
+            )
+        except Exception as e:
+            data["active_stories_error"] = str(e)
 
         # Recent posts (top 15)
         try:
@@ -375,7 +437,7 @@ def get_facebook_page():
             until = int(now.timestamp())
 
             pi_resp = _graph(f"{PAGE_ID}/insights", {
-                "metric": "page_actions_post_reactions_total,page_post_engagements,page_video_views,page_video_views_organic,page_posts_impressions",
+                "metric": "page_actions_post_reactions_total,page_post_engagements,page_video_views,page_video_views_organic,page_video_views_paid,page_posts_impressions",
                 "period": "day",
                 "since": since,
                 "until": until,
@@ -401,6 +463,8 @@ def get_facebook_page():
                         daily_breakdown[day]["video_views"] = val
                     elif name == "page_video_views_organic":
                         daily_breakdown[day]["video_views_organic"] = val
+                    elif name == "page_video_views_paid":
+                        daily_breakdown[day]["video_views_paid"] = val
                     elif name == "page_posts_impressions":
                         daily_breakdown[day]["impressions"] = val
 
@@ -409,6 +473,7 @@ def get_facebook_page():
             data["page_engagements_7d"] = sum(d.get("engagements", 0) for d in daily_breakdown.values())
             data["page_video_views_7d"] = sum(d.get("video_views", 0) for d in daily_breakdown.values())
             data["page_video_views_organic_7d"] = sum(d.get("video_views_organic", 0) for d in daily_breakdown.values())
+            data["page_video_views_paid_7d"] = sum(d.get("video_views_paid", 0) for d in daily_breakdown.values())
             data["page_impressions_7d"] = sum(d.get("impressions", 0) for d in daily_breakdown.values())
 
             # Aggregate reaction types across all days
@@ -608,7 +673,15 @@ def format_social_report(social_data):
     yt_activity = f"{_fmt_val(yt.get('videos'))} videos, {_fmt_val(yt.get('total_views'))} total views"
     lines.append(f"| YouTube | @myVURT1 | {_fmt_val(yt.get('subscribers'))} | {_delta_str(yt, 'subscribers')} | {yt_activity} |")
 
-    tt_activity = f"{_fmt_val(tt.get('likes'))} likes"
+    tt_parts = []
+    if tt.get("likes"):
+        tt_parts.append(f"{_fmt_val(tt.get('likes'))} likes")
+    if tt.get("posts"):
+        tt_parts.append(f"{_fmt_val(tt.get('posts'))} videos")
+    recent = tt.get("recent_7d", {})
+    if recent.get("post_count"):
+        tt_parts.append(f"{recent['post_count']} posts/7d · {_fmt_val(recent.get('total_views'))} views/7d")
+    tt_activity = ", ".join(tt_parts) if tt_parts else "—"
     lines.append(f"| TikTok | @myvurt | {_fmt_val(tt.get('followers'))} | {_delta_str(tt, 'followers')} | {tt_activity} |")
 
     x_activity = f"{_fmt_val(x.get('posts'))} posts"
@@ -671,6 +744,31 @@ def format_social_report(social_data):
             lines.append(f"| {name} | {_fmt_val(val)} |")
         lines.append("")
 
+    # Active IG Stories (24h rolling window) — tracks the "stories ladder" per Reel
+    stories = ig.get("active_stories", [])
+    if stories:
+        lines.append("### Instagram Stories (active, 24h rolling)")
+        lines.append("")
+        total_reach = ig.get("active_stories_reach_total", 0)
+        total_replies = ig.get("active_stories_replies_total", 0)
+        total_link_clicks = ig.get("active_stories_link_clicks_total", 0)
+        lines.append(f"**{len(stories)} active stories** · reach: {_fmt_val(total_reach)} · replies: {_fmt_val(total_replies)} · link-sticker clicks: {_fmt_val(total_link_clicks)}")
+        lines.append("")
+        lines.append("| Posted | Type | Reach | Replies | Tap→ | Tap← | Exits | Profile Visits | Link Clicks |")
+        lines.append("|--------|------|-------|---------|------|------|-------|----------------|-------------|")
+        for s in stories:
+            ts = s.get("timestamp", "")[:16].replace("T", " ")
+            lines.append(
+                f"| {ts} | {s.get('type','')} | {_fmt_val(s.get('reach'))} | "
+                f"{_fmt_val(s.get('replies'))} | {_fmt_val(s.get('taps_forward'))} | "
+                f"{_fmt_val(s.get('taps_back'))} | {_fmt_val(s.get('exits'))} | "
+                f"{_fmt_val(s.get('profile_visits'))} | {_fmt_val(s.get('link_clicks'))} |"
+            )
+        lines.append("")
+    elif ig.get("active_stories_error"):
+        lines.append(f"_Stories API note: {ig['active_stories_error']}_")
+        lines.append("")
+
     ig_posts = ig.get("top_posts", [])
     if ig_posts:
         total_cwr = ig.get("total_comments_with_replies", 0)
@@ -710,10 +808,11 @@ def format_social_report(social_data):
         lines.append(f"| Total Engagements | {_fmt_val(fb.get('page_engagements_7d'))} |")
         lines.append(f"| Video Views | {_fmt_val(fb.get('page_video_views_7d'))} |")
         organic = fb.get("page_video_views_organic_7d", 0)
+        paid = fb.get("page_video_views_paid_7d", 0)
         total_vv = fb.get("page_video_views_7d", 0)
-        if total_vv and organic:
-            rec_pct = round((1 - organic / total_vv) * 100, 1) if total_vv else 0
-            lines.append(f"| Organic vs Recommended | {_fmt_val(organic)} organic / {_fmt_val(total_vv - organic)} recommended ({rec_pct}% from FB algorithm) |")
+        if total_vv and (organic or paid):
+            paid_pct = round((paid / total_vv) * 100, 1) if total_vv else 0
+            lines.append(f"| Organic vs Paid | {_fmt_val(organic)} organic / {_fmt_val(paid)} paid ({paid_pct}% from paid ads) |")
         lines.append(f"| Post Impressions | {_fmt_val(fb.get('page_impressions_7d'))} |")
         lines.append("")
 

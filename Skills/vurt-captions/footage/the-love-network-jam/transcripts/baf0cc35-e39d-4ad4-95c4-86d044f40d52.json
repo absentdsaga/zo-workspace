@@ -1,0 +1,301 @@
+{
+  "text": "Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo mslu? mslu? Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo mslu?",
+  "audio_duration": 36,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo mslu? mslu? Kwa hivyo mslu? Kwa",
+      "confidence": 0.65443575,
+      "start": 31,
+      "end": 7531,
+      "words": [
+        {
+          "text": "Kwa",
+          "start": 31,
+          "end": 291,
+          "confidence": 0.33764648,
+          "speaker": "A"
+        },
+        {
+          "text": "hivyo",
+          "start": 291,
+          "end": 531,
+          "confidence": 0.48421225,
+          "speaker": "A"
+        },
+        {
+          "text": "mslu?",
+          "start": 531,
+          "end": 1351,
+          "confidence": 0.303,
+          "speaker": "A"
+        },
+        {
+          "text": "Kwa",
+          "start": 1751,
+          "end": 2991,
+          "confidence": 0.34140015,
+          "speaker": "A"
+        },
+        {
+          "text": "hivyo",
+          "start": 2991,
+          "end": 3091,
+          "confidence": 0.697347,
+          "speaker": "A"
+        },
+        {
+          "text": "mslu?",
+          "start": 3091,
+          "end": 3651,
+          "confidence": 0.708,
+          "speaker": "A"
+        },
+        {
+          "text": "Kwa",
+          "start": 3651,
+          "end": 3661,
+          "confidence": 0.4586792,
+          "speaker": "A"
+        },
+        {
+          "text": "hivyo",
+          "start": 3661,
+          "end": 3716,
+          "confidence": 0.90755206,
+          "speaker": "A"
+        },
+        {
+          "text": "mslu?",
+          "start": 3716,
+          "end": 3743,
+          "confidence": 0.967,
+          "speaker": "A"
+        },
+        {
+          "text": "mslu?",
+          "start": 3743,
+          "end": 3771,
+          "confidence": 0.97,
+          "speaker": "A"
+        },
+        {
+          "text": "Kwa",
+          "start": 3771,
+          "end": 3776,
+          "confidence": 0.47991943,
+          "speaker": "A"
+        },
+        {
+          "text": "hivyo",
+          "start": 3776,
+          "end": 3823,
+          "confidence": 0.93359375,
+          "speaker": "A"
+        },
+        {
+          "text": "mslu?",
+          "start": 3823,
+          "end": 3871,
+          "confidence": 0.98,
+          "speaker": "A"
+        },
+        {
+          "text": "Kwa",
+          "start": 4531,
+          "end": 7531,
+          "confidence": 0.59375,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "speaker": "B",
+      "text": "hivyo mslu? Kwa hivyo mslu?",
+      "confidence": 0.9048445,
+      "start": 14071,
+      "end": 18971,
+      "words": [
+        {
+          "text": "hivyo",
+          "start": 14071,
+          "end": 14331,
+          "confidence": 0.94710284,
+          "speaker": "B"
+        },
+        {
+          "text": "mslu?",
+          "start": 14331,
+          "end": 15191,
+          "confidence": 0.985,
+          "speaker": "B"
+        },
+        {
+          "text": "Kwa",
+          "start": 15211,
+          "end": 16511,
+          "confidence": 0.6567383,
+          "speaker": "B"
+        },
+        {
+          "text": "hivyo",
+          "start": 16511,
+          "end": 17371,
+          "confidence": 0.94938153,
+          "speaker": "B"
+        },
+        {
+          "text": "mslu?",
+          "start": 17371,
+          "end": 18971,
+          "confidence": 0.986,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "speaker": "C",
+      "text": "Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo mslu? Kwa hivyo",
+      "confidence": 0.911212,
+      "start": 19971,
+      "end": 30011,
+      "words": [
+        {
+          "text": "Kwa",
+          "start": 19971,
+          "end": 20411,
+          "confidence": 0.70581055,
+          "speaker": "C"
+        },
+        {
+          "text": "hivyo",
+          "start": 20411,
+          "end": 23411,
+          "confidence": 0.95003253,
+          "speaker": "C"
+        },
+        {
+          "text": "mslu?",
+          "start": 24131,
+          "end": 24411,
+          "confidence": 0.986,
+          "speaker": "C"
+        },
+        {
+          "text": "Kwa",
+          "start": 24851,
+          "end": 24891,
+          "confidence": 0.7590332,
+          "speaker": "C"
+        },
+        {
+          "text": "hivyo",
+          "start": 24891,
+          "end": 25931,
+          "confidence": 0.95410156,
+          "speaker": "C"
+        },
+        {
+          "text": "mslu?",
+          "start": 25931,
+          "end": 26291,
+          "confidence": 0.985,
+          "speaker": "C"
+        },
+        {
+          "text": "Kwa",
+          "start": 26571,
+          "end": 26691,
+          "confidence": 0.8039551,
+          "speaker": "C"
+        },
+        {
+          "text": "hivyo",
+          "start": 26691,
+          "end": 27071,
+          "confidence": 0.9607747,
+          "speaker": "C"
+        },
+        {
+          "text": "mslu?",
+          "start": 27071,
+          "end": 27531,
+          "confidence": 0.986,
+          "speaker": "C"
+        },
+        {
+          "text": "Kwa",
+          "start": 27811,
+          "end": 27881,
+          "confidence": 0.826416,
+          "speaker": "C"
+        },
+        {
+          "text": "hivyo",
+          "start": 27881,
+          "end": 27951,
+          "confidence": 0.96500653,
+          "speaker": "C"
+        },
+        {
+          "text": "mslu?",
+          "start": 27951,
+          "end": 27971,
+          "confidence": 0.986,
+          "speaker": "C"
+        },
+        {
+          "text": "Kwa",
+          "start": 28111,
+          "end": 29131,
+          "confidence": 0.84277344,
+          "speaker": "C"
+        },
+        {
+          "text": "hivyo",
+          "start": 29131,
+          "end": 29411,
+          "confidence": 0.96761066,
+          "speaker": "C"
+        },
+        {
+          "text": "mslu?",
+          "start": 29411,
+          "end": 29731,
+          "confidence": 0.986,
+          "speaker": "C"
+        },
+        {
+          "text": "Kwa",
+          "start": 29751,
+          "end": 29811,
+          "confidence": 0.85717773,
+          "speaker": "C"
+        },
+        {
+          "text": "hivyo",
+          "start": 29811,
+          "end": 30011,
+          "confidence": 0.9689128,
+          "speaker": "C"
+        }
+      ]
+    },
+    {
+      "speaker": "A",
+      "text": "mslu?",
+      "confidence": 0.986,
+      "start": 30011,
+      "end": 30111,
+      "words": [
+        {
+          "text": "mslu?",
+          "start": 30011,
+          "end": 30111,
+          "confidence": 0.986,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}

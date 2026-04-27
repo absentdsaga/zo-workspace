@@ -1,0 +1,86 @@
+{"type": "task_start", "data": {"task": "VURT Post Log sync", "command": "sync.py --all --auto-create", "timestamp": "2026-04-19T16:01:00Z"}}
+{"type": "result", "data": {"notion_entries_found": 201, "ig_posts_found": 59, "fb_posts_found": 50, "yt_videos_found": 38, "tiktok": "skipped - no token file", "yt_analytics": "skipped - 403 needs channel owner OAuth", "new_entries_created": 0, "urls_updated": 0, "metrics_updated": 151, "calendar_reconciled": 0, "calendar_enriched": 0, "frameio_links": 0, "status": "done", "timestamp": "2026-04-19T16:06:10Z"}}
+{"type": "decision", "data": {"note": "All 201 existing entries already in Post Log \u2014 0 new auto-creates needed. 151 entries refreshed with latest platform metrics.", "timestamp": "2026-04-19T16:06:10Z"}}
+  Metrics: VURT Clip - FB → Views=299, Likes=4, Shares=0, Comments Count=0, Reach=270
+  Metrics: VURT Filmmaker Spotlight - IG → Views=278, Likes=13, Saves=1, Shares=2, Comments Count=2, Reach=145, Engagement=21
+  Metrics: VURT Clip - IG → Views=551, Likes=32, Saves=1, Shares=4, Comments Count=4, Reach=402, Avg Watch Time (s)=13.2, Engagement=51
+  Metrics: VURT Clip - FB → Views=462, Likes=2, Shares=0, Comments Count=0, Reach=425
+  Metrics: VURT Clip - FB → Views=2901, Likes=38, Shares=9, Comments Count=0, Reach=2841
+  Metrics: The Love Network Jam | A VURT Original - YT Shorts → Views=831, Likes=15, Comments Count=0
+  Metrics: VURT Announcement - IG → Views=3802, Likes=82, Saves=18, Shares=20, Comments Count=9, Reach=3274, Avg Watch Time (s)=23.0, Engagement=134 ⏳
+  Metrics: VURT Filmmaker Spotlight - FB → Views=31, Likes=0, Shares=0, Comments Count=0, Reach=20
+  Metrics: The Love Network Jam | A VURT Original - YT Shorts → Views=831, Likes=15, Comments Count=0
+  Metrics: VURT Clip - FB → Views=291, Likes=1, Shares=0, Comments Count=0, Reach=279
+  Metrics: VURT Clip - FB → Views=126, Likes=1, Shares=0, Comments Count=0, Reach=118
+  Metrics: VURT Clip - IG → Views=208, Likes=16, Saves=0, Shares=3, Comments Count=5, Reach=140, Avg Watch Time (s)=13.3, Engagement=31 ⏳
+  Metrics: VURT Filmmaker Spotlight - FB → Views=19, Likes=0, Shares=0, Comments Count=0, Reach=11
+  Metrics: Ted Lucas Clip - IG → Views=237, Likes=34, Saves=0, Shares=3, Comments Count=6, Reach=111, Engagement=46 ⏳
+  Metrics: VURT Clip - YT Shorts → Views=116, Likes=5, Comments Count=0
+  Metrics: VURT Filmmaker Spotlight - IG → Views=151, Likes=9, Saves=0, Shares=2, Comments Count=0, Reach=79, Engagement=14 ⏳
+  152 entries updated with metrics
+
+Reconciling Content Calendar with Post Log...
+  Calendar create: 🟢 VURT Filmmaker Spotlight → FB (2026-04-19)
+  Calendar create: 🔵 Ted Lucas Clip → IG (2026-04-19)
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:822: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  today = datetime.utcnow().strftime("%Y-%m-%d")
+  0 updated, 2 created, 0 stale archived
+
+Enriching Content Calendar with IG post data...
+  Enrich: 🔵 VURT Filmmaker Spotlight → IG → Collaborator Tags
+  Enrich: 🔵 Ted Lucas Clip → IG → Collaborator Tags, Hashtags, Caption
+  2 calendar entries enriched
+
+Syncing Frame.io assets to Content Calendar...
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:1130: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  age = (datetime.utcnow() - datetime.fromisoformat(cache["timestamp"])).total_seconds()
+  Crawling Frame.io for social assets...
+  Frame.io token refreshed (expires in 3599s)
+  Found 124 shows in Frame.io
+    Bride To Be: 2 social clips
+    The Love Network Jam: 17 social clips
+    The Parking Lot Series: 8 social clips
+    Schemers: 12 social clips
+    Chicago Boogie: 1 social clips
+    V2: 5 social clips
+    Frenemies: 20 social clips
+    Karma in Heels: 10 social clips
+    The Love Letter: 5 social clips
+    35 & Ticking: 5 social clips
+    Your Husband Is Mine: 5 social clips
+    Yes To Forever: 5 social clips
+    Work Wife: 5 social clips
+    Woman Of God: 5 social clips
+    Who Stole My Wife : 5 social clips
+    Where Love Meets: 5 social clips
+    When Men Cry: 3 social clips
+    What The Heart Wants: 6 social clips
+    Through Thick and Thin: 6 social clips
+    The Wrong Choice: 6 social clips
+    Soul Ties: 6 social clips
+    Song Of Love - Solomon & Sheba: 4 social clips
+    Something Like A Business: 6 social clips
+    She's Not Our Sister: 7 social clips
+    Saving Westbrook High: 6 social clips
+    Saving Grace: 5 social clips
+    Pride-Prejudice, Atlanta: 5 social clips
+    Pretty Kitty Cartel: 5 social clips
+    Pedigree: 5 social clips
+    One Night In Lagos: 5 social clips
+    My Brother's Wife: 5 social clips
+    My Baby Mama: 5 social clips
+    Mr. Right: 5 social clips
+    Lord, All Men Can't Be Dogs: 6 social clips
+    Lil Duval - Living My Best Life: 6 social clips
+    Drawn To You: 6 social clips
+  Total: 223 social clips across all shows
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:1141: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  json.dump({"timestamp": datetime.utcnow().isoformat(), "assets": assets}, f)
+  Frame.io: 160 unique show/clip combinations indexed
+  Frame.io: 36 unique show names
+  0 calendar entries got Frame.io asset links
+
+Done.
+{"type": "task_start", "data": {"task": "VURT Post Log sync", "command": "sync.py --all --auto-create", "timestamp": "2026-04-19T22:02:52Z"}}
+{"type": "result", "data": {"notion_entries_found": 203, "ig_posts_found": 60, "fb_posts_found": 50, "yt_videos_found": 37, "tiktok": "skipped - no token file", "yt_analytics": "skipped - 403 needs channel owner OAuth", "new_entries_created": 0, "metrics_updated": 152, "calendar_reconciled": 0, "calendar_enriched": 0, "frameio_links": 0, "status": "done", "timestamp": "2026-04-19T22:02:52Z"}}
+{"type": "decision", "data": {"note": "All 203 existing entries already in Post Log — 0 new auto-creates needed. 152 entries refreshed with latest platform metrics.", "timestamp": "2026-04-19T22:02:52Z"}}

@@ -1,0 +1,92 @@
+{
+  "text": "You're kidding! Ah, success! Sometimes that's all it takes. What's wrong?",
+  "audio_duration": 30,
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "You're kidding! Ah, success! Sometimes that's all it takes. What's wrong?",
+      "confidence": 0.8159277,
+      "start": 2370,
+      "end": 20095,
+      "words": [
+        {
+          "text": "You're",
+          "start": 2370,
+          "end": 2611,
+          "confidence": 0.6595472,
+          "speaker": "A"
+        },
+        {
+          "text": "kidding!",
+          "start": 2611,
+          "end": 2852,
+          "confidence": 0.44878057,
+          "speaker": "A"
+        },
+        {
+          "text": "Ah,",
+          "start": 5686,
+          "end": 5718,
+          "confidence": 0.71364367,
+          "speaker": "A"
+        },
+        {
+          "text": "success!",
+          "start": 6571,
+          "end": 8922,
+          "confidence": 0.5598787,
+          "speaker": "A"
+        },
+        {
+          "text": "Sometimes",
+          "start": 9984,
+          "end": 10500,
+          "confidence": 0.9561313,
+          "speaker": "A"
+        },
+        {
+          "text": "that's",
+          "start": 10500,
+          "end": 11018,
+          "confidence": 0.7989954,
+          "speaker": "A"
+        },
+        {
+          "text": "all",
+          "start": 11018,
+          "end": 11067,
+          "confidence": 0.99959284,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 11067,
+          "end": 11115,
+          "confidence": 0.9971704,
+          "speaker": "A"
+        },
+        {
+          "text": "takes.",
+          "start": 11115,
+          "end": 15215,
+          "confidence": 0.8721007,
+          "speaker": "A"
+        },
+        {
+          "text": "What's",
+          "start": 19784,
+          "end": 19948,
+          "confidence": 0.9852826,
+          "speaker": "A"
+        },
+        {
+          "text": "wrong?",
+          "start": 19948,
+          "end": 20095,
+          "confidence": 0.984081,
+          "speaker": "A"
+        }
+      ]
+    }
+  ]
+}
