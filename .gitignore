@@ -147,3 +147,8 @@ sagadao-acquihire-deck/
 
 # Secrets
 .secrets/
+
+# Large video files — too big for GitHub (>100MB limit)
+Skills/vurt-captions/footage/**/*.mp4
+Skills/vurt-captions/footage/**/*.mov
+Skills/vurt-captions/footage/**/*.MP4
