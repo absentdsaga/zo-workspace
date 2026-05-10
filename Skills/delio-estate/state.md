@@ -1,6 +1,6 @@
 # Delio Estate — Living State
 
-Last updated: 2026-04-19 (Davie WhatsApp + Gisela iMessage: Tito confirmed as 3rd abogado, casa case advanced, Scotiabank account dormant, two lawyers working, Davie gatekeeping phones from Gisela)
+Last updated: 2026-05-04 (Gisela suspects cousin **Gullen** is behind US identity-theft prong — loan against a house in Delio's name + ongoing SSN misuse. Mom asking where to file federal complaint. Filing path mapped: FTC → SSA OIG → HHS OIG → IC3 → FBI tips → credit reports → CFPB if loan confirmed → credit bureau deceased flags. Gullen unverified — need full name, relation, spelling.)
 
 ## The estate
 
@@ -38,6 +38,7 @@ This is the legal ground truth. Every adversary claim ("Delio owed money to Luis
 - **Amarilys Altagracia Vásquez** ("Mari" / "tía Amarilis") — Delio's sister. Cédula **031-0235285-7**.
 - **"Válido" / "Varido"** — Amarilys's abogado. Son of deceased "koqueta". Described by Davie as a "delincuente"; Davie knows him personally and knows his family. Charging Amarilys 30% of a negotiated amount.
 - **Luis José** ("hermano de cabo") — alleged creditor Amarilys is invoking to claim Delio owed him money. No supporting documentation.
+- **Gullen** (cousin — relation TBC, full name TBC, spelling TBC) — **Gisela suspects he is behind the identity-theft prong** (loan against a house in Delio's name + ongoing SSN misuse). Unverified theory as of 2026-05-04. May be acting in coordination with Amarilys (she has the SS card; Gullen may be the front operating with Delio's identity in transactions). To verify: pull Delio's 3 US credit reports — any account opened post-13-Jun-2021 is the proof.
 
 ## The assets
 
@@ -83,8 +84,15 @@ This is the legal ground truth. Every adversary claim ("Delio owed money to Luis
 - [ ] Scotiabank 302639 — Certificación de Balance + Estado de Cuenta histórico + Relación de Movimientos from 13 Jun 2021 forward
 - [ ] SIB / ProUsuario "Consulta de Información Financiera" (sweep all DR banks by cédula 031-0513268-6)
 - [ ] Recover/reconcile personal documents from safe
-- [ ] **SSA OIG deceased payee fraud report** — file via secure.ssa.gov/oig/fraud/ — category: "Retirement and Survivors Insurance Fraud — deceased payee fraud"
-- [ ] **HHS OIG Medicare fraud tip** — oig.hhs.gov/fraud/report-fraud/ (parallel filing)
+- [ ] **FTC IdentityTheft.gov** — file as next-of-kin/heir of deceased; obtain Identity Theft Report number (anchor for all downstream filings)
+- [ ] **SSA OIG deceased payee fraud report** — file via secure.ssa.gov/oig/fraud/ or 1-800-269-0271 — category: "Deceased payee fraud" + SSN misuse. Name Amarilys (cédula 031-0235285-7) and Gullen if confirmed
+- [ ] **HHS OIG Medicare fraud tip** — oig.hhs.gov/fraud/report-fraud/ or 1-800-HHS-TIPS (parallel filing)
+- [ ] **IC3.gov** (FBI) — wire/internet fraud component (10-yr SOL under 18 USC §1343 because financial-institution wires)
+- [ ] **FBI tips.fbi.gov** — general tip cross-referencing FTC + SSA OIG + IC3 numbers
+- [ ] **Pull Delio's 3 US credit reports** (Experian / Equifax / TransUnion via annualcreditreport.com or direct mail with death cert) — answers the loan-fraud question definitively
+- [ ] **CFPB consumerfinance.gov/complaint** — only if a US loan/credit account is found (forces lender 15-day written response)
+- [ ] **Credit bureau "Deceased — Do Not Issue Credit" flags** — Experian 1-888-397-3742, Equifax 1-866-349-5191, TransUnion 1-833-395-6938 (lockdown step regardless of loan finding)
+- [ ] **State AG of any US state where loan/property fraud occurred** — only if US loan confirmed
 - [ ] Email FBU Santo Domingo (FBU.Santo.Domingo@ssa.gov) with case reference once OIG tip number received
 - [ ] Denuncia penal in Santiago fiscalía (Arts. 405, 408, 265-266 CP + Ley 155-17 lavado, Ley 53-07 if electronic)
 - [ ] Constitución en actor civil within the criminal case

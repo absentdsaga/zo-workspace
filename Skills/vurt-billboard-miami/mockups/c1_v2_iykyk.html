@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1680px; height: 800px; overflow: hidden; background: #222; }
+
+  .board {
+    width: 1680px; height: 800px;
+    background: #0B0B0B; color: #EBEBEB;
+    font-family: 'Inter', sans-serif;
+    padding: 90px 110px;
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+
+  .vurt-logo {
+    position: absolute;
+    top: 60px; right: 100px;
+    font-weight: 900; font-size: 64px;
+    letter-spacing: 0.02em; color: #EBEBEB;
+  }
+
+  .hero {
+    font-weight: 700;
+    font-size: 152px;
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+    color: #EBEBEB;
+    margin-top: 20px;
+  }
+
+  .hero .dim { color: #555; }
+
+  .bottom {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .where {
+    font-weight: 500;
+    font-size: 28px;
+    color: #888;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .cta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 38px;
+    color: #E63946;
+  }
+</style>
+</head>
+<body>
+<div class="board">
+  <div class="vurt-logo">VURT</div>
+  <div class="hero">
+    Rooftop. 5.29.<br>
+    <span class="dim">You know where.</span>
+  </div>
+  <div class="bottom">
+    <div class="where">Opening Night · Miami · Industry Only</div>
+    <div class="cta">myvurt.com/abff →</div>
+  </div>
+</div>
+</body>
+</html>

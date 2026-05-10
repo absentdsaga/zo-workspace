@@ -22,3 +22,23 @@ Format: date | hand 0-10 | spread notes | headache 0-10 | reflux 0-10 | bloat 0-
 - Book: dermatologist (patch test), PCP (Tier 1 labs)
 
 **Baseline photos:** `photos/2026-04-17-palm.jpg`, `photos/2026-04-17-dorsum.jpg` (see `/home/.z/chat-uploads/IMG_9892-02d6e0624ead.jpeg` and `IMG_9893-aab92dd01584.jpeg`)
+
+---
+
+## 2026-05-01 → 2026-05-02 — MAJOR FLARE
+
+**Trigger sequence (3-day stack):**
+- Day 1: Sausages + cheese + bacon (cured meat + aged dairy bomb)
+- Day 2: Pizza (wheat + tomato + cheese)
+- Day 3 (5/01): Active flare — headache, hand bumps multiplied, inflammation
+- Compounding error: took ~5 Advils across the day (NSAIDs worsen MCAS) — 2 on empty stomach late afternoon
+- Rescue: 8 saltines + glass of milk → fresh eggs + rice in butter → Allegra 180mg + Pepcid 20mg
+
+**Recovery: 2026-05-02 morning — feels significantly better.** Continue rescue stack 24-48h to prevent rebound.
+
+**Lessons captured:**
+- 3-day trigger stack = ~3-day flare (not 1 day)
+- NSAID rule: NEVER again during flare. Tylenol only.
+- Leftover meat rule confirmed: rotisserie chicken 24hr+ = no
+- Fresh eggs/beef + rice + butter = reliable safe rescue meal
+- Spreadable butter blend (canola/olive) = okay short-term, swap to Kerrygold

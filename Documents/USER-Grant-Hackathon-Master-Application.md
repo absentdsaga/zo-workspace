@@ -1,7 +1,7 @@
 # U$ER -- Master Grant & Hackathon Application
 ## The Open Mobile QA Layer for Solana
 
-> **Last updated:** April 12, 2026
+> **Last updated:** April 28, 2026
 > **Use this document as:** A modular source for any grant application, hackathon submission, or pitch. Copy the sections you need, adapt the framing to match the program's criteria.
 
 ---

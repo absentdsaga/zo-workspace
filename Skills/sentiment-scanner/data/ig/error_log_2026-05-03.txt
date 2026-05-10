@@ -1,0 +1,27 @@
+Instagram Growth Bot - Run Aborted
+Date: 2026-05-03 10:10 AM ET
+Agent: Scheduled automation
+
+ISSUE ENCOUNTERED:
+The followers dialog approach using Zo's browser tools is hitting severe limitations:
+1. Browser sessions are timing out/closing unexpectedly
+2. Instagram's interface is not stable enough for reliable automation via view_webpage/use_webpage
+3. The followers list loads dynamically and is difficult to navigate programmatically
+4. Each follow action would require multiple steps and is prone to failure
+
+ACTION BLOCKS/ERRORS:
+- Browser session closed unexpectedly during navigation
+- Followers dialog loaded but extracting and clicking individual profiles is unreliable
+- Risk of Instagram detecting automation patterns is HIGH
+
+RECOMMENDATION:
+This growth bot needs a more robust solution:
+1. Use a dedicated Instagram API library (like instagrapi) via Python
+2. Implement proper session management and rate limiting  
+3. Add error recovery and retry logic
+4. Consider using the ig-follow-bot skill mentioned in the instructions
+
+CURRENT STATUS:
+- 0 follows completed
+- 0 unfollows completed
+- Task aborted to prevent account flags

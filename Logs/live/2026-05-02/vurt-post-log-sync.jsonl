@@ -1,0 +1,161 @@
+{"timestamp": "2026-05-02T03:58:00Z", "type": "result", "task": "vurt-post-log-sync", "status": "success", "summary": {"notion_entries_found": 301, "new_entries_auto_created": 0, "metrics_synced": 223, "urls_updated": 0, "calendar_entries_enriched": 0, "frameio_clips_indexed": 211, "log_file": "Logs/live/2026-05-02/vurt-post-log-sync.log"}}
+  Metrics: VURT Clip - FB → Views=44, Likes=0, Shares=0, Comments Count=0, Reach=36
+  Metrics: 35 and Ticking Clip - IG → Views=3533, Likes=116, Saves=16, Shares=8, Comments Count=22, Reach=2867, Avg Watch Time (s)=16.2, Engagement=168
+  Metrics: VURT Clip - FB → Views=247, Likes=2, Shares=0, Comments Count=0, Reach=223
+  Metrics: 35 and Ticking Clip - IG → Views=297, Likes=5, Saves=1, Shares=1, Comments Count=0, Reach=258, Avg Watch Time (s)=6.6, Engagement=8
+  Metrics: 35 and Ticking Clip - FB → Views=279, Likes=0, Shares=0, Comments Count=0, Reach=253
+  Metrics: VURT Clip - IG → Views=1108, Likes=40, Saves=2, Shares=4, Comments Count=4, Reach=792, Avg Watch Time (s)=12.7, Engagement=51
+  Metrics: Favorite Son | A VURT Premiere - YT Shorts → Views=628, Likes=41, Comments Count=0, Total Watch Time (min)=153, Avg Watch Time (s)=22, Engagement=710
+  Metrics: Charisma Carpenter in Bound | Streaming Free on VURT - YT Shorts → Views=706, Likes=48, Comments Count=0, Total Watch Time (min)=176, Avg Watch Time (s)=25, Engagement=802
+  Metrics: VURT Clip - FB → Views=428, Likes=3, Shares=0, Comments Count=0, Reach=404
+  Metrics: 35 and Ticking Clip - IG → Views=1529, Likes=14, Saves=3, Shares=4, Comments Count=0, Reach=1388, Avg Watch Time (s)=10.6, Engagement=23
+  Metrics: VURT Clip - IG → Views=153, Likes=8, Saves=1, Shares=1, Comments Count=3, Reach=122, Avg Watch Time (s)=14.3, Engagement=16
+  Metrics: Bound | A VURT Premiere - YT Shorts → Views=518, Likes=38, Comments Count=0
+  Metrics: Come Back Dad Clip - IG → Views=2375, Likes=52, Saves=15, Shares=3, Comments Count=0, Reach=2161, Avg Watch Time (s)=16.9, Engagement=74 ⏳
+  Metrics: VURT Clip - FB → Views=509, Likes=1, Shares=11, Comments Count=0, Reach=465
+  Metrics: Tatyana Ali in Come Back Dad | A VURT Premiere - YT Shorts → Views=460, Likes=54, Comments Count=0
+  Metrics: Come Back Dad Clip - FB → Views=275, Likes=1, Shares=0, Comments Count=0, Reach=256
+  Metrics: VURT Clip - IG → Views=2003, Likes=8, Saves=2, Shares=2, Comments Count=0, Reach=1875, Avg Watch Time (s)=10.0, Engagement=13 ⏳
+  Metrics: VURT Clip - FB → Views=289, Likes=1, Shares=0, Comments Count=0, Reach=270
+  Metrics: Charisma Carpenter in Bound | A VURT Premiere - YT Shorts → Views=614, Likes=19, Comments Count=0
+  Metrics: VURT Clip - IG → Views=1890, Likes=20, Saves=12, Shares=5, Comments Count=0, Reach=1606, Avg Watch Time (s)=10.5, Engagement=38 ⏳
+  213 entries updated with metrics
+
+Reconciling Content Calendar with Post Log...
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:831: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  today = datetime.utcnow().strftime("%Y-%m-%d")
+  0 updated, 0 created, 0 stale archived
+
+Enriching Content Calendar with IG post data...
+  0 calendar entries enriched
+
+Syncing Frame.io assets to Content Calendar...
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:1139: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  age = (datetime.utcnow() - datetime.fromisoformat(cache["timestamp"])).total_seconds()
+  Crawling Frame.io for social assets...
+  Frame.io token refreshed (expires in 3599s)
+  Found 140 shows in Frame.io
+    Stay At Home Mom: 10 social clips
+    Bride To Be: 2 social clips
+    The Love Network Jam: 17 social clips
+    The Parking Lot Series: 8 social clips
+    Schemers: 12 social clips
+    Chicago Boogie: 1 social clips
+    Bound: 15 social clips
+    V2: 5 social clips
+    Frenemies: 20 social clips
+    Karma in Heels: 10 social clips
+    The Love Letter: 5 social clips
+    35 & Ticking: 25 social clips
+    Your Husband Is Mine: 5 social clips
+    Yes To Forever: 5 social clips
+    Work Wife: 5 social clips
+    Woman Of God: 5 social clips
+    Who Stole My Wife : 5 social clips
+    Where Love Meets: 5 social clips
+    When Men Cry: 3 social clips
+    What The Heart Wants: 6 social clips
+    Through Thick and Thin: 6 social clips
+    The Wrong Choice: 6 social clips
+    Soul Ties: 6 social clips
+    Song Of Love - Solomon & Sheba: 4 social clips
+    Something Like A Business: 9 social clips
+    She's Not Our Sister: 7 social clips
+    Saving Westbrook High: 6 social clips
+    Saving Grace: 5 social clips
+    Pride-Prejudice, Atlanta: 5 social clips
+    Pretty Kitty Cartel: 5 social clips
+    Pedigree: 5 social clips
+    Mr. Right: 5 social clips
+    Marry Me For Christmas: 6 social clips
+    Love Me Some More: 5 social clips
+    Do It For The Gram: 5 social clips
+    Church Boy: 5 social clips
+  Total: 259 social clips across all shows
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:1150: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  json.dump({"timestamp": datetime.utcnow().isoformat(), "assets": assets}, f)
+  Frame.io: 171 unique show/clip combinations indexed
+  Frame.io: 36 unique show names
+  0 calendar entries got Frame.io asset links
+
+Done.
+  Metrics: 35 and Ticking Clip - IG → Views=1541, Likes=14, Saves=3, Shares=4, Comments Count=0, Reach=1398, Avg Watch Time (s)=10.6, Engagement=23
+  Metrics: VURT Clip - IG → Views=159, Likes=8, Saves=1, Shares=1, Comments Count=3, Reach=126, Avg Watch Time (s)=14.3, Engagement=16
+  Metrics: Bound | A VURT Premiere - YT Shorts → Views=529, Likes=38, Comments Count=0, Total Watch Time (min)=128, Avg Watch Time (s)=22, Engagement=605
+  Metrics: Come Back Dad Clip - IG → Views=2542, Likes=53, Saves=17, Shares=3, Comments Count=0, Reach=2291, Avg Watch Time (s)=17.0, Engagement=77 ⏳
+  Metrics: VURT Clip - FB → Views=519, Likes=1, Shares=11, Comments Count=0, Reach=473
+  Metrics: Tatyana Ali in Come Back Dad | A VURT Premiere - YT Shorts → Views=479, Likes=58, Comments Count=0
+  Metrics: Come Back Dad Clip - FB → Views=282, Likes=1, Shares=0, Comments Count=0, Reach=269
+  Metrics: VURT Clip - IG → Views=2118, Likes=10, Saves=2, Shares=2, Comments Count=0, Reach=1988, Avg Watch Time (s)=9.9, Engagement=15 ⏳
+  Metrics: VURT Clip - FB → Views=321, Likes=1, Shares=0, Comments Count=0, Reach=303
+  Metrics: Come Back Dad Clip - FB → Views=397, Likes=5, Shares=0, Comments Count=0, Reach=377
+  Metrics: Charisma Carpenter in Bound | A VURT Premiere - YT Shorts → Views=620, Likes=20, Comments Count=0
+  Metrics: Comeback Dad | A VURT Premiere - YT Shorts → Views=998, Likes=115, Comments Count=2
+  Metrics: VURT Clip - IG → Views=2494, Likes=28, Saves=15, Shares=5, Comments Count=0, Reach=2099, Avg Watch Time (s)=10.2, Engagement=49 ⏳
+  Metrics: Come Back Dad Clip - IG → Views=1552, Likes=100, Saves=20, Shares=13, Comments Count=7, Reach=1122, Avg Watch Time (s)=32.1, Engagement=147 ⏳
+  214 entries updated with metrics
+
+Reconciling Content Calendar with Post Log...
+  Calendar create: 🟢 Come Back Dad Clip → FB (2026-05-02)
+  Calendar create: 🔴 Comeback Dad | A VURT Premiere → YT Shorts (2026-05-02)
+  Calendar create: 🔵 Come Back Dad Clip → IG (2026-05-02)
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:831: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  today = datetime.utcnow().strftime("%Y-%m-%d")
+  0 updated, 3 created, 0 stale archived
+
+Enriching Content Calendar with IG post data...
+  Enrich: 🔵 Come Back Dad Clip → IG → Collaborator Tags, Hashtags, Caption
+  1 calendar entries enriched
+
+Syncing Frame.io assets to Content Calendar...
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:1139: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  age = (datetime.utcnow() - datetime.fromisoformat(cache["timestamp"])).total_seconds()
+  Crawling Frame.io for social assets...
+  Frame.io token refreshed (expires in 3599s)
+  Found 140 shows in Frame.io
+    Stay At Home Mom: 10 social clips
+    Bride To Be: 2 social clips
+    The Love Network Jam: 17 social clips
+    The Parking Lot Series: 8 social clips
+    Schemers: 12 social clips
+    Chicago Boogie: 1 social clips
+    Bound: 15 social clips
+    V2: 5 social clips
+    Frenemies: 20 social clips
+    Karma in Heels: 10 social clips
+    The Love Letter: 5 social clips
+    35 & Ticking: 25 social clips
+    Your Husband Is Mine: 5 social clips
+    Yes To Forever: 5 social clips
+    Work Wife: 5 social clips
+    Woman Of God: 5 social clips
+    Who Stole My Wife : 5 social clips
+    Where Love Meets: 5 social clips
+    When Men Cry: 3 social clips
+    What The Heart Wants: 6 social clips
+    Through Thick and Thin: 6 social clips
+    The Wrong Choice: 6 social clips
+    Soul Ties: 6 social clips
+    Song Of Love - Solomon & Sheba: 4 social clips
+    Something Like A Business: 9 social clips
+    She's Not Our Sister: 7 social clips
+    Saving Westbrook High: 6 social clips
+    Saving Grace: 5 social clips
+    Pride-Prejudice, Atlanta: 5 social clips
+    Pretty Kitty Cartel: 5 social clips
+    Pedigree: 5 social clips
+    One Night In Lagos: 5 social clips
+    My Brother's Wife: 5 social clips
+    My Baby Mama: 5 social clips
+    Mr. Right: 5 social clips
+    Marry Me For Christmas: 6 social clips
+    Loving Hearts: 5 social clips
+    Drawn To You: 6 social clips
+  Total: 270 social clips across all shows
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:1150: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  json.dump({"timestamp": datetime.utcnow().isoformat(), "assets": assets}, f)
+  Frame.io: 179 unique show/clip combinations indexed
+  Frame.io: 38 unique show names
+  0 calendar entries got Frame.io asset links
+
+Done.

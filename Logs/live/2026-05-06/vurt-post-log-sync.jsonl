@@ -1,0 +1,108 @@
+Fetching Post Log from Notion...
+  Found 316 entries
+
+Fetching Instagram posts...
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:179: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow()
+  Found 86 IG posts
+Fetching Facebook posts...
+  FB enriching 1/50...
+  FB enriching 2/50...
+  FB enriching 3/50...
+  FB enriching 4/50...
+  FB enriching 5/50...
+  FB enriching 6/50...
+  FB enriching 7/50...
+  FB enriching 8/50...
+  FB enriching 9/50...
+  FB enriching 10/50...
+  FB enriching 11/50...
+  FB enriching 12/50...
+  FB enriching 13/50...
+  FB enriching 14/50...
+  FB enriching 15/50...
+  FB enriching 16/50...
+  FB enriching 17/50...
+  FB enriching 18/50...
+Enriching Content Calendar with IG post data...
+  0 calendar entries enriched
+
+Syncing Frame.io assets to Content Calendar...
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:1139: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  age = (datetime.utcnow() - datetime.fromisoformat(cache["timestamp"])).total_seconds()
+  Crawling Frame.io for social assets...
+  Frame.io token refreshed (expires in 3599s)
+  Found 146 shows in Frame.io
+    Stay At Home Mom: 11 social clips
+    Bride To Be: 2 social clips
+    The Love Network Jam: 17 social clips
+    The Parking Lot Series: 8 social clips
+    Schemers: 12 social clips
+    Chicago Boogie: 1 social clips
+    Dead 7: 5 social clips
+    Bound: 15 social clips
+    V2: 5 social clips
+    Frenemies: 20 social clips
+    Karma in Heels: 10 social clips
+    The Love Letter: 5 social clips
+    35 & Ticking: 25 social clips
+    Your Husband Is Mine: 5 social clips
+    Yes To Forever: 5 social clips
+    Work Wife: 5 social clips
+    Woman Of God: 5 social clips
+    Who Stole My Wife : 5 social clips
+    Where Love Meets: 5 social clips
+    When Men Cry: 3 social clips
+    What The Heart Wants: 6 social clips
+    Through Thick and Thin: 6 social clips
+    The Wrong Choice: 6 social clips
+    Soul Ties: 6 social clips
+    Song Of Love - Solomon & Sheba: 4 social clips
+    Something Like A Business: 9 social clips
+    She's Not Our Sister: 7 social clips
+    Saving Westbrook High: 6 social clips
+    Saving Grace: 5 social clips
+    Pride-Prejudice, Atlanta: 5 social clips
+    Pretty Kitty Cartel: 5 social clips
+    Pedigree: 5 social clips
+    One Night In Lagos: 5 social clips
+    My Brother's Wife: 5 social clips
+    My Baby Mama: 5 social clips
+    Mr. Right: 5 social clips
+    Marry Me For Christmas: 6 social clips
+    Loving Hearts: 5 social clips
+    Love The One You're With: 5 social clips
+    Love Regardless: 5 social clips
+    Love Me Some More: 5 social clips
+    Love Me Right: 5 social clips
+    Love Found Me: 6 social clips
+    Lord, All Men Can't Be Dogs: 6 social clips
+    Lil Duval - Living My Best Life: 6 social clips
+    Life Happened: 5 social clips
+    Legal Love: 7 social clips
+    Killer Stepdad: 5 social clips
+    Husband Material: 6 social clips
+    Hidden Love: 8 social clips
+    Girl In The Closet: 21 social clips
+    Framed By My Ex: 6 social clips
+    Fell In Love With A Fed: 6 social clips
+    Favorite Son: 5 social clips
+    Fatal Lust: 5 social clips
+    Drops Of Mercy: 5 social clips
+    Drawn To You: 6 social clips
+    Do It For The Gram: 10 social clips
+    Devil You Know: 5 social clips
+    Demented: 5 social clips
+    Crossed Lines: 10 social clips
+    Come Back Dad: 19 social clips
+    Church Boy: 5 social clips
+  Total: 447 social clips across all shows
+/home/workspace/Skills/vurt-post-log/scripts/sync.py:1150: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  json.dump({"timestamp": datetime.utcnow().isoformat(), "assets": assets}, f)
+  Frame.io: 291 unique show/clip combinations indexed
+  Frame.io: 63 unique show names
+  0 calendar entries got Frame.io asset links
+
+Done.
+{"type": "task_start", "timestamp": "2026-05-06T16:02:45Z", "conversation_id": "scheduled-agent-ed8f24cb", "data": {"task": "VURT Post Log sync --all", "agent_id": "ed8f24cb-3786-4711-b222-e9167708592d"}}
+{"type": "result", "timestamp": "2026-05-06T16:02:45Z", "conversation_id": "scheduled-agent-ed8f24cb", "data": {"notion_entries_found": 318, "ig_posts_found": 86, "fb_posts_found": 50, "yt_videos_found": 50, "tiktok": "API unavailable (missing tokens file)", "new_entries_created": 0, "urls_updated": 0, "metrics_updated": 219, "calendar_reconcile": {"updated": 0, "created": 0, "stale_archived": 0}, "calendar_enriched": 0, "frameio_clips_indexed": 75, "frameio_calendar_links": 0, "status": "completed"}}

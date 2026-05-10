@@ -1,5 +1,5 @@
 # VURT Social Ops -- Live State
-### Last Updated: 2026-04-23 (verified live APIs: Meta Graph, YT Data, GA4, Mux)
+### Last Updated: 2026-05-08 (added My Other Mother as active title)
 
 > Companion: `data/channel-winners.md` (per-channel top performers from daily reports).
 > Captions playbook: `Skills/vurt-captions/references/winning-patterns.md` (TikTok save-rate winners, IG clip reel patterns, FB double-drop, YT premiere strategy).
@@ -28,6 +28,15 @@ All CTAs drive to **myvurt.com** (web). NOT app stores.
 ---
 
 ## ACTIVE TITLES
+
+### My Other Mother (NEW — Clip 1 brief delivered 2026-05-08)
+- **Type:** Licensed (Swirl Films, 2014, dir. Stan Foster)
+- **Platforms:** Brief out for IG/IGS/TT/TTS/FB/YT
+- **Active dates:** 2026-05-08 - (ONGOING)
+- **Cast:** Essence Atkins (Candy), Lynn Whitfield (Mary Jo), Jasmine Guy (Evelyn), Kendrick Cross (Lewis — note: Dioni's transcript heard "Louise"), Gregory Alan Williams (Abner), Angie Stone (Delores — posthumous, sensitive)
+- **Slug:** myvurt.com/detail/micro_series/my-other-mother (verify before posting)
+- **Slot used:** CLONE — inner-monologue / confession (CBD Tatyana lineage)
+- **Hook line:** "Don't bring up those people or that place to me again."
 
 ### The Love Network Jam (CURRENT PUSH)
 - **Type:** Original
@@ -127,6 +136,14 @@ Handoff doc in progress: `Documents/VURT-Tracking-Migration-Handoff.md`. Audit r
 - 14d totals: 38,161 reach / 222 saves / 329 shares. Top posts are 2,600–5,985 reach on in-world character lines. Brand/feed plateau: 78–200 reach.
 - Top save-rate IG Reel (14d): "The rule they swore they'd keep" (Favorite Son) 0.79%. IG save-rate runs lower than TikTok; use reach + watch-time (AvgWatch ms) as tiebreakers.
 - Move director spotlights to LinkedIn or IG Stories.
+
+### IG Stories: the dead surface — fix with 4-frame replies-first sequence (NEW 2026-04-29)
+- Last 24h baseline (2026-04-28→29): 5 active frames, **68 total reach (avg 13/frame), 0 replies, 0 link clicks**. Algo reads zero replies as zero share-worthiness → Stories aren't being pushed to followers.
+- Old 3-funnel ladder (reshare → tag → link) is retired. Pure reshares in slot 1 get throttled. Replies are the strongest reach signal IG reads.
+- **New default for every clip post:** 4-frame sequence — (1) native quoted-dialogue or cliffhanger still, (2) reshare with new overlay angle, (3) replies-flywheel sticker (poll/question/quiz/Add Yours), (4) link sticker on cliffhanger frame with stake-specific CTA.
+- **Cadence floor:** 3-4 stories/day minimum. 2 native frames for every 1 reshare.
+- **30-day targets:** 200+ reach/frame, 5-10 replies/sequence, 1%+ link sticker CTR.
+- Spec lives in `Skills/vurt-captions/references/protocol.md` § Output Checklist #5 + `references/interactive-engagement.md`. Every clip caption brief auto-runs this pattern now — no separate ask required.
 
 ### TikTok: save rate is the KPI, upper-third overlay every post
 - 25 of 29 recent posts failed the 1% save threshold. The 4 winners share structure — clone it, run adjacent experiments with written hypotheses (see 70/20/10 framework).

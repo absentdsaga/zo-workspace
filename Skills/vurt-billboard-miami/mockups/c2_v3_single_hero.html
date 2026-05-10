@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1680px; height: 800px; overflow: hidden; background: #222; }
+
+  .board {
+    width: 1680px; height: 800px;
+    background: #0B0B0B; color: #EBEBEB;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    position: relative;
+  }
+
+  .photo-col {
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(135deg, #2a1518 0%, #0B0B0B 70%, #0B0B0B 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4a2528;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 22px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .photo-fade {
+    position: absolute;
+    top: 0; right: 0;
+    width: 200px; height: 100%;
+    background: linear-gradient(to right, transparent, #0B0B0B);
+  }
+
+  .type-col {
+    width: 45%;
+    padding: 100px 80px 80px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .vurt-logo {
+    font-weight: 900;
+    font-size: 70px;
+    letter-spacing: 0.02em;
+    color: #EBEBEB;
+  }
+
+  .tagline {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 0.96;
+    letter-spacing: -0.04em;
+    color: #EBEBEB;
+    margin-top: 36px;
+  }
+
+  .divider {
+    width: 80px;
+    height: 4px;
+    background: #E63946;
+    margin: 36px 0;
+  }
+
+  .free {
+    font-weight: 800;
+    font-size: 38px;
+    color: #E63946;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .url {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 38px;
+    color: #EBEBEB;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="board">
+  <div class="photo-col">
+    <div class="photo-placeholder">[ HERO TALENT PHOTO<br>single face · eyes camera<br>cinematic lighting · pulled from VURT catalog ]</div>
+    <div class="photo-fade"></div>
+  </div>
+  <div class="type-col">
+    <div>
+      <div class="vurt-logo">VURT</div>
+      <div class="tagline">Stories told <span style="color:#E63946">our</span> way.<br>Built for the Culture.</div>
+    </div>
+    <div>
+      <div class="divider"></div>
+      <div class="free">Always free to watch</div>
+      <div class="url">myvurt.com →</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

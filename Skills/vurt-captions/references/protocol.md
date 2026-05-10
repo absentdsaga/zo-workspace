@@ -56,7 +56,11 @@ Default deliverable count = **7**. If Dioni names specific platforms, follow tha
 2. [ ] **TikTok upper-third overlay** — 2-6 words, burned into top third of video, visible in profile-grid square crop. NEVER skip this. The 4 winners all had one.
 3. [ ] **TikTok Stories** — 2-stack, visual-only (no captions): Story 1 reshare post, Story 2 = tag card OR "Send to a friend" prompt sticker (alternate weekly to avoid pattern fatigue)
 4. [ ] **Instagram Reels caption** — character-rooted opening line (not brand language). Tag exec producer + director + top 2 actors in caption body. Collaborator invite list.
-5. [ ] **Instagram Stories** — 3-funnel: Story 1 caption tease (reshare), Story 2 = "Send to a friend" sticker with character-voice prompt (default) OR tag card (alternate), Story 3 link sticker (`myvurt.com`)
+5. [ ] **Instagram Stories — 4-frame replies-first sequence** (default for every clip post, not just Clip 1):
+   - **Frame 1 — Native hook.** Quoted-dialogue still on text-on-black or a held cliffhanger frame. NOT a reshare. The first frame is what the algo reads to decide whether to push the rest.
+   - **Frame 2 — Reshare the Reel** with overlay copy that adds a *new* angle (not the same caption).
+   - **Frame 3 — Replies-flywheel sticker.** Poll, question, quiz, or Add Yours. This is the most important frame — IG Stories reach is reply-weighted; one reply lifts the next 4-5 frames. Never skip.
+   - **Frame 4 — Link sticker on a cliffhanger frame** with cliffhanger CTA copy (see library below). Generic "Watch Now" is dead.
 6. [ ] **Facebook Reel** — title (`<Show Name> | A VURT Original`) + caption with **clickable myvurt.com link in line 1**
 7. [ ] **YouTube Shorts** — title (`<Show Name> | A VURT Original` or named-talent variant) + searchable description with show + cast + director + genre keywords + `myvurt.com`
 
@@ -69,7 +73,15 @@ Default deliverable count = **7**. If Dioni names specific platforms, follow tha
 - **TikTok upper-third:** Pull the most savable phrase from the dialogue or scene stake. Lead with the option that creates intrigue without spoiling.
 - **TikTok / IG Reels — trending audio option:** For every clip brief, also note one trending-audio variant the editor can cut alongside the dialogue version. Trending audio under a scene clip is a cheap algorithm-breaker — the platform reads it as participation in the audio trend and surfaces it to a wider audio-graph audience. Pick audio whose mood matches the scene (tense → tense; flirty → flirty; reveal → drop-style sting). Keep the original dialogue available as a lower-bed if the scene only lands with the line. When recommending a trend, name the sound's vibe and what scene moment to sync the beat-drop to. If you cannot point to a specific current trend, say so — do not invent one.
 - **IG Reels:** 2-4 sentences. Line breaks for scan. Tags in body, not just hashtags. Hashtags at end. **Every IG reel caption must include an open-loop hook (question or unresolved stakes) AND a share CTA** ("Send this to the friend who…", "Tag someone who's been here"). Captions that summarize dropped median comments 71% this week. The data: clip reels with in-world character lines beat brand posts 20-140× on reach.
-- **IG Stories Story 1:** Caption tease, NOT just the post. Story 2: tag card only. Story 3: link sticker only.
+- **IG Stories — per-frame structural rules:**
+  - **Frame 1 (native):** Quoted-dialogue on text-on-black, OR a held still from the clip with overlay copy. Never a pure reshare in slot 1 — pure reshares get throttled.
+  - **Frame 2 (reshare):** New overlay copy — a different angle than the Reel caption. Don't reuse the same line.
+  - **Frame 3 (replies sticker):** Pick from `references/interactive-engagement.md § IG Sticker Picker`. Match sticker to scene type (choice → poll, theory → question, relatable → Add Yours). Polls must be binary and dramatic.
+  - **Frame 4 (link sticker):** Cliffhanger frame + cliffhanger copy. Tie the CTA to the unresolved stake of *this* clip. See cliffhanger-CTA library below.
+  - **Native-vs-reshare ratio:** Across the day, target 2 native frames for every 1 reshare. Pure-reshare days get throttled.
+  - **Cadence floor:** 3-4 stories minimum per day. The 4-frame sequence per clip post counts toward this. Daily presence is non-negotiable for an account this young — Stories sort by recency in the top bar.
+  - **Tag everything:** Cast handles, location, sound on every frame where it fits. Each tag is a distribution lever and a notification (which generates replies).
+  - **Add Yours:** Run one Add Yours template per active title per week — highest-virality story mechanic on IG. Example: *"Drop your favorite Karma in Heels line."*
 - **FB:** Link in line 1, then 2-3 sentences setup, then hashtags. FB is mostly a paid channel now — link still works, but stop framing FB volume as "feed the algo."
 - **YT Shorts title:** Format = `<Show Name> | A VURT Original`. Named talent variant for spotlight clips: `<Star Name> in <Show Name> | A VURT Original`. Title is the brand, not the scene. Compounds for organic search.
 - **YT description:** Minimum 4 lines. Show name + premise + cast + director + `Stream free at myvurt.com` + hashtags. Searchable strings matter — google/organic + google-play/organic are our highest-engagement traffic (88.8% engagement on play store organic per 14d GA4).
@@ -105,12 +117,27 @@ The line a sharer can paste-and-send without editing. One clean sentence in the 
 
 Rule: Shares double when the caption already writes the sharer's reply. Three sentences of setup is worth less than one quotable line.
 
-Story 2 "Send to a friend" sticker prompts (pair one with a silent frame from the clip):
+Story "Send to a friend" sticker prompts (use on Frame 3 when scene is shareable rather than theory-bait; pair with a silent frame from the clip):
 - "Send this to [her / your group chat / the friend who…]"
 - "Who needs to see this?"
 - "DM this to someone who'd scream at this scene."
 
-IG's `send_to_friend` sticker converts shares at roughly 2× the rate of passive reshares. Use Story 2 as the default share slot on the ladder.
+IG's `send_to_friend` sticker converts shares at roughly 2× the rate of passive reshares.
+
+### Cliffhanger CTA library (Frame 4 link sticker copy)
+
+Always tie to the unresolved stake of *this* clip. Generic "Watch Now" is dead.
+- "She found the body. Watch what happens next."
+- "Episode 2 just dropped. Tap to watch."
+- "Find out who the killer is."
+- "He still doesn't know. Watch what happens when she tells him."
+- "The part she doesn't know yet. Tap to see."
+
+### IG Stories success thresholds (30-day target)
+- Reach per frame: **200+** (current baseline ~13)
+- Replies per 4-frame sequence: **5-10**
+- Link sticker CTR: **1%+**
+Below these = the sticker/sequence didn't earn algo lift. Study the frame that broke and replace it next post.
 
 ---
 
@@ -163,4 +190,4 @@ After every weekly data refresh (vurt-daily-report), `references/winning-pattern
 - Update the success-metrics thresholds if save-rate distribution shifts
 - Re-version this protocol file with date
 
-Last updated: 2026-04-23.
+Last updated: 2026-04-29 — IG Stories spec rewritten from 3-funnel reshare-first ladder to 4-frame replies-first sequence (native hook → reshare → replies sticker → cliffhanger link sticker). Driven by current Stories data: 5 frames live yesterday, 68 total reach, 0 replies, 0 link clicks → reach is reply-weighted, current pattern starves the algo.

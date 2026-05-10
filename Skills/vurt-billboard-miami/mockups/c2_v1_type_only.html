@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1680px; height: 800px; overflow: hidden; background: #222; }
+
+  .board {
+    width: 1680px; height: 800px;
+    background: #0B0B0B; color: #EBEBEB;
+    font-family: 'Inter', sans-serif;
+    padding: 90px 110px;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .vurt-logo {
+    font-weight: 900;
+    font-size: 80px;
+    letter-spacing: 0.02em;
+    color: #EBEBEB;
+  }
+
+  .free {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 28px;
+    color: #888;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 18px;
+  }
+
+  .hero {
+    font-weight: 700;
+    font-size: 156px;
+    line-height: 0.94;
+    letter-spacing: -0.045em;
+    color: #EBEBEB;
+  }
+
+  .hero .accent {
+    color: #E63946;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .url {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 42px;
+    color: #EBEBEB;
+  }
+</style>
+</head>
+<body>
+<div class="board">
+  <div class="top">
+    <div class="vurt-logo">VURT</div>
+    <div class="free">Always Free To Watch</div>
+  </div>
+  <div class="hero">
+    Stories told <span class="accent">our</span> way.<br>
+    Built for the Culture.
+  </div>
+  <div class="bottom">
+    <div></div>
+    <div class="url">myvurt.com →</div>
+  </div>
+</div>
+</body>
+</html>

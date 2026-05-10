@@ -1,0 +1,30 @@
+{"type": "task_start", "task": "VURT Trello Daily Maintenance", "time": "2026-04-28"}
+{"type": "decision", "task": "TASK1", "detail": "Found 'This Week' list ID: 69c06762ac8ecd537850ba8e"}
+{"type": "result", "task": "TASK1", "detail": "Found 16 cards in 'This Week'"}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69c13e5a3dbe8f1f5c6769a4", "card_name": "Weekly Triage: Review Inbox, prioritize This Week", "new_pos": 1024}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69c07be95174398ac2f62f5e", "card_name": "Wednesday deep dive with Tarik -- blitz sync + SEO timeline", "new_pos": 2048}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69c1c3298cb6cc5194236ea4", "card_name": "[DEV] Request Enveu: Add Meta SDK to VURT App", "new_pos": 3072}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69c07010e2c5d0b192954140", "card_name": "Add Apple Smart App Banner to myvurt.com", "new_pos": 4096}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69c0700d7eaf95089948f202", "card_name": "Fix mobile footer -- social links invisible on mobile", "new_pos": 5120}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69c0700f41676b2729ca4f83", "card_name": "Fix share links routing to vurt.enveu.link", "new_pos": 6144}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69c070119d577cef12b96481", "card_name": "Deploy foundation pixels via GTM", "new_pos": 7168}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69c0735f9a9c5c9a5cd20c78", "card_name": "Move download app button to top of website", "new_pos": 8192}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69c07360d2c4ee1b9163e163", "card_name": "Add age prompt after clicking on a title", "new_pos": 9216}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69ca74be0b6472576d867e13", "card_name": "Weekly Triage: Review Inbox, prioritize This Week", "new_pos": 10240}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69d3af508e89b6abeff8c400", "card_name": "Weekly Triage: Review Inbox, prioritize This Week", "new_pos": 11264}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69dcea7ca92d9fb008cc0cae", "card_name": "Weekly Triage: Review Inbox, prioritize This Week", "new_pos": 12288}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69e624462219036a1bc88661", "card_name": "Weekly Triage: Review Inbox, prioritize This Week", "new_pos": 13312}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69ef5f561cbb3ddcd4e633f5", "card_name": "Weekly Triage: Review Inbox, prioritize This Week", "new_pos": 14336}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69c1a6b3809d6602e7977279", "card_name": "Send editable (word version) of VURT Target demographic research doc", "new_pos": 15360}
+{"type": "tool_call", "task": "TASK1", "action": "PUT /1/cards/{id}/pos", "card_id": "69c2f7d6a5ac90a63a76edfd", "card_name": "Filmmaker spotlight post and promo for Nita K \\ Chicago Boogie", "new_pos": 16384}
+{"type": "result", "task": "TASK1", "detail": "Sorted 16 cards in 'This Week' by due date (nulls last)"}
+{"type": "decision", "task": "TASK2", "detail": "Found 'In Progress' list ID: 69c0676135c8a806ea58e2a5"}
+{"type": "result", "task": "TASK2", "detail": "Found 6 stale cards (>5 days inactive) in 'In Progress'"}
+{"type": "decision", "task": "TASK2", "detail": "Stale label already exists: 69c06d926bbfae785580fb39"}
+{"type": "result", "task": "TASK2", "detail": "Card 'Get subtitles vendor -- evaluate Rev.com vs AssemblyAI plugin' already has Stale label, skipping"}
+{"type": "result", "task": "TASK2", "detail": "Card 'Get SEO update timeline from Enveu for Tarik' already has Stale label, skipping"}
+{"type": "result", "task": "TASK2", "detail": "Card 'Set up Week 1 content calendar (Mar 24-30)' already has Stale label, skipping"}
+{"type": "result", "task": "TASK2", "detail": "Card 'Need VURT drops from Karma In Hills director and actors' already has Stale label, skipping"}
+{"type": "result", "task": "TASK2", "detail": "Card 'Create a \"CREATOR SPOTLIGHT\" schedule' already has Stale label, skipping"}
+{"type": "result", "task": "TASK2", "detail": "Card 'Bus Ad \u2014 Static Design (Stars + Titles + App GFX)' already has Stale label, skipping"}
+{"type": "result", "task": "TASK2", "detail": "Flagged 6 stale cards with label '69c06d926bbfae785580fb39'"}

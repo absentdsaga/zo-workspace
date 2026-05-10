@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1680px; height: 800px; overflow: hidden; background: #222; }
+
+  .board {
+    width: 1680px;
+    height: 800px;
+    background: #0B0B0B;
+    color: #EBEBEB;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    padding: 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .hero {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 200px;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: #EBEBEB;
+  }
+
+  .hero .accent {
+    color: #E63946;
+  }
+
+  .vurt-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 72px;
+    letter-spacing: 0.02em;
+    color: #EBEBEB;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .meta {
+    border-left: 4px solid #E63946;
+    padding-left: 28px;
+    max-width: 900px;
+  }
+
+  .event {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    color: #EBEBEB;
+    letter-spacing: 0.01em;
+    margin-bottom: 14px;
+  }
+
+  .hosts {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: #888;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+  }
+
+  .cta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 44px;
+    color: #E63946;
+    letter-spacing: -0.01em;
+  }
+</style>
+</head>
+<body>
+<div class="board">
+  <div class="top-row">
+    <div class="hero">
+      BY INVITATION.<br>
+      <span class="accent">ROOFTOP. 5.29.</span>
+    </div>
+    <div class="vurt-logo">VURT</div>
+  </div>
+
+  <div class="bottom">
+    <div class="meta">
+      <div class="event">Opening Night · Gates Hotel South Beach</div>
+      <div class="hosts">Hosted by Tarik Brooks · Ted Lucas · Hilmon Sorey · Eric Tomosunas</div>
+    </div>
+    <div class="cta">myvurt.com/abff →</div>
+  </div>
+</div>
+</body>
+</html>

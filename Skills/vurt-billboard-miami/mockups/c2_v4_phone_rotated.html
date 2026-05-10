@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1680px; height: 800px; overflow: hidden; background: #000; }
+
+  .board {
+    position: relative;
+    width: 1680px; height: 800px;
+    background: #0B0B0B;
+    color: #EBEBEB;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+  }
+
+  /* PHONE — laid sideways, fills nearly the whole canvas.
+     Phone aspect 9:19.5 portrait → 19.5:9 landscape. At 800h it's 1733w; we cap at 1500w with margin. */
+  .phone {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1560px;
+    height: 720px;
+    transform: translate(-50%, -50%);
+    background: #0B0B0B;
+    border: 14px solid #1a1a1a;
+    border-radius: 70px;
+    box-shadow:
+      inset 0 0 0 2px #2c2c2c,
+      0 18px 40px rgba(0,0,0,0.7),
+      0 0 80px rgba(255,255,255,0.06);
+    overflow: hidden;
+  }
+
+  /* Dynamic island — phone rotated 90° CLOCKWISE (right) from portrait
+     means the top-of-phone (where notch lives) is now on the RIGHT edge. */
+  .island {
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 130px;
+    background: #000;
+    border-radius: 9px;
+    z-index: 10;
+    box-shadow: inset 0 0 0 1px #0a0a0a, 0 0 14px rgba(0,0,0,0.6);
+  }
+
+  /* The screen content. Source image is portrait (9:16). When phone is rotated 90°cw,
+     we need the image rotated 90°cw inside the screen so it visually "fills" the landscape phone. */
+  .screen-wrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .screen-img {
+    position: absolute;
+    /* Portrait source rotated 90° CLOCKWISE (right).
+       Pre-rotation set width=phone-height, height=phone-width so post-rotation fills the phone. */
+    width: 720px;   /* becomes height after rotation */
+    height: 1560px; /* becomes width after rotation */
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    transform: translate(-50%, -50%) rotate(90deg);
+    object-fit: cover;
+  }
+
+  /* Subtle inner frame highlight to read as glass */
+  .screen-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 200px rgba(0,0,0,0.4);
+  }
+
+  /* VURT branding — reads HORIZONTALLY. Anchored LEFT side so it doesn't collide
+     with the dynamic island on the right edge of the rotated phone. */
+  .brand-stack {
+    position: absolute;
+    top: 70px;
+    left: 110px;
+    z-index: 20;
+    text-align: left;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.85);
+  }
+
+  .vurt-logo {
+    font-weight: 900;
+    font-size: 130px;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    color: #EBEBEB;
+  }
+
+  .tagline {
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -0.01em;
+    color: #EBEBEB;
+    margin-top: 14px;
+    line-height: 1.1;
+  }
+
+  .footer {
+    position: absolute;
+    left: 110px;
+    bottom: 60px;
+    z-index: 20;
+    text-align: left;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.85);
+  }
+
+  .free {
+    font-weight: 800;
+    font-size: 22px;
+    color: #E63946;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .url {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 36px;
+    color: #EBEBEB;
+  }
+</style>
+</head>
+<body>
+<div class="board">
+  <div class="phone">
+    <div class="screen-wrap">
+      <img class="screen-img" src="../assets/phone_screen_clean.jpg" alt="">
+      <div class="screen-glow"></div>
+    </div>
+    <div class="island"></div>
+  </div>
+
+  <div class="brand-stack">
+    <div class="vurt-logo">VURT</div>
+    <div class="tagline">Vertical Cinema.<br>Built for the Culture.</div>
+  </div>
+
+  <div class="footer">
+    <div class="free">Always free to watch</div>
+    <div class="url">myvurt.com</div>
+  </div>
+</div>
+</body>
+</html>
