@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-05-08T14:58:51.119344",
+  "timestamp": "2026-05-10T13:17:13.222789",
   "platforms": {
     "youtube": {
       "platform": "youtube",
       "handle": "@myVURT1",
-      "subscribers": 1220,
-      "videos": 66,
-      "total_views": 401325,
+      "subscribers": 1230,
+      "videos": 70,
+      "total_views": 404419,
       "top_videos": [],
       "error": null,
       "_prev": {
@@ -2542,17 +2542,17 @@
         "videos_delta": 1,
         "total_views_delta": 2908
       },
-      "subscribers_delta": 0,
-      "videos_delta": 2,
-      "total_views_delta": -14662
+      "subscribers_delta": 10,
+      "videos_delta": 6,
+      "total_views_delta": -11568
     },
     "tiktok": {
       "platform": "tiktok",
       "handle": "@myvurt",
-      "followers": 203,
-      "likes": 3708,
+      "followers": 205,
+      "likes": 3896,
       "following": 1,
-      "posts": 62,
+      "posts": 66,
       "top_posts": [
         {
           "caption": "He tried to stand up for himself. She stood him back down. Something Like A Busi",
@@ -3621,16 +3621,16 @@
         "likes_delta": 60,
         "posts_delta": 0
       },
-      "followers_delta": 1,
-      "likes_delta": 28,
-      "posts_delta": 2
+      "followers_delta": 3,
+      "likes_delta": 216,
+      "posts_delta": 6
     },
     "x": {
       "platform": "x",
       "handle": "@myvurt",
       "followers": 11,
       "following": 0,
-      "posts": 40,
+      "posts": 43,
       "error": null,
       "_prev": {
         "platform": "x",
@@ -4294,95 +4294,295 @@
         "posts_delta": 10
       },
       "followers_delta": 1,
-      "posts_delta": 2
+      "posts_delta": 5
     },
     "instagram": {
       "platform": "instagram",
       "handle": "@myvurt",
-      "followers": 11351,
-      "posts": 100,
-      "following": 19,
-      "reach_7d": 171778,
-      "profile_views_7d": 2034,
-      "accounts_engaged_7d": 11091,
-      "total_interactions_7d": 15135,
-      "likes_7d": 10123,
-      "comments_7d": 213,
-      "shares_7d": 1026,
-      "saves_7d": 2315,
+      "followers": 11795,
+      "posts": 104,
+      "following": 18,
+      "reach_7d": 174681,
+      "profile_views_7d": 2234,
+      "accounts_engaged_7d": 12101,
+      "total_interactions_7d": 16968,
+      "likes_7d": 11099,
+      "comments_7d": 217,
+      "shares_7d": 1266,
+      "saves_7d": 2596,
       "active_stories": [
         {
-          "id": "17883887253395971",
+          "id": "18158600467456041",
           "type": "IMAGE",
-          "permalink": "https://www.instagram.com/stories/myvurt/3891968692024638949",
-          "timestamp": "2026-05-07T18:34:04+0000",
-          "date": "2026-05-07",
-          "reach": 20,
+          "permalink": "https://www.instagram.com/stories/myvurt/3893630625525698556",
+          "timestamp": "2026-05-10T01:36:00+0000",
+          "date": "2026-05-10",
+          "reach": 7,
           "replies": 0,
-          "taps_forward": 17,
-          "taps_back": 2,
-          "exits": 5,
+          "taps_forward": 4,
+          "taps_back": null,
+          "exits": 2,
+          "profile_visits": 0,
+          "link_clicks": null
+        },
+        {
+          "id": "18013835927894305",
+          "type": "IMAGE",
+          "permalink": "https://www.instagram.com/stories/myvurt/3893629119787305450",
+          "timestamp": "2026-05-10T01:33:01+0000",
+          "date": "2026-05-10",
+          "reach": 8,
+          "replies": 0,
+          "taps_forward": 6,
+          "taps_back": null,
+          "exits": 1,
+          "profile_visits": 1,
+          "link_clicks": null
+        },
+        {
+          "id": "18064010090410780",
+          "type": "VIDEO",
+          "permalink": "https://www.instagram.com/stories/myvurt/3893597897287675618",
+          "timestamp": "2026-05-10T00:36:19+0000",
+          "date": "2026-05-10",
+          "reach": 9,
+          "replies": 0,
+          "taps_forward": 8,
+          "taps_back": 1,
+          "exits": null,
           "profile_visits": 0,
           "link_clicks": null,
           "swipes": 1
         },
         {
-          "id": "17893655691463940",
+          "id": "18116914879670747",
           "type": "IMAGE",
-          "permalink": "https://www.instagram.com/stories/myvurt/3891968330400107082",
-          "timestamp": "2026-05-07T18:33:20+0000",
-          "date": "2026-05-07",
-          "reach": 23,
+          "permalink": "https://www.instagram.com/stories/myvurt/3893320546662589511",
+          "timestamp": "2026-05-09T15:19:57+0000",
+          "date": "2026-05-09",
+          "reach": 16,
           "replies": 0,
-          "taps_forward": 19,
-          "taps_back": 1,
-          "exits": 1,
-          "profile_visits": 1,
+          "taps_forward": 14,
+          "taps_back": null,
+          "exits": 2,
+          "profile_visits": 0,
+          "link_clicks": null
+        },
+        {
+          "id": "18119239228731408",
+          "type": "VIDEO",
+          "permalink": "https://www.instagram.com/stories/myvurt/3893319843865017397",
+          "timestamp": "2026-05-09T15:19:03+0000",
+          "date": "2026-05-09",
+          "reach": 21,
+          "replies": 0,
+          "taps_forward": 15,
+          "taps_back": null,
+          "exits": 4,
+          "profile_visits": 2,
+          "link_clicks": null
+        },
+        {
+          "id": "18051378458736008",
+          "type": "IMAGE",
+          "permalink": "https://www.instagram.com/stories/myvurt/3893319904816650599",
+          "timestamp": "2026-05-09T15:18:40+0000",
+          "date": "2026-05-09",
+          "reach": 21,
+          "replies": 0,
+          "taps_forward": 14,
+          "taps_back": null,
+          "exits": 3,
+          "profile_visits": 0,
           "link_clicks": null,
           "swipes": 1
         },
         {
-          "id": "18077176190199159",
-          "type": "VIDEO",
-          "permalink": "https://www.instagram.com/stories/myvurt/3891967264660990068",
-          "timestamp": "2026-05-07T18:32:03+0000",
-          "date": "2026-05-07",
-          "reach": 47,
+          "id": "17883940032394436",
+          "type": "IMAGE",
+          "permalink": "https://www.instagram.com/stories/myvurt/3893318695867513602",
+          "timestamp": "2026-05-09T15:16:17+0000",
+          "date": "2026-05-09",
+          "reach": 26,
           "replies": 0,
-          "taps_forward": 21,
+          "taps_forward": 17,
           "taps_back": null,
-          "exits": 22,
-          "profile_visits": 6,
+          "exits": 3,
+          "profile_visits": 3,
           "link_clicks": null,
-          "swipes": 6
+          "swipes": 1
         }
       ],
-      "active_stories_count": 3,
-      "active_stories_reach_total": 90,
+      "active_stories_count": 7,
+      "active_stories_reach_total": 108,
       "active_stories_replies_total": 0,
       "active_stories_link_clicks_total": 0,
       "top_posts": [
         {
-          "caption": "Your card\u2019s been declined.\u201d\n\nShe said it loud enough for the",
-          "likes": 13,
+          "caption": "\u201cI finally jumped on the vertical bandwagon.\u201d\n\n@brittneyqhil",
+          "likes": 8,
+          "comments": 2,
+          "type": "VIDEO",
+          "date": "2026-05-09",
+          "reach": 186,
+          "views": 223,
+          "saves": 0,
+          "shares": 20,
+          "comments_with_replies": 2,
+          "comment_list": [
+            {
+              "user": "",
+              "text": "\ud83d\ude4c\ud83d\ude4c\ud83d\ude4c",
+              "date": "2026-05-09",
+              "post_caption": "\u201cI finally jumped on the vertical bandwa"
+            },
+            {
+              "user": "",
+              "text": "\u21b3 @sonharaeastman \ud83d\udc78",
+              "date": "2026-05-10",
+              "post_caption": "\u201cI finally jumped on the vertical bandwa"
+            }
+          ]
+        },
+        {
+          "caption": "\u201cI want to know who I belong to.\u201d\n\nCandy didn\u2019t know that qu",
+          "likes": 151,
+          "comments": 2,
+          "type": "VIDEO",
+          "date": "2026-05-09",
+          "reach": 2993,
+          "views": 3455,
+          "saves": 21,
+          "shares": 9,
+          "comments_with_replies": 2,
+          "comment_list": [
+            {
+              "user": "",
+              "text": "absolutely love this movie \ud83d\ude0d",
+              "date": "2026-05-10",
+              "post_caption": "\u201cI want to know who I belong to.\u201d\n\nCandy"
+            },
+            {
+              "user": "",
+              "text": "\u21b3 @adreanadotson I do too!",
+              "date": "2026-05-10",
+              "post_caption": "\u201cI want to know who I belong to.\u201d\n\nCandy"
+            }
+          ]
+        },
+        {
+          "caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI don\u2019t want to be at",
+          "likes": 59,
+          "comments": 11,
+          "type": "VIDEO",
+          "date": "2026-05-08",
+          "reach": 696,
+          "views": 1041,
+          "saves": 2,
+          "shares": 3,
+          "comments_with_replies": 11,
+          "comment_list": [
+            {
+              "user": "",
+              "text": "\ud83d\udc4f\ud83d\udc4f\ud83d\udc4f\ud83d\udc4f",
+              "date": "2026-05-09",
+              "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+            },
+            {
+              "user": "",
+              "text": "\u21b3 @jusjen28 wooooo!",
+              "date": "2026-05-10",
+              "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+            },
+            {
+              "user": "",
+              "text": "OK Stiggs!  I see yall fam!! Love you bro!",
+              "date": "2026-05-09",
+              "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+            },
+            {
+              "user": "",
+              "text": "\u21b3 @clink2112 God is STILL good, brother! Mad love!",
+              "date": "2026-05-09",
+              "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+            },
+            {
+              "user": "",
+              "text": "\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02",
+              "date": "2026-05-09",
+              "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+            },
+            {
+              "user": "",
+              "text": "Wait @brittneyqhill & @stiggah_man\u2026 yeah this a hit already",
+              "date": "2026-05-09",
+              "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+            },
+            {
+              "user": "",
+              "text": "\u21b3 @dat_guywill literally one of my favorite people to work with! @brittneyqhill We are due for anotha one! \ud83d\ude4c\ud83c\udffe\u2728",
+              "date": "2026-05-09",
+              "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+            },
+            {
+              "user": "",
+              "text": "\u21b3 @dat_guywill yoooo! You know Stiggah! Thats my guy! @stiggah_man Looove working with you too! We are absolutel",
+              "date": "2026-05-09",
+              "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+            },
+            {
+              "user": "",
+              "text": "You look great on cam!",
+              "date": "2026-05-09",
+              "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+            },
+            {
+              "user": "",
+              "text": "Mind you\u2026They didn\u2019t leave a tip \ud83d\ude05",
+              "date": "2026-05-08",
+              "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+            },
+            {
+              "user": "",
+              "text": "\u21b3 @stiggah_man unforgivable",
+              "date": "2026-05-09",
+              "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+            }
+          ]
+        },
+        {
+          "caption": "\u201cIf you want to remain my manager. Don\u2019t bring up those peop",
+          "likes": 67,
           "comments": 0,
           "type": "VIDEO",
           "date": "2026-05-08",
-          "reach": 1380,
-          "views": 1526,
+          "reach": 2360,
+          "views": 2653,
+          "saves": 12,
+          "shares": 9,
+          "comments_with_replies": 0
+        },
+        {
+          "caption": "Your card\u2019s been declined.\u201d\n\nShe said it loud enough for the",
+          "likes": 16,
+          "comments": 0,
+          "type": "VIDEO",
+          "date": "2026-05-08",
+          "reach": 2301,
+          "views": 2502,
           "saves": 0,
           "shares": 1,
           "comments_with_replies": 0
         },
         {
           "caption": "\u201c\u00c9l es el mejor. Bueno, el segundo mejor.\u201d\n\nShe pawned her r",
-          "likes": 8,
+          "likes": 9,
           "comments": 1,
           "type": "VIDEO",
           "date": "2026-05-07",
-          "reach": 1749,
-          "views": 2031,
-          "saves": 2,
+          "reach": 2204,
+          "views": 2571,
+          "saves": 4,
           "shares": 5,
           "comments_with_replies": 1,
           "comment_list": [
@@ -4396,12 +4596,12 @@
         },
         {
           "caption": "\u201cNext time, try to take your card back before you charge $2,",
-          "likes": 156,
+          "likes": 164,
           "comments": 10,
           "type": "VIDEO",
           "date": "2026-05-06",
-          "reach": 1164,
-          "views": 2045,
+          "reach": 1264,
+          "views": 2205,
           "saves": 6,
           "shares": 15,
           "comments_with_replies": 10,
@@ -4470,12 +4670,12 @@
         },
         {
           "caption": "Backstreet Boys + NSYNC. Zombies. An abandoned train. En esp",
-          "likes": 11,
+          "likes": 12,
           "comments": 1,
           "type": "VIDEO",
           "date": "2026-05-06",
-          "reach": 1297,
-          "views": 1547,
+          "reach": 1682,
+          "views": 1993,
           "saves": 4,
           "shares": 6,
           "comments_with_replies": 1,
@@ -4490,12 +4690,12 @@
         },
         {
           "caption": "VURT Filmmakers Spotlight: Sonhara Eastman.\n\nWriter and dire",
-          "likes": 53,
+          "likes": 59,
           "comments": 14,
           "type": "IMAGE",
           "date": "2026-05-05",
-          "reach": 362,
-          "views": 734,
+          "reach": 383,
+          "views": 771,
           "saves": 2,
           "shares": 7,
           "comments_with_replies": 14,
@@ -4588,12 +4788,12 @@
         },
         {
           "caption": "\u201cNo me decepciones, Lupita.\u201d\n\nBackstreet Boys. NSYNC. 98 Deg",
-          "likes": 16,
+          "likes": 17,
           "comments": 3,
           "type": "VIDEO",
           "date": "2026-05-05",
-          "reach": 1852,
-          "views": 2177,
+          "reach": 1875,
+          "views": 2203,
           "saves": 3,
           "shares": 7,
           "comments_with_replies": 3,
@@ -4620,16 +4820,28 @@
         },
         {
           "caption": "\u201cIt\u2019s got a lot of laughs and a lot of heart.\u201d\n\nSAHM premier",
-          "likes": 67,
-          "comments": 17,
+          "likes": 72,
+          "comments": 19,
           "type": "VIDEO",
           "date": "2026-05-04",
-          "reach": 961,
-          "views": 1461,
+          "reach": 1018,
+          "views": 1553,
           "saves": 1,
           "shares": 5,
-          "comments_with_replies": 17,
+          "comments_with_replies": 19,
           "comment_list": [
+            {
+              "user": "",
+              "text": "Congratulations \ud83c\udf8a \ud83d\udc4f\ud83c\udfff \ud83d\udc90",
+              "date": "2026-05-08",
+              "post_caption": "\u201cIt\u2019s got a lot of laughs and a lot of h"
+            },
+            {
+              "user": "",
+              "text": "\u21b3 @dani_guevarez Thank you \ud83d\ude0a",
+              "date": "2026-05-08",
+              "post_caption": "\u201cIt\u2019s got a lot of laughs and a lot of h"
+            },
             {
               "user": "",
               "text": "Looks like you got some \ud83d\udd25 tracks. this could work well for sync licensing in films, shows, or games. DropDaySync is wort",
@@ -4707,33 +4919,99 @@
               "text": "So excited about SAHM premiering on @myvurt \ud83d\ude4c",
               "date": "2026-05-04",
               "post_caption": "\u201cIt\u2019s got a lot of laughs and a lot of h"
-            },
-            {
-              "user": "",
-              "text": "\u21b3 @sonharaeastman Excited for you!!",
-              "date": "2026-05-04",
-              "post_caption": "\u201cIt\u2019s got a lot of laughs and a lot of h"
-            },
-            {
-              "user": "",
-              "text": "\u21b3 @carmenkjones \u2764\ufe0f\u2764\ufe0f\u2764\ufe0f",
-              "date": "2026-05-05",
-              "post_caption": "\u201cIt\u2019s got a lot of laughs and a lot of h"
             }
           ]
         },
         {
           "caption": "\u201cWhere was he when daddy kept calling for him?\u201d\n\nMama tried ",
-          "likes": 4316,
-          "comments": 57,
+          "likes": 5661,
+          "comments": 76,
           "type": "VIDEO",
           "date": "2026-05-04",
-          "reach": 65862,
-          "views": 80525,
-          "saves": 1275,
-          "shares": 484,
-          "comments_with_replies": 57,
+          "reach": 80601,
+          "views": 99889,
+          "saves": 1695,
+          "shares": 646,
+          "comments_with_replies": 76,
           "comment_list": [
+            {
+              "user": "",
+              "text": "Fun fact: Mama is played by Elizabeth Omilami who is the daughter of Civil Rights legend Hosea Williams and she is also ",
+              "date": "2026-05-10",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
+            {
+              "user": "",
+              "text": "I\u2019m confused. Was that woman supposed to be Loretta Devine\u2019s mother??? I watched this scene like, \u201cAre they sisters? In ",
+              "date": "2026-05-10",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
+            {
+              "user": "",
+              "text": "When she said \"no ma'am\" while her mama was fixing her wig killed me\u2620\ufe0f\ud83d\ude2d\ud83d\ude2d\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02",
+              "date": "2026-05-10",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
+            {
+              "user": "",
+              "text": "\u21b3 @inia.fj \ud83e\udd23 it was drama",
+              "date": "2026-05-10",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
+            {
+              "user": "",
+              "text": "\ud83d\udd25\ud83d\udd25POWERFUL ACTIRS AND ACTRESSES IN THIS REALITY FINE \ud83c\udf7f MOVIE.",
+              "date": "2026-05-09",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
+            {
+              "user": "",
+              "text": "\u21b3 @lorea_queen true!",
+              "date": "2026-05-10",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
+            {
+              "user": "",
+              "text": "I never heard of this movie what it call ?",
+              "date": "2026-05-09",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
+            {
+              "user": "",
+              "text": "\u21b3 @kavinnnnnn Come Back Dad streamin on the VURT app free",
+              "date": "2026-05-10",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
+            {
+              "user": "",
+              "text": "I enjoyed this movie. \ud83c\udfa5",
+              "date": "2026-05-09",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
+            {
+              "user": "",
+              "text": "Anything with Ms. Loretta Devine it in going be great ! Where\u2019s my popcorn \ud83c\udf7f \ud83d\ude01\ud83d\ude01\ud83d\ude01",
+              "date": "2026-05-09",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
+            {
+              "user": "",
+              "text": "",
+              "date": "2026-05-09",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
+            {
+              "user": "",
+              "text": "",
+              "date": "2026-05-09",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
+            {
+              "user": "",
+              "text": "What movie is this",
+              "date": "2026-05-09",
+              "post_caption": "\u201cWhere was he when daddy kept calling fo"
+            },
             {
               "user": "",
               "text": "I am WEAK at the mama fixing Loretta wiiiiig!!!",
@@ -4745,97 +5023,19 @@
               "text": "Name please",
               "date": "2026-05-08",
               "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "Sad",
-              "date": "2026-05-08",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "\ud83d\ude22\ud83d\ude22\ud83d\ude22\ud83d\ude22",
-              "date": "2026-05-07",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "@ms_lacks",
-              "date": "2026-05-07",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "Family ain't family without ACCOUNTABILITY",
-              "date": "2026-05-07",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\ud83d\udc4f\ud83d\udc4f\ud83d\ude22\ud83d\ude22\ud83d\ude02",
-              "date": "2026-05-06",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "Yes",
-              "date": "2026-05-06",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "ROC!",
-              "date": "2026-05-06",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
-              "date": "2026-05-06",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "Name please \u2764\ufe0f",
-              "date": "2026-05-05",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "Ashley this is not the behavior Aunt Viv doesn\u2019t like to see at all",
-              "date": "2026-05-05",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "@tatyanaali \ud83d\udd25\ud83d\udd25 love you love you.",
-              "date": "2026-05-05",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "I gotta see this today\ud83d\ude01",
-              "date": "2026-05-05",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
-            },
-            {
-              "user": "",
-              "text": "I love me some Miss Loretta Divine but baby I was ready to fight right along  with Cousin Tatyana because not my mama sw",
-              "date": "2026-05-05",
-              "post_caption": "\u201cWhere was he when daddy kept calling fo"
             }
           ]
         },
         {
           "caption": "\u201cShe has a scar on her knee that she tells people came from ",
-          "likes": 384,
+          "likes": 435,
           "comments": 10,
           "type": "VIDEO",
           "date": "2026-05-03",
-          "reach": 8727,
-          "views": 9968,
-          "saves": 59,
-          "shares": 19,
+          "reach": 9297,
+          "views": 10569,
+          "saves": 67,
+          "shares": 21,
           "comments_with_replies": 10,
           "comment_list": [
             {
@@ -4902,349 +5102,275 @@
         },
         {
           "caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nThe brother who stayed",
-          "likes": 2453,
-          "comments": 83,
+          "likes": 2807,
+          "comments": 103,
           "type": "VIDEO",
           "date": "2026-05-02",
-          "reach": 35698,
-          "views": 41701,
-          "saves": 589,
-          "shares": 251,
+          "reach": 40940,
+          "views": 47819,
+          "saves": 672,
+          "shares": 330,
           "comments_with_replies": 63,
           "comment_list": [
             {
               "user": "",
-              "text": "Sounds like an August Wilson play! Deep!",
-              "date": "2026-05-08",
+              "text": "Some great acting right here \ud83d\udc4f",
+              "date": "2026-05-10",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "Here's the whole movie link: https://youtu.be/iHtJueamsY4?si=zLsnXavO6JtjL-Ew. Enjoy and you're welcome!!!!!",
-              "date": "2026-05-08",
+              "text": "More of this, please\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+              "date": "2026-05-09",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "\"At least you choose your misery\" is one hell of a bar. \ud83e\uddd0",
-              "date": "2026-05-07",
+              "text": "\u21b3 @lastringmaster download the VURT app or go to myVURT.com Free to stream",
+              "date": "2026-05-10",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "Incredible acting",
-              "date": "2026-05-07",
+              "text": "This is cinema \ud83d\udd25",
+              "date": "2026-05-09",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "How is Charles not aging?",
-              "date": "2026-05-07",
+              "text": "\u21b3 @_thepeoplesduchess_ you know it",
+              "date": "2026-05-10",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "I\u2019ve always said that it\u2019s better and more noble to be allowed to make your own mistakes\u2026 you may learn from them. But w",
-              "date": "2026-05-07",
+              "text": "Sheeesh ! The writing, these two champions!\ud83d\ude4c\ud83c\udffe",
+              "date": "2026-05-09",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "Yes, \u2026\u201dat least, you chose your misery\u201d. That makes a whole lot of difference.",
-              "date": "2026-05-07",
+              "text": "\u21b3 @supanova77 legends!",
+              "date": "2026-05-09",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "Wow....\ud83d\udc4f\ud83c\udffe\ud83d\udc4f\ud83c\udffe great scene, great writing.",
-              "date": "2026-05-07",
+              "text": "What\u2019s the name of this movie?",
+              "date": "2026-05-09",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "Golly, they ACTIN'-actin'... \ud83d\udc4f\ud83c\udfff\ud83d\udc4f\ud83c\udfff\ud83d\udc4f\ud83c\udfff",
-              "date": "2026-05-06",
+              "text": "\u21b3 @no_nonsense_genxr Come Back Dad on the VURT app or myVURT.com",
+              "date": "2026-05-09",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "\u21b3 @sunnmcheaux Yes indeed!",
-              "date": "2026-05-07",
+              "text": "Charles Dutton doesn\u2019t get enough credit. That\u2019s a bad man!",
+              "date": "2026-05-09",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "Man\u2026who do I share this to cause DAMN. \u201cYou chose your misery.\u201d That was\u2026that made me laugh. But that also hit.",
-              "date": "2026-05-06",
+              "text": "\u21b3 @cain_in_the_garden that\u2019s a bad man walking",
+              "date": "2026-05-09",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "Deep",
-              "date": "2026-05-06",
+              "text": "\u21b3 @cain_in_the_garden truth",
+              "date": "2026-05-10",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "\"You lost your wife, but at least you know what love is. I can't stand this woman\" \ud83d\ude02",
-              "date": "2026-05-06",
+              "text": "You chose your misery",
+              "date": "2026-05-09",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "Charles Dutton is a treasure and I don\u2019t think we tell him that enough.",
-              "date": "2026-05-06",
+              "text": "\u21b3 @kennykentastic that\u2019s deep",
+              "date": "2026-05-09",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             },
             {
               "user": "",
-              "text": "Love it \ud83d\udc4f\ud83d\udc4f\ud83d\udc4f",
-              "date": "2026-05-06",
+              "text": "baaaayyybaaaaayyyyyyyy Charles S Dutton is THAT MAN \ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+              "date": "2026-05-09",
               "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
             }
           ]
         },
         {
           "caption": "\u201cHe\u2019s not your daddy anymore? I\u2019m your father. I\u2019m your mast",
-          "likes": 66,
+          "likes": 69,
           "comments": 0,
           "type": "VIDEO",
           "date": "2026-05-01",
-          "reach": 5304,
-          "views": 6036,
+          "reach": 5395,
+          "views": 6157,
           "saves": 31,
-          "shares": 11,
+          "shares": 12,
           "comments_with_replies": 0
-        },
-        {
-          "caption": "\u201cSpence, I am broken. I didn\u2019t ask for you to make me whole.",
-          "likes": 107,
-          "comments": 0,
-          "type": "VIDEO",
-          "date": "2026-05-01",
-          "reach": 3402,
-          "views": 3814,
-          "saves": 25,
-          "shares": 5,
-          "comments_with_replies": 0
-        },
-        {
-          "caption": "\u201cI\u2019m seeing someone.\u201d\nHe showed up with flowers. Unannounced",
-          "likes": 20,
-          "comments": 0,
-          "type": "VIDEO",
-          "date": "2026-04-30",
-          "reach": 2572,
-          "views": 2743,
-          "saves": 2,
-          "shares": 2,
-          "comments_with_replies": 0
-        },
-        {
-          "caption": "\u201cGQ. Look at y\u2019all.\u201d\nGirls\u2019 night. Drinks in hand. Then HE w",
-          "likes": 22,
-          "comments": 0,
-          "type": "VIDEO",
-          "date": "2026-04-30",
-          "reach": 1593,
-          "views": 1757,
-          "saves": 5,
-          "shares": 5,
-          "comments_with_replies": 0
-        },
-        {
-          "caption": "\u201cYou could cost me my job.\u201d\n\nMichelle walks out of the bathr",
-          "likes": 12,
-          "comments": 4,
-          "type": "VIDEO",
-          "date": "2026-04-29",
-          "reach": 259,
-          "views": 320,
-          "saves": 1,
-          "shares": 1,
-          "comments_with_replies": 4,
-          "comment_list": [
-            {
-              "user": "",
-              "text": "\ud83c\udf7f Ok... I'm here for it",
-              "date": "2026-05-01",
-              "post_caption": "\u201cYou could cost me my job.\u201d\n\nMichelle wa"
-            },
-            {
-              "user": "",
-              "text": "\u21b3 @hilmonsorey :D hehe me too",
-              "date": "2026-05-05",
-              "post_caption": "\u201cYou could cost me my job.\u201d\n\nMichelle wa"
-            },
-            {
-              "user": "",
-              "text": "Name of movie",
-              "date": "2026-04-30",
-              "post_caption": "\u201cYou could cost me my job.\u201d\n\nMichelle wa"
-            },
-            {
-              "user": "",
-              "text": "\u21b3 @mohamed493111 Bound on myvurt.com and the VURT app",
-              "date": "2026-04-30",
-              "post_caption": "\u201cYou could cost me my job.\u201d\n\nMichelle wa"
-            }
-          ]
         }
       ],
       "error": null,
       "all_recent_comments": [
         {
           "user": "",
-          "text": "I am WEAK at the mama fixing Loretta wiiiiig!!!",
-          "date": "2026-05-08",
+          "text": "\u21b3 @sonharaeastman \ud83d\udc78",
+          "date": "2026-05-10",
+          "post_caption": "\u201cI finally jumped on the vertical bandwa"
+        },
+        {
+          "user": "",
+          "text": "absolutely love this movie \ud83d\ude0d",
+          "date": "2026-05-10",
+          "post_caption": "\u201cI want to know who I belong to.\u201d\n\nCandy"
+        },
+        {
+          "user": "",
+          "text": "\u21b3 @adreanadotson I do too!",
+          "date": "2026-05-10",
+          "post_caption": "\u201cI want to know who I belong to.\u201d\n\nCandy"
+        },
+        {
+          "user": "",
+          "text": "\u21b3 @jusjen28 wooooo!",
+          "date": "2026-05-10",
+          "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+        },
+        {
+          "user": "",
+          "text": "Fun fact: Mama is played by Elizabeth Omilami who is the daughter of Civil Rights legend Hosea Williams and she is also ",
+          "date": "2026-05-10",
           "post_caption": "\u201cWhere was he when daddy kept calling fo"
         },
         {
           "user": "",
-          "text": "Name please",
-          "date": "2026-05-08",
+          "text": "I\u2019m confused. Was that woman supposed to be Loretta Devine\u2019s mother??? I watched this scene like, \u201cAre they sisters? In ",
+          "date": "2026-05-10",
           "post_caption": "\u201cWhere was he when daddy kept calling fo"
         },
         {
           "user": "",
-          "text": "Sad",
-          "date": "2026-05-08",
+          "text": "When she said \"no ma'am\" while her mama was fixing her wig killed me\u2620\ufe0f\ud83d\ude2d\ud83d\ude2d\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02",
+          "date": "2026-05-10",
           "post_caption": "\u201cWhere was he when daddy kept calling fo"
         },
         {
           "user": "",
-          "text": "\u21b3 @gwenbattles \ud83d\ude02\ud83d\ude02\ud83d\ude02",
-          "date": "2026-05-08",
+          "text": "\u21b3 @inia.fj \ud83e\udd23 it was drama",
+          "date": "2026-05-10",
           "post_caption": "\u201cWhere was he when daddy kept calling fo"
         },
         {
           "user": "",
-          "text": "\u21b3 @hightower.d but it\u2019s guud tho \ud83d\ude02\ud83d\ude02",
-          "date": "2026-05-08",
+          "text": "\u21b3 @lorea_queen true!",
+          "date": "2026-05-10",
           "post_caption": "\u201cWhere was he when daddy kept calling fo"
         },
         {
           "user": "",
-          "text": "\u21b3 @mrz.brewer_scorpio Come Back Dad free on Pluto TV",
-          "date": "2026-05-08",
+          "text": "\u21b3 @kavinnnnnn Come Back Dad streamin on the VURT app free",
+          "date": "2026-05-10",
           "post_caption": "\u201cWhere was he when daddy kept calling fo"
         },
         {
           "user": "",
-          "text": "Sounds like an August Wilson play! Deep!",
-          "date": "2026-05-08",
+          "text": "\u21b3 @gwenbattles she had her wig switched around in\"Jumping the Broom\" \ud83e\udd23\ud83d\ude02\ud83e\udd23",
+          "date": "2026-05-10",
+          "post_caption": "\u201cWhere was he when daddy kept calling fo"
+        },
+        {
+          "user": "",
+          "text": "\u21b3 @shauna_mo_nique \ud83e\udd23\ud83e\udd23 wardrobe change",
+          "date": "2026-05-10",
+          "post_caption": "\u201cWhere was he when daddy kept calling fo"
+        },
+        {
+          "user": "",
+          "text": "\u21b3 @hightower.d Exactly what I said \ud83d\ude02\ud83d\ude02\ud83d\ude02",
+          "date": "2026-05-10",
+          "post_caption": "\u201cWhere was he when daddy kept calling fo"
+        },
+        {
+          "user": "",
+          "text": "\u21b3 @the_handsom3_strang3r mmhmm \ud83d\ude02",
+          "date": "2026-05-10",
+          "post_caption": "\u201cWhere was he when daddy kept calling fo"
+        },
+        {
+          "user": "",
+          "text": "Some great acting right here \ud83d\udc4f",
+          "date": "2026-05-10",
           "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
         },
         {
           "user": "",
-          "text": "Here's the whole movie link: https://youtu.be/iHtJueamsY4?si=zLsnXavO6JtjL-Ew. Enjoy and you're welcome!!!!!",
-          "date": "2026-05-08",
+          "text": "\u21b3 @lastringmaster download the VURT app or go to myVURT.com Free to stream",
+          "date": "2026-05-10",
           "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
         },
         {
           "user": "",
-          "text": "\ud83d\udd25\ud83d\udd25\ud83d\udd25",
-          "date": "2026-05-07",
-          "post_caption": "\u201c\u00c9l es el mejor. Bueno, el segundo mejor"
-        },
-        {
-          "user": "",
-          "text": "Love it",
-          "date": "2026-05-07",
-          "post_caption": "\u201cNext time, try to take your card back b"
-        },
-        {
-          "user": "",
-          "text": "Love it",
-          "date": "2026-05-07",
-          "post_caption": "\u201cNext time, try to take your card back b"
-        },
-        {
-          "user": "",
-          "text": "YESSSS!!!",
-          "date": "2026-05-07",
-          "post_caption": "\u201cNext time, try to take your card back b"
-        },
-        {
-          "user": "",
-          "text": "\u21b3 @alyssathepayne yesssss",
-          "date": "2026-05-07",
-          "post_caption": "\u201cNext time, try to take your card back b"
-        },
-        {
-          "user": "",
-          "text": "",
-          "date": "2026-05-07",
-          "post_caption": "\u201cNext time, try to take your card back b"
-        },
-        {
-          "user": "",
-          "text": "\ud83d\udd25\ud83d\udd25\ud83d\udd25",
-          "date": "2026-05-07",
-          "post_caption": "\u201cNext time, try to take your card back b"
-        },
-        {
-          "user": "",
-          "text": "\ud83d\ude22\ud83d\ude22\ud83d\ude22\ud83d\ude22",
-          "date": "2026-05-07",
-          "post_caption": "\u201cWhere was he when daddy kept calling fo"
-        },
-        {
-          "user": "",
-          "text": "@ms_lacks",
-          "date": "2026-05-07",
-          "post_caption": "\u201cWhere was he when daddy kept calling fo"
-        },
-        {
-          "user": "",
-          "text": "Family ain't family without ACCOUNTABILITY",
-          "date": "2026-05-07",
-          "post_caption": "\u201cWhere was he when daddy kept calling fo"
-        },
-        {
-          "user": "",
-          "text": "\u21b3 @hightower.d \ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02",
-          "date": "2026-05-07",
-          "post_caption": "\u201cWhere was he when daddy kept calling fo"
-        },
-        {
-          "user": "",
-          "text": "\"At least you choose your misery\" is one hell of a bar. \ud83e\uddd0",
-          "date": "2026-05-07",
+          "text": "\u21b3 @_thepeoplesduchess_ you know it",
+          "date": "2026-05-10",
           "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
         },
         {
           "user": "",
-          "text": "Incredible acting",
-          "date": "2026-05-07",
+          "text": "\u21b3 @cain_in_the_garden truth",
+          "date": "2026-05-10",
           "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
         },
         {
           "user": "",
-          "text": "How is Charles not aging?",
-          "date": "2026-05-07",
-          "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
+          "text": "\ud83d\ude4c\ud83d\ude4c\ud83d\ude4c",
+          "date": "2026-05-09",
+          "post_caption": "\u201cI finally jumped on the vertical bandwa"
         },
         {
           "user": "",
-          "text": "I\u2019ve always said that it\u2019s better and more noble to be allowed to make your own mistakes\u2026 you may learn from them. But w",
-          "date": "2026-05-07",
-          "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
+          "text": "\ud83d\udc4f\ud83d\udc4f\ud83d\udc4f\ud83d\udc4f",
+          "date": "2026-05-09",
+          "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
         },
         {
           "user": "",
-          "text": "Yes, \u2026\u201dat least, you chose your misery\u201d. That makes a whole lot of difference.",
-          "date": "2026-05-07",
-          "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
+          "text": "OK Stiggs!  I see yall fam!! Love you bro!",
+          "date": "2026-05-09",
+          "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
         },
         {
           "user": "",
-          "text": "Wow....\ud83d\udc4f\ud83c\udffe\ud83d\udc4f\ud83c\udffe great scene, great writing.",
-          "date": "2026-05-07",
-          "post_caption": "\u201cI\u2019m living a life I didn\u2019t choose.\u201d\n\nTh"
+          "text": "\u21b3 @clink2112 God is STILL good, brother! Mad love!",
+          "date": "2026-05-09",
+          "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+        },
+        {
+          "user": "",
+          "text": "\ud83d\ude02\ud83d\ude02\ud83d\ude02\ud83d\ude02",
+          "date": "2026-05-09",
+          "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+        },
+        {
+          "user": "",
+          "text": "Wait @brittneyqhill & @stiggah_man\u2026 yeah this a hit already",
+          "date": "2026-05-09",
+          "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
+        },
+        {
+          "user": "",
+          "text": "\u21b3 @dat_guywill literally one of my favorite people to work with! @brittneyqhill We are due for anotha one! \ud83d\ude4c\ud83c\udffe\u2728",
+          "date": "2026-05-09",
+          "post_caption": "\u201cI don\u2019t want to feed them for free.\u201d \u201cI"
         }
       ],
-      "total_comments_with_replies": 180,
+      "total_comments_with_replies": 212,
       "_prev": {
         "platform": "instagram",
         "handle": "@myvurt",
@@ -38179,36 +38305,80 @@
         "followers_delta": 302,
         "posts_delta": 2
       },
-      "followers_delta": 230,
-      "posts_delta": 2
+      "followers_delta": 674,
+      "posts_delta": 6
     },
     "facebook": {
       "platform": "facebook",
       "handle": "myvurt",
-      "followers": 428,
-      "talking_about": 1314,
+      "followers": 430,
+      "talking_about": 819,
       "recent_posts": [
         {
-          "date": "2026-05-07",
+          "date": "2026-05-09",
           "reactions": 1,
+          "comments": 0,
+          "comments_with_replies": 0,
+          "shares": 0,
+          "message": "\"I finally jumped on the vertical bandwagon.\"  Brittney Q. H",
+          "recent_comments": [],
+          "is_reel": true,
+          "video_views": 237
+        },
+        {
+          "date": "2026-05-09",
+          "reactions": 10,
+          "comments": 0,
+          "comments_with_replies": 0,
+          "shares": 0,
+          "message": "Stream free \u2192 https://www.myvurt.com/detail/micro_series/my-",
+          "recent_comments": [],
+          "is_reel": true,
+          "video_views": 1432
+        },
+        {
+          "date": "2026-05-08",
+          "reactions": 5,
+          "comments": 0,
+          "comments_with_replies": 0,
+          "shares": 0,
+          "message": "\"I don't want to feed them for free.\" \"I don't want to be at",
+          "recent_comments": [],
+          "is_reel": true,
+          "video_views": 1182
+        },
+        {
+          "date": "2026-05-08",
+          "reactions": 13,
+          "comments": 0,
+          "comments_with_replies": 0,
+          "shares": 0,
+          "message": "Watch free at https://www.myvurt.com/detail/micro_series/my-",
+          "recent_comments": [],
+          "is_reel": true,
+          "video_views": 1813
+        },
+        {
+          "date": "2026-05-07",
+          "reactions": 3,
           "comments": 0,
           "comments_with_replies": 0,
           "shares": 0,
           "message": "Watch free at myvurt.com/detail/micro_series/stay-at-home-mo",
           "recent_comments": [],
           "is_reel": true,
-          "video_views": 280
+          "video_views": 364
         },
         {
           "date": "2026-05-07",
-          "reactions": 1,
+          "reactions": 3,
           "comments": 0,
           "comments_with_replies": 0,
           "shares": 0,
           "message": "She traded her wedding ring to find one man. Her current lov",
           "recent_comments": [],
           "is_reel": true,
-          "video_views": 263
+          "video_views": 379
         },
         {
           "date": "2026-05-06",
@@ -38219,7 +38389,7 @@
           "message": "\"Cash app don't work at the emergency room.\"  Stay at Home M",
           "recent_comments": [],
           "is_reel": true,
-          "video_views": 1063
+          "video_views": 1066
         },
         {
           "date": "2026-05-06",
@@ -38230,7 +38400,7 @@
           "message": "Backstreet Boys + NSYNC fighting zombies in the desert. Span",
           "recent_comments": [],
           "is_reel": true,
-          "video_views": 62
+          "video_views": 105
         },
         {
           "date": "2026-05-05",
@@ -38250,7 +38420,7 @@
           "message": "Watch free \u2192 https://www.myvurt.com/detail/micro_series/dead",
           "recent_comments": [],
           "is_reel": true,
-          "video_views": 121
+          "video_views": 123
         },
         {
           "date": "2026-05-05",
@@ -38276,7 +38446,7 @@
             }
           ],
           "is_reel": true,
-          "video_views": 313
+          "video_views": 315
         },
         {
           "date": "2026-05-04",
@@ -38287,7 +38457,7 @@
           "message": "She has a scar on her knee that she tells people came from c",
           "recent_comments": [],
           "is_reel": true,
-          "video_views": 1264
+          "video_views": 1279
         },
         {
           "date": "2026-05-02",
@@ -38298,7 +38468,7 @@
           "message": "\"I'm living a life I didn't choose.\"  The brother who stayed",
           "recent_comments": [],
           "is_reel": true,
-          "video_views": 1026
+          "video_views": 1034
         },
         {
           "date": "2026-05-01",
@@ -38309,66 +38479,49 @@
           "message": "Watch the full series free at https://www.myvurt.com/detail/",
           "recent_comments": [],
           "is_reel": true,
-          "video_views": 347
-        },
-        {
-          "date": "2026-05-01",
-          "reactions": 1,
-          "comments": 0,
-          "comments_with_replies": 0,
-          "shares": 0,
-          "message": "Watch the full series free at https://www.myvurt.com/detail/",
-          "recent_comments": [],
-          "is_reel": true,
-          "video_views": 306
-        },
-        {
-          "date": "2026-04-30",
-          "reactions": 1,
-          "comments": 0,
-          "comments_with_replies": 0,
-          "shares": 0,
-          "message": "\"I'm seeing someone.\"  He showed up with flowers. Unannounce",
-          "recent_comments": [],
-          "is_reel": true,
-          "video_views": 560
-        },
-        {
-          "date": "2026-04-29",
-          "reactions": 3,
-          "comments": 0,
-          "comments_with_replies": 0,
-          "shares": 0,
-          "message": "Watch free \u2192 https://www.myvurt.com/detail/micro_series/boun",
-          "recent_comments": [],
-          "is_reel": true,
-          "video_views": 461
-        },
-        {
-          "date": "2026-04-29",
-          "reactions": 0,
-          "comments": 0,
-          "comments_with_replies": 0,
-          "shares": 0,
-          "message": "\"Are you talking to me?\"  Kym Whitley plays Shavelle \u2014 the f",
-          "recent_comments": [],
-          "is_reel": true,
-          "video_views": 289
+          "video_views": 349
         }
       ],
-      "total_post_reactions": 53,
+      "total_post_reactions": 78,
       "total_post_shares": 0,
       "error": null,
       "page_daily_breakdown": [
         {
-          "date": "2026-05-09",
-          "reactions": 0,
-          "reactions_by_type": {},
-          "engagements": 27,
-          "video_views": 26,
-          "video_views_organic": 26,
+          "date": "2026-05-11",
+          "reactions": 2,
+          "reactions_by_type": {
+            "like": 1,
+            "love": 1
+          },
+          "engagements": 15,
+          "video_views": 104,
+          "video_views_organic": 104,
           "video_views_paid": 0,
-          "impressions": 54
+          "impressions": 298
+        },
+        {
+          "date": "2026-05-10",
+          "reactions": 13,
+          "reactions_by_type": {
+            "like": 13
+          },
+          "engagements": 130,
+          "video_views": 958,
+          "video_views_organic": 958,
+          "video_views_paid": 0,
+          "impressions": 1985
+        },
+        {
+          "date": "2026-05-09",
+          "reactions": 23,
+          "reactions_by_type": {
+            "like": 23
+          },
+          "engagements": 157,
+          "video_views": 1222,
+          "video_views_organic": 1222,
+          "video_views_paid": 0,
+          "impressions": 2611
         },
         {
           "date": "2026-05-08",
@@ -38377,8 +38530,8 @@
             "like": 3
           },
           "engagements": 146,
-          "video_views": 474,
-          "video_views_organic": 474,
+          "video_views": 476,
+          "video_views_organic": 476,
           "video_views_paid": 0,
           "impressions": 966
         },
@@ -38421,53 +38574,23 @@
           "video_views_organic": 811,
           "video_views_paid": 3703,
           "impressions": 6384
-        },
-        {
-          "date": "2026-05-04",
-          "reactions": 441,
-          "reactions_by_type": {
-            "like": 416,
-            "love": 16,
-            "wow": 3,
-            "haha": 6
-          },
-          "engagements": 4265,
-          "video_views": 10207,
-          "video_views_organic": 188,
-          "video_views_paid": 10019,
-          "impressions": 13685
-        },
-        {
-          "date": "2026-05-03",
-          "reactions": 529,
-          "reactions_by_type": {
-            "like": 497,
-            "love": 13,
-            "wow": 1,
-            "haha": 18
-          },
-          "engagements": 1999,
-          "video_views": 6941,
-          "video_views_organic": 570,
-          "video_views_paid": 6371,
-          "impressions": 10063
         }
       ],
-      "page_reactions_7d": 1229,
-      "page_engagements_7d": 8397,
-      "page_video_views_7d": 22719,
-      "page_video_views_organic_7d": 2621,
-      "page_video_views_paid_7d": 20098,
-      "page_impressions_7d": 32115,
+      "page_reactions_7d": 297,
+      "page_engagements_7d": 2408,
+      "page_video_views_7d": 7831,
+      "page_video_views_organic_7d": 4123,
+      "page_video_views_paid_7d": 3708,
+      "page_impressions_7d": 13207,
       "page_reactions_by_type_7d": {
-        "like": 1157,
-        "love": 39,
-        "wow": 7,
-        "haha": 25,
+        "like": 281,
+        "love": 11,
+        "wow": 3,
+        "haha": 1,
         "sorry": 1
       },
       "total_post_comments": 1,
-      "total_reel_views_feed": 7849,
+      "total_reel_views_feed": 11558,
       "_prev": {
         "platform": "facebook",
         "handle": "myvurt",
@@ -50341,9 +50464,9 @@
         "talking_about_delta": -637,
         "total_post_reactions_delta": 1
       },
-      "followers_delta": 0,
-      "talking_about_delta": -406,
-      "total_post_reactions_delta": -3
+      "followers_delta": 2,
+      "talking_about_delta": -901,
+      "total_post_reactions_delta": 22
     }
   }
 }
